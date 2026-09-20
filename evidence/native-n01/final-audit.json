@@ -1,0 +1,30 @@
+{
+  "checkpoint": "ACM-NATIVE-N01-2026-09-20",
+  "version": "0.2.0-alpha.1",
+  "jar_sha256": "7e5c5b23932eff2011d464cfc4e5d6c352f20d750e6ee1a0a01108baf121731a",
+  "jar_bytes": 5764672,
+  "classes": 37,
+  "source_manifest_sha256": "2822987a000be66d65edefe99ef7f89d16dec0fe4f25cba6ae06d0b6b639bab4",
+  "source_files": 86,
+  "reproducible_build": true,
+  "previous_checkpoints_unchanged": true,
+  "installed_in_pack": false,
+  "actual_minecraft_run": false,
+  "network_connection_tested": false,
+  "native_graphics_probe_checks": 511,
+  "native_graphics_probe_failures": 0,
+  "core_scenarios": 48,
+  "core_assertions": 17489,
+  "transformer_probe": "NOT_EXECUTED_TOOL_SAFETY_STATUS_BLOCK",
+  "verdict": "GRAPHICS_PROBE_PASSED__PACK_RUNTIME_BLOCKED",
+  "visuals_approved": [
+    "SANTUARIO_R04",
+    "O_DESPERTAR_S01.2"
+  ],
+  "limitations": [
+    "2D art",
+    "prerendered blur",
+    "not full Minecraft runtime",
+    "Android untested"
+  ]
+}

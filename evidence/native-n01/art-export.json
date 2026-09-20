@@ -1,0 +1,421 @@
+{
+  "startup_sha256": "c0158907051846c5b123d1502932c4e5c58bb1fb7d187c3c87b01efea7fb96a3",
+  "browser_network_requests": [],
+  "profiles": {
+    "hd": {
+      "width": 1366,
+      "height": 768,
+      "sidebar": 369,
+      "count": 4,
+      "button.0.x": 36,
+      "button.0.y": 349,
+      "button.0.width": 295,
+      "button.0.height": 53,
+      "button.1.x": 36,
+      "button.1.y": 408,
+      "button.1.width": 295,
+      "button.1.height": 53,
+      "button.2.x": 36,
+      "button.2.y": 466,
+      "button.2.width": 295,
+      "button.2.height": 53,
+      "button.3.x": 36,
+      "button.3.y": 525,
+      "button.3.width": 295,
+      "button.3.height": 53,
+      "title.x": 112,
+      "title.y": 509,
+      "title.width": 224,
+      "title.height": 30,
+      "detail.x": 112,
+      "detail.y": 547,
+      "detail.width": 224,
+      "detail.height": 16,
+      "percent.x": 654,
+      "percent.y": 505,
+      "percent.width": 72,
+      "percent.height": 62,
+      "progress.x": 112,
+      "progress.y": 590,
+      "progress.width": 614,
+      "progress.height": 2,
+      "branch.x": 112,
+      "branch.y": 610,
+      "branch.width": 614,
+      "branch.height": 12,
+      "steps.x": 684,
+      "steps.y": 473,
+      "steps.width": 42,
+      "steps.height": 12,
+      "time.x": 677,
+      "time.y": 658,
+      "time.width": 77,
+      "time.height": 14
+    },
+    "compact": {
+      "width": 854,
+      "height": 480,
+      "sidebar": 231,
+      "count": 4,
+      "button.0.x": 23,
+      "button.0.y": 188,
+      "button.0.width": 184,
+      "button.0.height": 41,
+      "button.1.x": 23,
+      "button.1.y": 233,
+      "button.1.width": 184,
+      "button.1.height": 41,
+      "button.2.x": 23,
+      "button.2.y": 278,
+      "button.2.width": 184,
+      "button.2.height": 41,
+      "button.3.x": 23,
+      "button.3.y": 323,
+      "button.3.width": 184,
+      "button.3.height": 41,
+      "title.x": 66,
+      "title.y": 281,
+      "title.width": 174,
+      "title.height": 24,
+      "detail.x": 66,
+      "detail.y": 313,
+      "detail.width": 174,
+      "detail.height": 15,
+      "percent.x": 411,
+      "percent.y": 280,
+      "percent.width": 60,
+      "percent.height": 48,
+      "progress.x": 66,
+      "progress.y": 345,
+      "progress.width": 405,
+      "progress.height": 2,
+      "branch.x": 66,
+      "branch.y": 362,
+      "branch.width": 405,
+      "branch.height": 12,
+      "steps.x": 444,
+      "steps.y": 256,
+      "steps.width": 28,
+      "steps.height": 10,
+      "time.x": 430,
+      "time.y": 400,
+      "time.width": 61,
+      "time.height": 12
+    },
+    "classic": {
+      "width": 1024,
+      "height": 768,
+      "sidebar": 276,
+      "count": 4,
+      "button.0.x": 27,
+      "button.0.y": 346,
+      "button.0.width": 221,
+      "button.0.height": 53,
+      "button.1.x": 27,
+      "button.1.y": 404,
+      "button.1.width": 221,
+      "button.1.height": 53,
+      "button.2.x": 27,
+      "button.2.y": 462,
+      "button.2.width": 221,
+      "button.2.height": 53,
+      "button.3.x": 27,
+      "button.3.y": 521,
+      "button.3.width": 221,
+      "button.3.height": 53,
+      "title.x": 84,
+      "title.y": 515,
+      "title.width": 201,
+      "title.height": 24,
+      "detail.x": 84,
+      "detail.y": 547,
+      "detail.width": 201,
+      "detail.height": 16,
+      "percent.x": 500,
+      "percent.y": 511,
+      "percent.width": 60,
+      "percent.height": 56,
+      "progress.x": 84,
+      "progress.y": 590,
+      "progress.width": 477,
+      "progress.height": 2,
+      "branch.x": 84,
+      "branch.y": 610,
+      "branch.width": 477,
+      "branch.height": 12,
+      "steps.x": 526,
+      "steps.y": 479,
+      "steps.width": 35,
+      "steps.height": 12,
+      "time.x": 512,
+      "time.y": 658,
+      "time.width": 77,
+      "time.height": 14
+    },
+    "wide": {
+      "width": 2048,
+      "height": 864,
+      "sidebar": 553,
+      "count": 4,
+      "button.0.x": 55,
+      "button.0.y": 403,
+      "button.0.width": 442,
+      "button.0.height": 60,
+      "button.1.x": 55,
+      "button.1.y": 468,
+      "button.1.width": 442,
+      "button.1.height": 60,
+      "button.2.x": 55,
+      "button.2.y": 534,
+      "button.2.width": 442,
+      "button.2.height": 60,
+      "button.3.x": 55,
+      "button.3.y": 600,
+      "button.3.width": 442,
+      "button.3.height": 60,
+      "title.x": 161,
+      "title.y": 573,
+      "title.width": 265,
+      "title.height": 36,
+      "detail.x": 161,
+      "detail.y": 616,
+      "detail.width": 265,
+      "detail.height": 20,
+      "percent.x": 859,
+      "percent.y": 567,
+      "percent.width": 72,
+      "percent.height": 75,
+      "progress.x": 161,
+      "progress.y": 665,
+      "progress.width": 770,
+      "progress.height": 2,
+      "branch.x": 161,
+      "branch.y": 685,
+      "branch.width": 770,
+      "branch.height": 15,
+      "steps.x": 884,
+      "steps.y": 534,
+      "steps.width": 47,
+      "steps.height": 13,
+      "time.x": 881,
+      "time.y": 741,
+      "time.width": 86,
+      "time.height": 15
+    }
+  },
+  "blur": "build-time rasterized approved panel B; not runtime framebuffer blur",
+  "browser": "153.0.8010.48",
+  "assets": {
+    "body.png": {
+      "bytes": 17879,
+      "sha256": "52c7934ca214b80fe01b69cc9bd1822b138c39e30702661e4145ad53d5101eb6"
+    },
+    "body.properties": {
+      "bytes": 2005,
+      "sha256": "0148defbbb37073dcb2047d2ffacb8e5b888bf3dd06295c6f5f30b5aa71cc458"
+    },
+    "classic/boot.png": {
+      "bytes": 772726,
+      "sha256": "f0af5ccb11b5e5df4caeb3b30ac09ffd86f56ba06fff613ac1e0dbc87b66d221"
+    },
+    "classic/button-0-hover.png": {
+      "bytes": 8444,
+      "sha256": "1aa7ebe0ffe8e3bb77c7643a0ad342e168da83d875f4ee66253dcd1f552c6020"
+    },
+    "classic/button-0.png": {
+      "bytes": 9615,
+      "sha256": "d797b9037facf421488dcb18f59c2c4dcd0f94f6d3512e2189af2abb0ec3ffcd"
+    },
+    "classic/button-1-hover.png": {
+      "bytes": 8703,
+      "sha256": "ecee7cc7e547a81e9dd3f535c61744279bbd43677ab69a1ab13791f0c138ea62"
+    },
+    "classic/button-1.png": {
+      "bytes": 5346,
+      "sha256": "600337c41a23b571a07c1bad9561a2eee7b478f0ac1b0b43610321ffb072d3ae"
+    },
+    "classic/button-2-hover.png": {
+      "bytes": 8381,
+      "sha256": "40186171f7e31f6f78d49d9840e4a208072b0a32a150c050a7cfece4a489478e"
+    },
+    "classic/button-2.png": {
+      "bytes": 5172,
+      "sha256": "974f9c5ece1394487142f8edcb0d20e7cefb72c47cf7a5e1c311a338e42ff887"
+    },
+    "classic/button-3-hover.png": {
+      "bytes": 7824,
+      "sha256": "a351305eabe68f7a7676be22d76efe3a094871dc807151dafb17f0494fa193c0"
+    },
+    "classic/button-3.png": {
+      "bytes": 4476,
+      "sha256": "a485538e571e81703c9963f510ff5f7108cabb255d2a1ef6564636b36fb67f6c"
+    },
+    "classic/layout.properties": {
+      "bytes": 766,
+      "sha256": "66eee1e28281f46ddf12c95415aca35dab60110303890f7b143d2e80a4d136fb"
+    },
+    "classic/panel.png": {
+      "bytes": 91691,
+      "sha256": "d8af82b707f013e918d5918b3e192bc5941f354f51c4b4262011c4601d73db06"
+    },
+    "classic/scene.jpg": {
+      "bytes": 242238,
+      "sha256": "aa8db56c4fd67472c647e026b3740425eab72c13b51a071a08549b64d3152221"
+    },
+    "compact/boot.png": {
+      "bytes": 433395,
+      "sha256": "f08ebb28989943a2bdeb701ea0677e548701aae5affa7756a9e37603ceed7f63"
+    },
+    "compact/button-0-hover.png": {
+      "bytes": 6424,
+      "sha256": "97c47a874c9461481a14f09862cd3a2897cdcf704f0bfd7a7d20e88c3a0cb587"
+    },
+    "compact/button-0.png": {
+      "bytes": 7152,
+      "sha256": "80dca534eb9debc6ad02bd95a983b0e7b3f6c84da7899df1447aa3404e810ccd"
+    },
+    "compact/button-1-hover.png": {
+      "bytes": 6394,
+      "sha256": "ad9cf7f30512b7814db8d898035009e60eb00619fe9715cdf6ca62d6c51a6102"
+    },
+    "compact/button-1.png": {
+      "bytes": 4102,
+      "sha256": "2fdb6f1ecf0c013170a0c9d5f1a8d72535d2d5062377b5672dc5fd404dfd2e39"
+    },
+    "compact/button-2-hover.png": {
+      "bytes": 6166,
+      "sha256": "a508892be679e4825944513ec418625ceeb0ca5d2d5b8d3fa5d294bc47bac13d"
+    },
+    "compact/button-2.png": {
+      "bytes": 4088,
+      "sha256": "9a2567fa60cea2f44e6418eef88c7441a8479abe63ca4d1978f089438c29bf46"
+    },
+    "compact/button-3-hover.png": {
+      "bytes": 5938,
+      "sha256": "1640b88da9e66eae3b4cfc3cb2eec719f8bf81ac652b49d4df8056cc0cbb2bac"
+    },
+    "compact/button-3.png": {
+      "bytes": 3709,
+      "sha256": "57c37a9c48e7b33606e0327833b8edde9193609c4250e4752e85148126a6f184"
+    },
+    "compact/layout.properties": {
+      "bytes": 765,
+      "sha256": "9b52f44e217ccb725838e6dbbe6ef263c3208d27ec25327fe87abf19b9313f47"
+    },
+    "compact/panel.png": {
+      "bytes": 60413,
+      "sha256": "3053353a6f2713ec6268b704496d58cc12151987bcc440cdeac2117f3185a6c3"
+    },
+    "compact/scene.jpg": {
+      "bytes": 156186,
+      "sha256": "fdbbdc604749c379400336420d9af253317872008d15adaec7e7a8a50420e68e"
+    },
+    "hd/boot.png": {
+      "bytes": 993341,
+      "sha256": "b99622ea8541937dde3dec2c3fc6648cc61ebab69c9e5f3b4d928b2509e002c3"
+    },
+    "hd/button-0-hover.png": {
+      "bytes": 10853,
+      "sha256": "1d560de4a4b531b27ad39a420ede58b1a353b2f2ce9f0434a6af3d8f30890bbc"
+    },
+    "hd/button-0.png": {
+      "bytes": 12509,
+      "sha256": "5c0af55c349ee7e354f721b176ef8f637d91a2fc9ac04c2a7be067dbff1f5741"
+    },
+    "hd/button-1-hover.png": {
+      "bytes": 10969,
+      "sha256": "19492e485ff593365b59a7ad87a3c4c9ce6d7755d96467f96dcbdd23b056a130"
+    },
+    "hd/button-1.png": {
+      "bytes": 6595,
+      "sha256": "ee39d7e3b96d3cc4b07e56b896d394d95cbc6ccac9a5b0681155a083bde00943"
+    },
+    "hd/button-2-hover.png": {
+      "bytes": 10648,
+      "sha256": "67ec55e2e4561129696fe22c335e9c916f920febfc670b3f2661d0d5a71e6b3f"
+    },
+    "hd/button-2.png": {
+      "bytes": 6646,
+      "sha256": "fa84887040ca27dd96dcd5ac29249bb2652414633919723e06d1098e6e313ba5"
+    },
+    "hd/button-3-hover.png": {
+      "bytes": 10347,
+      "sha256": "e045909af4aa8979846e3258465dedcd3ebde5939b98b2c1d2f67daaccf64dd9"
+    },
+    "hd/button-3.png": {
+      "bytes": 6099,
+      "sha256": "5c58991538bc89d0b832879276202249fda4145ab15efb5d33dc54d81f4111db"
+    },
+    "hd/layout.properties": {
+      "bytes": 770,
+      "sha256": "c8ae5a76e6555077cb668289cbaf5f1ab531a9f99f8b57e8b8ce41fd6e7133dc"
+    },
+    "hd/panel.png": {
+      "bytes": 123145,
+      "sha256": "21304f83f196eec47972fc7c5a2cc963c1e8839f976beed2c307fea2227f17bf"
+    },
+    "hd/scene.jpg": {
+      "bytes": 318266,
+      "sha256": "cc30139f32c91add05dc3161e3c2e0ede98c73fcf34502bccf0a71a8b0975385"
+    },
+    "serif.png": {
+      "bytes": 57593,
+      "sha256": "988cd9a1028018b63f503106479cf5cdca97da094b5158fd81e72ab1c50bd66c"
+    },
+    "serif.properties": {
+      "bytes": 2216,
+      "sha256": "a939dee7c90c376114d866c22354f10888f5ec2824750bfbdda6cda416d25d76"
+    },
+    "wide/boot.png": {
+      "bytes": 1503210,
+      "sha256": "7585970cef92b3eb6a5c000a3dc55f58a5b27b63d526121eba3a58f56d2b2398"
+    },
+    "wide/button-0-hover.png": {
+      "bytes": 17502,
+      "sha256": "03a82d10453c7f6d2ab40953800c98e7973a6a420d2fc9b690dd1ff91ea18e63"
+    },
+    "wide/button-0.png": {
+      "bytes": 21615,
+      "sha256": "d9c6934f78a38598e313b7c9821bedb80bca1718da1e7477df9f485062425bb2"
+    },
+    "wide/button-1-hover.png": {
+      "bytes": 18077,
+      "sha256": "b12fd3e9a7a55d8191a2e83194999dc4614415d5894683d532eb0dcf2e99269f"
+    },
+    "wide/button-1.png": {
+      "bytes": 10358,
+      "sha256": "24046800b989c3c6a26da230cf80cafaf232332fd3ba62e2591deaa031d7b80c"
+    },
+    "wide/button-2-hover.png": {
+      "bytes": 16610,
+      "sha256": "6f832df54337ca3cd9c935cd7e30b140c47022233cd7ca70983606d82b37c2ce"
+    },
+    "wide/button-2.png": {
+      "bytes": 9939,
+      "sha256": "697b8823c9596c9e220938a9e6dc8d3829bfab35457df88ba8a7dd344ab325fd"
+    },
+    "wide/button-3-hover.png": {
+      "bytes": 16685,
+      "sha256": "6b6f9a4ceefcea525c9c5d17debf004f86134cb70c60cb504eedc003576b161e"
+    },
+    "wide/button-3.png": {
+      "bytes": 9345,
+      "sha256": "74ee5a70e511d943d7a53e7673d38a9c3d57ef7f6a22796d3483f1d6a6913ead"
+    },
+    "wide/layout.properties": {
+      "bytes": 770,
+      "sha256": "190b998e1000ab8703862c37a00fdf8d2342c2d04c7872cba4af99dac7235355"
+    },
+    "wide/panel.png": {
+      "bytes": 189266,
+      "sha256": "8f5484b838129d9095db733efe4e9131b39896eba4c9c0e114ff9d5cf732fd39"
+    },
+    "wide/scene.jpg": {
+      "bytes": 461223,
+      "sha256": "5c5fb7cb25cc701aace7b647dc04bb8a76061ea4ea4096bdf4015b5560ce65ee"
+    }
+  },
+  "total_bytes": 5724595,
+  "glyph_baseline": "corrected to shared font ascent",
+  "body_atlas_size": 12
+}

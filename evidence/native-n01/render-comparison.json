@@ -1,0 +1,10 @@
+{
+  "browser_vs_native_mean_abs_rgb": [
+    0.6774226756954612,
+    0.5846268377867252,
+    0.7547422141898487
+  ],
+  "native_capture_sha256": "0f33125781d72f5410d08fa95df916a324dee94266906ed1ffec323a1cc61e24",
+  "reference_capture_sha256": "a10f636caf790e19a1e3d2d79e97e197f7b3d38b2d420cb2492de4688c6b734e",
+  "note": "JPEG right-scenery and crop rounding can differ; not pixel-identical claim"
+}

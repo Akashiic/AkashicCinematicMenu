@@ -9,7 +9,7 @@ from pathlib import Path
 import argparse, hashlib, json, os, shutil, struct, subprocess, sys, tempfile, zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.1.0-alpha.2'
+VERSION = '0.2.0-alpha.1'
 
 def sha(p):
     with Path(p).open('rb') as stream:
@@ -33,7 +33,7 @@ def main():
         cache = home / '.gradle/caches/modules-2/files-2.1'
         deps = [base/'srg_merged_minecraft.jar', base/'recompiled_minecraft-1.7.10.jar',
                 pick(cache/'org.lwjgl.lwjgl/lwjgl/2.9.1', '*/*.jar'),
-                pick(cache/'org.apache.logging.log4j/log4j-api/2.0-beta9', '*/*.jar')]
+                pick(cache/'org.apache.logging.log4j/log4j-api/2.0-beta9', '*/*.jar'), home/'AkashicDev/ThePatcher-1.1.0-beta.4/lib/asm-9.8.jar', home/'AkashicDev/ThePatcher-1.1.0-beta.4/lib/asm-tree-9.8.jar', home/'AkashicDev/CubicChunks-Crucible/bootstrap-probe/libraries/io/github/cruciblemc/launchwrapper/1.13/launchwrapper-1.13.jar']
     for p in deps:
         if not p.is_file(): raise FileNotFoundError(p)
     # Confirm this really is SRG Minecraft and a real Forge development artifact.
@@ -77,7 +77,7 @@ def main():
     report={'status':'COMPILED_NOT_RUNTIME_APPROVED','version':VERSION,'jar':final.name,
             'sha256':sha(final),'bytes':final.stat().st_size,'classes':len([n for n in entries if n.endswith('.class')]),
             'class_major_version':52,'compiled_against_real_artifacts':True,
-            'stubs_used':False,'native_splash_replaced':False,'installed_in_game':False,
+            'stubs_used':False,'splash_overlay_implemented':True,'installed_in_game':False,
             'runtime_tested':False,'compiler':compiler}
     (evidence/'native-build.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     print(json.dumps(report,indent=2),flush=True)

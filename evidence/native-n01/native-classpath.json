@@ -1,0 +1,30 @@
+[
+  {
+    "path": "C:\\Users\\User\\AkashicDev\\CubicChunks-Crucible\\source\\build\\rfg\\srg_merged_minecraft.jar",
+    "sha256": "d253f2106b6c42cd09e68e3eb271a05bffc1063ab065ac1a7425f1586d3b5891"
+  },
+  {
+    "path": "C:\\Users\\User\\AkashicDev\\CubicChunks-Crucible\\source\\build\\rfg\\recompiled_minecraft-1.7.10.jar",
+    "sha256": "449baa03c6316cdfeaed35d857a3c95dcb3a2ea9649ebac620d221717e2088da"
+  },
+  {
+    "path": "C:\\Users\\User\\.gradle\\caches\\modules-2\\files-2.1\\org.lwjgl.lwjgl\\lwjgl\\2.9.1\\f58c5aabcef0e41718a564be9f8e412fff8db847\\lwjgl-2.9.1.jar",
+    "sha256": "c118f8d84313980f79e1e7f7ae4b14b10c2f20c77ea4a1c29f6f0b02bc139077"
+  },
+  {
+    "path": "C:\\Users\\User\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.logging.log4j\\log4j-api\\2.0-beta9\\1dd66e68cccd907880229f9e2de1314bd13ff785\\log4j-api-2.0-beta9.jar",
+    "sha256": "eb0ca9bdd938f80711152a758d6bc331a8b0d769199d457294dc67ed03f73498"
+  },
+  {
+    "path": "C:\\Users\\User\\AkashicDev\\ThePatcher-1.1.0-beta.4\\lib\\asm-9.8.jar",
+    "sha256": "876eab6a83daecad5ca67eb9fcabb063c97b5aeb8cf1fca7a989ecde17522051"
+  },
+  {
+    "path": "C:\\Users\\User\\AkashicDev\\ThePatcher-1.1.0-beta.4\\lib\\asm-tree-9.8.jar",
+    "sha256": "14b7880cb7c85eed101e2710432fc3ffb83275532a6a894dc4c4095d49ad59f1"
+  },
+  {
+    "path": "C:\\Users\\User\\AkashicDev\\CubicChunks-Crucible\\bootstrap-probe\\libraries\\io\\github\\cruciblemc\\launchwrapper\\1.13\\launchwrapper-1.13.jar",
+    "sha256": "ebbee8e286e74093e445e83015a9a12e69dc42829699511dc19d07fd5d9266a0"
+  }
+]
