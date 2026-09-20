@@ -1,0 +1,9 @@
+{
+  "checkpoint": "ACM-2026-09-20-ALPHA1",
+  "source_tree_sha256": "bf97f95278e8e475c8732fb878361a5dadab46f900e49508f656330d54cad8db",
+  "jar_sha256": "6d7f5b0a005343fa6188d282fe2742d32c8705fe2398e63b38283644fc86c047",
+  "native_runtime_tested": false,
+  "startup_replaced": false,
+  "installed_in_playable_pack": false,
+  "next_gate": "M3 isolated pack runtime validation; B1 inspect exact startup integration"
+}

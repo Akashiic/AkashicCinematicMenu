@@ -1,0 +1,15 @@
+{
+  "status": "COMPILED_NOT_RUNTIME_APPROVED",
+  "version": "0.1.0-alpha.1",
+  "jar": "AkashicCinematicMenu-0.1.0-alpha.1.jar",
+  "sha256": "6d7f5b0a005343fa6188d282fe2742d32c8705fe2398e63b38283644fc86c047",
+  "bytes": 28132,
+  "classes": 27,
+  "class_major_version": 52,
+  "compiled_against_real_artifacts": true,
+  "stubs_used": false,
+  "native_splash_replaced": false,
+  "installed_in_game": false,
+  "runtime_tested": false,
+  "compiler": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.11.10-hotspot\\bin\\javac.EXE"
+}

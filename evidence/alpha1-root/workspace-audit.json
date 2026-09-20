@@ -1,0 +1,10 @@
+{
+  "pack_root": "C:\\Users\\User\\AppData\\Roaming\\.technic\\modpacks\\forbidden-series",
+  "checked_mods": {
+    "DummyCore-1.21.0.jar": "8221d142dc547d1cda13b2ddb73ff5ad9abdff8a6f3f1997d82532b4099a8bda",
+    "angelica-2.2.8.jar": "2b26826e5c9cb1ec208b097165a67662cdedbedb8c84ff96dc26c17b198cf84f",
+    "!Akashic-ThePatcher-1.1.0-beta.7.jar": "6b0f6a4dd0cb4a7d06eadcc7211be44aa99bda5e31e3b5720e34a1aaafc4517d"
+  },
+  "splash_enabled": true,
+  "project_installed": false
+}
