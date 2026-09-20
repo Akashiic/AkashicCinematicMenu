@@ -9,7 +9,7 @@ from pathlib import Path
 import argparse, hashlib, json, os, shutil, struct, subprocess, sys, tempfile, zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.2.0-alpha.3'
+VERSION = '0.2.0-alpha.4'
 
 def sha(p):
     with Path(p).open('rb') as stream:

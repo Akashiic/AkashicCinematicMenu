@@ -1,0 +1,5 @@
+{
+  "source": "native-n03",
+  "jar_sha256": "154c95045e70b15798988358ff4a38db75c57523b4946e4e4b786a0414b104ea",
+  "reason": "Cover first graphics-ready frame before Forge splash; keep core-profile rendering compatibility and connection-cancel guard"
+}

@@ -19,7 +19,7 @@ public final class SplashHooks {
         if(failed||Boolean.getBoolean("akashic.cinematic.disabled")||Boolean.getBoolean("akashic.cinematic.disableSplash"))return;
         int w=Display.getWidth(),h=Display.getHeight();if(w<1||h<1)return;
         try(RawScope scope=new RawScope(w,h)){
-            long now=System.nanoTime();if(started==0)started=now;
+            long now=System.nanoTime();if(started==0){started=EarlyWindowHooks.startedNanos>0?EarlyWindowHooks.startedNanos:now;System.out.println("[AkashicCinematic] FORGE_OVERLAY_STARTED epoch="+System.currentTimeMillis());}
             if(now-lastPoll>100_000_000L){last=sample();lastPoll=now;}
             String profile=NativeLayout.choose(w,h);
             if(visuals==null||!visuals.layout.profile.equals(profile)){if(visuals!=null)visuals.close();visuals=new NativeVisuals(profile);}

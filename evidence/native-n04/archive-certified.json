@@ -1,0 +1,11 @@
+{
+  "archive": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n04\\dist\\AkashicCinematicMenu-N04-verified-engineering.zip",
+  "bytes": 11946928,
+  "sha256": "d15f6dd938cc9a902f4870f3e766974af29c5324c00b1ad8dba469672b57db34",
+  "jar_sha256": "3adfd2cc102eed60666d5594afc0a375e2a1fc7047ed409c7afc81c5969c190e",
+  "report_sha256": "312d63bd0d503db019b7e4bd06ed161e40405cd45ff7091e09a542aaac71b652",
+  "included_files": 116,
+  "general_release_approved": false,
+  "fault_artifact_included": false,
+  "partial_n05_included": false
+}

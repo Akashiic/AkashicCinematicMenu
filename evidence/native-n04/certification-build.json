@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0-alpha.4",
+  "jar_sha256": "3adfd2cc102eed60666d5594afc0a375e2a1fc7047ed409c7afc81c5969c190e",
+  "jar_bytes": 5774983,
+  "classes": 43,
+  "reproducible_build": true,
+  "tests": [
+    {
+      "test": "core-certification",
+      "exit": 0
+    },
+    {
+      "test": "connection-certification",
+      "exit": 0
+    },
+    {
+      "test": "rebuild-certification",
+      "exit": 0
+    }
+  ],
+  "source_manifest_sha256": "4dbd5acb5069722bf36c198fa0af216215759dc185748648aefc943b87c0bf7e",
+  "no_QA_classes_or_font_files": true,
+  "no_partial_n05_code": true
+}

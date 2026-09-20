@@ -1,0 +1,223 @@
+{
+  "checkpoint": "ACM-N04-EARLY-WINDOW-2026-09-20",
+  "candidate_version": "0.2.0-alpha.4",
+  "jar_sha256": "3adfd2cc102eed60666d5594afc0a375e2a1fc7047ed409c7afc81c5969c190e",
+  "jar_bytes": 5774983,
+  "minecraft_runs": {
+    "run06": {
+      "pid": 13324,
+      "started_at": 1789925849.4484928,
+      "run": "run06",
+      "instance": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\instance",
+      "java": "C:\\Users\\User\\AppData\\Roaming\\.technic\\runtimes\\jre-legacy\\bin\\java.exe",
+      "max_heap_mb": 3072,
+      "test_identity": "ACMenuQA",
+      "real_credentials_used": false,
+      "log": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\evidence\\run06\\console.log",
+      "exit": 0,
+      "ended_at": 1789926400.2680826
+    },
+    "run07": {
+      "pid": 16148,
+      "started_at": 1789926455.6031477,
+      "run": "run07",
+      "instance": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\instance",
+      "java": "C:\\Users\\User\\AppData\\Roaming\\.technic\\runtimes\\jre-legacy\\bin\\java.exe",
+      "max_heap_mb": 3072,
+      "test_identity": "ACMenuQA",
+      "real_credentials_used": false,
+      "log": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\evidence\\run07\\console.log",
+      "exit": 0,
+      "ended_at": 1789927004.1618032
+    }
+  },
+  "run06_passed": 35,
+  "run07_passed": 11,
+  "focus_direct_cycles": [
+    {
+      "cycle": 1,
+      "queued": true,
+      "call_ms": 0.05669999518431723,
+      "request_epoch": 1789926392.8002467,
+      "os_iconic_ms": 101.10250001889654,
+      "telemetry_inactive_ms": 405.537100014044,
+      "restored": true,
+      "restore_ms": 406.9882000039797
+    },
+    {
+      "cycle": 2,
+      "queued": true,
+      "call_ms": 0.040000013541430235,
+      "request_epoch": 1789926394.8155403,
+      "os_iconic_ms": 101.5225000155624,
+      "telemetry_inactive_ms": 302.91250001755543,
+      "restored": true,
+      "restore_ms": 404.19960001599975
+    },
+    {
+      "cycle": 3,
+      "queued": true,
+      "call_ms": 0.05150001379661262,
+      "request_epoch": 1789926396.7261014,
+      "os_iconic_ms": 100.67350001190789,
+      "telemetry_inactive_ms": 302.8541000094265,
+      "restored": true,
+      "restore_ms": 404.9797000188846
+    },
+    {
+      "cycle": 1,
+      "queued": true,
+      "call_ms": 0.08560001151636243,
+      "request_epoch": 1789926997.3500702,
+      "os_iconic_ms": 101.07020000577904,
+      "telemetry_inactive_ms": 202.54090000526048,
+      "restored": true,
+      "restore_ms": 302.72720000357367
+    },
+    {
+      "cycle": 2,
+      "queued": true,
+      "call_ms": 0.02500001573935151,
+      "request_epoch": 1789926999.058047,
+      "os_iconic_ms": 101.47790002520196,
+      "telemetry_inactive_ms": 101.47790002520196,
+      "restored": true,
+      "restore_ms": 404.63169998838566
+    },
+    {
+      "cycle": 3,
+      "queued": true,
+      "call_ms": 0.03320001997053623,
+      "request_epoch": 1789927000.7680404,
+      "os_iconic_ms": 101.06380001525395,
+      "telemetry_inactive_ms": 304.11770002683625,
+      "restored": true,
+      "restore_ms": 408.31379999872297
+    }
+  ],
+  "focus_within_one_second_observation": true,
+  "focus_measurement_note": "100ms polling and about 300ms game telemetry cadence; not frame/GPU latency. Earlier helper-based test rejected for OS foreground mismatch. No menu focus code changed.",
+  "startup_comparison": {
+    "baseline": "N03/run05",
+    "candidate": "N04/run07",
+    "baseline_first_custom_after_visible_seconds": 7.479,
+    "candidate_first_custom_after_visible_seconds": 2.432,
+    "difference_seconds": 5.047,
+    "sampling_interval_nominal_seconds": 0.25,
+    "not_a_statistical_benchmark": true,
+    "remaining_initial_gap_seconds": 2.432,
+    "visually_inspected": [
+      "run05/early-window/frame-022.jpg: black",
+      "run05/early-window/frame-027.jpg: Forge progress custom art",
+      "run07/early-window/frame-009.jpg: Preparando o ambiente",
+      "run07/early-window/frame-028.jpg: real Forge progress"
+    ],
+    "markers": [
+      {
+        "run": "run06",
+        "line": 388,
+        "text": "[14:37:44] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:15]: [AkashicCinematic] EARLY_GRAPHICS_READY epoch=1789925864359"
+      },
+      {
+        "run": "run06",
+        "line": 391,
+        "text": "[14:37:44] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:24]: [AkashicCinematic] EARLY_FRAME_PRESENTED epoch=1789925864845 costMs=486"
+      },
+      {
+        "run": "run06",
+        "line": 520,
+        "text": "[14:37:47] [Thread-11/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:22]: [AkashicCinematic] FORGE_OVERLAY_STARTED epoch=1789925867637"
+      },
+      {
+        "run": "run07",
+        "line": 388,
+        "text": "[14:47:48] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:15]: [AkashicCinematic] EARLY_GRAPHICS_READY epoch=1789926468000"
+      },
+      {
+        "run": "run07",
+        "line": 391,
+        "text": "[14:47:48] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:24]: [AkashicCinematic] EARLY_FRAME_PRESENTED epoch=1789926468332 costMs=332"
+      },
+      {
+        "run": "run07",
+        "line": 574,
+        "text": "[14:47:50] [Thread-11/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:22]: [AkashicCinematic] FORGE_OVERLAY_STARTED epoch=1789926470914"
+      }
+    ]
+  },
+  "source_original_files_checked": 898,
+  "source_original_files_changed": [],
+  "installed_in_daily_pack": false,
+  "previous_checkpoint_preserved": true,
+  "approved_art_files_unchanged": 52,
+  "core_regression_scenarios": 48,
+  "core_assertions": 17489,
+  "connection_policy_checks": 15,
+  "runtime_errors_observed": [],
+  "runtime_markers": [
+    {
+      "run": "run06",
+      "line": 262,
+      "text": "[14:37:38] [main/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowTransformer:transform:25]: [AkashicCinematic] Graphics-ready hook installed after OpenGlHelper in func_71384_a"
+    },
+    {
+      "run": "run06",
+      "line": 388,
+      "text": "[14:37:44] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:15]: [AkashicCinematic] EARLY_GRAPHICS_READY epoch=1789925864359"
+    },
+    {
+      "run": "run06",
+      "line": 391,
+      "text": "[14:37:44] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:24]: [AkashicCinematic] EARLY_FRAME_PRESENTED epoch=1789925864845 costMs=486"
+    },
+    {
+      "run": "run06",
+      "line": 520,
+      "text": "[14:37:47] [Thread-11/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:22]: [AkashicCinematic] FORGE_OVERLAY_STARTED epoch=1789925867637"
+    },
+    {
+      "run": "run06",
+      "line": 18086,
+      "text": "[14:42:56] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematicqa.QAHarnessV4:log:26]: [ACM-QA] BOOT_OBSERVED timeMs=1789926176161 screen=br.com.redeakashic.cinematic.client.CinematicMenu active=true width=854 height=480 mcWidth=854 mcHeight=480 framebufferWidth=854 framebufferHeight=480 worldPresent=false renderFrames=1 glErrors=0 focus=0 reduced=false splashFinished=true splashRendered=true splashFailed=false displayVisible=true lastFrameEpoch=1789926175470 earlyAttempted=true earlyPresented=true earlyFailed=false earlyPresentedEpoch=1789925864845"
+    },
+    {
+      "run": "run06",
+      "line": 18191,
+      "text": "[14:43:12] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.client.ConnectionCancellationGuard:poll:80]: [AkashicCinematic] Connector watch released 1 cancelled=true channelOpen=false workerFinished=true"
+    },
+    {
+      "run": "run07",
+      "line": 262,
+      "text": "[14:47:43] [main/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowTransformer:transform:25]: [AkashicCinematic] Graphics-ready hook installed after OpenGlHelper in func_71384_a"
+    },
+    {
+      "run": "run07",
+      "line": 388,
+      "text": "[14:47:48] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:15]: [AkashicCinematic] EARLY_GRAPHICS_READY epoch=1789926468000"
+    },
+    {
+      "run": "run07",
+      "line": 391,
+      "text": "[14:47:48] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:24]: [AkashicCinematic] EARLY_FRAME_PRESENTED epoch=1789926468332 costMs=332"
+    },
+    {
+      "run": "run07",
+      "line": 574,
+      "text": "[14:47:50] [Thread-11/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:22]: [AkashicCinematic] FORGE_OVERLAY_STARTED epoch=1789926470914"
+    },
+    {
+      "run": "run07",
+      "line": 18080,
+      "text": "[14:52:57] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematicqa.QAHarnessV4:log:26]: [ACM-QA] BOOT_OBSERVED timeMs=1789926777893 screen=br.com.redeakashic.cinematic.client.CinematicMenu active=true width=854 height=480 mcWidth=854 mcHeight=480 framebufferWidth=854 framebufferHeight=480 worldPresent=false renderFrames=1 glErrors=0 focus=0 reduced=false splashFinished=true splashRendered=true splashFailed=false displayVisible=true lastFrameEpoch=1789926777178 earlyAttempted=true earlyPresented=true earlyFailed=false earlyPresentedEpoch=1789926468332"
+    }
+  ],
+  "limitations": [
+    "First OS/context-initialization gap remains about 2.432s in the observed run",
+    "Comparison uses one observed run per version, affected by cache and machine state; not a statistical benchmark",
+    "2D statue, prerendered panel blur",
+    "Authenticated login, gameplay, Android and additional drivers not validated",
+    "native-n05 is a partial unbuilt experiment after a tool security block; excluded from active candidate",
+    "No general release or daily-pack installation performed"
+  ],
+  "verdict": "TARGETED_QA_PASSED_INITIAL_CONTEXT_GAP_REMAINS"
+}
