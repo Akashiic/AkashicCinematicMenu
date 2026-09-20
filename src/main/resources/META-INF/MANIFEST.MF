@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Implementation-Title: Akashic Cinematic Menu
-Implementation-Version: 0.2.0-alpha.1
+Implementation-Version: 0.2.0-alpha.2
 FMLCorePlugin: br.com.redeakashic.cinematic.bootstrap.CinematicLoadingPlugin
 FMLCorePluginContainsFMLMod: true
 

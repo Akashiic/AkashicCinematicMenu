@@ -1,6 +1,6 @@
 package br.com.redeakashic.cinematic.render;
 import org.lwjgl.opengl.*;
-/** Raw GL only. Restore hardware state before returning to MC/Angelica's cached API. */
+/** GL scope eligible for Angelica FFP redirection; do not exclude this package from transformers. */
 public final class RawScope implements AutoCloseable {
     private final int mode,active,program,unpack;
     private boolean attrs,clients,projection,model,texture;
@@ -28,7 +28,7 @@ public final class RawScope implements AutoCloseable {
             GL11.glEnable(GL11.GL_BLEND);GL11.glBlendFunc(GL11.GL_SRC_ALPHA,GL11.GL_ONE_MINUS_SRC_ALPHA);
             GL14.glBlendEquation(GL14.GL_FUNC_ADD);GL11.glColorMask(true,true,true,true);
             GL11.glTexEnvi(GL11.GL_TEXTURE_ENV,GL11.GL_TEXTURE_ENV_MODE,GL11.GL_MODULATE);
-        }catch(RuntimeException|LinkageError ex){close();throw ex;}
+        }catch(RuntimeException|LinkageError ex){try{close();}catch(RuntimeException|LinkageError cleanup){ex.addSuppressed(cleanup);}throw ex;}
     }
     @Override public void close(){
         if(model){GL11.glMatrixMode(GL11.GL_MODELVIEW);GL11.glPopMatrix();model=false;}

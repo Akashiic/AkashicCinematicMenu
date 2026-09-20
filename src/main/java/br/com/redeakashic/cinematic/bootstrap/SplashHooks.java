@@ -25,7 +25,7 @@ public final class SplashHooks {
             if(visuals==null||!visuals.layout.profile.equals(profile)){if(visuals!=null)visuals.close();visuals=new NativeVisuals(profile);}
             elapsedSeconds=(now-started)/1.0e9;visuals.transform(w,h);visuals.startup(last,elapsedSeconds,1,!Boolean.getBoolean("akashic.cinematic.reduceMotion"));rendered=true;
         }catch(RuntimeException|LinkageError ex){
-            failed=true;rendered=false;System.err.println("[AkashicCinematic] Splash skin disabled; retaining Forge renderer: "+ex);
+            ex.printStackTrace();failed=true;rendered=false;System.err.println("[AkashicCinematic] Splash skin disabled; retaining Forge renderer: "+ex);
         }
     }
     public static LoadState sample(){

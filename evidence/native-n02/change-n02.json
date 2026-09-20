@@ -1,0 +1,4 @@
+{
+  "baseline": "7e5c5b23932eff2011d464cfc4e5d6c352f20d750e6ee1a0a01108baf121731a",
+  "reason": "Actual Angelica context is GL 4.6 CORE; raw FFP renderer bypassed Angelica emulation due to render package exclusion. Allow renderer transformation. No game/mod configuration changes."
+}

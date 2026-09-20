@@ -5,10 +5,9 @@ import net.minecraft.launchwrapper.Launch;
 @IFMLLoadingPlugin.Name("AkashicCinematicBoot")
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.SortingIndex(1001)
-@IFMLLoadingPlugin.TransformerExclusions({"br.com.redeakashic.cinematic.bootstrap.","br.com.redeakashic.cinematic.render."})
+@IFMLLoadingPlugin.TransformerExclusions({"br.com.redeakashic.cinematic.bootstrap."})
 public final class CinematicLoadingPlugin implements IFMLLoadingPlugin {
     public CinematicLoadingPlugin(){
-        Launch.classLoader.addTransformerExclusion("br.com.redeakashic.cinematic.render.");
         Launch.classLoader.addTransformerExclusion("br.com.redeakashic.cinematic.bootstrap.");
     }
     @Override public String[] getASMTransformerClass(){return new String[]{"br.com.redeakashic.cinematic.bootstrap.SplashTransformer"};}
