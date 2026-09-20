@@ -1,0 +1,249 @@
+{
+  "checkpoint": "ACM-N03-AUTONOMOUS-QA-2026-09-20",
+  "candidate": {
+    "status": "COMPILED_NOT_RUNTIME_APPROVED",
+    "version": "0.2.0-alpha.3",
+    "jar": "AkashicCinematicMenu-0.2.0-alpha.3.jar",
+    "sha256": "154c95045e70b15798988358ff4a38db75c57523b4946e4e4b786a0414b104ea",
+    "bytes": 5771076,
+    "classes": 41,
+    "class_major_version": 52,
+    "compiled_against_real_artifacts": true,
+    "stubs_used": false,
+    "splash_overlay_implemented": true,
+    "installed_in_game": false,
+    "runtime_tested": false,
+    "compiler": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.11.10-hotspot\\bin\\javac.EXE"
+  },
+  "process": {
+    "pid": 10644,
+    "started_at": 1789923297.532755,
+    "run": "run04",
+    "instance": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\instance",
+    "java": "C:\\Users\\User\\AppData\\Roaming\\.technic\\runtimes\\jre-legacy\\bin\\java.exe",
+    "max_heap_mb": 3072,
+    "test_identity": "ACMenuQA",
+    "real_credentials_used": false,
+    "log": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\evidence\\run04\\console.log",
+    "exit": 0,
+    "ended_at": 1789923892.104769
+  },
+  "boot_to_menu_seconds_observed": 339.84,
+  "acceptance_passed": 35,
+  "acceptance_total": 35,
+  "window_input_passed": 16,
+  "window_input_total": 16,
+  "failed_tests": [],
+  "source_original_files_checked": 898,
+  "source_original_files_changed": [],
+  "source_original_files_missing": [],
+  "previous_checkpoints_preserved": true,
+  "original_pack_has_candidate": false,
+  "art_assets_unchanged": 52,
+  "relevant_runtime_errors": [],
+  "runtime_markers": [
+    {
+      "line": 352,
+      "text": "[13:55:08] [Client thread/INFO] [Angelica]: Created GL 4.6 core profile context"
+    },
+    {
+      "line": 378,
+      "text": "[13:55:08] [Client thread/INFO] [Angelica]: OpenGL Vendor: Intel"
+    },
+    {
+      "line": 379,
+      "text": "[13:55:08] [Client thread/INFO] [Angelica]: OpenGL Renderer: Intel(R) UHD Graphics"
+    },
+    {
+      "line": 380,
+      "text": "[13:55:08] [Client thread/INFO] [Angelica]: OpenGL Version: 4.6.0 - Build 27.20.100.9268"
+    },
+    {
+      "line": 469,
+      "text": "[13:55:11] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.SplashTransformer:transform:34]: [AkashicCinematic] Forge splash overlay hooks installed; original loop retained"
+    },
+    {
+      "line": 18082,
+      "text": "[14:00:37] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematicqa.QAHarnessV3:log:26]: [ACM-QA] BOOT_OBSERVED timeMs=1789923637368 screen=br.com.redeakashic.cinematic.client.CinematicMenu active=true width=854 height=480 mcWidth=854 mcHeight=480 framebufferWidth=854 framebufferHeight=480 worldPresent=false renderFrames=1 glErrors=0 focus=0 reduced=false splashFinished=true splashRendered=true splashFailed=false"
+    },
+    {
+      "line": 18171,
+      "text": "[14:00:52] [Client thread/INFO]: Connecting to br2.xmxcloud.net, 10511"
+    },
+    {
+      "line": 18172,
+      "text": "[14:00:52] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.client.ConnectionCancellationGuard:connect:58]: [AkashicCinematic] Connector watch 1 worker=true"
+    },
+    {
+      "line": 18184,
+      "text": "[14:00:53] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.client.ConnectionCancellationGuard:poll:73]: [AkashicCinematic] Cancellation observed 1 managerPresent=false"
+    },
+    {
+      "line": 18186,
+      "text": "[14:00:53] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.client.ConnectionCancellationGuard:poll:77]: [AkashicCinematic] Closing cancelled connector 1 (asynchronous vanilla NetworkManager.close)"
+    },
+    {
+      "line": 18187,
+      "text": "[14:00:53] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.client.ConnectionCancellationGuard:poll:80]: [AkashicCinematic] Connector watch released 1 cancelled=true channelOpen=false workerFinished=true"
+    },
+    {
+      "line": 18337,
+      "text": "[14:02:36] [Client thread/INFO]: Connecting to br2.xmxcloud.net, 10511"
+    },
+    {
+      "line": 18338,
+      "text": "[14:02:36] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.client.ConnectionCancellationGuard:connect:58]: [AkashicCinematic] Connector watch 2 worker=true"
+    },
+    {
+      "line": 18342,
+      "text": "[14:02:37] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.client.ConnectionCancellationGuard:poll:73]: [AkashicCinematic] Cancellation observed 2 managerPresent=true"
+    },
+    {
+      "line": 18343,
+      "text": "[14:02:37] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.client.ConnectionCancellationGuard:poll:80]: [AkashicCinematic] Connector watch released 2 cancelled=true channelOpen=false workerFinished=true"
+    },
+    {
+      "line": 18362,
+      "text": "[14:04:49] [Client thread/INFO]: Stopping!"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "screenshots/2026-09-20_14.00.38.png",
+      "size": [
+        854,
+        480
+      ],
+      "sha256": "e15a5d8429f8c099868a4167bed100ed28bb10bed3c9f41b143fb98cdb5be17f"
+    },
+    {
+      "file": "screenshots/2026-09-20_14.00.43.png",
+      "size": [
+        854,
+        480
+      ],
+      "sha256": "7203d6a09efd01488c77352b9f53cf2326d7e2743a31b8bd77832d7051f44cd5"
+    },
+    {
+      "file": "screenshots/2026-09-20_14.00.46.png",
+      "size": [
+        854,
+        480
+      ],
+      "sha256": "966705b50fdda280f9d46fe27701b7b84be1c3fc61790aad14992a06dcc5e22a"
+    },
+    {
+      "file": "screenshots/2026-09-20_14.00.48.png",
+      "size": [
+        854,
+        480
+      ],
+      "sha256": "e9a5ef7a2a943337e68c978d49cd1f4d7aa0b9cdd42f7db3eadb52a378aaf612"
+    },
+    {
+      "file": "screenshots/2026-09-20_14.00.49.png",
+      "size": [
+        1366,
+        768
+      ],
+      "sha256": "4832869ff01e4f9a875bf04588f73f8316237eac71323728de19ac9fe9c7c890"
+    },
+    {
+      "file": "screenshots/2026-09-20_14.00.50.png",
+      "size": [
+        1024,
+        768
+      ],
+      "sha256": "9750b4516a9f0f3cb8e783c4534444e41636bddd1d7cd9386acffb37536bf3db"
+    },
+    {
+      "file": "screenshots/2026-09-20_14.00.51.png",
+      "size": [
+        854,
+        480
+      ],
+      "sha256": "2f31e082498b8f3e3812bc85038e35c01be0c00c40e0fd249ffc373799865644"
+    },
+    {
+      "file": "screenshots/2026-09-20_14.00.52.png",
+      "size": [
+        854,
+        480
+      ],
+      "sha256": "0a42c4f75e02d1d932ef020b542ca329f90b49ed5d2f881bd8309c51c8d8cdea"
+    },
+    {
+      "file": "screenshots/2026-09-20_14.02.02.png",
+      "size": [
+        854,
+        480
+      ],
+      "sha256": "4c53a8a90140790f8411d157f00314463e274de75a3cb9aaec7bf78c02c63c97"
+    },
+    {
+      "file": "screenshots/2026-09-20_14.04.49.png",
+      "size": [
+        854,
+        480
+      ],
+      "sha256": "13b581083f697eedd8b6ec731fb6ff5888c08132f9dca04e7f94af4447b709f2"
+    }
+  ],
+  "limitations": [
+    "Only isolated copy; no personal account used",
+    "Authenticated login and world gameplay not tested",
+    "First cancellation race fixed and rechecked; broad network failures not exhaustively covered",
+    "Images remain 2D; blur prerendered",
+    "No GPU benchmark or Android test",
+    "Bytecode probe separately blocked previously; real normal Forge runtime was executed",
+    "QA harness handler tests and own-window messages are reported separately"
+  ],
+  "user_visual_approval": "R04 and S01 approved; native pixel and motion differences remain subject to user review",
+  "retry_connection_passed": 7,
+  "retry_connection_total": 7,
+  "earlier_input_attempt_failures": [
+    {
+      "test": "minimize_loses_focus",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "test": "window_suite_stopped",
+      "passed": false,
+      "detail": "AssertionError('minimize_loses_focus')",
+      "state": {
+        "timeMs": "1789923796081",
+        "screen": "br.com.redeakashic.cinematic.client.CinematicMenu",
+        "active": "true",
+        "width": "854",
+        "height": "480",
+        "mcWidth": "854",
+        "mcHeight": "480",
+        "framebufferWidth": "854",
+        "framebufferHeight": "480",
+        "worldPresent": "false",
+        "renderFrames": "2955",
+        "glErrors": "0",
+        "focus": "0",
+        "reduced": "false",
+        "connectCancelled": "true",
+        "managerPresent": "true",
+        "channelOpen": "false",
+        "splashFinished": "true",
+        "splashRendered": "true",
+        "splashFailed": "false"
+      }
+    }
+  ],
+  "focus_latency_warning": "First minimize test exceeded 12 seconds. Repetition from a freshly focused window observed inactive after 8.501 seconds. Functional recovery passed, but this delay is NOT approved as responsiveness.",
+  "network_observation_resolution_ms": 300,
+  "network_latency_note": "0ms means manager was already closed at first sampled publication, not instantaneous physical closure.",
+  "fallback_observed": "BogoSorter WarningScreen after F8; bypass worked but direct return to DummyCore not asserted.",
+  "actual_minecraft_runtime_tested": true,
+  "installed_only_in_QA_copy": true,
+  "candidate_build_metadata_note": "native-build.json reflects compile-time status only; this run04 audit records subsequent runtime tests",
+  "core_regression_scenarios": 48,
+  "core_regression_assertions": 17489,
+  "connection_lifecycle_unit_checks": 15,
+  "verdict": "TARGETED_TESTS_PASSED_FOCUS_LATENCY_PENDING_NO_GENERAL_RELEASE"
+}

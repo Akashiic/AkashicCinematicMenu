@@ -1,0 +1,10 @@
+{
+  "archive": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n03\\dist\\AkashicCinematicMenu-N03-QA-validated-engineering.zip",
+  "archive_sha256": "d04dd1f8ab26e46dc6f4cdc6ae32e0318a132b3bb1b32511ec3c928f9ae28ce9",
+  "archive_bytes": 12462089,
+  "jar_sha256": "154c95045e70b15798988358ff4a38db75c57523b4946e4e4b786a0414b104ea",
+  "reproducible_build": true,
+  "game_qa_driver_included": false,
+  "general_release_approved": false,
+  "focus_latency_pending": true
+}

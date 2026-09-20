@@ -2,8 +2,6 @@ package br.com.redeakashic.cinematic.client;
 import br.com.redeakashic.cinematic.core.*;
 import br.com.redeakashic.cinematic.render.*;
 import br.com.redeakashic.cinematic.bootstrap.SplashHooks;
-import cpw.mods.fml.client.FMLClientHandler;
-import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.gui.*;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
@@ -102,9 +100,7 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
         hook.dispatched(action.name());
         switch (action) {
             case PLAY:
-                FMLClientHandler handler = FMLClientHandler.instance();
-                handler.setupServerList();
-                handler.connectToServer(this, new ServerData(ServerTarget.NAME, ServerTarget.address()));
+                ConnectionCancellationGuard.INSTANCE.connect(field_146297_k, this);
                 break;
             case SINGLEPLAYER: field_146297_k.func_147108_a(new GuiSelectWorld(this)); break;
             case OPTIONS: field_146297_k.func_147108_a(new GuiOptions(this, field_146297_k.field_71474_y)); break;

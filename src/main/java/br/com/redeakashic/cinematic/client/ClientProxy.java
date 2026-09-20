@@ -15,6 +15,7 @@ public final class ClientProxy extends CommonProxy {
             MenuConfig config = MenuConfig.read(event.getSuggestedConfigurationFile());
             if (!config.enabled) { return; }
             MinecraftForge.EVENT_BUS.register(new MenuHook(config, event.getModLog()));
+            cpw.mods.fml.common.FMLCommonHandler.instance().bus().register(ConnectionCancellationGuard.INSTANCE);
             event.getModLog().info("Cinematic menu registered. Splash overlay status is reported by bootstrap.");
         } catch (RuntimeException ex) {
             event.getModLog().error("Cinematic configuration rejected; existing menu preserved.", ex);

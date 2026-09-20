@@ -9,7 +9,7 @@ from pathlib import Path
 import argparse, hashlib, json, os, shutil, struct, subprocess, sys, tempfile, zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.2.0-alpha.2'
+VERSION = '0.2.0-alpha.3'
 
 def sha(p):
     with Path(p).open('rb') as stream:
@@ -34,6 +34,8 @@ def main():
         deps = [base/'srg_merged_minecraft.jar', base/'recompiled_minecraft-1.7.10.jar',
                 pick(cache/'org.lwjgl.lwjgl/lwjgl/2.9.1', '*/*.jar'),
                 pick(cache/'org.apache.logging.log4j/log4j-api/2.0-beta9', '*/*.jar'), home/'AkashicDev/ThePatcher-1.1.0-beta.4/lib/asm-9.8.jar', home/'AkashicDev/ThePatcher-1.1.0-beta.4/lib/asm-tree-9.8.jar', home/'AkashicDev/CubicChunks-Crucible/bootstrap-probe/libraries/io/github/cruciblemc/launchwrapper/1.13/launchwrapper-1.13.jar']
+    if not opt.classpath_json:
+        deps.append(home/'AppData/Roaming/.technic/libraries/io/netty/netty-all/4.0.10.Final/netty-all-4.0.10.Final.jar')
     for p in deps:
         if not p.is_file(): raise FileNotFoundError(p)
     # Confirm this really is SRG Minecraft and a real Forge development artifact.

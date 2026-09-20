@@ -1,0 +1,16 @@
+PASS one pending connector admitted
+PASS parallel attempt blocked
+PASS active uncancelled connection preserved
+PASS cancel before manager publication stays watched
+PASS late open manager must close
+PASS close request is not closure
+PASS closed manager with worker alive stays watched
+PASS cancelled closed worker releases watch
+PASS DNS failure after cancellation releases watch
+PASS return to our menu requires cancellation
+PASS successful world is not cancelled
+PASS normal terrain transition transfers ownership
+PASS cancel wins over late world transition
+PASS negative pending rejected
+PASS impossible channel state rejected
+RESULT checks=15 failures=0
