@@ -1,0 +1,15 @@
+{
+  "candidate": "navigation-r04",
+  "version": "0.1.0-alpha.2",
+  "server": "br2.xmxcloud.net:10511",
+  "actions": [
+    "PLAY",
+    "SINGLEPLAYER",
+    "OPTIONS",
+    "QUIT"
+  ],
+  "nativeRuntimeTested": false,
+  "installedInGame": false,
+  "artPortedFromHTML": false,
+  "originalAlphaPreserved": true
+}

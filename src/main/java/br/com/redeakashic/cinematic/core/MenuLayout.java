@@ -1,7 +1,7 @@
 package br.com.redeakashic.cinematic.core;
 
 public final class MenuLayout {
-    public static final int COUNT = 5;
+    public static final int COUNT = MenuAction.values().length;
     public static final double X = 74, Y = 236, W = 278, H = 35, GAP = 9;
     private MenuLayout() { }
     public static double top(int index) {

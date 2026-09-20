@@ -1,0 +1,10 @@
+{
+  "source_sha256": "5062ce13b47a80fe426fee7b74455c9893abbe3690d0570563e2b095844fdc40",
+  "jar_sha256": "c8930796eb1e3b1ec9ef4799eec868db3a3b7ee1809033abdd5b9e6c2c54e7a2",
+  "original_jar_unchanged": true,
+  "root_checkpoint_unchanged": true,
+  "installed": false,
+  "network_connection_tested": false,
+  "native_art_matches_html": false,
+  "bytecode_routes_verified": true
+}

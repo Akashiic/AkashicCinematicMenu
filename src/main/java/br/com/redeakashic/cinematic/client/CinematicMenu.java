@@ -7,9 +7,10 @@ import br.com.redeakashic.cinematic.core.MenuFlow;
 import br.com.redeakashic.cinematic.core.MenuLayout;
 import br.com.redeakashic.cinematic.core.Numbers;
 import br.com.redeakashic.cinematic.core.Viewport;
-import cpw.mods.fml.client.GuiModList;
+import cpw.mods.fml.client.FMLClientHandler;
+import br.com.redeakashic.cinematic.core.ServerTarget;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraft.client.gui.GuiSelectWorld;
 import net.minecraft.client.gui.GuiOptions;
 import net.minecraft.client.gui.GuiYesNo;
@@ -20,7 +21,7 @@ import org.lwjgl.opengl.GL11;
 
 /** Forge 1.7.10 adapter compiled against actual SRG classes, not generated stubs. */
 public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
-    private static final String[] LABELS = {"JOGAR", "MUNDO SOLO", "OPCOES", "MODS", "SAIR"};
+    private static final String[] LABELS = {"JOGAR", "SINGLEPLAYER", "OPCOES", "SAIR"};
     private final GuiScreen original;
     private final MenuHook hook;
     private final MenuConfig config;
@@ -76,7 +77,7 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
                     ScenePainter.rect(MenuLayout.X, y + MenuLayout.H, MenuLayout.W, 1, 0x82636A, .2 * a);
                     ScenePainter.text(field_146289_q, LABELS[i], MenuLayout.X + 17 + h * 5, y + 12,
                             1.25, 0xECE2DD, a * (.72 + .28 * h));
-                    if (i == 0) { ScenePainter.text(field_146289_q, "SERVIDORES", 277, y + 15, .6, 0xBFA1A5, a * .8); }
+                    // Direct Play no longer opens a server-list screen.
                 }
                 ScenePainter.text(field_146289_q, "1.7.10 / ALPHA TECNICA / STATUS NAO CONSULTADO", 74, 473, .66, 0x927F87, 1);
                 ScenePainter.text(field_146289_q, "TAB: NAVEGAR   F7: MOVIMENTO   F8: MENU ORIGINAL", 74, 496, .66, 0xAA9098, 1);
@@ -113,10 +114,14 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
     private void dispatch(MenuAction action) {
         hook.dispatched(action.name());
         switch (action) {
-            case SERVERS: field_146297_k.func_147108_a(new GuiMultiplayer(this)); break;
+            case PLAY:
+                FMLClientHandler handler = FMLClientHandler.instance();
+                // This direct route does not instantiate GuiMultiplayer. Forge needs these maps initialized.
+                handler.setupServerList();
+                handler.connectToServer(this, new ServerData(ServerTarget.NAME, ServerTarget.address()));
+                break;
             case SINGLEPLAYER: field_146297_k.func_147108_a(new GuiSelectWorld(this)); break;
             case OPTIONS: field_146297_k.func_147108_a(new GuiOptions(this, field_146297_k.field_71474_y)); break;
-            case MODS: field_146297_k.func_147108_a(new GuiModList(this)); break;
             case QUIT: field_146297_k.func_147108_a(new GuiYesNo(this, "Sair do Minecraft?", "Seu modpack sera fechado.", 1710)); break;
             default: throw new IllegalStateException("Unsupported action: " + action);
         }

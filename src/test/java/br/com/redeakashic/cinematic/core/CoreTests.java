@@ -50,16 +50,16 @@ public final class CoreTests {
         test("button hitboxes centers and right edge", () -> {for(int i=0;i<MenuLayout.COUNT;i++){check(MenuLayout.hit(MenuLayout.X+10,MenuLayout.top(i)+10)==i);check(MenuLayout.hit(MenuLayout.X+MenuLayout.W,MenuLayout.top(i)+10)==-1);}});
         test("button spacing has no overlapping targets", () -> {for(int i=0;i<MenuLayout.COUNT;i++){check(MenuLayout.hit(MenuLayout.X+10,MenuLayout.top(i)+MenuLayout.H+1)==-1);}});
         test("button nonfinite coordinates rejected", () -> {check(MenuLayout.hit(Double.NaN,0)==-1);check(MenuLayout.hit(100,Double.POSITIVE_INFINITY)==-1);});
-        test("focus wraps in both directions", () -> {check(MenuLayout.nextFocus(4,1)==0);check(MenuLayout.nextFocus(0,-1)==4);check(MenuLayout.nextFocus(2,1)==3);});
-        test("action whitelist has five routes", () -> {for(int i=0;i<5;i++){check(MenuLayout.action(i)!=null);}bad(()->MenuLayout.action(5));});
+        test("focus wraps in both directions", () -> {check(MenuLayout.nextFocus(3,1)==0);check(MenuLayout.nextFocus(0,-1)==3);check(MenuLayout.nextFocus(2,1)==3);});
+        test("action whitelist has four routes", () -> {for(int i=0;i<MenuLayout.COUNT;i++){check(MenuLayout.action(i)!=null);}bad(()->MenuLayout.action(4));});
         test("flow ignores clicks during intro", () -> {MenuFlow f=new MenuFlow(false,true);check(!f.request(MenuAction.QUIT));check(f.consume()==null);});
         test("flow becomes ready after intro", () -> {MenuFlow f=new MenuFlow(false,true);for(int i=0;i<54;i++){f.advance(1.0/60);}check(f.state()==MenuFlow.State.READY);near(f.visibility(),1,0);});
-        test("flow duplicate click protection", () -> {MenuFlow f=new MenuFlow(true,true);check(f.request(MenuAction.SERVERS));check(!f.request(MenuAction.QUIT));check(f.consume()==MenuAction.SERVERS);check(f.consume()==null);check(!f.request(MenuAction.MODS));});
-        test("flow cancel transition prevents action", () -> {MenuFlow f=new MenuFlow(false,true);f.escape();f.request(MenuAction.SERVERS);f.advance(.1);f.escape();f.advance(.5);check(f.consume()==null);check(f.state()==MenuFlow.State.READY);});
+        test("flow duplicate click protection", () -> {MenuFlow f=new MenuFlow(true,true);check(f.request(MenuAction.PLAY));check(!f.request(MenuAction.QUIT));check(f.consume()==MenuAction.PLAY);check(f.consume()==null);check(!f.request(MenuAction.SINGLEPLAYER));});
+        test("flow cancel transition prevents action", () -> {MenuFlow f=new MenuFlow(false,true);f.escape();f.request(MenuAction.PLAY);f.advance(.1);f.escape();f.advance(.5);check(f.consume()==null);check(f.state()==MenuFlow.State.READY);});
         test("flow escape skips intro", () -> {MenuFlow f=new MenuFlow(false,true);f.escape();check(f.state()==MenuFlow.State.READY);near(f.visibility(),1,0);});
         test("flow waits for exit before handoff", () -> {MenuFlow f=new MenuFlow(false,true);f.escape();f.request(MenuAction.OPTIONS);f.advance(.1);check(f.consume()==null);f.advance(.12);check(f.consume()==MenuAction.OPTIONS);check(f.consume()==null);});
-        test("flow reduced motion skips decorative waits", () -> {MenuFlow f=new MenuFlow(true,true);check(f.state()==MenuFlow.State.READY);check(f.request(MenuAction.MODS));check(f.consume()==MenuAction.MODS);});
-        test("flow stagger preserves bounds", () -> {MenuFlow f=new MenuFlow(false,true);for(int frame=0;frame<60;frame++){for(int i=0;i<5;i++){double a=f.buttonVisibility(i);check(a>=0&&a<=1);}f.advance(1.0/60);}});
+        test("flow reduced motion skips decorative waits", () -> {MenuFlow f=new MenuFlow(true,true);check(f.state()==MenuFlow.State.READY);check(f.request(MenuAction.SINGLEPLAYER));check(f.consume()==MenuAction.SINGLEPLAYER);});
+        test("flow stagger preserves bounds", () -> {MenuFlow f=new MenuFlow(false,true);for(int frame=0;frame<60;frame++){for(int i=0;i<MenuLayout.COUNT;i++){double a=f.buttonVisibility(i);check(a>=0&&a<=1);}f.advance(1.0/60);}});
         test("flow returns to existing menu with short intro", () -> {MenuFlow f=new MenuFlow(false,false);f.advance(.22);check(f.state()==MenuFlow.State.READY);});
         test("flow invalid delta rejected", () -> {MenuFlow f=new MenuFlow(false,true);bad(()->f.advance(Double.NaN));bad(()->f.advance(-1));bad(()->f.advance(1.1));});
         test("policy exact vanilla only", () -> {check(ScreenPolicy.accepts("net.minecraft.client.gui.GuiMainMenu",false));check(!ScreenPolicy.accepts("net.minecraft.client.gui.GuiMainMenu$Error",true));});
@@ -68,6 +68,10 @@ public final class CoreTests {
         test("boot unknown total is indeterminate", () -> {BootSnapshot b=new BootSnapshot("Discovering mods",0,0,false);check(!b.determinate());check(Double.isNaN(b.stageFraction()));check(!b.ready);});
         test("boot ratio is stage scoped not readiness", () -> {BootSnapshot b=new BootSnapshot("Stage",10,10,false);near(b.stageFraction(),1,0);check(!b.ready);});
         test("boot malformed snapshots rejected", () -> {bad(()->new BootSnapshot(null,0,0,false));bad(()->new BootSnapshot("x",1,0,false));bad(()->new BootSnapshot("x",11,10,false));bad(()->new BootSnapshot("x",-1,10,false));});
+        test("exact direct server endpoint", () -> {check(ServerTarget.HOST.equals("br2.xmxcloud.net"));check(ServerTarget.PORT==10511);check(ServerTarget.address().equals("br2.xmxcloud.net:10511"));});
+        test("four routes in requested order", () -> {check(MenuLayout.COUNT==4);check(MenuLayout.action(0)==MenuAction.PLAY);check(MenuLayout.action(1)==MenuAction.SINGLEPLAYER);check(MenuLayout.action(2)==MenuAction.OPTIONS);check(MenuLayout.action(3)==MenuAction.QUIT);});
+        test("removed routes rejected", () -> {bad(()->MenuAction.valueOf("MODS"));bad(()->MenuAction.valueOf("SERVERS"));});
+        test("direct play handoff executes once after transition", () -> {MenuFlow f=new MenuFlow(false,false);f.advance(.22);check(f.request(MenuAction.PLAY));check(!f.request(MenuAction.PLAY));check(f.consume()==null);f.advance(.22);check(f.consume()==MenuAction.PLAY);check(f.consume()==null);});
         System.out.println("RESULT scenarios="+passed.size()+" assertions="+assertions+" failures=0");
     }
 }
