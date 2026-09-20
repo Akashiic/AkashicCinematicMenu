@@ -21,6 +21,7 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
     private boolean fadeFromBoot;
     private final double[] highlightValues=new double[MenuLayout.COUNT];
     private boolean reduced, keyboardMode = true;
+    private int audioSelection=-2;
     private int focus, previousMouseX = Integer.MIN_VALUE, previousMouseY = Integer.MIN_VALUE;
     CinematicMenu(GuiScreen original, MenuHook hook, MenuConfig config) {
         this.original = original; this.hook = hook; this.config = config; this.reduced = config.reducedMotion;
@@ -49,6 +50,7 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
                 int hovered=layout.hit(layout.localX(px,w,h),layout.localY(py,w,h));
                 if(!keyboardMode&&hovered>=0)focus=hovered;
                 int selected=keyboardMode?focus:hovered;
+                if(selected!=audioSelection){if(selected>=0&&audioSelection!=-2)UiAudio.play(br.com.redeakashic.cinematic.core.UiCueGate.Cue.FOCUS);audioSelection=selected;}
                 if(reduced){mouseX.reset(0);mouseY.reset(0);}
                 else{mouseX.step(Numbers.clamp(px/w*2-1,-1,1),dt);mouseY.step(Numbers.clamp(py/h*2-1,-1,1),dt);}
                 double[] values=highlightValues;
@@ -62,6 +64,7 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
                 if(fadeFromBoot&&!reduced&&visitAge<.45)visuals.startup(SplashHooks.last,SplashHooks.elapsedSeconds,1-visitAge/.45,false);
                 else if(fadeFromBoot){visuals.releaseBoot();fadeFromBoot=false;}
             }
+            if(visitAge>.1)UiAudio.greet();
             MenuAction next=flow.consume();if(next!=null)dispatch(next);
         }catch(RuntimeException ex){dispose();hook.fallback(field_146297_k,original,ex);}
         catch(LinkageError ex){dispose();hook.fallback(field_146297_k,original,ex);}
@@ -78,13 +81,13 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
         int w=Display.getWidth(),h=Display.getHeight();
         double x=mx*(double)w/Math.max(1,field_146294_l),y=my*(double)h/Math.max(1,field_146295_m);
         int index=layout.hit(layout.localX(x,w,h),layout.localY(y,w,h));
-        if (index >= 0) { focus = index; flow.request(MenuLayout.action(index)); }
+        if (index >= 0) { focus = index; requestAction(MenuLayout.action(index),"mouse:"+mx+","+my); }
     }
     @Override protected void func_73869_a(char character, int key) {
         if (flow == null) { return; }
         if (key == Keyboard.KEY_F8) { hook.fallback(field_146297_k, original, null); return; }
         if (key == Keyboard.KEY_F7) { reduced = !reduced; flow = new MenuFlow(reduced, false); flow.escape(); return; }
-        if (key == Keyboard.KEY_ESCAPE) { flow.escape(); return; }
+        if (key == Keyboard.KEY_ESCAPE) { if(flow.state()==MenuFlow.State.EXITING)UiAudio.play(br.com.redeakashic.cinematic.core.UiCueGate.Cue.BACK);flow.escape(); return; }
         if(key==Keyboard.KEY_HOME){keyboardMode=true;focus=0;return;}
         if(key==Keyboard.KEY_END){keyboardMode=true;focus=MenuLayout.COUNT-1;return;}
         int delta = 0;
@@ -94,7 +97,10 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
             delta = Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) ? -1 : 1;
         }
         if (delta != 0) { keyboardMode = true; focus = MenuLayout.nextFocus(focus, delta); }
-        if (key == Keyboard.KEY_RETURN || key == Keyboard.KEY_NUMPADENTER || key == Keyboard.KEY_SPACE) { flow.request(MenuLayout.action(focus)); }
+        if (key == Keyboard.KEY_RETURN || key == Keyboard.KEY_NUMPADENTER || key == Keyboard.KEY_SPACE) { requestAction(MenuLayout.action(focus),"key:"+key); }
+    }
+    private void requestAction(MenuAction action,String source){
+        if(flow.request(action)){System.out.println("[AkashicCinematic] ACCEPTED_INPUT "+source+" action="+action);UiAudio.play(action==MenuAction.PLAY?br.com.redeakashic.cinematic.core.UiCueGate.Cue.CONNECT:br.com.redeakashic.cinematic.core.UiCueGate.Cue.SELECT);}
     }
     private void dispatch(MenuAction action) {
         hook.dispatched(action.name());

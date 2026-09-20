@@ -17,6 +17,7 @@ public final class MenuHook {
     public MenuHook(MenuConfig config, Logger log) { this.config = config; this.log = log; }
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onOpen(GuiOpenEvent event) {
+        if(!disabledForSession && config.suppressBogoConflict && Minecraft.func_71410_x().field_71441_e==null && BogoWarningCompat.consume(event.gui,log))event.gui=new net.minecraft.client.gui.GuiMainMenu();
         if (disabledForSession || event.gui == null
                 || !ScreenPolicy.accepts(event.gui.getClass().getName(), config.replaceDummyCore)) { return; }
         GuiScreen original = event.gui;

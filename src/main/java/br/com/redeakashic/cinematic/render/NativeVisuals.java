@@ -5,6 +5,7 @@ import org.lwjgl.opengl.GL11;
 public final class NativeVisuals implements AutoCloseable {
     public final NativeLayout layout;
     private NativeTexture panel,scene,boot;
+    private BackdropRenderer backdrop;
     private final NativeTexture[] buttons=new NativeTexture[4],hover=new NativeTexture[4];
     private BitmapText body,serif;
     public NativeVisuals(String profile){layout=new NativeLayout(profile);}
@@ -24,7 +25,7 @@ public final class NativeVisuals implements AutoCloseable {
         GL11.glBegin(GL11.GL_QUADS);GL11.glVertex2d(x,y);GL11.glVertex2d(x+w,y);GL11.glVertex2d(x+w,y+h);GL11.glVertex2d(x,y+h);GL11.glEnd();
     }
     public void transform(int w,int h){
-        double s=layout.scale(w,h);rect(0,0,w,h,0x070D09,1);
+        double s=layout.scale(w,h);if(backdrop==null)backdrop=new BackdropRenderer();backdrop.draw(w,h,1);
         GL11.glTranslated((w-layout.width*s)/2,(h-layout.height*s)/2,0);GL11.glScaled(s,s,1);
     }
     public void menu(double age,double px,double py,double visibility,double[] highlights,boolean motion,boolean particles){
@@ -63,6 +64,7 @@ public final class NativeVisuals implements AutoCloseable {
         if(boot!=null){boot.close();boot=null;}if(body!=null){body.close();body=null;}if(serif!=null){serif.close();serif=null;}
     }
     @Override public void close(){
+        if(backdrop!=null){backdrop.close();backdrop=null;}
         if(panel!=null){panel.close();panel=null;}if(scene!=null){scene.close();scene=null;}if(boot!=null){boot.close();boot=null;}
         if(body!=null){body.close();body=null;}if(serif!=null){serif.close();serif=null;}
         for(int i=0;i<4;i++){if(buttons[i]!=null){buttons[i].close();buttons[i]=null;}if(hover[i]!=null){hover[i].close();hover[i]=null;}}

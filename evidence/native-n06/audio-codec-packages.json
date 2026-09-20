@@ -1,0 +1,172 @@
+{
+  "version": "1",
+  "pip_version": "26.2.1",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/14/e9/6b761de83277f2f02ded7e7ea6f07828ec78e4b229b80e4ca55dd205b9dc/soundfile-0.13.1-py2.py3-none-win_amd64.whl",
+        "archive_info": {
+          "hashes": {
+            "sha256": "1e70a05a0626524a69e9f0f4dd2ec174b4e9567f4d8b6c11d38b5c289be36ee9"
+          },
+          "hash": "sha256=1e70a05a0626524a69e9f0f4dd2ec174b4e9567f4d8b6c11d38b5c289be36ee9"
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "soundfile",
+        "version": "0.13.1",
+        "platform": [
+          "any"
+        ],
+        "summary": "An audio library based on libsndfile, CFFI and NumPy",
+        "description": "python-soundfile\n================\n\n|version| |python| |status| |license|\n\n|contributors| |downloads|\n\nThe `soundfile <https://github.com/bastibe/python-soundfile>`__ module is an audio\nlibrary based on libsndfile, CFFI and NumPy. Full documentation is\navailable on https://python-soundfile.readthedocs.io/.\n\nThe ``soundfile`` module can read and write sound files. File reading/writing is\nsupported through `libsndfile <http://www.mega-nerd.com/libsndfile/>`__,\nwhich is a free, cross-platform, open-source (LGPL) library for reading\nand writing many different sampled sound file formats that runs on many\nplatforms including Windows, OS X, and Unix. It is accessed through\n`CFFI <https://cffi.readthedocs.io/>`__, which is a foreign function\ninterface for Python calling C code. CFFI is supported for CPython 2.6+,\n3.x and PyPy 2.0+. The ``soundfile`` module represents audio data as NumPy arrays.\n\n| python-soundfile is BSD licensed (BSD 3-Clause License).\n| (c) 2013, Bastian Bechtold\n\n\n|open-issues| |closed-issues| |open-prs| |closed-prs|\n\n.. |contributors| image:: https://img.shields.io/github/contributors/bastibe/python-soundfile.svg\n.. |version| image:: https://img.shields.io/pypi/v/soundfile.svg\n.. |python| image:: https://img.shields.io/pypi/pyversions/soundfile.svg\n.. |license| image:: https://img.shields.io/github/license/bastibe/python-soundfile.svg\n.. |downloads| image:: https://img.shields.io/pypi/dm/soundfile.svg\n.. |open-issues| image:: https://img.shields.io/github/issues/bastibe/python-soundfile.svg\n.. |closed-issues| image:: https://img.shields.io/github/issues-closed/bastibe/python-soundfile.svg\n.. |open-prs| image:: https://img.shields.io/github/issues-pr/bastibe/python-soundfile.svg\n.. |closed-prs| image:: https://img.shields.io/github/issues-pr-closed/bastibe/python-soundfile.svg\n.. |status| image:: https://img.shields.io/pypi/status/soundfile.svg\n\nBreaking Changes\n----------------\n\nThe ``soundfile`` module has evolved rapidly in the past. Most\nnotably, we changed the import name from ``import pysoundfile`` to\n``import soundfile`` in 0.7. In 0.6, we cleaned up many small\ninconsistencies, particularly in the the ordering and naming of\nfunction arguments and the removal of the indexing interface.\n\nIn 0.8.0, we changed the default value of ``always_2d`` from ``True``\nto ``False``. Also, the order of arguments of the ``write`` function\nchanged from ``write(data, file, ...)`` to ``write(file, data, ...)``.\n\nIn 0.9.0, we changed the ``ctype`` arguments of the ``buffer_*``\nmethods to ``dtype``, using the Numpy ``dtype`` notation. The old\n``ctype`` arguments still work, but are now officially deprecated.\n\nIn 0.12.0, we changed the load order of the libsndfile library. Now,\nthe packaged libsndfile in the platform-specific wheels is tried\nbefore falling back to any system-provided libsndfile. If you would\nprefer using the system-provided libsndfile, install the source\npackage or source wheel instead of the platform-specific wheels.\n\nInstallation\n------------\n\nThe ``soundfile`` module depends on the Python packages CFFI and NumPy, and the\nlibrary libsndfile.\n\nIn a modern Python, you can use ``pip install soundfile`` to download\nand install the latest release of the ``soundfile`` module and its\ndependencies. On Windows (64/32) and OS X (Intel/ARM) and Linux 64,\nthis will also install a current version of the library libsndfile. If\nyou install the source module, you need to install libsndfile using\nyour distribution's package manager, for example ``sudo apt install\nlibsndfile1``.\n\nIf you are running on an unusual platform or if you are using an older\nversion of Python, you might need to install NumPy and CFFI separately,\nfor example using the Anaconda_ package manager.\n\n.. _Anaconda: https://www.continuum.io/downloads\n\nBuilding\n--------\n\n``Soundfile`` itself does not contain any compiled code and can be\nbundled into a wheel with the usual ``python setup.py bdist_wheel``.\nHowever, ``soundfile`` relies on libsndfile, and optionally ships its\nown copy of libsndfile in the wheel.\n\nTo build a binary wheel that contains libsndfile, make sure to\ncheckout and update the ``_soundfile_data`` submodule, then run\n``python setup.py bdist_wheel`` as usual. If the resulting file size\nof the wheel is around one megabyte, a matching libsndfile has been\nbundled (without libsndfile, it's around 25 KB).\n\nTo build binary wheels for all supported platforms, run ``python\nbuild_wheels.py``, which will ``python setup.py bdist_wheel`` for each\nof the platforms we have precompiled libsndfiles for.\n\nError Reporting\n---------------\n\nIn case of API usage errors the ``soundfile`` module raises the usual `ValueError` or `TypeError`.\n\nFor other errors `SoundFileError` is raised (used to be `RuntimeError`).\nParticularly, a `LibsndfileError` subclass of this exception is raised on\nerrors reported by the libsndfile library. In that case the exception object\nprovides the libsndfile internal error code in the `LibsndfileError.code` attribute and the raw\nlibsndfile error message in the `LibsndfileError.error_string` attribute.\n\nRead/Write Functions\n--------------------\n\nData can be written to the file using `soundfile.write()`, or read from\nthe file using `soundfile.read()`. The ``soundfile`` module can open all file formats\nthat `libsndfile supports\n<http://www.mega-nerd.com/libsndfile/#Features>`__, for example WAV,\nFLAC, OGG and MAT files (see `Known Issues <https://github.com/bastibe/python-soundfile#known-issues>`__ below about writing OGG files).\n\nHere is an example for a program that reads a wave file and copies it\ninto an FLAC file:\n\n.. code:: python\n\n    import soundfile as sf\n\n    data, samplerate = sf.read('existing_file.wav')\n    sf.write('new_file.flac', data, samplerate)\n\nBlock Processing\n----------------\n\nSound files can also be read in short, optionally overlapping blocks\nwith `soundfile.blocks()`.\nFor example, this calculates the signal level for each block of a long\nfile:\n\n.. code:: python\n\n   import numpy as np\n   import soundfile as sf\n\n   rms = [np.sqrt(np.mean(block**2)) for block in\n          sf.blocks('myfile.wav', blocksize=1024, overlap=512)]\n\n``SoundFile`` Objects\n---------------------\n\nSound files can also be opened as `SoundFile` objects. Every\n`SoundFile` has a specific sample rate, data format and a set number of\nchannels.\n\nIf a file is opened, it is kept open for as long as the `SoundFile`\nobject exists. The file closes when the object is garbage collected,\nbut you should use the `SoundFile.close()` method or the\ncontext manager to close the file explicitly:\n\n.. code:: python\n\n   import soundfile as sf\n\n   with sf.SoundFile('myfile.wav', 'r+') as f:\n       while f.tell() < f.frames:\n           pos = f.tell()\n           data = f.read(1024)\n           f.seek(pos)\n           f.write(data*2)\n\nAll data access uses frames as index. A frame is one discrete time-step\nin the sound file. Every frame contains as many samples as there are\nchannels in the file.\n\nRAW Files\n---------\n\n`soundfile.read()` can usually auto-detect the file type of sound files. This\nis not possible for RAW files, though:\n\n.. code:: python\n\n   import soundfile as sf\n\n   data, samplerate = sf.read('myfile.raw', channels=1, samplerate=44100,\n                              subtype='FLOAT')\n\nNote that on x86, this defaults to ``endian='LITTLE'``. If you are\nreading big endian data (mostly old PowerPC/6800-based files), you\nhave to set ``endian='BIG'`` accordingly.\n\nYou can write RAW files in a similar way, but be advised that in most\ncases, a more expressive format is better and should be used instead.\n\nVirtual IO\n----------\n\nIf you have an open file-like object, `soundfile.read()` can open it just like\nregular files:\n\n.. code:: python\n\n    import soundfile as sf\n    with open('filename.flac', 'rb') as f:\n        data, samplerate = sf.read(f)\n\nHere is an example using an HTTP request:\n\n.. code:: python\n\n    import io\n    import soundfile as sf\n    from urllib.request import urlopen\n\n    url = \"http://tinyurl.com/shepard-risset\"\n    data, samplerate = sf.read(io.BytesIO(urlopen(url).read()))\n\nNote that the above example only works with Python 3.x.\nFor Python 2.x support, replace the third line with:\n\n.. code:: python\n\n    from urllib2 import urlopen\n\nIn-memory files\n^^^^^^^^^^^^^^^\n\nChunks of audio, i.e. `bytes`, can also be read and written without touching the filesystem.\nIn the following example OGG is converted to WAV entirely in memory (without writing files to the disk):\n\n.. code:: python\n\n    import io\n    import soundfile as sf\n\n    def ogg2wav(ogg: bytes):\n        ogg_buf = io.BytesIO(ogg)\n        ogg_buf.name = 'file.ogg'\n        data, samplerate = sf.read(ogg_buf)\n        wav_buf = io.BytesIO()\n        wav_buf.name = 'file.wav'\n        sf.write(wav_buf, data, samplerate)\n        wav_buf.seek(0)  # Necessary for `.read()` to return all bytes\n        return wav_buf.read()\n\nControlling bitrate mode and compression level\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFor some audio formats, you can control the bitrate and compression level. \n\n`compression_level` is a float between 0 and 1, with 1 being the highest compression, \nand `bitrate_mode` is 'VARIABLE', 'CONSTANT', or 'AVERAGE'.\n\n.. code:: python\n\n    import soundfile as sf\n    \n    # for example, this uncompressed 5 minute wav file with 32 kHz sample rate is 18 Mb\n    data, samplerate = sf.read('5min_32kHz.wav') \n    \n    # maximum mp3 compression results in 1.1 Mb file, with either CONSTANT or VARIABLE bit rate\n    sf.write('max_compression_vbr.mp3', data, samplerate, bitrate_mode='VARIABLE', compression_level=.99) \n    sf.write('max_compression_cbr.mp3', data, samplerate, bitrate_mode='CONSTANT', compression_level=.99)\n    \n    # minimum mp3 compression results in 3.5 Mb file\n    sf.write('min_compression_vbr.mp3', data, samplerate, bitrate_mode='VARIABLE', compression_level=0)\n\nKnown Issues\n------------\n\nWriting to OGG files can result in empty files with certain versions of libsndfile. See `#130 <https://github.com/bastibe/python-soundfile/issues/130>`__ for news on this issue.\n\nIf using a Buildroot style system, Python has trouble locating ``libsndfile.so`` file, which causes python-soundfile to not be loaded. This is apparently a bug in `python <https://bugs.python.org/issue13508>`__. For the time being, in ``soundfile.py``, you can remove the call to ``_find_library`` and hardcode the location of the ``libsndfile.so`` in ``_ffi.dlopen``. See `#258 <https://github.com/bastibe/python-soundfile/issues/258>`__ for discussion on this issue.\n\nNews\n----\n\n2013-08-27 V0.1.0 Bastian Bechtold:\n    Initial prototype. A simple wrapper for libsndfile in Python\n\n2013-08-30 V0.2.0 Bastian Bechtold:\n    Bugfixes and more consistency with PySoundCard\n\n2013-08-30 V0.2.1 Bastian Bechtold:\n    Bugfixes\n\n2013-09-27 V0.3.0 Bastian Bechtold:\n    Added binary installer for Windows, and context manager\n\n2013-11-06 V0.3.1 Bastian Bechtold:\n    Switched from distutils to setuptools for easier installation\n\n2013-11-29 V0.4.0 Bastian Bechtold:\n    Thanks to David Blewett, now with Virtual IO!\n\n2013-12-08 V0.4.1 Bastian Bechtold:\n    Thanks to Xidorn Quan, FLAC files are not float32 any more.\n\n2014-02-26 V0.5.0 Bastian Bechtold:\n    Thanks to Matthias Geier, improved seeking and a flush() method.\n\n2015-01-19 V0.6.0 Bastian Bechtold:\n    A big, big thank you to Matthias Geier, who did most of the work!\n\n    - Switched to ``float64`` as default data type.\n    - Function arguments changed for consistency.\n    - Added unit tests.\n    - Added global `read()`, `write()`, `blocks()` convenience\n      functions.\n    - Documentation overhaul and hosting on readthedocs.\n    - Added ``'x'`` open mode.\n    - Added `tell()` method.\n    - Added ``__repr__()`` method.\n\n2015-04-12 V0.7.0 Bastian Bechtold:\n    Again, thanks to Matthias Geier for all of his hard work, but also\n    Nils Werner and Whistler7 for their many suggestions and help.\n\n    - Renamed ``import pysoundfile`` to ``import soundfile``.\n    - Installation through pip wheels that contain the necessary\n      libraries for OS X and Windows.\n    - Removed ``exclusive_creation`` argument to `write()`.\n    - Added `truncate()` method.\n\n2015-10-20 V0.8.0 Bastian Bechtold:\n    Again, Matthias Geier contributed a whole lot of hard work to this\n    release.\n\n    - Changed the default value of ``always_2d`` from ``True`` to\n      ``False``.\n    - Numpy is now optional, and only loaded for ``read`` and\n      ``write``.\n    - Added `SoundFile.buffer_read()` and\n      `SoundFile.buffer_read_into()` and `SoundFile.buffer_write()`,\n      which read/write raw data without involving Numpy.\n    - Added `info()` function that returns metadata of a sound file.\n    - Changed the argument order of the `write()` function from\n      ``write(data, file, ...)`` to ``write(file, data, ...)``\n\n    And many more minor bug fixes.\n\n2017-02-02 V0.9.0 Bastian Bechtold:\n    Thank you, Matthias Geier, Tomas Garcia, and Todd, for contributions\n    for this release.\n\n    - Adds support for ALAC files.\n    - Adds new member ``__libsndfile_version__``\n    - Adds number of frames to ``info`` class\n    - Adds ``dtype`` argument to ``buffer_*`` methods\n    - Deprecates ``ctype`` argument to ``buffer_*`` methods\n    - Adds official support for Python 3.6\n\n    And some minor bug fixes.\n\n2017-11-12 V0.10.0 Bastian Bechtold:\n    Thank you, Matthias Geier, Toni Barth, Jon Peirce, Till Hoffmann,\n    and Tomas Garcia, for contributions to this release.\n\n    - Should now work with cx_freeze.\n    - Several documentation fixes in the README.\n    - Removes deprecated ``ctype`` argument in favor of ``dtype`` in ``buffer_*()``.\n    - Adds `SoundFile.frames` in favor of now-deprecated ``__len__()``.\n    - Improves performance of `blocks()` and `SoundFile.blocks()`.\n    - Improves import time by using CFFI's out of line mode.\n    - Adds a build script for building distributions.\n\n2022-06-02 V0.11.0 Bastian Bechtold:\n    Thank you, tennies, Hannes Helmholz, Christoph Boeddeker, Matt\n    Vollrath, Matthias Geier, Jacek Konieczny, Boris Verkhovskiy,\n    Jonas Haag, Eduardo Moguillansky, Panos Laganakos, Jarvy Jarvison,\n    Domingo Ramirez, Tim Chagnon, Kyle Benesch, Fabian-Robert Stöter,\n    Joe Todd\n\n    - MP3 support\n    - Adds binary wheels for macOS M1\n    - Improves compatibility with macOS, specifically for M1 machines\n    - Fixes file descriptor open for binary wheels on Windows and Python 3.5+\n    - Updates libsndfile to v1.1.0\n    - Adds get_strings method for retrieving all metadata at once\n    - Improves documentation, error messages and tests\n    - Displays length of very short files in samples\n    - Supports the file system path protocol (pathlib et al)\n\n2023-02-02 V0.12.0 Bastian Bechtold\n    Thank you, Barabazs, Andrew Murray, Jon Peirce, for contributions\n    to this release.\n\n    - Updated libsndfile to v1.2.0\n    - Improves precompiled library location, especially with py2app or cx-freeze.\n    - Now provide binary wheels for Linux x86_64\n    - Now prefers packaged libsndfile over system-installed libsndfile\n\n2023-02-15 V0.12.1 Bastian Bechtold\n    Thank you, funnypig, for the bug report\n\n    - Fixed typo on library location detection if no packaged lib and\n      no system lib was found\n\n2025-01-02 V0.13.0 Bastian Bechtold\n    Thank you, Zhong Jianxin, mcclure, jneuendorf-i4h, aoirint, endolith, Guy Illes, ytya, Sam Lapp, Benjamin Moody\n\n    - Updated libsndfile to v1.2.2\n    - Linux arm64 builds added\n    - Numpy is now a dependency\n    - Fixed error in blocks, if file is very short\n    - Compression level and bitrate controls added for compressed files\n    - Various README improvements\n    - Various build system improvements\n    - Various improvements to error messages\n\n2025-01-25 V0.13.1 Bastian Bechtold\n    Thank you, Brian McFee and Guy Illes\n\n    - Fixed regression in blocks\n",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "audio",
+          "libsndfile"
+        ],
+        "home_page": "https://github.com/bastibe/python-soundfile",
+        "author": "Bastian Bechtold",
+        "author_email": "[email-omitido]",
+        "license": "BSD 3-Clause License",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Intended Audience :: Science/Research",
+          "License :: OSI Approved :: BSD License",
+          "Natural Language :: English",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Topic :: Multimedia :: Sound/Audio"
+        ],
+        "requires_dist": [
+          "cffi >=1.0",
+          "numpy"
+        ],
+        "provides_extra": [
+          "numpy"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/7c/fc/6a8cb64e5f0324877d503c854da15d76c1e50eb722e320b15345c4d0c6de/cffi-1.17.1-cp313-cp313-win_amd64.whl",
+        "archive_info": {
+          "hashes": {
+            "sha256": "f6a16c31041f09ead72d69f583767292f750d24913dadacf5756b966aacb3f1a"
+          },
+          "hash": "sha256=f6a16c31041f09ead72d69f583767292f750d24913dadacf5756b966aacb3f1a"
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "cffi",
+        "version": "1.17.1",
+        "summary": "Foreign Function Interface for Python calling C code.",
+        "description": "\nCFFI\n====\n\nForeign Function Interface for Python calling C code.\nPlease see the `Documentation <http://cffi.readthedocs.org/>`_.\n\nContact\n-------\n\n`Mailing list <https://groups.google.com/forum/#!forum/python-cffi>`_\n",
+        "home_page": "http://cffi.readthedocs.org",
+        "author": "Armin Rigo, Maciej Fijalkowski",
+        "author_email": "[email-omitido]",
+        "license": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "License :: OSI Approved :: MIT License"
+        ],
+        "requires_dist": [
+          "pycparser"
+        ],
+        "requires_python": ">=3.8",
+        "project_url": [
+          "Documentation, http://cffi.readthedocs.org/",
+          "Source Code, https://github.com/python-cffi/cffi",
+          "Issue Tracker, https://github.com/python-cffi/cffi/issues",
+          "Changelog, https://cffi.readthedocs.io/en/latest/whatsnew.html",
+          "Downloads, https://github.com/python-cffi/cffi/releases",
+          "Contact, https://groups.google.com/forum/#!forum/python-cffi"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl",
+        "archive_info": {
+          "hashes": {
+            "sha256": "c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc"
+          },
+          "hash": "sha256=c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc"
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "pycparser",
+        "version": "2.22",
+        "platform": [
+          "Cross Platform"
+        ],
+        "summary": "C parser in Python",
+        "description": "\n        pycparser is a complete parser of the C language, written in\n        pure Python using the PLY parsing library.\n        It parses C code into an AST and can serve as a front-end for\n        C compilers or analysis tools.\n    \n\n",
+        "home_page": "https://github.com/eliben/pycparser",
+        "author": "Eli Bendersky",
+        "author_email": "[email-omitido]",
+        "maintainer": "Eli Bendersky",
+        "license": "BSD-3-Clause",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "License :: OSI Approved :: BSD License",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12"
+        ],
+        "requires_python": ">=3.8"
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.13.14",
+    "os_name": "nt",
+    "platform_machine": "AMD64",
+    "platform_release": "10",
+    "platform_system": "Windows",
+    "platform_version": "10.0.19045",
+    "python_full_version": "3.13.14",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.13",
+    "sys_platform": "win32"
+  }
+}

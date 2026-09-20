@@ -28,6 +28,8 @@ public final class SplashTransformer implements IClassTransformer {
             FieldInsnNode f=(FieldInsnNode)anchor;
             if(!f.owner.equals("cpw/mods/fml/client/SplashProgress")||!f.name.equals("mutex"))return bytes;
             run.instructions.insertBefore(anchor,new MethodInsnNode(Opcodes.INVOKESTATIC,HOOK,"frame","()V",false));
+            // Exactly one present at the existing Forge semaphore-protected site.
+            run.instructions.set(updates.get(0),new MethodInsnNode(Opcodes.INVOKESTATIC,HOOK,"present","()V",false));
             // Only the final clearGL releases our textures; pause/resume retains them.
             run.instructions.insertBefore(clears.get(1),new MethodInsnNode(Opcodes.INVOKESTATIC,HOOK,"finish","()V",false));
             ClassWriter out=new ClassWriter(ClassWriter.COMPUTE_MAXS);c.accept(out);

@@ -1,0 +1,13 @@
+Collecting soundfile==0.13.1
+  Downloading soundfile-0.13.1-py2.py3-none-win_amd64.whl.metadata (16 kB)
+Collecting cffi==1.17.1
+  Downloading cffi-1.17.1-cp313-cp313-win_amd64.whl.metadata (1.6 kB)
+Collecting pycparser==2.22
+  Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+Downloading soundfile-0.13.1-py2.py3-none-win_amd64.whl (1.0 MB)
+   ---------------------------------------- 1.0/1.0 MB 14.8 MB/s  0:00:00
+Downloading cffi-1.17.1-cp313-cp313-win_amd64.whl (182 kB)
+Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+Installing collected packages: soundfile, pycparser, cffi
+
+Successfully installed cffi-1.17.1 pycparser-2.22 soundfile-0.13.1

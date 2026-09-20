@@ -1,0 +1,47 @@
+{
+  "ui.focus": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "akashiccinematic:ui/focus",
+        "stream": false
+      }
+    ]
+  },
+  "ui.select": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "akashiccinematic:ui/select",
+        "stream": false
+      }
+    ]
+  },
+  "ui.back": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "akashiccinematic:ui/back",
+        "stream": false
+      }
+    ]
+  },
+  "ui.enter": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "akashiccinematic:ui/enter",
+        "stream": false
+      }
+    ]
+  },
+  "ui.connect": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "akashiccinematic:ui/connect",
+        "stream": false
+      }
+    ]
+  }
+}

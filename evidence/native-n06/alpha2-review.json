@@ -1,0 +1,7 @@
+{
+  "visual_issue": "Disconnected message exceeded the card width; corrected to measured text width plus padding",
+  "runtime_suite": "Interrupted by unscheduled navigation; no source of that input assigned without telemetry",
+  "changes": "Text-fit card, content height and accepted-input origin logs",
+  "preserved_jar": "        if(flow.request(action))UiAudio.play(action==MenuAction.PLAY?br.com.redeakashic.cinematic.core.UiCueGate.Cue.CONNECT:br.com.redeakashic.cinematic.core.UiCueGate.Cue.SELECT);",
+  "source_backup": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n06\\evidence\\source-alpha2-before-textfit.zip"
+}

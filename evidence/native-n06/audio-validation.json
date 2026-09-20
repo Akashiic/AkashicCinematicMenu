@@ -1,0 +1,53 @@
+{
+  "generator": "deterministic original synthesis",
+  "soundfile": "0.13.1",
+  "libsndfile": "1.2.2",
+  "files": {
+    "focus": {
+      "seconds": 0.13,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak_dbfs": -17.15442592914855,
+      "rms_dbfs": -28.777756607155226,
+      "sha256": "81616dca7665f20eea61cb8d01d6aff1275bdb6a845b2fbe14367d19a0a94cf5",
+      "bytes": 4584
+    },
+    "select": {
+      "seconds": 0.29,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak_dbfs": -12.731185412185958,
+      "rms_dbfs": -24.83639328657979,
+      "sha256": "1dd8512b495f67a103e6196264c5086bf81af245f5f4cad53f7a6984a2441494",
+      "bytes": 4694
+    },
+    "back": {
+      "seconds": 0.22,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak_dbfs": -15.880421417977246,
+      "rms_dbfs": -27.376801066169058,
+      "sha256": "d7895d412bbc2318b2d4add1d4840130ffc8a477015f01fcee8866a57ec4cdb3",
+      "bytes": 4534
+    },
+    "enter": {
+      "seconds": 0.85,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak_dbfs": -12.384489402035914,
+      "rms_dbfs": -24.39811184240043,
+      "sha256": "d24d8ecb350a575b26303d36fbde0aa966559e60ce12fd469a77b423bd438ced",
+      "bytes": 5570
+    },
+    "connect": {
+      "seconds": 0.46,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak_dbfs": -12.653463373325591,
+      "rms_dbfs": -24.495907325412816,
+      "sha256": "c66038d2fd2a74a9dfe00e9be700fcb68b162d3798de8dc1f4d87bdf393cb9a6",
+      "bytes": 4910
+    }
+  },
+  "subjective_approval": "PENDING_USER_LISTENING"
+}

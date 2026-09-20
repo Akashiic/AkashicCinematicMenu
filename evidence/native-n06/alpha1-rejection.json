@@ -1,0 +1,9 @@
+{
+  "status": "REJECTED_RUNTIME",
+  "run": "n06run1",
+  "error": "IllegalAccessError from Forge generated event adapter to package-private LateBogoNoticeGate",
+  "fix": "Public subscriber class; add bytecode accessibility gate",
+  "source_backup": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n06\\evidence\\source-alpha1-before-listener-fix.zip",
+  "artifact_preserved": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n06\\dist\\AkashicCinematicMenu-0.3.0-alpha.1.jar",
+  "resize_visual_test_passed_before_failure": true
+}

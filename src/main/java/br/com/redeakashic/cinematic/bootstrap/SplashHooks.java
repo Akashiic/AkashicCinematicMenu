@@ -9,6 +9,7 @@ public final class SplashHooks {
     private static NativeVisuals visuals;
     private static boolean failed;
     private static long started,lastPoll;
+    private static int previousWidth,previousHeight,geometryLogs;
     public static volatile boolean finished;
     public static volatile boolean rendered;
     public static volatile double elapsedSeconds;
@@ -18,6 +19,7 @@ public final class SplashHooks {
     public static void frame(){
         if(failed||Boolean.getBoolean("akashic.cinematic.disabled")||Boolean.getBoolean("akashic.cinematic.disableSplash"))return;
         int w=Display.getWidth(),h=Display.getHeight();if(w<1||h<1)return;
+        if((w!=previousWidth||h!=previousHeight)&&geometryLogs++<40){previousWidth=w;previousHeight=h;System.out.println("[AkashicCinematic] SPLASH_GEOMETRY "+w+"x"+h);}
         try(RawScope scope=new RawScope(w,h)){
             long now=System.nanoTime();if(started==0){started=EarlyWindowHooks.startedNanos>0?EarlyWindowHooks.startedNanos:now;System.out.println("[AkashicCinematic] FORGE_OVERLAY_STARTED epoch="+System.currentTimeMillis());}
             if(now-lastPoll>100_000_000L){last=sample();lastPoll=now;}
@@ -27,6 +29,12 @@ public final class SplashHooks {
         }catch(RuntimeException|LinkageError ex){
             ex.printStackTrace();failed=true;rendered=false;System.err.println("[AkashicCinematic] Splash skin disabled; retaining Forge renderer: "+ex);
         }
+    }
+    /** Kept in the existing excluded bootstrap package: never redirected by Angelica. */
+    public static void present(){
+        // LWJGL updates cached width/height/wasResized here. swapBuffers + processMessages alone does not.
+        // Called at the original FML present site; no second swap and no new lock/context owner.
+        Display.update();
     }
     public static LoadState sample(){
         Iterator<cpw.mods.fml.common.ProgressManager.ProgressBar> it=cpw.mods.fml.common.ProgressManager.barIterator();cpw.mods.fml.common.ProgressManager.ProgressBar root=null,leaf=null;int count=0;

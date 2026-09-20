@@ -1,0 +1,13 @@
+{
+  "baseline_jar": "3adfd2cc102eed60666d5594afc0a375e2a1fc7047ed409c7afc81c5969c190e",
+  "baseline": "native-n04",
+  "unused_partial_n05": true,
+  "scope": [
+    "splash resize",
+    "targeted Bogo warning",
+    "UI audio",
+    "connecting and disconnect visuals"
+  ],
+  "phase": "ANALYSIS_COMPLETED_IMPLEMENTATION_STARTED",
+  "runtime_approved": false
+}
