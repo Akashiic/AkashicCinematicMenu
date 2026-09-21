@@ -1,0 +1,224 @@
+Compiled from "PlaySoundEvent17.java"
+public class net.minecraftforge.client.event.sound.PlaySoundEvent17 extends net.minecraftforge.client.event.sound.SoundEvent {
+  public final java.lang.String name;
+
+  public final net.minecraft.client.audio.ISound sound;
+
+  public final net.minecraft.client.audio.SoundCategory category;
+
+  public net.minecraft.client.audio.ISound result;
+
+  public net.minecraftforge.client.event.sound.PlaySoundEvent17(net.minecraft.client.audio.SoundManager, net.minecraft.client.audio.ISound, net.minecraft.client.audio.SoundCategory);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #1                  // Method net/minecraftforge/client/event/sound/SoundEvent."<init>":(Lnet/minecraft/client/audio/SoundManager;)V
+       5: aload_0
+       6: aload_2
+       7: putfield      #2                  // Field sound:Lnet/minecraft/client/audio/ISound;
+      10: aload_0
+      11: aload_3
+      12: putfield      #3                  // Field category:Lnet/minecraft/client/audio/SoundCategory;
+      15: aload_0
+      16: aload_2
+      17: invokeinterface #4,  1            // InterfaceMethod net/minecraft/client/audio/ISound.getPositionedSoundLocation:()Lnet/minecraft/util/ResourceLocation;
+      22: invokevirtual #5                  // Method net/minecraft/util/ResourceLocation.getResourcePath:()Ljava/lang/String;
+      25: putfield      #6                  // Field name:Ljava/lang/String;
+      28: aload_0
+      29: aload_2
+      30: putfield      #7                  // Field result:Lnet/minecraft/client/audio/ISound;
+      33: return
+}
+Compiled from "SoundLoadEvent.java"
+public class net.minecraftforge.client.event.sound.SoundLoadEvent extends net.minecraftforge.client.event.sound.SoundEvent {
+  public final net.minecraft.client.audio.SoundManager manager;
+
+  public net.minecraftforge.client.event.sound.SoundLoadEvent(net.minecraft.client.audio.SoundManager);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #1                  // Method net/minecraftforge/client/event/sound/SoundEvent."<init>":(Lnet/minecraft/client/audio/SoundManager;)V
+       5: aload_0
+       6: aload_1
+       7: putfield      #2                  // Field manager:Lnet/minecraft/client/audio/SoundManager;
+      10: return
+}
+Compiled from "GuiScreenEvent.java"
+public class net.minecraftforge.client.event.GuiScreenEvent extends cpw.mods.fml.common.eventhandler.Event {
+  public final net.minecraft.client.gui.GuiScreen gui;
+
+  public net.minecraftforge.client.event.GuiScreenEvent(net.minecraft.client.gui.GuiScreen);
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method cpw/mods/fml/common/eventhandler/Event."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #2                  // Field gui:Lnet/minecraft/client/gui/GuiScreen;
+       9: return
+}
+Compiled from "IResourcePack.java"
+public interface net.minecraft.client.resources.IResourcePack {
+  public abstract java.io.InputStream getInputStream(net.minecraft.util.ResourceLocation) throws java.io.IOException;
+
+  public abstract boolean resourceExists(net.minecraft.util.ResourceLocation);
+
+  public abstract java.util.Set<java.lang.String> getResourceDomains();
+
+  public abstract net.minecraft.client.resources.data.IMetadataSection getPackMetadata(net.minecraft.client.resources.data.IMetadataSerializer, java.lang.String) throws java.io.IOException;
+
+  public abstract java.awt.image.BufferedImage getPackImage() throws java.io.IOException;
+
+  public abstract java.lang.String getPackName();
+}
+Compiled from "SoundEventAccessorComposite.java"
+public class net.minecraft.client.audio.SoundEventAccessorComposite implements net.minecraft.client.audio.ISoundEventAccessor {
+  private final java.util.List soundPool;
+
+  private final java.util.Random rnd;
+
+  private final net.minecraft.util.ResourceLocation field_148735_c;
+
+  private final net.minecraft.client.audio.SoundCategory field_148732_d;
+
+  private double eventPitch;
+
+  private double eventVolume;
+
+  private static final java.lang.String __OBFID;
+
+  public net.minecraft.client.audio.SoundEventAccessorComposite(net.minecraft.util.ResourceLocation, double, double, net.minecraft.client.audio.SoundCategory);
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: invokestatic  #2                  // Method com/google/common/collect/Lists.newArrayList:()Ljava/util/ArrayList;
+       8: putfield      #3                  // Field soundPool:Ljava/util/List;
+      11: aload_0
+      12: new           #4                  // class java/util/Random
+      15: dup
+      16: invokespecial #5                  // Method java/util/Random."<init>":()V
+      19: putfield      #6                  // Field rnd:Ljava/util/Random;
+      22: aload_0
+      23: aload_1
+      24: putfield      #7                  // Field field_148735_c:Lnet/minecraft/util/ResourceLocation;
+      27: aload_0
+      28: dload         4
+      30: putfield      #8                  // Field eventVolume:D
+      33: aload_0
+      34: dload_2
+      35: putfield      #9                  // Field eventPitch:D
+      38: aload_0
+      39: aload         6
+      41: putfield      #10                 // Field field_148732_d:Lnet/minecraft/client/audio/SoundCategory;
+      44: return
+
+  public int func_148721_a();
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: aload_0
+       3: getfield      #3                  // Field soundPool:Ljava/util/List;
+       6: invokeinterface #11,  1           // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      11: astore_3
+      12: aload_3
+      13: invokeinterface #12,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+      18: ifeq          43
+      21: aload_3
+      22: invokeinterface #13,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      27: checkcast     #14                 // class net/minecraft/client/audio/ISoundEventAccessor
+      30: astore_2
+      31: iload_1
+      32: aload_2
+      33: invokeinterface #15,  1           // InterfaceMethod net/minecraft/client/audio/ISoundEventAccessor.func_148721_a:()I
+      38: iadd
+      39: istore_1
+      40: goto          12
+      43: iload_1
+      44: ireturn
+
+  public net.minecraft.client.audio.SoundPoolEntry func_148720_g();
+    Code:
+       0: aload_0
+       1: invokevirtual #16                 // Method func_148721_a:()I
+       4: istore_1
+       5: aload_0
+       6: getfield      #3                  // Field soundPool:Ljava/util/List;
+       9: invokeinterface #17,  1           // InterfaceMethod java/util/List.isEmpty:()Z
+      14: ifne          123
+      17: iload_1
+      18: ifeq          123
+      21: aload_0
+      22: getfield      #6                  // Field rnd:Ljava/util/Random;
+      25: iload_1
+      26: invokevirtual #18                 // Method java/util/Random.nextInt:(I)I
+      29: istore_2
+      30: aload_0
+      31: getfield      #3                  // Field soundPool:Ljava/util/List;
+      34: invokeinterface #11,  1           // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      39: astore_3
+      40: aload_3
+      41: invokeinterface #12,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+      46: ifne          53
+      49: getstatic     #19                 // Field net/minecraft/client/audio/SoundHandler.missing_sound:Lnet/minecraft/client/audio/SoundPoolEntry;
+      52: areturn
+      53: aload_3
+      54: invokeinterface #13,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      59: checkcast     #14                 // class net/minecraft/client/audio/ISoundEventAccessor
+      62: astore        4
+      64: iload_2
+      65: aload         4
+      67: invokeinterface #15,  1           // InterfaceMethod net/minecraft/client/audio/ISoundEventAccessor.func_148721_a:()I
+      72: isub
+      73: istore_2
+      74: iload_2
+      75: ifge          40
+      78: aload         4
+      80: invokeinterface #20,  1           // InterfaceMethod net/minecraft/client/audio/ISoundEventAccessor.func_148720_g:()Ljava/lang/Object;
+      85: checkcast     #21                 // class net/minecraft/client/audio/SoundPoolEntry
+      88: astore        5
+      90: aload         5
+      92: aload         5
+      94: invokevirtual #22                 // Method net/minecraft/client/audio/SoundPoolEntry.getPitch:()D
+      97: aload_0
+      98: getfield      #9                  // Field eventPitch:D
+     101: dmul
+     102: invokevirtual #23                 // Method net/minecraft/client/audio/SoundPoolEntry.setPitch:(D)V
+     105: aload         5
+     107: aload         5
+     109: invokevirtual #24                 // Method net/minecraft/client/audio/SoundPoolEntry.getVolume:()D
+     112: aload_0
+     113: getfield      #8                  // Field eventVolume:D
+     116: dmul
+     117: invokevirtual #25                 // Method net/minecraft/client/audio/SoundPoolEntry.setVolume:(D)V
+     120: aload         5
+     122: areturn
+     123: getstatic     #19                 // Field net/minecraft/client/audio/SoundHandler.missing_sound:Lnet/minecraft/client/audio/SoundPoolEntry;
+     126: areturn
+
+  public void addSoundToEventPool(net.minecraft.client.audio.ISoundEventAccessor);
+    Code:
+       0: aload_0
+       1: getfield      #3                  // Field soundPool:Ljava/util/List;
+       4: aload_1
+       5: invokeinterface #26,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      10: pop
+      11: return
+
+  public net.minecraft.util.ResourceLocation getSoundEventLocation();
+    Code:
+       0: aload_0
+       1: getfield      #7                  // Field field_148735_c:Lnet/minecraft/util/ResourceLocation;
+       4: areturn
+
+  public net.minecraft.client.audio.SoundCategory getSoundCategory();
+    Code:
+       0: aload_0
+       1: getfield      #10                 // Field field_148732_d:Lnet/minecraft/client/audio/SoundCategory;
+       4: areturn
+
+  public java.lang.Object func_148720_g();
+    Code:
+       0: aload_0
+       1: invokevirtual #27                 // Method func_148720_g:()Lnet/minecraft/client/audio/SoundPoolEntry;
+       4: areturn
+}

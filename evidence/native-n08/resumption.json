@@ -1,0 +1,8 @@
+{
+  "last_MenuBgm_write_before_reconnect": "30 lines; timed-out append had not landed",
+  "new_source": "BGM.mp3 supplied in conversation and identical Windows Downloads file found",
+  "input_sha256": "1e7a442de0759fb7a9b605c3f70d0fecdb7c3e1da428796e41df9a717d668408",
+  "baseline_N07_preserved": true,
+  "no_daily_pack_mutation": true,
+  "target": "native-n08/0.5.0-alpha.1"
+}

@@ -1,0 +1,8 @@
+{
+  "finding": "libsndfile MP3 duration is estimated at7145083 frames; blocks() yielded padded blocks beyond actual7138944 frames. Verified against sequential read and ffprobe161.8808seconds.",
+  "correction": "Stream .read() chunks to actual EOF, never trust estimated .frames for buffer length.",
+  "rejected_encoded_file": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n08\\evidence\\rejected-estimated-duration.ogg",
+  "original_preserved": true,
+  "expected_actual_frames": 7138944,
+  "no_approved_audio_yet": true
+}

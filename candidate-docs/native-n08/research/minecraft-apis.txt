@@ -1,0 +1,2317 @@
+Compiled from "SourceFile"
+public class net.minecraft.client.gui.GuiDownloadTerrain extends net.minecraft.client.gui.GuiScreen {
+  private net.minecraft.client.network.NetHandlerPlayClient field_146594_a;
+
+  private int field_146593_f;
+
+  private static final java.lang.String __OBFID;
+
+  public net.minecraft.client.gui.GuiDownloadTerrain(net.minecraft.client.network.NetHandlerPlayClient);
+    Code:
+       0: aload_0
+       1: invokespecial #22                 // Method net/minecraft/client/gui/GuiScreen."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #24                 // Field field_146594_a:Lnet/minecraft/client/network/NetHandlerPlayClient;
+       9: return
+
+  protected void func_73869_a(char, int);
+    Code:
+       0: return
+
+  public void func_73866_w_();
+    Code:
+       0: aload_0
+       1: getfield      #37                 // Field field_146292_n:Ljava/util/List;
+       4: invokeinterface #42,  1           // InterfaceMethod java/util/List.clear:()V
+       9: return
+
+  public void func_73876_c();
+    Code:
+       0: aload_0
+       1: dup
+       2: getfield      #45                 // Field field_146593_f:I
+       5: iconst_1
+       6: iadd
+       7: putfield      #45                 // Field field_146593_f:I
+      10: aload_0
+      11: getfield      #45                 // Field field_146593_f:I
+      14: bipush        20
+      16: irem
+      17: ifne          34
+      20: aload_0
+      21: getfield      #24                 // Field field_146594_a:Lnet/minecraft/client/network/NetHandlerPlayClient;
+      24: new           #47                 // class net/minecraft/network/play/client/C00PacketKeepAlive
+      27: dup
+      28: invokespecial #48                 // Method net/minecraft/network/play/client/C00PacketKeepAlive."<init>":()V
+      31: invokevirtual #54                 // Method net/minecraft/client/network/NetHandlerPlayClient.func_147297_a:(Lnet/minecraft/network/Packet;)V
+      34: aload_0
+      35: getfield      #24                 // Field field_146594_a:Lnet/minecraft/client/network/NetHandlerPlayClient;
+      38: ifnull        48
+      41: aload_0
+      42: getfield      #24                 // Field field_146594_a:Lnet/minecraft/client/network/NetHandlerPlayClient;
+      45: invokevirtual #57                 // Method net/minecraft/client/network/NetHandlerPlayClient.func_147233_a:()V
+      48: return
+
+  public void func_73863_a(int, int, float);
+    Code:
+       0: aload_0
+       1: iconst_0
+       2: invokevirtual #63                 // Method func_146278_c:(I)V
+       5: aload_0
+       6: aload_0
+       7: getfield      #67                 // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+      10: ldc           #69                 // String multiplayer.downloadingTerrain
+      12: iconst_0
+      13: anewarray     #71                 // class java/lang/Object
+      16: invokestatic  #77                 // Method net/minecraft/client/resources/I18n.func_135052_a:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+      19: aload_0
+      20: getfield      #80                 // Field field_146294_l:I
+      23: iconst_2
+      24: idiv
+      25: aload_0
+      26: getfield      #83                 // Field field_146295_m:I
+      29: iconst_2
+      30: idiv
+      31: bipush        50
+      33: isub
+      34: ldc           #84                 // int 16777215
+      36: invokevirtual #88                 // Method func_73732_a:(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V
+      39: aload_0
+      40: iload_1
+      41: iload_2
+      42: fload_3
+      43: invokespecial #90                 // Method net/minecraft/client/gui/GuiScreen.func_73863_a:(IIF)V
+      46: return
+
+  public boolean func_73868_f();
+    Code:
+       0: iconst_0
+       1: ireturn
+}
+Compiled from "SourceFile"
+public class net.minecraft.client.LoadingScreenRenderer implements net.minecraft.util.IProgressUpdate {
+  private java.lang.String field_73727_a;
+
+  private net.minecraft.client.Minecraft field_73725_b;
+
+  private java.lang.String field_73726_c;
+
+  private long field_73723_d;
+
+  private boolean field_73724_e;
+
+  private net.minecraft.client.gui.ScaledResolution field_146587_f;
+
+  private net.minecraft.client.shader.Framebuffer field_146588_g;
+
+  private static final java.lang.String __OBFID;
+
+  public net.minecraft.client.LoadingScreenRenderer(net.minecraft.client.Minecraft);
+    Code:
+       0: aload_0
+       1: invokespecial #32                 // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: ldc           #34                 // String
+       7: putfield      #36                 // Field field_73727_a:Ljava/lang/String;
+      10: aload_0
+      11: ldc           #34                 // String
+      13: putfield      #38                 // Field field_73726_c:Ljava/lang/String;
+      16: aload_0
+      17: invokestatic  #44                 // Method net/minecraft/client/Minecraft.func_71386_F:()J
+      20: putfield      #46                 // Field field_73723_d:J
+      23: aload_0
+      24: aload_1
+      25: putfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+      28: aload_0
+      29: new           #50                 // class net/minecraft/client/gui/ScaledResolution
+      32: dup
+      33: aload_1
+      34: aload_1
+      35: getfield      #54                 // Field net/minecraft/client/Minecraft.field_71443_c:I
+      38: aload_1
+      39: getfield      #57                 // Field net/minecraft/client/Minecraft.field_71440_d:I
+      42: invokespecial #60                 // Method net/minecraft/client/gui/ScaledResolution."<init>":(Lnet/minecraft/client/Minecraft;II)V
+      45: putfield      #62                 // Field field_146587_f:Lnet/minecraft/client/gui/ScaledResolution;
+      48: aload_0
+      49: new           #64                 // class net/minecraft/client/shader/Framebuffer
+      52: dup
+      53: aload_1
+      54: getfield      #54                 // Field net/minecraft/client/Minecraft.field_71443_c:I
+      57: aload_1
+      58: getfield      #57                 // Field net/minecraft/client/Minecraft.field_71440_d:I
+      61: iconst_0
+      62: invokespecial #67                 // Method net/minecraft/client/shader/Framebuffer."<init>":(IIZ)V
+      65: putfield      #69                 // Field field_146588_g:Lnet/minecraft/client/shader/Framebuffer;
+      68: aload_0
+      69: getfield      #69                 // Field field_146588_g:Lnet/minecraft/client/shader/Framebuffer;
+      72: sipush        9728
+      75: invokevirtual #73                 // Method net/minecraft/client/shader/Framebuffer.func_147607_a:(I)V
+      78: return
+
+  public void func_73721_b(java.lang.String);
+    Code:
+       0: aload_0
+       1: iconst_0
+       2: putfield      #80                 // Field field_73724_e:Z
+       5: aload_0
+       6: aload_1
+       7: invokevirtual #83                 // Method func_73722_d:(Ljava/lang/String;)V
+      10: return
+
+  public void func_73720_a(java.lang.String);
+    Code:
+       0: aload_0
+       1: iconst_1
+       2: putfield      #80                 // Field field_73724_e:Z
+       5: aload_0
+       6: aload_1
+       7: invokevirtual #83                 // Method func_73722_d:(Ljava/lang/String;)V
+      10: return
+
+  public void func_73722_d(java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #38                 // Field field_73726_c:Ljava/lang/String;
+       5: aload_0
+       6: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+       9: getfield      #89                 // Field net/minecraft/client/Minecraft.field_71425_J:Z
+      12: ifne          31
+      15: aload_0
+      16: getfield      #80                 // Field field_73724_e:Z
+      19: ifeq          23
+      22: return
+      23: new           #91                 // class net/minecraft/util/MinecraftError
+      26: dup
+      27: invokespecial #92                 // Method net/minecraft/util/MinecraftError."<init>":()V
+      30: athrow
+      31: sipush        256
+      34: invokestatic  #97                 // Method org/lwjgl/opengl/GL11.glClear:(I)V
+      37: sipush        5889
+      40: invokestatic  #100                // Method org/lwjgl/opengl/GL11.glMatrixMode:(I)V
+      43: invokestatic  #103                // Method org/lwjgl/opengl/GL11.glLoadIdentity:()V
+      46: invokestatic  #109                // Method net/minecraft/client/renderer/OpenGlHelper.func_148822_b:()Z
+      49: ifeq          94
+      52: aload_0
+      53: getfield      #62                 // Field field_146587_f:Lnet/minecraft/client/gui/ScaledResolution;
+      56: invokevirtual #113                // Method net/minecraft/client/gui/ScaledResolution.func_78325_e:()I
+      59: istore_2
+      60: dconst_0
+      61: aload_0
+      62: getfield      #62                 // Field field_146587_f:Lnet/minecraft/client/gui/ScaledResolution;
+      65: invokevirtual #116                // Method net/minecraft/client/gui/ScaledResolution.func_78326_a:()I
+      68: iload_2
+      69: imul
+      70: i2d
+      71: aload_0
+      72: getfield      #62                 // Field field_146587_f:Lnet/minecraft/client/gui/ScaledResolution;
+      75: invokevirtual #119                // Method net/minecraft/client/gui/ScaledResolution.func_78328_b:()I
+      78: iload_2
+      79: imul
+      80: i2d
+      81: dconst_0
+      82: ldc2_w        #120                // double 100.0d
+      85: ldc2_w        #122                // double 300.0d
+      88: invokestatic  #127                // Method org/lwjgl/opengl/GL11.glOrtho:(DDDDDD)V
+      91: goto          139
+      94: new           #50                 // class net/minecraft/client/gui/ScaledResolution
+      97: dup
+      98: aload_0
+      99: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     102: aload_0
+     103: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     106: getfield      #54                 // Field net/minecraft/client/Minecraft.field_71443_c:I
+     109: aload_0
+     110: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     113: getfield      #57                 // Field net/minecraft/client/Minecraft.field_71440_d:I
+     116: invokespecial #60                 // Method net/minecraft/client/gui/ScaledResolution."<init>":(Lnet/minecraft/client/Minecraft;II)V
+     119: astore_2
+     120: dconst_0
+     121: aload_2
+     122: invokevirtual #131                // Method net/minecraft/client/gui/ScaledResolution.func_78327_c:()D
+     125: aload_2
+     126: invokevirtual #134                // Method net/minecraft/client/gui/ScaledResolution.func_78324_d:()D
+     129: dconst_0
+     130: ldc2_w        #120                // double 100.0d
+     133: ldc2_w        #122                // double 300.0d
+     136: invokestatic  #127                // Method org/lwjgl/opengl/GL11.glOrtho:(DDDDDD)V
+     139: sipush        5888
+     142: invokestatic  #100                // Method org/lwjgl/opengl/GL11.glMatrixMode:(I)V
+     145: invokestatic  #103                // Method org/lwjgl/opengl/GL11.glLoadIdentity:()V
+     148: fconst_0
+     149: fconst_0
+     150: ldc           #135                // float -200.0f
+     152: invokestatic  #139                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+     155: return
+
+  public void func_73719_c(java.lang.String);
+    Code:
+       0: aload_0
+       1: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+       4: getfield      #89                 // Field net/minecraft/client/Minecraft.field_71425_J:Z
+       7: ifne          26
+      10: aload_0
+      11: getfield      #80                 // Field field_73724_e:Z
+      14: ifeq          18
+      17: return
+      18: new           #91                 // class net/minecraft/util/MinecraftError
+      21: dup
+      22: invokespecial #92                 // Method net/minecraft/util/MinecraftError."<init>":()V
+      25: athrow
+      26: aload_0
+      27: lconst_0
+      28: putfield      #46                 // Field field_73723_d:J
+      31: aload_0
+      32: aload_1
+      33: putfield      #36                 // Field field_73727_a:Ljava/lang/String;
+      36: aload_0
+      37: iconst_m1
+      38: invokevirtual #146                // Method func_73718_a:(I)V
+      41: aload_0
+      42: lconst_0
+      43: putfield      #46                 // Field field_73723_d:J
+      46: return
+
+  public void func_73718_a(int);
+    Code:
+       0: aload_0
+       1: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+       4: getfield      #89                 // Field net/minecraft/client/Minecraft.field_71425_J:Z
+       7: ifne          26
+      10: aload_0
+      11: getfield      #80                 // Field field_73724_e:Z
+      14: ifeq          18
+      17: return
+      18: new           #91                 // class net/minecraft/util/MinecraftError
+      21: dup
+      22: invokespecial #92                 // Method net/minecraft/util/MinecraftError."<init>":()V
+      25: athrow
+      26: invokestatic  #44                 // Method net/minecraft/client/Minecraft.func_71386_F:()J
+      29: lstore_2
+      30: lload_2
+      31: aload_0
+      32: getfield      #46                 // Field field_73723_d:J
+      35: lsub
+      36: ldc2_w        #150                // long 100l
+      39: lcmp
+      40: ifge          44
+      43: return
+      44: aload_0
+      45: lload_2
+      46: putfield      #46                 // Field field_73723_d:J
+      49: new           #50                 // class net/minecraft/client/gui/ScaledResolution
+      52: dup
+      53: aload_0
+      54: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+      57: aload_0
+      58: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+      61: getfield      #54                 // Field net/minecraft/client/Minecraft.field_71443_c:I
+      64: aload_0
+      65: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+      68: getfield      #57                 // Field net/minecraft/client/Minecraft.field_71440_d:I
+      71: invokespecial #60                 // Method net/minecraft/client/gui/ScaledResolution."<init>":(Lnet/minecraft/client/Minecraft;II)V
+      74: astore        4
+      76: aload         4
+      78: invokevirtual #113                // Method net/minecraft/client/gui/ScaledResolution.func_78325_e:()I
+      81: istore        5
+      83: aload         4
+      85: invokevirtual #116                // Method net/minecraft/client/gui/ScaledResolution.func_78326_a:()I
+      88: istore        6
+      90: aload         4
+      92: invokevirtual #119                // Method net/minecraft/client/gui/ScaledResolution.func_78328_b:()I
+      95: istore        7
+      97: invokestatic  #109                // Method net/minecraft/client/renderer/OpenGlHelper.func_148822_b:()Z
+     100: ifeq          113
+     103: aload_0
+     104: getfield      #69                 // Field field_146588_g:Lnet/minecraft/client/shader/Framebuffer;
+     107: invokevirtual #154                // Method net/minecraft/client/shader/Framebuffer.func_147614_f:()V
+     110: goto          119
+     113: sipush        256
+     116: invokestatic  #97                 // Method org/lwjgl/opengl/GL11.glClear:(I)V
+     119: aload_0
+     120: getfield      #69                 // Field field_146588_g:Lnet/minecraft/client/shader/Framebuffer;
+     123: iconst_0
+     124: invokevirtual #158                // Method net/minecraft/client/shader/Framebuffer.func_147610_a:(Z)V
+     127: sipush        5889
+     130: invokestatic  #100                // Method org/lwjgl/opengl/GL11.glMatrixMode:(I)V
+     133: invokestatic  #103                // Method org/lwjgl/opengl/GL11.glLoadIdentity:()V
+     136: dconst_0
+     137: aload         4
+     139: invokevirtual #131                // Method net/minecraft/client/gui/ScaledResolution.func_78327_c:()D
+     142: aload         4
+     144: invokevirtual #134                // Method net/minecraft/client/gui/ScaledResolution.func_78324_d:()D
+     147: dconst_0
+     148: ldc2_w        #120                // double 100.0d
+     151: ldc2_w        #122                // double 300.0d
+     154: invokestatic  #127                // Method org/lwjgl/opengl/GL11.glOrtho:(DDDDDD)V
+     157: sipush        5888
+     160: invokestatic  #100                // Method org/lwjgl/opengl/GL11.glMatrixMode:(I)V
+     163: invokestatic  #103                // Method org/lwjgl/opengl/GL11.glLoadIdentity:()V
+     166: fconst_0
+     167: fconst_0
+     168: ldc           #135                // float -200.0f
+     170: invokestatic  #139                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+     173: invokestatic  #109                // Method net/minecraft/client/renderer/OpenGlHelper.func_148822_b:()Z
+     176: ifne          185
+     179: sipush        16640
+     182: invokestatic  #97                 // Method org/lwjgl/opengl/GL11.glClear:(I)V
+     185: getstatic     #164                // Field net/minecraft/client/renderer/Tessellator.field_78398_a:Lnet/minecraft/client/renderer/Tessellator;
+     188: astore        8
+     190: aload_0
+     191: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     194: invokevirtual #168                // Method net/minecraft/client/Minecraft.func_110434_K:()Lnet/minecraft/client/renderer/texture/TextureManager;
+     197: getstatic     #174                // Field net/minecraft/client/gui/Gui.field_110325_k:Lnet/minecraft/util/ResourceLocation;
+     200: invokevirtual #180                // Method net/minecraft/client/renderer/texture/TextureManager.func_110577_a:(Lnet/minecraft/util/ResourceLocation;)V
+     203: ldc           #181                // float 32.0f
+     205: fstore        9
+     207: aload         8
+     209: invokevirtual #184                // Method net/minecraft/client/renderer/Tessellator.func_78382_b:()V
+     212: aload         8
+     214: ldc           #185                // int 4210752
+     216: invokevirtual #188                // Method net/minecraft/client/renderer/Tessellator.func_78378_d:(I)V
+     219: aload         8
+     221: dconst_0
+     222: iload         7
+     224: i2d
+     225: dconst_0
+     226: dconst_0
+     227: iload         7
+     229: i2f
+     230: fload         9
+     232: fdiv
+     233: f2d
+     234: invokevirtual #192                // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+     237: aload         8
+     239: iload         6
+     241: i2d
+     242: iload         7
+     244: i2d
+     245: dconst_0
+     246: iload         6
+     248: i2f
+     249: fload         9
+     251: fdiv
+     252: f2d
+     253: iload         7
+     255: i2f
+     256: fload         9
+     258: fdiv
+     259: f2d
+     260: invokevirtual #192                // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+     263: aload         8
+     265: iload         6
+     267: i2d
+     268: dconst_0
+     269: dconst_0
+     270: iload         6
+     272: i2f
+     273: fload         9
+     275: fdiv
+     276: f2d
+     277: dconst_0
+     278: invokevirtual #192                // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+     281: aload         8
+     283: dconst_0
+     284: dconst_0
+     285: dconst_0
+     286: dconst_0
+     287: dconst_0
+     288: invokevirtual #192                // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+     291: aload         8
+     293: invokevirtual #195                // Method net/minecraft/client/renderer/Tessellator.func_78381_a:()I
+     296: pop
+     297: iload_1
+     298: iflt          483
+     301: bipush        100
+     303: istore        10
+     305: iconst_2
+     306: istore        11
+     308: iload         6
+     310: iconst_2
+     311: idiv
+     312: iload         10
+     314: iconst_2
+     315: idiv
+     316: isub
+     317: istore        12
+     319: iload         7
+     321: iconst_2
+     322: idiv
+     323: bipush        16
+     325: iadd
+     326: istore        13
+     328: sipush        3553
+     331: invokestatic  #198                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+     334: aload         8
+     336: invokevirtual #184                // Method net/minecraft/client/renderer/Tessellator.func_78382_b:()V
+     339: aload         8
+     341: ldc           #199                // int 8421504
+     343: invokevirtual #188                // Method net/minecraft/client/renderer/Tessellator.func_78378_d:(I)V
+     346: aload         8
+     348: iload         12
+     350: i2d
+     351: iload         13
+     353: i2d
+     354: dconst_0
+     355: invokevirtual #203                // Method net/minecraft/client/renderer/Tessellator.func_78377_a:(DDD)V
+     358: aload         8
+     360: iload         12
+     362: i2d
+     363: iload         13
+     365: iload         11
+     367: iadd
+     368: i2d
+     369: dconst_0
+     370: invokevirtual #203                // Method net/minecraft/client/renderer/Tessellator.func_78377_a:(DDD)V
+     373: aload         8
+     375: iload         12
+     377: iload         10
+     379: iadd
+     380: i2d
+     381: iload         13
+     383: iload         11
+     385: iadd
+     386: i2d
+     387: dconst_0
+     388: invokevirtual #203                // Method net/minecraft/client/renderer/Tessellator.func_78377_a:(DDD)V
+     391: aload         8
+     393: iload         12
+     395: iload         10
+     397: iadd
+     398: i2d
+     399: iload         13
+     401: i2d
+     402: dconst_0
+     403: invokevirtual #203                // Method net/minecraft/client/renderer/Tessellator.func_78377_a:(DDD)V
+     406: aload         8
+     408: ldc           #204                // int 8454016
+     410: invokevirtual #188                // Method net/minecraft/client/renderer/Tessellator.func_78378_d:(I)V
+     413: aload         8
+     415: iload         12
+     417: i2d
+     418: iload         13
+     420: i2d
+     421: dconst_0
+     422: invokevirtual #203                // Method net/minecraft/client/renderer/Tessellator.func_78377_a:(DDD)V
+     425: aload         8
+     427: iload         12
+     429: i2d
+     430: iload         13
+     432: iload         11
+     434: iadd
+     435: i2d
+     436: dconst_0
+     437: invokevirtual #203                // Method net/minecraft/client/renderer/Tessellator.func_78377_a:(DDD)V
+     440: aload         8
+     442: iload         12
+     444: iload_1
+     445: iadd
+     446: i2d
+     447: iload         13
+     449: iload         11
+     451: iadd
+     452: i2d
+     453: dconst_0
+     454: invokevirtual #203                // Method net/minecraft/client/renderer/Tessellator.func_78377_a:(DDD)V
+     457: aload         8
+     459: iload         12
+     461: iload_1
+     462: iadd
+     463: i2d
+     464: iload         13
+     466: i2d
+     467: dconst_0
+     468: invokevirtual #203                // Method net/minecraft/client/renderer/Tessellator.func_78377_a:(DDD)V
+     471: aload         8
+     473: invokevirtual #195                // Method net/minecraft/client/renderer/Tessellator.func_78381_a:()I
+     476: pop
+     477: sipush        3553
+     480: invokestatic  #207                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+     483: sipush        3042
+     486: invokestatic  #207                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+     489: sipush        770
+     492: sipush        771
+     495: iconst_1
+     496: iconst_0
+     497: invokestatic  #211                // Method net/minecraft/client/renderer/OpenGlHelper.func_148821_a:(IIII)V
+     500: aload_0
+     501: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     504: getfield      #215                // Field net/minecraft/client/Minecraft.field_71466_p:Lnet/minecraft/client/gui/FontRenderer;
+     507: aload_0
+     508: getfield      #38                 // Field field_73726_c:Ljava/lang/String;
+     511: iload         6
+     513: aload_0
+     514: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     517: getfield      #215                // Field net/minecraft/client/Minecraft.field_71466_p:Lnet/minecraft/client/gui/FontRenderer;
+     520: aload_0
+     521: getfield      #38                 // Field field_73726_c:Ljava/lang/String;
+     524: invokevirtual #221                // Method net/minecraft/client/gui/FontRenderer.func_78256_a:(Ljava/lang/String;)I
+     527: isub
+     528: iconst_2
+     529: idiv
+     530: iload         7
+     532: iconst_2
+     533: idiv
+     534: iconst_4
+     535: isub
+     536: bipush        16
+     538: isub
+     539: ldc           #222                // int 16777215
+     541: invokevirtual #226                // Method net/minecraft/client/gui/FontRenderer.func_78261_a:(Ljava/lang/String;III)I
+     544: pop
+     545: aload_0
+     546: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     549: getfield      #215                // Field net/minecraft/client/Minecraft.field_71466_p:Lnet/minecraft/client/gui/FontRenderer;
+     552: aload_0
+     553: getfield      #36                 // Field field_73727_a:Ljava/lang/String;
+     556: iload         6
+     558: aload_0
+     559: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     562: getfield      #215                // Field net/minecraft/client/Minecraft.field_71466_p:Lnet/minecraft/client/gui/FontRenderer;
+     565: aload_0
+     566: getfield      #36                 // Field field_73727_a:Ljava/lang/String;
+     569: invokevirtual #221                // Method net/minecraft/client/gui/FontRenderer.func_78256_a:(Ljava/lang/String;)I
+     572: isub
+     573: iconst_2
+     574: idiv
+     575: iload         7
+     577: iconst_2
+     578: idiv
+     579: iconst_4
+     580: isub
+     581: bipush        8
+     583: iadd
+     584: ldc           #222                // int 16777215
+     586: invokevirtual #226                // Method net/minecraft/client/gui/FontRenderer.func_78261_a:(Ljava/lang/String;III)I
+     589: pop
+     590: aload_0
+     591: getfield      #69                 // Field field_146588_g:Lnet/minecraft/client/shader/Framebuffer;
+     594: invokevirtual #229                // Method net/minecraft/client/shader/Framebuffer.func_147609_e:()V
+     597: invokestatic  #109                // Method net/minecraft/client/renderer/OpenGlHelper.func_148822_b:()Z
+     600: ifeq          620
+     603: aload_0
+     604: getfield      #69                 // Field field_146588_g:Lnet/minecraft/client/shader/Framebuffer;
+     607: iload         6
+     609: iload         5
+     611: imul
+     612: iload         7
+     614: iload         5
+     616: imul
+     617: invokevirtual #233                // Method net/minecraft/client/shader/Framebuffer.func_147615_c:(II)V
+     620: aload_0
+     621: getfield      #48                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     624: invokevirtual #236                // Method net/minecraft/client/Minecraft.func_147120_f:()V
+     627: invokestatic  #241                // Method java/lang/Thread.yield:()V
+     630: goto          635
+     633: astore        10
+     635: return
+    Exception table:
+       from    to  target type
+         627   630   633   Class java/lang/Exception
+
+  public void func_146586_a();
+    Code:
+       0: return
+}
+Compiled from "SourceFile"
+public class net.minecraft.client.audio.SoundHandler implements net.minecraft.client.resources.IResourceManagerReloadListener,net.minecraft.server.gui.IUpdatePlayerListBox {
+  private static final org.apache.logging.log4j.Logger field_147698_b;
+
+  private static final com.google.gson.Gson field_147699_c;
+
+  private static final java.lang.reflect.ParameterizedType field_147696_d;
+
+  public static final net.minecraft.client.audio.SoundPoolEntry field_147700_a;
+
+  private final net.minecraft.client.audio.SoundRegistry field_147697_e;
+
+  private final net.minecraft.client.audio.SoundManager field_147694_f;
+
+  private final net.minecraft.client.resources.IResourceManager field_147695_g;
+
+  private static final java.lang.String __OBFID;
+
+  public net.minecraft.client.audio.SoundHandler(net.minecraft.client.resources.IResourceManager, net.minecraft.client.settings.GameSettings);
+    Code:
+       0: aload_0
+       1: invokespecial #43                 // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: new           #45                 // class net/minecraft/client/audio/SoundRegistry
+       8: dup
+       9: invokespecial #46                 // Method net/minecraft/client/audio/SoundRegistry."<init>":()V
+      12: putfield      #48                 // Field field_147697_e:Lnet/minecraft/client/audio/SoundRegistry;
+      15: aload_0
+      16: aload_1
+      17: putfield      #50                 // Field field_147695_g:Lnet/minecraft/client/resources/IResourceManager;
+      20: aload_0
+      21: new           #52                 // class net/minecraft/client/audio/SoundManager
+      24: dup
+      25: aload_0
+      26: aload_2
+      27: invokespecial #55                 // Method net/minecraft/client/audio/SoundManager."<init>":(Lnet/minecraft/client/audio/SoundHandler;Lnet/minecraft/client/settings/GameSettings;)V
+      30: putfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+      33: return
+
+  public void func_110549_a(net.minecraft.client.resources.IResourceManager);
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+       4: invokevirtual #71                 // Method net/minecraft/client/audio/SoundManager.func_148596_a:()V
+       7: aload_0
+       8: getfield      #48                 // Field field_147697_e:Lnet/minecraft/client/audio/SoundRegistry;
+      11: invokevirtual #74                 // Method net/minecraft/client/audio/SoundRegistry.func_148763_c:()V
+      14: aload_1
+      15: invokeinterface #80,  1           // InterfaceMethod net/minecraft/client/resources/IResourceManager.func_135055_a:()Ljava/util/Set;
+      20: invokeinterface #86,  1           // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+      25: astore_2
+      26: aload_2
+      27: invokeinterface #92,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+      32: ifeq          221
+      35: aload_2
+      36: invokeinterface #96,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      41: checkcast     #98                 // class java/lang/String
+      44: astore_3
+      45: aload_1
+      46: new           #100                // class net/minecraft/util/ResourceLocation
+      49: dup
+      50: aload_3
+      51: ldc           #102                // String sounds.json
+      53: invokespecial #105                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+      56: invokeinterface #109,  2          // InterfaceMethod net/minecraft/client/resources/IResourceManager.func_135056_b:(Lnet/minecraft/util/ResourceLocation;)Ljava/util/List;
+      61: astore        4
+      63: aload         4
+      65: invokeinterface #112,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      70: astore        5
+      72: aload         5
+      74: invokeinterface #92,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+      79: ifeq          213
+      82: aload         5
+      84: invokeinterface #96,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      89: checkcast     #114                // class net/minecraft/client/resources/IResource
+      92: astore        6
+      94: getstatic     #116                // Field field_147699_c:Lcom/google/gson/Gson;
+      97: new           #118                // class java/io/InputStreamReader
+     100: dup
+     101: aload         6
+     103: invokeinterface #122,  1          // InterfaceMethod net/minecraft/client/resources/IResource.func_110527_b:()Ljava/io/InputStream;
+     108: invokespecial #125                // Method java/io/InputStreamReader."<init>":(Ljava/io/InputStream;)V
+     111: getstatic     #127                // Field field_147696_d:Ljava/lang/reflect/ParameterizedType;
+     114: invokevirtual #133                // Method com/google/gson/Gson.fromJson:(Ljava/io/Reader;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+     117: checkcast     #135                // class java/util/Map
+     120: astore        7
+     122: aload         7
+     124: invokeinterface #138,  1          // InterfaceMethod java/util/Map.entrySet:()Ljava/util/Set;
+     129: invokeinterface #86,  1           // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+     134: astore        8
+     136: aload         8
+     138: invokeinterface #92,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+     143: ifeq          193
+     146: aload         8
+     148: invokeinterface #96,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     153: checkcast     #140                // class java/util/Map$Entry
+     156: astore        9
+     158: aload_0
+     159: new           #100                // class net/minecraft/util/ResourceLocation
+     162: dup
+     163: aload_3
+     164: aload         9
+     166: invokeinterface #143,  1          // InterfaceMethod java/util/Map$Entry.getKey:()Ljava/lang/Object;
+     171: checkcast     #98                 // class java/lang/String
+     174: invokespecial #105                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     177: aload         9
+     179: invokeinterface #146,  1          // InterfaceMethod java/util/Map$Entry.getValue:()Ljava/lang/Object;
+     184: checkcast     #148                // class net/minecraft/client/audio/SoundList
+     187: invokespecial #152                // Method func_147693_a:(Lnet/minecraft/util/ResourceLocation;Lnet/minecraft/client/audio/SoundList;)V
+     190: goto          136
+     193: goto          210
+     196: astore        7
+     198: getstatic     #154                // Field field_147698_b:Lorg/apache/logging/log4j/Logger;
+     201: ldc           #156                // String Invalid sounds.json
+     203: aload         7
+     205: invokeinterface #162,  3          // InterfaceMethod org/apache/logging/log4j/Logger.warn:(Ljava/lang/String;Ljava/lang/Throwable;)V
+     210: goto          72
+     213: goto          218
+     216: astore        4
+     218: goto          26
+     221: return
+    Exception table:
+       from    to  target type
+          94   193   196   Class java/lang/RuntimeException
+          45   213   216   Class java/io/IOException
+
+  private void func_147693_a(net.minecraft.util.ResourceLocation, net.minecraft.client.audio.SoundList);
+    Code:
+       0: aload_0
+       1: getfield      #48                 // Field field_147697_e:Lnet/minecraft/client/audio/SoundRegistry;
+       4: aload_1
+       5: invokevirtual #169                // Method net/minecraft/client/audio/SoundRegistry.func_148741_d:(Ljava/lang/Object;)Z
+       8: ifeq          18
+      11: aload_2
+      12: invokevirtual #172                // Method net/minecraft/client/audio/SoundList.func_148574_b:()Z
+      15: ifeq          62
+      18: getstatic     #154                // Field field_147698_b:Lorg/apache/logging/log4j/Logger;
+      21: ldc           #174                // String Registered/replaced new sound event location {}
+      23: iconst_1
+      24: anewarray     #4                  // class java/lang/Object
+      27: dup
+      28: iconst_0
+      29: aload_1
+      30: aastore
+      31: invokeinterface #178,  3          // InterfaceMethod org/apache/logging/log4j/Logger.debug:(Ljava/lang/String;[Ljava/lang/Object;)V
+      36: new           #180                // class net/minecraft/client/audio/SoundEventAccessorComposite
+      39: dup
+      40: aload_1
+      41: dconst_1
+      42: dconst_1
+      43: aload_2
+      44: invokevirtual #184                // Method net/minecraft/client/audio/SoundList.func_148573_c:()Lnet/minecraft/client/audio/SoundCategory;
+      47: invokespecial #187                // Method net/minecraft/client/audio/SoundEventAccessorComposite."<init>":(Lnet/minecraft/util/ResourceLocation;DDLnet/minecraft/client/audio/SoundCategory;)V
+      50: astore_3
+      51: aload_0
+      52: getfield      #48                 // Field field_147697_e:Lnet/minecraft/client/audio/SoundRegistry;
+      55: aload_3
+      56: invokevirtual #191                // Method net/minecraft/client/audio/SoundRegistry.func_148762_a:(Lnet/minecraft/client/audio/SoundEventAccessorComposite;)V
+      59: goto          74
+      62: aload_0
+      63: getfield      #48                 // Field field_147697_e:Lnet/minecraft/client/audio/SoundRegistry;
+      66: aload_1
+      67: invokevirtual #195                // Method net/minecraft/client/audio/SoundRegistry.func_82594_a:(Ljava/lang/Object;)Ljava/lang/Object;
+      70: checkcast     #180                // class net/minecraft/client/audio/SoundEventAccessorComposite
+      73: astore_3
+      74: aload_2
+      75: invokevirtual #199                // Method net/minecraft/client/audio/SoundList.func_148570_a:()Ljava/util/List;
+      78: invokeinterface #112,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      83: astore        4
+      85: aload         4
+      87: invokeinterface #92,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+      92: ifeq          396
+      95: aload         4
+      97: invokeinterface #96,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     102: checkcast     #201                // class net/minecraft/client/audio/SoundList$SoundEntry
+     105: astore        5
+     107: aload         5
+     109: invokevirtual #205                // Method net/minecraft/client/audio/SoundList$SoundEntry.func_148556_a:()Ljava/lang/String;
+     112: astore        6
+     114: new           #100                // class net/minecraft/util/ResourceLocation
+     117: dup
+     118: aload         6
+     120: invokespecial #208                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+     123: astore        7
+     125: aload         6
+     127: ldc           #210                // String :
+     129: invokevirtual #214                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+     132: ifeq          143
+     135: aload         7
+     137: invokevirtual #217                // Method net/minecraft/util/ResourceLocation.func_110624_b:()Ljava/lang/String;
+     140: goto          147
+     143: aload_1
+     144: invokevirtual #217                // Method net/minecraft/util/ResourceLocation.func_110624_b:()Ljava/lang/String;
+     147: astore        8
+     149: getstatic     #221                // Field net/minecraft/client/audio/SoundHandler$SwitchType.field_148765_a:[I
+     152: aload         5
+     154: invokevirtual #225                // Method net/minecraft/client/audio/SoundList$SoundEntry.func_148563_e:()Lnet/minecraft/client/audio/SoundList$SoundEntry$Type;
+     157: invokevirtual #231                // Method net/minecraft/client/audio/SoundList$SoundEntry$Type.ordinal:()I
+     160: iaload
+     161: lookupswitch  { // 2
+
+                     1: 188
+
+                     2: 359
+               default: 376
+          }
+     188: new           #100                // class net/minecraft/util/ResourceLocation
+     191: dup
+     192: aload         8
+     194: new           #233                // class java/lang/StringBuilder
+     197: dup
+     198: invokespecial #234                // Method java/lang/StringBuilder."<init>":()V
+     201: ldc           #236                // String sounds/
+     203: invokevirtual #240                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     206: aload         7
+     208: invokevirtual #243                // Method net/minecraft/util/ResourceLocation.func_110623_a:()Ljava/lang/String;
+     211: invokevirtual #240                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     214: ldc           #245                // String .ogg
+     216: invokevirtual #240                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     219: invokevirtual #248                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     222: invokespecial #105                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     225: astore        10
+     227: aload_0
+     228: getfield      #50                 // Field field_147695_g:Lnet/minecraft/client/resources/IResourceManager;
+     231: aload         10
+     233: invokeinterface #252,  2          // InterfaceMethod net/minecraft/client/resources/IResourceManager.func_110536_a:(Lnet/minecraft/util/ResourceLocation;)Lnet/minecraft/client/resources/IResource;
+     238: pop
+     239: goto          316
+     242: astore        11
+     244: getstatic     #154                // Field field_147698_b:Lorg/apache/logging/log4j/Logger;
+     247: ldc           #254                // String File {} does not exist, cannot add it to event {}
+     249: iconst_2
+     250: anewarray     #4                  // class java/lang/Object
+     253: dup
+     254: iconst_0
+     255: aload         10
+     257: aastore
+     258: dup
+     259: iconst_1
+     260: aload_1
+     261: aastore
+     262: invokeinterface #256,  3          // InterfaceMethod org/apache/logging/log4j/Logger.warn:(Ljava/lang/String;[Ljava/lang/Object;)V
+     267: goto          85
+     270: astore        11
+     272: getstatic     #154                // Field field_147698_b:Lorg/apache/logging/log4j/Logger;
+     275: new           #233                // class java/lang/StringBuilder
+     278: dup
+     279: invokespecial #234                // Method java/lang/StringBuilder."<init>":()V
+     282: ldc_w         #258                // String Could not load sound file
+     285: invokevirtual #240                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     288: aload         10
+     290: invokevirtual #261                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+     293: ldc_w         #263                // String , cannot add it to event
+     296: invokevirtual #240                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     299: aload_1
+     300: invokevirtual #261                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+     303: invokevirtual #248                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     306: aload         11
+     308: invokeinterface #162,  3          // InterfaceMethod org/apache/logging/log4j/Logger.warn:(Ljava/lang/String;Ljava/lang/Throwable;)V
+     313: goto          85
+     316: new           #265                // class net/minecraft/client/audio/SoundEventAccessor
+     319: dup
+     320: new           #267                // class net/minecraft/client/audio/SoundPoolEntry
+     323: dup
+     324: aload         10
+     326: aload         5
+     328: invokevirtual #271                // Method net/minecraft/client/audio/SoundList$SoundEntry.func_148560_c:()F
+     331: f2d
+     332: aload         5
+     334: invokevirtual #274                // Method net/minecraft/client/audio/SoundList$SoundEntry.func_148558_b:()F
+     337: f2d
+     338: aload         5
+     340: invokevirtual #277                // Method net/minecraft/client/audio/SoundList$SoundEntry.func_148552_f:()Z
+     343: invokespecial #280                // Method net/minecraft/client/audio/SoundPoolEntry."<init>":(Lnet/minecraft/util/ResourceLocation;DDZ)V
+     346: aload         5
+     348: invokevirtual #283                // Method net/minecraft/client/audio/SoundList$SoundEntry.func_148555_d:()I
+     351: invokespecial #286                // Method net/minecraft/client/audio/SoundEventAccessor."<init>":(Lnet/minecraft/client/audio/SoundPoolEntry;I)V
+     354: astore        9
+     356: goto          387
+     359: new           #17                 // class net/minecraft/client/audio/SoundHandler$2
+     362: dup
+     363: aload_0
+     364: aload         8
+     366: aload         5
+     368: invokespecial #289                // Method net/minecraft/client/audio/SoundHandler$2."<init>":(Lnet/minecraft/client/audio/SoundHandler;Ljava/lang/String;Lnet/minecraft/client/audio/SoundList$SoundEntry;)V
+     371: astore        9
+     373: goto          387
+     376: new           #291                // class java/lang/IllegalStateException
+     379: dup
+     380: ldc_w         #293                // String IN YOU FACE
+     383: invokespecial #294                // Method java/lang/IllegalStateException."<init>":(Ljava/lang/String;)V
+     386: athrow
+     387: aload_3
+     388: aload         9
+     390: invokevirtual #300                // Method net/minecraft/client/audio/SoundEventAccessorComposite.func_148727_a:(Lnet/minecraft/client/audio/ISoundEventAccessor;)V
+     393: goto          85
+     396: return
+    Exception table:
+       from    to  target type
+         227   239   242   Class java/io/FileNotFoundException
+         227   239   270   Class java/io/IOException
+
+  public net.minecraft.client.audio.SoundEventAccessorComposite func_147680_a(net.minecraft.util.ResourceLocation);
+    Code:
+       0: aload_0
+       1: getfield      #48                 // Field field_147697_e:Lnet/minecraft/client/audio/SoundRegistry;
+       4: aload_1
+       5: invokevirtual #195                // Method net/minecraft/client/audio/SoundRegistry.func_82594_a:(Ljava/lang/Object;)Ljava/lang/Object;
+       8: checkcast     #180                // class net/minecraft/client/audio/SoundEventAccessorComposite
+      11: areturn
+
+  public void func_147682_a(net.minecraft.client.audio.ISound);
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+       4: aload_1
+       5: invokevirtual #312                // Method net/minecraft/client/audio/SoundManager.func_148611_c:(Lnet/minecraft/client/audio/ISound;)V
+       8: return
+
+  public void func_147681_a(net.minecraft.client.audio.ISound, int);
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+       4: aload_1
+       5: iload_2
+       6: invokevirtual #319                // Method net/minecraft/client/audio/SoundManager.func_148599_a:(Lnet/minecraft/client/audio/ISound;I)V
+       9: return
+
+  public void func_147691_a(net.minecraft.entity.player.EntityPlayer, float);
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+       4: aload_1
+       5: fload_2
+       6: invokevirtual #327                // Method net/minecraft/client/audio/SoundManager.func_148615_a:(Lnet/minecraft/entity/player/EntityPlayer;F)V
+       9: return
+
+  public void func_147689_b();
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+       4: invokevirtual #335                // Method net/minecraft/client/audio/SoundManager.func_148610_e:()V
+       7: return
+
+  public void func_147690_c();
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+       4: invokevirtual #339                // Method net/minecraft/client/audio/SoundManager.func_148614_c:()V
+       7: return
+
+  public void func_147685_d();
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+       4: invokevirtual #343                // Method net/minecraft/client/audio/SoundManager.func_148613_b:()V
+       7: return
+
+  public void func_73660_a();
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+       4: invokevirtual #347                // Method net/minecraft/client/audio/SoundManager.func_148605_d:()V
+       7: return
+
+  public void func_147687_e();
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+       4: invokevirtual #351                // Method net/minecraft/client/audio/SoundManager.func_148604_f:()V
+       7: return
+
+  public void func_147684_a(net.minecraft.client.audio.SoundCategory, float);
+    Code:
+       0: aload_1
+       1: getstatic     #359                // Field net/minecraft/client/audio/SoundCategory.MASTER:Lnet/minecraft/client/audio/SoundCategory;
+       4: if_acmpne     17
+       7: fload_2
+       8: fconst_0
+       9: fcmpg
+      10: ifgt          17
+      13: aload_0
+      14: invokevirtual #361                // Method func_147690_c:()V
+      17: aload_0
+      18: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+      21: aload_1
+      22: fload_2
+      23: invokevirtual #364                // Method net/minecraft/client/audio/SoundManager.func_148601_a:(Lnet/minecraft/client/audio/SoundCategory;F)V
+      26: return
+
+  public void func_147683_b(net.minecraft.client.audio.ISound);
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+       4: aload_1
+       5: invokevirtual #370                // Method net/minecraft/client/audio/SoundManager.func_148602_b:(Lnet/minecraft/client/audio/ISound;)V
+       8: return
+
+  public net.minecraft.client.audio.SoundEventAccessorComposite func_147686_a(net.minecraft.client.audio.SoundCategory...);
+    Code:
+       0: invokestatic  #379                // Method com/google/common/collect/Lists.newArrayList:()Ljava/util/ArrayList;
+       3: astore_2
+       4: aload_0
+       5: getfield      #48                 // Field field_147697_e:Lnet/minecraft/client/audio/SoundRegistry;
+       8: invokevirtual #382                // Method net/minecraft/client/audio/SoundRegistry.func_148742_b:()Ljava/util/Set;
+      11: invokeinterface #86,  1           // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+      16: astore_3
+      17: aload_3
+      18: invokeinterface #92,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+      23: ifeq          75
+      26: aload_3
+      27: invokeinterface #96,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      32: checkcast     #100                // class net/minecraft/util/ResourceLocation
+      35: astore        4
+      37: aload_0
+      38: getfield      #48                 // Field field_147697_e:Lnet/minecraft/client/audio/SoundRegistry;
+      41: aload         4
+      43: invokevirtual #195                // Method net/minecraft/client/audio/SoundRegistry.func_82594_a:(Ljava/lang/Object;)Ljava/lang/Object;
+      46: checkcast     #180                // class net/minecraft/client/audio/SoundEventAccessorComposite
+      49: astore        5
+      51: aload_1
+      52: aload         5
+      54: invokevirtual #387                // Method net/minecraft/client/audio/SoundEventAccessorComposite.func_148728_d:()Lnet/minecraft/client/audio/SoundCategory;
+      57: invokestatic  #392                // Method org/apache/commons/lang3/ArrayUtils.contains:([Ljava/lang/Object;Ljava/lang/Object;)Z
+      60: ifeq          72
+      63: aload_2
+      64: aload         5
+      66: invokeinterface #395,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      71: pop
+      72: goto          17
+      75: aload_2
+      76: invokeinterface #398,  1          // InterfaceMethod java/util/List.isEmpty:()Z
+      81: ifeq          86
+      84: aconst_null
+      85: areturn
+      86: aload_2
+      87: new           #400                // class java/util/Random
+      90: dup
+      91: invokespecial #401                // Method java/util/Random."<init>":()V
+      94: aload_2
+      95: invokeinterface #404,  1          // InterfaceMethod java/util/List.size:()I
+     100: invokevirtual #408                // Method java/util/Random.nextInt:(I)I
+     103: invokeinterface #412,  2          // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+     108: checkcast     #180                // class net/minecraft/client/audio/SoundEventAccessorComposite
+     111: areturn
+
+  public boolean func_147692_c(net.minecraft.client.audio.ISound);
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field field_147694_f:Lnet/minecraft/client/audio/SoundManager;
+       4: aload_1
+       5: invokevirtual #419                // Method net/minecraft/client/audio/SoundManager.func_148597_a:(Lnet/minecraft/client/audio/ISound;)Z
+       8: ireturn
+
+  static net.minecraft.client.audio.SoundRegistry access$000(net.minecraft.client.audio.SoundHandler);
+    Code:
+       0: aload_0
+       1: getfield      #48                 // Field field_147697_e:Lnet/minecraft/client/audio/SoundRegistry;
+       4: areturn
+
+  static {};
+    Code:
+       0: invokestatic  #430                // Method org/apache/logging/log4j/LogManager.getLogger:()Lorg/apache/logging/log4j/Logger;
+       3: putstatic     #154                // Field field_147698_b:Lorg/apache/logging/log4j/Logger;
+       6: new           #432                // class com/google/gson/GsonBuilder
+       9: dup
+      10: invokespecial #433                // Method com/google/gson/GsonBuilder."<init>":()V
+      13: ldc           #148                // class net/minecraft/client/audio/SoundList
+      15: new           #435                // class net/minecraft/client/audio/SoundListSerializer
+      18: dup
+      19: invokespecial #436                // Method net/minecraft/client/audio/SoundListSerializer."<init>":()V
+      22: invokevirtual #440                // Method com/google/gson/GsonBuilder.registerTypeAdapter:(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
+      25: invokevirtual #444                // Method com/google/gson/GsonBuilder.create:()Lcom/google/gson/Gson;
+      28: putstatic     #116                // Field field_147699_c:Lcom/google/gson/Gson;
+      31: new           #15                 // class net/minecraft/client/audio/SoundHandler$1
+      34: dup
+      35: invokespecial #445                // Method net/minecraft/client/audio/SoundHandler$1."<init>":()V
+      38: putstatic     #127                // Field field_147696_d:Ljava/lang/reflect/ParameterizedType;
+      41: new           #267                // class net/minecraft/client/audio/SoundPoolEntry
+      44: dup
+      45: new           #100                // class net/minecraft/util/ResourceLocation
+      48: dup
+      49: ldc_w         #447                // String meta:missing_sound
+      52: invokespecial #208                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+      55: dconst_0
+      56: dconst_0
+      57: iconst_0
+      58: invokespecial #280                // Method net/minecraft/client/audio/SoundPoolEntry."<init>":(Lnet/minecraft/util/ResourceLocation;DDZ)V
+      61: putstatic     #449                // Field field_147700_a:Lnet/minecraft/client/audio/SoundPoolEntry;
+      64: return
+}
+Compiled from "SourceFile"
+public interface net.minecraft.client.audio.ITickableSound extends net.minecraft.client.audio.ISound,net.minecraft.server.gui.IUpdatePlayerListBox {
+  public abstract boolean func_147667_k();
+}
+Compiled from "SourceFile"
+public abstract class net.minecraft.client.audio.PositionedSound implements net.minecraft.client.audio.ISound {
+  protected final net.minecraft.util.ResourceLocation field_147664_a;
+
+  protected float field_147662_b;
+
+  protected float field_147663_c;
+
+  protected float field_147660_d;
+
+  protected float field_147661_e;
+
+  protected float field_147658_f;
+
+  protected boolean field_147659_g;
+
+  protected int field_147665_h;
+
+  protected net.minecraft.client.audio.ISound$AttenuationType field_147666_i;
+
+  private static final java.lang.String __OBFID;
+
+  protected net.minecraft.client.audio.PositionedSound(net.minecraft.util.ResourceLocation);
+    Code:
+       0: aload_0
+       1: invokespecial #37                 // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: fconst_1
+       6: putfield      #39                 // Field field_147662_b:F
+       9: aload_0
+      10: fconst_1
+      11: putfield      #41                 // Field field_147663_c:F
+      14: aload_0
+      15: iconst_0
+      16: putfield      #43                 // Field field_147659_g:Z
+      19: aload_0
+      20: iconst_0
+      21: putfield      #45                 // Field field_147665_h:I
+      24: aload_0
+      25: getstatic     #48                 // Field net/minecraft/client/audio/ISound$AttenuationType.LINEAR:Lnet/minecraft/client/audio/ISound$AttenuationType;
+      28: putfield      #50                 // Field field_147666_i:Lnet/minecraft/client/audio/ISound$AttenuationType;
+      31: aload_0
+      32: aload_1
+      33: putfield      #52                 // Field field_147664_a:Lnet/minecraft/util/ResourceLocation;
+      36: return
+
+  public net.minecraft.util.ResourceLocation func_147650_b();
+    Code:
+       0: aload_0
+       1: getfield      #52                 // Field field_147664_a:Lnet/minecraft/util/ResourceLocation;
+       4: areturn
+
+  public boolean func_147657_c();
+    Code:
+       0: aload_0
+       1: getfield      #43                 // Field field_147659_g:Z
+       4: ireturn
+
+  public int func_147652_d();
+    Code:
+       0: aload_0
+       1: getfield      #45                 // Field field_147665_h:I
+       4: ireturn
+
+  public float func_147653_e();
+    Code:
+       0: aload_0
+       1: getfield      #39                 // Field field_147662_b:F
+       4: freturn
+
+  public float func_147655_f();
+    Code:
+       0: aload_0
+       1: getfield      #41                 // Field field_147663_c:F
+       4: freturn
+
+  public float func_147649_g();
+    Code:
+       0: aload_0
+       1: getfield      #67                 // Field field_147660_d:F
+       4: freturn
+
+  public float func_147654_h();
+    Code:
+       0: aload_0
+       1: getfield      #70                 // Field field_147661_e:F
+       4: freturn
+
+  public float func_147651_i();
+    Code:
+       0: aload_0
+       1: getfield      #73                 // Field field_147658_f:F
+       4: freturn
+
+  public net.minecraft.client.audio.ISound$AttenuationType func_147656_j();
+    Code:
+       0: aload_0
+       1: getfield      #50                 // Field field_147666_i:Lnet/minecraft/client/audio/ISound$AttenuationType;
+       4: areturn
+}
+Compiled from "SourceFile"
+public class net.minecraft.client.audio.MusicTicker implements net.minecraft.server.gui.IUpdatePlayerListBox {
+  private final java.util.Random field_147679_a;
+
+  private final net.minecraft.client.Minecraft field_147677_b;
+
+  private net.minecraft.client.audio.ISound field_147678_c;
+
+  private int field_147676_d;
+
+  private static final java.lang.String __OBFID;
+
+  public net.minecraft.client.audio.MusicTicker(net.minecraft.client.Minecraft);
+    Code:
+       0: aload_0
+       1: invokespecial #31                 // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: new           #33                 // class java/util/Random
+       8: dup
+       9: invokespecial #34                 // Method java/util/Random."<init>":()V
+      12: putfield      #36                 // Field field_147679_a:Ljava/util/Random;
+      15: aload_0
+      16: bipush        100
+      18: putfield      #38                 // Field field_147676_d:I
+      21: aload_0
+      22: aload_1
+      23: putfield      #40                 // Field field_147677_b:Lnet/minecraft/client/Minecraft;
+      26: return
+
+  public void func_73660_a();
+    Code:
+       0: aload_0
+       1: getfield      #40                 // Field field_147677_b:Lnet/minecraft/client/Minecraft;
+       4: invokevirtual #50                 // Method net/minecraft/client/Minecraft.func_147109_W:()Lnet/minecraft/client/audio/MusicTicker$MusicType;
+       7: astore_1
+       8: aload_0
+       9: getfield      #52                 // Field field_147678_c:Lnet/minecraft/client/audio/ISound;
+      12: ifnull        114
+      15: aload_1
+      16: invokevirtual #56                 // Method net/minecraft/client/audio/MusicTicker$MusicType.func_148635_a:()Lnet/minecraft/util/ResourceLocation;
+      19: aload_0
+      20: getfield      #52                 // Field field_147678_c:Lnet/minecraft/client/audio/ISound;
+      23: invokeinterface #61,  1           // InterfaceMethod net/minecraft/client/audio/ISound.func_147650_b:()Lnet/minecraft/util/ResourceLocation;
+      28: invokevirtual #67                 // Method net/minecraft/util/ResourceLocation.equals:(Ljava/lang/Object;)Z
+      31: ifne          66
+      34: aload_0
+      35: getfield      #40                 // Field field_147677_b:Lnet/minecraft/client/Minecraft;
+      38: invokevirtual #71                 // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+      41: aload_0
+      42: getfield      #52                 // Field field_147678_c:Lnet/minecraft/client/audio/ISound;
+      45: invokevirtual #77                 // Method net/minecraft/client/audio/SoundHandler.func_147683_b:(Lnet/minecraft/client/audio/ISound;)V
+      48: aload_0
+      49: aload_0
+      50: getfield      #36                 // Field field_147679_a:Ljava/util/Random;
+      53: iconst_0
+      54: aload_1
+      55: invokevirtual #81                 // Method net/minecraft/client/audio/MusicTicker$MusicType.func_148634_b:()I
+      58: iconst_2
+      59: idiv
+      60: invokestatic  #87                 // Method net/minecraft/util/MathHelper.func_76136_a:(Ljava/util/Random;II)I
+      63: putfield      #38                 // Field field_147676_d:I
+      66: aload_0
+      67: getfield      #40                 // Field field_147677_b:Lnet/minecraft/client/Minecraft;
+      70: invokevirtual #71                 // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+      73: aload_0
+      74: getfield      #52                 // Field field_147678_c:Lnet/minecraft/client/audio/ISound;
+      77: invokevirtual #91                 // Method net/minecraft/client/audio/SoundHandler.func_147692_c:(Lnet/minecraft/client/audio/ISound;)Z
+      80: ifne          114
+      83: aload_0
+      84: aconst_null
+      85: putfield      #52                 // Field field_147678_c:Lnet/minecraft/client/audio/ISound;
+      88: aload_0
+      89: aload_0
+      90: getfield      #36                 // Field field_147679_a:Ljava/util/Random;
+      93: aload_1
+      94: invokevirtual #81                 // Method net/minecraft/client/audio/MusicTicker$MusicType.func_148634_b:()I
+      97: aload_1
+      98: invokevirtual #94                 // Method net/minecraft/client/audio/MusicTicker$MusicType.func_148633_c:()I
+     101: invokestatic  #87                 // Method net/minecraft/util/MathHelper.func_76136_a:(Ljava/util/Random;II)I
+     104: aload_0
+     105: getfield      #38                 // Field field_147676_d:I
+     108: invokestatic  #100                // Method java/lang/Math.min:(II)I
+     111: putfield      #38                 // Field field_147676_d:I
+     114: aload_0
+     115: getfield      #52                 // Field field_147678_c:Lnet/minecraft/client/audio/ISound;
+     118: ifnonnull     166
+     121: aload_0
+     122: dup
+     123: getfield      #38                 // Field field_147676_d:I
+     126: dup_x1
+     127: iconst_1
+     128: isub
+     129: putfield      #38                 // Field field_147676_d:I
+     132: ifgt          166
+     135: aload_0
+     136: aload_1
+     137: invokevirtual #56                 // Method net/minecraft/client/audio/MusicTicker$MusicType.func_148635_a:()Lnet/minecraft/util/ResourceLocation;
+     140: invokestatic  #106                // Method net/minecraft/client/audio/PositionedSoundRecord.func_147673_a:(Lnet/minecraft/util/ResourceLocation;)Lnet/minecraft/client/audio/PositionedSoundRecord;
+     143: putfield      #52                 // Field field_147678_c:Lnet/minecraft/client/audio/ISound;
+     146: aload_0
+     147: getfield      #40                 // Field field_147677_b:Lnet/minecraft/client/Minecraft;
+     150: invokevirtual #71                 // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+     153: aload_0
+     154: getfield      #52                 // Field field_147678_c:Lnet/minecraft/client/audio/ISound;
+     157: invokevirtual #109                // Method net/minecraft/client/audio/SoundHandler.func_147682_a:(Lnet/minecraft/client/audio/ISound;)V
+     160: aload_0
+     161: ldc           #110                // int 2147483647
+     163: putfield      #38                 // Field field_147676_d:I
+     166: return
+}
+Compiled from "SourceFile"
+public interface net.minecraft.client.audio.ISound {
+  public abstract net.minecraft.util.ResourceLocation func_147650_b();
+
+  public abstract boolean func_147657_c();
+
+  public abstract int func_147652_d();
+
+  public abstract float func_147653_e();
+
+  public abstract float func_147655_f();
+
+  public abstract float func_147649_g();
+
+  public abstract float func_147654_h();
+
+  public abstract float func_147651_i();
+
+  public abstract net.minecraft.client.audio.ISound$AttenuationType func_147656_j();
+}
+Compiled from "SourceFile"
+public class net.minecraft.client.gui.GuiScreen extends net.minecraft.client.gui.Gui {
+  protected static net.minecraft.client.renderer.entity.RenderItem field_146296_j;
+
+  public net.minecraft.client.Minecraft field_146297_k;
+
+  public int field_146294_l;
+
+  public int field_146295_m;
+
+  protected java.util.List field_146292_n;
+
+  protected java.util.List field_146293_o;
+
+  public boolean field_146291_p;
+
+  protected net.minecraft.client.gui.FontRenderer field_146289_q;
+
+  private net.minecraft.client.gui.GuiButton field_146290_a;
+
+  private int field_146287_f;
+
+  private long field_146288_g;
+
+  private int field_146298_h;
+
+  private static final java.lang.String __OBFID;
+
+  public net.minecraft.client.gui.GuiScreen();
+    Code:
+       0: aload_0
+       1: invokespecial #37                 // Method net/minecraft/client/gui/Gui."<init>":()V
+       4: aload_0
+       5: new           #39                 // class java/util/ArrayList
+       8: dup
+       9: invokespecial #40                 // Method java/util/ArrayList."<init>":()V
+      12: putfield      #42                 // Field field_146292_n:Ljava/util/List;
+      15: aload_0
+      16: new           #39                 // class java/util/ArrayList
+      19: dup
+      20: invokespecial #40                 // Method java/util/ArrayList."<init>":()V
+      23: putfield      #44                 // Field field_146293_o:Ljava/util/List;
+      26: return
+
+  public void func_73863_a(int, int, float);
+    Code:
+       0: iconst_0
+       1: istore        4
+       3: iload         4
+       5: aload_0
+       6: getfield      #42                 // Field field_146292_n:Ljava/util/List;
+       9: invokeinterface #52,  1           // InterfaceMethod java/util/List.size:()I
+      14: if_icmpge     46
+      17: aload_0
+      18: getfield      #42                 // Field field_146292_n:Ljava/util/List;
+      21: iload         4
+      23: invokeinterface #56,  2           // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+      28: checkcast     #58                 // class net/minecraft/client/gui/GuiButton
+      31: aload_0
+      32: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      35: iload_1
+      36: iload_2
+      37: invokevirtual #64                 // Method net/minecraft/client/gui/GuiButton.func_146112_a:(Lnet/minecraft/client/Minecraft;II)V
+      40: iinc          4, 1
+      43: goto          3
+      46: iconst_0
+      47: istore        4
+      49: iload         4
+      51: aload_0
+      52: getfield      #44                 // Field field_146293_o:Ljava/util/List;
+      55: invokeinterface #52,  1           // InterfaceMethod java/util/List.size:()I
+      60: if_icmpge     92
+      63: aload_0
+      64: getfield      #44                 // Field field_146293_o:Ljava/util/List;
+      67: iload         4
+      69: invokeinterface #56,  2           // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+      74: checkcast     #66                 // class net/minecraft/client/gui/GuiLabel
+      77: aload_0
+      78: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      81: iload_1
+      82: iload_2
+      83: invokevirtual #69                 // Method net/minecraft/client/gui/GuiLabel.func_146159_a:(Lnet/minecraft/client/Minecraft;II)V
+      86: iinc          4, 1
+      89: goto          49
+      92: return
+
+  protected void func_73869_a(char, int);
+    Code:
+       0: iload_2
+       1: iconst_1
+       2: if_icmpne     20
+       5: aload_0
+       6: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+       9: aconst_null
+      10: invokevirtual #83                 // Method net/minecraft/client/Minecraft.func_147108_a:(Lnet/minecraft/client/gui/GuiScreen;)V
+      13: aload_0
+      14: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      17: invokevirtual #86                 // Method net/minecraft/client/Minecraft.func_71381_h:()V
+      20: return
+
+  public static java.lang.String func_146277_j();
+    Code:
+       0: invokestatic  #99                 // Method java/awt/Toolkit.getDefaultToolkit:()Ljava/awt/Toolkit;
+       3: invokevirtual #103                // Method java/awt/Toolkit.getSystemClipboard:()Ljava/awt/datatransfer/Clipboard;
+       6: aconst_null
+       7: invokevirtual #109                // Method java/awt/datatransfer/Clipboard.getContents:(Ljava/lang/Object;)Ljava/awt/datatransfer/Transferable;
+      10: astore_0
+      11: aload_0
+      12: ifnull        40
+      15: aload_0
+      16: getstatic     #115                // Field java/awt/datatransfer/DataFlavor.stringFlavor:Ljava/awt/datatransfer/DataFlavor;
+      19: invokeinterface #121,  2          // InterfaceMethod java/awt/datatransfer/Transferable.isDataFlavorSupported:(Ljava/awt/datatransfer/DataFlavor;)Z
+      24: ifeq          40
+      27: aload_0
+      28: getstatic     #115                // Field java/awt/datatransfer/DataFlavor.stringFlavor:Ljava/awt/datatransfer/DataFlavor;
+      31: invokeinterface #125,  2          // InterfaceMethod java/awt/datatransfer/Transferable.getTransferData:(Ljava/awt/datatransfer/DataFlavor;)Ljava/lang/Object;
+      36: checkcast     #127                // class java/lang/String
+      39: areturn
+      40: goto          44
+      43: astore_0
+      44: ldc           #129                // String
+      46: areturn
+    Exception table:
+       from    to  target type
+           0    39    43   Class java/lang/Exception
+
+  public static void func_146275_d(java.lang.String);
+    Code:
+       0: new           #133                // class java/awt/datatransfer/StringSelection
+       3: dup
+       4: aload_0
+       5: invokespecial #135                // Method java/awt/datatransfer/StringSelection."<init>":(Ljava/lang/String;)V
+       8: astore_1
+       9: invokestatic  #99                 // Method java/awt/Toolkit.getDefaultToolkit:()Ljava/awt/Toolkit;
+      12: invokevirtual #103                // Method java/awt/Toolkit.getSystemClipboard:()Ljava/awt/datatransfer/Clipboard;
+      15: aload_1
+      16: aconst_null
+      17: invokevirtual #139                // Method java/awt/datatransfer/Clipboard.setContents:(Ljava/awt/datatransfer/Transferable;Ljava/awt/datatransfer/ClipboardOwner;)V
+      20: goto          24
+      23: astore_1
+      24: return
+    Exception table:
+       from    to  target type
+           0    20    23   Class java/lang/Exception
+
+  protected void func_146285_a(net.minecraft.item.ItemStack, int, int);
+    Code:
+       0: aload_1
+       1: aload_0
+       2: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+       5: getfield      #146                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+       8: aload_0
+       9: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      12: getfield      #150                // Field net/minecraft/client/Minecraft.field_71474_y:Lnet/minecraft/client/settings/GameSettings;
+      15: getfield      #155                // Field net/minecraft/client/settings/GameSettings.field_82882_x:Z
+      18: invokevirtual #161                // Method net/minecraft/item/ItemStack.func_82840_a:(Lnet/minecraft/entity/player/EntityPlayer;Z)Ljava/util/List;
+      21: astore        4
+      23: iconst_0
+      24: istore        5
+      26: iload         5
+      28: aload         4
+      30: invokeinterface #52,  1           // InterfaceMethod java/util/List.size:()I
+      35: if_icmpge     138
+      38: iload         5
+      40: ifne          91
+      43: aload         4
+      45: iload         5
+      47: new           #163                // class java/lang/StringBuilder
+      50: dup
+      51: invokespecial #164                // Method java/lang/StringBuilder."<init>":()V
+      54: aload_1
+      55: invokevirtual #168                // Method net/minecraft/item/ItemStack.func_77953_t:()Lnet/minecraft/item/EnumRarity;
+      58: getfield      #174                // Field net/minecraft/item/EnumRarity.field_77937_e:Lnet/minecraft/util/EnumChatFormatting;
+      61: invokevirtual #178                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+      64: aload         4
+      66: iload         5
+      68: invokeinterface #56,  2           // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+      73: checkcast     #127                // class java/lang/String
+      76: invokevirtual #181                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      79: invokevirtual #184                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      82: invokeinterface #188,  3          // InterfaceMethod java/util/List.set:(ILjava/lang/Object;)Ljava/lang/Object;
+      87: pop
+      88: goto          132
+      91: aload         4
+      93: iload         5
+      95: new           #163                // class java/lang/StringBuilder
+      98: dup
+      99: invokespecial #164                // Method java/lang/StringBuilder."<init>":()V
+     102: getstatic     #193                // Field net/minecraft/util/EnumChatFormatting.GRAY:Lnet/minecraft/util/EnumChatFormatting;
+     105: invokevirtual #178                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+     108: aload         4
+     110: iload         5
+     112: invokeinterface #56,  2           // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+     117: checkcast     #127                // class java/lang/String
+     120: invokevirtual #181                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     123: invokevirtual #184                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     126: invokeinterface #188,  3          // InterfaceMethod java/util/List.set:(ILjava/lang/Object;)Ljava/lang/Object;
+     131: pop
+     132: iinc          5, 1
+     135: goto          26
+     138: aload_0
+     139: aload         4
+     141: iload_2
+     142: iload_3
+     143: invokevirtual #197                // Method func_146283_a:(Ljava/util/List;II)V
+     146: return
+
+  protected void func_146279_a(java.lang.String, int, int);
+    Code:
+       0: aload_0
+       1: iconst_1
+       2: anewarray     #127                // class java/lang/String
+       5: dup
+       6: iconst_0
+       7: aload_1
+       8: aastore
+       9: invokestatic  #209                // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+      12: iload_2
+      13: iload_3
+      14: invokevirtual #197                // Method func_146283_a:(Ljava/util/List;II)V
+      17: return
+
+  protected void func_146283_a(java.util.List, int, int);
+    Code:
+       0: aload_1
+       1: invokeinterface #216,  1          // InterfaceMethod java/util/List.isEmpty:()Z
+       6: ifeq          10
+       9: return
+      10: ldc           #217                // int 32826
+      12: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+      15: invokestatic  #228                // Method net/minecraft/client/renderer/RenderHelper.func_74518_a:()V
+      18: sipush        2896
+      21: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+      24: sipush        2929
+      27: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+      30: iconst_0
+      31: istore        4
+      33: aload_1
+      34: invokeinterface #232,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      39: astore        5
+      41: aload         5
+      43: invokeinterface #237,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      48: ifeq          88
+      51: aload         5
+      53: invokeinterface #241,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      58: checkcast     #127                // class java/lang/String
+      61: astore        6
+      63: aload_0
+      64: getfield      #243                // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+      67: aload         6
+      69: invokevirtual #249                // Method net/minecraft/client/gui/FontRenderer.func_78256_a:(Ljava/lang/String;)I
+      72: istore        7
+      74: iload         7
+      76: iload         4
+      78: if_icmple     85
+      81: iload         7
+      83: istore        4
+      85: goto          41
+      88: iload_2
+      89: bipush        12
+      91: iadd
+      92: istore        5
+      94: iload_3
+      95: bipush        12
+      97: isub
+      98: istore        6
+     100: iload         4
+     102: istore        7
+     104: bipush        8
+     106: istore        8
+     108: aload_1
+     109: invokeinterface #52,  1           // InterfaceMethod java/util/List.size:()I
+     114: iconst_1
+     115: if_icmple     136
+     118: iload         8
+     120: iconst_2
+     121: aload_1
+     122: invokeinterface #52,  1           // InterfaceMethod java/util/List.size:()I
+     127: iconst_1
+     128: isub
+     129: bipush        10
+     131: imul
+     132: iadd
+     133: iadd
+     134: istore        8
+     136: iload         5
+     138: iload         4
+     140: iadd
+     141: aload_0
+     142: getfield      #251                // Field field_146294_l:I
+     145: if_icmple     158
+     148: iload         5
+     150: bipush        28
+     152: iload         4
+     154: iadd
+     155: isub
+     156: istore        5
+     158: iload         6
+     160: iload         8
+     162: iadd
+     163: bipush        6
+     165: iadd
+     166: aload_0
+     167: getfield      #253                // Field field_146295_m:I
+     170: if_icmple     185
+     173: aload_0
+     174: getfield      #253                // Field field_146295_m:I
+     177: iload         8
+     179: isub
+     180: bipush        6
+     182: isub
+     183: istore        6
+     185: aload_0
+     186: ldc           #254                // float 300.0f
+     188: putfield      #257                // Field field_73735_i:F
+     191: getstatic     #259                // Field field_146296_j:Lnet/minecraft/client/renderer/entity/RenderItem;
+     194: ldc           #254                // float 300.0f
+     196: putfield      #264                // Field net/minecraft/client/renderer/entity/RenderItem.field_77023_b:F
+     199: ldc_w         #265                // int -267386864
+     202: istore        9
+     204: aload_0
+     205: iload         5
+     207: iconst_3
+     208: isub
+     209: iload         6
+     211: iconst_4
+     212: isub
+     213: iload         5
+     215: iload         7
+     217: iadd
+     218: iconst_3
+     219: iadd
+     220: iload         6
+     222: iconst_3
+     223: isub
+     224: iload         9
+     226: iload         9
+     228: invokevirtual #269                // Method func_73733_a:(IIIIII)V
+     231: aload_0
+     232: iload         5
+     234: iconst_3
+     235: isub
+     236: iload         6
+     238: iload         8
+     240: iadd
+     241: iconst_3
+     242: iadd
+     243: iload         5
+     245: iload         7
+     247: iadd
+     248: iconst_3
+     249: iadd
+     250: iload         6
+     252: iload         8
+     254: iadd
+     255: iconst_4
+     256: iadd
+     257: iload         9
+     259: iload         9
+     261: invokevirtual #269                // Method func_73733_a:(IIIIII)V
+     264: aload_0
+     265: iload         5
+     267: iconst_3
+     268: isub
+     269: iload         6
+     271: iconst_3
+     272: isub
+     273: iload         5
+     275: iload         7
+     277: iadd
+     278: iconst_3
+     279: iadd
+     280: iload         6
+     282: iload         8
+     284: iadd
+     285: iconst_3
+     286: iadd
+     287: iload         9
+     289: iload         9
+     291: invokevirtual #269                // Method func_73733_a:(IIIIII)V
+     294: aload_0
+     295: iload         5
+     297: iconst_4
+     298: isub
+     299: iload         6
+     301: iconst_3
+     302: isub
+     303: iload         5
+     305: iconst_3
+     306: isub
+     307: iload         6
+     309: iload         8
+     311: iadd
+     312: iconst_3
+     313: iadd
+     314: iload         9
+     316: iload         9
+     318: invokevirtual #269                // Method func_73733_a:(IIIIII)V
+     321: aload_0
+     322: iload         5
+     324: iload         7
+     326: iadd
+     327: iconst_3
+     328: iadd
+     329: iload         6
+     331: iconst_3
+     332: isub
+     333: iload         5
+     335: iload         7
+     337: iadd
+     338: iconst_4
+     339: iadd
+     340: iload         6
+     342: iload         8
+     344: iadd
+     345: iconst_3
+     346: iadd
+     347: iload         9
+     349: iload         9
+     351: invokevirtual #269                // Method func_73733_a:(IIIIII)V
+     354: ldc_w         #270                // int 1347420415
+     357: istore        10
+     359: iload         10
+     361: ldc_w         #271                // int 16711422
+     364: iand
+     365: iconst_1
+     366: ishr
+     367: iload         10
+     369: ldc_w         #272                // int -16777216
+     372: iand
+     373: ior
+     374: istore        11
+     376: aload_0
+     377: iload         5
+     379: iconst_3
+     380: isub
+     381: iload         6
+     383: iconst_3
+     384: isub
+     385: iconst_1
+     386: iadd
+     387: iload         5
+     389: iconst_3
+     390: isub
+     391: iconst_1
+     392: iadd
+     393: iload         6
+     395: iload         8
+     397: iadd
+     398: iconst_3
+     399: iadd
+     400: iconst_1
+     401: isub
+     402: iload         10
+     404: iload         11
+     406: invokevirtual #269                // Method func_73733_a:(IIIIII)V
+     409: aload_0
+     410: iload         5
+     412: iload         7
+     414: iadd
+     415: iconst_2
+     416: iadd
+     417: iload         6
+     419: iconst_3
+     420: isub
+     421: iconst_1
+     422: iadd
+     423: iload         5
+     425: iload         7
+     427: iadd
+     428: iconst_3
+     429: iadd
+     430: iload         6
+     432: iload         8
+     434: iadd
+     435: iconst_3
+     436: iadd
+     437: iconst_1
+     438: isub
+     439: iload         10
+     441: iload         11
+     443: invokevirtual #269                // Method func_73733_a:(IIIIII)V
+     446: aload_0
+     447: iload         5
+     449: iconst_3
+     450: isub
+     451: iload         6
+     453: iconst_3
+     454: isub
+     455: iload         5
+     457: iload         7
+     459: iadd
+     460: iconst_3
+     461: iadd
+     462: iload         6
+     464: iconst_3
+     465: isub
+     466: iconst_1
+     467: iadd
+     468: iload         10
+     470: iload         10
+     472: invokevirtual #269                // Method func_73733_a:(IIIIII)V
+     475: aload_0
+     476: iload         5
+     478: iconst_3
+     479: isub
+     480: iload         6
+     482: iload         8
+     484: iadd
+     485: iconst_2
+     486: iadd
+     487: iload         5
+     489: iload         7
+     491: iadd
+     492: iconst_3
+     493: iadd
+     494: iload         6
+     496: iload         8
+     498: iadd
+     499: iconst_3
+     500: iadd
+     501: iload         11
+     503: iload         11
+     505: invokevirtual #269                // Method func_73733_a:(IIIIII)V
+     508: iconst_0
+     509: istore        12
+     511: iload         12
+     513: aload_1
+     514: invokeinterface #52,  1           // InterfaceMethod java/util/List.size:()I
+     519: if_icmpge     567
+     522: aload_1
+     523: iload         12
+     525: invokeinterface #56,  2           // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+     530: checkcast     #127                // class java/lang/String
+     533: astore        13
+     535: aload_0
+     536: getfield      #243                // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+     539: aload         13
+     541: iload         5
+     543: iload         6
+     545: iconst_m1
+     546: invokevirtual #276                // Method net/minecraft/client/gui/FontRenderer.func_78261_a:(Ljava/lang/String;III)I
+     549: pop
+     550: iload         12
+     552: ifne          558
+     555: iinc          6, 2
+     558: iinc          6, 10
+     561: iinc          12, 1
+     564: goto          511
+     567: aload_0
+     568: fconst_0
+     569: putfield      #257                // Field field_73735_i:F
+     572: getstatic     #259                // Field field_146296_j:Lnet/minecraft/client/renderer/entity/RenderItem;
+     575: fconst_0
+     576: putfield      #264                // Field net/minecraft/client/renderer/entity/RenderItem.field_77023_b:F
+     579: sipush        2896
+     582: invokestatic  #279                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+     585: sipush        2929
+     588: invokestatic  #279                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+     591: invokestatic  #282                // Method net/minecraft/client/renderer/RenderHelper.func_74519_b:()V
+     594: ldc           #217                // int 32826
+     596: invokestatic  #279                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+     599: return
+
+  protected void func_73864_a(int, int, int);
+    Code:
+       0: iload_3
+       1: ifne          81
+       4: iconst_0
+       5: istore        4
+       7: iload         4
+       9: aload_0
+      10: getfield      #42                 // Field field_146292_n:Ljava/util/List;
+      13: invokeinterface #52,  1           // InterfaceMethod java/util/List.size:()I
+      18: if_icmpge     81
+      21: aload_0
+      22: getfield      #42                 // Field field_146292_n:Ljava/util/List;
+      25: iload         4
+      27: invokeinterface #56,  2           // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+      32: checkcast     #58                 // class net/minecraft/client/gui/GuiButton
+      35: astore        5
+      37: aload         5
+      39: aload_0
+      40: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      43: iload_1
+      44: iload_2
+      45: invokevirtual #291                // Method net/minecraft/client/gui/GuiButton.func_146116_c:(Lnet/minecraft/client/Minecraft;II)Z
+      48: ifeq          75
+      51: aload_0
+      52: aload         5
+      54: putfield      #293                // Field field_146290_a:Lnet/minecraft/client/gui/GuiButton;
+      57: aload         5
+      59: aload_0
+      60: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      63: invokevirtual #297                // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+      66: invokevirtual #301                // Method net/minecraft/client/gui/GuiButton.func_146113_a:(Lnet/minecraft/client/audio/SoundHandler;)V
+      69: aload_0
+      70: aload         5
+      72: invokevirtual #305                // Method func_146284_a:(Lnet/minecraft/client/gui/GuiButton;)V
+      75: iinc          4, 1
+      78: goto          7
+      81: return
+
+  protected void func_146286_b(int, int, int);
+    Code:
+       0: aload_0
+       1: getfield      #293                // Field field_146290_a:Lnet/minecraft/client/gui/GuiButton;
+       4: ifnull        25
+       7: iload_3
+       8: ifne          25
+      11: aload_0
+      12: getfield      #293                // Field field_146290_a:Lnet/minecraft/client/gui/GuiButton;
+      15: iload_1
+      16: iload_2
+      17: invokevirtual #313                // Method net/minecraft/client/gui/GuiButton.func_146118_a:(II)V
+      20: aload_0
+      21: aconst_null
+      22: putfield      #293                // Field field_146290_a:Lnet/minecraft/client/gui/GuiButton;
+      25: return
+
+  protected void func_146273_a(int, int, int, long);
+    Code:
+       0: return
+
+  protected void func_146284_a(net.minecraft.client.gui.GuiButton);
+    Code:
+       0: return
+
+  public void func_146280_a(net.minecraft.client.Minecraft, int, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+       5: aload_0
+       6: aload_1
+       7: getfield      #327                // Field net/minecraft/client/Minecraft.field_71466_p:Lnet/minecraft/client/gui/FontRenderer;
+      10: putfield      #243                // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+      13: aload_0
+      14: iload_2
+      15: putfield      #251                // Field field_146294_l:I
+      18: aload_0
+      19: iload_3
+      20: putfield      #253                // Field field_146295_m:I
+      23: aload_0
+      24: getfield      #42                 // Field field_146292_n:Ljava/util/List;
+      27: invokeinterface #330,  1          // InterfaceMethod java/util/List.clear:()V
+      32: aload_0
+      33: invokevirtual #333                // Method func_73866_w_:()V
+      36: return
+
+  public void func_73866_w_();
+    Code:
+       0: return
+
+  public void func_146269_k();
+    Code:
+       0: invokestatic  #342                // Method org/lwjgl/input/Mouse.isCreated:()Z
+       3: ifeq          19
+       6: invokestatic  #344                // Method org/lwjgl/input/Mouse.next:()Z
+       9: ifeq          19
+      12: aload_0
+      13: invokevirtual #347                // Method func_146274_d:()V
+      16: goto          6
+      19: invokestatic  #350                // Method org/lwjgl/input/Keyboard.isCreated:()Z
+      22: ifeq          38
+      25: invokestatic  #351                // Method org/lwjgl/input/Keyboard.next:()Z
+      28: ifeq          38
+      31: aload_0
+      32: invokevirtual #354                // Method func_146282_l:()V
+      35: goto          25
+      38: return
+
+  public void func_146274_d();
+    Code:
+       0: invokestatic  #357                // Method org/lwjgl/input/Mouse.getEventX:()I
+       3: aload_0
+       4: getfield      #251                // Field field_146294_l:I
+       7: imul
+       8: aload_0
+       9: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      12: getfield      #360                // Field net/minecraft/client/Minecraft.field_71443_c:I
+      15: idiv
+      16: istore_1
+      17: aload_0
+      18: getfield      #253                // Field field_146295_m:I
+      21: invokestatic  #363                // Method org/lwjgl/input/Mouse.getEventY:()I
+      24: aload_0
+      25: getfield      #253                // Field field_146295_m:I
+      28: imul
+      29: aload_0
+      30: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      33: getfield      #366                // Field net/minecraft/client/Minecraft.field_71440_d:I
+      36: idiv
+      37: isub
+      38: iconst_1
+      39: isub
+      40: istore_2
+      41: invokestatic  #369                // Method org/lwjgl/input/Mouse.getEventButton:()I
+      44: istore_3
+      45: invokestatic  #372                // Method org/lwjgl/input/Mouse.getEventButtonState:()Z
+      48: ifeq          104
+      51: aload_0
+      52: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      55: getfield      #150                // Field net/minecraft/client/Minecraft.field_71474_y:Lnet/minecraft/client/settings/GameSettings;
+      58: getfield      #375                // Field net/minecraft/client/settings/GameSettings.field_85185_A:Z
+      61: ifeq          79
+      64: aload_0
+      65: dup
+      66: getfield      #377                // Field field_146298_h:I
+      69: dup_x1
+      70: iconst_1
+      71: iadd
+      72: putfield      #377                // Field field_146298_h:I
+      75: ifle          79
+      78: return
+      79: aload_0
+      80: iload_3
+      81: putfield      #379                // Field field_146287_f:I
+      84: aload_0
+      85: invokestatic  #383                // Method net/minecraft/client/Minecraft.func_71386_F:()J
+      88: putfield      #385                // Field field_146288_g:J
+      91: aload_0
+      92: iload_1
+      93: iload_2
+      94: aload_0
+      95: getfield      #379                // Field field_146287_f:I
+      98: invokevirtual #387                // Method func_73864_a:(III)V
+     101: goto          191
+     104: iload_3
+     105: iconst_m1
+     106: if_icmpeq     152
+     109: aload_0
+     110: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+     113: getfield      #150                // Field net/minecraft/client/Minecraft.field_71474_y:Lnet/minecraft/client/settings/GameSettings;
+     116: getfield      #375                // Field net/minecraft/client/settings/GameSettings.field_85185_A:Z
+     119: ifeq          137
+     122: aload_0
+     123: dup
+     124: getfield      #377                // Field field_146298_h:I
+     127: iconst_1
+     128: isub
+     129: dup_x1
+     130: putfield      #377                // Field field_146298_h:I
+     133: ifle          137
+     136: return
+     137: aload_0
+     138: iconst_m1
+     139: putfield      #379                // Field field_146287_f:I
+     142: aload_0
+     143: iload_1
+     144: iload_2
+     145: iload_3
+     146: invokevirtual #389                // Method func_146286_b:(III)V
+     149: goto          191
+     152: aload_0
+     153: getfield      #379                // Field field_146287_f:I
+     156: iconst_m1
+     157: if_icmpeq     191
+     160: aload_0
+     161: getfield      #385                // Field field_146288_g:J
+     164: lconst_0
+     165: lcmp
+     166: ifle          191
+     169: invokestatic  #383                // Method net/minecraft/client/Minecraft.func_71386_F:()J
+     172: aload_0
+     173: getfield      #385                // Field field_146288_g:J
+     176: lsub
+     177: lstore        4
+     179: aload_0
+     180: iload_1
+     181: iload_2
+     182: aload_0
+     183: getfield      #379                // Field field_146287_f:I
+     186: lload         4
+     188: invokevirtual #391                // Method func_146273_a:(IIIJ)V
+     191: return
+
+  public void func_146282_l();
+    Code:
+       0: invokestatic  #394                // Method org/lwjgl/input/Keyboard.getEventKeyState:()Z
+       3: ifeq          16
+       6: aload_0
+       7: invokestatic  #398                // Method org/lwjgl/input/Keyboard.getEventCharacter:()C
+      10: invokestatic  #401                // Method org/lwjgl/input/Keyboard.getEventKey:()I
+      13: invokevirtual #403                // Method func_73869_a:(CI)V
+      16: aload_0
+      17: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      20: invokevirtual #406                // Method net/minecraft/client/Minecraft.func_152348_aa:()V
+      23: return
+
+  public void func_73876_c();
+    Code:
+       0: return
+
+  public void func_146281_b();
+    Code:
+       0: return
+
+  public void func_146276_q_();
+    Code:
+       0: aload_0
+       1: iconst_0
+       2: invokevirtual #412                // Method func_146270_b:(I)V
+       5: return
+
+  public void func_146270_b(int);
+    Code:
+       0: aload_0
+       1: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+       4: getfield      #416                // Field net/minecraft/client/Minecraft.field_71441_e:Lnet/minecraft/client/multiplayer/WorldClient;
+       7: ifnull        33
+      10: aload_0
+      11: iconst_0
+      12: iconst_0
+      13: aload_0
+      14: getfield      #251                // Field field_146294_l:I
+      17: aload_0
+      18: getfield      #253                // Field field_146295_m:I
+      21: ldc_w         #417                // int -1072689136
+      24: ldc_w         #418                // int -804253680
+      27: invokevirtual #269                // Method func_73733_a:(IIIIII)V
+      30: goto          38
+      33: aload_0
+      34: iload_1
+      35: invokevirtual #421                // Method func_146278_c:(I)V
+      38: return
+
+  public void func_146278_c(int);
+    Code:
+       0: sipush        2896
+       3: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+       6: sipush        2912
+       9: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+      12: getstatic     #428                // Field net/minecraft/client/renderer/Tessellator.field_78398_a:Lnet/minecraft/client/renderer/Tessellator;
+      15: astore_2
+      16: aload_0
+      17: getfield      #60                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      20: invokevirtual #432                // Method net/minecraft/client/Minecraft.func_110434_K:()Lnet/minecraft/client/renderer/texture/TextureManager;
+      23: getstatic     #436                // Field field_110325_k:Lnet/minecraft/util/ResourceLocation;
+      26: invokevirtual #442                // Method net/minecraft/client/renderer/texture/TextureManager.func_110577_a:(Lnet/minecraft/util/ResourceLocation;)V
+      29: fconst_1
+      30: fconst_1
+      31: fconst_1
+      32: fconst_1
+      33: invokestatic  #446                // Method org/lwjgl/opengl/GL11.glColor4f:(FFFF)V
+      36: ldc_w         #447                // float 32.0f
+      39: fstore_3
+      40: aload_2
+      41: invokevirtual #450                // Method net/minecraft/client/renderer/Tessellator.func_78382_b:()V
+      44: aload_2
+      45: ldc_w         #451                // int 4210752
+      48: invokevirtual #454                // Method net/minecraft/client/renderer/Tessellator.func_78378_d:(I)V
+      51: aload_2
+      52: dconst_0
+      53: aload_0
+      54: getfield      #253                // Field field_146295_m:I
+      57: i2d
+      58: dconst_0
+      59: dconst_0
+      60: aload_0
+      61: getfield      #253                // Field field_146295_m:I
+      64: i2f
+      65: fload_3
+      66: fdiv
+      67: iload_1
+      68: i2f
+      69: fadd
+      70: f2d
+      71: invokevirtual #458                // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+      74: aload_2
+      75: aload_0
+      76: getfield      #251                // Field field_146294_l:I
+      79: i2d
+      80: aload_0
+      81: getfield      #253                // Field field_146295_m:I
+      84: i2d
+      85: dconst_0
+      86: aload_0
+      87: getfield      #251                // Field field_146294_l:I
+      90: i2f
+      91: fload_3
+      92: fdiv
+      93: f2d
+      94: aload_0
+      95: getfield      #253                // Field field_146295_m:I
+      98: i2f
+      99: fload_3
+     100: fdiv
+     101: iload_1
+     102: i2f
+     103: fadd
+     104: f2d
+     105: invokevirtual #458                // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+     108: aload_2
+     109: aload_0
+     110: getfield      #251                // Field field_146294_l:I
+     113: i2d
+     114: dconst_0
+     115: dconst_0
+     116: aload_0
+     117: getfield      #251                // Field field_146294_l:I
+     120: i2f
+     121: fload_3
+     122: fdiv
+     123: f2d
+     124: iload_1
+     125: i2d
+     126: invokevirtual #458                // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+     129: aload_2
+     130: dconst_0
+     131: dconst_0
+     132: dconst_0
+     133: dconst_0
+     134: iload_1
+     135: i2d
+     136: invokevirtual #458                // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+     139: aload_2
+     140: invokevirtual #461                // Method net/minecraft/client/renderer/Tessellator.func_78381_a:()I
+     143: pop
+     144: return
+
+  public boolean func_73868_f();
+    Code:
+       0: iconst_1
+       1: ireturn
+
+  public void func_73878_a(boolean, int);
+    Code:
+       0: return
+
+  public static boolean func_146271_m();
+    Code:
+       0: getstatic     #471                // Field net/minecraft/client/Minecraft.field_142025_a:Z
+       3: ifeq          30
+       6: sipush        219
+       9: invokestatic  #475                // Method org/lwjgl/input/Keyboard.isKeyDown:(I)Z
+      12: ifne          24
+      15: sipush        220
+      18: invokestatic  #475                // Method org/lwjgl/input/Keyboard.isKeyDown:(I)Z
+      21: ifeq          28
+      24: iconst_1
+      25: goto          29
+      28: iconst_0
+      29: ireturn
+      30: bipush        29
+      32: invokestatic  #475                // Method org/lwjgl/input/Keyboard.isKeyDown:(I)Z
+      35: ifne          47
+      38: sipush        157
+      41: invokestatic  #475                // Method org/lwjgl/input/Keyboard.isKeyDown:(I)Z
+      44: ifeq          51
+      47: iconst_1
+      48: goto          52
+      51: iconst_0
+      52: ireturn
+
+  public static boolean func_146272_n();
+    Code:
+       0: bipush        42
+       2: invokestatic  #475                // Method org/lwjgl/input/Keyboard.isKeyDown:(I)Z
+       5: ifne          16
+       8: bipush        54
+      10: invokestatic  #475                // Method org/lwjgl/input/Keyboard.isKeyDown:(I)Z
+      13: ifeq          20
+      16: iconst_1
+      17: goto          21
+      20: iconst_0
+      21: ireturn
+
+  static {};
+    Code:
+       0: new           #261                // class net/minecraft/client/renderer/entity/RenderItem
+       3: dup
+       4: invokespecial #478                // Method net/minecraft/client/renderer/entity/RenderItem."<init>":()V
+       7: putstatic     #259                // Field field_146296_j:Lnet/minecraft/client/renderer/entity/RenderItem;
+      10: return
+}

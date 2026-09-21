@@ -10,7 +10,7 @@ public final class CinematicLoadingPlugin implements IFMLLoadingPlugin {
     public CinematicLoadingPlugin(){
         Launch.classLoader.addTransformerExclusion("br.com.redeakashic.cinematic.bootstrap.");
     }
-    @Override public String[] getASMTransformerClass(){return new String[]{"br.com.redeakashic.cinematic.bootstrap.EarlyWindowTransformer","br.com.redeakashic.cinematic.bootstrap.SplashTransformer"};}
+    @Override public String[] getASMTransformerClass(){return new String[]{"br.com.redeakashic.cinematic.bootstrap.LoadingThemeTransformer","br.com.redeakashic.cinematic.bootstrap.EarlyWindowTransformer","br.com.redeakashic.cinematic.bootstrap.SplashTransformer"};}
     @Override public String getModContainerClass(){return null;}
     @Override public String getSetupClass(){return null;}
     @Override public void injectData(Map<String,Object> data){}

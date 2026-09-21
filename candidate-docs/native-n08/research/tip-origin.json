@@ -1,0 +1,87 @@
+[
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/de_DE.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/en_US.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/es_MX.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/fr_FR.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/it_IT.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/ja_JP.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/ko_KR.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/nl_NL.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/pl_PL.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/ro_RO.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/ru_RU.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/sv_SE.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/th_TH.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/uk_UA.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/zh_CN.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/lang/zh_TW.lang",
+    "exact_tip": false
+  },
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "entry": "assets/aether_legacy/texts/en_US.txt",
+    "exact_tip": true
+  }
+]

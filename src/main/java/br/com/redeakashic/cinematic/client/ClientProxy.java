@@ -20,6 +20,10 @@ public final class ClientProxy extends CommonProxy {
             settings=config;logger=event.getModLog();menu=new MenuHook(config,logger);MinecraftForge.EVENT_BUS.register(menu);
             if(config.themeConnections)MinecraftForge.EVENT_BUS.register(new ConnectionScreenTheme(event.getModLog()));
             cpw.mods.fml.common.FMLCommonHandler.instance().bus().register(ConnectionCancellationGuard.INSTANCE);
+            TransitionTheme.configure(config.themeTransitions);
+            cpw.mods.fml.common.FMLCommonHandler.instance().bus().register(new TransitionTheme());
+            try{MenuBgm.install(config,event.getSuggestedConfigurationFile().getParentFile());}
+            catch(ReflectiveOperationException|RuntimeException|LinkageError failure){event.getModLog().error("BGM unavailable; vanilla music preserved.",failure);}
             event.getModLog().info("Cinematic menu registered. Splash overlay status is reported by bootstrap.");
         } catch (RuntimeException ex) {
             event.getModLog().error("Cinematic configuration rejected; existing menu preserved.", ex);
