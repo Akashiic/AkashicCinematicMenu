@@ -43,5 +43,14 @@
         "stream": false
       }
     ]
+  },
+  "bgm.menu": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "akashiccinematic:bgm/menu",
+        "stream": true
+      }
+    ]
   }
 }

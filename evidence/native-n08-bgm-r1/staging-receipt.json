@@ -1,0 +1,9 @@
+{
+  "base": "native-n07",
+  "partial_n08_untouched": true,
+  "overlay_sha256": "b76de5670adcbd892142d7556e8ddcedd3d0959b85cda4626e105a16fbc60bc6",
+  "original_mp3_provided": true,
+  "original_mp3_sha256": "1e7a442de0759fb7a9b605c3f70d0fecdb7c3e1da428796e41df9a717d668408",
+  "ogg_sha256": "66db58689c1745385109a2ee9e5b5757f2d57f3f692d20ed13e9a7d084999db3",
+  "audio_in_pc_not_yet_verified": true
+}

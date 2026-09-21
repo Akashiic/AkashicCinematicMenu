@@ -17,6 +17,10 @@ public final class ClientProxy extends CommonProxy {
             MenuConfig config = MenuConfig.read(event.getSuggestedConfigurationFile());
             if (!config.enabled) { return; }
             UiAudio.configure(config);
+            TransitionTheme.configure(config.themeTransitions);
+            if(config.themeTransitions)cpw.mods.fml.common.FMLCommonHandler.instance().bus().register(new TransitionTheme());
+            try{MenuBgm.install(event.getSuggestedConfigurationFile().getParentFile());}
+            catch(RuntimeException|LinkageError ex){event.getModLog().error("BGM unavailable; original music retained.",ex);}
             settings=config;logger=event.getModLog();menu=new MenuHook(config,logger);MinecraftForge.EVENT_BUS.register(menu);
             if(config.themeConnections)MinecraftForge.EVENT_BUS.register(new ConnectionScreenTheme(event.getModLog()));
             cpw.mods.fml.common.FMLCommonHandler.instance().bus().register(ConnectionCancellationGuard.INSTANCE);

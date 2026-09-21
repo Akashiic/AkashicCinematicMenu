@@ -1,0 +1,57 @@
+{
+  "checkpoint": "ACM-N08-BGM-R1-2026-09-21",
+  "version": "0.5.0-alpha.1",
+  "jar_sha256": "c9248a3060139e5334facd6186e9c09f6826af650508e6c20d1438bc52975b0d",
+  "jar_bytes": 7264366,
+  "classes": 73,
+  "built_with_real_apis": true,
+  "reproducible_build": true,
+  "runtime": {
+    "pid": 5556,
+    "started_at": 1789964940.0602312,
+    "run": "n08bgm1",
+    "instance": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\instance",
+    "java": "C:\\Users\\User\\AppData\\Roaming\\.technic\\runtimes\\jre-legacy\\bin\\java.exe",
+    "max_heap_mb": 3072,
+    "test_identity": "ACMenuQA",
+    "real_credentials_used": false,
+    "log": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\evidence\\n08bgm1\\console.log",
+    "exit": 0,
+    "ended_at": 1789965453.4573884
+  },
+  "runtime_checks": 15,
+  "aether_render_exercised": true,
+  "vanilla_loading_render_exercised": true,
+  "terrain_hook_exercised": false,
+  "theme_visual_inspection": "Aether and vanilla screenshots inspected; no dirt; native progress/messages/tips retained",
+  "bgm_source_provided": true,
+  "bgm_source_sha256": "1e7a442de0759fb7a9b605c3f70d0fecdb7c3e1da428796e41df9a717d668408",
+  "bgm_converted_sha256": "66db58689c1745385109a2ee9e5b5757f2d57f3f692d20ed13e9a7d084999db3",
+  "exact_track_in_PC_runtime": false,
+  "actual_music_playback_approved": false,
+  "audio_runtime_scope": "Missing recording: no BGM start, no vanilla suppression; MUSIC mute changes state. A mute test without a voice is NOT evidence of stopping audible playback.",
+  "tests": [
+    {
+      "test": "core",
+      "exit": 0
+    },
+    {
+      "test": "fade",
+      "exit": 0
+    },
+    {
+      "test": "playback",
+      "exit": 0
+    },
+    {
+      "test": "rebuild",
+      "exit": 0
+    }
+  ],
+  "pure_fade_checks": 1557,
+  "pure_playback_scenarios": 18,
+  "pure_playback_assertions": 124,
+  "original_N07_preserved": true,
+  "general_release_approved": false,
+  "verdict": "TRANSITION_TARGETS_TESTED__EXACT_MUSIC_PLAYBACK_PENDING_TRANSFER"
+}

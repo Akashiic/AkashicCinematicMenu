@@ -3,7 +3,7 @@ import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 import br.com.redeakashic.cinematic.core.Numbers;
 public final class MenuConfig {
-    public final boolean enabled,reducedMotion,replaceDummyCore,particles,sfxEnabled,suppressBogoConflict,themeConnections;
+    public final boolean enabled,reducedMotion,replaceDummyCore,particles,sfxEnabled,suppressBogoConflict,themeConnections,themeTransitions;
     public final double parallax,sfxVolume;
     private MenuConfig(Configuration c){
         enabled=c.get("general","enabled",true).getBoolean(true);
@@ -15,6 +15,7 @@ public final class MenuConfig {
         double volume=c.get("audio","uiVolume",0.45,"Additional UI volume multiplier, 0..1; respects MASTER volume.").getDouble(.45);
         sfxVolume=Double.isFinite(volume)?Math.max(0,Math.min(1,volume)):.45;
         suppressBogoConflict=c.get("compatibility","hideBogoInventoryTweaksModal",true,"Only the audited notice is moved to the log; inventory incompatibility is not repaired.").getBoolean(true);
+        themeTransitions=c.get("screens","themeLoadingTransitions",true,"Only audited Aether, vanilla loading and terrain backgrounds.").getBoolean(true);
         themeConnections=c.get("screens","themeConnectionScreens",true,"Connecting and disconnected backgrounds; preserve native networking and error messages.").getBoolean(true);
     }
     public static MenuConfig read(File file){
