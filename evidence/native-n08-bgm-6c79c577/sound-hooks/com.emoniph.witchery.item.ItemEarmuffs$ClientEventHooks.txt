@@ -1,0 +1,17 @@
+  public void onSound(net.minecraftforge.client.event.sound.PlaySoundEvent17);
+    Code:
+       0: invokestatic  #23                 // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+       3: astore_2
+       4: aload_2
+       5: getfield      #27                 // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+       8: astore_3
+       9: aload_3
+      10: ifnull        25
+      13: aload_3
+      14: invokestatic  #31                 // Method com/emoniph/witchery/item/ItemEarmuffs.isHelmWorn:(Lnet/minecraft/entity/player/EntityPlayer;)Z
+      17: ifeq          25
+      20: aload_1
+      21: aconst_null
+      22: putfield      #37                 // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+      25: return
+}

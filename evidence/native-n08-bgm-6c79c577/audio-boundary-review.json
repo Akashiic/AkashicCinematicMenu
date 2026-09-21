@@ -1,0 +1,8 @@
+{
+  "first_run": "verify1 reached menu and faded supplied audio; rejected vanilla suppression/continuous playback test",
+  "change": "Guard exact minecraft music namespace before other listeners; do not depend on mutable category metadata. Log bounded event decisions.",
+  "no_aether_world_music_changes": true,
+  "aether_menu_setting_observed": false,
+  "real_cause_of_prior_restart": "not yet conclusively isolated; event diagnostics required",
+  "original_recording_changed": false
+}

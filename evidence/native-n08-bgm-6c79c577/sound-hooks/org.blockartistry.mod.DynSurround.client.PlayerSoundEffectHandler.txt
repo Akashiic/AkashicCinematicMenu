@@ -1,0 +1,42 @@
+  public void soundEvent(net.minecraftforge.client.event.sound.PlaySoundEvent17);
+    Code:
+       0: aload_1
+       1: getfield      #361                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+       4: ifnonnull     8
+       7: return
+       8: getstatic     #366                // Field org/blockartistry/mod/DynSurround/ModOptions.alwaysOverrideSound:Z
+      11: ifne          20
+      14: invokestatic  #371                // Method org/blockartistry/mod/DynSurround/client/weather/Weather.doVanilla:()Z
+      17: ifne          76
+      20: aload_1
+      21: getfield      #373                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+      24: invokestatic  #375                // Method replaceRainSound:(Ljava/lang/String;)Z
+      27: ifeq          76
+      30: aload_1
+      31: getfield      #361                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+      34: astore_2
+      35: aload_1
+      36: new           #377                // class net/minecraft/client/audio/PositionedSoundRecord
+      39: dup
+      40: invokestatic  #381                // Method org/blockartistry/mod/DynSurround/client/weather/Weather.getCurrentStormSound:()Lnet/minecraft/util/ResourceLocation;
+      43: invokestatic  #385                // Method org/blockartistry/mod/DynSurround/client/weather/Weather.getCurrentVolume:()F
+      46: aload_2
+      47: invokeinterface #390,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+      52: aload_2
+      53: invokeinterface #393,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147649_g:()F
+      58: aload_2
+      59: invokeinterface #396,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147654_h:()F
+      64: aload_2
+      65: invokeinterface #399,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147651_i:()F
+      70: invokespecial #402                // Method net/minecraft/client/audio/PositionedSoundRecord."<init>":(Lnet/minecraft/util/ResourceLocation;FFFFF)V
+      73: putfield      #404                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+      76: return
+
+  static {};
+    Code:
+       0: new           #101                // class java/util/ArrayList
+       3: dup
+       4: invokespecial #102                // Method java/util/ArrayList."<init>":()V
+       7: putstatic     #142                // Field drops:Ljava/util/List;
+      10: return
+}

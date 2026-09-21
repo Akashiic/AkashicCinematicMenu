@@ -1,0 +1,828 @@
+  public void onPlaySoundEvent(net.minecraftforge.client.event.sound.PlaySoundEvent17);
+    Code:
+       0: aload_1
+       1: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+       4: ifnull        1984
+       7: aload_1
+       8: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+      11: ifnull        1984
+      14: invokestatic  #120                // Method cpw/mods/fml/client/FMLClientHandler.instance:()Lcpw/mods/fml/client/FMLClientHandler;
+      17: invokevirtual #244                // Method cpw/mods/fml/client/FMLClientHandler.getWorldClient:()Lnet/minecraft/client/multiplayer/WorldClient;
+      20: ifnull        1984
+      23: invokestatic  #120                // Method cpw/mods/fml/client/FMLClientHandler.instance:()Lcpw/mods/fml/client/FMLClientHandler;
+      26: invokevirtual #244                // Method cpw/mods/fml/client/FMLClientHandler.getWorldClient:()Lnet/minecraft/client/multiplayer/WorldClient;
+      29: astore_2
+      30: aload_1
+      31: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+      34: invokeinterface #837,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147649_g:()F
+      39: fstore_3
+      40: aload_1
+      41: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+      44: invokeinterface #840,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147654_h:()F
+      49: fstore        4
+      51: aload_1
+      52: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+      55: invokeinterface #843,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147651_i:()F
+      60: fstore        5
+      62: fload_3
+      63: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+      66: istore        6
+      68: fload         4
+      70: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+      73: istore        7
+      75: fload         5
+      77: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+      80: istore        8
+      82: aload_2
+      83: iload         6
+      85: iload         7
+      87: iload         8
+      89: invokevirtual #848                // Method net/minecraft/world/World.func_147439_a:(III)Lnet/minecraft/block/Block;
+      92: astore        9
+      94: aload         9
+      96: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+      99: invokevirtual #855                // Method net/minecraft/block/Block$SoundType.func_150498_e:()Ljava/lang/String;
+     102: aload_1
+     103: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     106: invokevirtual #861                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+     109: istore        10
+     111: aload         9
+     113: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+     116: invokevirtual #864                // Method net/minecraft/block/Block$SoundType.func_150495_a:()Ljava/lang/String;
+     119: aload_1
+     120: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     123: invokevirtual #861                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+     126: istore        11
+     128: aload         9
+     130: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+     133: invokevirtual #867                // Method net/minecraft/block/Block$SoundType.func_150496_b:()Ljava/lang/String;
+     136: aload_1
+     137: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     140: invokevirtual #861                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+     143: istore        12
+     145: getstatic     #870                // Field ganymedes01/etfuturum/api/MultiBlockSoundRegistry.multiBlockSounds:Ljava/util/Map;
+     148: aload         9
+     150: invokeinterface #873,  2          // InterfaceMethod java/util/Map.containsKey:(Ljava/lang/Object;)Z
+     155: ifeq          393
+     158: iload         10
+     160: ifne          173
+     163: iload         11
+     165: ifne          173
+     168: iload         12
+     170: ifeq          393
+     173: getstatic     #870                // Field ganymedes01/etfuturum/api/MultiBlockSoundRegistry.multiBlockSounds:Ljava/util/Map;
+     176: aload         9
+     178: invokeinterface #877,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+     183: checkcast     #879                // class ganymedes01/etfuturum/api/mappings/MultiBlockSoundContainer
+     186: astore        13
+     188: iload         10
+     190: ifeq          201
+     193: getstatic     #883                // Field ganymedes01/etfuturum/api/MultiBlockSoundRegistry$BlockSoundType.HIT:Lganymedes01/etfuturum/api/MultiBlockSoundRegistry$BlockSoundType;
+     196: astore        14
+     198: goto          219
+     201: iload         12
+     203: ifeq          214
+     206: getstatic     #886                // Field ganymedes01/etfuturum/api/MultiBlockSoundRegistry$BlockSoundType.PLACE:Lganymedes01/etfuturum/api/MultiBlockSoundRegistry$BlockSoundType;
+     209: astore        14
+     211: goto          219
+     214: getstatic     #889                // Field ganymedes01/etfuturum/api/MultiBlockSoundRegistry$BlockSoundType.BREAK:Lganymedes01/etfuturum/api/MultiBlockSoundRegistry$BlockSoundType;
+     217: astore        14
+     219: aload         13
+     221: aload_2
+     222: iload         6
+     224: iload         7
+     226: iload         8
+     228: aload_1
+     229: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     232: aload         14
+     234: invokevirtual #893                // Method ganymedes01/etfuturum/api/mappings/MultiBlockSoundContainer.getSound:(Lnet/minecraft/world/World;IIILjava/lang/String;Lganymedes01/etfuturum/api/MultiBlockSoundRegistry$BlockSoundType;)Ljava/lang/String;
+     237: astore        15
+     239: aload         13
+     241: aload_2
+     242: iload         6
+     244: iload         7
+     246: iload         8
+     248: aload_1
+     249: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+     252: invokeinterface #896,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147653_e:()F
+     257: aload         14
+     259: invokevirtual #900                // Method ganymedes01/etfuturum/api/mappings/MultiBlockSoundContainer.getVolume:(Lnet/minecraft/world/World;IIIFLganymedes01/etfuturum/api/MultiBlockSoundRegistry$BlockSoundType;)F
+     262: fstore        16
+     264: aload         13
+     266: aload_2
+     267: iload         6
+     269: iload         7
+     271: iload         8
+     273: aload_1
+     274: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+     277: invokeinterface #903,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+     282: aload         14
+     284: invokevirtual #906                // Method ganymedes01/etfuturum/api/mappings/MultiBlockSoundContainer.getPitch:(Lnet/minecraft/world/World;IIIFLganymedes01/etfuturum/api/MultiBlockSoundRegistry$BlockSoundType;)F
+     287: fstore        17
+     289: aload         15
+     291: ifnonnull     312
+     294: fload         16
+     296: ldc_w         #907                // float -1.0f
+     299: fcmpl
+     300: ifne          312
+     303: fload         17
+     305: ldc_w         #907                // float -1.0f
+     308: fcmpl
+     309: ifeq          393
+     312: aload         15
+     314: ifnonnull     323
+     317: aload_1
+     318: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     321: astore        15
+     323: fload         16
+     325: ldc_w         #907                // float -1.0f
+     328: fcmpl
+     329: ifne          343
+     332: aload_1
+     333: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+     336: invokeinterface #896,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147653_e:()F
+     341: fstore        16
+     343: fload         17
+     345: ldc_w         #907                // float -1.0f
+     348: fcmpl
+     349: ifne          363
+     352: aload_1
+     353: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+     356: invokeinterface #903,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+     361: fstore        17
+     363: aload_1
+     364: new           #909                // class net/minecraft/client/audio/PositionedSoundRecord
+     367: dup
+     368: new           #911                // class net/minecraft/util/ResourceLocation
+     371: dup
+     372: aload         15
+     374: invokespecial #912                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+     377: fload         16
+     379: fload         17
+     381: fload_3
+     382: fload         4
+     384: fload         5
+     386: invokespecial #915                // Method net/minecraft/client/audio/PositionedSoundRecord."<init>":(Lnet/minecraft/util/ResourceLocation;FFFFF)V
+     389: putfield      #917                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     392: return
+     393: getstatic     #920                // Field ganymedes01/etfuturum/configuration/configs/ConfigSounds.doorOpenClose:Z
+     396: ifeq          480
+     399: aload_1
+     400: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     403: ldc_w         #922                // String random.door
+     406: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+     409: ifeq          480
+     412: aload_1
+     413: new           #909                // class net/minecraft/client/audio/PositionedSoundRecord
+     416: dup
+     417: new           #911                // class net/minecraft/util/ResourceLocation
+     420: dup
+     421: aload_0
+     422: aload         9
+     424: aload_1
+     425: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     428: invokespecial #929                // Method getReplacementDoorSound:(Lnet/minecraft/block/Block;Ljava/lang/String;)Ljava/lang/String;
+     431: invokespecial #912                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+     434: aload_1
+     435: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+     438: invokeinterface #896,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147653_e:()F
+     443: aload_1
+     444: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+     447: invokeinterface #903,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+     452: iload         6
+     454: i2f
+     455: ldc_w         #930                // float 0.5f
+     458: fadd
+     459: iload         7
+     461: i2f
+     462: ldc_w         #930                // float 0.5f
+     465: fadd
+     466: iload         8
+     468: i2f
+     469: ldc_w         #930                // float 0.5f
+     472: fadd
+     473: invokespecial #915                // Method net/minecraft/client/audio/PositionedSoundRecord."<init>":(Lnet/minecraft/util/ResourceLocation;FFFFF)V
+     476: putfield      #917                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     479: return
+     480: getstatic     #933                // Field ganymedes01/etfuturum/configuration/configs/ConfigSounds.chestOpenClose:Z
+     483: ifeq          738
+     486: aload_1
+     487: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     490: ldc_w         #935                // String random.chest
+     493: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+     496: ifeq          738
+     499: aload_1
+     500: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     503: astore        13
+     505: getstatic     #938                // Field net/minecraft/block/Block.field_149771_c:Lnet/minecraft/util/RegistryNamespaced;
+     508: aload         9
+     510: invokevirtual #720                // Method net/minecraft/util/RegistryNamespaced.func_148750_c:(Ljava/lang/Object;)Ljava/lang/String;
+     513: ldc_w         #940                // String :
+     516: invokevirtual #944                // Method java/lang/String.split:(Ljava/lang/String;)[Ljava/lang/String;
+     519: iconst_1
+     520: aaload
+     521: invokevirtual #947                // Method java/lang/String.toLowerCase:()Ljava/lang/String;
+     524: astore        14
+     526: aload         14
+     528: ldc_w         #949                // String chest
+     531: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+     534: ifeq          666
+     537: aload_1
+     538: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     541: ldc_w         #951                // String open
+     544: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+     547: ifne          563
+     550: aload_1
+     551: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     554: ldc_w         #953                // String close
+     557: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+     560: ifeq          666
+     563: aload         14
+     565: ldc_w         #955                // String ender
+     568: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+     571: ifeq          634
+     574: aload         9
+     576: invokevirtual #552                // Method net/minecraft/block/Block.func_149688_o:()Lnet/minecraft/block/material/Material;
+     579: getstatic     #958                // Field net/minecraft/block/material/Material.field_151576_e:Lnet/minecraft/block/material/Material;
+     582: invokevirtual #961                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     585: ifeq          634
+     588: new           #366                // class java/lang/StringBuilder
+     591: dup
+     592: invokespecial #367                // Method java/lang/StringBuilder."<init>":()V
+     595: ldc_w         #963                // String minecraft_1.21.10:block.ender_chest.
+     598: invokevirtual #373                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     601: aload_1
+     602: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     605: ldc_w         #953                // String close
+     608: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+     611: ifeq          620
+     614: ldc_w         #953                // String close
+     617: goto          623
+     620: ldc_w         #951                // String open
+     623: invokevirtual #373                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     626: invokevirtual #381                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     629: astore        13
+     631: goto          666
+     634: aload         9
+     636: invokevirtual #552                // Method net/minecraft/block/Block.func_149688_o:()Lnet/minecraft/block/material/Material;
+     639: getstatic     #966                // Field net/minecraft/block/material/Material.field_151575_d:Lnet/minecraft/block/material/Material;
+     642: invokevirtual #961                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     645: ifeq          666
+     648: aload_1
+     649: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     652: ldc_w         #953                // String close
+     655: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+     658: ifeq          666
+     661: ldc_w         #968                // String minecraft_1.21.10:block.chest.close
+     664: astore        13
+     666: aload         13
+     668: aload_1
+     669: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     672: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     675: ifne          738
+     678: aload_1
+     679: new           #909                // class net/minecraft/client/audio/PositionedSoundRecord
+     682: dup
+     683: new           #911                // class net/minecraft/util/ResourceLocation
+     686: dup
+     687: aload         13
+     689: invokespecial #912                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+     692: aload_1
+     693: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+     696: invokeinterface #896,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147653_e:()F
+     701: aload_1
+     702: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+     705: invokeinterface #903,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+     710: iload         6
+     712: i2f
+     713: ldc_w         #930                // float 0.5f
+     716: fadd
+     717: iload         7
+     719: i2f
+     720: ldc_w         #930                // float 0.5f
+     723: fadd
+     724: iload         8
+     726: i2f
+     727: ldc_w         #930                // float 0.5f
+     730: fadd
+     731: invokespecial #915                // Method net/minecraft/client/audio/PositionedSoundRecord."<init>":(Lnet/minecraft/util/ResourceLocation;FFFFF)V
+     734: putfield      #917                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     737: return
+     738: getstatic     #972                // Field ganymedes01/etfuturum/configuration/configs/ConfigSounds.pressurePlateButton:Z
+     741: ifeq          1117
+     744: aload         9
+     746: instanceof    #974                // class net/minecraft/block/BlockButton
+     749: ifeq          921
+     752: aload_1
+     753: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     756: ldc_w         #976                // String random.click
+     759: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     762: ifeq          921
+     765: aconst_null
+     766: astore        13
+     768: aload         9
+     770: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+     773: getstatic     #979                // Field net/minecraft/block/Block.field_149766_f:Lnet/minecraft/block/Block$SoundType;
+     776: if_acmpne     787
+     779: ldc_w         #981                // String minecraft_1.21.10:block.wooden_button.click
+     782: astore        13
+     784: goto          841
+     787: aload         9
+     789: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+     792: getstatic     #986                // Field ganymedes01/etfuturum/client/sound/ModSounds.soundNetherWood:Lnet/minecraft/block/Block$SoundType;
+     795: if_acmpne     806
+     798: ldc_w         #988                // String minecraft_1.21.10:block.nether_wood_button.click
+     801: astore        13
+     803: goto          841
+     806: aload         9
+     808: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+     811: getstatic     #991                // Field ganymedes01/etfuturum/client/sound/ModSounds.soundCherryWood:Lnet/minecraft/block/Block$SoundType;
+     814: if_acmpne     825
+     817: ldc_w         #993                // String minecraft_1.21.10:block.cherry_wood_button.click
+     820: astore        13
+     822: goto          841
+     825: aload         9
+     827: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+     830: getstatic     #996                // Field ganymedes01/etfuturum/client/sound/ModSounds.soundBambooWood:Lnet/minecraft/block/Block$SoundType;
+     833: if_acmpne     841
+     836: ldc_w         #998                // String minecraft_1.21.10:block.bamboo_wood_button.click
+     839: astore        13
+     841: aload         13
+     843: ifnull        920
+     846: aload_1
+     847: new           #909                // class net/minecraft/client/audio/PositionedSoundRecord
+     850: dup
+     851: new           #911                // class net/minecraft/util/ResourceLocation
+     854: dup
+     855: new           #366                // class java/lang/StringBuilder
+     858: dup
+     859: invokespecial #367                // Method java/lang/StringBuilder."<init>":()V
+     862: aload         13
+     864: invokevirtual #373                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     867: ldc_w         #1000               // String _
+     870: invokevirtual #373                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     873: aload_1
+     874: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+     877: invokeinterface #903,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+     882: ldc_w         #930                // float 0.5f
+     885: fcmpl
+     886: ifle          895
+     889: ldc_w         #1002               // String on
+     892: goto          898
+     895: ldc_w         #1004               // String off
+     898: invokevirtual #373                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     901: invokevirtual #381                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     904: invokespecial #912                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+     907: fconst_1
+     908: fconst_1
+     909: fload_3
+     910: fload         4
+     912: fload         5
+     914: invokespecial #915                // Method net/minecraft/client/audio/PositionedSoundRecord."<init>":(Lnet/minecraft/util/ResourceLocation;FFFFF)V
+     917: putfield      #917                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     920: return
+     921: aload         9
+     923: instanceof    #1006               // class net/minecraft/block/BlockBasePressurePlate
+     926: ifeq          1117
+     929: aload_1
+     930: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     933: ldc_w         #976                // String random.click
+     936: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     939: ifeq          1117
+     942: aconst_null
+     943: astore        13
+     945: aload         9
+     947: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+     950: getstatic     #1009               // Field net/minecraft/block/Block.field_149777_j:Lnet/minecraft/block/Block$SoundType;
+     953: if_acmpne     964
+     956: ldc_w         #1011               // String minecraft_1.21.10:block.metal_pressure_plate.click
+     959: astore        13
+     961: goto          1037
+     964: aload         9
+     966: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+     969: getstatic     #979                // Field net/minecraft/block/Block.field_149766_f:Lnet/minecraft/block/Block$SoundType;
+     972: if_acmpne     983
+     975: ldc_w         #1013               // String minecraft_1.21.10:block.wooden_pressure_plate.click
+     978: astore        13
+     980: goto          1037
+     983: aload         9
+     985: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+     988: getstatic     #986                // Field ganymedes01/etfuturum/client/sound/ModSounds.soundNetherWood:Lnet/minecraft/block/Block$SoundType;
+     991: if_acmpne     1002
+     994: ldc_w         #1015               // String minecraft_1.21.10:block.nether_wood_pressure_plate.click
+     997: astore        13
+     999: goto          1037
+    1002: aload         9
+    1004: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+    1007: getstatic     #991                // Field ganymedes01/etfuturum/client/sound/ModSounds.soundCherryWood:Lnet/minecraft/block/Block$SoundType;
+    1010: if_acmpne     1021
+    1013: ldc_w         #1017               // String minecraft_1.21.10:block.cherry_wood_pressure_plate.click
+    1016: astore        13
+    1018: goto          1037
+    1021: aload         9
+    1023: getfield      #852                // Field net/minecraft/block/Block.field_149762_H:Lnet/minecraft/block/Block$SoundType;
+    1026: getstatic     #996                // Field ganymedes01/etfuturum/client/sound/ModSounds.soundBambooWood:Lnet/minecraft/block/Block$SoundType;
+    1029: if_acmpne     1037
+    1032: ldc_w         #1019               // String minecraft_1.21.10:block.bamboo_wood_pressure_plate.click
+    1035: astore        13
+    1037: aload         13
+    1039: ifnull        1116
+    1042: aload_1
+    1043: new           #909                // class net/minecraft/client/audio/PositionedSoundRecord
+    1046: dup
+    1047: new           #911                // class net/minecraft/util/ResourceLocation
+    1050: dup
+    1051: new           #366                // class java/lang/StringBuilder
+    1054: dup
+    1055: invokespecial #367                // Method java/lang/StringBuilder."<init>":()V
+    1058: aload         13
+    1060: invokevirtual #373                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    1063: ldc_w         #1000               // String _
+    1066: invokevirtual #373                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    1069: aload_1
+    1070: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+    1073: invokeinterface #903,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+    1078: ldc_w         #930                // float 0.5f
+    1081: fcmpl
+    1082: ifle          1091
+    1085: ldc_w         #1002               // String on
+    1088: goto          1094
+    1091: ldc_w         #1004               // String off
+    1094: invokevirtual #373                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    1097: invokevirtual #381                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+    1100: invokespecial #912                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+    1103: fconst_1
+    1104: fconst_1
+    1105: fload_3
+    1106: fload         4
+    1108: fload         5
+    1110: invokespecial #915                // Method net/minecraft/client/audio/PositionedSoundRecord."<init>":(Lnet/minecraft/util/ResourceLocation;FFFFF)V
+    1113: putfield      #917                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+    1116: return
+    1117: getstatic     #1022               // Field ganymedes01/etfuturum/configuration/configs/ConfigSounds.noteBlockNotes:Z
+    1120: ifeq          1622
+    1123: aload_2
+    1124: fload_3
+    1125: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+    1128: fload         4
+    1130: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+    1133: fload         5
+    1135: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+    1138: invokevirtual #848                // Method net/minecraft/world/World.func_147439_a:(III)Lnet/minecraft/block/Block;
+    1141: instanceof    #1024               // class net/minecraft/block/BlockNote
+    1144: ifeq          1622
+    1147: aload_1
+    1148: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+    1151: ldc_w         #1026               // String note.harp
+    1154: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1157: ifne          1199
+    1160: aload_1
+    1161: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+    1164: ldc_w         #1028               // String note.snare
+    1167: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1170: ifne          1199
+    1173: aload_1
+    1174: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+    1177: ldc_w         #1030               // String note.hat
+    1180: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1183: ifne          1199
+    1186: aload_1
+    1187: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+    1190: ldc_w         #1032               // String note.bd
+    1193: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1196: ifeq          1622
+    1199: aload_1
+    1200: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+    1203: astore        13
+    1205: ldc_w         #1034               // String
+    1208: astore        14
+    1210: aload_2
+    1211: fload_3
+    1212: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+    1215: fload         4
+    1217: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+    1220: iconst_1
+    1221: isub
+    1222: fload         5
+    1224: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+    1227: invokevirtual #848                // Method net/minecraft/world/World.func_147439_a:(III)Lnet/minecraft/block/Block;
+    1230: astore        15
+    1232: aload         15
+    1234: invokestatic  #1038               // Method net/minecraft/item/Item.func_150898_a:(Lnet/minecraft/block/Block;)Lnet/minecraft/item/Item;
+    1237: astore        16
+    1239: aload         16
+    1241: ifnull        1302
+    1244: aload         16
+    1246: invokevirtual #1041               // Method net/minecraft/item/Item.func_77614_k:()Z
+    1249: ifeq          1302
+    1252: getstatic     #1043               // Field STORAGE_STACK:Lnet/minecraft/item/ItemStack;
+    1255: aload         16
+    1257: invokevirtual #1047               // Method net/minecraft/item/ItemStack.func_150996_a:(Lnet/minecraft/item/Item;)V
+    1260: getstatic     #1043               // Field STORAGE_STACK:Lnet/minecraft/item/ItemStack;
+    1263: aload_2
+    1264: fload_3
+    1265: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+    1268: fload         4
+    1270: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+    1273: fload         5
+    1275: invokestatic  #847                // Method net/minecraft/util/MathHelper.func_76141_d:(F)I
+    1278: invokevirtual #1051               // Method net/minecraft/world/World.func_72805_g:(III)I
+    1281: invokevirtual #1055               // Method net/minecraft/item/ItemStack.func_77964_b:(I)V
+    1284: aload         16
+    1286: getstatic     #1043               // Field STORAGE_STACK:Lnet/minecraft/item/ItemStack;
+    1289: invokevirtual #1059               // Method net/minecraft/item/Item.func_77667_c:(Lnet/minecraft/item/ItemStack;)Ljava/lang/String;
+    1292: invokevirtual #947                // Method java/lang/String.toLowerCase:()Ljava/lang/String;
+    1295: astore        14
+    1297: goto          1302
+    1300: astore        17
+    1302: aload         14
+    1304: ldc_w         #1034               // String
+    1307: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1310: ifeq          1323
+    1313: aload         15
+    1315: invokevirtual #1062               // Method net/minecraft/block/Block.func_149739_a:()Ljava/lang/String;
+    1318: invokevirtual #947                // Method java/lang/String.toLowerCase:()Ljava/lang/String;
+    1321: astore        14
+    1323: aload         15
+    1325: getstatic     #1067               // Field net/minecraft/init/Blocks.field_150425_aM:Lnet/minecraft/block/Block;
+    1328: if_acmpne     1339
+    1331: ldc_w         #1069               // String minecraft_1.21.10:block.note_block.cow_bell
+    1334: astore        13
+    1336: goto          1550
+    1339: aload         14
+    1341: ldc_w         #1071               // String hay
+    1344: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+    1347: ifeq          1358
+    1350: ldc_w         #1073               // String minecraft_1.21.10:block.note_block.banjo
+    1353: astore        13
+    1355: goto          1550
+    1358: aload         15
+    1360: iconst_1
+    1361: anewarray     #857                // class java/lang/String
+    1364: dup
+    1365: iconst_0
+    1366: ldc_w         #1075               // String blockGold
+    1369: aastore
+    1370: invokestatic  #1081               // Method ganymedes01/etfuturum/EtFuturum.hasDictTag:(Lnet/minecraft/block/Block;[Ljava/lang/String;)Z
+    1373: ifeq          1384
+    1376: ldc_w         #1083               // String minecraft_1.21.10:block.note_block.bell
+    1379: astore        13
+    1381: goto          1550
+    1384: aload         15
+    1386: iconst_1
+    1387: anewarray     #857                // class java/lang/String
+    1390: dup
+    1391: iconst_0
+    1392: ldc_w         #1085               // String blockEmerald
+    1395: aastore
+    1396: invokestatic  #1081               // Method ganymedes01/etfuturum/EtFuturum.hasDictTag:(Lnet/minecraft/block/Block;[Ljava/lang/String;)Z
+    1399: ifeq          1410
+    1402: ldc_w         #1087               // String minecraft_1.21.10:block.note_block.bit
+    1405: astore        13
+    1407: goto          1550
+    1410: aload         14
+    1412: ldc_w         #1089               // String packed
+    1415: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+    1418: ifeq          1440
+    1421: aload         14
+    1423: ldc_w         #1091               // String ice
+    1426: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+    1429: ifeq          1440
+    1432: ldc_w         #1093               // String minecraft_1.21.10:block.note_block.chime
+    1435: astore        13
+    1437: goto          1550
+    1440: aload         14
+    1442: ldc_w         #1095               // String pumpkin
+    1445: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+    1448: ifeq          1459
+    1451: ldc_w         #1097               // String minecraft_1.21.10:block.note_block.didgeridoo
+    1454: astore        13
+    1456: goto          1550
+    1459: aload         15
+    1461: invokevirtual #552                // Method net/minecraft/block/Block.func_149688_o:()Lnet/minecraft/block/material/Material;
+    1464: getstatic     #1100               // Field net/minecraft/block/material/Material.field_151571_B:Lnet/minecraft/block/material/Material;
+    1467: if_acmpne     1478
+    1470: ldc_w         #1102               // String minecraft_1.21.10:block.note_block.flute
+    1473: astore        13
+    1475: goto          1550
+    1478: aload         15
+    1480: iconst_1
+    1481: anewarray     #857                // class java/lang/String
+    1484: dup
+    1485: iconst_0
+    1486: ldc_w         #1104               // String blockIron
+    1489: aastore
+    1490: invokestatic  #1081               // Method ganymedes01/etfuturum/EtFuturum.hasDictTag:(Lnet/minecraft/block/Block;[Ljava/lang/String;)Z
+    1493: ifeq          1504
+    1496: ldc_w         #1106               // String minecraft_1.21.10:block.note_block.iron_xylophone
+    1499: astore        13
+    1501: goto          1550
+    1504: aload         15
+    1506: invokevirtual #552                // Method net/minecraft/block/Block.func_149688_o:()Lnet/minecraft/block/material/Material;
+    1509: getstatic     #1109               // Field net/minecraft/block/material/Material.field_151580_n:Lnet/minecraft/block/material/Material;
+    1512: if_acmpne     1523
+    1515: ldc_w         #1111               // String minecraft_1.21.10:block.note_block.guitar
+    1518: astore        13
+    1520: goto          1550
+    1523: aload         14
+    1525: ldc_w         #1113               // String bone
+    1528: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+    1531: ifne          1545
+    1534: aload         14
+    1536: ldc_w         #1115               // String ivory
+    1539: invokevirtual #925                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+    1542: ifeq          1550
+    1545: ldc_w         #1117               // String minecraft_1.21.10:block.note_block.xylophone
+    1548: astore        13
+    1550: aload_1
+    1551: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+    1554: aload         13
+    1556: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1559: ifeq          1563
+    1562: return
+    1563: aload_1
+    1564: new           #909                // class net/minecraft/client/audio/PositionedSoundRecord
+    1567: dup
+    1568: new           #911                // class net/minecraft/util/ResourceLocation
+    1571: dup
+    1572: aload         13
+    1574: invokespecial #912                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+    1577: aload         13
+    1579: ldc_w         #1106               // String minecraft_1.21.10:block.note_block.iron_xylophone
+    1582: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1585: ifeq          1592
+    1588: fconst_1
+    1589: goto          1601
+    1592: aload_1
+    1593: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+    1596: invokeinterface #896,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147653_e:()F
+    1601: aload_1
+    1602: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+    1605: invokeinterface #903,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+    1610: fload_3
+    1611: fload         4
+    1613: fload         5
+    1615: invokespecial #915                // Method net/minecraft/client/audio/PositionedSoundRecord."<init>":(Lnet/minecraft/util/ResourceLocation;FFFFF)V
+    1618: putfield      #917                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+    1621: return
+    1622: aload_0
+    1623: getfield      #126                // Field mc:Lnet/minecraft/client/Minecraft;
+    1626: getfield      #496                // Field net/minecraft/client/Minecraft.field_71462_r:Lnet/minecraft/client/gui/GuiScreen;
+    1629: astore        14
+    1631: aload         14
+    1633: instanceof    #1119               // class net/minecraft/client/gui/GuiScreenBook
+    1636: ifeq          1705
+    1639: aload         14
+    1641: checkcast     #1119               // class net/minecraft/client/gui/GuiScreenBook
+    1644: astore        13
+    1646: aload_1
+    1647: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+    1650: ldc_w         #1121               // String gui.button.press
+    1653: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1656: ifeq          1705
+    1659: aload         13
+    1661: getfield      #1124               // Field net/minecraft/client/gui/GuiScreenBook.field_146484_x:I
+    1664: aload_0
+    1665: getfield      #509                // Field currPage:I
+    1668: if_icmpeq     1705
+    1671: aload_0
+    1672: aload         13
+    1674: getfield      #1124               // Field net/minecraft/client/gui/GuiScreenBook.field_146484_x:I
+    1677: putfield      #509                // Field currPage:I
+    1680: aload_0
+    1681: getfield      #126                // Field mc:Lnet/minecraft/client/Minecraft;
+    1684: getfield      #527                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+    1687: astore        14
+    1689: aload         14
+    1691: ldc_w         #1126               // String minecraft_1.21.10:item.book.page_turn
+    1694: fconst_1
+    1695: fconst_1
+    1696: invokevirtual #1130               // Method net/minecraft/client/entity/EntityClientPlayerMP.func_85030_a:(Ljava/lang/String;FF)V
+    1699: aload_1
+    1700: aconst_null
+    1701: putfield      #917                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+    1704: return
+    1705: getstatic     #1133               // Field ganymedes01/etfuturum/configuration/configs/ConfigSounds.rainSounds:Z
+    1708: ifeq          1823
+    1711: aload_1
+    1712: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+    1715: ldc_w         #1135               // String ambient.weather.rain
+    1718: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1721: ifeq          1823
+    1724: aload_1
+    1725: new           #909                // class net/minecraft/client/audio/PositionedSoundRecord
+    1728: dup
+    1729: new           #911                // class net/minecraft/util/ResourceLocation
+    1732: dup
+    1733: new           #366                // class java/lang/StringBuilder
+    1736: dup
+    1737: invokespecial #367                // Method java/lang/StringBuilder."<init>":()V
+    1740: ldc_w         #1137               // String minecraft_1.21.10:weather.rain
+    1743: invokevirtual #373                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    1746: aload_1
+    1747: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+    1750: invokeinterface #903,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+    1755: fconst_1
+    1756: fcmpg
+    1757: ifge          1766
+    1760: ldc_w         #1139               // String .above
+    1763: goto          1769
+    1766: ldc_w         #1034               // String
+    1769: invokevirtual #373                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    1772: invokevirtual #381                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+    1775: invokespecial #912                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+    1778: aload_1
+    1779: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+    1782: invokeinterface #896,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147653_e:()F
+    1787: aload_1
+    1788: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+    1791: invokeinterface #903,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+    1796: iload         6
+    1798: i2f
+    1799: ldc_w         #930                // float 0.5f
+    1802: fadd
+    1803: iload         7
+    1805: i2f
+    1806: ldc_w         #930                // float 0.5f
+    1809: fadd
+    1810: iload         8
+    1812: i2f
+    1813: ldc_w         #930                // float 0.5f
+    1816: fadd
+    1817: invokespecial #915                // Method net/minecraft/client/audio/PositionedSoundRecord."<init>":(Lnet/minecraft/util/ResourceLocation;FFFFF)V
+    1820: putfield      #917                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+    1823: aload_1
+    1824: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+    1827: ldc_w         #1141               // String music.game
+    1830: invokevirtual #1144               // Method java/lang/String.startsWith:(Ljava/lang/String;)Z
+    1833: ifeq          1903
+    1836: aload_0
+    1837: getfield      #1146               // Field musicOverride:Lnet/minecraft/client/audio/PositionedSound;
+    1840: ifnull        1860
+    1843: aload_0
+    1844: getfield      #126                // Field mc:Lnet/minecraft/client/Minecraft;
+    1847: invokevirtual #454                // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+    1850: aload_0
+    1851: getfield      #1146               // Field musicOverride:Lnet/minecraft/client/audio/PositionedSound;
+    1854: invokevirtual #460                // Method net/minecraft/client/audio/SoundHandler.func_147692_c:(Lnet/minecraft/client/audio/ISound;)Z
+    1857: ifne          1898
+    1860: aload_0
+    1861: invokespecial #1148               // Method getAmbientMusicOverride:()Ljava/lang/String;
+    1864: astore        13
+    1866: aload         13
+    1868: ifnull        1895
+    1871: aload_0
+    1872: new           #911                // class net/minecraft/util/ResourceLocation
+    1875: dup
+    1876: aload         13
+    1878: invokespecial #912                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+    1881: invokestatic  #1152               // Method net/minecraft/client/audio/PositionedSoundRecord.func_147673_a:(Lnet/minecraft/util/ResourceLocation;)Lnet/minecraft/client/audio/PositionedSoundRecord;
+    1884: putfield      #1146               // Field musicOverride:Lnet/minecraft/client/audio/PositionedSound;
+    1887: aload_1
+    1888: aload_0
+    1889: getfield      #1146               // Field musicOverride:Lnet/minecraft/client/audio/PositionedSound;
+    1892: putfield      #917                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+    1895: goto          1903
+    1898: aload_1
+    1899: aconst_null
+    1900: putfield      #917                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+    1903: aload_1
+    1904: getfield      #832                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+    1907: ldc_w         #1154               // String ambient.cave.cave
+    1910: invokevirtual #969                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1913: ifeq          1984
+    1916: aload_0
+    1917: invokespecial #1156               // Method getAmbienceMood:()Ljava/lang/String;
+    1920: ifnull        1984
+    1923: aload_1
+    1924: new           #909                // class net/minecraft/client/audio/PositionedSoundRecord
+    1927: dup
+    1928: new           #911                // class net/minecraft/util/ResourceLocation
+    1931: dup
+    1932: aload_0
+    1933: invokespecial #1156               // Method getAmbienceMood:()Ljava/lang/String;
+    1936: invokespecial #912                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+    1939: aload_1
+    1940: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+    1943: invokeinterface #896,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147653_e:()F
+    1948: aload_1
+    1949: getfield      #829                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+    1952: invokeinterface #903,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+    1957: iload         6
+    1959: i2f
+    1960: ldc_w         #930                // float 0.5f
+    1963: fadd
+    1964: iload         7
+    1966: i2f
+    1967: ldc_w         #930                // float 0.5f
+    1970: fadd
+    1971: iload         8
+    1973: i2f
+    1974: ldc_w         #930                // float 0.5f
+    1977: fadd
+    1978: invokespecial #915                // Method net/minecraft/client/audio/PositionedSoundRecord."<init>":(Lnet/minecraft/util/ResourceLocation;FFFFF)V
+    1981: putfield      #917                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+    1984: return
+    Exception table:
+       from    to  target type
+        1252  1297  1300   Class java/lang/Exception

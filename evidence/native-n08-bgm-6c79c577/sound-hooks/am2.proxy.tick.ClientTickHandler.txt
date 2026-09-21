@@ -1,0 +1,13 @@
+  public void onPlaySound(net.minecraftforge.client.event.sound.PlaySoundEvent17);
+    Code:
+       0: invokestatic  #127                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+       3: ifnull        26
+       6: invokestatic  #127                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+       9: getfield      #256                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      12: ifnull        26
+      15: getstatic     #283                // Field am2/network/AMPacketProcessorClient.deaf:I
+      18: ifle          26
+      21: aload_1
+      22: aconst_null
+      23: putfield      #289                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+      26: return

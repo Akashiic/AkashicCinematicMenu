@@ -1,0 +1,459 @@
+Compiled from "SoundPlayFlush.java"
+public class org.blockartistry.mod.DynSurround.asm.SoundPlayFlush extends org.blockartistry.mod.DynSurround.asm.Transmorgrifier {
+  public org.blockartistry.mod.DynSurround.asm.SoundPlayFlush();
+    Code:
+       0: aload_0
+       1: ldc           #9                  // String net.minecraft.client.audio.SoundManager
+       3: invokespecial #12                 // Method org/blockartistry/mod/DynSurround/asm/Transmorgrifier."<init>":(Ljava/lang/String;)V
+       6: return
+
+  public java.lang.String name();
+    Code:
+       0: ldc           #18                 // String SoundManager playSound flush
+       2: areturn
+
+  public boolean transmorgrify(org.objectweb.asm.tree.ClassNode);
+    Code:
+       0: iconst_2
+       1: anewarray     #22                 // class java/lang/String
+       4: dup
+       5: iconst_0
+       6: ldc           #24                 // String playSound
+       8: aastore
+       9: dup
+      10: iconst_1
+      11: ldc           #26                 // String func_148611_c
+      13: aastore
+      14: astore_2
+      15: ldc           #28                 // String (Lnet/minecraft/client/audio/ISound;)V
+      17: astore_3
+      18: aload_0
+      19: aload_1
+      20: ldc           #28                 // String (Lnet/minecraft/client/audio/ISound;)V
+      22: aload_2
+      23: invokevirtual #32                 // Method findMethod:(Lorg/objectweb/asm/tree/ClassNode;Ljava/lang/String;[Ljava/lang/String;)Lorg/objectweb/asm/tree/MethodNode;
+      26: astore        4
+      28: aload         4
+      30: ifnull        179
+      33: aload_0
+      34: invokestatic  #38                 // Method org/blockartistry/mod/DynSurround/asm/Transformer.log:()Lorg/apache/logging/log4j/Logger;
+      37: aload         4
+      39: ldc           #40                 // String Found!
+      41: invokevirtual #44                 // Method logMethod:(Lorg/apache/logging/log4j/Logger;Lorg/objectweb/asm/tree/MethodNode;Ljava/lang/String;)V
+      44: ldc           #46                 // String org/blockartistry/mod/DynSurround/client/sound/SoundManager
+      46: astore        5
+      48: ldc           #48                 // String flushSound
+      50: astore        6
+      52: ldc           #49                 // String ()V
+      54: astore        7
+      56: new           #51                 // class org/objectweb/asm/tree/InsnList
+      59: dup
+      60: invokespecial #53                 // Method org/objectweb/asm/tree/InsnList."<init>":()V
+      63: astore        8
+      65: aload         8
+      67: new           #55                 // class org/objectweb/asm/tree/MethodInsnNode
+      70: dup
+      71: sipush        184
+      74: ldc           #46                 // String org/blockartistry/mod/DynSurround/client/sound/SoundManager
+      76: ldc           #48                 // String flushSound
+      78: ldc           #49                 // String ()V
+      80: iconst_0
+      81: invokespecial #58                 // Method org/objectweb/asm/tree/MethodInsnNode."<init>":(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+      84: invokevirtual #62                 // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+      87: aload         4
+      89: getfield      #68                 // Field org/objectweb/asm/tree/MethodNode.instructions:Lorg/objectweb/asm/tree/InsnList;
+      92: invokevirtual #72                 // Method org/objectweb/asm/tree/InsnList.iterator:()Ljava/util/ListIterator;
+      95: astore        9
+      97: aload         9
+      99: invokeinterface #82,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+     104: ifeq          177
+     107: aload         9
+     109: invokeinterface #86,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     114: checkcast     #88                 // class org/objectweb/asm/tree/AbstractInsnNode
+     117: astore        10
+     119: aload         10
+     121: instanceof    #55                 // class org/objectweb/asm/tree/MethodInsnNode
+     124: ifeq          174
+     127: aload         10
+     129: checkcast     #55                 // class org/objectweb/asm/tree/MethodInsnNode
+     132: astore        11
+     134: aload         11
+     136: getfield      #92                 // Field org/objectweb/asm/tree/MethodInsnNode.owner:Ljava/lang/String;
+     139: ldc           #94                 // String net/minecraft/client/audio/SoundManager$SoundSystemStarterThread
+     141: invokevirtual #98                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     144: ifeq          174
+     147: aload         11
+     149: getfield      #100                // Field org/objectweb/asm/tree/MethodInsnNode.name:Ljava/lang/String;
+     152: ldc           #102                // String play
+     154: invokevirtual #98                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     157: ifeq          174
+     160: aload         4
+     162: getfield      #68                 // Field org/objectweb/asm/tree/MethodNode.instructions:Lorg/objectweb/asm/tree/InsnList;
+     165: aload         10
+     167: aload         8
+     169: invokevirtual #106                // Method org/objectweb/asm/tree/InsnList.insert:(Lorg/objectweb/asm/tree/AbstractInsnNode;Lorg/objectweb/asm/tree/InsnList;)V
+     172: iconst_1
+     173: ireturn
+     174: goto          97
+     177: iconst_0
+     178: ireturn
+     179: invokestatic  #38                 // Method org/blockartistry/mod/DynSurround/asm/Transformer.log:()Lorg/apache/logging/log4j/Logger;
+     182: ldc           #108                // String Unable to locate method {}{}
+     184: iconst_2
+     185: anewarray     #110                // class java/lang/Object
+     188: dup
+     189: iconst_0
+     190: aload_2
+     191: iconst_0
+     192: aaload
+     193: aastore
+     194: dup
+     195: iconst_1
+     196: ldc           #28                 // String (Lnet/minecraft/client/audio/ISound;)V
+     198: aastore
+     199: invokeinterface #116,  3          // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;[Ljava/lang/Object;)V
+     204: invokestatic  #38                 // Method org/blockartistry/mod/DynSurround/asm/Transformer.log:()Lorg/apache/logging/log4j/Logger;
+     207: ldc           #118                // String Unable to patch [{}]!
+     209: iconst_1
+     210: anewarray     #110                // class java/lang/Object
+     213: dup
+     214: iconst_0
+     215: aload_0
+     216: invokevirtual #121                // Method getClassName:()Ljava/lang/String;
+     219: aastore
+     220: invokeinterface #124,  3          // InterfaceMethod org/apache/logging/log4j/Logger.info:(Ljava/lang/String;[Ljava/lang/Object;)V
+     225: iconst_0
+     226: ireturn
+}
+Compiled from "PatchSoundManager.java"
+public class org.blockartistry.mod.DynSurround.asm.PatchSoundManager extends org.blockartistry.mod.DynSurround.asm.Transmorgrifier {
+  public org.blockartistry.mod.DynSurround.asm.PatchSoundManager();
+    Code:
+       0: aload_0
+       1: ldc           #9                  // String net.minecraft.client.audio.SoundManager
+       3: invokespecial #12                 // Method org/blockartistry/mod/DynSurround/asm/Transmorgrifier."<init>":(Ljava/lang/String;)V
+       6: return
+
+  public java.lang.String name();
+    Code:
+       0: ldc           #18                 // String Sound Caching
+       2: areturn
+
+  public boolean transmorgrify(org.objectweb.asm.tree.ClassNode);
+    Code:
+       0: iconst_2
+       1: anewarray     #22                 // class java/lang/String
+       4: dup
+       5: iconst_0
+       6: ldc           #24                 // String getURLForSoundResource
+       8: aastore
+       9: dup
+      10: iconst_1
+      11: ldc           #26                 // String func_148612_a
+      13: aastore
+      14: astore_2
+      15: ldc           #28                 // String (Lnet/minecraft/util/ResourceLocation;)Ljava/net/URL;
+      17: astore_3
+      18: aload_0
+      19: aload_1
+      20: ldc           #28                 // String (Lnet/minecraft/util/ResourceLocation;)Ljava/net/URL;
+      22: aload_2
+      23: invokevirtual #32                 // Method findMethod:(Lorg/objectweb/asm/tree/ClassNode;Ljava/lang/String;[Ljava/lang/String;)Lorg/objectweb/asm/tree/MethodNode;
+      26: astore        4
+      28: aload         4
+      30: ifnull        137
+      33: aload_0
+      34: invokestatic  #38                 // Method org/blockartistry/mod/DynSurround/asm/Transformer.log:()Lorg/apache/logging/log4j/Logger;
+      37: aload         4
+      39: ldc           #40                 // String Found!
+      41: invokevirtual #44                 // Method logMethod:(Lorg/apache/logging/log4j/Logger;Lorg/objectweb/asm/tree/MethodNode;Ljava/lang/String;)V
+      44: new           #46                 // class org/objectweb/asm/tree/InsnList
+      47: dup
+      48: invokespecial #48                 // Method org/objectweb/asm/tree/InsnList."<init>":()V
+      51: astore        5
+      53: aload         5
+      55: new           #50                 // class org/objectweb/asm/tree/VarInsnNode
+      58: dup
+      59: bipush        25
+      61: iconst_0
+      62: invokespecial #53                 // Method org/objectweb/asm/tree/VarInsnNode."<init>":(II)V
+      65: invokevirtual #57                 // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+      68: ldc           #59                 // String org/blockartistry/mod/DynSurround/client/sound/cache/SoundCache
+      70: astore        6
+      72: ldc           #24                 // String getURLForSoundResource
+      74: astore        7
+      76: ldc           #28                 // String (Lnet/minecraft/util/ResourceLocation;)Ljava/net/URL;
+      78: astore        8
+      80: aload         5
+      82: new           #61                 // class org/objectweb/asm/tree/MethodInsnNode
+      85: dup
+      86: sipush        184
+      89: ldc           #59                 // String org/blockartistry/mod/DynSurround/client/sound/cache/SoundCache
+      91: ldc           #24                 // String getURLForSoundResource
+      93: ldc           #28                 // String (Lnet/minecraft/util/ResourceLocation;)Ljava/net/URL;
+      95: iconst_0
+      96: invokespecial #64                 // Method org/objectweb/asm/tree/MethodInsnNode."<init>":(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+      99: invokevirtual #57                 // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+     102: aload         5
+     104: new           #66                 // class org/objectweb/asm/tree/InsnNode
+     107: dup
+     108: sipush        176
+     111: invokespecial #69                 // Method org/objectweb/asm/tree/InsnNode."<init>":(I)V
+     114: invokevirtual #57                 // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+     117: aload         4
+     119: getfield      #75                 // Field org/objectweb/asm/tree/MethodNode.instructions:Lorg/objectweb/asm/tree/InsnList;
+     122: aload         4
+     124: getfield      #75                 // Field org/objectweb/asm/tree/MethodNode.instructions:Lorg/objectweb/asm/tree/InsnList;
+     127: invokevirtual #79                 // Method org/objectweb/asm/tree/InsnList.getFirst:()Lorg/objectweb/asm/tree/AbstractInsnNode;
+     130: aload         5
+     132: invokevirtual #83                 // Method org/objectweb/asm/tree/InsnList.insert:(Lorg/objectweb/asm/tree/AbstractInsnNode;Lorg/objectweb/asm/tree/InsnList;)V
+     135: iconst_1
+     136: ireturn
+     137: invokestatic  #38                 // Method org/blockartistry/mod/DynSurround/asm/Transformer.log:()Lorg/apache/logging/log4j/Logger;
+     140: ldc           #87                 // String Unable to locate method {}{}
+     142: iconst_2
+     143: anewarray     #89                 // class java/lang/Object
+     146: dup
+     147: iconst_0
+     148: aload_2
+     149: iconst_0
+     150: aaload
+     151: aastore
+     152: dup
+     153: iconst_1
+     154: ldc           #28                 // String (Lnet/minecraft/util/ResourceLocation;)Ljava/net/URL;
+     156: aastore
+     157: invokeinterface #95,  3           // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;[Ljava/lang/Object;)V
+     162: invokestatic  #38                 // Method org/blockartistry/mod/DynSurround/asm/Transformer.log:()Lorg/apache/logging/log4j/Logger;
+     165: ldc           #97                 // String Unable to patch [{}]!
+     167: iconst_1
+     168: anewarray     #89                 // class java/lang/Object
+     171: dup
+     172: iconst_0
+     173: aload_0
+     174: invokevirtual #100                // Method getClassName:()Ljava/lang/String;
+     177: aastore
+     178: invokeinterface #103,  3          // InterfaceMethod org/apache/logging/log4j/Logger.info:(Ljava/lang/String;[Ljava/lang/Object;)V
+     183: iconst_0
+     184: ireturn
+}
+Compiled from "SoundCache.java"
+public final class org.blockartistry.mod.DynSurround.client.sound.cache.SoundCache {
+  private static final int BUFFER_SIZE;
+
+  private static final byte[] BUFFER;
+
+  private static final net.minecraft.client.resources.IResourceManager manager;
+
+  private static final java.util.Map<net.minecraft.util.ResourceLocation, java.net.URL> cache;
+
+  private static final byte[] SILENCE;
+
+  private static byte[] getBuffer(net.minecraft.util.ResourceLocation);
+    Code:
+       0: aconst_null
+       1: astore_1
+       2: getstatic     #27                 // Field manager:Lnet/minecraft/client/resources/IResourceManager;
+       5: aload_0
+       6: invokeinterface #33,  2           // InterfaceMethod net/minecraft/client/resources/IResourceManager.func_110536_a:(Lnet/minecraft/util/ResourceLocation;)Lnet/minecraft/client/resources/IResource;
+      11: invokeinterface #39,  1           // InterfaceMethod net/minecraft/client/resources/IResource.func_110527_b:()Ljava/io/InputStream;
+      16: astore_1
+      17: aload_1
+      18: ifnonnull     55
+      21: ldc           #41                 // String No stream returned for [%s]
+      23: iconst_1
+      24: anewarray     #4                  // class java/lang/Object
+      27: dup
+      28: iconst_0
+      29: aload_0
+      30: invokevirtual #47                 // Method net/minecraft/util/ResourceLocation.toString:()Ljava/lang/String;
+      33: aastore
+      34: invokestatic  #53                 // Method org/blockartistry/mod/DynSurround/ModLog.warn:(Ljava/lang/String;[Ljava/lang/Object;)V
+      37: getstatic     #55                 // Field SILENCE:[B
+      40: astore_2
+      41: aload_1
+      42: ifnull        53
+      45: aload_1
+      46: invokevirtual #61                 // Method java/io/InputStream.close:()V
+      49: goto          53
+      52: astore_3
+      53: aload_2
+      54: areturn
+      55: aload_1
+      56: invokevirtual #66                 // Method java/io/InputStream.available:()I
+      59: ldc           #12                 // int 65536
+      61: if_icmpge     125
+      64: aload_1
+      65: getstatic     #68                 // Field BUFFER:[B
+      68: iconst_0
+      69: ldc           #12                 // int 65536
+      71: invokestatic  #74                 // Method com/google/common/io/ByteStreams.read:(Ljava/io/InputStream;[BII)I
+      74: istore_2
+      75: iload_2
+      76: ifeq          85
+      79: iload_2
+      80: ldc           #12                 // int 65536
+      82: if_icmpne     102
+      85: aconst_null
+      86: astore_3
+      87: aload_1
+      88: ifnull        100
+      91: aload_1
+      92: invokevirtual #61                 // Method java/io/InputStream.close:()V
+      95: goto          100
+      98: astore        4
+     100: aload_3
+     101: areturn
+     102: getstatic     #68                 // Field BUFFER:[B
+     105: iload_2
+     106: invokestatic  #80                 // Method java/util/Arrays.copyOf:([BI)[B
+     109: astore_3
+     110: aload_1
+     111: ifnull        123
+     114: aload_1
+     115: invokevirtual #61                 // Method java/io/InputStream.close:()V
+     118: goto          123
+     121: astore        4
+     123: aload_3
+     124: areturn
+     125: aload_1
+     126: ifnull        194
+     129: aload_1
+     130: invokevirtual #61                 // Method java/io/InputStream.close:()V
+     133: goto          194
+     136: astore_2
+     137: goto          194
+     140: astore_2
+     141: ldc           #82                 // String Error reading stream [%s]
+     143: iconst_1
+     144: anewarray     #4                  // class java/lang/Object
+     147: dup
+     148: iconst_0
+     149: aload_0
+     150: invokevirtual #47                 // Method net/minecraft/util/ResourceLocation.toString:()Ljava/lang/String;
+     153: aastore
+     154: invokestatic  #53                 // Method org/blockartistry/mod/DynSurround/ModLog.warn:(Ljava/lang/String;[Ljava/lang/Object;)V
+     157: getstatic     #55                 // Field SILENCE:[B
+     160: astore_3
+     161: aload_1
+     162: ifnull        174
+     165: aload_1
+     166: invokevirtual #61                 // Method java/io/InputStream.close:()V
+     169: goto          174
+     172: astore        4
+     174: aload_3
+     175: areturn
+     176: astore        5
+     178: aload_1
+     179: ifnull        191
+     182: aload_1
+     183: invokevirtual #61                 // Method java/io/InputStream.close:()V
+     186: goto          191
+     189: astore        6
+     191: aload         5
+     193: athrow
+     194: aconst_null
+     195: areturn
+    Exception table:
+       from    to  target type
+          45    49    52   Class java/lang/Throwable
+          91    95    98   Class java/lang/Throwable
+         114   118   121   Class java/lang/Throwable
+         129   133   136   Class java/lang/Throwable
+           2    41   140   Class java/lang/Throwable
+          55    87   140   Class java/lang/Throwable
+         102   110   140   Class java/lang/Throwable
+         165   169   172   Class java/lang/Throwable
+           2    41   176   any
+          55    87   176   any
+         102   110   176   any
+         140   161   176   any
+         182   186   189   Class java/lang/Throwable
+         176   178   176   any
+
+  private static java.net.URL load(net.minecraft.util.ResourceLocation) throws java.lang.Exception;
+    Code:
+       0: aload_0
+       1: invokestatic  #95                 // Method getBuffer:(Lnet/minecraft/util/ResourceLocation;)[B
+       4: astore_1
+       5: aload_1
+       6: ifnonnull     21
+       9: new           #97                 // class org/blockartistry/mod/DynSurround/client/sound/cache/SoundStreamHandler
+      12: dup
+      13: aload_0
+      14: invokespecial #101                // Method org/blockartistry/mod/DynSurround/client/sound/cache/SoundStreamHandler."<init>":(Lnet/minecraft/util/ResourceLocation;)V
+      17: astore_2
+      18: goto          31
+      21: new           #103                // class org/blockartistry/mod/DynSurround/client/sound/cache/MemoryStreamHandler
+      24: dup
+      25: aload_0
+      26: aload_1
+      27: invokespecial #106                // Method org/blockartistry/mod/DynSurround/client/sound/cache/MemoryStreamHandler."<init>":(Lnet/minecraft/util/ResourceLocation;[B)V
+      30: astore_2
+      31: new           #108                // class java/net/URL
+      34: dup
+      35: aconst_null
+      36: checkcast     #108                // class java/net/URL
+      39: aload_2
+      40: invokevirtual #111                // Method org/blockartistry/mod/DynSurround/client/sound/cache/SoundStreamHandler.getSpec:()Ljava/lang/String;
+      43: aload_2
+      44: invokespecial #114                // Method java/net/URL."<init>":(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V
+      47: areturn
+
+  private org.blockartistry.mod.DynSurround.client.sound.cache.SoundCache();
+    Code:
+       0: aload_0
+       1: invokespecial #120                // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static java.net.URL getURLForSoundResource(net.minecraft.util.ResourceLocation);
+    Code:
+       0: getstatic     #125                // Field cache:Ljava/util/Map;
+       3: aload_0
+       4: invokeinterface #131,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+       9: checkcast     #108                // class java/net/URL
+      12: astore_1
+      13: aload_1
+      14: ifnonnull     47
+      17: getstatic     #125                // Field cache:Ljava/util/Map;
+      20: aload_0
+      21: aload_0
+      22: invokestatic  #133                // Method load:(Lnet/minecraft/util/ResourceLocation;)Ljava/net/URL;
+      25: dup
+      26: astore_1
+      27: invokeinterface #137,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+      32: pop
+      33: goto          47
+      36: astore_2
+      37: new           #139                // class java/lang/Error
+      40: dup
+      41: ldc           #141                // String Unable to load sound from cache!
+      43: invokespecial #144                // Method java/lang/Error."<init>":(Ljava/lang/String;)V
+      46: athrow
+      47: aload_1
+      48: areturn
+    Exception table:
+       from    to  target type
+          17    33    36   Class java/lang/Throwable
+
+  static {};
+    Code:
+       0: ldc           #12                 // int 65536
+       2: newarray       byte
+       4: putstatic     #68                 // Field BUFFER:[B
+       7: invokestatic  #154                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+      10: invokevirtual #158                // Method net/minecraft/client/Minecraft.func_110442_L:()Lnet/minecraft/client/resources/IResourceManager;
+      13: putstatic     #27                 // Field manager:Lnet/minecraft/client/resources/IResourceManager;
+      16: new           #160                // class java/util/HashMap
+      19: dup
+      20: sipush        256
+      23: invokespecial #163                // Method java/util/HashMap."<init>":(I)V
+      26: putstatic     #125                // Field cache:Ljava/util/Map;
+      29: new           #43                 // class net/minecraft/util/ResourceLocation
+      32: dup
+      33: ldc           #165                // String dsurround:sounds/ambient/silence.ogg
+      35: invokespecial #166                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+      38: invokestatic  #95                 // Method getBuffer:(Lnet/minecraft/util/ResourceLocation;)[B
+      41: putstatic     #55                 // Field SILENCE:[B
+      44: return
+}

@@ -1,0 +1,346 @@
+Compiled from "MixinLoadingScreenRenderer.java"
+public class ganymedes01.etfuturum.mixins.early.worldthumbnail.client.MixinLoadingScreenRenderer {
+  private net.minecraft.client.Minecraft field_73725_b;
+
+  private java.lang.String field_73726_c;
+
+  private java.lang.String field_73727_a;
+
+  public ganymedes01.etfuturum.mixins.early.worldthumbnail.client.MixinLoadingScreenRenderer();
+    Code:
+       0: aload_0
+       1: invokespecial #18                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  private void etfu$captureProgress(int, org.spongepowered.asm.mixin.injection.callback.CallbackInfo, com.llamalad7.mixinextras.sugar.ref.LocalIntRef);
+    Code:
+       0: aload_3
+       1: iload_1
+       2: invokeinterface #36,  2           // InterfaceMethod com/llamalad7/mixinextras/sugar/ref/LocalIntRef.set:(I)V
+       7: return
+
+  private boolean etfu$modernLoadingScreen(cpw.mods.fml.client.FMLClientHandler, net.minecraft.client.gui.ScaledResolution, com.llamalad7.mixinextras.injector.wrapoperation.Operation<java.lang.Boolean>, com.llamalad7.mixinextras.sugar.ref.LocalIntRef);
+    Code:
+       0: aload_3
+       1: iconst_2
+       2: anewarray     #4                  // class java/lang/Object
+       5: dup
+       6: iconst_0
+       7: aload_1
+       8: aastore
+       9: dup
+      10: iconst_1
+      11: aload_2
+      12: aastore
+      13: invokeinterface #56,  2           // InterfaceMethod com/llamalad7/mixinextras/injector/wrapoperation/Operation.call:([Ljava/lang/Object;)Ljava/lang/Object;
+      18: checkcast     #58                 // class java/lang/Boolean
+      21: invokevirtual #62                 // Method java/lang/Boolean.booleanValue:()Z
+      24: ifeq          29
+      27: iconst_1
+      28: ireturn
+      29: invokestatic  #67                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenStateTracker.isActive:()Z
+      32: ifne          37
+      35: iconst_0
+      36: ireturn
+      37: aload_0
+      38: getfield      #69                 // Field field_73726_c:Ljava/lang/String;
+      41: astore        5
+      43: aload         5
+      45: ifnull        56
+      48: aload         5
+      50: invokevirtual #74                 // Method java/lang/String.isEmpty:()Z
+      53: ifeq          61
+      56: invokestatic  #80                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenText.getLoadingWorldTitle:()Ljava/lang/String;
+      59: astore        5
+      61: aload         5
+      63: invokestatic  #84                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenStateTracker.updateTitle:(Ljava/lang/String;)V
+      66: aload_0
+      67: getfield      #86                 // Field field_73727_a:Ljava/lang/String;
+      70: ifnull        93
+      73: aload_0
+      74: getfield      #86                 // Field field_73727_a:Ljava/lang/String;
+      77: invokevirtual #74                 // Method java/lang/String.isEmpty:()Z
+      80: ifne          93
+      83: aload_0
+      84: getfield      #86                 // Field field_73727_a:Ljava/lang/String;
+      87: invokestatic  #89                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenStateTracker.updateSubtitle:(Ljava/lang/String;)V
+      90: goto          99
+      93: invokestatic  #92                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenText.getBuildingTerrainSubtitle:()Ljava/lang/String;
+      96: invokestatic  #89                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenStateTracker.updateSubtitle:(Ljava/lang/String;)V
+      99: aload_0
+     100: getfield      #94                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     103: invokevirtual #100                // Method net/minecraft/client/Minecraft.func_71401_C:()Lnet/minecraft/server/integrated/IntegratedServer;
+     106: astore        6
+     108: aload         6
+     110: ifnull        121
+     113: aload         6
+     115: getfield      #105                // Field net/minecraft/server/integrated/IntegratedServer.field_71303_e:I
+     118: goto          122
+     121: iconst_0
+     122: istore        7
+     124: fconst_0
+     125: fstore        8
+     127: iload         7
+     129: ifle          143
+     132: iload         7
+     134: i2f
+     135: ldc           #106                // float 100.0f
+     137: fdiv
+     138: fstore        8
+     140: goto          166
+     143: aload         4
+     145: invokeinterface #110,  1          // InterfaceMethod com/llamalad7/mixinextras/sugar/ref/LocalIntRef.get:()I
+     150: ifle          166
+     153: aload         4
+     155: invokeinterface #110,  1          // InterfaceMethod com/llamalad7/mixinextras/sugar/ref/LocalIntRef.get:()I
+     160: i2f
+     161: ldc           #106                // float 100.0f
+     163: fdiv
+     164: fstore        8
+     166: fload         8
+     168: invokestatic  #116                // Method ganymedes01/etfuturum/client/SpawnChunkProgress.getProgress:()F
+     171: invokestatic  #122                // Method java/lang/Math.max:(FF)F
+     174: fstore        8
+     176: fload         8
+     178: invokestatic  #126                // Method ganymedes01/etfuturum/client/SpawnChunkProgress.setProgress:(F)V
+     181: fload         8
+     183: invokestatic  #129                // Method ganymedes01/etfuturum/client/loading/LoadingScreenStateTracker.updateProgress:(F)V
+     186: aload_0
+     187: getfield      #94                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     190: getfield      #133                // Field net/minecraft/client/Minecraft.field_71462_r:Lnet/minecraft/client/gui/GuiScreen;
+     193: instanceof    #135                // class ganymedes01/etfuturum/client/GuiLoadingBridge
+     196: ifne          213
+     199: aload_0
+     200: getfield      #94                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     203: new           #135                // class ganymedes01/etfuturum/client/GuiLoadingBridge
+     206: dup
+     207: invokespecial #136                // Method ganymedes01/etfuturum/client/GuiLoadingBridge."<init>":()V
+     210: invokevirtual #140                // Method net/minecraft/client/Minecraft.func_147108_a:(Lnet/minecraft/client/gui/GuiScreen;)V
+     213: aload_0
+     214: getfield      #94                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     217: getfield      #133                // Field net/minecraft/client/Minecraft.field_71462_r:Lnet/minecraft/client/gui/GuiScreen;
+     220: ifnull        236
+     223: aload_0
+     224: getfield      #94                 // Field field_73725_b:Lnet/minecraft/client/Minecraft;
+     227: getfield      #133                // Field net/minecraft/client/Minecraft.field_71462_r:Lnet/minecraft/client/gui/GuiScreen;
+     230: iconst_0
+     231: iconst_0
+     232: fconst_0
+     233: invokevirtual #146                // Method net/minecraft/client/gui/GuiScreen.func_73863_a:(IIF)V
+     236: iconst_1
+     237: ireturn
+}
+Compiled from "MixinGuiDownloadTerrain.java"
+public abstract class ganymedes01.etfuturum.mixins.early.worldthumbnail.client.MixinGuiDownloadTerrain extends net.minecraft.client.gui.GuiScreen {
+  private static final long ETFU$PREPARING_TERRAIN_DELAY_MS;
+
+  private long etfu$openedAt;
+
+  public ganymedes01.etfuturum.mixins.early.worldthumbnail.client.MixinGuiDownloadTerrain();
+    Code:
+       0: aload_0
+       1: invokespecial #18                 // Method net/minecraft/client/gui/GuiScreen."<init>":()V
+       4: return
+
+  private void etfu$beginDownloadTerrain(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+       0: invokestatic  #34                 // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+       3: astore_2
+       4: aload_0
+       5: invokestatic  #38                 // Method net/minecraft/client/Minecraft.func_71386_F:()J
+       8: putfield      #40                 // Field etfu$openedAt:J
+      11: aload_2
+      12: invokevirtual #44                 // Method net/minecraft/client/Minecraft.func_71401_C:()Lnet/minecraft/server/integrated/IntegratedServer;
+      15: ifnull        22
+      18: iconst_1
+      19: goto          23
+      22: iconst_0
+      23: invokestatic  #50                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenHooks.beginDownloadTerrain:(Z)V
+      26: return
+
+  private void etfu$modernLoadingScreen(int, int, float, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+       0: aload         4
+       2: invokevirtual #64                 // Method org/spongepowered/asm/mixin/injection/callback/CallbackInfo.cancel:()V
+       5: invokestatic  #34                 // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+       8: astore        5
+      10: invokestatic  #70                 // Method ganymedes01/etfuturum/client/SpawnChunkProgress.getProgress:()F
+      13: fstore        6
+      15: invokestatic  #75                 // Method ganymedes01/etfuturum/client/ChunkLoadingProgress.getRawProgress:()F
+      18: fstore        7
+      20: fload         6
+      22: fload         7
+      24: invokestatic  #81                 // Method java/lang/Math.max:(FF)F
+      27: fstore        8
+      29: aload         5
+      31: invokevirtual #44                 // Method net/minecraft/client/Minecraft.func_71401_C:()Lnet/minecraft/server/integrated/IntegratedServer;
+      34: ifnonnull     51
+      37: invokestatic  #87                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenText.getDownloadingTerrainTitle:()Ljava/lang/String;
+      40: invokestatic  #93                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenStateTracker.updateTitle:(Ljava/lang/String;)V
+      43: ldc           #95                 // String
+      45: invokestatic  #98                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenStateTracker.updateSubtitle:(Ljava/lang/String;)V
+      48: goto          92
+      51: invokestatic  #101                // Method ganymedes01/etfuturum/client/loading/LoadingScreenText.getLoadingWorldTitle:()Ljava/lang/String;
+      54: invokestatic  #93                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenStateTracker.updateTitle:(Ljava/lang/String;)V
+      57: invokestatic  #38                 // Method net/minecraft/client/Minecraft.func_71386_F:()J
+      60: aload_0
+      61: getfield      #40                 // Field etfu$openedAt:J
+      64: lsub
+      65: ldc2_w        #11                 // long 1500l
+      68: lcmp
+      69: iflt          92
+      72: fload         6
+      74: fconst_0
+      75: fcmpl
+      76: ifgt          86
+      79: fload         7
+      81: fconst_0
+      82: fcmpl
+      83: ifle          92
+      86: invokestatic  #104                // Method ganymedes01/etfuturum/client/loading/LoadingScreenText.getPreparingTerrainSubtitle:()Ljava/lang/String;
+      89: invokestatic  #98                 // Method ganymedes01/etfuturum/client/loading/LoadingScreenStateTracker.updateSubtitle:(Ljava/lang/String;)V
+      92: fload         8
+      94: invokestatic  #108                // Method ganymedes01/etfuturum/client/loading/LoadingScreenStateTracker.updateProgress:(F)V
+      97: fload         6
+      99: fconst_0
+     100: fcmpg
+     101: ifgt          109
+     104: aload         5
+     106: invokestatic  #112                // Method ganymedes01/etfuturum/client/loading/LoadingScreenHooks.updateClientChunkMap:(Lnet/minecraft/client/Minecraft;)V
+     109: invokestatic  #118                // Method ganymedes01/etfuturum/client/loading/LoadingScreenRenderManager.getRenderer:()Lganymedes01/etfuturum/client/loading/LoadingScreenRenderer;
+     112: aload         5
+     114: aload_0
+     115: getfield      #122                // Field field_146294_l:I
+     118: aload_0
+     119: getfield      #125                // Field field_146295_m:I
+     122: invokestatic  #129                // Method ganymedes01/etfuturum/client/loading/LoadingScreenStateTracker.snapshot:()Lganymedes01/etfuturum/client/loading/LoadingScreenSnapshot;
+     125: invokevirtual #135                // Method ganymedes01/etfuturum/client/loading/LoadingScreenRenderer.render:(Lnet/minecraft/client/Minecraft;IILganymedes01/etfuturum/client/loading/LoadingScreenSnapshot;)V
+     128: return
+}
+Compiled from "LoadingScreenBackgroundRenderer.java"
+public class ganymedes01.etfuturum.client.loading.LoadingScreenBackgroundRenderer {
+  public ganymedes01.etfuturum.client.loading.LoadingScreenBackgroundRenderer();
+    Code:
+       0: aload_0
+       1: invokespecial #9                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public void render(net.minecraft.client.Minecraft, int, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: iload_2
+       3: iload_3
+       4: invokespecial #16                 // Method renderDefaultBackground:(Lnet/minecraft/client/Minecraft;II)V
+       7: return
+
+  private void renderDefaultBackground(net.minecraft.client.Minecraft, int, int);
+    Code:
+       0: aload_1
+       1: invokevirtual #27                 // Method net/minecraft/client/Minecraft.func_110434_K:()Lnet/minecraft/client/renderer/texture/TextureManager;
+       4: getstatic     #33                 // Field net/minecraft/client/gui/Gui.field_110325_k:Lnet/minecraft/util/ResourceLocation;
+       7: invokevirtual #39                 // Method net/minecraft/client/renderer/texture/TextureManager.func_110577_a:(Lnet/minecraft/util/ResourceLocation;)V
+      10: aload_0
+      11: iload_2
+      12: iload_3
+      13: ldc           #40                 // float 32.0f
+      15: fconst_0
+      16: ldc           #41                 // int -12566464
+      18: invokespecial #45                 // Method drawTexturedQuad:(IIFFI)V
+      21: return
+
+  private void drawTexturedQuad(int, int, float, float, int);
+    Code:
+       0: getstatic     #51                 // Field net/minecraft/client/renderer/Tessellator.field_78398_a:Lnet/minecraft/client/renderer/Tessellator;
+       3: astore        6
+       5: iload         5
+       7: bipush        16
+       9: ishr
+      10: sipush        255
+      13: iand
+      14: i2f
+      15: ldc           #52                 // float 255.0f
+      17: fdiv
+      18: fstore        7
+      20: iload         5
+      22: bipush        8
+      24: ishr
+      25: sipush        255
+      28: iand
+      29: i2f
+      30: ldc           #52                 // float 255.0f
+      32: fdiv
+      33: fstore        8
+      35: iload         5
+      37: sipush        255
+      40: iand
+      41: i2f
+      42: ldc           #52                 // float 255.0f
+      44: fdiv
+      45: fstore        9
+      47: aload         6
+      49: invokevirtual #55                 // Method net/minecraft/client/renderer/Tessellator.func_78382_b:()V
+      52: aload         6
+      54: fload         7
+      56: fload         8
+      58: fload         9
+      60: invokevirtual #59                 // Method net/minecraft/client/renderer/Tessellator.func_78386_a:(FFF)V
+      63: aload         6
+      65: dconst_0
+      66: iload_2
+      67: i2d
+      68: dconst_0
+      69: dconst_0
+      70: iload_2
+      71: i2f
+      72: fload_3
+      73: fdiv
+      74: fload         4
+      76: fadd
+      77: f2d
+      78: invokevirtual #63                 // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+      81: aload         6
+      83: iload_1
+      84: i2d
+      85: iload_2
+      86: i2d
+      87: dconst_0
+      88: iload_1
+      89: i2f
+      90: fload_3
+      91: fdiv
+      92: f2d
+      93: iload_2
+      94: i2f
+      95: fload_3
+      96: fdiv
+      97: fload         4
+      99: fadd
+     100: f2d
+     101: invokevirtual #63                 // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+     104: aload         6
+     106: iload_1
+     107: i2d
+     108: dconst_0
+     109: dconst_0
+     110: iload_1
+     111: i2f
+     112: fload_3
+     113: fdiv
+     114: f2d
+     115: fload         4
+     117: f2d
+     118: invokevirtual #63                 // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+     121: aload         6
+     123: dconst_0
+     124: dconst_0
+     125: dconst_0
+     126: dconst_0
+     127: fload         4
+     129: f2d
+     130: invokevirtual #63                 // Method net/minecraft/client/renderer/Tessellator.func_78374_a:(DDDDD)V
+     133: aload         6
+     135: invokevirtual #67                 // Method net/minecraft/client/renderer/Tessellator.func_78381_a:()I
+     138: pop
+     139: return
+}

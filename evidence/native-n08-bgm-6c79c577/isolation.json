@@ -1,0 +1,8 @@
+{
+  "reason": "An existing n08-setup held a different73-class N08 artifact. Preserve it instead of overwriting, deploy to a new physical QA copy with a unique version.",
+  "previous_QA_untouched": true,
+  "new_candidate": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n08-bgm-6c79c577",
+  "new_QA": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n08-bgm-6c79c577",
+  "version": "0.5.1-alpha.1",
+  "created": 1789965621.178817
+}

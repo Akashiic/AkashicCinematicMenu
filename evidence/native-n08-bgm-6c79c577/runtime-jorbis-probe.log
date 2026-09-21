@@ -1,0 +1,2 @@
+FORMAT PCM_SIGNED 44100.0 Hz, 16 bit, stereo, 4 bytes/frame, little-endian
+RESULT decoded_seconds=161.8808163265306 chunks=196 max_buffer=176128 failures=0

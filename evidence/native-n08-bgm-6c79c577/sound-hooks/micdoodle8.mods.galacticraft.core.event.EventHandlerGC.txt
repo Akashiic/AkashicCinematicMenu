@@ -1,0 +1,197 @@
+  public void onSoundPlayed(net.minecraftforge.client.event.sound.PlaySoundEvent17);
+    Code:
+       0: aload_1
+       1: getfield      #1162               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+       4: ifnonnull     8
+       7: return
+       8: invokestatic  #875                // Method cpw/mods/fml/client/FMLClientHandler.instance:()Lcpw/mods/fml/client/FMLClientHandler;
+      11: invokevirtual #879                // Method cpw/mods/fml/client/FMLClientHandler.getClient:()Lnet/minecraft/client/Minecraft;
+      14: getfield      #885                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      17: astore_2
+      18: aload_2
+      19: ifnull        427
+      22: aload_2
+      23: getfield      #1165               // Field net/minecraft/client/entity/EntityPlayerSP.field_70170_p:Lnet/minecraft/world/World;
+      26: ifnull        427
+      29: aload_2
+      30: getfield      #1165               // Field net/minecraft/client/entity/EntityPlayerSP.field_70170_p:Lnet/minecraft/world/World;
+      33: getfield      #208                // Field net/minecraft/world/World.field_73011_w:Lnet/minecraft/world/WorldProvider;
+      36: instanceof    #278                // class micdoodle8/mods/galacticraft/api/world/IGalacticraftWorldProvider
+      39: ifeq          427
+      42: aload_1
+      43: ifnull        427
+      46: aload_1
+      47: getfield      #1162               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+      50: invokeinterface #1169,  1         // InterfaceMethod net/minecraft/client/audio/ISound.func_147656_j:()Lnet/minecraft/client/audio/ISound$AttenuationType;
+      55: getstatic     #1173               // Field net/minecraft/client/audio/ISound$AttenuationType.NONE:Lnet/minecraft/client/audio/ISound$AttenuationType;
+      58: if_acmpeq     427
+      61: getstatic     #1178               // Field micdoodle8/mods/galacticraft/core/proxy/ClientProxyCore.playerItemData:Ljava/util/Map;
+      64: aload_2
+      65: invokevirtual #1182               // Method net/minecraft/client/entity/EntityPlayerSP.func_146103_bH:()Lcom/mojang/authlib/GameProfile;
+      68: invokevirtual #1188               // Method com/mojang/authlib/GameProfile.getName:()Ljava/lang/String;
+      71: invokeinterface #526,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      76: checkcast     #1190               // class micdoodle8/mods/galacticraft/core/wrappers/PlayerGearData
+      79: astore_3
+      80: aload_1
+      81: getfield      #1162               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+      84: invokeinterface #1193,  1         // InterfaceMethod net/minecraft/client/audio/ISound.func_147649_g:()F
+      89: fstore        4
+      91: aload_1
+      92: getfield      #1162               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+      95: invokeinterface #1196,  1         // InterfaceMethod net/minecraft/client/audio/ISound.func_147654_h:()F
+     100: fstore        5
+     102: aload_1
+     103: getfield      #1162               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     106: invokeinterface #1199,  1         // InterfaceMethod net/minecraft/client/audio/ISound.func_147651_i:()F
+     111: fstore        6
+     113: aload_3
+     114: ifnull        125
+     117: aload_3
+     118: invokevirtual #1202               // Method micdoodle8/mods/galacticraft/core/wrappers/PlayerGearData.getFrequencyModule:()I
+     121: iconst_m1
+     122: if_icmpne     427
+     125: fload         4
+     127: f2d
+     128: ldc2_w        #1203               // double 0.0015d
+     131: dsub
+     132: fload         5
+     134: f2d
+     135: ldc2_w        #1203               // double 0.0015d
+     138: dsub
+     139: fload         6
+     141: f2d
+     142: ldc2_w        #1203               // double 0.0015d
+     145: dsub
+     146: fload         4
+     148: f2d
+     149: ldc2_w        #1203               // double 0.0015d
+     152: dadd
+     153: fload         5
+     155: f2d
+     156: ldc2_w        #1203               // double 0.0015d
+     159: dadd
+     160: fload         6
+     162: f2d
+     163: ldc2_w        #1203               // double 0.0015d
+     166: dadd
+     167: invokestatic  #428                // Method net/minecraft/util/AxisAlignedBB.func_72330_a:(DDDDDD)Lnet/minecraft/util/AxisAlignedBB;
+     170: astore        7
+     172: aload_2
+     173: invokestatic  #472                // Method micdoodle8/mods/galacticraft/core/util/OxygenUtil.isAABBInBreathableAirBlock:(Lnet/minecraft/entity/EntityLivingBase;)Z
+     176: istore        8
+     178: aload_2
+     179: getfield      #1165               // Field net/minecraft/client/entity/EntityPlayerSP.field_70170_p:Lnet/minecraft/world/World;
+     182: aload         7
+     184: invokestatic  #222                // Method micdoodle8/mods/galacticraft/core/util/OxygenUtil.isAABBInBreathableAirBlock:(Lnet/minecraft/world/World;Lnet/minecraft/util/AxisAlignedBB;)Z
+     187: istore        9
+     189: iload         8
+     191: ifeq          199
+     194: iload         9
+     196: ifne          427
+     199: aload_1
+     200: getfield      #1162               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     203: invokeinterface #1207,  1         // InterfaceMethod net/minecraft/client/audio/ISound.func_147653_e:()F
+     208: fstore        10
+     210: iconst_0
+     211: istore        11
+     213: iload         11
+     215: aload_0
+     216: getfield      #118                // Field soundPlayList:Ljava/util/List;
+     219: invokeinterface #1208,  1         // InterfaceMethod java/util/List.size:()I
+     224: if_icmpge     321
+     227: aload_0
+     228: getfield      #118                // Field soundPlayList:Ljava/util/List;
+     231: iload         11
+     233: invokeinterface #1209,  2         // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+     238: checkcast     #87                 // class micdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry
+     241: astore        12
+     243: aload         12
+     245: invokestatic  #1213               // Method micdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry.access$000:(Lmicdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry;)Ljava/lang/String;
+     248: aload_1
+     249: getfield      #1216               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     252: invokevirtual #141                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     255: ifeq          315
+     258: aload         12
+     260: invokestatic  #1220               // Method micdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry.access$100:(Lmicdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry;)F
+     263: fload         4
+     265: fcmpl
+     266: ifne          315
+     269: aload         12
+     271: invokestatic  #1223               // Method micdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry.access$200:(Lmicdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry;)F
+     274: fload         5
+     276: fcmpl
+     277: ifne          315
+     280: aload         12
+     282: invokestatic  #1226               // Method micdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry.access$300:(Lmicdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry;)F
+     285: fload         6
+     287: fcmpl
+     288: ifne          315
+     291: aload         12
+     293: invokestatic  #1229               // Method micdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry.access$400:(Lmicdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry;)F
+     296: fload         10
+     298: fcmpl
+     299: ifne          315
+     302: aload_0
+     303: getfield      #118                // Field soundPlayList:Ljava/util/List;
+     306: iload         11
+     308: invokeinterface #1232,  2         // InterfaceMethod java/util/List.remove:(I)Ljava/lang/Object;
+     313: pop
+     314: return
+     315: iinc          11, 1
+     318: goto          213
+     321: fload         10
+     323: ldc_w         #1233               // float 0.01f
+     326: aload_2
+     327: getfield      #1165               // Field net/minecraft/client/entity/EntityPlayerSP.field_70170_p:Lnet/minecraft/world/World;
+     330: getfield      #208                // Field net/minecraft/world/World.field_73011_w:Lnet/minecraft/world/WorldProvider;
+     333: checkcast     #278                // class micdoodle8/mods/galacticraft/api/world/IGalacticraftWorldProvider
+     336: invokeinterface #1236,  1         // InterfaceMethod micdoodle8/mods/galacticraft/api/world/IGalacticraftWorldProvider.getSoundVolReductionAmount:()F
+     341: invokestatic  #1240               // Method java/lang/Math.max:(FF)F
+     344: fdiv
+     345: fstore        11
+     347: aload_0
+     348: getfield      #118                // Field soundPlayList:Ljava/util/List;
+     351: new           #87                 // class micdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry
+     354: dup
+     355: aload_1
+     356: getfield      #1216               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     359: fload         4
+     361: fload         5
+     363: fload         6
+     365: fload         11
+     367: aconst_null
+     368: invokespecial #1243               // Method micdoodle8/mods/galacticraft/core/event/EventHandlerGC$SoundPlayEntry."<init>":(Ljava/lang/String;FFFFLmicdoodle8/mods/galacticraft/core/event/EventHandlerGC$1;)V
+     371: invokeinterface #816,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+     376: pop
+     377: new           #1245               // class net/minecraft/client/audio/PositionedSoundRecord
+     380: dup
+     381: aload_1
+     382: getfield      #1162               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     385: invokeinterface #1249,  1         // InterfaceMethod net/minecraft/client/audio/ISound.func_147650_b:()Lnet/minecraft/util/ResourceLocation;
+     390: fload         11
+     392: aload_1
+     393: getfield      #1162               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     396: invokeinterface #1252,  1         // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+     401: fload         4
+     403: fload         5
+     405: fload         6
+     407: invokespecial #1255               // Method net/minecraft/client/audio/PositionedSoundRecord."<init>":(Lnet/minecraft/util/ResourceLocation;FFFFF)V
+     410: astore        12
+     412: aload_1
+     413: getfield      #1259               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.manager:Lnet/minecraft/client/audio/SoundManager;
+     416: aload         12
+     418: invokevirtual #1265               // Method net/minecraft/client/audio/SoundManager.func_148611_c:(Lnet/minecraft/client/audio/ISound;)V
+     421: aload_1
+     422: aconst_null
+     423: putfield      #1162               // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     426: return
+     427: return
+
+  static {};
+    Code:
+       0: new           #904                // class java/util/HashMap
+       3: dup
+       4: invokespecial #905                // Method java/util/HashMap."<init>":()V
+       7: putstatic     #520                // Field bucketList:Ljava/util/Map;
+      10: return
+}

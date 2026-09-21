@@ -1,0 +1,94 @@
+  public void onPlaySoundEvent(net.minecraftforge.client.event.sound.PlaySoundEvent17);
+    Code:
+       0: aload_1
+       1: getfield      #92                 // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+       4: ifnull        204
+       7: aload_1
+       8: getfield      #96                 // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+      11: ifnull        204
+      14: invokestatic  #102                // Method cpw/mods/fml/client/FMLClientHandler.instance:()Lcpw/mods/fml/client/FMLClientHandler;
+      17: invokevirtual #106                // Method cpw/mods/fml/client/FMLClientHandler.getClient:()Lnet/minecraft/client/Minecraft;
+      20: getfield      #112                // Field net/minecraft/client/Minecraft.field_71441_e:Lnet/minecraft/client/multiplayer/WorldClient;
+      23: ifnull        204
+      26: invokestatic  #117                // Method cpw/mods/fml/common/FMLCommonHandler.instance:()Lcpw/mods/fml/common/FMLCommonHandler;
+      29: invokevirtual #121                // Method cpw/mods/fml/common/FMLCommonHandler.getSide:()Lcpw/mods/fml/relauncher/Side;
+      32: getstatic     #125                // Field cpw/mods/fml/relauncher/Side.CLIENT:Lcpw/mods/fml/relauncher/Side;
+      35: if_acmpne     204
+      38: aload_1
+      39: getfield      #96                 // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+      42: ldc           #127                // String \\.
+      44: invokevirtual #133                // Method java/lang/String.split:(Ljava/lang/String;)[Ljava/lang/String;
+      47: astore_2
+      48: invokestatic  #102                // Method cpw/mods/fml/client/FMLClientHandler.instance:()Lcpw/mods/fml/client/FMLClientHandler;
+      51: invokevirtual #106                // Method cpw/mods/fml/client/FMLClientHandler.getClient:()Lnet/minecraft/client/Minecraft;
+      54: astore_3
+      55: aload_3
+      56: getfield      #137                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      59: getfield      #143                // Field net/minecraft/client/entity/EntityClientPlayerMP.field_71093_bK:I
+      62: iconst_m1
+      63: if_icmpne     204
+      66: aload_1
+      67: getfield      #96                 // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+      70: ldc           #62                 // String music.game.nether
+      72: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      75: ifeq          204
+      78: aload_0
+      79: getfield      #149                // Field netherMusic:Lnet/minecraft/client/audio/PositionedSound;
+      82: ifnull        99
+      85: aload_3
+      86: invokevirtual #153                // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+      89: aload_0
+      90: getfield      #149                // Field netherMusic:Lnet/minecraft/client/audio/PositionedSound;
+      93: invokevirtual #159                // Method net/minecraft/client/audio/SoundHandler.func_147692_c:(Lnet/minecraft/client/audio/ISound;)Z
+      96: ifne          199
+      99: aload_3
+     100: getfield      #112                // Field net/minecraft/client/Minecraft.field_71441_e:Lnet/minecraft/client/multiplayer/WorldClient;
+     103: astore        4
+     105: aload_0
+     106: aload_3
+     107: getfield      #112                // Field net/minecraft/client/Minecraft.field_71441_e:Lnet/minecraft/client/multiplayer/WorldClient;
+     110: aload_3
+     111: getfield      #137                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+     114: getfield      #165                // Field net/minecraft/client/entity/EntityClientPlayerMP.field_70165_t:D
+     117: d2i
+     118: aload_3
+     119: getfield      #137                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+     122: getfield      #168                // Field net/minecraft/client/entity/EntityClientPlayerMP.field_70161_v:D
+     125: d2i
+     126: invokevirtual #174                // Method net/minecraft/client/multiplayer/WorldClient.func_72938_d:(II)Lnet/minecraft/world/chunk/Chunk;
+     129: aload_3
+     130: getfield      #137                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+     133: getfield      #165                // Field net/minecraft/client/entity/EntityClientPlayerMP.field_70165_t:D
+     136: d2i
+     137: bipush        15
+     139: iand
+     140: aload_3
+     141: getfield      #137                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+     144: getfield      #168                // Field net/minecraft/client/entity/EntityClientPlayerMP.field_70161_v:D
+     147: d2i
+     148: bipush        15
+     150: iand
+     151: aload_3
+     152: getfield      #112                // Field net/minecraft/client/Minecraft.field_71441_e:Lnet/minecraft/client/multiplayer/WorldClient;
+     155: invokevirtual #178                // Method net/minecraft/client/multiplayer/WorldClient.func_72959_q:()Lnet/minecraft/world/biome/WorldChunkManager;
+     158: invokevirtual #184                // Method net/minecraft/world/chunk/Chunk.func_76591_a:(IILnet/minecraft/world/biome/WorldChunkManager;)Lnet/minecraft/world/biome/BiomeGenBase;
+     161: getfield      #189                // Field net/minecraft/world/biome/BiomeGenBase.field_76791_y:Ljava/lang/String;
+     164: invokespecial #193                // Method getMusicForBiome:(Ljava/lang/String;)LDelirusCrux/Netherlicious/Client/Utility/WeightedSoundPool;
+     167: astore        5
+     169: aload_0
+     170: new           #195                // class net/minecraft/util/ResourceLocation
+     173: dup
+     174: aload         5
+     176: invokevirtual #199                // Method DelirusCrux/Netherlicious/Client/Utility/WeightedSoundPool.getRandom:()Ljava/lang/String;
+     179: invokespecial #202                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+     182: invokestatic  #208                // Method net/minecraft/client/audio/PositionedSoundRecord.func_147673_a:(Lnet/minecraft/util/ResourceLocation;)Lnet/minecraft/client/audio/PositionedSoundRecord;
+     185: putfield      #149                // Field netherMusic:Lnet/minecraft/client/audio/PositionedSound;
+     188: aload_1
+     189: aload_0
+     190: getfield      #149                // Field netherMusic:Lnet/minecraft/client/audio/PositionedSound;
+     193: putfield      #211                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     196: goto          204
+     199: aload_1
+     200: aconst_null
+     201: putfield      #211                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     204: return

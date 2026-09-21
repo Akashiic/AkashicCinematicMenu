@@ -1,0 +1,52 @@
+  public void onSoundEffectResult(net.minecraftforge.client.event.sound.PlaySoundEvent17);
+    Code:
+       0: aload_1
+       1: getfield      #55                 // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+       4: invokeinterface #61,  1           // InterfaceMethod net/minecraft/client/audio/ISound.func_147650_b:()Lnet/minecraft/util/ResourceLocation;
+       9: astore_2
+      10: aload_2
+      11: ifnull        121
+      14: aload_2
+      15: invokevirtual #65                 // Method net/minecraft/util/ResourceLocation.func_110624_b:()Ljava/lang/String;
+      18: ldc           #67                 // String minecraft
+      20: invokevirtual #73                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      23: ifeq          121
+      26: aload_2
+      27: invokevirtual #76                 // Method net/minecraft/util/ResourceLocation.func_110623_a:()Ljava/lang/String;
+      30: ldc           #78                 // String music.game
+      32: invokevirtual #73                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      35: ifne          50
+      38: aload_2
+      39: invokevirtual #76                 // Method net/minecraft/util/ResourceLocation.func_110623_a:()Ljava/lang/String;
+      42: ldc           #80                 // String music.game.creative
+      44: invokevirtual #73                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      47: ifeq          121
+      50: invokestatic  #86                 // Method cpw/mods/fml/client/FMLClientHandler.instance:()Lcpw/mods/fml/client/FMLClientHandler;
+      53: invokevirtual #90                 // Method cpw/mods/fml/client/FMLClientHandler.getClient:()Lnet/minecraft/client/Minecraft;
+      56: getfield      #96                 // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      59: getfield      #102                // Field net/minecraft/client/entity/EntityClientPlayerMP.field_70170_p:Lnet/minecraft/world/World;
+      62: getfield      #108                // Field net/minecraft/world/World.field_73011_w:Lnet/minecraft/world/WorldProvider;
+      65: getfield      #114                // Field net/minecraft/world/WorldProvider.field_76574_g:I
+      68: getstatic     #117                // Field org/dimdev/dimdoors/DimDoors.properties:Lorg/dimdev/dimdoors/config/DDProperties;
+      71: getfield      #122                // Field org/dimdev/dimdoors/config/DDProperties.LimboDimensionID:I
+      74: if_icmpne     121
+      77: new           #28                 // class net/minecraft/util/ResourceLocation
+      80: dup
+      81: ldc           #30                 // String dimdoors:creepy
+      83: invokespecial #33                 // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+      86: astore_3
+      87: invokestatic  #125                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+      90: invokevirtual #129                // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+      93: aload_0
+      94: getfield      #41                 // Field limboMusic:Lnet/minecraft/client/audio/ISound;
+      97: invokevirtual #135                // Method net/minecraft/client/audio/SoundHandler.func_147692_c:(Lnet/minecraft/client/audio/ISound;)Z
+     100: ifne          114
+     103: aload_1
+     104: aload_0
+     105: getfield      #41                 // Field limboMusic:Lnet/minecraft/client/audio/ISound;
+     108: putfield      #138                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     111: goto          121
+     114: aload_1
+     115: getstatic     #142                // Field cpw/mods/fml/common/eventhandler/Event$Result.DENY:Lcpw/mods/fml/common/eventhandler/Event$Result;
+     118: invokevirtual #146                // Method net/minecraftforge/client/event/sound/PlaySoundEvent17.setResult:(Lcpw/mods/fml/common/eventhandler/Event$Result;)V
+     121: return

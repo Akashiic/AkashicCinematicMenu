@@ -1,0 +1,49 @@
+  public void onSoundEvent(net.minecraftforge.client.event.sound.PlaySoundEvent17);
+    Code:
+       0: invokestatic  #127                // Method isPlayerWearingGlasses:()Z
+       3: ifeq          85
+       6: aload_1
+       7: getfield      #133                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+      10: astore_2
+      11: aload_0
+      12: getfield      #49                 // Field icons:Lopenblocks/client/SoundIconRegistry;
+      15: aload_2
+      16: invokeinterface #139,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147650_b:()Lnet/minecraft/util/ResourceLocation;
+      21: invokevirtual #143                // Method openblocks/client/SoundIconRegistry.getIcon:(Lnet/minecraft/util/ResourceLocation;)Lopenblocks/client/Icons$IDrawableIcon;
+      24: astore_3
+      25: aload_0
+      26: getfield      #57                 // Field events:Ljava/util/List;
+      29: dup
+      30: astore        4
+      32: monitorenter
+      33: aload_0
+      34: getfield      #57                 // Field events:Ljava/util/List;
+      37: new           #16                 // class openblocks/client/SoundEventsManager$SoundEvent
+      40: dup
+      41: aload_2
+      42: aload_3
+      43: aload_2
+      44: invokeinterface #147,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147653_e:()F
+      49: fconst_1
+      50: fadd
+      51: f2d
+      52: invokestatic  #153                // Method java/lang/Math.log:(D)D
+      55: aload_2
+      56: invokeinterface #156,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147655_f:()F
+      61: f2d
+      62: invokespecial #159                // Method openblocks/client/SoundEventsManager$SoundEvent."<init>":(Lnet/minecraft/client/audio/ISound;Lopenblocks/client/Icons$IDrawableIcon;DD)V
+      65: invokeinterface #165,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      70: pop
+      71: aload         4
+      73: monitorexit
+      74: goto          85
+      77: astore        5
+      79: aload         4
+      81: monitorexit
+      82: aload         5
+      84: athrow
+      85: return
+    Exception table:
+       from    to  target type
+          33    74    77   any
+          77    82    77   any

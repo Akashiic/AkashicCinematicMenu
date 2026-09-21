@@ -1,0 +1,7 @@
+{
+  "found": "A fade that reached done before a rapid return must not leave an unplayable stale sound until startup timeout.",
+  "fix": "Release finished tickable sound before deciding a fresh start; preserve continuous reversal before silence.",
+  "reload": "Revalidate supplied file header at sound reload, not every frame. Missing/corrupt file releases vanilla music.",
+  "kill_switch": "akashic.cinematic.disableBgm",
+  "runtime": "PENDING"
+}

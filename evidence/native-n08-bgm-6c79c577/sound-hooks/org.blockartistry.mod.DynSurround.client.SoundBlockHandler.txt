@@ -1,0 +1,54 @@
+  public void soundEvent(net.minecraftforge.client.event.sound.PlaySoundEvent17);
+    Code:
+       0: aload_1
+       1: getfield      #153                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+       4: ifnull        19
+       7: aload_1
+       8: getfield      #153                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+      11: invokeinterface #159,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147650_b:()Lnet/minecraft/util/ResourceLocation;
+      16: ifnonnull     20
+      19: return
+      20: aload_1
+      21: getfield      #153                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+      24: invokeinterface #159,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147650_b:()Lnet/minecraft/util/ResourceLocation;
+      29: invokevirtual #162                // Method net/minecraft/util/ResourceLocation.toString:()Ljava/lang/String;
+      32: astore_2
+      33: aload_0
+      34: getfield      #36                 // Field soundsToBlock:Ljava/util/Set;
+      37: aload_2
+      38: invokeinterface #165,  2          // InterfaceMethod java/util/Set.contains:(Ljava/lang/Object;)Z
+      43: ifeq          52
+      46: aload_1
+      47: aconst_null
+      48: putfield      #168                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+      51: return
+      52: getstatic     #130                // Field org/blockartistry/mod/DynSurround/ModOptions.soundCullingThreshold:I
+      55: ifgt          59
+      58: return
+      59: aload_0
+      60: getfield      #41                 // Field soundCull:Lgnu/trove/map/hash/TObjectIntHashMap;
+      63: aload_2
+      64: invokevirtual #172                // Method gnu/trove/map/hash/TObjectIntHashMap.get:(Ljava/lang/Object;)I
+      67: istore_3
+      68: iload_3
+      69: ifne          73
+      72: return
+      73: invokestatic  #176                // Method org/blockartistry/mod/DynSurround/client/EnvironStateHandler$EnvironState.getTickCounter:()I
+      76: istore        4
+      78: iload         4
+      80: iload_3
+      81: isub
+      82: getstatic     #130                // Field org/blockartistry/mod/DynSurround/ModOptions.soundCullingThreshold:I
+      85: if_icmpge     96
+      88: aload_1
+      89: aconst_null
+      90: putfield      #168                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+      93: goto          107
+      96: aload_0
+      97: getfield      #41                 // Field soundCull:Lgnu/trove/map/hash/TObjectIntHashMap;
+     100: aload_2
+     101: iload         4
+     103: invokevirtual #134                // Method gnu/trove/map/hash/TObjectIntHashMap.put:(Ljava/lang/Object;I)I
+     106: pop
+     107: return
+}

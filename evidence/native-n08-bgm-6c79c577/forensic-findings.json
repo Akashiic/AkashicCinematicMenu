@@ -1,0 +1,9 @@
+{
+  "audio": "Runtime event minecraft:music.menu was labelled RECORDS. Category-only suppression missed it. Namespace/path guard at highest priority prevents the unwanted menu recording before other handlers. Own bgm.menu is MUSIC.",
+  "aether_audio_config": "Aether menu music is disabled in this QA; no need to change its gameplay setting.",
+  "loading": "Et Futurum wraps handleLoadingScreen and cancels terrain draw at HEAD; the vanilla background hook is legitimately bypassed.",
+  "solution": "Theme Et Futurum dedicated background renderer only, preserve native messages/progress and chunk-map rendering. Aether remains separately covered.",
+  "partial_test_rejection": "verify2 music guards and Aether rendering passed, suite stopped because it expected a vanilla hook on the Et Futurum branch.",
+  "subclass_policy": "Working/Connecting/Terrain subclasses also fade out the BGM.",
+  "runtime_final": "PENDING"
+}

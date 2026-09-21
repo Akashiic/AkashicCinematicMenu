@@ -1,0 +1,100 @@
+Compiled from "MixinSoundManager.java"
+public class com.mitchej123.hodgepodge.mixins.early.minecraft.MixinSoundManager {
+  public com.mitchej123.hodgepodge.mixins.early.minecraft.MixinSoundManager();
+    Code:
+       0: aload_0
+       1: invokespecial #12                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public float hodgepodge$modifySetMasterVolumeArg(float);
+    Code:
+       0: fload_1
+       1: f2d
+       2: ldc2_w        #28                 // double 2.0d
+       5: invokestatic  #35                 // Method java/lang/Math.pow:(DD)D
+       8: d2f
+       9: freturn
+
+  private float hodgepodge$modifySetCategoryVolumeArg(float);
+    Code:
+       0: fload_1
+       1: f2d
+       2: ldc2_w        #28                 // double 2.0d
+       5: invokestatic  #35                 // Method java/lang/Math.pow:(DD)D
+       8: d2f
+       9: freturn
+}
+Compiled from "MixinSoundHandler.java"
+public class com.mitchej123.hodgepodge.mixins.early.minecraft.MixinSoundHandler {
+  public com.mitchej123.hodgepodge.mixins.early.minecraft.MixinSoundHandler();
+    Code:
+       0: aload_0
+       1: invokespecial #12                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  private void hodgepodge$loadSoundResource(net.minecraft.util.ResourceLocation, net.minecraft.client.audio.SoundList, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+       0: aload_1
+       1: invokevirtual #31                 // Method net/minecraft/util/ResourceLocation.toString:()Ljava/lang/String;
+       4: astore        4
+       6: aload         4
+       8: ldc           #33                 // String minecraft:step
+      10: invokevirtual #39                 // Method java/lang/String.startsWith:(Ljava/lang/String;)Z
+      13: ifne          36
+      16: aload         4
+      18: ldc           #41                 // String minecraft:random.bow
+      20: invokevirtual #39                 // Method java/lang/String.startsWith:(Ljava/lang/String;)Z
+      23: ifne          36
+      26: aload         4
+      28: ldc           #43                 // String minecraft:game.potion.smash
+      30: invokevirtual #47                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      33: ifeq          43
+      36: aload_2
+      37: getstatic     #53                 // Field net/minecraft/client/audio/SoundCategory.PLAYERS:Lnet/minecraft/client/audio/SoundCategory;
+      40: invokevirtual #59                 // Method net/minecraft/client/audio/SoundList.func_148571_a:(Lnet/minecraft/client/audio/SoundCategory;)V
+      43: return
+}
+Compiled from "MixinMusicTicker.java"
+public class com.mitchej123.hodgepodge.mixins.early.minecraft.MixinMusicTicker {
+  private java.util.Random field_147679_a;
+
+  public com.mitchej123.hodgepodge.mixins.early.minecraft.MixinMusicTicker();
+    Code:
+       0: aload_0
+       1: invokespecial #23                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  private int hodgepodge$configurableMusicDelay(int, net.minecraft.client.audio.MusicTicker$MusicType);
+    Code:
+       0: getstatic     #42                 // Field com/mitchej123/hodgepodge/mixins/early/minecraft/MixinMusicTicker$1.$SwitchMap$net$minecraft$client$audio$MusicTicker$MusicType:[I
+       3: aload_2
+       4: invokevirtual #45                 // Method net/minecraft/client/audio/MusicTicker$MusicType.ordinal:()I
+       7: iaload
+       8: tableswitch   { // 1 to 3
+
+                     1: 36
+
+                     2: 36
+
+                     3: 36
+               default: 38
+          }
+      36: iload_1
+      37: ireturn
+      38: getstatic     #51                 // Field com/mitchej123/hodgepodge/config/TweaksConfig.musicDelayMinSeconds:I
+      41: bipush        20
+      43: imul
+      44: istore_3
+      45: iload_3
+      46: getstatic     #54                 // Field com/mitchej123/hodgepodge/config/TweaksConfig.musicDelayMaxSeconds:I
+      49: bipush        20
+      51: imul
+      52: invokestatic  #60                 // Method java/lang/Math.max:(II)I
+      55: istore        4
+      57: aload_0
+      58: getfield      #62                 // Field field_147679_a:Ljava/util/Random;
+      61: iload_3
+      62: iload         4
+      64: invokestatic  #68                 // Method net/minecraft/util/MathHelper.func_76136_a:(Ljava/util/Random;II)I
+      67: ireturn
+}

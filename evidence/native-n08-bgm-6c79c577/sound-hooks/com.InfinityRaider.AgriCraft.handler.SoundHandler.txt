@@ -1,0 +1,52 @@
+  public void onSoundPlayed(net.minecraftforge.client.event.sound.PlaySoundEvent17);
+    Code:
+       0: getstatic     #29                 // Field com/InfinityRaider/AgriCraft/handler/ConfigurationHandler.disableSounds:Z
+       3: ifne          7
+       6: return
+       7: aload_1
+       8: getfield      #35                 // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+      11: ifnonnull     15
+      14: return
+      15: getstatic     #41                 // Field com/InfinityRaider/AgriCraft/AgriCraft.proxy:Lcom/InfinityRaider/AgriCraft/proxy/IProxy;
+      18: invokeinterface #47,  1           // InterfaceMethod com/InfinityRaider/AgriCraft/proxy/IProxy.getClientWorld:()Lnet/minecraft/world/World;
+      23: astore_2
+      24: aload_1
+      25: getfield      #35                 // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+      28: invokeinterface #53,  1           // InterfaceMethod net/minecraft/client/audio/ISound.func_147649_g:()F
+      33: ldc           #54                 // float 0.5f
+      35: fsub
+      36: f2i
+      37: istore_3
+      38: aload_1
+      39: getfield      #35                 // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+      42: invokeinterface #57,  1           // InterfaceMethod net/minecraft/client/audio/ISound.func_147654_h:()F
+      47: ldc           #54                 // float 0.5f
+      49: fsub
+      50: f2i
+      51: istore        4
+      53: aload_1
+      54: getfield      #35                 // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+      57: invokeinterface #60,  1           // InterfaceMethod net/minecraft/client/audio/ISound.func_147651_i:()F
+      62: ldc           #54                 // float 0.5f
+      64: fsub
+      65: f2i
+      66: istore        5
+      68: aload_2
+      69: ifnull        103
+      72: aload_2
+      73: iload_3
+      74: iload         4
+      76: iload         5
+      78: invokevirtual #66                 // Method net/minecraft/world/World.func_147439_a:(III)Lnet/minecraft/block/Block;
+      81: astore        6
+      83: aload         6
+      85: instanceof    #68                 // class com/InfinityRaider/AgriCraft/blocks/BlockCrop
+      88: ifeq          103
+      91: aload_1
+      92: getstatic     #72                 // Field cpw/mods/fml/common/eventhandler/Event$Result.DENY:Lcpw/mods/fml/common/eventhandler/Event$Result;
+      95: invokevirtual #76                 // Method net/minecraftforge/client/event/sound/PlaySoundEvent17.setResult:(Lcpw/mods/fml/common/eventhandler/Event$Result;)V
+      98: aload_1
+      99: aconst_null
+     100: putfield      #79                 // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     103: return
+}

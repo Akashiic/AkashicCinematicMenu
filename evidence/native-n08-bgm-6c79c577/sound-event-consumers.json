@@ -1,0 +1,66 @@
+[
+  {
+    "jar": "aether-1.7.10-v1.1.2.5.jar",
+    "class": "com/gildedgames/the_aether/client/audio/AetherMusicHandler.class"
+  },
+  {
+    "jar": "AgriCraft-1.5.2-evernife-v1.jar",
+    "class": "com/InfinityRaider/AgriCraft/handler/SoundHandler.class"
+  },
+  {
+    "jar": "AkashicCinematicMenu-0.5.1-alpha.1.jar",
+    "class": "br/com/redeakashic/cinematic/client/MenuBgm.class"
+  },
+  {
+    "jar": "AM2.5-LTS-1.6.11-LE.jar",
+    "class": "am2/proxy/tick/ClientTickHandler.class"
+  },
+  {
+    "jar": "CarpentersBlocks-3.7.3-GTNH.jar",
+    "class": "com/carpentersblocks/util/handler/EventHandler.class"
+  },
+  {
+    "jar": "DimensionalDoors-2.2.6-1.7.10.jar",
+    "class": "org/dimdev/dimdoors/client/ClientOnlyHooks.class"
+  },
+  {
+    "jar": "DynamicSurroundings-1.7.10-1.0.6.4.jar",
+    "class": "org/blockartistry/mod/DynSurround/client/PlayerSoundEffectHandler.class"
+  },
+  {
+    "jar": "DynamicSurroundings-1.7.10-1.0.6.4.jar",
+    "class": "org/blockartistry/mod/DynSurround/client/SoundBlockHandler.class"
+  },
+  {
+    "jar": "etfuturum-2.6.59-GTNH.jar",
+    "class": "ganymedes01/etfuturum/core/handlers/ClientEventHandler.class"
+  },
+  {
+    "jar": "extrautilities-1.2.13a.jar",
+    "class": "com/rwtema/extrautils/EventHandlerClient.class"
+  },
+  {
+    "jar": "Galacticraft-4.0-Akashic.jar",
+    "class": "micdoodle8/mods/galacticraft/core/event/EventHandlerGC.class"
+  },
+  {
+    "jar": "netherlicious-3.2.8.jar",
+    "class": "DelirusCrux/Netherlicious/Client/Utility/NetherAmbienceMoodEventHandler.class"
+  },
+  {
+    "jar": "netherlicious-3.2.8.jar",
+    "class": "DelirusCrux/Netherlicious/Client/Utility/NetherMusic.class"
+  },
+  {
+    "jar": "OpenBlocks-1.12.20-GTNH.jar",
+    "class": "META-INF/versions/21/openblocks/client/SoundEventsManager.class"
+  },
+  {
+    "jar": "OpenBlocks-1.12.20-GTNH.jar",
+    "class": "openblocks/client/SoundEventsManager.class"
+  },
+  {
+    "jar": "witchery-1.7.10-0.24.1-evernife-V6.jar",
+    "class": "com/emoniph/witchery/item/ItemEarmuffs$ClientEventHooks.class"
+  }
+]

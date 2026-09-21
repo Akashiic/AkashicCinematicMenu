@@ -1,0 +1,8 @@
+Exception in thread "main" java.lang.NoClassDefFoundError: org/apache/commons/lang3/Validate
+	at net.minecraft.util.ResourceLocation.<init>(SourceFile:10)
+	at LocalMusicPackProbe.main(LocalMusicPackProbe.java:11)
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.lang3.Validate
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 2 more

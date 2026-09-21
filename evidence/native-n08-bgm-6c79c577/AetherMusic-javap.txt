@@ -1,0 +1,523 @@
+﻿Compiled from "AetherMusicHandler.java"
+public class com.gildedgames.the_aether.client.audio.AetherMusicHandler {
+  private net.minecraft.client.Minecraft mc;
+
+  private final com.gildedgames.the_aether.client.audio.music.AetherMusicTicker musicTicker;
+
+  public com.gildedgames.the_aether.client.audio.AetherMusicHandler();
+    Code:
+       0: aload_0
+       1: invokespecial #24                 // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: invokestatic  #30                 // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+       8: putfield      #32                 // Field mc:Lnet/minecraft/client/Minecraft;
+      11: aload_0
+      12: new           #34                 // class com/gildedgames/the_aether/client/audio/music/AetherMusicTicker
+      15: dup
+      16: aload_0
+      17: getfield      #32                 // Field mc:Lnet/minecraft/client/Minecraft;
+      20: invokespecial #37                 // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker."<init>":(Lnet/minecraft/client/Minecraft;)V
+      23: putfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+      26: return
+
+  public void onClientTick(cpw.mods.fml.common.gameevent.TickEvent$ClientTickEvent) throws java.lang.Exception;
+    Code:
+       0: aload_1
+       1: getfield      #50                 // Field cpw/mods/fml/common/gameevent/TickEvent$ClientTickEvent.phase:Lcpw/mods/fml/common/gameevent/TickEvent$Phase;
+       4: astore_2
+       5: aload_1
+       6: getfield      #54                 // Field cpw/mods/fml/common/gameevent/TickEvent$ClientTickEvent.type:Lcpw/mods/fml/common/gameevent/TickEvent$Type;
+       9: astore_3
+      10: invokestatic  #30                 // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+      13: getfield      #58                 // Field net/minecraft/client/Minecraft.field_71462_r:Lnet/minecraft/client/gui/GuiScreen;
+      16: astore        4
+      18: getstatic     #64                 // Field com/gildedgames/the_aether/AetherConfig.config:Lnet/minecraftforge/common/config/Configuration;
+      21: ldc           #66                 // String Misc
+      23: ldc           #68                 // String Toggles the music in the Aether. Disable this if you use another mod that adds custom music (like MusicChoices)
+      25: iconst_1
+      26: invokevirtual #74                 // Method net/minecraftforge/common/config/Configuration.get:(Ljava/lang/String;Ljava/lang/String;Z)Lnet/minecraftforge/common/config/Property;
+      29: invokevirtual #80                 // Method net/minecraftforge/common/config/Property.getBoolean:()Z
+      32: ifeq          79
+      35: aload_2
+      36: getstatic     #83                 // Field cpw/mods/fml/common/gameevent/TickEvent$Phase.END:Lcpw/mods/fml/common/gameevent/TickEvent$Phase;
+      39: if_acmpne     79
+      42: aload_3
+      43: getstatic     #86                 // Field cpw/mods/fml/common/gameevent/TickEvent$Type.CLIENT:Lcpw/mods/fml/common/gameevent/TickEvent$Type;
+      46: invokevirtual #90                 // Method cpw/mods/fml/common/gameevent/TickEvent$Type.equals:(Ljava/lang/Object;)Z
+      49: ifeq          79
+      52: aload_0
+      53: getfield      #32                 // Field mc:Lnet/minecraft/client/Minecraft;
+      56: invokevirtual #93                 // Method net/minecraft/client/Minecraft.func_147113_T:()Z
+      59: ifne          79
+      62: aload_0
+      63: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+      66: invokevirtual #96                 // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.playingRecord:()Z
+      69: ifne          79
+      72: aload_0
+      73: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+      76: invokevirtual #99                 // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.func_73660_a:()V
+      79: aload_0
+      80: getfield      #32                 // Field mc:Lnet/minecraft/client/Minecraft;
+      83: invokevirtual #105                // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+      86: aload_0
+      87: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+      90: invokevirtual #109                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.getRecord:()Lnet/minecraft/client/audio/ISound;
+      93: invokevirtual #115                // Method net/minecraft/client/audio/SoundHandler.func_147692_c:(Lnet/minecraft/client/audio/ISound;)Z
+      96: ifne          107
+      99: aload_0
+     100: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+     103: aconst_null
+     104: invokevirtual #119                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.trackRecord:(Lnet/minecraft/client/audio/ISound;)V
+     107: getstatic     #64                 // Field com/gildedgames/the_aether/AetherConfig.config:Lnet/minecraftforge/common/config/Configuration;
+     110: ldc           #66                 // String Misc
+     112: ldc           #121                // String Enables the Aether Menu
+     114: iconst_0
+     115: invokevirtual #74                 // Method net/minecraftforge/common/config/Configuration.get:(Ljava/lang/String;Ljava/lang/String;Z)Lnet/minecraftforge/common/config/Property;
+     118: invokevirtual #80                 // Method net/minecraftforge/common/config/Property.getBoolean:()Z
+     121: ifeq          178
+     124: invokestatic  #30                 // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+     127: getfield      #125                // Field net/minecraft/client/Minecraft.field_71441_e:Lnet/minecraft/client/multiplayer/WorldClient;
+     130: ifnonnull     178
+     133: aload         4
+     135: instanceof    #127                // class net/minecraft/client/gui/GuiScreenWorking
+     138: ifne          178
+     141: aload_0
+     142: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+     145: invokevirtual #130                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.playingMenuMusic:()Z
+     148: ifne          158
+     151: aload_0
+     152: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+     155: invokevirtual #133                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.playMenuMusic:()V
+     158: aload_0
+     159: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+     162: invokevirtual #136                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.playingMinecraftMusic:()Z
+     165: ifeq          185
+     168: aload_0
+     169: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+     172: invokevirtual #139                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.stopMinecraftMusic:()V
+     175: goto          185
+     178: aload_0
+     179: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+     182: invokevirtual #142                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.stopMenuMusic:()V
+     185: return
+
+  public void onMusicControl(net.minecraftforge.client.event.sound.PlaySoundEvent17);
+    Code:
+       0: aload_1
+       1: getfield      #153                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+       4: astore_2
+       5: invokestatic  #30                 // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+       8: getfield      #58                 // Field net/minecraft/client/Minecraft.field_71462_r:Lnet/minecraft/client/gui/GuiScreen;
+      11: astore_3
+      12: aload_2
+      13: ifnonnull     17
+      16: return
+      17: aload_1
+      18: getfield      #159                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.category:Lnet/minecraft/client/audio/SoundCategory;
+      21: astore        4
+      23: aload         4
+      25: getstatic     #164                // Field net/minecraft/client/audio/SoundCategory.MUSIC:Lnet/minecraft/client/audio/SoundCategory;
+      28: if_acmpne     183
+      31: aload_0
+      32: getfield      #32                 // Field mc:Lnet/minecraft/client/Minecraft;
+      35: getfield      #168                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      38: ifnull        117
+      41: aload_0
+      42: getfield      #32                 // Field mc:Lnet/minecraft/client/Minecraft;
+      45: getfield      #168                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      48: getfield      #174                // Field net/minecraft/client/entity/EntityClientPlayerMP.field_71093_bK:I
+      51: invokestatic  #178                // Method com/gildedgames/the_aether/AetherConfig.getAetherDimensionID:()I
+      54: if_icmpne     117
+      57: aload_2
+      58: invokeinterface #182,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147650_b:()Lnet/minecraft/util/ResourceLocation;
+      63: invokevirtual #188                // Method net/minecraft/util/ResourceLocation.toString:()Ljava/lang/String;
+      66: ldc           #190                // String aether_legacy
+      68: invokevirtual #196                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+      71: ifne          117
+      74: aload_0
+      75: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+      78: invokevirtual #199                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.playingMusic:()Z
+      81: ifne          94
+      84: aload_0
+      85: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+      88: invokevirtual #199                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.playingMusic:()Z
+      91: ifne          117
+      94: getstatic     #64                 // Field com/gildedgames/the_aether/AetherConfig.config:Lnet/minecraftforge/common/config/Configuration;
+      97: ldc           #66                 // String Misc
+      99: ldc           #68                 // String Toggles the music in the Aether. Disable this if you use another mod that adds custom music (like MusicChoices)
+     101: iconst_1
+     102: invokevirtual #74                 // Method net/minecraftforge/common/config/Configuration.get:(Ljava/lang/String;Ljava/lang/String;Z)Lnet/minecraftforge/common/config/Property;
+     105: invokevirtual #80                 // Method net/minecraftforge/common/config/Property.getBoolean:()Z
+     108: ifeq          117
+     111: aload_1
+     112: aconst_null
+     113: putfield      #153                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     116: return
+     117: aload_2
+     118: invokeinterface #182,  1          // InterfaceMethod net/minecraft/client/audio/ISound.func_147650_b:()Lnet/minecraft/util/ResourceLocation;
+     123: invokevirtual #188                // Method net/minecraft/util/ResourceLocation.toString:()Ljava/lang/String;
+     126: ldc           #201                // String minecraft:music.menu
+     128: invokevirtual #202                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     131: ifeq          225
+     134: aload_0
+     135: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+     138: aload_2
+     139: invokevirtual #205                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.trackMinecraftMusic:(Lnet/minecraft/client/audio/ISound;)V
+     142: getstatic     #64                 // Field com/gildedgames/the_aether/AetherConfig.config:Lnet/minecraftforge/common/config/Configuration;
+     145: ldc           #66                 // String Misc
+     147: ldc           #121                // String Enables the Aether Menu
+     149: iconst_0
+     150: invokevirtual #74                 // Method net/minecraftforge/common/config/Configuration.get:(Ljava/lang/String;Ljava/lang/String;Z)Lnet/minecraftforge/common/config/Property;
+     153: invokevirtual #80                 // Method net/minecraftforge/common/config/Property.getBoolean:()Z
+     156: ifeq          225
+     159: invokestatic  #30                 // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+     162: getfield      #125                // Field net/minecraft/client/Minecraft.field_71441_e:Lnet/minecraft/client/multiplayer/WorldClient;
+     165: ifnonnull     225
+     168: aload_3
+     169: instanceof    #127                // class net/minecraft/client/gui/GuiScreenWorking
+     172: ifne          225
+     175: aload_1
+     176: aconst_null
+     177: putfield      #153                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.result:Lnet/minecraft/client/audio/ISound;
+     180: goto          225
+     183: aload         4
+     185: getstatic     #208                // Field net/minecraft/client/audio/SoundCategory.RECORDS:Lnet/minecraft/client/audio/SoundCategory;
+     188: if_acmpne     225
+     191: aload_1
+     192: getfield      #212                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.name:Ljava/lang/String;
+     195: ldc           #214                // String note
+     197: invokevirtual #196                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+     200: ifne          225
+     203: aload_0
+     204: getfield      #39                 // Field musicTicker:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker;
+     207: aload_1
+     208: getfield      #217                // Field net/minecraftforge/client/event/sound/PlaySoundEvent17.sound:Lnet/minecraft/client/audio/ISound;
+     211: invokevirtual #119                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker.trackRecord:(Lnet/minecraft/client/audio/ISound;)V
+     214: aload_0
+     215: getfield      #32                 // Field mc:Lnet/minecraft/client/Minecraft;
+     218: invokevirtual #105                // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+     221: invokevirtual #220                // Method net/minecraft/client/audio/SoundHandler.func_147690_c:()V
+     224: return
+     225: return
+
+  public static net.minecraft.client.audio.ISound getAchievementSound(int);
+    Code:
+       0: iload_0
+       1: iconst_1
+       2: if_icmpne     13
+       5: ldc           #228                // String achievement_bronze
+       7: invokestatic  #234                // Method com/gildedgames/the_aether/Aether.locate:(Ljava/lang/String;)Lnet/minecraft/util/ResourceLocation;
+      10: goto          31
+      13: iload_0
+      14: iconst_2
+      15: if_icmpne     26
+      18: ldc           #236                // String achievement_silver
+      20: invokestatic  #234                // Method com/gildedgames/the_aether/Aether.locate:(Ljava/lang/String;)Lnet/minecraft/util/ResourceLocation;
+      23: goto          31
+      26: ldc           #238                // String achievement
+      28: invokestatic  #234                // Method com/gildedgames/the_aether/Aether.locate:(Ljava/lang/String;)Lnet/minecraft/util/ResourceLocation;
+      31: astore_1
+      32: aload_1
+      33: invokestatic  #244                // Method net/minecraft/client/audio/PositionedSoundRecord.func_147673_a:(Lnet/minecraft/util/ResourceLocation;)Lnet/minecraft/client/audio/PositionedSoundRecord;
+      36: areturn
+}
+Compiled from "AetherMusicTicker.java"
+public class com.gildedgames.the_aether.client.audio.music.AetherMusicTicker implements net.minecraft.server.gui.IUpdatePlayerListBox {
+  private final java.util.Random rand;
+
+  private final net.minecraft.client.Minecraft mc;
+
+  private net.minecraft.client.audio.ISound currentMusic;
+
+  private net.minecraft.client.audio.ISound currentRecord;
+
+  private net.minecraft.client.audio.ISound menuMusic;
+
+  private net.minecraft.client.audio.ISound minecraftMusic;
+
+  private int timeUntilNextMusic;
+
+  public com.gildedgames.the_aether.client.audio.music.AetherMusicTicker(net.minecraft.client.Minecraft);
+    Code:
+       0: aload_0
+       1: invokespecial #30                 // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: new           #32                 // class java/util/Random
+       8: dup
+       9: invokespecial #33                 // Method java/util/Random."<init>":()V
+      12: putfield      #35                 // Field rand:Ljava/util/Random;
+      15: aload_0
+      16: bipush        100
+      18: putfield      #37                 // Field timeUntilNextMusic:I
+      21: aload_0
+      22: aload_1
+      23: putfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+      26: return
+
+  public void func_73660_a();
+    Code:
+       0: aload_0
+       1: invokevirtual #47                 // Method getRandomTrack:()Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType;
+       4: astore_1
+       5: aload_0
+       6: getfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+       9: getfield      #53                 // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      12: ifnull        185
+      15: aload_0
+      16: getfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+      19: getfield      #57                 // Field net/minecraft/client/Minecraft.field_71474_y:Lnet/minecraft/client/settings/GameSettings;
+      22: getstatic     #63                 // Field net/minecraft/client/audio/SoundCategory.MUSIC:Lnet/minecraft/client/audio/SoundCategory;
+      25: invokevirtual #69                 // Method net/minecraft/client/settings/GameSettings.func_151438_a:(Lnet/minecraft/client/audio/SoundCategory;)F
+      28: fconst_0
+      29: fcmpl
+      30: ifne          50
+      33: aload_0
+      34: getfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+      37: ifnull        49
+      40: aload_0
+      41: invokevirtual #74                 // Method stopMusic:()V
+      44: aload_0
+      45: aconst_null
+      46: putfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+      49: return
+      50: aload_0
+      51: getfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+      54: getfield      #53                 // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      57: getfield      #79                 // Field net/minecraft/client/entity/EntityClientPlayerMP.field_71093_bK:I
+      60: invokestatic  #85                 // Method com/gildedgames/the_aether/AetherConfig.getAetherDimensionID:()I
+      63: if_icmpeq     73
+      66: aload_0
+      67: invokevirtual #74                 // Method stopMusic:()V
+      70: goto          185
+      73: aload_0
+      74: getfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+      77: getfield      #53                 // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      80: getfield      #79                 // Field net/minecraft/client/entity/EntityClientPlayerMP.field_71093_bK:I
+      83: invokestatic  #85                 // Method com/gildedgames/the_aether/AetherConfig.getAetherDimensionID:()I
+      86: if_icmpne     185
+      89: aload_0
+      90: getfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+      93: ifnull        144
+      96: aload_0
+      97: getfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+     100: invokevirtual #89                 // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+     103: aload_0
+     104: getfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+     107: invokevirtual #95                 // Method net/minecraft/client/audio/SoundHandler.func_147692_c:(Lnet/minecraft/client/audio/ISound;)Z
+     110: ifne          144
+     113: aload_0
+     114: aconst_null
+     115: putfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+     118: aload_0
+     119: aload_0
+     120: getfield      #35                 // Field rand:Ljava/util/Random;
+     123: aload_1
+     124: invokevirtual #98                 // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType.getMinDelay:()I
+     127: aload_1
+     128: invokevirtual #101                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType.getMaxDelay:()I
+     131: invokestatic  #107                // Method net/minecraft/util/MathHelper.func_76136_a:(Ljava/util/Random;II)I
+     134: aload_0
+     135: getfield      #37                 // Field timeUntilNextMusic:I
+     138: invokestatic  #113                // Method java/lang/Math.min:(II)I
+     141: putfield      #37                 // Field timeUntilNextMusic:I
+     144: aload_0
+     145: aload_0
+     146: getfield      #37                 // Field timeUntilNextMusic:I
+     149: aload_1
+     150: invokevirtual #101                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType.getMaxDelay:()I
+     153: invokestatic  #113                // Method java/lang/Math.min:(II)I
+     156: putfield      #37                 // Field timeUntilNextMusic:I
+     159: aload_0
+     160: getfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+     163: ifnonnull     185
+     166: aload_0
+     167: dup
+     168: getfield      #37                 // Field timeUntilNextMusic:I
+     171: dup_x1
+     172: iconst_1
+     173: isub
+     174: putfield      #37                 // Field timeUntilNextMusic:I
+     177: ifgt          185
+     180: aload_0
+     181: aload_1
+     182: invokevirtual #117                // Method playMusic:(Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType;)V
+     185: aload_0
+     186: getfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+     189: invokevirtual #89                 // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+     192: aload_0
+     193: getfield      #119                // Field menuMusic:Lnet/minecraft/client/audio/ISound;
+     196: invokevirtual #95                 // Method net/minecraft/client/audio/SoundHandler.func_147692_c:(Lnet/minecraft/client/audio/ISound;)Z
+     199: ifne          207
+     202: aload_0
+     203: aconst_null
+     204: putfield      #119                // Field menuMusic:Lnet/minecraft/client/audio/ISound;
+     207: return
+
+  public boolean playingMusic();
+    Code:
+       0: aload_0
+       1: getfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+       4: ifnull        11
+       7: iconst_1
+       8: goto          12
+      11: iconst_0
+      12: ireturn
+
+  public boolean playingRecord();
+    Code:
+       0: aload_0
+       1: getfield      #126                // Field currentRecord:Lnet/minecraft/client/audio/ISound;
+       4: ifnull        11
+       7: iconst_1
+       8: goto          12
+      11: iconst_0
+      12: ireturn
+
+  public boolean playingMenuMusic();
+    Code:
+       0: aload_0
+       1: getfield      #119                // Field menuMusic:Lnet/minecraft/client/audio/ISound;
+       4: ifnull        11
+       7: iconst_1
+       8: goto          12
+      11: iconst_0
+      12: ireturn
+
+  public boolean playingMinecraftMusic();
+    Code:
+       0: aload_0
+       1: getfield      #130                // Field minecraftMusic:Lnet/minecraft/client/audio/ISound;
+       4: ifnull        11
+       7: iconst_1
+       8: goto          12
+      11: iconst_0
+      12: ireturn
+
+  public net.minecraft.client.audio.ISound getRecord();
+    Code:
+       0: aload_0
+       1: getfield      #126                // Field currentRecord:Lnet/minecraft/client/audio/ISound;
+       4: areturn
+
+  public com.gildedgames.the_aether.client.audio.music.AetherMusicTicker$TrackType getRandomTrack();
+    Code:
+       0: aload_0
+       1: getfield      #35                 // Field rand:Ljava/util/Random;
+       4: iconst_4
+       5: invokevirtual #136                // Method java/util/Random.nextInt:(I)I
+       8: istore_1
+       9: iload_1
+      10: ifne          19
+      13: getstatic     #139                // Field com/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType.TRACK_ONE:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType;
+      16: goto          44
+      19: iload_1
+      20: iconst_1
+      21: if_icmpne     30
+      24: getstatic     #142                // Field com/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType.TRACK_TWO:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType;
+      27: goto          44
+      30: iload_1
+      31: iconst_2
+      32: if_icmpne     41
+      35: getstatic     #145                // Field com/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType.TRACK_THREE:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType;
+      38: goto          44
+      41: getstatic     #148                // Field com/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType.TRACK_FOUR:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType;
+      44: areturn
+
+  public void playMusic(com.gildedgames.the_aether.client.audio.music.AetherMusicTicker$TrackType);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #153                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType.getMusicLocation:()Lnet/minecraft/util/ResourceLocation;
+       5: invokestatic  #159                // Method net/minecraft/client/audio/PositionedSoundRecord.func_147673_a:(Lnet/minecraft/util/ResourceLocation;)Lnet/minecraft/client/audio/PositionedSoundRecord;
+       8: putfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+      11: aload_0
+      12: getfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+      15: invokevirtual #89                 // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+      18: aload_0
+      19: getfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+      22: invokevirtual #163                // Method net/minecraft/client/audio/SoundHandler.func_147682_a:(Lnet/minecraft/client/audio/ISound;)V
+      25: aload_0
+      26: ldc           #164                // int 2147483647
+      28: putfield      #37                 // Field timeUntilNextMusic:I
+      31: return
+
+  public void trackRecord(net.minecraft.client.audio.ISound);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #126                // Field currentRecord:Lnet/minecraft/client/audio/ISound;
+       5: return
+
+  public void trackMinecraftMusic(net.minecraft.client.audio.ISound);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #130                // Field minecraftMusic:Lnet/minecraft/client/audio/ISound;
+       5: return
+
+  public void playMenuMusic();
+    Code:
+       0: aload_0
+       1: getstatic     #172                // Field com/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType.TRACK_MENU:Lcom/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType;
+       4: invokevirtual #153                // Method com/gildedgames/the_aether/client/audio/music/AetherMusicTicker$TrackType.getMusicLocation:()Lnet/minecraft/util/ResourceLocation;
+       7: invokestatic  #159                // Method net/minecraft/client/audio/PositionedSoundRecord.func_147673_a:(Lnet/minecraft/util/ResourceLocation;)Lnet/minecraft/client/audio/PositionedSoundRecord;
+      10: putfield      #119                // Field menuMusic:Lnet/minecraft/client/audio/ISound;
+      13: aload_0
+      14: getfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+      17: invokevirtual #89                 // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+      20: aload_0
+      21: getfield      #119                // Field menuMusic:Lnet/minecraft/client/audio/ISound;
+      24: invokevirtual #163                // Method net/minecraft/client/audio/SoundHandler.func_147682_a:(Lnet/minecraft/client/audio/ISound;)V
+      27: return
+
+  public void stopMusic();
+    Code:
+       0: aload_0
+       1: getfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+       4: ifnull        31
+       7: aload_0
+       8: getfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+      11: invokevirtual #89                 // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+      14: aload_0
+      15: getfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+      18: invokevirtual #175                // Method net/minecraft/client/audio/SoundHandler.func_147683_b:(Lnet/minecraft/client/audio/ISound;)V
+      21: aload_0
+      22: aconst_null
+      23: putfield      #71                 // Field currentMusic:Lnet/minecraft/client/audio/ISound;
+      26: aload_0
+      27: iconst_0
+      28: putfield      #37                 // Field timeUntilNextMusic:I
+      31: return
+
+  public void stopMenuMusic();
+    Code:
+       0: aload_0
+       1: getfield      #119                // Field menuMusic:Lnet/minecraft/client/audio/ISound;
+       4: ifnull        26
+       7: aload_0
+       8: getfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+      11: invokevirtual #89                 // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+      14: aload_0
+      15: getfield      #119                // Field menuMusic:Lnet/minecraft/client/audio/ISound;
+      18: invokevirtual #175                // Method net/minecraft/client/audio/SoundHandler.func_147683_b:(Lnet/minecraft/client/audio/ISound;)V
+      21: aload_0
+      22: aconst_null
+      23: putfield      #119                // Field menuMusic:Lnet/minecraft/client/audio/ISound;
+      26: return
+
+  public void stopMinecraftMusic();
+    Code:
+       0: aload_0
+       1: getfield      #130                // Field minecraftMusic:Lnet/minecraft/client/audio/ISound;
+       4: ifnull        26
+       7: aload_0
+       8: getfield      #39                 // Field mc:Lnet/minecraft/client/Minecraft;
+      11: invokevirtual #89                 // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+      14: aload_0
+      15: getfield      #130                // Field minecraftMusic:Lnet/minecraft/client/audio/ISound;
+      18: invokevirtual #175                // Method net/minecraft/client/audio/SoundHandler.func_147683_b:(Lnet/minecraft/client/audio/ISound;)V
+      21: aload_0
+      22: aconst_null
+      23: putfield      #130                // Field minecraftMusic:Lnet/minecraft/client/audio/ISound;
+      26: return
+}

@@ -1,0 +1,45 @@
+{
+  "results": [
+    {
+      "test": "core",
+      "exit": 0
+    },
+    {
+      "test": "MenuMusicTests",
+      "exit": 0
+    },
+    {
+      "test": "ConnectionWatchTests",
+      "exit": 0
+    },
+    {
+      "test": "PixelLayoutTests",
+      "exit": 0
+    },
+    {
+      "test": "UiFeaturesTests",
+      "exit": 0
+    },
+    {
+      "test": "build",
+      "exit": 0
+    }
+  ],
+  "jar": {
+    "status": "COMPILED_NOT_RUNTIME_APPROVED",
+    "version": "0.5.1-alpha.3",
+    "jar": "AkashicCinematicMenu-0.5.1-alpha.3.jar",
+    "sha256": "4f12227f232c53ae221cc9676113f5a325e0620f5c16ce4d74d9bce316303247",
+    "bytes": 7256912,
+    "classes": 64,
+    "class_major_version": 52,
+    "compiled_against_real_artifacts": true,
+    "stubs_used": false,
+    "splash_overlay_implemented": true,
+    "installed_in_game": false,
+    "runtime_tested": false,
+    "compiler": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.11.10-hotspot\\bin\\javac.EXE"
+  },
+  "track_external": true,
+  "real_runtime": "PENDING"
+}
