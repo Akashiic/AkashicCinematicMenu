@@ -1,0 +1,43 @@
+{
+  "version": "0.5.2-alpha.1",
+  "jar_path": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n09-audio-fixed\\dist\\AkashicCinematicMenu-0.5.2-alpha.1.jar",
+  "jar_sha256": "da5bb5579545e9716590547fbf80efbfc05771f47dba38a62999cfa9e4c0460a",
+  "jar_bytes": 11510805,
+  "audio_sha256": "6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6",
+  "audio_bytes": 4271570,
+  "source_user_mp3_sha256": "1e7a442de0759fb7a9b605c3f70d0fecdb7c3e1da428796e41df9a717d668408",
+  "streaming": true,
+  "music_category": "MUSIC",
+  "tests": [
+    {
+      "test": "core",
+      "exit": 0,
+      "result_tail": "SS exact direct server endpoint\nPASS four routes in requested order\nPASS removed routes rejected\nPASS direct play handoff executes once after transition\nRESULT scenarios=48 assertions=17489 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx160m\n\n"
+    },
+    {
+      "test": "MusicCoreTests",
+      "exit": 0,
+      "result_tail": "RESULT music_core_checks=1557 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx160m\n"
+    },
+    {
+      "test": "BgmPlaybackTests",
+      "exit": 0,
+      "result_tail": "tant fade parameters and level zero are defined\nSCENARIO loop=false plays once per frontend visit\nSCENARIO frontend allowlist and world precedence\nRESULT playback_scenarios=18 assertions=124 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx160m\n"
+    },
+    {
+      "test": "MenuSoundGateTests",
+      "exit": 0,
+      "result_tail": "RESULT sound_gate_checks=32 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx160m\n"
+    },
+    {
+      "test": "build",
+      "exit": 0,
+      "result_tail": "inst_real_artifacts\": true,\n  \"stubs_used\": false,\n  \"splash_overlay_implemented\": true,\n  \"installed_in_game\": false,\n  \"runtime_tested\": false,\n  \"compiler\": \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-21.0.11.10-hotspot\\\\bin\\\\javac.EXE\"\n}\n"
+    }
+  ],
+  "actual_runtime_this_version": false,
+  "daily_pack_modified": false,
+  "volume_changed": false,
+  "runtime_constraint": "About1.28GiB free physical RAM and existing user Java clients; full modpack not launched alongside them.",
+  "verdict": "COMPILED_AND_UNIT_TESTED_RUNTIME_PENDING"
+}

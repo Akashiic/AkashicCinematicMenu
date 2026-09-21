@@ -1,0 +1,6 @@
+{
+  "installed_base_sha256": "c9248a3060139e5334facd6186e9c09f6826af650508e6c20d1438bc52975b0d",
+  "recording_sha256": "6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6",
+  "no_daily_mutation": true,
+  "changes": "Bundle exact provided recording; category-independent known music IDs plus mod MUSIC events; menu-only ownership; respect MUSIC/MASTER zero; preserve settings and frontend policy"
+}

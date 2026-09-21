@@ -9,7 +9,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
      acceptableRemoteVersions = "*")
 public final class AkashicCinematicMenu {
     public static final String ID = "akashiccinematicmenu";
-    public static final String VERSION = "0.5.0-alpha.1";
+    public static final String VERSION = "0.5.2-alpha.1";
     @SidedProxy(clientSide = "br.com.redeakashic.cinematic.client.ClientProxy",
                 serverSide = "br.com.redeakashic.cinematic.CommonProxy")
     public static CommonProxy proxy;

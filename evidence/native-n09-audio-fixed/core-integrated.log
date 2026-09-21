@@ -1,0 +1,51 @@
+PASS easing endpoints and clamps
+PASS easing range and monotonicity
+PASS easing rejects nonfinite inputs
+PASS bezier linear inversion
+PASS bezier premium curve remains bounded
+PASS bezier rejects invalid controls
+PASS tween delay and interpolation
+PASS tween zero duration
+PASS tween repeated sampling is pure
+PASS tween rejects malformed tracks
+PASS clock starts without fabricated delta
+PASS clock uses nanoseconds
+PASS clock long stall clamp
+PASS clock loses focus without catchup
+PASS clock resync preserves scene time
+PASS clock nonmonotonic source cannot rewind
+PASS spring 30 60 144 FPS equivalence
+PASS spring stationary target convergence
+PASS spring changing direction stays finite
+PASS spring rejects invalid dt and target
+PASS spring reset and zero delta
+PASS viewport inverse across resolutions
+PASS viewport rejects zero or negative dimensions
+PASS button hitboxes centers and right edge
+PASS button spacing has no overlapping targets
+PASS button nonfinite coordinates rejected
+PASS focus wraps in both directions
+PASS action whitelist has four routes
+PASS flow ignores clicks during intro
+PASS flow becomes ready after intro
+PASS flow duplicate click protection
+PASS flow cancel transition prevents action
+PASS flow escape skips intro
+PASS flow waits for exit before handoff
+PASS flow reduced motion skips decorative waits
+PASS flow stagger preserves bounds
+PASS flow returns to existing menu with short intro
+PASS flow invalid delta rejected
+PASS policy exact vanilla only
+PASS policy supports only explicit DummyCore classes
+PASS policy leaves errors containers and disconnects alone
+PASS boot unknown total is indeterminate
+PASS boot ratio is stage scoped not readiness
+PASS boot malformed snapshots rejected
+PASS exact direct server endpoint
+PASS four routes in requested order
+PASS removed routes rejected
+PASS direct play handoff executes once after transition
+RESULT scenarios=48 assertions=17489 failures=0
+Picked up JAVA_TOOL_OPTIONS: -Xmx160m
+

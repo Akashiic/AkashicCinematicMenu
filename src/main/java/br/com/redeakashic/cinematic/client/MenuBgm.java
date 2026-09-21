@@ -2,7 +2,7 @@ package br.com.redeakashic.cinematic.client;
 
 import br.com.redeakashic.cinematic.core.BgmFrontendPolicy;
 import br.com.redeakashic.cinematic.core.BgmPlayback;
-import br.com.redeakashic.cinematic.core.MenuMusicPolicy;
+import br.com.redeakashic.cinematic.core.MenuSoundGate;
 import br.com.redeakashic.cinematic.core.VorbisHeader;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.EventPriority;
@@ -54,20 +54,15 @@ public final class MenuBgm {
     private boolean frontend(Minecraft mc){return BgmFrontendPolicy.frontend(reachedMain,mc.field_71441_e!=null,screen(mc));}
 
     @SubscribeEvent public void reloaded(SoundLoadEvent event){reload.set(true);}
-    @SubscribeEvent(priority=EventPriority.LOWEST) public void sound(PlaySoundEvent17 event){
-        if(event.result==null||event.category!=SoundCategory.MUSIC)return;
-        ResourceLocation loc=event.result.func_147650_b();if(loc==null)return;
-        if(!"minecraft".equals(loc.func_110624_b())||!loc.func_110623_a().startsWith("music."))return;
-        Minecraft mc=Minecraft.func_71410_x();
-        boolean replace=mc!=null&&!faulted&&settings.enabled&&settings.volume>0&&frontend(mc)&&playback.snapshot().suppressVanilla;
-        if(MenuMusicPolicy.suppressVanilla(replace,true,loc.func_110624_b(),loc.func_110623_a(),true)){
-            event.result=null;blocked++;return;
-        }
-        // Keep a bounded set of vanilla voices observed through Forge's existing event.
-        // References are only stopped after our replacement is confirmed playing.
-        synchronized(trackedVanilla){
-            if(!trackedVanilla.contains(event.result)){if(trackedVanilla.size()==8)trackedVanilla.removeFirst();trackedVanilla.addLast(event.result);}
-        }
+    @SubscribeEvent(priority=EventPriority.HIGHEST) public void soundEarly(PlaySoundEvent17 e){filter(e);}
+    @SubscribeEvent(priority=EventPriority.LOWEST) public void sound(PlaySoundEvent17 e){filter(e);}
+    private void filter(PlaySoundEvent17 event){
+        if(event.result==null)return;ResourceLocation loc=event.result.func_147650_b();if(loc==null)return;
+        if(!MenuSoundGate.competing(loc.func_110624_b(),loc.func_110623_a(),event.category==SoundCategory.MUSIC))return;
+        Minecraft mc=Minecraft.func_71410_x();boolean muted=mc!=null&&mc.field_71474_y!=null&&(mc.field_71474_y.func_151438_a(SoundCategory.MASTER)<=0||mc.field_71474_y.func_151438_a(SoundCategory.MUSIC)<=0);
+        boolean replace=mc!=null&&!faulted&&settings.enabled&&settings.volume>0&&frontend(mc)&&(playback.snapshot().suppressVanilla||(muted&&backend.validated));
+        if(replace){event.result=null;blocked++;return;}
+        synchronized(trackedVanilla){if(!trackedVanilla.contains(event.result)){if(trackedVanilla.size()==16)trackedVanilla.removeFirst();trackedVanilla.addLast(event.result);}}
     }
     @SubscribeEvent public void tick(TickEvent.ClientTickEvent event){
         if(event.phase!=TickEvent.Phase.END)return;Minecraft mc=Minecraft.func_71410_x();
@@ -83,6 +78,7 @@ public final class MenuBgm {
             boolean audible=mc.field_71474_y.func_151438_a(SoundCategory.MASTER)>0&&mc.field_71474_y.func_151438_a(SoundCategory.MUSIC)>0;
             BgmPlayback.Context context=BgmFrontendPolicy.context(enabled,reachedMain,mc.field_71441_e!=null,current);
             playback.update(context,audible,now);
+            if(enabled&&settings.volume>0&&!audible&&frontend(mc)&&backend.available())backend.silenceTrackedVanilla();
             BgmPlayback.Snapshot snapshot=playback.snapshot();gain=snapshot.gain;starts=snapshot.starts;stops=snapshot.stops;failures=snapshot.failedStarts;
             status=(!reachedMain?"WAITING_MAIN_MENU":snapshot.phase.name());
         }catch(RuntimeException|LinkageError ex){
@@ -92,7 +88,7 @@ public final class MenuBgm {
         }
     }
     private final class Engine implements BgmPlayback.Backend {
-        private boolean validated;
+        private volatile boolean validated;
         private long nextValidation;
         private String lastResourceProblem="";
         private MenuTrack owned;
