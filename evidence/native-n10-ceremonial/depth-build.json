@@ -1,0 +1,38 @@
+{
+  "source": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n10-ceremonial\\src\\main\\resources\\assets\\akashiccinematic\\native\\backdrop.jpg",
+  "source_sha256": "52817d6c37739fac17ba205f0640ca7776f81335cbaa1c4a3a298256cc9b8b3c",
+  "source_size": [
+    1207,
+    830
+  ],
+  "layer_size": [
+    1255,
+    878
+  ],
+  "padding": 24,
+  "neutral_mean_abs_rgb": [
+    0.15296114033599184,
+    0.15423583314201295,
+    0.15763068845389844
+  ],
+  "neutral_changed_pixels": 0.007376648266637386,
+  "hero_pixels": 133779,
+  "sky_pixels": 46811,
+  "max_offset_source_pixels": [
+    [
+      0.9,
+      0.45
+    ],
+    [
+      2.8,
+      1.4
+    ],
+    [
+      8.0,
+      4.0
+    ]
+  ],
+  "inpaint_method": "Telea5; nearest-cloud extension under architecture",
+  "limitations": "Clean plates only qualified for bounded motion corridor; not a full3D scene, no invented unseen buildings",
+  "visual_gate": "PENDING_INSPECTION"
+}

@@ -1,0 +1,13 @@
+{
+  "edge_refinement": "GrabCut in an11px boundary band; halo independent",
+  "blur": "premultiplied colour blur then unpremultiply to avoid black fringe",
+  "bgm_not_changed": true,
+  "files": {
+    "angel-blur.png": "7cb89b2ba29600f42fdce0c47b50bfbd53c2ae6656d14ca463656a5903b2e4f7",
+    "angel.png": "dc84c54373aaa5c214ac2aaa9f83e10878b363985d65d6e55d2e9d6bca3b209d",
+    "architecture-blur.png": "9168edd8a06a3f852aaada6b24729563375b94512f29e6cdf6a161c7d56276b9",
+    "architecture.png": "a8d2b8934b719996cc4478a972a426c73151278561ee6fd4e6917189bdba9b75",
+    "sky-blur.png": "77b9e6544ddc2baa94474d3c695125d2ed3b164085d5bb80bfe6cc751360812a",
+    "sky.png": "9204f4fc02fc4f805c9c952215e3994d5af37ad3d5ce3b592a87cff03123feb0"
+  }
+}

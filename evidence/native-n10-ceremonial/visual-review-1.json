@@ -1,0 +1,7 @@
+{
+  "inspection": "Native pbuffer captures at five resolutions",
+  "rejected": "White shimmer had visible band steps and overlapping strip seams",
+  "correction": "Single smooth triangle strip, shared edges and per-vertex gaussian alpha",
+  "other_observations": "Background layers and fixed CTA bounds retained; BGM unchanged",
+  "pack_runtime": "Not executed; other user Java clients active with limited memory"
+}

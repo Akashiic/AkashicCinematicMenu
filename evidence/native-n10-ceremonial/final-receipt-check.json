@@ -1,0 +1,15 @@
+{
+  "version": "0.6.0-alpha.3",
+  "jar_sha256": "a15e18a206e89aa7736d71cae22813ecb4be0e7cb0dffd75d4c10e0939785859",
+  "archive_sha256": "bd2389e15fd627fe1d64b7641e59281f882781233f0ef3a9bbf521ee16c6b86b",
+  "archive_bytes": 40218053,
+  "gallery_links_verified": 4,
+  "daily_observed": [
+    {
+      "name": "AkashicCinematicMenu-0.5.2-alpha.1.jar",
+      "sha256": "da5bb5579545e9716590547fbf80efbfc05771f47dba38a62999cfa9e4c0460a"
+    }
+  ],
+  "full_modpack_runtime": false,
+  "all_delivery_artifacts_verified": true
+}

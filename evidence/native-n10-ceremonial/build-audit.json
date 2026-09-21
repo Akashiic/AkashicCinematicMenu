@@ -1,0 +1,63 @@
+{
+  "build": {
+    "status": "COMPILED_NOT_RUNTIME_APPROVED",
+    "version": "0.6.0-alpha.3",
+    "jar": "AkashicCinematicMenu-0.6.0-alpha.3.jar",
+    "sha256": "a15e18a206e89aa7736d71cae22813ecb4be0e7cb0dffd75d4c10e0939785859",
+    "bytes": 16498716,
+    "classes": 77,
+    "class_major_version": 52,
+    "compiled_against_real_artifacts": true,
+    "stubs_used": false,
+    "splash_overlay_implemented": true,
+    "installed_in_game": false,
+    "runtime_tested": false,
+    "compiler": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.11.10-hotspot\\bin\\javac.EXE"
+  },
+  "tests": [
+    {
+      "step": "core",
+      "exit": 0,
+      "tail": "r routes in requested order\nPASS removed routes rejected\nPASS direct play handoff executes once after transition\nRESULT scenarios=48 assertions=17489 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n\n"
+    },
+    {
+      "step": "CeremonialTests",
+      "exit": 0,
+      "tail": "RESULT ceremonial_checks=4807 failures=0\n"
+    },
+    {
+      "step": "PixelLayoutTests",
+      "exit": 0,
+      "tail": "RESULT geometry_checks=1785 failures=0\n"
+    },
+    {
+      "step": "UiFeaturesTests",
+      "exit": 0,
+      "tail": "RESULT ui-feature-checks=140 failures=0\n"
+    },
+    {
+      "step": "MusicCoreTests",
+      "exit": 0,
+      "tail": "RESULT music_core_checks=1557 failures=0\n"
+    },
+    {
+      "step": "BgmPlaybackTests",
+      "exit": 0,
+      "tail": "nt fade parameters and level zero are defined\nSCENARIO loop=false plays once per frontend visit\nSCENARIO frontend allowlist and world precedence\nRESULT playback_scenarios=18 assertions=124 failures=0\n"
+    },
+    {
+      "step": "MenuSoundGateTests",
+      "exit": 0,
+      "tail": "RESULT sound_gate_checks=32 failures=0\n"
+    },
+    {
+      "step": "native-build",
+      "exit": 0,
+      "tail": "d\": false,\n  \"splash_overlay_implemented\": true,\n  \"installed_in_game\": false,\n  \"runtime_tested\": false,\n  \"compiler\": \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-21.0.11.10-hotspot\\\\bin\\\\javac.EXE\"\n}\n"
+    }
+  ],
+  "BGM_bytes_sha256": "6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6",
+  "BGM_code_unchanged": true,
+  "runtime": "NOT_YET_EXECUTED",
+  "baseline_sha256": "da5bb5579545e9716590547fbf80efbfc05771f47dba38a62999cfa9e4c0460a"
+}

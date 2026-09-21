@@ -1,0 +1,8 @@
+{
+  "purpose": "Keep the piers in front of knees/robe during relative camera motion",
+  "depth_planes": 3,
+  "draw_layers": 4,
+  "occluder_depth": "shares architecture transform; not a fourth independent moving plane",
+  "original_scene_unchanged": true,
+  "applied_version": "0.6.0-alpha.3"
+}

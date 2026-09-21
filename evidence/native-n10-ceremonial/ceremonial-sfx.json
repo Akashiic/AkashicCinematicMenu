@@ -1,0 +1,101 @@
+{
+  "creative_source": "Original wordless additive/formant choir, modal metal, filtered air and stereo diffuse decay; no sampled chant or recorded human singer",
+  "runtime_DSP": false,
+  "sr": 44100,
+  "cues": [
+    {
+      "name": "focus",
+      "seconds": 1.05,
+      "frames": 46305,
+      "peak_dbfs": -15.036675250929523,
+      "rms_dbfs": -34.291326510550945,
+      "tail25ms_dbfs": -85.41423588013754,
+      "stereo_correlation": 0.9317996968417489,
+      "mono_rms_ratio": 0.9827741272324501,
+      "sha256": "e1b5f19fd360831060004430f1dcdf2848070393d41439d94d769c116afa1591"
+    },
+    {
+      "name": "focus_b",
+      "seconds": 1.1,
+      "frames": 48510,
+      "peak_dbfs": -14.968931921329279,
+      "rms_dbfs": -34.15028491722202,
+      "tail25ms_dbfs": -90.20013926025561,
+      "stereo_correlation": 0.9052525384197064,
+      "mono_rms_ratio": 0.9744879554521625,
+      "sha256": "e00525ccb2d5e31d2a28f54fd4a81dd1365d8bdf472c960ca9a9c4c1ab1664d4"
+    },
+    {
+      "name": "select",
+      "seconds": 1.9,
+      "frames": 83790,
+      "peak_dbfs": -9.97838274345947,
+      "rms_dbfs": -29.26845123244146,
+      "tail25ms_dbfs": -71.11238079961252,
+      "stereo_correlation": 0.8455072941529753,
+      "mono_rms_ratio": 0.9598963835187159,
+      "sha256": "623d49f41a4e486490337978beae0f52ecbbb487b5cda789a16d1564c0d73868"
+    },
+    {
+      "name": "back",
+      "seconds": 1.4,
+      "frames": 61740,
+      "peak_dbfs": -13.957438262436124,
+      "rms_dbfs": -36.042455690758054,
+      "tail25ms_dbfs": -81.88504571270906,
+      "stereo_correlation": 0.8412279562244634,
+      "mono_rms_ratio": 0.9516827247016382,
+      "sha256": "58b7e89d2ba5c48d5871eeef0c26e5fb5038e2400dababd89cef6bd04a6e61fe"
+    },
+    {
+      "name": "enter",
+      "seconds": 3.6,
+      "frames": 158760,
+      "peak_dbfs": -9.976259152763626,
+      "rms_dbfs": -30.057761080132597,
+      "tail25ms_dbfs": -87.77940646553988,
+      "stereo_correlation": 0.893758053739773,
+      "mono_rms_ratio": 0.9631215164851021,
+      "sha256": "84999bbc0bd77a43f9c05497e29df3492373c0b080350eaed18ca0f22fbdff39"
+    },
+    {
+      "name": "connect",
+      "seconds": 2.8,
+      "frames": 123480,
+      "peak_dbfs": -8.943156795721919,
+      "rms_dbfs": -28.410084447643378,
+      "tail25ms_dbfs": -81.20817992860539,
+      "stereo_correlation": 0.7927713319350084,
+      "mono_rms_ratio": 0.9463160303023077,
+      "sha256": "942bdf938ad96f5886b9e766543a0f739531c6477cf9ceab5bf336c0eadb28f3"
+    }
+  ],
+  "audition_timeline": [
+    {
+      "cue": "focus",
+      "start_seconds": 0.5
+    },
+    {
+      "cue": "focus_b",
+      "start_seconds": 2.05
+    },
+    {
+      "cue": "select",
+      "start_seconds": 3.65
+    },
+    {
+      "cue": "back",
+      "start_seconds": 6.05
+    },
+    {
+      "cue": "enter",
+      "start_seconds": 7.95
+    },
+    {
+      "cue": "connect",
+      "start_seconds": 12.05
+    }
+  ],
+  "BGM_recording_untouched": true,
+  "subjective_listening_approval": "USER_PENDING"
+}

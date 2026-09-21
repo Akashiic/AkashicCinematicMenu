@@ -1,0 +1,128 @@
+{
+  "GuiOptions": {
+    "present": true,
+    "default_bg": 1,
+    "world_bg": 0,
+    "options_texture": 0,
+    "gui_slot": false,
+    "draw_methods": [],
+    "yesno": 0,
+    "confirm": false
+  },
+  "GuiSelectWorld": {
+    "present": true,
+    "default_bg": 1,
+    "world_bg": 0,
+    "options_texture": 0,
+    "gui_slot": true,
+    "draw_methods": [],
+    "yesno": 1,
+    "confirm": true
+  },
+  "GuiCreateWorld": {
+    "present": true,
+    "default_bg": 1,
+    "world_bg": 0,
+    "options_texture": 0,
+    "gui_slot": false,
+    "draw_methods": [],
+    "yesno": 0,
+    "confirm": false
+  },
+  "GuiLanguage": {
+    "present": true,
+    "default_bg": 1,
+    "world_bg": 0,
+    "options_texture": 0,
+    "gui_slot": true,
+    "draw_methods": [],
+    "yesno": 0,
+    "confirm": false
+  },
+  "GuiScreenResourcePacks": {
+    "present": true,
+    "default_bg": 0,
+    "world_bg": 0,
+    "options_texture": 0,
+    "gui_slot": false,
+    "draw_methods": [],
+    "yesno": 0,
+    "confirm": false
+  },
+  "GuiControls": {
+    "present": true,
+    "default_bg": 1,
+    "world_bg": 0,
+    "options_texture": 0,
+    "gui_slot": false,
+    "draw_methods": [],
+    "yesno": 0,
+    "confirm": false
+  },
+  "GuiVideoSettings": {
+    "present": true,
+    "default_bg": 1,
+    "world_bg": 0,
+    "options_texture": 0,
+    "gui_slot": false,
+    "draw_methods": [],
+    "yesno": 0,
+    "confirm": false
+  },
+  "GuiScreenOptionsSounds": {
+    "present": true,
+    "default_bg": 1,
+    "world_bg": 0,
+    "options_texture": 0,
+    "gui_slot": false,
+    "draw_methods": [],
+    "yesno": 0,
+    "confirm": false
+  },
+  "GuiChatOptions": {
+    "present": false
+  },
+  "GuiSnooper": {
+    "present": true,
+    "default_bg": 1,
+    "world_bg": 0,
+    "options_texture": 0,
+    "gui_slot": true,
+    "draw_methods": [],
+    "yesno": 0,
+    "confirm": false
+  },
+  "GuiCustomizeSkin": {
+    "present": false
+  },
+  "GuiSlot": {
+    "present": true,
+    "default_bg": 0,
+    "world_bg": 0,
+    "options_texture": 2,
+    "gui_slot": false,
+    "draw_methods": [],
+    "yesno": 0,
+    "confirm": false
+  },
+  "GuiButton": {
+    "present": true,
+    "default_bg": 0,
+    "world_bg": 0,
+    "options_texture": 0,
+    "gui_slot": false,
+    "draw_methods": [],
+    "yesno": 0,
+    "confirm": false
+  },
+  "GuiTextField": {
+    "present": true,
+    "default_bg": 0,
+    "world_bg": 0,
+    "options_texture": 0,
+    "gui_slot": false,
+    "draw_methods": [],
+    "yesno": 0,
+    "confirm": false
+  }
+}

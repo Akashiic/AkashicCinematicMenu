@@ -1,0 +1,6 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx192m
+VENDOR=Intel
+RENDERER=Intel(R) UHD Graphics
+GL=4.6.0 - Build 27.20.100.9268
+WARM_DRAW_MS median=11.414199 p95=50.251399
+RESULT checks=276 failures=0

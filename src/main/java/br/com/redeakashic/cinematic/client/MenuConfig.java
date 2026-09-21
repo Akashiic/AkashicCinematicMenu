@@ -3,10 +3,12 @@ import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 import br.com.redeakashic.cinematic.core.Numbers;
 public final class MenuConfig {
-    public final boolean enabled,reducedMotion,replaceDummyCore,particles,sfxEnabled,suppressBogoConflict,themeConnections,themeTransitions;
+    public final boolean enabled,reducedMotion,replaceDummyCore,particles,sfxEnabled,suppressBogoConflict,themeConnections,themeTransitions,layeredParallax,animatedPlay;
     public final double parallax,sfxVolume;
     private MenuConfig(Configuration c){
         enabled=c.get("general","enabled",true).getBoolean(true);
+        layeredParallax=c.get("motion","layeredParallax",true,"Separate sky, architecture and angel; reduced motion uses approved static art.").getBoolean(true);
+        animatedPlay=c.get("motion","animatedPlayButton",true,"Gentle crimson gradient and white glint; reduced motion removes idle animation.").getBoolean(true);
         reducedMotion=c.get("motion","reducedMotion",false).getBoolean(false);
         replaceDummyCore=c.get("compatibility","replaceKnownDummyCoreMenus",true).getBoolean(true);
         particles=c.get("motion","particles",true).getBoolean(true);

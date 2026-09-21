@@ -3,7 +3,11 @@
     "category": "master",
     "sounds": [
       {
-        "name": "akashiccinematic:ui/focus",
+        "name": "akashiccinematic:ritual/focus",
+        "stream": false
+      },
+      {
+        "name": "akashiccinematic:ritual/focus_b",
         "stream": false
       }
     ]
@@ -12,7 +16,7 @@
     "category": "master",
     "sounds": [
       {
-        "name": "akashiccinematic:ui/select",
+        "name": "akashiccinematic:ritual/select",
         "stream": false
       }
     ]
@@ -21,7 +25,7 @@
     "category": "master",
     "sounds": [
       {
-        "name": "akashiccinematic:ui/back",
+        "name": "akashiccinematic:ritual/back",
         "stream": false
       }
     ]
@@ -30,7 +34,7 @@
     "category": "master",
     "sounds": [
       {
-        "name": "akashiccinematic:ui/enter",
+        "name": "akashiccinematic:ritual/enter",
         "stream": false
       }
     ]
@@ -39,7 +43,7 @@
     "category": "master",
     "sounds": [
       {
-        "name": "akashiccinematic:ui/connect",
+        "name": "akashiccinematic:ritual/connect",
         "stream": false
       }
     ]

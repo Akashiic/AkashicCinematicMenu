@@ -1,0 +1,21 @@
+{
+  "baseline": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n09-audio-fixed\\dist\\AkashicCinematicMenu-0.5.2-alpha.1.jar",
+  "baseline_sha256": "da5bb5579545e9716590547fbf80efbfc05771f47dba38a62999cfa9e4c0460a",
+  "daily_observed": [
+    {
+      "name": "AkashicCinematicMenu-0.5.2-alpha.1.jar",
+      "sha256": "da5bb5579545e9716590547fbf80efbfc05771f47dba38a62999cfa9e4c0460a"
+    }
+  ],
+  "libraries": {
+    "PIL": true,
+    "numpy": true,
+    "scipy": false,
+    "cv2": true,
+    "soundfile": false
+  },
+  "created": 1790016388.5343585,
+  "user_approved": "BGM functional; visual palette preserved except crimson-white PLAY; real-depth layers and liturgical SFX requested",
+  "user_bgm_bytes_must_remain_identical": true,
+  "status": "ISOLATED_IN_DEVELOPMENT"
+}

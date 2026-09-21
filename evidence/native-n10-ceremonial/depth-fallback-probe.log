@@ -1,0 +1,3 @@
+RESULT missing-layer-fallback pixel_equal=true textures_released=true errors=0
+Picked up JAVA_TOOL_OPTIONS: -Xmx160m
+[AkashicCinematic] Depth assets unavailable; static approved scene retained: java.lang.IllegalStateException: Texture init failed: depth/angel.png

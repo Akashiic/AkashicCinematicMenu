@@ -1,0 +1,620 @@
+===== GuiOptions =====
+86:    }
+87:
+88:    protected void actionPerformed(GuiButton button)
+89:    {
+90:        if (button.enabled)
+91:        {
+92:            if (button.id < 100 && button instanceof GuiOptionButton)
+93:            {
+94:                this.field_146443_h.setOptionValue(((GuiOptionButton)button).returnEnumOptions(), 1);
+95:                button.displayString = this.field_146443_h.getKeyBinding(GameSettings.Options.getEnumOptions(button.id));
+96:            }
+169:     * Draws the screen and all the components in it.
+170:     */
+171:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+172:    {
+173:        this.drawDefaultBackground();
+174:        this.drawCenteredString(this.fontRendererObj, this.field_146442_a, this.width / 2, 15, 16777215);
+175:        super.drawScreen(mouseX, mouseY, partialTicks);
+176:    }
+177:}
+171:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+172:    {
+173:        this.drawDefaultBackground();
+174:        this.drawCenteredString(this.fontRendererObj, this.field_146442_a, this.width / 2, 15, 16777215);
+175:        super.drawScreen(mouseX, mouseY, partialTicks);
+176:    }
+177:}
+173:        this.drawDefaultBackground();
+174:        this.drawCenteredString(this.fontRendererObj, this.field_146442_a, this.width / 2, 15, 16777215);
+175:        super.drawScreen(mouseX, mouseY, partialTicks);
+176:    }
+177:}
+===== GuiSelectWorld =====
+114:    }
+115:
+116:    protected void actionPerformed(GuiButton button)
+117:    {
+118:        if (button.enabled)
+119:        {
+120:            if (button.id == 2)
+121:            {
+122:                String s = this.func_146614_d(this.field_146640_r);
+123:
+124:                if (s != null)
+156:            else
+157:            {
+158:                this.field_146638_t.actionPerformed(button);
+159:            }
+160:        }
+161:    }
+162:
+163:    public void func_146615_e(int p_146615_1_)
+164:    {
+165:        this.mc.displayGuiScreen((GuiScreen)null);
+166:
+189:    }
+190:
+191:    public void confirmClicked(boolean result, int id)
+192:    {
+193:        if (this.field_146643_x)
+194:        {
+195:            this.field_146643_x = false;
+196:
+197:            if (result)
+198:            {
+199:                ISaveFormat isaveformat = this.mc.getSaveLoader();
+218:     * Draws the screen and all the components in it.
+219:     */
+220:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+221:    {
+222:        this.field_146638_t.drawScreen(mouseX, mouseY, partialTicks);
+223:        this.drawCenteredString(this.fontRendererObj, this.field_146628_f, this.width / 2, 20, 16777215);
+224:        super.drawScreen(mouseX, mouseY, partialTicks);
+225:    }
+226:
+227:    public static GuiYesNo func_152129_a(GuiYesNoCallback p_152129_0_, String p_152129_1_, int p_152129_2_)
+228:    {
+220:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+221:    {
+222:        this.field_146638_t.drawScreen(mouseX, mouseY, partialTicks);
+223:        this.drawCenteredString(this.fontRendererObj, this.field_146628_f, this.width / 2, 20, 16777215);
+224:        super.drawScreen(mouseX, mouseY, partialTicks);
+225:    }
+226:
+227:    public static GuiYesNo func_152129_a(GuiYesNoCallback p_152129_0_, String p_152129_1_, int p_152129_2_)
+228:    {
+229:        String s1 = I18n.format("selectWorld.deleteQuestion", new Object[0]);
+230:        String s2 = "\'" + p_152129_1_ + "\' " + I18n.format("selectWorld.deleteWarning", new Object[0]);
+222:        this.field_146638_t.drawScreen(mouseX, mouseY, partialTicks);
+223:        this.drawCenteredString(this.fontRendererObj, this.field_146628_f, this.width / 2, 20, 16777215);
+224:        super.drawScreen(mouseX, mouseY, partialTicks);
+225:    }
+226:
+227:    public static GuiYesNo func_152129_a(GuiYesNoCallback p_152129_0_, String p_152129_1_, int p_152129_2_)
+228:    {
+229:        String s1 = I18n.format("selectWorld.deleteQuestion", new Object[0]);
+230:        String s2 = "\'" + p_152129_1_ + "\' " + I18n.format("selectWorld.deleteWarning", new Object[0]);
+231:        String s3 = I18n.format("selectWorld.deleteButton", new Object[0]);
+232:        String s4 = I18n.format("gui.cancel", new Object[0]);
+231:        String s3 = I18n.format("selectWorld.deleteButton", new Object[0]);
+232:        String s4 = I18n.format("gui.cancel", new Object[0]);
+233:        GuiYesNo guiyesno = new GuiYesNo(p_152129_0_, s1, s2, s3, s4, p_152129_2_);
+234:        return guiyesno;
+235:    }
+236:
+237:    @SideOnly(Side.CLIENT)
+238:    class List extends GuiSlot
+239:    {
+240:        private static final String __OBFID = "CL_00000712";
+241:
+286:        protected void drawBackground()
+287:        {
+288:            GuiSelectWorld.this.drawDefaultBackground();
+289:        }
+290:
+291:        protected void drawSlot(int p_148126_1_, int p_148126_2_, int p_148126_3_, int p_148126_4_, Tessellator p_148126_5_, int p_148126_6_, int p_148126_7_)
+292:        {
+293:            SaveFormatComparator saveformatcomparator = (SaveFormatComparator)GuiSelectWorld.this.field_146639_s.get(p_148126_1_);
+294:            String s = saveformatcomparator.getDisplayName();
+295:
+296:            if (s == null || MathHelper.stringNullOrLengthZero(s))
+===== GuiCreateWorld =====
+183:    }
+184:
+185:    protected void actionPerformed(GuiButton button)
+186:    {
+187:        if (button.enabled)
+188:        {
+189:            if (button.id == 1)
+190:            {
+191:                this.mc.displayGuiScreen(this.field_146332_f);
+192:            }
+193:            else if (button.id == 0)
+378:        if (keyCode == 28 || keyCode == 156)
+379:        {
+380:            this.actionPerformed((GuiButton)this.buttonList.get(0));
+381:        }
+382:
+383:        ((GuiButton)this.buttonList.get(0)).enabled = this.field_146333_g.getText().length() > 0;
+384:        this.func_146314_g();
+385:    }
+386:
+387:    /**
+388:     * Called when the mouse is clicked.
+405:     * Draws the screen and all the components in it.
+406:     */
+407:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+408:    {
+409:        this.drawDefaultBackground();
+410:        this.drawCenteredString(this.fontRendererObj, I18n.format("selectWorld.create", new Object[0]), this.width / 2, 20, -1);
+411:
+412:        if (this.field_146344_y)
+413:        {
+414:            this.drawString(this.fontRendererObj, I18n.format("selectWorld.enterSeed", new Object[0]), this.width / 2 - 100, 47, -6250336);
+415:            this.drawString(this.fontRendererObj, I18n.format("selectWorld.seedInfo", new Object[0]), this.width / 2 - 100, 85, -6250336);
+407:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+408:    {
+409:        this.drawDefaultBackground();
+410:        this.drawCenteredString(this.fontRendererObj, I18n.format("selectWorld.create", new Object[0]), this.width / 2, 20, -1);
+411:
+412:        if (this.field_146344_y)
+413:        {
+414:            this.drawString(this.fontRendererObj, I18n.format("selectWorld.enterSeed", new Object[0]), this.width / 2 - 100, 47, -6250336);
+415:            this.drawString(this.fontRendererObj, I18n.format("selectWorld.seedInfo", new Object[0]), this.width / 2 - 100, 85, -6250336);
+416:            this.drawString(this.fontRendererObj, I18n.format("selectWorld.mapFeatures.info", new Object[0]), this.width / 2 - 150, 122, -6250336);
+417:            this.drawString(this.fontRendererObj, I18n.format("selectWorld.allowCommands.info", new Object[0]), this.width / 2 - 150, 172, -6250336);
+432:        }
+433:
+434:        super.drawScreen(mouseX, mouseY, partialTicks);
+435:    }
+436:
+437:    public void func_146318_a(WorldInfo p_146318_1_)
+438:    {
+439:        this.field_146330_J = I18n.format("selectWorld.newWorld.copyOf", new Object[] {p_146318_1_.getWorldName()});
+440:        this.field_146329_I = p_146318_1_.getSeed() + "";
+441:        this.field_146331_K = p_146318_1_.getTerrainType().getWorldTypeID();
+442:        this.field_146334_a = p_146318_1_.getGeneratorOptions();
+===== GuiLanguage =====
+49:    }
+50:
+51:    protected void actionPerformed(GuiButton button)
+52:    {
+53:        if (button.enabled)
+54:        {
+55:            switch (button.id)
+56:            {
+57:                case 5:
+58:                    break;
+59:                case 6:
+73:                    break;
+74:                default:
+75:                    this.field_146450_f.actionPerformed(button);
+76:            }
+77:        }
+78:    }
+79:
+80:    /**
+81:     * Draws the screen and all the components in it.
+82:     */
+83:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+81:     * Draws the screen and all the components in it.
+82:     */
+83:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+84:    {
+85:        this.field_146450_f.drawScreen(mouseX, mouseY, partialTicks);
+86:        this.drawCenteredString(this.fontRendererObj, I18n.format("options.language", new Object[0]), this.width / 2, 16, 16777215);
+87:        this.drawCenteredString(this.fontRendererObj, "(" + I18n.format("options.languageWarning", new Object[0]) + ")", this.width / 2, this.height - 56, 8421504);
+88:        super.drawScreen(mouseX, mouseY, partialTicks);
+89:    }
+90:
+91:    @SideOnly(Side.CLIENT)
+83:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+84:    {
+85:        this.field_146450_f.drawScreen(mouseX, mouseY, partialTicks);
+86:        this.drawCenteredString(this.fontRendererObj, I18n.format("options.language", new Object[0]), this.width / 2, 16, 16777215);
+87:        this.drawCenteredString(this.fontRendererObj, "(" + I18n.format("options.languageWarning", new Object[0]) + ")", this.width / 2, this.height - 56, 8421504);
+88:        super.drawScreen(mouseX, mouseY, partialTicks);
+89:    }
+90:
+91:    @SideOnly(Side.CLIENT)
+92:    class List extends GuiSlot
+93:    {
+86:        this.drawCenteredString(this.fontRendererObj, I18n.format("options.language", new Object[0]), this.width / 2, 16, 16777215);
+87:        this.drawCenteredString(this.fontRendererObj, "(" + I18n.format("options.languageWarning", new Object[0]) + ")", this.width / 2, this.height - 56, 8421504);
+88:        super.drawScreen(mouseX, mouseY, partialTicks);
+89:    }
+90:
+91:    @SideOnly(Side.CLIENT)
+92:    class List extends GuiSlot
+93:    {
+94:        private final java.util.List field_148176_l = Lists.newArrayList();
+95:        private final Map field_148177_m = Maps.newHashMap();
+96:        private static final String __OBFID = "CL_00000699";
+148:        protected void drawBackground()
+149:        {
+150:            GuiLanguage.this.drawDefaultBackground();
+151:        }
+152:
+153:        protected void drawSlot(int p_148126_1_, int p_148126_2_, int p_148126_3_, int p_148126_4_, Tessellator p_148126_5_, int p_148126_6_, int p_148126_7_)
+154:        {
+155:            GuiLanguage.this.fontRendererObj.setBidiFlag(true);
+156:            GuiLanguage.this.drawCenteredString(GuiLanguage.this.fontRendererObj, ((Language)this.field_148177_m.get(this.field_148176_l.get(p_148126_1_))).toString(), this.width / 2, p_148126_3_ + 1, 16777215);
+157:            GuiLanguage.this.fontRendererObj.setBidiFlag(GuiLanguage.this.field_146454_h.getCurrentLanguage().isBidirectional());
+158:        }
+===== GuiScreenResourcePacks =====
+96:    }
+97:
+98:    protected void actionPerformed(GuiButton button)
+99:    {
+100:        if (button.enabled)
+101:        {
+102:            if (button.id == 2)
+103:            {
+104:                File file1 = this.mc.getResourcePackRepository().getDirResourcepacks();
+105:                String s = file1.getAbsolutePath();
+106:
+208:     * Draws the screen and all the components in it.
+209:     */
+210:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+211:    {
+212:        this.drawBackground(0);
+213:        this.field_146970_i.drawScreen(mouseX, mouseY, partialTicks);
+214:        this.field_146967_r.drawScreen(mouseX, mouseY, partialTicks);
+215:        this.drawCenteredString(this.fontRendererObj, I18n.format("resourcePack.title", new Object[0]), this.width / 2, 16, 16777215);
+216:        this.drawCenteredString(this.fontRendererObj, I18n.format("resourcePack.folderInfo", new Object[0]), this.width / 2 - 77, this.height - 26, 8421504);
+217:        super.drawScreen(mouseX, mouseY, partialTicks);
+218:    }
+211:    {
+212:        this.drawBackground(0);
+213:        this.field_146970_i.drawScreen(mouseX, mouseY, partialTicks);
+214:        this.field_146967_r.drawScreen(mouseX, mouseY, partialTicks);
+215:        this.drawCenteredString(this.fontRendererObj, I18n.format("resourcePack.title", new Object[0]), this.width / 2, 16, 16777215);
+216:        this.drawCenteredString(this.fontRendererObj, I18n.format("resourcePack.folderInfo", new Object[0]), this.width / 2 - 77, this.height - 26, 8421504);
+217:        super.drawScreen(mouseX, mouseY, partialTicks);
+218:    }
+219:}
+212:        this.drawBackground(0);
+213:        this.field_146970_i.drawScreen(mouseX, mouseY, partialTicks);
+214:        this.field_146967_r.drawScreen(mouseX, mouseY, partialTicks);
+215:        this.drawCenteredString(this.fontRendererObj, I18n.format("resourcePack.title", new Object[0]), this.width / 2, 16, 16777215);
+216:        this.drawCenteredString(this.fontRendererObj, I18n.format("resourcePack.folderInfo", new Object[0]), this.width / 2 - 77, this.height - 26, 8421504);
+217:        super.drawScreen(mouseX, mouseY, partialTicks);
+218:    }
+219:}
+215:        this.drawCenteredString(this.fontRendererObj, I18n.format("resourcePack.title", new Object[0]), this.width / 2, 16, 16777215);
+216:        this.drawCenteredString(this.fontRendererObj, I18n.format("resourcePack.folderInfo", new Object[0]), this.width / 2 - 77, this.height - 26, 8421504);
+217:        super.drawScreen(mouseX, mouseY, partialTicks);
+218:    }
+219:}
+===== GuiControls =====
+60:    }
+61:
+62:    protected void actionPerformed(GuiButton button)
+63:    {
+64:        if (button.id == 200)
+65:        {
+66:            this.mc.displayGuiScreen(this.parentScreen);
+67:        }
+68:        else if (button.id == 201)
+69:        {
+70:            KeyBinding[] akeybinding = this.mc.gameSettings.keyBindings;
+144:     * Draws the screen and all the components in it.
+145:     */
+146:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+147:    {
+148:        this.drawDefaultBackground();
+149:        this.keyBindingList.drawScreen(mouseX, mouseY, partialTicks);
+150:        this.drawCenteredString(this.fontRendererObj, this.field_146495_a, this.width / 2, 8, 16777215);
+151:        boolean flag = true;
+152:        KeyBinding[] akeybinding = this.options.keyBindings;
+153:        int k = akeybinding.length;
+154:
+146:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+147:    {
+148:        this.drawDefaultBackground();
+149:        this.keyBindingList.drawScreen(mouseX, mouseY, partialTicks);
+150:        this.drawCenteredString(this.fontRendererObj, this.field_146495_a, this.width / 2, 8, 16777215);
+151:        boolean flag = true;
+152:        KeyBinding[] akeybinding = this.options.keyBindings;
+153:        int k = akeybinding.length;
+154:
+155:        for (int l = 0; l < k; ++l)
+156:        {
+147:    {
+148:        this.drawDefaultBackground();
+149:        this.keyBindingList.drawScreen(mouseX, mouseY, partialTicks);
+150:        this.drawCenteredString(this.fontRendererObj, this.field_146495_a, this.width / 2, 8, 16777215);
+151:        boolean flag = true;
+152:        KeyBinding[] akeybinding = this.options.keyBindings;
+153:        int k = akeybinding.length;
+154:
+155:        for (int l = 0; l < k; ++l)
+156:        {
+157:            KeyBinding keybinding = akeybinding[l];
+165:
+166:        this.field_146493_s.enabled = !flag;
+167:        super.drawScreen(mouseX, mouseY, partialTicks);
+168:    }
+169:}
+===== GuiVideoSettings =====
+59:    }
+60:
+61:    protected void actionPerformed(GuiButton button)
+62:    {
+63:        if (button.enabled)
+64:        {
+65:            if (button.id == 200)
+66:            {
+67:                this.mc.gameSettings.saveOptions();
+68:                this.mc.displayGuiScreen(this.parentGuiScreen);
+69:            }
+111:     * Draws the screen and all the components in it.
+112:     */
+113:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+114:    {
+115:        this.drawDefaultBackground();
+116:        this.optionsRowList.drawScreen(mouseX, mouseY, partialTicks);
+117:        this.drawCenteredString(this.fontRendererObj, this.screenTitle, this.width / 2, 5, 16777215);
+118:        super.drawScreen(mouseX, mouseY, partialTicks);
+119:    }
+120:}
+113:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+114:    {
+115:        this.drawDefaultBackground();
+116:        this.optionsRowList.drawScreen(mouseX, mouseY, partialTicks);
+117:        this.drawCenteredString(this.fontRendererObj, this.screenTitle, this.width / 2, 5, 16777215);
+118:        super.drawScreen(mouseX, mouseY, partialTicks);
+119:    }
+120:}
+114:    {
+115:        this.drawDefaultBackground();
+116:        this.optionsRowList.drawScreen(mouseX, mouseY, partialTicks);
+117:        this.drawCenteredString(this.fontRendererObj, this.screenTitle, this.width / 2, 5, 16777215);
+118:        super.drawScreen(mouseX, mouseY, partialTicks);
+119:    }
+120:}
+116:        this.optionsRowList.drawScreen(mouseX, mouseY, partialTicks);
+117:        this.drawCenteredString(this.fontRendererObj, this.screenTitle, this.width / 2, 5, 16777215);
+118:        super.drawScreen(mouseX, mouseY, partialTicks);
+119:    }
+120:}
+===== GuiScreenOptionsSounds =====
+54:    }
+55:
+56:    protected void actionPerformed(GuiButton button)
+57:    {
+58:        if (button.enabled)
+59:        {
+60:            if (button.id == 200)
+61:            {
+62:                this.mc.gameSettings.saveOptions();
+63:                this.mc.displayGuiScreen(this.field_146505_f);
+64:            }
+69:     * Draws the screen and all the components in it.
+70:     */
+71:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+72:    {
+73:        this.drawDefaultBackground();
+74:        this.drawCenteredString(this.fontRendererObj, this.field_146507_a, this.width / 2, 15, 16777215);
+75:        super.drawScreen(mouseX, mouseY, partialTicks);
+76:    }
+77:
+78:    protected String func_146504_a(SoundCategory p_146504_1_)
+79:    {
+71:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+72:    {
+73:        this.drawDefaultBackground();
+74:        this.drawCenteredString(this.fontRendererObj, this.field_146507_a, this.width / 2, 15, 16777215);
+75:        super.drawScreen(mouseX, mouseY, partialTicks);
+76:    }
+77:
+78:    protected String func_146504_a(SoundCategory p_146504_1_)
+79:    {
+80:        float f = this.field_146506_g.getSoundLevel(p_146504_1_);
+81:        return f == 0.0F ? this.field_146508_h : (int)(f * 100.0F) + "%";
+73:        this.drawDefaultBackground();
+74:        this.drawCenteredString(this.fontRendererObj, this.field_146507_a, this.width / 2, 15, 16777215);
+75:        super.drawScreen(mouseX, mouseY, partialTicks);
+76:    }
+77:
+78:    protected String func_146504_a(SoundCategory p_146504_1_)
+79:    {
+80:        float f = this.field_146506_g.getSoundLevel(p_146504_1_);
+81:        return f == 0.0F ? this.field_146508_h : (int)(f * 100.0F) + "%";
+82:    }
+83:
+MISSING net/minecraft/client/gui/GuiChatOptions.java
+===== GuiSnooper =====
+77:    }
+78:
+79:    protected void actionPerformed(GuiButton button)
+80:    {
+81:        if (button.enabled)
+82:        {
+83:            if (button.id == 2)
+84:            {
+85:                this.field_146603_f.saveOptions();
+86:                this.field_146603_f.saveOptions();
+87:                this.mc.displayGuiScreen(this.field_146608_a);
+99:     * Draws the screen and all the components in it.
+100:     */
+101:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+102:    {
+103:        this.drawDefaultBackground();
+104:        this.field_146606_s.drawScreen(mouseX, mouseY, partialTicks);
+105:        this.drawCenteredString(this.fontRendererObj, this.field_146610_i, this.width / 2, 8, 16777215);
+106:        int k = 22;
+107:        String[] astring = this.field_146607_r;
+108:        int l = astring.length;
+109:
+101:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+102:    {
+103:        this.drawDefaultBackground();
+104:        this.field_146606_s.drawScreen(mouseX, mouseY, partialTicks);
+105:        this.drawCenteredString(this.fontRendererObj, this.field_146610_i, this.width / 2, 8, 16777215);
+106:        int k = 22;
+107:        String[] astring = this.field_146607_r;
+108:        int l = astring.length;
+109:
+110:        for (int i1 = 0; i1 < l; ++i1)
+111:        {
+102:    {
+103:        this.drawDefaultBackground();
+104:        this.field_146606_s.drawScreen(mouseX, mouseY, partialTicks);
+105:        this.drawCenteredString(this.fontRendererObj, this.field_146610_i, this.width / 2, 8, 16777215);
+106:        int k = 22;
+107:        String[] astring = this.field_146607_r;
+108:        int l = astring.length;
+109:
+110:        for (int i1 = 0; i1 < l; ++i1)
+111:        {
+112:            String s = astring[i1];
+115:        }
+116:
+117:        super.drawScreen(mouseX, mouseY, partialTicks);
+118:    }
+119:
+120:    @SideOnly(Side.CLIENT)
+121:    class List extends GuiSlot
+122:    {
+123:        private static final String __OBFID = "CL_00000715";
+124:
+125:        public List()
+MISSING net/minecraft/client/gui/GuiCustomizeSkin.java
+===== GuiSlot =====
+199:    }
+200:
+201:    public void actionPerformed(GuiButton p_148147_1_)
+202:    {
+203:        if (p_148147_1_.enabled)
+204:        {
+205:            if (p_148147_1_.id == this.scrollUpButtonID)
+206:            {
+207:                this.amountScrolled -= (float)(this.slotHeight * 2 / 3);
+208:                this.initialClickY = -2.0F;
+209:                this.bindAmountScrolled();
+218:    }
+219:
+220:    public void drawScreen(int p_148128_1_, int p_148128_2_, float p_148128_3_)
+221:    {
+222:        this.mouseX = p_148128_1_;
+223:        this.mouseY = p_148128_2_;
+224:        this.drawBackground();
+225:        int k = this.getSize();
+226:        int l = this.getScrollBarX();
+227:        int i1 = l + 6;
+228:        int l1;
+337:        GL11.glDisable(GL11.GL_FOG);
+338:        Tessellator tessellator = Tessellator.instance;
+339:        drawContainerBackground(tessellator);
+340:        l1 = this.left + this.width / 2 - this.getListWidth() / 2 + 2;
+341:        i2 = this.top + 4 - (int)this.amountScrolled;
+342:
+343:        if (this.hasListHeader)
+344:        {
+345:            this.drawListHeader(l1, i2, tessellator);
+346:        }
+347:
+495:    {
+496:        Tessellator tessellator = Tessellator.instance;
+497:        this.mc.getTextureManager().bindTexture(Gui.optionsBackground);
+498:        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+499:        float f = 32.0F;
+500:        tessellator.startDrawingQuads();
+501:        tessellator.setColorRGBA_I(4210752, p_148136_4_);
+502:        tessellator.addVertexWithUV((double)this.left, (double)p_148136_2_, 0.0D, 0.0D, (double)((float)p_148136_2_ / f));
+503:        tessellator.addVertexWithUV((double)(this.left + this.width), (double)p_148136_2_, 0.0D, (double)((float)this.width / f), (double)((float)p_148136_2_ / f));
+504:        tessellator.setColorRGBA_I(4210752, p_148136_3_);
+505:        tessellator.addVertexWithUV((double)(this.left + this.width), (double)p_148136_1_, 0.0D, (double)((float)this.width / f), (double)((float)p_148136_1_ / f));
+522:    }
+523:
+524:    protected void drawContainerBackground(Tessellator tessellator)
+525:    {
+526:        this.mc.getTextureManager().bindTexture(Gui.optionsBackground);
+527:        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+528:        float f1 = 32.0F;
+529:        tessellator.startDrawingQuads();
+530:        tessellator.setColorOpaque_I(2105376);
+531:        tessellator.addVertexWithUV((double)this.left, (double)this.bottom, 0.0D, (double)((float)this.left / f1), (double)((float)(this.bottom + (int)this.amountScrolled) / f1));
+532:        tessellator.addVertexWithUV((double)this.right, (double)this.bottom, 0.0D, (double)((float)this.right / f1), (double)((float)(this.bottom + (int)this.amountScrolled) / f1));
+524:    protected void drawContainerBackground(Tessellator tessellator)
+525:    {
+526:        this.mc.getTextureManager().bindTexture(Gui.optionsBackground);
+527:        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+528:        float f1 = 32.0F;
+529:        tessellator.startDrawingQuads();
+530:        tessellator.setColorOpaque_I(2105376);
+531:        tessellator.addVertexWithUV((double)this.left, (double)this.bottom, 0.0D, (double)((float)this.left / f1), (double)((float)(this.bottom + (int)this.amountScrolled) / f1));
+532:        tessellator.addVertexWithUV((double)this.right, (double)this.bottom, 0.0D, (double)((float)this.right / f1), (double)((float)(this.bottom + (int)this.amountScrolled) / f1));
+533:        tessellator.addVertexWithUV((double)this.right, (double)this.top, 0.0D, (double)((float)this.right / f1), (double)((float)(this.top + (int)this.amountScrolled) / f1));
+534:        tessellator.addVertexWithUV((double)this.left, (double)this.top, 0.0D, (double)((float)this.left / f1), (double)((float)(this.top + (int)this.amountScrolled) / f1));
+===== GuiButton =====
+75:     * Draws this button to the screen.
+76:     */
+77:    public void drawButton(Minecraft mc, int mouseX, int mouseY)
+78:    {
+79:        if (this.visible)
+80:        {
+81:            FontRenderer fontrenderer = mc.fontRenderer;
+82:            mc.getTextureManager().bindTexture(buttonTextures);
+83:            GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+84:            this.field_146123_n = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
+85:            int k = this.getHoverState(this.field_146123_n);
+===== GuiYesNo =====
+50:    }
+51:
+52:    protected void actionPerformed(GuiButton button)
+53:    {
+54:        this.parentScreen.confirmClicked(button.id == 0, this.field_146357_i);
+55:    }
+56:
+57:    /**
+58:     * Draws the screen and all the components in it.
+59:     */
+60:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+52:    protected void actionPerformed(GuiButton button)
+53:    {
+54:        this.parentScreen.confirmClicked(button.id == 0, this.field_146357_i);
+55:    }
+56:
+57:    /**
+58:     * Draws the screen and all the components in it.
+59:     */
+60:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+61:    {
+62:        this.drawDefaultBackground();
+58:     * Draws the screen and all the components in it.
+59:     */
+60:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+61:    {
+62:        this.drawDefaultBackground();
+63:        this.drawCenteredString(this.fontRendererObj, this.field_146351_f, this.width / 2, 70, 16777215);
+64:        this.drawCenteredString(this.fontRendererObj, this.field_146354_r, this.width / 2, 90, 16777215);
+65:        super.drawScreen(mouseX, mouseY, partialTicks);
+66:    }
+67:
+68:    public void func_146350_a(int p_146350_1_)
+60:    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+61:    {
+62:        this.drawDefaultBackground();
+63:        this.drawCenteredString(this.fontRendererObj, this.field_146351_f, this.width / 2, 70, 16777215);
+64:        this.drawCenteredString(this.fontRendererObj, this.field_146354_r, this.width / 2, 90, 16777215);
+65:        super.drawScreen(mouseX, mouseY, partialTicks);
+66:    }
+67:
+68:    public void func_146350_a(int p_146350_1_)
+69:    {
+70:        this.field_146353_s = p_146350_1_;
+63:        this.drawCenteredString(this.fontRendererObj, this.field_146351_f, this.width / 2, 70, 16777215);
+64:        this.drawCenteredString(this.fontRendererObj, this.field_146354_r, this.width / 2, 90, 16777215);
+65:        super.drawScreen(mouseX, mouseY, partialTicks);
+66:    }
+67:
+68:    public void func_146350_a(int p_146350_1_)
+69:    {
+70:        this.field_146353_s = p_146350_1_;
+71:        GuiButton guibutton;
+72:
+73:        for (Iterator iterator = this.buttonList.iterator(); iterator.hasNext(); guibutton.enabled = false)

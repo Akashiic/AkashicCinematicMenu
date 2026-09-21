@@ -16,7 +16,7 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
     private MenuFlow flow;
     private NativeVisuals visuals;
     private NativeLayout layout;
-    private double visitAge;
+    private double visitAge,playPressedAt=Double.NEGATIVE_INFINITY;
     private static boolean handoffSeen;
     private boolean fadeFromBoot;
     private final double[] highlightValues=new double[MenuLayout.COUNT];
@@ -46,6 +46,7 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
                 if(visuals==null||!visuals.layout.profile.equals(profile)) {
                     if(visuals!=null)visuals.close();visuals=new NativeVisuals(profile);layout=visuals.layout;
                 }
+                layout.resize(w,h);
                 double px=mx*(double)w/Math.max(1,field_146294_l),py=my*(double)h/Math.max(1,field_146295_m);
                 int hovered=layout.hit(layout.localX(px,w,h),layout.localY(py,w,h));
                 if(!keyboardMode&&hovered>=0)focus=hovered;
@@ -58,7 +59,7 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
                     double target=i==selected?1:0;if(reduced)highlights[i].reset(target);else highlights[i].step(target,dt);
                     values[i]=highlights[i].position();
                 }
-                visuals.transform(w,h);
+                visuals.transform(w,h);visuals.playPressAge=clock.elapsed()-playPressedAt;visuals.depthEnabled=config.layeredParallax&&config.parallax>0;visuals.heroAnimation=config.animatedPlay;
                 visuals.menu(clock.elapsed(),mouseX.position()*config.parallax,mouseY.position()*config.parallax,flow.visibility(),values,!reduced,config.particles);
                 // Only actual splash completion allows the handoff; this does not hold up loading.
                 if(fadeFromBoot&&!reduced&&visitAge<.45)visuals.startup(SplashHooks.last,SplashHooks.elapsedSeconds,1-visitAge/.45,false);
@@ -100,7 +101,7 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
         if (key == Keyboard.KEY_RETURN || key == Keyboard.KEY_NUMPADENTER || key == Keyboard.KEY_SPACE) { requestAction(MenuLayout.action(focus),"key:"+key); }
     }
     private void requestAction(MenuAction action,String source){
-        if(flow.request(action)){System.out.println("[AkashicCinematic] ACCEPTED_INPUT "+source+" action="+action);UiAudio.play(action==MenuAction.PLAY?br.com.redeakashic.cinematic.core.UiCueGate.Cue.CONNECT:br.com.redeakashic.cinematic.core.UiCueGate.Cue.SELECT);}
+        if(flow.request(action)){if(action==MenuAction.PLAY)playPressedAt=clock.elapsed();System.out.println("[AkashicCinematic] ACCEPTED_INPUT "+source+" action="+action);UiAudio.play(action==MenuAction.PLAY?br.com.redeakashic.cinematic.core.UiCueGate.Cue.CONNECT:br.com.redeakashic.cinematic.core.UiCueGate.Cue.SELECT);}
     }
     private void dispatch(MenuAction action) {
         hook.dispatched(action.name());

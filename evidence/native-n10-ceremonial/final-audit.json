@@ -1,0 +1,94 @@
+{
+  "checkpoint": "ACM-N10-CEREMONIAL-2026-09-21",
+  "version": "0.6.0-alpha.3",
+  "jar": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n10-ceremonial\\dist\\AkashicCinematicMenu-0.6.0-alpha.3.jar",
+  "jar_sha256": "a15e18a206e89aa7736d71cae22813ecb4be0e7cb0dffd75d4c10e0939785859",
+  "jar_bytes": 16498716,
+  "classes": 77,
+  "baseline_user_approved": "native-n09-audio-fixed/0.5.2-alpha.1",
+  "baseline_sha256": "da5bb5579545e9716590547fbf80efbfc05771f47dba38a62999cfa9e4c0460a",
+  "BGM_recording_unchanged": true,
+  "BGM_recording_sha256": "6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6",
+  "BGM_java_source_unchanged": true,
+  "BGM_event_unchanged": true,
+  "changed_java_sources": [
+    "src/main/java/br/com/redeakashic/cinematic/AkashicCinematicMenu.java",
+    "src/main/java/br/com/redeakashic/cinematic/client/CinematicMenu.java",
+    "src/main/java/br/com/redeakashic/cinematic/client/MenuConfig.java",
+    "src/main/java/br/com/redeakashic/cinematic/client/UiAudio.java",
+    "src/main/java/br/com/redeakashic/cinematic/core/DepthCamera.java",
+    "src/main/java/br/com/redeakashic/cinematic/core/HeroButtonState.java",
+    "src/main/java/br/com/redeakashic/cinematic/render/BackdropRenderer.java",
+    "src/main/java/br/com/redeakashic/cinematic/render/HeroButton.java",
+    "src/main/java/br/com/redeakashic/cinematic/render/NativeVisuals.java"
+  ],
+  "depth_planes": 3,
+  "draw_layers": 4,
+  "occluder": "shares architecture camera; protects the piers in front of the seated statue",
+  "source_dimensions": [
+    1207,
+    830
+  ],
+  "padded_dimensions": [
+    1255,
+    878
+  ],
+  "neutral_mean_absolute_channel_error": 0.08035555644283847,
+  "five_sizes_tested": [
+    [
+      854,
+      480
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      1366,
+      768
+    ],
+    [
+      1920,
+      1001
+    ],
+    [
+      2560,
+      1440
+    ]
+  ],
+  "new_unit_checks": 4807,
+  "native_graphics_checks": 276,
+  "pbuffer_process": {
+    "pid": 11068,
+    "started": 1790017749.078527,
+    "ended": 1790017771.529061,
+    "exit": 0,
+    "kind": "isolated pbuffer, not Minecraft"
+  },
+  "graphics_driver_log": "Picked up JAVA_TOOL_OPTIONS: -Xmx192m\nVENDOR=Intel\nRENDERER=Intel(R) UHD Graphics\nGL=4.6.0 - Build 27.20.100.9268\nWARM_DRAW_MS median=6.2559 p95=15.425\nPAIRED_MEDIAN_MS static=9.074701 layered=4.756001\nRESULT checks=276 failures=0\n",
+  "reduced_motion_pixel_stability": true,
+  "missing_layer_fallback_pixel_identical": true,
+  "six_sfx_actual_jorbis_decode_passed": true,
+  "audio_preview_remote_sha256": "f8392dc1da6c9ee1bdec18e28805942804f611685bb48d794ef04a9e4332a458",
+  "daily_observed": [
+    {
+      "name": "AkashicCinematicMenu-0.5.2-alpha.1.jar",
+      "sha256": "da5bb5579545e9716590547fbf80efbfc05771f47dba38a62999cfa9e4c0460a"
+    }
+  ],
+  "daily_mutation_by_this_work": false,
+  "qa_modpack_launched": false,
+  "reason_no_full_pack_test": "Other user Java clients were open; free physical memory about1-2GiB. A private pbuffer and low-heap tests were used instead.",
+  "user_visual_audio_approval": "PENDING",
+  "verdict": "BUILD_AND_NATIVE_RENDERER_GATES_PASSED__FULL_PACK_RUNTIME_PENDING",
+  "general_release_approved": false,
+  "limitations": [
+    "Three depth planes and an occlusion mask are2.5D, not a newly modelled3D statue",
+    "Masked hidden regions restored only for bounded camera travel; not unrestricted movement",
+    "Original source remains1207x830; no fabricated4K detail",
+    "Wordless choir is synthesized, not a recording of a Gregorian choir",
+    "No new cue was auditioned through Minecraft SoundHandler in this run",
+    "Pbuffer timing is not a modpack FPS benchmark",
+    "Existing unexplained earlier runtime exit remains historical; this does not resolve it"
+  ]
+}

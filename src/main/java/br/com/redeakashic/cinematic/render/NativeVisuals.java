@@ -5,6 +5,7 @@ import org.lwjgl.opengl.GL11;
 public final class NativeVisuals implements AutoCloseable {
     public static final int INK=0x090D14,SLATE=0x171C25,IVORY=0xE8E4D8,GOLD=0xC4AA7C,MUTED=0xACB2BB,ICE=0xDCEBFA;
     public final NativeLayout layout;private BackdropRenderer backdrop;private final UiTypography type=new UiTypography();
+    public double playPressAge=-1;public boolean depthEnabled=true,heroAnimation=true;
     public static long menuFrames,startupFrames;public static int lastWidth,lastHeight;
     public NativeVisuals(String profile){layout=new NativeLayout(profile);}
     public void prepareMenu(){if(backdrop==null)backdrop=new BackdropRenderer();}
@@ -27,7 +28,7 @@ public final class NativeVisuals implements AutoCloseable {
     private void center(String value,double x,double y,double size,double limit,boolean serif,double spacing,int colour,double a){type.centered(value,x,y,size,limit,serif,spacing,colour,a);}
     public void menu(double age,double px,double py,double visibility,double[] highlights,boolean motion,boolean particles){
         menuFrames++;double w=layout.width,h=layout.height,s=layout.pixels.unit,p=layout.sidebar,c=p/2;
-        background(1,motion?px:0,motion?py:0);backdrop.glass(0,0,p,h,.92);rect(0,0,p,h,INK,.70);rect(p-1,0,1,h,GOLD,.25);
+        prepareMenu();backdrop.drawDepth(layout.width,layout.height,1,motion?px:0,motion?py:0,motion&&depthEnabled);backdrop.glass(0,0,p,h,.92);rect(0,0,p,h,INK,.70);rect(p-1,0,1,h,GOLD,.25);
         outline(Math.round(p*.05),Math.round(h*.045),Math.round(p*.90),Math.round(h*.93),GOLD,.14);
         diamond(c,h*.085,10*s,GOLD,.68);diamond(c,h*.085,5*s,ICE,.38);
         center("THE END OF",c,h*.135,11*s,p*.80,false,3*s,MUTED,1);
@@ -38,10 +39,10 @@ public final class NativeVisuals implements AutoCloseable {
         String[] actions={"JOGAR","SINGLEPLAYER","OPÇÕES","SAIR"};
         for(int i=0;i<4;i++){
             double x=layout.pixels.buttonX(),y=layout.pixels.buttonY(i),bw=layout.pixels.buttonWidth(),bh=layout.pixels.buttonHeight(),hot=Math.max(0,Math.min(1,highlights[i]));
-            rect(x,y,bw,bh,SLATE,(.18+hot*.40)*visibility);outline(x,y,bw,bh,GOLD,(.18+hot*.48)*visibility);
-            if(hot>.005)rect(x,y,2,bh,GOLD,hot*visibility);
-            text("0"+(i+1),x+12*s,y+(bh-10*s)/2,9*s,24*s,false,1*s,GOLD,visibility*.88);
-            text(actions[i],x+36*s,y+(bh-19*s)/2-1,19*s,bw-48*s,true,1*s,IVORY,visibility);
+            if(i==0)HeroButton.draw(x,y,bw,bh,age,hot,playPressAge,visibility,motion&&heroAnimation);
+            else{rect(x,y,bw,bh,SLATE,(.18+hot*.40)*visibility);outline(x,y,bw,bh,GOLD,(.18+hot*.48)*visibility);if(hot>.005)rect(x,y,2,bh,GOLD,hot*visibility);}
+            text("0"+(i+1),x+12*s,y+(bh-10*s)/2,9*s,24*s,false,1*s,i==0?0xFFF5F8:GOLD,visibility*.88);
+            text(actions[i],x+36*s,y+(bh-19*s)/2-1,19*s,bw-(i==0?67:48)*s,true,1*s,i==0?0xFFFFFF:IVORY,visibility);
         }
         text("REDE AKASHIC",p*.10,h*.877,10*s,p*.80,false,2*s,GOLD,1);
         text("FORBIDDEN SERIES  /  1.7.10",p*.10,h*.919,8*s,p*.80,false,1*s,MUTED,1);
