@@ -18,7 +18,7 @@ public final class SplashHooks {
     @SuppressWarnings("try")
     public static void frame(){
         if(failed||Boolean.getBoolean("akashic.cinematic.disabled")||Boolean.getBoolean("akashic.cinematic.disableSplash"))return;
-        int w=Display.getWidth(),h=Display.getHeight();if(w<1||h<1)return;
+        int w=Display.getWidth(),h=Display.getHeight();if(w<160||h<120)return;
         if((w!=previousWidth||h!=previousHeight)&&geometryLogs++<40){previousWidth=w;previousHeight=h;System.out.println("[AkashicCinematic] SPLASH_GEOMETRY "+w+"x"+h);}
         try(RawScope scope=new RawScope(w,h)){
             long now=System.nanoTime();if(started==0){started=EarlyWindowHooks.startedNanos>0?EarlyWindowHooks.startedNanos:now;System.out.println("[AkashicCinematic] FORGE_OVERLAY_STARTED epoch="+System.currentTimeMillis());}

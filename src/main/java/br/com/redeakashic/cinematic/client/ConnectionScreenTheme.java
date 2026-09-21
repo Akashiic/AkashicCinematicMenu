@@ -41,7 +41,7 @@ public final class ConnectionScreenTheme {
             try(RawScope scope=new RawScope(width,height)){
                 if(backdrop==null)backdrop=new BackdropRenderer();backdrop.draw(width,height,1);
                 GL11.glScaled((double)width/gw,(double)height/gh,1);
-                NativeVisuals.rect(0,0,gw,gh,0x020907,.58);
+                NativeVisuals.rect(0,0,gw,gh,0x060911,.58);
                 int widest=mc.field_71466_p.func_78256_a(title),buttonBottom=0;
                 for(String line:lines)widest=Math.max(widest,mc.field_71466_p.func_78256_a(line));
                 for(GuiButton button:buttons)if(button.field_146125_m)buttonBottom=Math.max(buttonBottom,button.field_146129_i+button.field_146121_g);
@@ -49,15 +49,15 @@ public final class ConnectionScreenTheme {
                 int bodyTop=connecting?top+35:gh/2-lines.size()*9/2,bodyBottom=bodyTop+lines.size()*9;
                 if(!connecting)top=bodyTop-30;
                 int bottom=Math.min(gh-8,Math.max(bodyBottom+16,buttonBottom+14));
-                NativeVisuals.rect(left,top,boxWidth,bottom-top,0x06100C,.88);
-                NativeVisuals.rect(left,top,boxWidth,1,0x94AA7A,.8);NativeVisuals.rect(left,bottom-1,boxWidth,1,0x94AA7A,.25);
-                centered(mc,title,gw/2,top+14,0xDDE8D1);
-                int y=bodyTop;for(String line:lines){centered(mc,line,gw/2,y,0xC6D3C0);y+=9;}
+                NativeVisuals.rect(left,top,boxWidth,bottom-top,0x10141D,.88);
+                NativeVisuals.rect(left,top,boxWidth,1,0xC4AA7C,.8);NativeVisuals.rect(left,bottom-1,boxWidth,1,0xC4AA7C,.25);
+                centered(mc,title,gw/2,top+14,0xE8E4D8);
+                int y=bodyTop;for(String line:lines){centered(mc,line,gw/2,y,0xACB2BB);y+=9;}
                 for(GuiButton button:buttons)if(button.field_146125_m){
                     int x=button.field_146128_h,by=button.field_146129_i,bw=button.field_146120_f,bh=button.field_146121_g;
                     boolean hover=event.mouseX>=x&&event.mouseX<x+bw&&event.mouseY>=by&&event.mouseY<by+bh;
-                    NativeVisuals.rect(x,by,bw,bh,hover?0x213523:0x101B14,.95);NativeVisuals.rect(x,by,bw,1,0xA2BC82,hover?.85:.3);
-                    centered(mc,button.field_146126_j,x+bw/2,by+(bh-8)/2,button.field_146124_l?0xE3EDD7:0x738070);
+                    NativeVisuals.rect(x,by,bw,bh,hover?0x30333A:0x171C25,.95);NativeVisuals.rect(x,by,bw,1,0xC4AA7C,hover?.85:.3);
+                    centered(mc,button.field_146126_j,x+bw/2,by+(bh-8)/2,button.field_146124_l?0xE8E4D8:0x767E89);
                 }
             }
             event.setCanceled(true);drawn++;

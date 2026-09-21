@@ -1,0 +1,8 @@
+{
+  "verdict": "REJECT_SMALL_METADATA_LEGIBILITY",
+  "maximized": "full-bleed and new palette visible; no old contain gap",
+  "compact": "metadata at 5-7 physical pixels too small",
+  "fix": "minimum nominal body9px / serif12px before width-fit",
+  "source_backup": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n07\\evidence\\alpha1-source-before-legibility.zip",
+  "runtime_jar_alpha1_preserved": true
+}

@@ -1,0 +1,15 @@
+{
+  "navigation_width_ratio": 0.27,
+  "background_mapping": "single top-anchored full-bleed cover",
+  "geometry": "framebuffer pixel native, live resize; no contain centered composite",
+  "typography": "nine bucket atlases, pixel-positioned glyphs; ornaments vector quads",
+  "source_scene_native_resolution": [
+    1207,
+    830
+  ],
+  "scene_is_not_4K": "no synthetic detail claim",
+  "palette": "mobile-derived obsidian slate ivory muted brass and celeste",
+  "stall": "skip invalid surfaces and reuse GPU resources across resize; cannot draw when all rendering is stopped",
+  "previous_SFX_Bogo_connection_work": "preserved and requires repeat runtime tests",
+  "user_visual_approval": "pending new colour version"
+}

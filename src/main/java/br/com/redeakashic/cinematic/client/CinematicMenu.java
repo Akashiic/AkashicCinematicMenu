@@ -34,7 +34,7 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
     }
     @Override @SuppressWarnings("try")
     public void func_73863_a(int mx, int my, float partialTicks) {
-        int w=Display.getWidth(),h=Display.getHeight(); if(w<1||h<1)return;
+        int w=Display.getWidth(),h=Display.getHeight(); if(w<160||h<120)return;
         try {
             double dt=clock.tick(Display.isActive());visitAge+=dt;
             if(!Display.isActive())flow.escape();

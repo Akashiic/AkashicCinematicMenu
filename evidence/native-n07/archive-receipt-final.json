@@ -1,0 +1,13 @@
+{
+  "archive": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n07\\dist\\AkashicCinematicMenu-N07-Fidelity-engineering.zip",
+  "archive_sha256": "4af3409245f0da443212ac105321400625e016fd08056c0447cb48ed69ee4664",
+  "archive_bytes": 16026855,
+  "jar_sha256": "14b366d1ce85be558d11fb4bf0ed81f6c043de1fc39bf065856e8477716cf8ac",
+  "version": "0.4.0-alpha.3",
+  "reproducible_build": true,
+  "files": 169,
+  "no_QA_mod_or_font_binaries": true,
+  "general_release_approved": false,
+  "visual_approval": "USER_PENDING",
+  "earlier_unexplained_exit_recorded": true
+}

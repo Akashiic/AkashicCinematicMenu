@@ -1,0 +1,190 @@
+{
+  "source_size": [
+    1207,
+    830
+  ],
+  "source_sha256": "f696b9fb64b99a480ad7e13925b7a1917e9421210d2c52e604d871ae6c88c960",
+  "synthetic_upscale": false,
+  "tokens": {
+    "obsidian": "090D14",
+    "slate": "171C25",
+    "ivory": "E8E4D8",
+    "gold": "C4AA7C",
+    "muted": "ACB2BB",
+    "celeste": "DCEBFA"
+  },
+  "font_atlases": [
+    {
+      "name": "body-16",
+      "pixels": [
+        2048,
+        64
+      ],
+      "nominal_size": 16,
+      "glyphs": 224,
+      "gpu_rgba_bytes": 524288
+    },
+    {
+      "name": "body-24",
+      "pixels": [
+        2048,
+        64
+      ],
+      "nominal_size": 24,
+      "glyphs": 224,
+      "gpu_rgba_bytes": 524288
+    },
+    {
+      "name": "body-36",
+      "pixels": [
+        2048,
+        128
+      ],
+      "nominal_size": 36,
+      "glyphs": 224,
+      "gpu_rgba_bytes": 1048576
+    },
+    {
+      "name": "body-48",
+      "pixels": [
+        2048,
+        256
+      ],
+      "nominal_size": 48,
+      "glyphs": 224,
+      "gpu_rgba_bytes": 2097152
+    },
+    {
+      "name": "serif-24",
+      "pixels": [
+        2048,
+        128
+      ],
+      "nominal_size": 24,
+      "glyphs": 224,
+      "gpu_rgba_bytes": 1048576
+    },
+    {
+      "name": "serif-48",
+      "pixels": [
+        2048,
+        256
+      ],
+      "nominal_size": 48,
+      "glyphs": 224,
+      "gpu_rgba_bytes": 2097152
+    },
+    {
+      "name": "serif-72",
+      "pixels": [
+        2048,
+        512
+      ],
+      "nominal_size": 72,
+      "glyphs": 224,
+      "gpu_rgba_bytes": 4194304
+    },
+    {
+      "name": "serif-96",
+      "pixels": [
+        2048,
+        1024
+      ],
+      "nominal_size": 96,
+      "glyphs": 224,
+      "gpu_rgba_bytes": 8388608
+    },
+    {
+      "name": "serif-144",
+      "pixels": [
+        2048,
+        2048
+      ],
+      "nominal_size": 144,
+      "glyphs": 224,
+      "gpu_rgba_bytes": 16777216
+    }
+  ],
+  "generated_files": {
+    "fonts/body-16.png": {
+      "bytes": 18247,
+      "sha256": "fd4883fa65203fcad7c197e5fd4561137a0b39c1eabdd6231ae83114d13bcd41"
+    },
+    "fonts/body-16.properties": {
+      "bytes": 6051,
+      "sha256": "782ec4749cddffb6fbcabbb96408786d3b54206d48cdeda21ccc4531fc449c82"
+    },
+    "fonts/body-24.png": {
+      "bytes": 28282,
+      "sha256": "a10e804f6e2d512f169890cf4c7c8a9fbb38743ac3bb455fad91d8ee0170745e"
+    },
+    "fonts/body-24.properties": {
+      "bytes": 6353,
+      "sha256": "07ead694d06f788cf10fbb11b73e4df92e26684073c5092a65f2467217747e3d"
+    },
+    "fonts/body-36.png": {
+      "bytes": 47708,
+      "sha256": "198da2c29f7bb0f0c298577bd7ae50c6138eae0f5462b6251a4c2356293fc781"
+    },
+    "fonts/body-36.properties": {
+      "bytes": 6464,
+      "sha256": "d3ca8d8d6728fb6bc586e5f405f16854ff1d5560ab31e5cf17a834fff33e69d6"
+    },
+    "fonts/body-48.png": {
+      "bytes": 67048,
+      "sha256": "a48cf2c31598381033551c4a46d4c83fb32a18319ad2b5391c04619739d9ab3f"
+    },
+    "fonts/body-48.properties": {
+      "bytes": 6567,
+      "sha256": "5c2020b09ff8e31211f0ce89adfaf92af4041fd4f661024e53eb1d5b2f9dfce4"
+    },
+    "fonts/serif-144.png": {
+      "bytes": 270585,
+      "sha256": "bc6bd3a28df4b54322792443617ef9076071052e9b5bcb7af9fa231fda70fc1c"
+    },
+    "fonts/serif-144.properties": {
+      "bytes": 7296,
+      "sha256": "da5df652df735096f633f95b81956effaa5869752a2b2aff0cb280455eea5beb"
+    },
+    "fonts/serif-24.png": {
+      "bytes": 34828,
+      "sha256": "2f8e70c376fd3440a1870b60855aea1238f989acd0698d41225c2673baa350cc"
+    },
+    "fonts/serif-24.properties": {
+      "bytes": 6385,
+      "sha256": "aedb255941a02ebf9d40fc74f87986801893d60800a1e9ed2dc9bd09de05072c"
+    },
+    "fonts/serif-48.png": {
+      "bytes": 70146,
+      "sha256": "9638a51042e0d863d1ec2d1b34839f917aa125bff6ac8e7b876adb7015b96cd6"
+    },
+    "fonts/serif-48.properties": {
+      "bytes": 6609,
+      "sha256": "691ee91e607676f0b5e4ee3f23b6f18311ad77bee7e864b97c3fe9884c9f027b"
+    },
+    "fonts/serif-72.png": {
+      "bytes": 118651,
+      "sha256": "70e262dd83170ebadea9a4f085ef81fadb0adedafdf119b40f8854e6292012e5"
+    },
+    "fonts/serif-72.properties": {
+      "bytes": 6650,
+      "sha256": "e2d53478facfbd6b452f710d379202cf5f09b04772445494b3588a5e40276e6c"
+    },
+    "fonts/serif-96.png": {
+      "bytes": 166858,
+      "sha256": "98500a5b8fa6017eeeec053417ade63804bffcb5bf821540c3561f0394d435bb"
+    },
+    "fonts/serif-96.properties": {
+      "bytes": 6698,
+      "sha256": "56c776842333339b30cc3f5276105e553255c5915fed2f12cedd962159846866"
+    },
+    "backdrop.jpg": {
+      "bytes": 487066,
+      "sha256": "52817d6c37739fac17ba205f0640ca7776f81335cbaa1c4a3a298256cc9b8b3c"
+    },
+    "backdrop-blur.jpg": {
+      "bytes": 133187,
+      "sha256": "97423b91bc4a92974e11e449caafb44f3cf3f5c3c3d0c3f53a0c9b9bcb620595"
+    }
+  }
+}

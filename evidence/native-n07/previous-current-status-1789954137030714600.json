@@ -1,0 +1,20 @@
+{
+  "active_candidate": "candidates/native-n04",
+  "version": "0.2.0-alpha.4",
+  "checkpoint": "candidates/native-n04/CHECKPOINT_N04_RECOVERY.json",
+  "jar_sha256": "3adfd2cc102eed60666d5594afc0a375e2a1fc7047ed409c7afc81c5969c190e",
+  "do_not_promote": [
+    "candidates/native-n05"
+  ],
+  "native_n05_status": "PARTIAL_NOT_BUILT_TOOL_BLOCK",
+  "original_checkpoint_is_historical": true,
+  "general_release_approved": false,
+  "qa_instance_restored": true,
+  "last_test_run": "run08",
+  "resumption_audit": "qa-n02/evidence/resumption-installation-audit-1789931739114908500.json",
+  "resumption_core_tests": "qa-n02/evidence/resume-core-3i2dyqz1/result.json",
+  "resumption_report": "NATIVE_REVIEW_N04_RESUMPTION.md",
+  "daily_extra_mod_not_tested": "mods/akashicindex-tablet-music-online-r2.jar",
+  "daily_exact_runtime_approved": false,
+  "new_Minecraft_run_during_resumption": false
+}

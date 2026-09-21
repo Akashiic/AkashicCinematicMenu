@@ -1,0 +1,48 @@
+{
+  "observed": "Compact-menu decorative bottom border crossed the final footer line",
+  "correction": "Move only the border bottom from95.5% to97.5%; do not shift content or hitboxes",
+  "version": "0.4.0-alpha.3",
+  "checks": [
+    {
+      "height": 480,
+      "text_bottom_upper_bound": 463.56,
+      "frame_bottom": 468.00000000000006
+    },
+    {
+      "height": 600,
+      "text_bottom_upper_bound": 577.1999999999999,
+      "frame_bottom": 585.0
+    },
+    {
+      "height": 768,
+      "text_bottom_upper_bound": 736.2959999999999,
+      "frame_bottom": 748.8000000000001
+    },
+    {
+      "height": 800,
+      "text_bottom_upper_bound": 766.5999999999999,
+      "frame_bottom": 780.0000000000001
+    },
+    {
+      "height": 1001,
+      "text_bottom_upper_bound": 957.0706979166666,
+      "frame_bottom": 975.9750000000001
+    },
+    {
+      "height": 1080,
+      "text_bottom_upper_bound": 1032.60375,
+      "frame_bottom": 1053.0
+    },
+    {
+      "height": 1440,
+      "text_bottom_upper_bound": 1376.8049999999998,
+      "frame_bottom": 1404.0000000000002
+    },
+    {
+      "height": 2160,
+      "text_bottom_upper_bound": 2060.22,
+      "frame_bottom": 2106.0
+    }
+  ],
+  "previous_source": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n07\\evidence\\source-alpha2-before-footer.zip"
+}

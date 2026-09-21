@@ -1,0 +1,86 @@
+{
+  "glyph_bounds_checks": 2016,
+  "atlases": [
+    {
+      "file": "body-16.properties",
+      "size": [
+        2048,
+        64
+      ],
+      "nominal_pixels": "16"
+    },
+    {
+      "file": "body-24.properties",
+      "size": [
+        2048,
+        64
+      ],
+      "nominal_pixels": "24"
+    },
+    {
+      "file": "body-36.properties",
+      "size": [
+        2048,
+        128
+      ],
+      "nominal_pixels": "36"
+    },
+    {
+      "file": "body-48.properties",
+      "size": [
+        2048,
+        256
+      ],
+      "nominal_pixels": "48"
+    },
+    {
+      "file": "serif-144.properties",
+      "size": [
+        2048,
+        2048
+      ],
+      "nominal_pixels": "144"
+    },
+    {
+      "file": "serif-24.properties",
+      "size": [
+        2048,
+        128
+      ],
+      "nominal_pixels": "24"
+    },
+    {
+      "file": "serif-48.properties",
+      "size": [
+        2048,
+        256
+      ],
+      "nominal_pixels": "48"
+    },
+    {
+      "file": "serif-72.properties",
+      "size": [
+        2048,
+        512
+      ],
+      "nominal_pixels": "72"
+    },
+    {
+      "file": "serif-96.properties",
+      "size": [
+        2048,
+        1024
+      ],
+      "nominal_pixels": "96"
+    }
+  ],
+  "SFX_unchanged_by_hash": 5,
+  "old_audio_analysis_source": "native-n06/evidence/audio-validation.json",
+  "scene_source_pixels": [
+    1207,
+    830
+  ],
+  "no_claim_of_4K_scene_detail": true,
+  "no_font_binary_files": true,
+  "ui_policy_result": "RESULT ui-feature-checks=140 failures=0"
+}

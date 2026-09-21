@@ -1,0 +1,166 @@
+{
+  "checkpoint": "ACM-N07-FIDELITY-FINAL-CANDIDATE-2026-09-20",
+  "version": "0.4.0-alpha.3",
+  "jar_sha256": "14b366d1ce85be558d11fb4bf0ed81f6c043de1fc39bf065856e8477716cf8ac",
+  "jar_bytes": 7238260,
+  "classes": 56,
+  "runtime_process": {
+    "pid": 6036,
+    "started_at": 1789953497.7221029,
+    "run": "n07release2",
+    "instance": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\instance",
+    "java": "C:\\Users\\User\\AppData\\Roaming\\.technic\\runtimes\\jre-legacy\\bin\\java.exe",
+    "max_heap_mb": 3072,
+    "test_identity": "ACMenuQA",
+    "real_credentials_used": false,
+    "log": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\evidence\\n07release2\\console.log",
+    "exit": 0,
+    "ended_at": 1789953896.5132766
+  },
+  "runtime_suites": [
+    {
+      "suite": "basic",
+      "exit": 0,
+      "started": 1789953516.8938181,
+      "ended": 1789953877.4240663,
+      "log": "basic-runner.log"
+    },
+    {
+      "suite": "resolutions",
+      "exit": 0,
+      "started": 1789953877.4245756,
+      "ended": 1789953882.4721081,
+      "log": "resolutions-runner.log"
+    },
+    {
+      "suite": "stall_recovery",
+      "exit": 0,
+      "started": 1789953882.4724839,
+      "ended": 1789953894.8913167,
+      "log": "stall_recovery-runner.log"
+    }
+  ],
+  "basic_checks": 34,
+  "resolution_checks": 10,
+  "recovery_checks": 20,
+  "all_final_checks_passed": true,
+  "recovery_surface_sizes": [
+    [
+      1920,
+      1001
+    ],
+    [
+      1920,
+      1001
+    ]
+  ],
+  "runtime_error_markers": [],
+  "runtime_markers": [
+    {
+      "line": 391,
+      "text": "[22:18:35] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:24]: [AkashicCinematic] EARLY_FRAME_PRESENTED epoch=1789953515831 costMs=683"
+    },
+    {
+      "line": 497,
+      "text": "[22:18:39] [Thread-11/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:22]: [AkashicCinematic] SPLASH_GEOMETRY 854x480"
+    },
+    {
+      "line": 18142,
+      "text": "[22:24:11] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematicqa.QAHarnessV7:log:26]: [ACM-QA] BOOT_OBSERVED timeMs=1789953851582 screen=br.com.redeakashic.cinematic.client.CinematicMenu active=true width=854 height=480 mcWidth=854 mcHeight=480 framebufferWidth=854 framebufferHeight=480 worldPresent=false renderFrames=1 glErrors=0 focus=0 reduced=false splashFinished=true splashRendered=true splashFailed=false displayVisible=true lastFrameEpoch=1789953850745 earlyAttempted=true earlyPresented=true earlyFailed=false earlyPresentedEpoch=1789953515831 audioSubmitted=0 audioSuppressed=0 audioMissing=0 audioPlaying=false masterVolume=0.0 themeFrames=0 bogoSuppressed=0 uiWidth=854 uiHeight=480"
+    },
+    {
+      "line": 18252,
+      "text": "[22:24:27] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.client.ConnectionCancellationGuard:poll:80]: [AkashicCinematic] Connector watch released 1 cancelled=true channelOpen=false workerFinished=true"
+    },
+    {
+      "line": 18279,
+      "text": "[22:24:43] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematicqa.QAHarnessV7:log:26]: [ACM-QA] CONTROLLED_STALL_BEGIN 800"
+    },
+    {
+      "line": 18280,
+      "text": "[22:24:44] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematicqa.QAHarnessV7:log:26]: [ACM-QA] CONTROLLED_STALL_END"
+    },
+    {
+      "line": 18290,
+      "text": "[22:24:46] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematicqa.QAHarnessV7:log:26]: [ACM-QA] CONTROLLED_STALL_BEGIN 6500"
+    },
+    {
+      "line": 18291,
+      "text": "[22:24:53] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematicqa.QAHarnessV7:log:26]: [ACM-QA] CONTROLLED_STALL_END"
+    }
+  ],
+  "core_scenarios": 48,
+  "core_assertions": 17489,
+  "geometry_checks": 1785,
+  "connection_policy_checks": 15,
+  "ui_policy_checks": 140,
+  "glyph_bounds_checks": 2016,
+  "public_event_listeners": 4,
+  "changed_jar_entries_since_alpha2": [
+    "META-INF/MANIFEST.MF",
+    "br/com/redeakashic/cinematic/AkashicCinematicMenu.class",
+    "br/com/redeakashic/cinematic/render/NativeVisuals.class",
+    "mcmod.info"
+  ],
+  "footer_only_render_source_delta_verified": true,
+  "startup_resize_evidence": "n07final/alpha.2; unchanged startup method and assets, one menu border constant changed in alpha.3",
+  "previous_n04_intact": true,
+  "daily_pack_cinematic_jars_observed": [
+    {
+      "name": "AkashicCinematicMenu-0.4.0-alpha.3.jar",
+      "sha256": "14b366d1ce85be558d11fb4bf0ed81f6c043de1fc39bf065856e8477716cf8ac"
+    }
+  ],
+  "final_candidate_observed_in_daily_pack": true,
+  "daily_presence_note": "Read-only final audit found one independent file with matching final hash. This workflow installed only the QA copy; no actor or copy time inferred, no daily file replaced or deleted.",
+  "source_scene_size": [
+    1207,
+    830
+  ],
+  "palette": {
+    "base": "#090D14",
+    "slate": "#171C25",
+    "ivory": "#E8E4D8",
+    "gold": "#C4AA7C",
+    "muted": "#ACB2BB",
+    "celeste": "#DCEBFA"
+  },
+  "earlier_failures_preserved": [
+    "n07run1: compact metadata and foreground precondition",
+    "n07final: stale HWND GDI capture",
+    "n07recovery: stale HWND maximize",
+    "n07release: early exit1, cause not established"
+  ],
+  "unexplained_early_exit": {
+    "process": {
+      "pid": 11656,
+      "started_at": 1789953253.9933937,
+      "run": "n07release",
+      "instance": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\instance",
+      "java": "C:\\Users\\User\\AppData\\Roaming\\.technic\\runtimes\\jre-legacy\\bin\\java.exe",
+      "max_heap_mb": 3072,
+      "test_identity": "ACMenuQA",
+      "real_credentials_used": false,
+      "log": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n02\\evidence\\n07release\\console.log",
+      "exit": 1,
+      "ended_at": 1789953321.8946168
+    },
+    "native_crash_files_observed": [],
+    "cause": "NOT_ESTABLISHED",
+    "not_attributed_to_user_or_candidate": true,
+    "next_controlled_run": "No startup window manipulation; same JAR; wait until engine ready before resizing",
+    "scope_note": "No claim that successful later run explains this exit. Previous evidence preserved."
+  },
+  "limits": [
+    "Original scenic asset1207x830; UI typography is separate but artwork is not new4K detail",
+    "No continuous presentation promised while whole JVM/driver is stopped",
+    "Controlled 800/6500ms main-thread stalls are not a GPU reset or full GC pause",
+    "Blur is preprocessed; parallax bounded by available crop area",
+    "Unknown Bogo warnings remain visible; conflict with InventoryTweaks not solved by modal suppression",
+    "Options and world list remain native",
+    "No authenticated login, gameplay, Android or subjective SFX listening approval"
+  ],
+  "visual_approval": "USER_PENDING",
+  "general_release_approved": false,
+  "verdict": "FINAL_DIRECTED_TESTS_PASSED_OPEN_EARLY_EXIT_RISK_RECORDED"
+}

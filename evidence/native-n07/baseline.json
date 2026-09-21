@@ -1,0 +1,8 @@
+{
+  "base": "native-n06",
+  "sha256": "5fdab2cf1b4d8b68876bf20550907fed6343f3349f78af4f0e0df045a0da3f06",
+  "base_runtime_not_promoted": true,
+  "original_n04_intact": "3adfd2cc102eed60666d5594afc0a375e2a1fc7047ed409c7afc81c5969c190e",
+  "started_at": 1789950081.6680834,
+  "user_scope": "responsive full-bleed, native-scale typography, mobile palette, stall recovery; retain targeted Bogo/SFX/secondary work"
+}

@@ -1,0 +1,22 @@
+{
+  "jar_sha256": "14b366d1ce85be558d11fb4bf0ed81f6c043de1fc39bf065856e8477716cf8ac",
+  "listeners": [
+    {
+      "class": "br.com.redeakashic.cinematic.client.ConnectionCancellationGuard",
+      "public": true
+    },
+    {
+      "class": "br.com.redeakashic.cinematic.client.ConnectionScreenTheme",
+      "public": true
+    },
+    {
+      "class": "br.com.redeakashic.cinematic.client.LateBogoNoticeGate",
+      "public": true
+    },
+    {
+      "class": "br.com.redeakashic.cinematic.client.MenuHook",
+      "public": true
+    }
+  ],
+  "all_passed": true
+}
