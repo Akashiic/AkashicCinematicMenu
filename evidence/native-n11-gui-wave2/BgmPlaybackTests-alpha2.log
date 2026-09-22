@@ -1,0 +1,20 @@
+SCENARIO no root reached / leave context never starts a track
+SCENARIO submission is not playback confirmation
+SCENARIO frontend submenus retain one playback handle
+SCENARIO leaving fades and stops at zero only
+SCENARIO quick return reverses fade without duplicate
+SCENARIO world wins immediately, even during fade
+SCENARIO mute and unmute; no muting vanilla globally
+SCENARIO missing resource retains vanilla and does not start
+SCENARIO source removed mid-playback releases voice
+SCENARIO failed playback retries are bounded and backoff enforced
+SCENARIO reload is explicit recovery with no duplicate voice
+SCENARIO start and gain exceptions are isolated to custom BGM
+SCENARIO leaving while buffering never starts late music
+SCENARIO end of healthy playback only restarts once
+SCENARIO timestamp reversal does not reverse the fade
+SCENARIO instant fade parameters and level zero are defined
+SCENARIO loop=false plays once per frontend visit
+SCENARIO frontend allowlist and world precedence
+RESULT playback_scenarios=18 assertions=124 failures=0
+Picked up JAVA_TOOL_OPTIONS: -Xmx192m

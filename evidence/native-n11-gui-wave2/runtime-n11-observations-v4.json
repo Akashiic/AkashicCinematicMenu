@@ -1,0 +1,137 @@
+[
+  {
+    "label": "main-before-wave2",
+    "file": "2026-09-21_22.40.14.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.0
+  },
+  {
+    "label": "options",
+    "file": "2026-09-21_22.40.15.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.0
+  },
+  {
+    "label": "singleplayer",
+    "file": "2026-09-21_22.40.18.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.16624625374625374
+  },
+  {
+    "label": "createworld",
+    "file": "2026-09-21_22.40.20.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.0
+  },
+  {
+    "label": "language",
+    "file": "2026-09-21_22.40.23.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.14198926073926074
+  },
+  {
+    "label": "resources",
+    "file": "2026-09-21_22.40.25.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.04429112554112554
+  },
+  {
+    "label": "controls",
+    "file": "2026-09-21_22.40.27.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.13173701298701299
+  },
+  {
+    "label": "video",
+    "file": "2026-09-21_22.40.29.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.0
+  },
+  {
+    "label": "sound",
+    "file": "2026-09-21_22.40.32.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.0
+  },
+  {
+    "label": "chat",
+    "file": "2026-09-21_22.40.36.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.0
+  },
+  {
+    "label": "snooper",
+    "file": "2026-09-21_22.40.39.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.17847360972360973
+  },
+  {
+    "label": "flat",
+    "file": "2026-09-21_22.40.41.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.14857850482850482
+  },
+  {
+    "label": "presets",
+    "file": "2026-09-21_22.40.43.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.14640619796869797
+  },
+  {
+    "label": "confirmation-preserved",
+    "file": "2026-09-21_22.40.46.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.0
+  },
+  {
+    "label": "main-before-direct-quit",
+    "file": "2026-09-21_22.40.48.png",
+    "size": [
+      1920,
+      1001
+    ],
+    "brown_fraction": 0.0
+  }
+]

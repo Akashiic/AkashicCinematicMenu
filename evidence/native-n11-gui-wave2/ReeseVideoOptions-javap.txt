@@ -1,0 +1,927 @@
+﻿Compiled from "ReeseSodiumVideoOptionsScreen.java"
+public class me.flashyreese.mods.reeses_sodium_options.client.gui.ReeseSodiumVideoOptionsScreen extends me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI {
+  private static final float ASPECT_RATIO;
+
+  private static final int MINIMUM_WIDTH;
+
+  private com.gtnewhorizons.angelica.compat.mojang.Element focused;
+
+  private static final java.util.concurrent.atomic.AtomicReference<java.lang.String> tabFrameSelectedTab;
+
+  private static final java.util.concurrent.atomic.AtomicReference<java.lang.Integer> tabFrameScrollBarOffset;
+
+  private static final java.util.concurrent.atomic.AtomicReference<java.lang.Integer> optionPageScrollBarOffset;
+
+  private static final java.util.concurrent.atomic.AtomicReference<java.lang.String> lastSearch;
+
+  private me.flashyreese.mods.reeses_sodium_options.client.gui.frame.AbstractFrame frame;
+
+  private me.flashyreese.mods.reeses_sodium_options.client.gui.frame.components.SearchTextFieldComponent searchTextField;
+
+  public me.flashyreese.mods.reeses_sodium_options.client.gui.ReeseSodiumVideoOptionsScreen(net.minecraft.client.gui.GuiScreen);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #52                 // Method me/jellysquid/mods/sodium/client/gui/SodiumOptionsGUI."<init>":(Lnet/minecraft/client/gui/GuiScreen;)V
+       5: return
+
+  public void rebuildGUI();
+    Code:
+       0: aload_0
+       1: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+       4: ifnull        21
+       7: aload_0
+       8: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+      11: invokevirtual #66                 // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent.isFocused:()Z
+      14: ifeq          21
+      17: iconst_1
+      18: goto          22
+      21: iconst_0
+      22: istore_1
+      23: aload_0
+      24: getfield      #70                 // Field children:Ljava/util/List;
+      27: invokeinterface #75,  1           // InterfaceMethod java/util/List.clear:()V
+      32: aload_0
+      33: invokevirtual #78                 // Method func_73866_w_:()V
+      36: iload_1
+      37: ifeq          63
+      40: aload_0
+      41: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+      44: ifnull        63
+      47: aload_0
+      48: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+      51: iconst_1
+      52: invokevirtual #82                 // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent.setFocused:(Z)V
+      55: aload_0
+      56: aload_0
+      57: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+      60: invokevirtual #85                 // Method setFocused:(Lcom/gtnewhorizons/angelica/compat/mojang/Element;)V
+      63: return
+
+  public void setFocused(com.gtnewhorizons.angelica.compat.mojang.Element);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #89                 // Field focused:Lcom/gtnewhorizons/angelica/compat/mojang/Element;
+       5: return
+
+  public com.gtnewhorizons.angelica.compat.mojang.Element getFocused();
+    Code:
+       0: aload_0
+       1: getfield      #89                 // Field focused:Lcom/gtnewhorizons/angelica/compat/mojang/Element;
+       4: areturn
+
+  public void func_73866_w_();
+    Code:
+       0: aload_0
+       1: aload_0
+       2: invokevirtual #95                 // Method parentFrameBuilder:()Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+       5: invokevirtual #99                 // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder.build:()Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame;
+       8: putfield      #101                // Field frame:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/AbstractFrame;
+      11: aload_0
+      12: getfield      #70                 // Field children:Ljava/util/List;
+      15: aload_0
+      16: getfield      #101                // Field frame:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/AbstractFrame;
+      19: invokeinterface #105,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      24: pop
+      25: aload_0
+      26: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+      29: getstatic     #107                // Field lastSearch:Ljava/util/concurrent/atomic/AtomicReference;
+      32: invokevirtual #113                // Method java/util/concurrent/atomic/AtomicReference.get:()Ljava/lang/Object;
+      35: checkcast     #115                // class java/lang/String
+      38: invokevirtual #119                // Method java/lang/String.trim:()Ljava/lang/String;
+      41: invokevirtual #122                // Method java/lang/String.isEmpty:()Z
+      44: ifne          51
+      47: iconst_1
+      48: goto          52
+      51: iconst_0
+      52: invokevirtual #82                 // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent.setFocused:(Z)V
+      55: aload_0
+      56: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+      59: invokevirtual #66                 // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent.isFocused:()Z
+      62: ifeq          76
+      65: aload_0
+      66: aload_0
+      67: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+      70: invokevirtual #85                 // Method setFocused:(Lcom/gtnewhorizons/angelica/compat/mojang/Element;)V
+      73: goto          84
+      76: aload_0
+      77: aload_0
+      78: getfield      #101                // Field frame:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/AbstractFrame;
+      81: invokevirtual #85                 // Method setFocused:(Lcom/gtnewhorizons/angelica/compat/mojang/Element;)V
+      84: return
+
+  protected me.flashyreese.mods.reeses_sodium_options.client.gui.frame.BasicFrame$Builder parentFrameBuilder();
+    Code:
+       0: aload_0
+       1: getfield      #125                // Field field_146294_l:I
+       4: istore_2
+       5: aload_0
+       6: getfield      #125                // Field field_146294_l:I
+       9: sipush        550
+      12: if_icmple     48
+      15: aload_0
+      16: getfield      #125                // Field field_146294_l:I
+      19: i2f
+      20: aload_0
+      21: getfield      #128                // Field field_146295_m:I
+      24: i2f
+      25: fdiv
+      26: ldc           #31                 // float 1.25f
+      28: fcmpl
+      29: ifle          48
+      32: sipush        550
+      35: aload_0
+      36: getfield      #128                // Field field_146295_m:I
+      39: i2f
+      40: ldc           #31                 // float 1.25f
+      42: fmul
+      43: f2i
+      44: invokestatic  #134                // Method java/lang/Math.max:(II)I
+      47: istore_2
+      48: new           #136                // class me/jellysquid/mods/sodium/client/util/Dim2i
+      51: dup
+      52: aload_0
+      53: getfield      #125                // Field field_146294_l:I
+      56: iload_2
+      57: isub
+      58: iconst_2
+      59: idiv
+      60: iconst_0
+      61: iload_2
+      62: aload_0
+      63: getfield      #128                // Field field_146295_m:I
+      66: invokespecial #139                // Method me/jellysquid/mods/sodium/client/util/Dim2i."<init>":(IIII)V
+      69: astore_3
+      70: new           #136                // class me/jellysquid/mods/sodium/client/util/Dim2i
+      73: dup
+      74: aload_3
+      75: invokevirtual #143                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getOriginX:()I
+      78: aload_3
+      79: invokevirtual #146                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getWidth:()I
+      82: bipush        20
+      84: idiv
+      85: iconst_2
+      86: idiv
+      87: iadd
+      88: aload_3
+      89: invokevirtual #149                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getOriginY:()I
+      92: aload_3
+      93: invokevirtual #152                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getHeight:()I
+      96: iconst_4
+      97: idiv
+      98: iconst_2
+      99: idiv
+     100: iadd
+     101: aload_3
+     102: invokevirtual #146                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getWidth:()I
+     105: aload_3
+     106: invokevirtual #146                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getWidth:()I
+     109: bipush        20
+     111: idiv
+     112: isub
+     113: aload_3
+     114: invokevirtual #152                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getHeight:()I
+     117: iconst_4
+     118: idiv
+     119: iconst_3
+     120: imul
+     121: invokespecial #139                // Method me/jellysquid/mods/sodium/client/util/Dim2i."<init>":(IIII)V
+     124: astore        4
+     126: new           #136                // class me/jellysquid/mods/sodium/client/util/Dim2i
+     129: dup
+     130: aload         4
+     132: invokevirtual #155                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getLimitX:()I
+     135: sipush        203
+     138: isub
+     139: aload         4
+     141: invokevirtual #158                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getLimitY:()I
+     144: iconst_5
+     145: iadd
+     146: bipush        65
+     148: bipush        20
+     150: invokespecial #139                // Method me/jellysquid/mods/sodium/client/util/Dim2i."<init>":(IIII)V
+     153: astore        5
+     155: new           #136                // class me/jellysquid/mods/sodium/client/util/Dim2i
+     158: dup
+     159: aload         4
+     161: invokevirtual #155                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getLimitX:()I
+     164: sipush        134
+     167: isub
+     168: aload         4
+     170: invokevirtual #158                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getLimitY:()I
+     173: iconst_5
+     174: iadd
+     175: bipush        65
+     177: bipush        20
+     179: invokespecial #139                // Method me/jellysquid/mods/sodium/client/util/Dim2i."<init>":(IIII)V
+     182: astore        6
+     184: new           #136                // class me/jellysquid/mods/sodium/client/util/Dim2i
+     187: dup
+     188: aload         4
+     190: invokevirtual #155                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getLimitX:()I
+     193: bipush        65
+     195: isub
+     196: aload         4
+     198: invokevirtual #158                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getLimitY:()I
+     201: iconst_5
+     202: iadd
+     203: bipush        65
+     205: bipush        20
+     207: invokespecial #139                // Method me/jellysquid/mods/sodium/client/util/Dim2i."<init>":(IIII)V
+     210: astore        7
+     212: aload_0
+     213: new           #160                // class me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget
+     216: dup
+     217: aload         5
+     219: ldc           #162                // String Undo
+     221: aload_0
+     222: invokedynamic #178,  0            // InvokeDynamic #0:run:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;)Ljava/lang/Runnable;
+     227: invokespecial #181                // Method me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget."<init>":(Lme/jellysquid/mods/sodium/client/util/Dim2i;Ljava/lang/String;Ljava/lang/Runnable;)V
+     230: putfield      #185                // Field undoButton:Lme/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget;
+     233: aload_0
+     234: new           #160                // class me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget
+     237: dup
+     238: aload         6
+     240: ldc           #187                // String Apply
+     242: aload_0
+     243: invokedynamic #192,  0            // InvokeDynamic #1:run:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;)Ljava/lang/Runnable;
+     248: invokespecial #181                // Method me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget."<init>":(Lme/jellysquid/mods/sodium/client/util/Dim2i;Ljava/lang/String;Ljava/lang/Runnable;)V
+     251: putfield      #195                // Field applyButton:Lme/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget;
+     254: aload_0
+     255: new           #160                // class me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget
+     258: dup
+     259: aload         7
+     261: ldc           #197                // String Close
+     263: aload_0
+     264: invokedynamic #202,  0            // InvokeDynamic #2:run:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;)Ljava/lang/Runnable;
+     269: invokespecial #181                // Method me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget."<init>":(Lme/jellysquid/mods/sodium/client/util/Dim2i;Ljava/lang/String;Ljava/lang/Runnable;)V
+     272: putfield      #205                // Field closeButton:Lme/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget;
+     275: getstatic     #210                // Field net/coderbot/iris/Iris.enabled:Z
+     278: ifeq          299
+     281: invokestatic  #216                // InterfaceMethod net/irisshaders/iris/api/v0/IrisApi.getInstance:()Lnet/irisshaders/iris/api/v0/IrisApi;
+     284: invokeinterface #219,  1          // InterfaceMethod net/irisshaders/iris/api/v0/IrisApi.getMainScreenLanguageKey:()Ljava/lang/String;
+     289: iconst_0
+     290: anewarray     #221                // class java/lang/Object
+     293: invokestatic  #227                // Method net/minecraft/client/resources/I18n.func_135052_a:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+     296: goto          300
+     299: aconst_null
+     300: astore        8
+     302: aload         8
+     304: ifnull        322
+     307: aload_0
+     308: getfield      #231                // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+     311: getfield      #237                // Field net/minecraft/client/Minecraft.field_71466_p:Lnet/minecraft/client/gui/FontRenderer;
+     314: aload         8
+     316: invokevirtual #243                // Method net/minecraft/client/gui/FontRenderer.func_78256_a:(Ljava/lang/String;)I
+     319: goto          323
+     322: iconst_0
+     323: istore        9
+     325: getstatic     #248                // Field com/gtnewhorizons/angelica/config/AngelicaConfig.enableFontRenderer:Z
+     328: ifeq          343
+     331: ldc           #250                // String options.angelica.fontconfig
+     333: iconst_0
+     334: anewarray     #221                // class java/lang/Object
+     337: invokestatic  #227                // Method net/minecraft/client/resources/I18n.func_135052_a:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+     340: goto          344
+     343: aconst_null
+     344: astore        10
+     346: aload         10
+     348: ifnull        366
+     351: aload_0
+     352: getfield      #231                // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+     355: getfield      #237                // Field net/minecraft/client/Minecraft.field_71466_p:Lnet/minecraft/client/gui/FontRenderer;
+     358: aload         10
+     360: invokevirtual #243                // Method net/minecraft/client/gui/FontRenderer.func_78256_a:(Ljava/lang/String;)I
+     363: goto          367
+     366: iconst_0
+     367: istore        11
+     369: iconst_0
+     370: istore        12
+     372: aload         8
+     374: ifnull        387
+     377: iload         12
+     379: iload         9
+     381: bipush        12
+     383: iadd
+     384: iadd
+     385: istore        12
+     387: aload         10
+     389: ifnull        402
+     392: iload         12
+     394: iload         11
+     396: bipush        14
+     398: iadd
+     399: iadd
+     400: istore        12
+     402: new           #136                // class me/jellysquid/mods/sodium/client/util/Dim2i
+     405: dup
+     406: aload         4
+     408: invokevirtual #143                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getOriginX:()I
+     411: aload         4
+     413: invokevirtual #149                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getOriginY:()I
+     416: bipush        26
+     418: isub
+     419: aload         4
+     421: invokevirtual #146                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getWidth:()I
+     424: iload         12
+     426: isub
+     427: bipush        20
+     429: invokespecial #139                // Method me/jellysquid/mods/sodium/client/util/Dim2i."<init>":(IIII)V
+     432: astore        13
+     434: aload_0
+     435: new           #62                 // class me/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent
+     438: dup
+     439: aload         13
+     441: aload_0
+     442: getfield      #253                // Field pages:Ljava/util/List;
+     445: getstatic     #255                // Field tabFrameSelectedTab:Ljava/util/concurrent/atomic/AtomicReference;
+     448: getstatic     #257                // Field tabFrameScrollBarOffset:Ljava/util/concurrent/atomic/AtomicReference;
+     451: getstatic     #259                // Field optionPageScrollBarOffset:Ljava/util/concurrent/atomic/AtomicReference;
+     454: aload         4
+     456: invokevirtual #152                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getHeight:()I
+     459: aload_0
+     460: getstatic     #107                // Field lastSearch:Ljava/util/concurrent/atomic/AtomicReference;
+     463: invokespecial #262                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent."<init>":(Lme/jellysquid/mods/sodium/client/util/Dim2i;Ljava/util/List;Ljava/util/concurrent/atomic/AtomicReference;Ljava/util/concurrent/atomic/AtomicReference;Ljava/util/concurrent/atomic/AtomicReference;ILme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;Ljava/util/concurrent/atomic/AtomicReference;)V
+     466: putfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+     469: aload_0
+     470: aload_3
+     471: aload         4
+     473: invokevirtual #266                // Method parentBasicFrameBuilder:(Lme/jellysquid/mods/sodium/client/util/Dim2i;Lme/jellysquid/mods/sodium/client/util/Dim2i;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+     476: astore_1
+     477: aload         4
+     479: invokevirtual #155                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getLimitX:()I
+     482: istore        14
+     484: aload         8
+     486: ifnull        559
+     489: iload         14
+     491: iload         9
+     493: bipush        10
+     495: iadd
+     496: isub
+     497: istore        14
+     499: new           #136                // class me/jellysquid/mods/sodium/client/util/Dim2i
+     502: dup
+     503: iload         14
+     505: aload         4
+     507: invokevirtual #149                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getOriginY:()I
+     510: bipush        26
+     512: isub
+     513: iload         9
+     515: bipush        10
+     517: iadd
+     518: bipush        20
+     520: invokespecial #139                // Method me/jellysquid/mods/sodium/client/util/Dim2i."<init>":(IIII)V
+     523: astore        15
+     525: new           #160                // class me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget
+     528: dup
+     529: aload         15
+     531: aload         8
+     533: aload_0
+     534: invokedynamic #271,  0            // InvokeDynamic #3:run:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;)Ljava/lang/Runnable;
+     539: invokespecial #181                // Method me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget."<init>":(Lme/jellysquid/mods/sodium/client/util/Dim2i;Ljava/lang/String;Ljava/lang/Runnable;)V
+     542: astore        16
+     544: aload_1
+     545: aload         16
+     547: invokedynamic #284,  0            // InvokeDynamic #4:apply:(Lme/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget;)Ljava/util/function/Function;
+     552: invokevirtual #288                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder.addChild:(Ljava/util/function/Function;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+     555: pop
+     556: iinc          14, -2
+     559: aload         10
+     561: ifnull        631
+     564: iload         14
+     566: iload         11
+     568: bipush        12
+     570: iadd
+     571: isub
+     572: istore        14
+     574: new           #136                // class me/jellysquid/mods/sodium/client/util/Dim2i
+     577: dup
+     578: iload         14
+     580: aload         4
+     582: invokevirtual #149                // Method me/jellysquid/mods/sodium/client/util/Dim2i.getOriginY:()I
+     585: bipush        26
+     587: isub
+     588: iload         11
+     590: bipush        12
+     592: iadd
+     593: bipush        20
+     595: invokespecial #139                // Method me/jellysquid/mods/sodium/client/util/Dim2i."<init>":(IIII)V
+     598: astore        15
+     600: new           #160                // class me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget
+     603: dup
+     604: aload         15
+     606: aload         10
+     608: aload_0
+     609: invokedynamic #293,  0            // InvokeDynamic #5:run:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;)Ljava/lang/Runnable;
+     614: invokespecial #181                // Method me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget."<init>":(Lme/jellysquid/mods/sodium/client/util/Dim2i;Ljava/lang/String;Ljava/lang/Runnable;)V
+     617: astore        16
+     619: aload_1
+     620: aload         16
+     622: invokedynamic #298,  0            // InvokeDynamic #6:apply:(Lme/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget;)Ljava/util/function/Function;
+     627: invokevirtual #288                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder.addChild:(Ljava/util/function/Function;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+     630: pop
+     631: aload_1
+     632: aload_0
+     633: invokedynamic #305,  0            // InvokeDynamic #7:apply:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;)Ljava/util/function/Function;
+     638: invokevirtual #288                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder.addChild:(Ljava/util/function/Function;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+     641: pop
+     642: aload_1
+     643: areturn
+
+  public me.flashyreese.mods.reeses_sodium_options.client.gui.frame.BasicFrame$Builder parentBasicFrameBuilder(me.jellysquid.mods.sodium.client.util.Dim2i, me.jellysquid.mods.sodium.client.util.Dim2i);
+    Code:
+       0: aload_0
+       1: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+       4: invokevirtual #330                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent.getOptionPredicate:()Ljava/util/function/Predicate;
+       7: astore_3
+       8: aload_0
+       9: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+      12: invokevirtual #333                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent.hasNoResults:()Z
+      15: istore        4
+      17: invokestatic  #336                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame.createBuilder:()Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+      20: aload_1
+      21: invokevirtual #340                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder.setDimension:(Lme/jellysquid/mods/sodium/client/util/Dim2i;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+      24: iconst_0
+      25: invokevirtual #344                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder.shouldRenderOutline:(Z)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+      28: astore        5
+      30: iload         4
+      32: ifeq          65
+      35: ldc_w         #346                // String options.angelica.search.no_results
+      38: iconst_0
+      39: anewarray     #221                // class java/lang/Object
+      42: invokestatic  #227                // Method net/minecraft/client/resources/I18n.func_135052_a:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+      45: astore        6
+      47: aload         5
+      49: aload_0
+      50: aload         6
+      52: aload_2
+      53: invokedynamic #354,  0            // InvokeDynamic #8:apply:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;Ljava/lang/String;Lme/jellysquid/mods/sodium/client/util/Dim2i;)Ljava/util/function/Function;
+      58: invokevirtual #288                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder.addChild:(Ljava/util/function/Function;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+      61: pop
+      62: goto          79
+      65: aload         5
+      67: aload_0
+      68: aload_2
+      69: aload_3
+      70: invokedynamic #364,  0            // InvokeDynamic #9:apply:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;Lme/jellysquid/mods/sodium/client/util/Dim2i;Ljava/util/function/Predicate;)Ljava/util/function/Function;
+      75: invokevirtual #288                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder.addChild:(Ljava/util/function/Function;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+      78: pop
+      79: aload         5
+      81: aload_0
+      82: invokedynamic #369,  0            // InvokeDynamic #10:apply:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;)Ljava/util/function/Function;
+      87: invokevirtual #288                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder.addChild:(Ljava/util/function/Function;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+      90: aload_0
+      91: invokedynamic #374,  0            // InvokeDynamic #11:apply:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;)Ljava/util/function/Function;
+      96: invokevirtual #288                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder.addChild:(Ljava/util/function/Function;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+      99: aload_0
+     100: invokedynamic #379,  0            // InvokeDynamic #12:apply:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;)Ljava/util/function/Function;
+     105: invokevirtual #288                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder.addChild:(Ljava/util/function/Function;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/BasicFrame$Builder;
+     108: areturn
+
+  public void func_73863_a(int, int, float);
+    Code:
+       0: aload_0
+       1: invokespecial #391                // Method me/jellysquid/mods/sodium/client/gui/SodiumOptionsGUI.func_146276_q_:()V
+       4: aload_0
+       5: iload_1
+       6: iload_2
+       7: fload_3
+       8: invokevirtual #394                // Method handleMouseScroll:(IIF)V
+      11: aload_0
+      12: invokevirtual #397                // Method updateControls:()V
+      15: aload_0
+      16: getfield      #101                // Field frame:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/AbstractFrame;
+      19: iload_1
+      20: iload_2
+      21: fload_3
+      22: invokevirtual #402                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/AbstractFrame.render:(IIF)V
+      25: return
+
+  private void updateControls();
+    Code:
+       0: aload_0
+       1: invokevirtual #409                // Method getAllOptions:()Ljava/util/stream/Stream;
+       4: invokedynamic #421,  0            // InvokeDynamic #13:test:()Ljava/util/function/Predicate;
+       9: invokeinterface #427,  2          // InterfaceMethod java/util/stream/Stream.anyMatch:(Ljava/util/function/Predicate;)Z
+      14: istore_1
+      15: aload_0
+      16: getfield      #253                // Field pages:Ljava/util/List;
+      19: invokeinterface #431,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      24: astore_2
+      25: aload_2
+      26: invokeinterface #436,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      31: ifeq          93
+      34: aload_2
+      35: invokeinterface #439,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      40: checkcast     #441                // class me/jellysquid/mods/sodium/client/gui/options/OptionPage
+      43: astore_3
+      44: aload_3
+      45: invokevirtual #445                // Method me/jellysquid/mods/sodium/client/gui/options/OptionPage.getOptions:()Lcom/google/common/collect/ImmutableList;
+      48: invokevirtual #450                // Method com/google/common/collect/ImmutableList.iterator:()Lcom/google/common/collect/UnmodifiableIterator;
+      51: astore        4
+      53: aload         4
+      55: invokeinterface #436,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      60: ifeq          90
+      63: aload         4
+      65: invokeinterface #439,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      70: checkcast     #412                // class me/jellysquid/mods/sodium/client/gui/options/Option
+      73: astore        5
+      75: aload         5
+      77: invokeinterface #415,  1          // InterfaceMethod me/jellysquid/mods/sodium/client/gui/options/Option.hasChanged:()Z
+      82: ifeq          87
+      85: iconst_1
+      86: istore_1
+      87: goto          53
+      90: goto          25
+      93: aload_0
+      94: getfield      #195                // Field applyButton:Lme/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget;
+      97: iload_1
+      98: invokevirtual #453                // Method me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget.setEnabled:(Z)V
+     101: aload_0
+     102: getfield      #185                // Field undoButton:Lme/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget;
+     105: iload_1
+     106: invokevirtual #456                // Method me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget.setVisible:(Z)V
+     109: aload_0
+     110: getfield      #205                // Field closeButton:Lme/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget;
+     113: iload_1
+     114: ifne          121
+     117: iconst_1
+     118: goto          122
+     121: iconst_0
+     122: invokevirtual #453                // Method me/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget.setEnabled:(Z)V
+     125: aload_0
+     126: iload_1
+     127: putfield      #459                // Field hasPendingChanges:Z
+     130: return
+
+  private java.util.stream.Stream<me.jellysquid.mods.sodium.client.gui.options.Option<?>> getAllOptions();
+    Code:
+       0: aload_0
+       1: getfield      #253                // Field pages:Ljava/util/List;
+       4: invokeinterface #469,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+       9: invokedynamic #478,  0            // InvokeDynamic #14:apply:()Ljava/util/function/Function;
+      14: invokeinterface #482,  2          // InterfaceMethod java/util/stream/Stream.flatMap:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+      19: areturn
+
+  private void applyChanges();
+    Code:
+       0: new           #484                // class java/util/HashSet
+       3: dup
+       4: invokespecial #486                // Method java/util/HashSet."<init>":()V
+       7: astore_1
+       8: ldc_w         #488                // class me/jellysquid/mods/sodium/client/gui/options/OptionFlag
+      11: invokestatic  #494                // Method java/util/EnumSet.noneOf:(Ljava/lang/Class;)Ljava/util/EnumSet;
+      14: astore_2
+      15: aload_0
+      16: invokevirtual #409                // Method getAllOptions:()Ljava/util/stream/Stream;
+      19: aload_2
+      20: aload_1
+      21: invokedynamic #507,  0            // InvokeDynamic #15:accept:(Ljava/util/EnumSet;Ljava/util/HashSet;)Ljava/util/function/Consumer;
+      26: invokeinterface #511,  2          // InterfaceMethod java/util/stream/Stream.forEach:(Ljava/util/function/Consumer;)V
+      31: aload_2
+      32: getstatic     #515                // Field me/jellysquid/mods/sodium/client/gui/options/OptionFlag.REQUIRES_ASSET_RELOAD:Lme/jellysquid/mods/sodium/client/gui/options/OptionFlag;
+      35: invokevirtual #518                // Method java/util/EnumSet.contains:(Ljava/lang/Object;)Z
+      38: ifeq          54
+      41: invokestatic  #523                // Method me/jellysquid/mods/sodium/client/gui/SodiumGameOptions.applyAtlasSettings:()V
+      44: aload_0
+      45: getfield      #231                // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      48: invokevirtual #526                // Method net/minecraft/client/Minecraft.func_110436_a:()V
+      51: goto          74
+      54: aload_2
+      55: getstatic     #529                // Field me/jellysquid/mods/sodium/client/gui/options/OptionFlag.REQUIRES_RENDERER_RELOAD:Lme/jellysquid/mods/sodium/client/gui/options/OptionFlag;
+      58: invokevirtual #518                // Method java/util/EnumSet.contains:(Ljava/lang/Object;)Z
+      61: ifeq          74
+      64: aload_0
+      65: getfield      #231                // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      68: getfield      #533                // Field net/minecraft/client/Minecraft.field_71438_f:Lnet/minecraft/client/renderer/RenderGlobal;
+      71: invokevirtual #538                // Method net/minecraft/client/renderer/RenderGlobal.func_72712_a:()V
+      74: aload_1
+      75: invokevirtual #539                // Method java/util/HashSet.iterator:()Ljava/util/Iterator;
+      78: astore_3
+      79: aload_3
+      80: invokeinterface #436,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      85: ifeq          109
+      88: aload_3
+      89: invokeinterface #439,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      94: checkcast     #541                // class me/jellysquid/mods/sodium/client/gui/options/storage/OptionStorage
+      97: astore        4
+      99: aload         4
+     101: invokeinterface #544,  1          // InterfaceMethod me/jellysquid/mods/sodium/client/gui/options/storage/OptionStorage.save:()V
+     106: goto          79
+     109: return
+
+  private void undoChanges();
+    Code:
+       0: aload_0
+       1: invokevirtual #409                // Method getAllOptions:()Ljava/util/stream/Stream;
+       4: invokedynamic #560,  0            // InvokeDynamic #16:accept:()Ljava/util/function/Consumer;
+       9: invokeinterface #511,  2          // InterfaceMethod java/util/stream/Stream.forEach:(Ljava/util/function/Consumer;)V
+      14: return
+
+  private boolean canShowPage(me.jellysquid.mods.sodium.client.gui.options.OptionPage);
+    Code:
+       0: aload_1
+       1: invokevirtual #565                // Method me/jellysquid/mods/sodium/client/gui/options/OptionPage.getGroups:()Lcom/google/common/collect/ImmutableList;
+       4: invokevirtual #566                // Method com/google/common/collect/ImmutableList.isEmpty:()Z
+       7: ifeq          12
+      10: iconst_0
+      11: ireturn
+      12: aload_0
+      13: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+      16: invokevirtual #330                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent.getOptionPredicate:()Ljava/util/function/Predicate;
+      19: astore_2
+      20: aload_1
+      21: invokevirtual #565                // Method me/jellysquid/mods/sodium/client/gui/options/OptionPage.getGroups:()Lcom/google/common/collect/ImmutableList;
+      24: invokevirtual #450                // Method com/google/common/collect/ImmutableList.iterator:()Lcom/google/common/collect/UnmodifiableIterator;
+      27: astore_3
+      28: aload_3
+      29: invokeinterface #436,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      34: ifeq          99
+      37: aload_3
+      38: invokeinterface #439,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      43: checkcast     #568                // class me/jellysquid/mods/sodium/client/gui/options/OptionGroup
+      46: astore        4
+      48: aload         4
+      50: invokevirtual #569                // Method me/jellysquid/mods/sodium/client/gui/options/OptionGroup.getOptions:()Lcom/google/common/collect/ImmutableList;
+      53: invokevirtual #450                // Method com/google/common/collect/ImmutableList.iterator:()Lcom/google/common/collect/UnmodifiableIterator;
+      56: astore        5
+      58: aload         5
+      60: invokeinterface #436,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      65: ifeq          96
+      68: aload         5
+      70: invokeinterface #439,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      75: checkcast     #412                // class me/jellysquid/mods/sodium/client/gui/options/Option
+      78: astore        6
+      80: aload_2
+      81: aload         6
+      83: invokeinterface #571,  2          // InterfaceMethod java/util/function/Predicate.test:(Ljava/lang/Object;)Z
+      88: ifeq          93
+      91: iconst_1
+      92: ireturn
+      93: goto          58
+      96: goto          28
+      99: iconst_0
+     100: ireturn
+
+  public void func_73869_a(char, int);
+    Code:
+       0: iload_2
+       1: iconst_1
+       2: if_icmpne     13
+       5: aload_0
+       6: invokevirtual #579                // Method shouldCloseOnEsc:()Z
+       9: ifne          13
+      12: return
+      13: iload_2
+      14: iconst_1
+      15: if_icmpne     23
+      18: aload_0
+      19: invokevirtual #200                // Method onClose:()V
+      22: return
+      23: iload_2
+      24: bipush        25
+      26: if_icmpne     111
+      29: invokestatic  #582                // Method func_146272_n:()Z
+      32: ifeq          87
+      35: aload_0
+      36: getfield      #231                // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      39: new           #584                // class jss/notfine/gui/GuiCustomMenu
+      42: dup
+      43: aload_0
+      44: getfield      #586                // Field prevScreen:Lnet/minecraft/client/gui/GuiScreen;
+      47: invokestatic  #592                // Method me/jellysquid/mods/sodium/client/gui/SodiumGameOptionPages.general:()Lme/jellysquid/mods/sodium/client/gui/options/OptionPage;
+      50: iconst_4
+      51: anewarray     #441                // class me/jellysquid/mods/sodium/client/gui/options/OptionPage
+      54: dup
+      55: iconst_0
+      56: invokestatic  #595                // Method me/jellysquid/mods/sodium/client/gui/SodiumGameOptionPages.quality:()Lme/jellysquid/mods/sodium/client/gui/options/OptionPage;
+      59: aastore
+      60: dup
+      61: iconst_1
+      62: invokestatic  #598                // Method me/jellysquid/mods/sodium/client/gui/SodiumGameOptionPages.advanced:()Lme/jellysquid/mods/sodium/client/gui/options/OptionPage;
+      65: aastore
+      66: dup
+      67: iconst_2
+      68: invokestatic  #601                // Method me/jellysquid/mods/sodium/client/gui/SodiumGameOptionPages.performance:()Lme/jellysquid/mods/sodium/client/gui/options/OptionPage;
+      71: aastore
+      72: dup
+      73: iconst_3
+      74: invokestatic  #604                // Method me/jellysquid/mods/sodium/client/gui/SodiumGameOptionPages.appearance:()Lme/jellysquid/mods/sodium/client/gui/options/OptionPage;
+      77: aastore
+      78: invokespecial #607                // Method jss/notfine/gui/GuiCustomMenu."<init>":(Lnet/minecraft/client/gui/GuiScreen;Lme/jellysquid/mods/sodium/client/gui/options/OptionPage;[Lme/jellysquid/mods/sodium/client/gui/options/OptionPage;)V
+      81: invokevirtual #610                // Method net/minecraft/client/Minecraft.func_147108_a:(Lnet/minecraft/client/gui/GuiScreen;)V
+      84: goto          111
+      87: invokestatic  #613                // Method func_146271_m:()Z
+      90: ifeq          111
+      93: aload_0
+      94: getfield      #231                // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      97: new           #4                  // class me/jellysquid/mods/sodium/client/gui/SodiumOptionsGUI
+     100: dup
+     101: aload_0
+     102: getfield      #586                // Field prevScreen:Lnet/minecraft/client/gui/GuiScreen;
+     105: invokespecial #52                 // Method me/jellysquid/mods/sodium/client/gui/SodiumOptionsGUI."<init>":(Lnet/minecraft/client/gui/GuiScreen;)V
+     108: invokevirtual #610                // Method net/minecraft/client/Minecraft.func_147108_a:(Lnet/minecraft/client/gui/GuiScreen;)V
+     111: aload_0
+     112: getfield      #89                 // Field focused:Lcom/gtnewhorizons/angelica/compat/mojang/Element;
+     115: ifnull        130
+     118: aload_0
+     119: getfield      #89                 // Field focused:Lcom/gtnewhorizons/angelica/compat/mojang/Element;
+     122: iload_1
+     123: iload_2
+     124: invokeinterface #619,  3          // InterfaceMethod com/gtnewhorizons/angelica/compat/mojang/Element.keyTyped:(CI)Z
+     129: pop
+     130: return
+
+  public boolean shouldCloseOnEsc();
+    Code:
+       0: aload_0
+       1: getfield      #459                // Field hasPendingChanges:Z
+       4: ifne          11
+       7: iconst_1
+       8: goto          12
+      11: iconst_0
+      12: ireturn
+
+  public void onClose();
+    Code:
+       0: getstatic     #107                // Field lastSearch:Ljava/util/concurrent/atomic/AtomicReference;
+       3: ldc_w         #624                // String
+       6: invokevirtual #627                // Method java/util/concurrent/atomic/AtomicReference.set:(Ljava/lang/Object;)V
+       9: aload_0
+      10: invokespecial #628                // Method me/jellysquid/mods/sodium/client/gui/SodiumOptionsGUI.onClose:()V
+      13: return
+
+  private static void lambda$applyChanges$0(java.util.EnumSet, java.util.HashSet, me.jellysquid.mods.sodium.client.gui.options.Option);
+    Code:
+       0: aload_2
+       1: invokeinterface #415,  1          // InterfaceMethod me/jellysquid/mods/sodium/client/gui/options/Option.hasChanged:()Z
+       6: ifne          10
+       9: return
+      10: aload_2
+      11: invokeinterface #629,  1          // InterfaceMethod me/jellysquid/mods/sodium/client/gui/options/Option.applyChanges:()V
+      16: aload_0
+      17: aload_2
+      18: invokeinterface #633,  1          // InterfaceMethod me/jellysquid/mods/sodium/client/gui/options/Option.getFlags:()Ljava/util/Collection;
+      23: invokevirtual #637                // Method java/util/EnumSet.addAll:(Ljava/util/Collection;)Z
+      26: pop
+      27: aload_1
+      28: aload_2
+      29: invokeinterface #641,  1          // InterfaceMethod me/jellysquid/mods/sodium/client/gui/options/Option.getStorage:()Lme/jellysquid/mods/sodium/client/gui/options/storage/OptionStorage;
+      34: invokevirtual #642                // Method java/util/HashSet.add:(Ljava/lang/Object;)Z
+      37: pop
+      38: return
+
+  private static java.util.stream.Stream lambda$getAllOptions$0(me.jellysquid.mods.sodium.client.gui.options.OptionPage);
+    Code:
+       0: aload_0
+       1: invokevirtual #445                // Method me/jellysquid/mods/sodium/client/gui/options/OptionPage.getOptions:()Lcom/google/common/collect/ImmutableList;
+       4: invokevirtual #643                // Method com/google/common/collect/ImmutableList.stream:()Ljava/util/stream/Stream;
+       7: areturn
+
+  private me.jellysquid.mods.sodium.client.gui.widgets.AbstractWidget lambda$parentBasicFrameBuilder$7(me.jellysquid.mods.sodium.client.util.Dim2i);
+    Code:
+       0: aload_0
+       1: getfield      #205                // Field closeButton:Lme/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget;
+       4: areturn
+
+  private me.jellysquid.mods.sodium.client.gui.widgets.AbstractWidget lambda$parentBasicFrameBuilder$6(me.jellysquid.mods.sodium.client.util.Dim2i);
+    Code:
+       0: aload_0
+       1: getfield      #195                // Field applyButton:Lme/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget;
+       4: areturn
+
+  private me.jellysquid.mods.sodium.client.gui.widgets.AbstractWidget lambda$parentBasicFrameBuilder$5(me.jellysquid.mods.sodium.client.util.Dim2i);
+    Code:
+       0: aload_0
+       1: getfield      #185                // Field undoButton:Lme/jellysquid/mods/sodium/client/gui/widgets/FlatButtonWidget;
+       4: areturn
+
+  private me.jellysquid.mods.sodium.client.gui.widgets.AbstractWidget lambda$parentBasicFrameBuilder$1(me.jellysquid.mods.sodium.client.util.Dim2i, java.util.function.Predicate, me.jellysquid.mods.sodium.client.util.Dim2i);
+    Code:
+       0: invokestatic  #648                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame.createBuilder:()Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder;
+       3: aload_1
+       4: invokevirtual #651                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder.setDimension:(Lme/jellysquid/mods/sodium/client/util/Dim2i;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder;
+       7: iconst_0
+       8: invokevirtual #654                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder.shouldRenderOutline:(Z)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder;
+      11: getstatic     #257                // Field tabFrameScrollBarOffset:Ljava/util/concurrent/atomic/AtomicReference;
+      14: invokevirtual #658                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder.setTabSectionScrollBarOffset:(Ljava/util/concurrent/atomic/AtomicReference;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder;
+      17: getstatic     #255                // Field tabFrameSelectedTab:Ljava/util/concurrent/atomic/AtomicReference;
+      20: invokevirtual #661                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder.setTabSectionSelectedTab:(Ljava/util/concurrent/atomic/AtomicReference;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder;
+      23: aload_0
+      24: aload_2
+      25: invokedynamic #671,  0            // InvokeDynamic #17:accept:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;Ljava/util/function/Predicate;)Ljava/util/function/Consumer;
+      30: invokevirtual #675                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder.addTabs:(Ljava/util/function/Consumer;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder;
+      33: invokedynamic #682,  0            // InvokeDynamic #18:run:()Ljava/lang/Runnable;
+      38: invokevirtual #686                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder.onSetTab:(Ljava/lang/Runnable;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder;
+      41: invokevirtual #689                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame$Builder.build:()Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame;
+      44: areturn
+
+  private static void lambda$parentBasicFrameBuilder$4();
+    Code:
+       0: getstatic     #259                // Field optionPageScrollBarOffset:Ljava/util/concurrent/atomic/AtomicReference;
+       3: iconst_0
+       4: invokestatic  #696                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       7: invokevirtual #627                // Method java/util/concurrent/atomic/AtomicReference.set:(Ljava/lang/Object;)V
+      10: return
+
+  private void lambda$parentBasicFrameBuilder$2(java.util.function.Predicate, java.util.List);
+    Code:
+       0: aload_0
+       1: getfield      #253                // Field pages:Ljava/util/List;
+       4: invokeinterface #469,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+       9: aload_0
+      10: invokedynamic #703,  0            // InvokeDynamic #19:test:(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;)Ljava/util/function/Predicate;
+      15: invokeinterface #707,  2          // InterfaceMethod java/util/stream/Stream.filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+      20: aload_2
+      21: aload_1
+      22: invokedynamic #717,  0            // InvokeDynamic #20:accept:(Ljava/util/List;Ljava/util/function/Predicate;)Ljava/util/function/Consumer;
+      27: invokeinterface #511,  2          // InterfaceMethod java/util/stream/Stream.forEach:(Ljava/util/function/Consumer;)V
+      32: return
+
+  private static void lambda$parentBasicFrameBuilder$3(java.util.List, java.util.function.Predicate, me.jellysquid.mods.sodium.client.gui.options.OptionPage);
+    Code:
+       0: aload_0
+       1: invokestatic  #721                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/Tab.createBuilder:()Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/Tab$Builder;
+       4: aload_2
+       5: aload_1
+       6: getstatic     #259                // Field optionPageScrollBarOffset:Ljava/util/concurrent/atomic/AtomicReference;
+       9: invokevirtual #725                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/Tab$Builder.from:(Lme/jellysquid/mods/sodium/client/gui/options/OptionPage;Ljava/util/function/Predicate;Ljava/util/concurrent/atomic/AtomicReference;)Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/Tab;
+      12: invokeinterface #105,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      17: pop
+      18: return
+
+  private me.jellysquid.mods.sodium.client.gui.widgets.AbstractWidget lambda$parentBasicFrameBuilder$0(java.lang.String, me.jellysquid.mods.sodium.client.util.Dim2i, me.jellysquid.mods.sodium.client.util.Dim2i);
+    Code:
+       0: new           #23                 // class me/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen$1
+       3: dup
+       4: aload_0
+       5: aload_1
+       6: aload_2
+       7: invokespecial #728                // Method me/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen$1."<init>":(Lme/flashyreese/mods/reeses_sodium_options/client/gui/ReeseSodiumVideoOptionsScreen;Ljava/lang/String;Lme/jellysquid/mods/sodium/client/util/Dim2i;)V
+      10: areturn
+
+  private me.jellysquid.mods.sodium.client.gui.widgets.AbstractWidget lambda$parentFrameBuilder$4(me.jellysquid.mods.sodium.client.util.Dim2i);
+    Code:
+       0: aload_0
+       1: getfield      #60                 // Field searchTextField:Lme/flashyreese/mods/reeses_sodium_options/client/gui/frame/components/SearchTextFieldComponent;
+       4: areturn
+
+  private static me.jellysquid.mods.sodium.client.gui.widgets.AbstractWidget lambda$parentFrameBuilder$3(me.jellysquid.mods.sodium.client.gui.widgets.FlatButtonWidget, me.jellysquid.mods.sodium.client.util.Dim2i);
+    Code:
+       0: aload_0
+       1: areturn
+
+  private void lambda$parentFrameBuilder$2();
+    Code:
+       0: aload_0
+       1: getfield      #231                // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+       4: new           #730                // class com/gtnewhorizons/angelica/client/gui/FontConfigScreen
+       7: dup
+       8: aload_0
+       9: invokespecial #731                // Method com/gtnewhorizons/angelica/client/gui/FontConfigScreen."<init>":(Lnet/minecraft/client/gui/GuiScreen;)V
+      12: invokevirtual #610                // Method net/minecraft/client/Minecraft.func_147108_a:(Lnet/minecraft/client/gui/GuiScreen;)V
+      15: return
+
+  private static me.jellysquid.mods.sodium.client.gui.widgets.AbstractWidget lambda$parentFrameBuilder$1(me.jellysquid.mods.sodium.client.gui.widgets.FlatButtonWidget, me.jellysquid.mods.sodium.client.util.Dim2i);
+    Code:
+       0: aload_0
+       1: areturn
+
+  private void lambda$parentFrameBuilder$0();
+    Code:
+       0: aload_0
+       1: getfield      #231                // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+       4: new           #733                // class net/coderbot/iris/gui/screen/ShaderPackScreen
+       7: dup
+       8: aload_0
+       9: invokespecial #734                // Method net/coderbot/iris/gui/screen/ShaderPackScreen."<init>":(Lnet/minecraft/client/gui/GuiScreen;)V
+      12: invokevirtual #610                // Method net/minecraft/client/Minecraft.func_147108_a:(Lnet/minecraft/client/gui/GuiScreen;)V
+      15: return
+
+  static {};
+    Code:
+       0: new           #109                // class java/util/concurrent/atomic/AtomicReference
+       3: dup
+       4: aconst_null
+       5: invokespecial #737                // Method java/util/concurrent/atomic/AtomicReference."<init>":(Ljava/lang/Object;)V
+       8: putstatic     #255                // Field tabFrameSelectedTab:Ljava/util/concurrent/atomic/AtomicReference;
+      11: new           #109                // class java/util/concurrent/atomic/AtomicReference
+      14: dup
+      15: iconst_0
+      16: invokestatic  #696                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      19: invokespecial #737                // Method java/util/concurrent/atomic/AtomicReference."<init>":(Ljava/lang/Object;)V
+      22: putstatic     #257                // Field tabFrameScrollBarOffset:Ljava/util/concurrent/atomic/AtomicReference;
+      25: new           #109                // class java/util/concurrent/atomic/AtomicReference
+      28: dup
+      29: iconst_0
+      30: invokestatic  #696                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      33: invokespecial #737                // Method java/util/concurrent/atomic/AtomicReference."<init>":(Ljava/lang/Object;)V
+      36: putstatic     #259                // Field optionPageScrollBarOffset:Ljava/util/concurrent/atomic/AtomicReference;
+      39: new           #109                // class java/util/concurrent/atomic/AtomicReference
+      42: dup
+      43: ldc_w         #624                // String
+      46: invokespecial #737                // Method java/util/concurrent/atomic/AtomicReference."<init>":(Ljava/lang/Object;)V
+      49: putstatic     #107                // Field lastSearch:Ljava/util/concurrent/atomic/AtomicReference;
+      52: return
+}

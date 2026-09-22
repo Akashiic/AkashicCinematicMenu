@@ -16,6 +16,7 @@ public final class BgmFrontendPolicy {
         "net.minecraft.client.gui.GuiLanguage",
         "net.minecraft.client.gui.GuiScreenResourcePacks",
         "net.minecraft.client.gui.GuiScreenOptionsSounds",
+        "net.minecraft.client.gui.ScreenChatOptions",
         "net.minecraft.client.gui.GuiSnooper",
         "net.minecraft.client.gui.GuiSelectWorld",
         "net.minecraft.client.gui.GuiCreateWorld",
@@ -23,6 +24,9 @@ public final class BgmFrontendPolicy {
         "net.minecraft.client.gui.GuiFlatPresets",
         "net.minecraft.client.gui.GuiRenameWorld",
         "net.minecraft.client.gui.GuiYesNo",
+        "net.minecraft.client.gui.GuiConfirmOpenLink",
+        "rtg.client.gui.WorldTypeMessageGUI",
+        "me.flashyreese.mods.reeses_sodium_options.client.gui.ReeseSodiumVideoOptionsScreen",
         "net.minecraft.client.gui.GuiYesNoLink"
     )));
     private BgmFrontendPolicy(){}

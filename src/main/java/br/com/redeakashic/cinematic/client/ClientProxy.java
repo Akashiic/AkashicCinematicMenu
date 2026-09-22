@@ -17,6 +17,8 @@ public final class ClientProxy extends CommonProxy {
             MenuConfig config = MenuConfig.read(event.getSuggestedConfigurationFile());
             if (!config.enabled) { return; }
             UiAudio.configure(config);
+            SecondaryScreenTheme.configure(config.themeSecondaryScreens);
+            cpw.mods.fml.common.FMLCommonHandler.instance().bus().register(SecondaryScreenTheme.INSTANCE);
             TransitionTheme.configure(config.themeTransitions);
             if(config.themeTransitions)cpw.mods.fml.common.FMLCommonHandler.instance().bus().register(new TransitionTheme());
             try{MenuBgm.install(event.getSuggestedConfigurationFile().getParentFile());}

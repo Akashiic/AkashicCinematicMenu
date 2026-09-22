@@ -1,0 +1,13 @@
+{
+  "finding": "RTG first displayed WorldTypeMessageGUI, later direct creation reached GuiCreateWorld",
+  "valid_routes": [
+    "rtg.client.gui.WorldTypeMessageGUI",
+    "net.minecraft.client.gui.GuiCreateWorld"
+  ],
+  "valid_sections": [
+    "GERAÇÃO DE MUNDO",
+    "NOVO MUNDO"
+  ],
+  "product_changed": false,
+  "prior_failures_preserved": true
+}

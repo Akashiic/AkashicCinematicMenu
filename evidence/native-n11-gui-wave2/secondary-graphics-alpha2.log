@@ -1,0 +1,4 @@
+VENDOR=Intel
+RENDERER=Intel(R) UHD Graphics
+RESULT secondary_graphics_checks=14 failures=0
+Picked up JAVA_TOOL_OPTIONS: -Xmx192m

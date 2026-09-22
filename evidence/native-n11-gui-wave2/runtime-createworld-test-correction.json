@@ -1,0 +1,7 @@
+{
+  "finding": "RTG redirects GuiCreateWorld to rtg.client.gui.WorldTypeMessageGUI in the real pack",
+  "observed_section": "GERAÇÃO DE MUNDO",
+  "product_changed": false,
+  "correction": "V3 expects the actual RTG screen already included in SecondaryScreenPolicy alpha4",
+  "prior_failure_preserved": true
+}

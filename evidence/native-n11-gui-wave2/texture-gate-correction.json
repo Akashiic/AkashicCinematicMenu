@@ -1,0 +1,11 @@
+{
+  "old_gate": ">20 unique RGBA values",
+  "measured": {
+    "46": 19,
+    "66": 19,
+    "86": 19
+  },
+  "new_gate": ">=12 unique RGBA values plus fully covered alpha",
+  "product_changed": false,
+  "reason": "Each20px state uses18 interpolated vertical rows plus border/highlight;19 unique values is the expected authored gradient."
+}

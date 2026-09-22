@@ -1,0 +1,8 @@
+{
+  "failed_run": "secondary-graphics.log",
+  "finding": "The determinism assertion sampled 1366x768 bytes from the previous 2560x1440 framebuffer before rendering the first comparable 1366x768 frame.",
+  "product_changed": false,
+  "correction": "Render two consecutive 1366x768 CONFIGURAÇÕES frames and compare those equal-size frames.",
+  "prior_failure_preserved": true,
+  "status": "TEST_CORRECTED_REQUIRES_REPEAT"
+}

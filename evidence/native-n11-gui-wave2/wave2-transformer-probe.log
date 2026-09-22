@@ -1,0 +1,6 @@
+[AkashicCinematic] Secondary GUI primitive themed: net.minecraft.client.gui.GuiScreen
+[AkashicCinematic] Secondary GUI primitive themed: net.minecraft.client.gui.GuiButton
+[AkashicCinematic] Secondary GUI primitive themed: net.minecraft.client.gui.GuiSlot
+RESULT transformer_checks=13 failures=0
+Picked up JAVA_TOOL_OPTIONS: -Xmx192m
+[AkashicCinematic] Secondary theme splice rejected: net.minecraft.client.gui.GuiButton java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for length 4

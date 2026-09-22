@@ -1,0 +1,307 @@
+{
+  "checkpoint": "ACM-N11-GUI-WAVE2-2026-09-21",
+  "version": "0.7.0-alpha.4",
+  "jar_sha256": "7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a",
+  "jar_bytes": 16508324,
+  "classes": 81,
+  "compiled_against_real_artifacts": true,
+  "independent_gates": {
+    "version": "0.7.0-alpha.4",
+    "jar_sha256": "7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a",
+    "jar_bytes": 16508324,
+    "classes": 81,
+    "steps": [
+      {
+        "step": "core",
+        "exit": 0,
+        "tail": "napshots rejected\nPASS exact direct server endpoint\nPASS four routes in requested order\nPASS removed routes rejected\nPASS direct play handoff executes once after transition\nRESULT scenarios=48 assertions=17489 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n\n"
+      },
+      {
+        "step": "SecondaryScreenPolicyTests",
+        "exit": 0,
+        "tail": "RESULT secondary_policy_checks=58 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n"
+      },
+      {
+        "step": "CeremonialTests",
+        "exit": 0,
+        "tail": "RESULT ceremonial_checks=4807 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n"
+      },
+      {
+        "step": "PixelLayoutTests",
+        "exit": 0,
+        "tail": "RESULT geometry_checks=1785 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n"
+      },
+      {
+        "step": "UiFeaturesTests",
+        "exit": 0,
+        "tail": "RESULT ui-feature-checks=140 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n"
+      },
+      {
+        "step": "MusicCoreTests",
+        "exit": 0,
+        "tail": "RESULT music_core_checks=1557 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n"
+      },
+      {
+        "step": "BgmPlaybackTests",
+        "exit": 0,
+        "tail": "he fade\nSCENARIO instant fade parameters and level zero are defined\nSCENARIO loop=false plays once per frontend visit\nSCENARIO frontend allowlist and world precedence\nRESULT playback_scenarios=18 assertions=124 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n"
+      },
+      {
+        "step": "MenuSoundGateTests",
+        "exit": 0,
+        "tail": "RESULT sound_gate_checks=32 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n"
+      },
+      {
+        "step": "native-build",
+        "exit": 0,
+        "tail": " 52,\n  \"compiled_against_real_artifacts\": true,\n  \"stubs_used\": false,\n  \"splash_overlay_implemented\": true,\n  \"installed_in_game\": false,\n  \"runtime_tested\": false,\n  \"compiler\": \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-21.0.11.10-hotspot\\\\bin\\\\javac.EXE\"\n}\n"
+      },
+      {
+        "step": "probe-compile",
+        "exit": 0,
+        "tail": "Picked up JAVA_TOOL_OPTIONS: -Xmx192m\n"
+      },
+      {
+        "step": "transformer-probe",
+        "exit": 0,
+        "tail": "hicCinematic] Secondary GUI primitive themed: net.minecraft.client.gui.GuiButton\n[AkashicCinematic] Secondary GUI primitive themed: net.minecraft.client.gui.GuiSlot\nRESULT transformer_checks=13 slot_dirt_refs=2 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n"
+      },
+      {
+        "step": "quit-probe",
+        "exit": 0,
+        "tail": "RESULT quit_checks=5 shutdown_calls=1 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n"
+      },
+      {
+        "step": "secondary-graphics",
+        "exit": 0,
+        "tail": "VENDOR=Intel\nRENDERER=Intel(R) UHD Graphics\nRESULT secondary_graphics_checks=14 failures=0\nPicked up JAVA_TOOL_OPTIONS: -Xmx192m\n"
+      }
+    ],
+    "BGM_bytes_unchanged": true,
+    "BGM_code_unchanged": true,
+    "direct_quit_proved": true,
+    "delete_world_confirmation_preserved": true,
+    "visual_probe": "PASS",
+    "runtime": "PENDING"
+  },
+  "full_pack_process": {
+    "pid": 3928,
+    "started_at": 1790040228.3692505,
+    "run": "n11run1",
+    "instance": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n08-bgm-6c79c577\\instance",
+    "java": "C:\\Users\\User\\AppData\\Roaming\\.technic\\runtimes\\jre-legacy\\bin\\java.exe",
+    "max_heap_mb": 3072,
+    "test_identity": "ACMenuQA",
+    "real_credentials_used": false,
+    "log": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n08-bgm-6c79c577\\evidence\\n11run1\\console.log",
+    "exit": 0,
+    "ended_at": 1790041336.566111
+  },
+  "runtime_passed_checks": 83,
+  "runtime_matrix_total_records": 85,
+  "runtime_expected_test_precondition_failures": [
+    "quit_process_exits_directly",
+    "suite_stopped"
+  ],
+  "direct_quit_foreground": {
+    "foreground_verified": true,
+    "process": {
+      "pid": 3928,
+      "started_at": 1790040228.3692505,
+      "run": "n11run1",
+      "instance": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n08-bgm-6c79c577\\instance",
+      "java": "C:\\Users\\User\\AppData\\Roaming\\.technic\\runtimes\\jre-legacy\\bin\\java.exe",
+      "max_heap_mb": 3072,
+      "test_identity": "ACMenuQA",
+      "real_credentials_used": false,
+      "log": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n08-bgm-6c79c577\\evidence\\n11run1\\console.log",
+      "exit": 0,
+      "ended_at": 1790041336.566111
+    },
+    "gui_yes_no_after_quit": false,
+    "events_tail": "1790041333522 COMMAND 1790041333412 key 207\n1790041333523 DONE 1790041333412\n1790041333922 COMMAND 1790041333413 key 28\n1790041333932 DONE 1790041333413\n"
+  },
+  "captured_screens": [
+    "main-before-wave2",
+    "options",
+    "singleplayer",
+    "createworld",
+    "language",
+    "resources",
+    "controls",
+    "video",
+    "sound",
+    "chat",
+    "snooper",
+    "flat",
+    "presets",
+    "confirmation-preserved",
+    "main-before-direct-quit"
+  ],
+  "observations": [
+    {
+      "label": "main-before-wave2",
+      "file": "2026-09-21_22.40.14.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.0
+    },
+    {
+      "label": "options",
+      "file": "2026-09-21_22.40.15.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.0
+    },
+    {
+      "label": "singleplayer",
+      "file": "2026-09-21_22.40.18.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.16624625374625374
+    },
+    {
+      "label": "createworld",
+      "file": "2026-09-21_22.40.20.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.0
+    },
+    {
+      "label": "language",
+      "file": "2026-09-21_22.40.23.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.14198926073926074
+    },
+    {
+      "label": "resources",
+      "file": "2026-09-21_22.40.25.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.04429112554112554
+    },
+    {
+      "label": "controls",
+      "file": "2026-09-21_22.40.27.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.13173701298701299
+    },
+    {
+      "label": "video",
+      "file": "2026-09-21_22.40.29.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.0
+    },
+    {
+      "label": "sound",
+      "file": "2026-09-21_22.40.32.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.0
+    },
+    {
+      "label": "chat",
+      "file": "2026-09-21_22.40.36.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.0
+    },
+    {
+      "label": "snooper",
+      "file": "2026-09-21_22.40.39.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.17847360972360973
+    },
+    {
+      "label": "flat",
+      "file": "2026-09-21_22.40.41.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.14857850482850482
+    },
+    {
+      "label": "presets",
+      "file": "2026-09-21_22.40.43.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.14640619796869797
+    },
+    {
+      "label": "confirmation-preserved",
+      "file": "2026-09-21_22.40.46.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.0
+    },
+    {
+      "label": "main-before-direct-quit",
+      "file": "2026-09-21_22.40.48.png",
+      "size": [
+        1920,
+        1001
+      ],
+      "brown_fraction": 0.0
+    }
+  ],
+  "runtime_error_markers": [],
+  "runtime_markers": [
+    {
+      "line": 286,
+      "text": "[22:24:17] [main/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.SecondaryThemeTransformer:transform:23]: [AkashicCinematic] Secondary GUI primitive themed: net.minecraft.client.gui.GuiScreen"
+    },
+    {
+      "line": 645,
+      "text": "[22:24:51] [Client thread/INFO] [STDOUT]: [br.com.redeakashic.cinematic.bootstrap.SecondaryThemeTransformer:transform:23]: [AkashicCinematic] Secondary GUI primitive themed: net.minecraft.client.gui.GuiButton"
+    }
+  ],
+  "BGM_recording_unchanged": true,
+  "BGM_controller_unchanged": true,
+  "BGM_policy_extension": "Wave 2 allow-list expanded for themed front-end settings; world precedence unchanged.",
+  "worlds_created_or_loaded": false,
+  "real_credentials_used": false,
+  "delete_world_confirmation_preserved": true,
+  "generic_confirmation_runtime_tested": true,
+  "daily_observed_read_only": [
+    {
+      "name": "AkashicCinematicMenu-0.6.0-alpha.3.jar",
+      "sha256": "a15e18a206e89aa7736d71cae22813ecb4be0e7cb0dffd75d4c10e0939785859"
+    }
+  ],
+  "daily_mutation_by_this_work": false,
+  "reproducible_build": true,
+  "user_visual_approval": "PENDING_AFTER_N11",
+  "general_release_approved": false,
+  "verdict": "FULL_PACK_DIRECTED_TESTS_PASSED__USER_VISUAL_APPROVAL_PENDING"
+}

@@ -1,0 +1,17 @@
+{
+  "alpha_min": 32,
+  "alpha_max": 255,
+  "alpha_zero_fraction": 0.0,
+  "alpha_lt64_fraction": 0.125,
+  "opaque_fraction": 0.875,
+  "rgb_min": [
+    205,
+    206,
+    208
+  ],
+  "rgb_max": [
+    234,
+    236,
+    239
+  ]
+}

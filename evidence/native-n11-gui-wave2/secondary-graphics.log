@@ -1,0 +1,6 @@
+VENDOR=Intel
+RENDERER=Intel(R) UHD Graphics
+Picked up JAVA_TOOL_OPTIONS: -Xmx192m
+Exception in thread "main" java.lang.AssertionError: static frame deterministic
+	at br.com.redeakashic.cinematic.render.SecondaryGraphicsProbe.check(SecondaryGraphicsProbe.java:13)
+	at br.com.redeakashic.cinematic.render.SecondaryGraphicsProbe.main(SecondaryGraphicsProbe.java:57)

@@ -1,0 +1,6 @@
+{
+  "change": "Theme remaining vanilla confirmation dialogs visually; no callback/action logic changed",
+  "quit_confirmation": "still removed only in CinematicMenu",
+  "destructive_confirmations": "still native",
+  "version": "0.7.0-alpha.2"
+}

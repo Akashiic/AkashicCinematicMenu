@@ -1,0 +1,19 @@
+{
+  "version": "0.7.0-alpha.2",
+  "jar_sha256": "2138cd5c4e0bc071ca167c31a9ecbd03fb3f8d8bcd6c094755d8b520a525bf7e",
+  "jar_bytes": 16508146,
+  "button_unique_colours": {
+    "46": 19,
+    "66": 19,
+    "86": 19
+  },
+  "button_threshold": 12,
+  "list_surface": "PASS",
+  "transformer": "PASS",
+  "direct_quit": "PASS",
+  "delete_world_confirmation": "PRESERVED",
+  "secondary_graphics": "PASS",
+  "BGM_bytes_unchanged": true,
+  "runtime": "PENDING",
+  "prior_gate_failure": "Texture states had19 colors; previous >20 requirement was invalid and is preserved in wave2 alpha2 log."
+}

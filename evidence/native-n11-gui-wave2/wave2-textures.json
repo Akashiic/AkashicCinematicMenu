@@ -1,0 +1,18 @@
+{
+  "list_surface.png": {
+    "bytes": 431,
+    "sha256": "a8c791569e18c001f6f1a41d869fda4e2d46e9aa81a3b16bdf6bc56e8d1adf20",
+    "size": [
+      32,
+      32
+    ]
+  },
+  "widgets_forbidden.png": {
+    "bytes": 684,
+    "sha256": "359b304b06b00530b8f823fd49947b1a071240dfdeb9afebc6d5850e40eaa96e",
+    "size": [
+      256,
+      256
+    ]
+  }
+}

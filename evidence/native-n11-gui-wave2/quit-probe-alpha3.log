@@ -1,0 +1,2 @@
+RESULT quit_checks=5 shutdown_calls=1 failures=0
+Picked up JAVA_TOOL_OPTIONS: -Xmx192m

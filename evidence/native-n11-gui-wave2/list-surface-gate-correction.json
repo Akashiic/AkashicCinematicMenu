@@ -1,0 +1,6 @@
+{
+  "finding": "12.5% decorative diagonal pixels use alpha32;87.5% are alpha255; no alpha0 pixels.",
+  "background_behind_list": "SecondaryScreenTheme, not vanilla dirt",
+  "product_changed": false,
+  "correct_gate": "No alpha0 holes and minimum decorative alpha>=24"
+}

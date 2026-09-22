@@ -1,0 +1,6 @@
+{
+  "run2_exit": 0,
+  "run2_failure": "missing telemetry fields, not product assertion",
+  "candidate_jar_unchanged": "6640852dfe1e53e43625c3778268777f9b41675350f621495c400043858f2b4b",
+  "new_qa_driver_sha256": "aba82b70ed8eaafce5203a0888ca668cf314e97f5aaba25fea9fd91fe9b54ff3"
+}

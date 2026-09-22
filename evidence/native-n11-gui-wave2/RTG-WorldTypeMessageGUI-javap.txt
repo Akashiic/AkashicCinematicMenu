@@ -1,0 +1,276 @@
+﻿Compiled from "WorldTypeMessageGUI.java"
+public class rtg.client.gui.WorldTypeMessageGUI extends net.minecraft.client.gui.GuiScreen {
+  private net.minecraft.client.gui.GuiScreen parentGuiScreen;
+
+  private java.io.File nameHashFile;
+
+  private java.lang.String nameHash;
+
+  private static final net.minecraft.util.ResourceLocation rtgLogoTexture;
+
+  public rtg.client.gui.WorldTypeMessageGUI(net.minecraft.client.gui.GuiScreen, java.io.File, java.lang.String);
+    Code:
+       0: aload_0
+       1: invokespecial #18                 // Method net/minecraft/client/gui/GuiScreen."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #20                 // Field parentGuiScreen:Lnet/minecraft/client/gui/GuiScreen;
+       9: aload_0
+      10: aload_2
+      11: putfield      #22                 // Field nameHashFile:Ljava/io/File;
+      14: aload_0
+      15: aload_3
+      16: putfield      #24                 // Field nameHash:Ljava/lang/String;
+      19: return
+
+  public void func_73866_w_();
+    Code:
+       0: iconst_1
+       1: invokestatic  #33                 // Method org/lwjgl/input/Keyboard.enableRepeatEvents:(Z)V
+       4: aload_0
+       5: getfield      #37                 // Field field_146292_n:Ljava/util/List;
+       8: invokeinterface #42,  1           // InterfaceMethod java/util/List.clear:()V
+      13: aload_0
+      14: getfield      #37                 // Field field_146292_n:Ljava/util/List;
+      17: new           #44                 // class net/minecraft/client/gui/GuiButton
+      20: dup
+      21: iconst_0
+      22: aload_0
+      23: getfield      #48                 // Field field_146294_l:I
+      26: iconst_2
+      27: idiv
+      28: sipush        175
+      31: isub
+      32: aload_0
+      33: getfield      #51                 // Field field_146295_m:I
+      36: bipush        24
+      38: isub
+      39: sipush        350
+      42: bipush        20
+      44: ldc           #53                 // String OK
+      46: iconst_0
+      47: anewarray     #55                 // class java/lang/Object
+      50: invokestatic  #61                 // Method net/minecraft/client/resources/I18n.func_135052_a:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+      53: invokespecial #64                 // Method net/minecraft/client/gui/GuiButton."<init>":(IIIIILjava/lang/String;)V
+      56: invokeinterface #68,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      61: pop
+      62: return
+
+  public void func_146281_b();
+    Code:
+       0: iconst_0
+       1: invokestatic  #33                 // Method org/lwjgl/input/Keyboard.enableRepeatEvents:(Z)V
+       4: return
+
+  protected void func_146284_a(net.minecraft.client.gui.GuiButton);
+    Code:
+       0: aload_1
+       1: getfield      #77                 // Field net/minecraft/client/gui/GuiButton.field_146124_l:Z
+       4: ifeq          73
+       7: aload_1
+       8: getfield      #80                 // Field net/minecraft/client/gui/GuiButton.field_146127_k:I
+      11: ifne          73
+      14: aload_0
+      15: getfield      #22                 // Field nameHashFile:Ljava/io/File;
+      18: invokevirtual #86                 // Method java/io/File.createNewFile:()Z
+      21: pop
+      22: aload_0
+      23: getfield      #22                 // Field nameHashFile:Ljava/io/File;
+      26: new           #88                 // class java/lang/StringBuilder
+      29: dup
+      30: invokespecial #89                 // Method java/lang/StringBuilder."<init>":()V
+      33: aload_0
+      34: getfield      #24                 // Field nameHash:Ljava/lang/String;
+      37: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      40: ldc           #95                 // String StartupWarning
+      42: invokevirtual #101                // Method java/lang/String.hashCode:()I
+      45: invokevirtual #104                // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+      48: invokevirtual #108                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      51: invokestatic  #114                // Method org/apache/commons/io/FileUtils.write:(Ljava/io/File;Ljava/lang/CharSequence;)V
+      54: goto          62
+      57: astore_2
+      58: aload_2
+      59: invokevirtual #117                // Method java/io/IOException.printStackTrace:()V
+      62: aload_0
+      63: getfield      #121                // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      66: aload_0
+      67: getfield      #20                 // Field parentGuiScreen:Lnet/minecraft/client/gui/GuiScreen;
+      70: invokevirtual #127                // Method net/minecraft/client/Minecraft.func_147108_a:(Lnet/minecraft/client/gui/GuiScreen;)V
+      73: return
+    Exception table:
+       from    to  target type
+          14    54    57   Class java/io/IOException
+
+  public void func_73863_a(int, int, float);
+    Code:
+       0: aload_0
+       1: invokevirtual #136                // Method func_146276_q_:()V
+       4: aload_0
+       5: aload_0
+       6: getfield      #140                // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+       9: new           #88                 // class java/lang/StringBuilder
+      12: dup
+      13: invokespecial #89                 // Method java/lang/StringBuilder."<init>":()V
+      16: ldc           #142                // String
+      18: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      21: getstatic     #148                // Field net/minecraft/util/EnumChatFormatting.WHITE:Lnet/minecraft/util/EnumChatFormatting;
+      24: invokevirtual #151                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+      27: ldc           #153                // String warning.rtgStartup1
+      29: invokestatic  #159                // Method net/minecraft/util/StatCollector.func_74838_a:(Ljava/lang/String;)Ljava/lang/String;
+      32: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      35: invokevirtual #108                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      38: aload_0
+      39: getfield      #48                 // Field field_146294_l:I
+      42: iconst_2
+      43: idiv
+      44: bipush        82
+      46: ldc           #160                // int 16777215
+      48: invokevirtual #164                // Method func_73732_a:(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V
+      51: aload_0
+      52: aload_0
+      53: getfield      #140                // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+      56: new           #88                 // class java/lang/StringBuilder
+      59: dup
+      60: invokespecial #89                 // Method java/lang/StringBuilder."<init>":()V
+      63: ldc           #142                // String
+      65: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      68: getstatic     #148                // Field net/minecraft/util/EnumChatFormatting.WHITE:Lnet/minecraft/util/EnumChatFormatting;
+      71: invokevirtual #151                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+      74: ldc           #166                // String warning.rtgStartup2
+      76: invokestatic  #159                // Method net/minecraft/util/StatCollector.func_74838_a:(Ljava/lang/String;)Ljava/lang/String;
+      79: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      82: invokevirtual #108                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      85: aload_0
+      86: getfield      #48                 // Field field_146294_l:I
+      89: iconst_2
+      90: idiv
+      91: bipush        94
+      93: ldc           #160                // int 16777215
+      95: invokevirtual #164                // Method func_73732_a:(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V
+      98: aload_0
+      99: aload_0
+     100: getfield      #140                // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+     103: new           #88                 // class java/lang/StringBuilder
+     106: dup
+     107: invokespecial #89                 // Method java/lang/StringBuilder."<init>":()V
+     110: ldc           #142                // String
+     112: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     115: getstatic     #148                // Field net/minecraft/util/EnumChatFormatting.WHITE:Lnet/minecraft/util/EnumChatFormatting;
+     118: invokevirtual #151                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+     121: ldc           #168                // String warning.rtgStartup3
+     123: invokestatic  #159                // Method net/minecraft/util/StatCollector.func_74838_a:(Ljava/lang/String;)Ljava/lang/String;
+     126: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     129: invokevirtual #108                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     132: aload_0
+     133: getfield      #48                 // Field field_146294_l:I
+     136: iconst_2
+     137: idiv
+     138: bipush        106
+     140: ldc           #160                // int 16777215
+     142: invokevirtual #164                // Method func_73732_a:(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V
+     145: aload_0
+     146: aload_0
+     147: getfield      #140                // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+     150: new           #88                 // class java/lang/StringBuilder
+     153: dup
+     154: invokespecial #89                 // Method java/lang/StringBuilder."<init>":()V
+     157: ldc           #142                // String
+     159: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     162: getstatic     #148                // Field net/minecraft/util/EnumChatFormatting.WHITE:Lnet/minecraft/util/EnumChatFormatting;
+     165: invokevirtual #151                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+     168: ldc           #170                // String warning.rtgStartup4
+     170: invokestatic  #159                // Method net/minecraft/util/StatCollector.func_74838_a:(Ljava/lang/String;)Ljava/lang/String;
+     173: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     176: invokevirtual #108                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     179: aload_0
+     180: getfield      #48                 // Field field_146294_l:I
+     183: iconst_2
+     184: idiv
+     185: sipush        132
+     188: ldc           #160                // int 16777215
+     190: invokevirtual #164                // Method func_73732_a:(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V
+     193: aload_0
+     194: aload_0
+     195: getfield      #140                // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+     198: new           #88                 // class java/lang/StringBuilder
+     201: dup
+     202: invokespecial #89                 // Method java/lang/StringBuilder."<init>":()V
+     205: ldc           #142                // String
+     207: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     210: getstatic     #148                // Field net/minecraft/util/EnumChatFormatting.WHITE:Lnet/minecraft/util/EnumChatFormatting;
+     213: invokevirtual #151                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+     216: ldc           #172                // String warning.rtgStartup5
+     218: invokestatic  #159                // Method net/minecraft/util/StatCollector.func_74838_a:(Ljava/lang/String;)Ljava/lang/String;
+     221: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     224: invokevirtual #108                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     227: aload_0
+     228: getfield      #48                 // Field field_146294_l:I
+     231: iconst_2
+     232: idiv
+     233: sipush        144
+     236: ldc           #160                // int 16777215
+     238: invokevirtual #164                // Method func_73732_a:(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V
+     241: aload_0
+     242: aload_0
+     243: getfield      #140                // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+     246: new           #88                 // class java/lang/StringBuilder
+     249: dup
+     250: invokespecial #89                 // Method java/lang/StringBuilder."<init>":()V
+     253: ldc           #142                // String
+     255: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     258: getstatic     #175                // Field net/minecraft/util/EnumChatFormatting.DARK_RED:Lnet/minecraft/util/EnumChatFormatting;
+     261: invokevirtual #151                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+     264: ldc           #177                // String warning.rtgStartup6
+     266: invokestatic  #159                // Method net/minecraft/util/StatCollector.func_74838_a:(Ljava/lang/String;)Ljava/lang/String;
+     269: invokevirtual #93                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     272: invokevirtual #108                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     275: aload_0
+     276: getfield      #48                 // Field field_146294_l:I
+     279: iconst_2
+     280: idiv
+     281: sipush        168
+     284: ldc           #160                // int 16777215
+     286: invokevirtual #164                // Method func_73732_a:(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V
+     289: sipush        3042
+     292: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+     295: aload_0
+     296: getfield      #121                // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+     299: invokevirtual #187                // Method net/minecraft/client/Minecraft.func_110434_K:()Lnet/minecraft/client/renderer/texture/TextureManager;
+     302: getstatic     #189                // Field rtgLogoTexture:Lnet/minecraft/util/ResourceLocation;
+     305: invokevirtual #195                // Method net/minecraft/client/renderer/texture/TextureManager.func_110577_a:(Lnet/minecraft/util/ResourceLocation;)V
+     308: fconst_1
+     309: fconst_1
+     310: fconst_1
+     311: fconst_1
+     312: invokestatic  #199                // Method org/lwjgl/opengl/GL11.glColor4f:(FFFF)V
+     315: aload_0
+     316: aload_0
+     317: getfield      #48                 // Field field_146294_l:I
+     320: iconst_2
+     321: idiv
+     322: bipush        84
+     324: isub
+     325: iconst_0
+     326: iconst_0
+     327: iconst_0
+     328: sipush        168
+     331: bipush        80
+     333: invokevirtual #203                // Method func_73729_b:(IIIIII)V
+     336: sipush        3042
+     339: invokestatic  #206                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+     342: aload_0
+     343: iload_1
+     344: iload_2
+     345: fload_3
+     346: invokespecial #208                // Method net/minecraft/client/gui/GuiScreen.func_73863_a:(IIF)V
+     349: return
+
+  static {};
+    Code:
+       0: new           #215                // class net/minecraft/util/ResourceLocation
+       3: dup
+       4: ldc           #217                // String rtg:textures/gui/rtg-logo-worldtype.png
+       6: invokespecial #220                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+       9: putstatic     #189                // Field rtgLogoTexture:Lnet/minecraft/util/ResourceLocation;
+      12: return
+}

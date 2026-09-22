@@ -1,0 +1,13 @@
+{
+  "pid": 3928,
+  "started_at": 1790040228.3692505,
+  "run": "n11run1",
+  "instance": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n08-bgm-6c79c577\\instance",
+  "java": "C:\\Users\\User\\AppData\\Roaming\\.technic\\runtimes\\jre-legacy\\bin\\java.exe",
+  "max_heap_mb": 3072,
+  "test_identity": "ACMenuQA",
+  "real_credentials_used": false,
+  "log": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n08-bgm-6c79c577\\evidence\\n11run1\\console.log",
+  "exit": 0,
+  "ended_at": 1790041336.566111
+}

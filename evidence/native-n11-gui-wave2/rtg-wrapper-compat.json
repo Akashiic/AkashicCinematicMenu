@@ -1,0 +1,10 @@
+{
+  "runtime_finding": "RTG intercepts GuiCreateWorld with rtg.client.gui.WorldTypeMessageGUI",
+  "rtg_jar": "RTG-1.2.1-GTNH.jar",
+  "wrapper_behavior": "extends GuiScreen; first draw call is drawDefaultBackground; one ordinary GuiButton; returns parent on OK",
+  "change": "Exact wrapper allowlisted for secondary theme and BGM frontend continuity",
+  "generic_mod_gui_support": false,
+  "vanilla_create_world_action_logic_changed": false,
+  "run1_preserved": "qa-n11-wave2/evidence/wave2run1",
+  "version": "0.7.0-alpha.3"
+}

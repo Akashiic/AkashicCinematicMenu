@@ -1,0 +1,18 @@
+{
+  "foreground_verified": true,
+  "process": {
+    "pid": 3928,
+    "started_at": 1790040228.3692505,
+    "run": "n11run1",
+    "instance": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n08-bgm-6c79c577\\instance",
+    "java": "C:\\Users\\User\\AppData\\Roaming\\.technic\\runtimes\\jre-legacy\\bin\\java.exe",
+    "max_heap_mb": 3072,
+    "test_identity": "ACMenuQA",
+    "real_credentials_used": false,
+    "log": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\qa-n08-bgm-6c79c577\\evidence\\n11run1\\console.log",
+    "exit": 0,
+    "ended_at": 1790041336.566111
+  },
+  "gui_yes_no_after_quit": false,
+  "events_tail": "1790041333522 COMMAND 1790041333412 key 207\n1790041333523 DONE 1790041333412\n1790041333922 COMMAND 1790041333413 key 28\n1790041333932 DONE 1790041333413\n"
+}

@@ -1,0 +1,6 @@
+{
+  "finding": "Verifier read UTF-8 state/events using Windows locale",
+  "product_changed": false,
+  "correction": "Explicit UTF-8 reads in verifier V2",
+  "prior_failure_preserved": true
+}

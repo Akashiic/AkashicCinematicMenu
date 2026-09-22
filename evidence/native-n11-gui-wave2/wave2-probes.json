@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "test": "SecondaryScreenPolicyTests",
+      "exit": 0
+    },
+    {
+      "test": "CeremonialTests",
+      "exit": 0
+    },
+    {
+      "test": "PixelLayoutTests",
+      "exit": 0
+    },
+    {
+      "test": "UiFeaturesTests",
+      "exit": 0
+    },
+    {
+      "test": "MusicCoreTests",
+      "exit": 0
+    },
+    {
+      "test": "BgmPlaybackTests",
+      "exit": 0
+    },
+    {
+      "test": "MenuSoundGateTests",
+      "exit": 0
+    }
+  ],
+  "transformer": "passed",
+  "jar_sha256": "2ed2b906e42312fe77107884eee9fc0dd2851f90142fbed5d2564d802a0bc312"
+}

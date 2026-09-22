@@ -1,0 +1,8 @@
+{
+  "failed_tool": "verify_wave2_alpha3.py",
+  "product_failure": false,
+  "inherited_invalid_gate": ">20 unique button RGBA values",
+  "measured_authored_values": 19,
+  "correct_gate": "finish_wave2_alpha3_gates.py uses >=12 and no alpha0 list holes",
+  "prior_gates": "bytecode and OpenGL passed before the obsolete texture assertion"
+}

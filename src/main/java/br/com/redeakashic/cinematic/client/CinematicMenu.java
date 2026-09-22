@@ -6,7 +6,7 @@ import net.minecraft.client.gui.*;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 /** Forge 1.7.10 adapter compiled against actual SRG classes, not generated stubs. */
-public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
+public final class CinematicMenu extends GuiScreen {
     private final GuiScreen original;
     private final MenuHook hook;
     private final MenuConfig config;
@@ -111,12 +111,9 @@ public final class CinematicMenu extends GuiScreen implements GuiYesNoCallback {
                 break;
             case SINGLEPLAYER: field_146297_k.func_147108_a(new GuiSelectWorld(this)); break;
             case OPTIONS: field_146297_k.func_147108_a(new GuiOptions(this, field_146297_k.field_71474_y)); break;
-            case QUIT: field_146297_k.func_147108_a(new GuiYesNo(this, "Sair do Minecraft?", "Seu modpack sera fechado.", 1710)); break;
+            case QUIT: field_146297_k.func_71400_g(); break;
             default: throw new IllegalStateException("Unsupported action: " + action);
         }
-    }
-    @Override public void func_73878_a(boolean confirmed, int id) {
-        if (id == 1710 && confirmed) { field_146297_k.func_71400_g(); } else { field_146297_k.func_147108_a(this); }
     }
     @Override public boolean func_73868_f() { return false; }
 }

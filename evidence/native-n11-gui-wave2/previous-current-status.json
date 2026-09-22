@@ -1,0 +1,51 @@
+{
+  "active_candidate": "candidates/native-n07",
+  "version": "0.4.0-alpha.3",
+  "checkpoint": "candidates/native-n07/CHECKPOINT_N07.json",
+  "jar_sha256": "14b366d1ce85be558d11fb4bf0ed81f6c043de1fc39bf065856e8477716cf8ac",
+  "report": "NATIVE_REVIEW_N07.md",
+  "last_test_run": "n07release2",
+  "directed_tests_passed": true,
+  "general_release_approved": false,
+  "visual_approval": "USER_PENDING",
+  "open_risk": "Unexplained early exit in n07release, preserved",
+  "daily_candidate_presence": true,
+  "do_not_promote": [
+    "candidates/native-n05"
+  ],
+  "previous_current_status": "C:\\Users\\User\\AkashicDev\\AkashicCinematicMenu\\candidates\\native-n07\\evidence\\previous-current-status-1789954137030714600.json",
+  "pending_integration": {
+    "candidate": "candidates/native-n08-bgm-r1",
+    "version": "0.5.0-alpha.1",
+    "report": "NATIVE_REVIEW_N08_BGM.md",
+    "track_received_in_chat": true,
+    "track_transfer_to_PC_pending": true,
+    "runtime_scope": "Aether/vanilla themes and absent-audio fallback tested; exact recording playback not tested"
+  },
+  "audio_delivery_candidate": {
+    "candidate": "candidates/native-n09-audio-fixed",
+    "version": "0.5.2-alpha.1",
+    "jar_sha256": "da5bb5579545e9716590547fbf80efbfc05771f47dba38a62999cfa9e4c0460a",
+    "recording_bundled": true,
+    "tests": "compile and unit tests passed",
+    "runtime": "NOT_EXECUTED_IN_THIS_VERSION",
+    "daily_pack_changed": false,
+    "user_music_slider_observed": 0.0
+  },
+  "user_confirmed_baseline": {
+    "candidate": "candidates/native-n09-audio-fixed",
+    "version": "0.5.2-alpha.1",
+    "music_functional_confirmed": true,
+    "jar_sha256": "da5bb5579545e9716590547fbf80efbfc05771f47dba38a62999cfa9e4c0460a"
+  },
+  "ceremonial_candidate": {
+    "candidate": "candidates/native-n10-ceremonial",
+    "version": "0.6.0-alpha.3",
+    "jar_sha256": "a15e18a206e89aa7736d71cae22813ecb4be0e7cb0dffd75d4c10e0939785859",
+    "checkpoint": "candidates/native-n10-ceremonial/CHECKPOINT_N10.json",
+    "renderer_tested": true,
+    "full_modpack_runtime": false,
+    "installed_by_this_work": false,
+    "user_approval": "PENDING"
+  }
+}

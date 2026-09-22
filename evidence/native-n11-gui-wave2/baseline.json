@@ -1,0 +1,29 @@
+{
+  "baseline": "native-n10-ceremonial",
+  "baseline_sha256": "a15e18a206e89aa7736d71cae22813ecb4be0e7cb0dffd75d4c10e0939785859",
+  "version": "0.7.0-alpha.1",
+  "daily_observed": [
+    {
+      "name": "AkashicCinematicMenu-0.6.0-alpha.3.jar",
+      "sha256": "a15e18a206e89aa7736d71cae22813ecb4be0e7cb0dffd75d4c10e0939785859"
+    }
+  ],
+  "scope": [
+    "Options",
+    "Singleplayer",
+    "Create World",
+    "Language",
+    "Resource Packs",
+    "Controls",
+    "Video",
+    "Sound",
+    "Chat",
+    "Snooper",
+    "Flat World",
+    "Rename World"
+  ],
+  "quit_confirmation": "remove only main-menu quit confirmation",
+  "destructive_confirmations": "preserve delete-world and other irreversible confirmations",
+  "created": 1790021949.786267,
+  "status": "ISOLATED_IN_DEVELOPMENT"
+}

@@ -3,7 +3,7 @@ import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 import br.com.redeakashic.cinematic.core.Numbers;
 public final class MenuConfig {
-    public final boolean enabled,reducedMotion,replaceDummyCore,particles,sfxEnabled,suppressBogoConflict,themeConnections,themeTransitions,layeredParallax,animatedPlay;
+    public final boolean enabled,reducedMotion,replaceDummyCore,particles,sfxEnabled,suppressBogoConflict,themeConnections,themeTransitions,themeSecondaryScreens,layeredParallax,animatedPlay;
     public final double parallax,sfxVolume;
     private MenuConfig(Configuration c){
         enabled=c.get("general","enabled",true).getBoolean(true);
@@ -18,6 +18,7 @@ public final class MenuConfig {
         sfxVolume=Double.isFinite(volume)?Math.max(0,Math.min(1,volume)):.45;
         suppressBogoConflict=c.get("compatibility","hideBogoInventoryTweaksModal",true,"Only the audited notice is moved to the log; inventory incompatibility is not repaired.").getBoolean(true);
         themeTransitions=c.get("screens","themeLoadingTransitions",true,"Only audited Aether, vanilla loading and terrain backgrounds.").getBoolean(true);
+        themeSecondaryScreens=c.get("screens","themeVanillaMenus",true,"Options/world/language/resources/control family; native behavior retained.").getBoolean(true);
         themeConnections=c.get("screens","themeConnectionScreens",true,"Connecting and disconnected backgrounds; preserve native networking and error messages.").getBoolean(true);
     }
     public static MenuConfig read(File file){
