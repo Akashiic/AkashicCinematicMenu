@@ -1,0 +1,19 @@
+# PARA ATIVAR: copie este arquivo para .github/workflows/core-tests.yml (o push inicial foi feito com um token sem o escopo 'workflow', entao o GitHub recusou criar o workflow).
+name: core-tests
+# Roda apenas o NUCLEO puro (Java 8, sem Minecraft/Forge). Nao substitui QA no modpack (ver docs/HANDOFF.md).
+on:
+  push:
+  pull_request:
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Nucleo (javac --release 8 + CoreTests)
+        run: python3 tools/repo/run_core_gates.py
+      - name: Mermaid dos docs sao blocos fechados
+        run: python3 tools/repo/check_docs.py

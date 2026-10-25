@@ -1,0 +1,9 @@
+# Bytes preservados exatamente como no acervo original (sem conversao de fim de linha).
+* -text
+*.png binary
+*.webp binary
+*.jpg binary
+*.ogg binary
+*.wav binary
+*.jar binary
+*.zip binary

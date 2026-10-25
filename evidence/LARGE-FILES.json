@@ -1,0 +1,170 @@
+[
+ {
+  "path": "candidates/native-n06/evidence/source-alpha1-before-listener-fix.zip",
+  "bytes": 6175119,
+  "reason": "zip-pacote",
+  "sha256": "caaeb259afa6698bcc3246426d4d0c91019a9cfd9c6f9f2fba18342c95b7abb7"
+ },
+ {
+  "path": "candidates/native-n06/evidence/source-alpha2-before-textfit.zip",
+  "bytes": 6175123,
+  "reason": "zip-pacote",
+  "sha256": "d0c2f81154f5bacf551170dfd82dd3e27415d4bd527199478630e7ec303857b4"
+ },
+ {
+  "path": "candidates/native-n09-audio-fixed/src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg",
+  "bytes": 4271570,
+  "reason": "bgm-terceiros",
+  "sha256": "6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6"
+ },
+ {
+  "path": "candidates/native-n10-ceremonial/evidence/audio/Ceremonial-SFX-Audition.wav",
+  "bytes": 2619584,
+  "reason": "maior-que-2.5MB",
+  "sha256": "f8392dc1da6c9ee1bdec18e28805942804f611685bb48d794ef04a9e4332a458"
+ },
+ {
+  "path": "candidates/native-n10-ceremonial/evidence/depth/parallax-review.webp",
+  "bytes": 3054366,
+  "reason": "maior-que-2.5MB",
+  "sha256": "ca6132956b53aad11527cc32be0c734a9b8de7d41c9d837b5e67531190f4c953"
+ },
+ {
+  "path": "candidates/native-n10-ceremonial/evidence/native-probe/menu-2560x1440.png",
+  "bytes": 3512929,
+  "reason": "maior-que-2.5MB",
+  "sha256": "e783203820d894c32012f75e5b298e6c45cd79caaf27f6b70fd52f8f66635b8a"
+ },
+ {
+  "path": "candidates/native-n10-ceremonial/evidence/native-probe-0.6.0-alpha.2/menu-2560x1440.png",
+  "bytes": 3512929,
+  "reason": "maior-que-2.5MB",
+  "sha256": "e783203820d894c32012f75e5b298e6c45cd79caaf27f6b70fd52f8f66635b8a"
+ },
+ {
+  "path": "candidates/native-n10-ceremonial/evidence/native-probe-0.6.0-alpha.2/N10-Movimento-Nativo.webp",
+  "bytes": 2850332,
+  "reason": "maior-que-2.5MB",
+  "sha256": "ad00c326c6385ce607a645441a4893d21e3eec9592eedd898a3bf57f47b19db4"
+ },
+ {
+  "path": "candidates/native-n10-ceremonial/evidence/native-probe-0.6.0-alpha.3/menu-2560x1440.png",
+  "bytes": 3516417,
+  "reason": "maior-que-2.5MB",
+  "sha256": "6e2473d8ed165abe982a9fa1deaeb98b6e6352a88d40b4dd0aadb09fac0db595"
+ },
+ {
+  "path": "candidates/native-n10-ceremonial/evidence/native-probe-0.6.0-alpha.3/N10-Movimento-Nativo.webp",
+  "bytes": 2853140,
+  "reason": "maior-que-2.5MB",
+  "sha256": "45d545b4c4f39a2977b01faec32b3b5d2d7a1e13e8a6c1a4a88cdcc9f9870379"
+ },
+ {
+  "path": "candidates/native-n10-ceremonial/src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg",
+  "bytes": 4271570,
+  "reason": "bgm-terceiros",
+  "sha256": "6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6"
+ },
+ {
+  "path": "candidates/native-n11-gui-wave2/src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg",
+  "bytes": 4271570,
+  "reason": "bgm-terceiros",
+  "sha256": "6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6"
+ },
+ {
+  "path": "candidates/native-n08/evidence/rejected-estimated-duration.ogg",
+  "bytes": 4273943,
+  "reason": "ogg-grande",
+  "sha256": "c714d4979ce577474d0e57ee13bbe47f042462e7de4b469ef7411cab09792927"
+ },
+ {
+  "path": "transfer/part0.b64",
+  "bytes": 8000,
+  "reason": "binario-ou-pacote",
+  "sha256": "060d041b2e319fc39c93ea1a70d49a2c86f009d57021d4621afe28d4b7c6ec15"
+ },
+ {
+  "path": "transfer/part1.b64",
+  "bytes": 8000,
+  "reason": "binario-ou-pacote",
+  "sha256": "e345626d3f545cca96067dd32554e26d47cec08c02eedf10b46cdb523d8e3746"
+ },
+ {
+  "path": "transfer/part2.b64",
+  "bytes": 18542,
+  "reason": "binario-ou-pacote",
+  "sha256": "ec164219cc2ffb4890fcf75fadd6268f7e0156ed61f5b42575fec5a6cb1090b3"
+ },
+ {
+  "path": "transfer/part2a.b64",
+  "bytes": 2000,
+  "reason": "binario-ou-pacote",
+  "sha256": "c9c3e396e3cdd1623de424214f9c241b1d6e75a1932843e49c361afcda71fc0f"
+ },
+ {
+  "path": "transfer/part2b.b64",
+  "bytes": 2000,
+  "reason": "binario-ou-pacote",
+  "sha256": "ae5bc4db65a9f692767fabe992c87313d76344bea6778babffda8b1aaa618242"
+ },
+ {
+  "path": "transfer/part2c.b64",
+  "bytes": 2000,
+  "reason": "binario-ou-pacote",
+  "sha256": "08901fb0259a536b340b372f32648c5ca23e51bdc0344c64c822822627c89cc4"
+ },
+ {
+  "path": "transfer/part2d.b64",
+  "bytes": 2000,
+  "reason": "binario-ou-pacote",
+  "sha256": "2fa8f71fe2989af63ddd8a0db6dd5a6233b226f1f4e05aa20747ed5c914d567e"
+ },
+ {
+  "path": "transfer/part3a.b64",
+  "bytes": 2000,
+  "reason": "binario-ou-pacote",
+  "sha256": "35522d90f78f5ea30496d73ce4543ca20011a781c1c58b9a500aeef5f10d6467"
+ },
+ {
+  "path": "transfer/part3b.b64",
+  "bytes": 2000,
+  "reason": "binario-ou-pacote",
+  "sha256": "2042540817407d67a012fbd6bd2573a30e0bdafe173826a4c3caebc1fadaef34"
+ },
+ {
+  "path": "transfer/part3c.b64",
+  "bytes": 2000,
+  "reason": "binario-ou-pacote",
+  "sha256": "22e5ef8e488ee455ad3eebfd1ed9433b1489a8173736c25c2209c6deff6c17e3"
+ },
+ {
+  "path": "transfer/part3d.b64",
+  "bytes": 940,
+  "reason": "binario-ou-pacote",
+  "sha256": "6109e99dd1baa0ca2e75ed473186fbd80f294a9aef7cfae20c91cdd7178cedca"
+ },
+ {
+  "path": "transfer-n08-bgm/part0.b64",
+  "bytes": 6000,
+  "reason": "binario-ou-pacote",
+  "sha256": "88c41f29a99790f20961ffb775e09f56bd94a56d2aa181201f37809f376611fb"
+ },
+ {
+  "path": "transfer-n08-bgm/part1.b64",
+  "bytes": 6000,
+  "reason": "binario-ou-pacote",
+  "sha256": "4a87b5aa2c5d27d144b6561bdc87e6870c47005a7607f8ed2b540505370faab1"
+ },
+ {
+  "path": "transfer-n08-bgm/part2.b64",
+  "bytes": 6000,
+  "reason": "binario-ou-pacote",
+  "sha256": "f0ed0892f89b658487cfa2070cc5cc22ce7898ccf0ef3fcdb62e181883981191"
+ },
+ {
+  "path": "transfer-n08-bgm/part3.b64",
+  "bytes": 3344,
+  "reason": "binario-ou-pacote",
+  "sha256": "48b3f39a35588c4c6769950733f34b3acc6ffdbc9826769b277ce70641d57847"
+ }
+]

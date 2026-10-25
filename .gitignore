@@ -1,0 +1,20 @@
+# artefatos reproduziveis / pesados (JARs vao para Releases)
+build/
+dist/
+*.jar
+*.zip
+!evidence/**/*.zip
+# audio de terceiros (ver docs/OPEN-ISSUES.md OI-07)
+menu.ogg
+*.mp3
+local-assets/
+# copias do modpack / QA
+qa-*/
+instance/
+deps.json
+# misc
+__pycache__/
+*.pyc
+Thumbs.db
+.idea/
+.vscode/
