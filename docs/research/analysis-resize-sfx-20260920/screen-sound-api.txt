@@ -1,0 +1,78 @@
+Compiled from "SourceFile"
+public class net.minecraft.client.audio.PositionedSoundRecord extends net.minecraft.client.audio.PositionedSound {
+  private static final java.lang.String __OBFID;
+  public static net.minecraft.client.audio.PositionedSoundRecord func_147674_a(net.minecraft.util.ResourceLocation, float);
+  public static net.minecraft.client.audio.PositionedSoundRecord func_147673_a(net.minecraft.util.ResourceLocation);
+  public static net.minecraft.client.audio.PositionedSoundRecord func_147675_a(net.minecraft.util.ResourceLocation, float, float, float);
+  public net.minecraft.client.audio.PositionedSoundRecord(net.minecraft.util.ResourceLocation, float, float, float, float, float);
+  private net.minecraft.client.audio.PositionedSoundRecord(net.minecraft.util.ResourceLocation, float, float, boolean, int, net.minecraft.client.audio.ISound$AttenuationType, float, float, float);
+}
+Compiled from "SourceFile"
+public class net.minecraft.client.audio.SoundHandler implements net.minecraft.client.resources.IResourceManagerReloadListener,net.minecraft.server.gui.IUpdatePlayerListBox {
+  private static final org.apache.logging.log4j.Logger field_147698_b;
+  private static final com.google.gson.Gson field_147699_c;
+  private static final java.lang.reflect.ParameterizedType field_147696_d;
+  public static final net.minecraft.client.audio.SoundPoolEntry field_147700_a;
+  private final net.minecraft.client.audio.SoundRegistry field_147697_e;
+  private final net.minecraft.client.audio.SoundManager field_147694_f;
+  private final net.minecraft.client.resources.IResourceManager field_147695_g;
+  private static final java.lang.String __OBFID;
+  public net.minecraft.client.audio.SoundHandler(net.minecraft.client.resources.IResourceManager, net.minecraft.client.settings.GameSettings);
+  public void func_110549_a(net.minecraft.client.resources.IResourceManager);
+  private void func_147693_a(net.minecraft.util.ResourceLocation, net.minecraft.client.audio.SoundList);
+  public net.minecraft.client.audio.SoundEventAccessorComposite func_147680_a(net.minecraft.util.ResourceLocation);
+  public void func_147682_a(net.minecraft.client.audio.ISound);
+  public void func_147681_a(net.minecraft.client.audio.ISound, int);
+  public void func_147691_a(net.minecraft.entity.player.EntityPlayer, float);
+  public void func_147689_b();
+  public void func_147690_c();
+  public void func_147685_d();
+  public void func_73660_a();
+  public void func_147687_e();
+  public void func_147684_a(net.minecraft.client.audio.SoundCategory, float);
+  public void func_147683_b(net.minecraft.client.audio.ISound);
+  public net.minecraft.client.audio.SoundEventAccessorComposite func_147686_a(net.minecraft.client.audio.SoundCategory...);
+  public boolean func_147692_c(net.minecraft.client.audio.ISound);
+  static net.minecraft.client.audio.SoundRegistry access$000(net.minecraft.client.audio.SoundHandler);
+  static {};
+}
+Compiled from "SourceFile"
+public class net.minecraft.client.gui.GuiDisconnected extends net.minecraft.client.gui.GuiScreen {
+  private java.lang.String field_146306_a;
+  private net.minecraft.util.IChatComponent field_146304_f;
+  private java.util.List field_146305_g;
+  private final net.minecraft.client.gui.GuiScreen field_146307_h;
+  private static final java.lang.String __OBFID;
+  public net.minecraft.client.gui.GuiDisconnected(net.minecraft.client.gui.GuiScreen, java.lang.String, net.minecraft.util.IChatComponent);
+  protected void func_73869_a(char, int);
+  public void func_73866_w_();
+  protected void func_146284_a(net.minecraft.client.gui.GuiButton);
+  public void func_73863_a(int, int, float);
+}
+Compiled from "SourceFile"
+public class net.minecraft.client.gui.GuiButton extends net.minecraft.client.gui.Gui {
+  protected static final net.minecraft.util.ResourceLocation field_146122_a;
+  public int field_146120_f;
+  public int field_146121_g;
+  public int field_146128_h;
+  public int field_146129_i;
+  public java.lang.String field_146126_j;
+  public int field_146127_k;
+  public boolean field_146124_l;
+  public boolean field_146125_m;
+  protected boolean field_146123_n;
+  private static final java.lang.String __OBFID;
+  public net.minecraft.client.gui.GuiButton(int, int, int, java.lang.String);
+  public net.minecraft.client.gui.GuiButton(int, int, int, int, int, java.lang.String);
+  public int func_146114_a(boolean);
+  public void func_146112_a(net.minecraft.client.Minecraft, int, int);
+  protected void func_146119_b(net.minecraft.client.Minecraft, int, int);
+  public void func_146118_a(int, int);
+  public boolean func_146116_c(net.minecraft.client.Minecraft, int, int);
+  public boolean func_146115_a();
+  public void func_146111_b(int, int);
+  public void func_146113_a(net.minecraft.client.audio.SoundHandler);
+  public int func_146117_b();
+  public int func_154310_c();
+  static {};
+}

@@ -1,0 +1,244 @@
+{
+  "at": 1790007846.9276812,
+  "daily_jars": [
+    {
+      "name": "AkashicCinematicMenu-0.5.0-alpha.1.jar",
+      "sha256": "c9248a3060139e5334facd6186e9c09f6826af650508e6c20d1438bc52975b0d",
+      "recording_entries": []
+    }
+  ],
+  "audio_settings": [
+    "resourcePacks:[\"High Texture Attemption.zip\"]",
+    "soundCategory_master:1.0",
+    "soundCategory_music:0.0"
+  ],
+  "music_events": [
+    {
+      "container": "aether-1.7.10-v1.1.2.5.jar",
+      "asset": "assets/aether_legacy/sounds.json",
+      "event": "music.menu",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "aether_legacy:music/menu",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "aether-1.7.10-v1.1.2.5.jar",
+      "asset": "assets/aether_legacy/sounds.json",
+      "event": "music.aether1",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "aether_legacy:music/aether1",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "aether-1.7.10-v1.1.2.5.jar",
+      "asset": "assets/aether_legacy/sounds.json",
+      "event": "music.aether2",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "aether_legacy:music/aether2",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "aether-1.7.10-v1.1.2.5.jar",
+      "asset": "assets/aether_legacy/sounds.json",
+      "event": "music.aether3",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "aether_legacy:music/aether3",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "aether-1.7.10-v1.1.2.5.jar",
+      "asset": "assets/aether_legacy/sounds.json",
+      "event": "music.aether4",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "aether_legacy:music/aether4",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "AkashicCinematicMenu-0.5.0-alpha.1.jar",
+      "asset": "assets/akashiccinematic/sounds.json",
+      "event": "bgm.menu",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "akashiccinematic:bgm/menu",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "Botania+r1.8-249.jar",
+      "asset": "assets/botania/sounds.json",
+      "event": "music.gaia1",
+      "category": "record",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "music/EndureEmptiness",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "Botania+r1.8-249.jar",
+      "asset": "assets/botania/sounds.json",
+      "event": "music.gaia2",
+      "category": "record",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "music/FightForQuiescence",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "Galacticraft-4.0-Akashic.jar",
+      "asset": "assets/galacticraftcore/sounds.json",
+      "event": "galacticraft.musicSpace",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "music/mars_JC",
+          "stream": true
+        },
+        {
+          "name": "music/mimas_JC",
+          "stream": true
+        },
+        {
+          "name": "music/orbit_JC",
+          "stream": true
+        },
+        {
+          "name": "music/scary_ambience",
+          "stream": true
+        },
+        {
+          "name": "music/spacerace_JC",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "MatterOverdrive.jar",
+      "asset": "assets/mo/sounds.json",
+      "event": "transformation_music",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "music/transformation_music",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "netherlicious-3.2.8.jar",
+      "asset": "assets/netherlicious/sounds.json",
+      "event": "music.nether.wastes",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "minecraft_1.19.3:music/game/nether/nether_wastes/rubedo",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "netherlicious-3.2.8.jar",
+      "asset": "assets/netherlicious/sounds.json",
+      "event": "music.nether.mushroom",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "minecraft_1.19.3:music/game/nether/crimson_forest/chrysopoeia",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "netherlicious-3.2.8.jar",
+      "asset": "assets/netherlicious/sounds.json",
+      "event": "music.nether.empty",
+      "category": "music",
+      "replace": false,
+      "sounds": []
+    },
+    {
+      "container": "netherlicious-3.2.8.jar",
+      "asset": "assets/netherlicious/sounds.json",
+      "event": "music.nether.lonely",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "minecraft_1.19.3:music/game/nether/soulsand_valley/so_below",
+          "stream": true
+        }
+      ]
+    },
+    {
+      "container": "netherlicious-3.2.8.jar",
+      "asset": "assets/netherlicious/sounds.json",
+      "event": "music.nether.crystal",
+      "category": "music",
+      "replace": false,
+      "sounds": [
+        {
+          "name": "minecraft_1.19.3:music/game/infinite_amethyst",
+          "stream": true
+        }
+      ]
+    }
+  ],
+  "bounded_log_reads": [
+    {
+      "name": "latest.log",
+      "file_bytes": 150773,
+      "tail_bytes_read": 131072,
+      "matches": [
+        "[11:53:11] [Client thread/WARN]: File akashiccinematic:sounds/bgm/menu.ogg does not exist, cannot add it to event akashiccinematic:bgm.menu",
+        "[11:58:51] [Client thread/WARN]: File akashiccinematic:sounds/bgm/menu.ogg does not exist, cannot add it to event akashiccinematic:bgm.menu",
+        "[12:16:39] [Client thread/WARN]: File akashiccinematic:sounds/bgm/menu.ogg does not exist, cannot add it to event akashiccinematic:bgm.menu",
+        "[12:17:21] [Client thread/WARN]: File akashiccinematic:sounds/bgm/menu.ogg does not exist, cannot add it to event akashiccinematic:bgm.menu",
+        "[13:11:50] [Client thread/WARN]: File akashiccinematic:sounds/bgm/menu.ogg does not exist, cannot add it to event akashiccinematic:bgm.menu",
+        "[13:17:38] [Client thread/WARN]: File akashiccinematic:sounds/bgm/menu.ogg does not exist, cannot add it to event akashiccinematic:bgm.menu"
+      ]
+    },
+    {
+      "name": "fml-client-latest.log",
+      "file_bytes": 2853189683,
+      "tail_bytes_read": 131072,
+      "matches": []
+    }
+  ]
+}

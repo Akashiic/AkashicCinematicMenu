@@ -1,0 +1,1219 @@
+Compiled from "WarningScreen.java"
+public class com.cleanroommc.bogosorter.compat.screen.WarningScreen extends net.minecraft.client.gui.GuiScreen {
+  public static boolean wasOpened;
+
+  public final java.util.List<java.lang.String> messages;
+
+  private int textHeight;
+
+  public com.cleanroommc.bogosorter.compat.screen.WarningScreen(java.util.List<java.lang.String>);
+    Code:
+       0: aload_0
+       1: invokespecial #22                 // Method net/minecraft/client/gui/GuiScreen."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #24                 // Field messages:Ljava/util/List;
+       9: return
+
+  public void func_73863_a(int, int, float);
+    Code:
+       0: aload_0
+       1: invokevirtual #31                 // Method func_146276_q_:()V
+       4: aload_0
+       5: getfield      #34                 // Field field_146295_m:I
+       8: iconst_2
+       9: idiv
+      10: aload_0
+      11: getfield      #36                 // Field textHeight:I
+      14: iconst_2
+      15: idiv
+      16: isub
+      17: istore        4
+      19: aload_0
+      20: getfield      #24                 // Field messages:Ljava/util/List;
+      23: ifnull        94
+      26: aload_0
+      27: getfield      #24                 // Field messages:Ljava/util/List;
+      30: invokeinterface #42,  1           // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      35: astore        5
+      37: aload         5
+      39: invokeinterface #48,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+      44: ifeq          94
+      47: aload         5
+      49: invokeinterface #52,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      54: checkcast     #54                 // class java/lang/String
+      57: astore        6
+      59: aload_0
+      60: aload_0
+      61: getfield      #58                 // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+      64: aload         6
+      66: aload_0
+      67: getfield      #61                 // Field field_146294_l:I
+      70: iconst_2
+      71: idiv
+      72: iload         4
+      74: ldc           #62                 // int 16777215
+      76: invokevirtual #66                 // Method func_73732_a:(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V
+      79: iload         4
+      81: aload_0
+      82: getfield      #58                 // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+      85: getfield      #71                 // Field net/minecraft/client/gui/FontRenderer.field_78288_b:I
+      88: iadd
+      89: istore        4
+      91: goto          37
+      94: aload_0
+      95: iload_1
+      96: iload_2
+      97: fload_3
+      98: invokespecial #73                 // Method net/minecraft/client/gui/GuiScreen.func_73863_a:(IIF)V
+     101: return
+
+  public void func_146284_a(net.minecraft.client.gui.GuiButton);
+    Code:
+       0: aload_1
+       1: getfield      #87                 // Field net/minecraft/client/gui/GuiButton.field_146127_k:I
+       4: ifne          21
+       7: aload_0
+       8: getfield      #91                 // Field field_146297_k:Lnet/minecraft/client/Minecraft;
+      11: new           #93                 // class net/minecraft/client/gui/GuiMainMenu
+      14: dup
+      15: invokespecial #94                 // Method net/minecraft/client/gui/GuiMainMenu."<init>":()V
+      18: invokevirtual #100                // Method net/minecraft/client/Minecraft.func_147108_a:(Lnet/minecraft/client/gui/GuiScreen;)V
+      21: return
+
+  public void func_73866_w_();
+    Code:
+       0: aload_0
+       1: aload_0
+       2: getfield      #24                 // Field messages:Ljava/util/List;
+       5: invokeinterface #107,  1          // InterfaceMethod java/util/List.size:()I
+      10: aload_0
+      11: getfield      #58                 // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+      14: getfield      #71                 // Field net/minecraft/client/gui/FontRenderer.field_78288_b:I
+      17: imul
+      18: putfield      #36                 // Field textHeight:I
+      21: aload_0
+      22: getfield      #110                // Field field_146292_n:Ljava/util/List;
+      25: new           #84                 // class net/minecraft/client/gui/GuiButton
+      28: dup
+      29: iconst_0
+      30: aload_0
+      31: getfield      #61                 // Field field_146294_l:I
+      34: iconst_2
+      35: idiv
+      36: bipush        100
+      38: isub
+      39: aload_0
+      40: getfield      #34                 // Field field_146295_m:I
+      43: iconst_2
+      44: idiv
+      45: aload_0
+      46: getfield      #36                 // Field textHeight:I
+      49: iconst_2
+      50: idiv
+      51: iadd
+      52: aload_0
+      53: getfield      #58                 // Field field_146289_q:Lnet/minecraft/client/gui/FontRenderer;
+      56: getfield      #71                 // Field net/minecraft/client/gui/FontRenderer.field_78288_b:I
+      59: iadd
+      60: aload_0
+      61: getfield      #34                 // Field field_146295_m:I
+      64: bipush        30
+      66: isub
+      67: invokestatic  #116                // Method java/lang/Math.min:(II)I
+      70: ldc           #118                // String gui.toMenu
+      72: iconst_0
+      73: anewarray     #120                // class java/lang/Object
+      76: invokestatic  #126                // Method net/minecraft/client/resources/I18n.func_135052_a:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+      79: invokespecial #129                // Method net/minecraft/client/gui/GuiButton."<init>":(IIILjava/lang/String;)V
+      82: invokeinterface #133,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      87: pop
+      88: return
+
+  static {};
+    Code:
+       0: iconst_0
+       1: putstatic     #136                // Field wasOpened:Z
+       4: return
+}
+Compiled from "BogoSorterConfig.java"
+public class com.cleanroommc.bogosorter.common.config.BogoSorterConfig {
+  public static final com.cleanroommc.bogosorter.common.config.BogoSorterConfig$DropOff dropOff;
+
+  public static final com.cleanroommc.bogosorter.common.config.BogoSorterConfig$DropKeyRepeat dropKeyRepeat;
+
+  public static final com.cleanroommc.bogosorter.common.config.BogoSorterConfig$UsageTicker usageTicker;
+
+  public static final com.cleanroommc.bogosorter.common.config.BogoSorterConfig$Ae2Integration ae2Integration;
+
+  public static java.lang.String sortSound;
+
+  public static boolean enableHotbarSort;
+
+  public static boolean enableAutoRefill;
+
+  public static boolean enableAutoRefill_server;
+
+  public static boolean autoRefillFromPinnedSlots;
+
+  public static boolean autoRefillFromPinnedSlots_server;
+
+  public static com.cleanroommc.bogosorter.common.config.BogoSorterConfig$PinnedSlotStyle pinnedSlotStyle;
+
+  public static com.cleanroommc.bogosorter.common.config.BogoSorterConfig$PinnedSlotIconOffset pinnedSlotIconOffset;
+
+  public static boolean showPinnedSlotIcon;
+
+  public static int autoRefillDamageThreshold;
+
+  public static boolean preventSplit;
+
+  public static int buttonColor;
+
+  public static boolean buttonEnabled;
+
+  public static boolean enableHotbarSwap;
+
+  public static boolean enableDebugTools;
+
+  public com.cleanroommc.bogosorter.common.config.BogoSorterConfig();
+    Code:
+       0: aload_0
+       1: invokespecial #133                // Method java/lang/Object."<init>":()V
+       4: return
+
+  static {};
+    Code:
+       0: new           #10                 // class com/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropOff
+       3: dup
+       4: invokespecial #137                // Method com/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropOff."<init>":()V
+       7: putstatic     #139                // Field dropOff:Lcom/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropOff;
+      10: new           #13                 // class com/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropKeyRepeat
+      13: dup
+      14: invokespecial #140                // Method com/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropKeyRepeat."<init>":()V
+      17: putstatic     #142                // Field dropKeyRepeat:Lcom/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropKeyRepeat;
+      20: new           #16                 // class com/cleanroommc/bogosorter/common/config/BogoSorterConfig$UsageTicker
+      23: dup
+      24: invokespecial #143                // Method com/cleanroommc/bogosorter/common/config/BogoSorterConfig$UsageTicker."<init>":()V
+      27: putstatic     #145                // Field usageTicker:Lcom/cleanroommc/bogosorter/common/config/BogoSorterConfig$UsageTicker;
+      30: new           #19                 // class com/cleanroommc/bogosorter/common/config/BogoSorterConfig$Ae2Integration
+      33: dup
+      34: invokespecial #146                // Method com/cleanroommc/bogosorter/common/config/BogoSorterConfig$Ae2Integration."<init>":()V
+      37: putstatic     #148                // Field ae2Integration:Lcom/cleanroommc/bogosorter/common/config/BogoSorterConfig$Ae2Integration;
+      40: getstatic     #150                // Field com/cleanroommc/bogosorter/common/config/BogoSorterConfig$PinnedSlotStyle.STAR_1:Lcom/cleanroommc/bogosorter/common/config/BogoSorterConfig$PinnedSlotStyle;
+      43: putstatic     #152                // Field pinnedSlotStyle:Lcom/cleanroommc/bogosorter/common/config/BogoSorterConfig$PinnedSlotStyle;
+      46: getstatic     #154                // Field com/cleanroommc/bogosorter/common/config/BogoSorterConfig$PinnedSlotIconOffset.PX_1:Lcom/cleanroommc/bogosorter/common/config/BogoSorterConfig$PinnedSlotIconOffset;
+      49: putstatic     #156                // Field pinnedSlotIconOffset:Lcom/cleanroommc/bogosorter/common/config/BogoSorterConfig$PinnedSlotIconOffset;
+      52: return
+}
+Compiled from "ClientEventHandler.java"
+public class com.cleanroommc.bogosorter.ClientEventHandler {
+  private static long timeConfigGui;
+
+  private static long timeSort;
+
+  private static long timeShortcut;
+
+  private static long timeDropoff;
+
+  private static long ticks;
+
+  private static net.minecraft.client.gui.GuiScreen nextGui;
+
+  private static boolean pinSyncPending;
+
+  private static java.lang.Class<?> NEI_GUI_RECIPE_CLASS;
+
+  private static java.lang.reflect.Field NEI_RECIPE_SEARCH_FIELD;
+
+  private static java.lang.reflect.Field NEI_INVENTORY_SEARCH_FIELD;
+
+  public com.cleanroommc.bogosorter.ClientEventHandler();
+    Code:
+       0: aload_0
+       1: invokespecial #83                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void openNextTick(net.minecraft.client.gui.GuiScreen);
+    Code:
+       0: aload_0
+       1: putstatic     #89                 // Field nextGui:Lnet/minecraft/client/gui/GuiScreen;
+       4: return
+
+  public static long getTicks();
+    Code:
+       0: getstatic     #94                 // Field ticks:J
+       3: lreturn
+
+  public void onClientTick(cpw.mods.fml.common.gameevent.TickEvent$ClientTickEvent);
+    Code:
+       0: aload_1
+       1: getfield      #101                // Field cpw/mods/fml/common/gameevent/TickEvent$ClientTickEvent.phase:Lcpw/mods/fml/common/gameevent/TickEvent$Phase;
+       4: getstatic     #104                // Field cpw/mods/fml/common/gameevent/TickEvent$Phase.END:Lcpw/mods/fml/common/gameevent/TickEvent$Phase;
+       7: if_acmpne     61
+      10: invokestatic  #109                // Method com/cleanroommc/bogosorter/client/network/ClientNetworkHandler.drainClientTasks:()V
+      13: invokestatic  #114                // Method com/cleanroommc/bogosorter/compat/ae2/Ae2TerminalSearchAdapter.applyPendingSearch:()V
+      16: invokestatic  #118                // Method com/cleanroommc/bogosorter/client/drop/DropKeyRepeatHandler.onClientTick:()V
+      19: getstatic     #120                // Field pinSyncPending:Z
+      22: ifeq          61
+      25: invokestatic  #126                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+      28: getfield      #129                // Field net/minecraft/client/Minecraft.field_71462_r:Lnet/minecraft/client/gui/GuiScreen;
+      31: astore_3
+      32: aload_3
+      33: instanceof    #131                // class net/minecraft/client/gui/inventory/GuiContainer
+      36: ifeq          57
+      39: aload_3
+      40: checkcast     #131                // class net/minecraft/client/gui/inventory/GuiContainer
+      43: astore_2
+      44: aload_2
+      45: getfield      #135                // Field net/minecraft/client/gui/inventory/GuiContainer.field_147002_h:Lnet/minecraft/inventory/Container;
+      48: getfield      #141                // Field net/minecraft/inventory/Container.field_75152_c:I
+      51: invokestatic  #147                // Method com/cleanroommc/bogosorter/common/network/CPlayerPins.get:(I)Lcom/cleanroommc/bogosorter/common/network/CPlayerPins;
+      54: invokestatic  #153                // Method com/cleanroommc/bogosorter/common/network/NetworkHandler.sendToServer:(Lcom/cleanroommc/bogosorter/common/network/IPacket;)V
+      57: iconst_0
+      58: putstatic     #120                // Field pinSyncPending:Z
+      61: aload_1
+      62: getfield      #101                // Field cpw/mods/fml/common/gameevent/TickEvent$ClientTickEvent.phase:Lcpw/mods/fml/common/gameevent/TickEvent$Phase;
+      65: getstatic     #156                // Field cpw/mods/fml/common/gameevent/TickEvent$Phase.START:Lcpw/mods/fml/common/gameevent/TickEvent$Phase;
+      68: if_acmpne     79
+      71: getstatic     #94                 // Field ticks:J
+      74: lconst_1
+      75: ladd
+      76: putstatic     #94                 // Field ticks:J
+      79: getstatic     #89                 // Field nextGui:Lnet/minecraft/client/gui/GuiScreen;
+      82: ifnull        95
+      85: getstatic     #89                 // Field nextGui:Lnet/minecraft/client/gui/GuiScreen;
+      88: invokestatic  #161                // Method com/cleanroommc/modularui/factory/ClientGUI.open:(Lnet/minecraft/client/gui/GuiScreen;)V
+      91: aconst_null
+      92: putstatic     #89                 // Field nextGui:Lnet/minecraft/client/gui/GuiScreen;
+      95: return
+
+  public void onClientDisconnect(cpw.mods.fml.common.network.FMLNetworkEvent$ClientDisconnectionFromServerEvent);
+    Code:
+       0: invokestatic  #170                // Method com/cleanroommc/bogosorter/compat/ae2/Ae2TerminalSearchAdapter.clearPendingSearch:()V
+       3: invokestatic  #175                // Method com/cleanroommc/bogosorter/client/ae2/Ae2ClientBridge.resetConnectionState:()V
+       6: invokestatic  #180                // Method com/cleanroommc/bogosorter/client/PinnedSlotClient.clear:()V
+       9: return
+
+  public void onGuiOpen(net.minecraftforge.client.event.GuiOpenEvent);
+    Code:
+       0: invokestatic  #190                // Method com/cleanroommc/bogosorter/client/PinnedSlotClient.clearContainer:()V
+       3: iconst_0
+       4: putstatic     #120                // Field pinSyncPending:Z
+       7: aload_1
+       8: getfield      #194                // Field net/minecraftforge/client/event/GuiOpenEvent.gui:Lnet/minecraft/client/gui/GuiScreen;
+      11: instanceof    #196                // class net/minecraft/client/gui/GuiMainMenu
+      14: ifeq          119
+      17: getstatic     #201                // Field com/cleanroommc/bogosorter/compat/screen/WarningScreen.wasOpened:Z
+      20: ifne          119
+      23: iconst_1
+      24: putstatic     #201                // Field com/cleanroommc/bogosorter/compat/screen/WarningScreen.wasOpened:Z
+      27: new           #203                // class java/util/ArrayList
+      30: dup
+      31: invokespecial #204                // Method java/util/ArrayList."<init>":()V
+      34: astore_2
+      35: ldc           #206                // String inventorytweaks
+      37: invokestatic  #212                // Method cpw/mods/fml/common/Loader.isModLoaded:(Ljava/lang/String;)Z
+      40: ifeq          61
+      43: aload_2
+      44: ldc           #214                // String InventoryTweaks is loaded. This will cause issues!
+      46: invokeinterface #220,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      51: pop
+      52: aload_2
+      53: ldc           #222                // String Consider removing the mod and reload the game.
+      55: invokeinterface #220,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      60: pop
+      61: aload_2
+      62: invokeinterface #226,  1          // InterfaceMethod java/util/List.isEmpty:()Z
+      67: ifne          119
+      70: aload_2
+      71: iconst_0
+      72: new           #228                // class java/lang/StringBuilder
+      75: dup
+      76: invokespecial #229                // Method java/lang/StringBuilder."<init>":()V
+      79: getstatic     #235                // Field net/minecraft/util/EnumChatFormatting.BOLD:Lnet/minecraft/util/EnumChatFormatting;
+      82: invokevirtual #239                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+      85: ldc           #241                // String ! Warning from Inventory Bogosorter !
+      87: invokevirtual #244                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      90: invokevirtual #248                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      93: invokeinterface #251,  3          // InterfaceMethod java/util/List.add:(ILjava/lang/Object;)V
+      98: aload_2
+      99: iconst_1
+     100: ldc           #253                // String
+     102: invokeinterface #251,  3          // InterfaceMethod java/util/List.add:(ILjava/lang/Object;)V
+     107: aload_1
+     108: new           #198                // class com/cleanroommc/bogosorter/compat/screen/WarningScreen
+     111: dup
+     112: aload_2
+     113: invokespecial #256                // Method com/cleanroommc/bogosorter/compat/screen/WarningScreen."<init>":(Ljava/util/List;)V
+     116: putfield      #194                // Field net/minecraftforge/client/event/GuiOpenEvent.gui:Lnet/minecraft/client/gui/GuiScreen;
+     119: return
+
+  public void onInitGui(net.minecraftforge.client.event.GuiScreenEvent$InitGuiEvent$Post);
+    Code:
+       0: aload_1
+       1: getfield      #263                // Field net/minecraftforge/client/event/GuiScreenEvent$InitGuiEvent$Post.gui:Lnet/minecraft/client/gui/GuiScreen;
+       4: instanceof    #131                // class net/minecraft/client/gui/inventory/GuiContainer
+       7: ifeq          14
+      10: iconst_1
+      11: putstatic     #120                // Field pinSyncPending:Z
+      14: return
+
+  private static void shortcutAction();
+    Code:
+       0: invokestatic  #268                // Method net/minecraft/client/Minecraft.func_71386_F:()J
+       3: putstatic     #270                // Field timeShortcut:J
+       6: return
+
+  private static boolean canDoShortcutAction();
+    Code:
+       0: invokestatic  #268                // Method net/minecraft/client/Minecraft.func_71386_F:()J
+       3: getstatic     #270                // Field timeShortcut:J
+       6: lsub
+       7: ldc2_w        #272                // long 50l
+      10: lcmp
+      11: ifle          18
+      14: iconst_1
+      15: goto          19
+      18: iconst_0
+      19: ireturn
+
+  public void onKeyInput(cpw.mods.fml.common.gameevent.InputEvent$KeyInputEvent);
+    Code:
+       0: aconst_null
+       1: iconst_0
+       2: invokestatic  #279                // Method handleInput:(Lnet/minecraft/client/gui/inventory/GuiContainer;Z)Z
+       5: pop
+       6: return
+
+  public void onKeyInput(cpw.mods.fml.common.gameevent.InputEvent$MouseInputEvent);
+    Code:
+       0: aconst_null
+       1: iconst_1
+       2: invokestatic  #279                // Method handleInput:(Lnet/minecraft/client/gui/inventory/GuiContainer;Z)Z
+       5: pop
+       6: return
+
+  public void onGuiKeyInput(com.cleanroommc.modularui.api.event.KeyboardInputEvent$Pre);
+    Code:
+       0: invokestatic  #287                // Method getTicks:()J
+       3: invokestatic  #293                // Method com/cleanroommc/bogosorter/client/keybinds/KeyBind.checkKeys:(J)V
+       6: aload_1
+       7: getfield      #294                // Field com/cleanroommc/modularui/api/event/KeyboardInputEvent$Pre.gui:Lnet/minecraft/client/gui/GuiScreen;
+      10: instanceof    #131                // class net/minecraft/client/gui/inventory/GuiContainer
+      13: ifne          17
+      16: return
+      17: aload_1
+      18: getfield      #294                // Field com/cleanroommc/modularui/api/event/KeyboardInputEvent$Pre.gui:Lnet/minecraft/client/gui/GuiScreen;
+      21: checkcast     #131                // class net/minecraft/client/gui/inventory/GuiContainer
+      24: invokestatic  #298                // Method com/cleanroommc/bogosorter/compat/ae2/Ae2TerminalSearchAdapter.handleSearchKey:(Lnet/minecraft/client/gui/inventory/GuiContainer;)Z
+      27: ifeq          36
+      30: aload_1
+      31: iconst_1
+      32: invokevirtual #302                // Method com/cleanroommc/modularui/api/event/KeyboardInputEvent$Pre.setCanceled:(Z)V
+      35: return
+      36: aload_1
+      37: getfield      #294                // Field com/cleanroommc/modularui/api/event/KeyboardInputEvent$Pre.gui:Lnet/minecraft/client/gui/GuiScreen;
+      40: checkcast     #131                // class net/minecraft/client/gui/inventory/GuiContainer
+      43: iconst_0
+      44: invokestatic  #279                // Method handleInput:(Lnet/minecraft/client/gui/inventory/GuiContainer;Z)Z
+      47: ifeq          56
+      50: aload_1
+      51: iconst_1
+      52: invokevirtual #302                // Method com/cleanroommc/modularui/api/event/KeyboardInputEvent$Pre.setCanceled:(Z)V
+      55: return
+      56: getstatic     #305                // Field com/cleanroommc/bogosorter/common/config/BogoSorterConfig.enableDebugTools:Z
+      59: ifeq          133
+      62: bipush        79
+      64: invokestatic  #311                // Method org/lwjgl/input/Keyboard.isKeyDown:(I)Z
+      67: ifeq          98
+      70: aload_1
+      71: getfield      #294                // Field com/cleanroommc/modularui/api/event/KeyboardInputEvent$Pre.gui:Lnet/minecraft/client/gui/GuiScreen;
+      74: invokestatic  #315                // Method getSlot:(Lnet/minecraft/client/gui/GuiScreen;)Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;
+      77: astore_2
+      78: aload_1
+      79: getfield      #294                // Field com/cleanroommc/modularui/api/event/KeyboardInputEvent$Pre.gui:Lnet/minecraft/client/gui/GuiScreen;
+      82: aload_2
+      83: invokestatic  #319                // Method createSortHandler:(Lnet/minecraft/client/gui/GuiScreen;Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;)Lcom/cleanroommc/bogosorter/common/sort/SortHandler;
+      86: astore_3
+      87: aload_3
+      88: ifnonnull     92
+      91: return
+      92: aload_3
+      93: aload_2
+      94: invokevirtual #327                // Method com/cleanroommc/bogosorter/common/sort/SortHandler.clearAllItems:(Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;)V
+      97: return
+      98: bipush        80
+     100: invokestatic  #311                // Method org/lwjgl/input/Keyboard.isKeyDown:(I)Z
+     103: ifeq          133
+     106: aload_1
+     107: getfield      #294                // Field com/cleanroommc/modularui/api/event/KeyboardInputEvent$Pre.gui:Lnet/minecraft/client/gui/GuiScreen;
+     110: invokestatic  #315                // Method getSlot:(Lnet/minecraft/client/gui/GuiScreen;)Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;
+     113: astore_2
+     114: aload_1
+     115: getfield      #294                // Field com/cleanroommc/modularui/api/event/KeyboardInputEvent$Pre.gui:Lnet/minecraft/client/gui/GuiScreen;
+     118: aload_2
+     119: invokestatic  #319                // Method createSortHandler:(Lnet/minecraft/client/gui/GuiScreen;Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;)Lcom/cleanroommc/bogosorter/common/sort/SortHandler;
+     122: astore_3
+     123: aload_3
+     124: ifnonnull     128
+     127: return
+     128: aload_3
+     129: aload_2
+     130: invokevirtual #330                // Method com/cleanroommc/bogosorter/common/sort/SortHandler.randomizeItems:(Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;)V
+     133: return
+
+  public void onMouseInput(com.cleanroommc.modularui.api.event.MouseInputEvent$Pre);
+    Code:
+       0: invokestatic  #287                // Method getTicks:()J
+       3: invokestatic  #293                // Method com/cleanroommc/bogosorter/client/keybinds/KeyBind.checkKeys:(J)V
+       6: aload_1
+       7: getfield      #338                // Field com/cleanroommc/modularui/api/event/MouseInputEvent$Pre.gui:Lnet/minecraft/client/gui/GuiScreen;
+      10: instanceof    #131                // class net/minecraft/client/gui/inventory/GuiContainer
+      13: ifeq          35
+      16: aload_1
+      17: getfield      #338                // Field com/cleanroommc/modularui/api/event/MouseInputEvent$Pre.gui:Lnet/minecraft/client/gui/GuiScreen;
+      20: checkcast     #131                // class net/minecraft/client/gui/inventory/GuiContainer
+      23: iconst_1
+      24: invokestatic  #279                // Method handleInput:(Lnet/minecraft/client/gui/inventory/GuiContainer;Z)Z
+      27: ifeq          35
+      30: aload_1
+      31: iconst_1
+      32: invokevirtual #339                // Method com/cleanroommc/modularui/api/event/MouseInputEvent$Pre.setCanceled:(Z)V
+      35: return
+
+  public void onRenderWorldLastEvent(net.minecraftforge.client.event.RenderWorldLastEvent);
+    Code:
+       0: getstatic     #346                // Field com/cleanroommc/bogosorter/common/config/BogoSorterConfig.dropOff:Lcom/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropOff;
+       3: getfield      #349                // Field com/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropOff.dropoffRender:Z
+       6: ifeq          16
+       9: getstatic     #355                // Field com/cleanroommc/bogosorter/common/dropoff/render/RendererCube.INSTANCE:Lcom/cleanroommc/bogosorter/common/dropoff/render/RendererCube;
+      12: aload_1
+      13: invokevirtual #358                // Method com/cleanroommc/bogosorter/common/dropoff/render/RendererCube.tryToRender:(Lnet/minecraftforge/client/event/RenderWorldLastEvent;)V
+      16: return
+
+  public static boolean handleInput(net.minecraft.client.gui.inventory.GuiContainer, boolean);
+    Code:
+       0: aload_0
+       1: ifnull        59
+       4: iload_1
+       5: invokestatic  #364                // Method pinSlotPressed:(Z)Z
+       8: ifeq          59
+      11: aload_0
+      12: invokestatic  #315                // Method getSlot:(Lnet/minecraft/client/gui/GuiScreen;)Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;
+      15: astore_2
+      16: invokestatic  #126                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+      19: getfield      #368                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      22: aload_0
+      23: getfield      #135                // Field net/minecraft/client/gui/inventory/GuiContainer.field_147002_h:Lnet/minecraft/inventory/Container;
+      26: aload_2
+      27: invokestatic  #374                // Method com/cleanroommc/bogosorter/common/PinnedSlots.isPinnable:(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/inventory/Container;Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;)Z
+      30: ifeq          59
+      33: aload_0
+      34: aload_2
+      35: invokestatic  #378                // Method com/cleanroommc/bogosorter/client/PinnedSlotClient.toggle:(Lnet/minecraft/client/gui/inventory/GuiContainer;Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;)V
+      38: aload_0
+      39: getfield      #135                // Field net/minecraft/client/gui/inventory/GuiContainer.field_147002_h:Lnet/minecraft/inventory/Container;
+      42: getfield      #141                // Field net/minecraft/inventory/Container.field_75152_c:I
+      45: aload_2
+      46: invokeinterface #382,  1          // InterfaceMethod com/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor.getSlotNumber:()I
+      51: invokestatic  #385                // Method com/cleanroommc/bogosorter/common/network/CPlayerPins.toggle:(II)Lcom/cleanroommc/bogosorter/common/network/CPlayerPins;
+      54: invokestatic  #153                // Method com/cleanroommc/bogosorter/common/network/NetworkHandler.sendToServer:(Lcom/cleanroommc/bogosorter/common/network/IPacket;)V
+      57: iconst_1
+      58: ireturn
+      59: aload_0
+      60: ifnull        263
+      63: invokestatic  #387                // Method canDoShortcutAction:()Z
+      66: ifeq          263
+      69: getstatic     #391                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.MOVE_ALL:Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;
+      72: invokestatic  #395                // Method com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.getActiveKeyBind:(Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;)Lcom/cleanroommc/bogosorter/client/keybinds/KeyBind;
+      75: astore_2
+      76: aload_2
+      77: ifnull        100
+      80: aload_2
+      81: invokevirtual #398                // Method com/cleanroommc/bogosorter/client/keybinds/KeyBind.isFirstPress:()Z
+      84: ifeq          100
+      87: aload_0
+      88: iconst_0
+      89: invokestatic  #403                // Method com/cleanroommc/bogosorter/ShortcutHandler.moveAllItems:(Lnet/minecraft/client/gui/inventory/GuiContainer;Z)Z
+      92: ifeq          100
+      95: invokestatic  #405                // Method shortcutAction:()V
+      98: iconst_1
+      99: ireturn
+     100: getstatic     #408                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.MOVE_ALL_SAME:Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;
+     103: invokestatic  #395                // Method com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.getActiveKeyBind:(Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;)Lcom/cleanroommc/bogosorter/client/keybinds/KeyBind;
+     106: astore_2
+     107: aload_2
+     108: ifnull        131
+     111: aload_2
+     112: invokevirtual #398                // Method com/cleanroommc/bogosorter/client/keybinds/KeyBind.isFirstPress:()Z
+     115: ifeq          131
+     118: aload_0
+     119: iconst_1
+     120: invokestatic  #403                // Method com/cleanroommc/bogosorter/ShortcutHandler.moveAllItems:(Lnet/minecraft/client/gui/inventory/GuiContainer;Z)Z
+     123: ifeq          131
+     126: invokestatic  #405                // Method shortcutAction:()V
+     129: iconst_1
+     130: ireturn
+     131: getstatic     #411                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.MOVE_SINGLE:Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;
+     134: invokestatic  #395                // Method com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.getActiveKeyBind:(Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;)Lcom/cleanroommc/bogosorter/client/keybinds/KeyBind;
+     137: astore_2
+     138: aload_2
+     139: ifnull        164
+     142: aload_2
+     143: bipush        15
+     145: invokevirtual #414                // Method com/cleanroommc/bogosorter/client/keybinds/KeyBind.isFirstPressOrHeldLong:(I)Z
+     148: ifeq          164
+     151: aload_0
+     152: iconst_0
+     153: invokestatic  #417                // Method com/cleanroommc/bogosorter/ShortcutHandler.moveSingleItem:(Lnet/minecraft/client/gui/inventory/GuiContainer;Z)Z
+     156: ifeq          164
+     159: invokestatic  #405                // Method shortcutAction:()V
+     162: iconst_1
+     163: ireturn
+     164: getstatic     #420                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.MOVE_SINGLE_EMPTY:Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;
+     167: invokestatic  #395                // Method com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.getActiveKeyBind:(Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;)Lcom/cleanroommc/bogosorter/client/keybinds/KeyBind;
+     170: astore_2
+     171: aload_2
+     172: ifnull        197
+     175: aload_2
+     176: bipush        15
+     178: invokevirtual #414                // Method com/cleanroommc/bogosorter/client/keybinds/KeyBind.isFirstPressOrHeldLong:(I)Z
+     181: ifeq          197
+     184: aload_0
+     185: iconst_1
+     186: invokestatic  #417                // Method com/cleanroommc/bogosorter/ShortcutHandler.moveSingleItem:(Lnet/minecraft/client/gui/inventory/GuiContainer;Z)Z
+     189: ifeq          197
+     192: invokestatic  #405                // Method shortcutAction:()V
+     195: iconst_1
+     196: ireturn
+     197: getstatic     #423                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.THROW_ALL:Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;
+     200: invokestatic  #395                // Method com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.getActiveKeyBind:(Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;)Lcom/cleanroommc/bogosorter/client/keybinds/KeyBind;
+     203: astore_2
+     204: aload_2
+     205: ifnull        228
+     208: aload_2
+     209: invokevirtual #398                // Method com/cleanroommc/bogosorter/client/keybinds/KeyBind.isFirstPress:()Z
+     212: ifeq          228
+     215: aload_0
+     216: iconst_0
+     217: invokestatic  #426                // Method com/cleanroommc/bogosorter/ShortcutHandler.dropItems:(Lnet/minecraft/client/gui/inventory/GuiContainer;Z)Z
+     220: ifeq          228
+     223: invokestatic  #405                // Method shortcutAction:()V
+     226: iconst_1
+     227: ireturn
+     228: getstatic     #429                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.THROW_ALL_SAME:Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;
+     231: invokestatic  #395                // Method com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.getActiveKeyBind:(Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;)Lcom/cleanroommc/bogosorter/client/keybinds/KeyBind;
+     234: astore_2
+     235: aload_2
+     236: ifnull        259
+     239: aload_2
+     240: invokevirtual #398                // Method com/cleanroommc/bogosorter/client/keybinds/KeyBind.isFirstPress:()Z
+     243: ifeq          259
+     246: aload_0
+     247: iconst_1
+     248: invokestatic  #426                // Method com/cleanroommc/bogosorter/ShortcutHandler.dropItems:(Lnet/minecraft/client/gui/inventory/GuiContainer;Z)Z
+     251: ifeq          259
+     254: invokestatic  #405                // Method shortcutAction:()V
+     257: iconst_1
+     258: ireturn
+     259: iconst_1
+     260: putstatic     #432                // Field com/cleanroommc/bogosorter/ShortcutHandler.SetCanTakeStack:Z
+     263: getstatic     #436                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.sortKeyOutsideGUI:Lnet/minecraft/client/settings/KeyBinding;
+     266: invokestatic  #440                // Method Keypress:(Lnet/minecraft/client/settings/KeyBinding;)Z
+     269: ifeq          339
+     272: invokestatic  #126                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+     275: getfield      #129                // Field net/minecraft/client/Minecraft.field_71462_r:Lnet/minecraft/client/gui/GuiScreen;
+     278: ifnull        285
+     281: aload_0
+     282: ifnull        339
+     285: invokestatic  #268                // Method net/minecraft/client/Minecraft.func_71386_F:()J
+     288: lstore_2
+     289: lload_2
+     290: getstatic     #442                // Field timeSort:J
+     293: lsub
+     294: ldc2_w        #443                // long 500l
+     297: lcmp
+     298: ifle          339
+     301: invokestatic  #126                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+     304: getfield      #368                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+     307: getfield      #449                // Field net/minecraft/client/entity/EntityClientPlayerMP.field_71069_bz:Lnet/minecraft/inventory/Container;
+     310: aconst_null
+     311: bipush        9
+     313: invokestatic  #453                // Method sort:(Lnet/minecraft/inventory/Container;Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;I)Z
+     316: pop
+     317: invokestatic  #126                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+     320: getfield      #368                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+     323: getfield      #449                // Field net/minecraft/client/entity/EntityClientPlayerMP.field_71069_bz:Lnet/minecraft/inventory/Container;
+     326: aconst_null
+     327: bipush        36
+     329: invokestatic  #453                // Method sort:(Lnet/minecraft/inventory/Container;Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;I)Z
+     332: pop
+     333: lload_2
+     334: putstatic     #442                // Field timeSort:J
+     337: iconst_1
+     338: ireturn
+     339: getstatic     #456                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.sortKeyInGUI:Lnet/minecraft/client/settings/KeyBinding;
+     342: invokestatic  #440                // Method Keypress:(Lnet/minecraft/client/settings/KeyBinding;)Z
+     345: ifeq          399
+     348: invokestatic  #268                // Method net/minecraft/client/Minecraft.func_71386_F:()J
+     351: lstore_2
+     352: lload_2
+     353: getstatic     #442                // Field timeSort:J
+     356: lsub
+     357: ldc2_w        #443                // long 500l
+     360: lcmp
+     361: ifle          399
+     364: aload_0
+     365: ifnull        399
+     368: aload_0
+     369: invokestatic  #315                // Method getSlot:(Lnet/minecraft/client/gui/GuiScreen;)Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;
+     372: astore        4
+     374: aload         4
+     376: invokestatic  #460                // Method canSort:(Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;)Z
+     379: ifeq          391
+     382: aload_0
+     383: aload         4
+     385: invokestatic  #463                // Method sort:(Lnet/minecraft/client/gui/GuiScreen;Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;)Z
+     388: ifne          393
+     391: iconst_0
+     392: ireturn
+     393: lload_2
+     394: putstatic     #442                // Field timeSort:J
+     397: iconst_1
+     398: ireturn
+     399: getstatic     #466                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.configGuiKey:Lnet/minecraft/client/settings/KeyBinding;
+     402: invokestatic  #440                // Method Keypress:(Lnet/minecraft/client/settings/KeyBinding;)Z
+     405: ifeq          446
+     408: invokestatic  #268                // Method net/minecraft/client/Minecraft.func_71386_F:()J
+     411: lstore_2
+     412: lload_2
+     413: getstatic     #468                // Field timeConfigGui:J
+     416: lsub
+     417: ldc2_w        #443                // long 500l
+     420: lcmp
+     421: ifle          446
+     424: invokestatic  #473                // Method com/cleanroommc/bogosorter/common/config/ConfigGui.closeCurrent:()Z
+     427: ifne          442
+     430: getstatic     #478                // Field com/cleanroommc/bogosorter/BogoSortAPI.INSTANCE:Lcom/cleanroommc/bogosorter/BogoSortAPI;
+     433: invokestatic  #126                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+     436: getfield      #129                // Field net/minecraft/client/Minecraft.field_71462_r:Lnet/minecraft/client/gui/GuiScreen;
+     439: invokevirtual #481                // Method com/cleanroommc/bogosorter/BogoSortAPI.openConfigGui:(Lnet/minecraft/client/gui/GuiScreen;)V
+     442: lload_2
+     443: putstatic     #468                // Field timeConfigGui:J
+     446: getstatic     #484                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.dropoffKey:Lnet/minecraft/client/settings/KeyBinding;
+     449: invokestatic  #440                // Method Keypress:(Lnet/minecraft/client/settings/KeyBinding;)Z
+     452: ifeq          513
+     455: invokestatic  #126                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+     458: getfield      #129                // Field net/minecraft/client/Minecraft.field_71462_r:Lnet/minecraft/client/gui/GuiScreen;
+     461: ifnull        468
+     464: aload_0
+     465: ifnull        513
+     468: invokestatic  #487                // Method isNeiSearchFocused:()Z
+     471: ifne          513
+     474: invokestatic  #268                // Method net/minecraft/client/Minecraft.func_71386_F:()J
+     477: lstore_2
+     478: lload_2
+     479: getstatic     #489                // Field timeDropoff:J
+     482: lsub
+     483: getstatic     #346                // Field com/cleanroommc/bogosorter/common/config/BogoSorterConfig.dropOff:Lcom/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropOff;
+     486: getfield      #492                // Field com/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropOff.dropoffPacketThrottleInMS:I
+     489: i2l
+     490: lcmp
+     491: ifle          513
+     494: getstatic     #346                // Field com/cleanroommc/bogosorter/common/config/BogoSorterConfig.dropOff:Lcom/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropOff;
+     497: getfield      #495                // Field com/cleanroommc/bogosorter/common/config/BogoSorterConfig$DropOff.enableDropOff:Z
+     500: ifeq          509
+     503: invokestatic  #501                // Method com/cleanroommc/bogosorter/common/network/CDropOff.fromClientPreference:()Lcom/cleanroommc/bogosorter/common/network/CDropOff;
+     506: invokestatic  #153                // Method com/cleanroommc/bogosorter/common/network/NetworkHandler.sendToServer:(Lcom/cleanroommc/bogosorter/common/network/IPacket;)V
+     509: lload_2
+     510: putstatic     #489                // Field timeDropoff:J
+     513: iconst_0
+     514: ireturn
+
+  private static boolean pinSlotPressed(boolean);
+    Code:
+       0: getstatic     #512                // Field com/cleanroommc/bogosorter/compat/Mods.Controlling:Lcom/cleanroommc/bogosorter/compat/Mods;
+       3: invokevirtual #515                // Method com/cleanroommc/bogosorter/compat/Mods.isLoaded:()Z
+       6: ifeq          94
+       9: getstatic     #518                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.pinSlotKey:Lnet/minecraft/client/settings/KeyBinding;
+      12: astore_1
+      13: aload_1
+      14: invokevirtual #523                // Method net/minecraft/client/settings/KeyBinding.func_151463_i:()I
+      17: istore_2
+      18: iload_2
+      19: ifle          47
+      22: iload_0
+      23: ifne          43
+      26: invokestatic  #526                // Method org/lwjgl/input/Keyboard.getEventKeyState:()Z
+      29: ifeq          43
+      32: invokestatic  #529                // Method org/lwjgl/input/Keyboard.getEventKey:()I
+      35: iload_2
+      36: if_icmpne     43
+      39: iconst_1
+      40: goto          72
+      43: iconst_0
+      44: goto          72
+      47: iload_0
+      48: ifeq          71
+      51: invokestatic  #534                // Method org/lwjgl/input/Mouse.getEventButtonState:()Z
+      54: ifeq          71
+      57: invokestatic  #537                // Method org/lwjgl/input/Mouse.getEventButton:()I
+      60: iload_2
+      61: bipush        100
+      63: iadd
+      64: if_icmpne     71
+      67: iconst_1
+      68: goto          72
+      71: iconst_0
+      72: istore_3
+      73: iload_2
+      74: ifeq          92
+      77: iload_3
+      78: ifeq          92
+      81: aload_1
+      82: invokestatic  #542                // Method com/cleanroommc/bogosorter/compat/controlling/ControllingCompat.isModifierActive:(Lnet/minecraft/client/settings/KeyBinding;)Z
+      85: ifeq          92
+      88: iconst_1
+      89: goto          93
+      92: iconst_0
+      93: ireturn
+      94: getstatic     #545                // Field com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.PIN_SLOT:Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;
+      97: invokestatic  #395                // Method com/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds.getActiveKeyBind:(Lcom/cleanroommc/bogosorter/client/keybinds/control/BSKeybinds$KeybindDefinition;)Lcom/cleanroommc/bogosorter/client/keybinds/KeyBind;
+     100: astore_1
+     101: aload_1
+     102: ifnull        116
+     105: aload_1
+     106: invokevirtual #398                // Method com/cleanroommc/bogosorter/client/keybinds/KeyBind.isFirstPress:()Z
+     109: ifeq          116
+     112: iconst_1
+     113: goto          117
+     116: iconst_0
+     117: ireturn
+
+  private static boolean isNeiSearchFocused();
+    Code:
+       0: getstatic     #553                // Field NEI_GUI_RECIPE_CLASS:Ljava/lang/Class;
+       3: ifnonnull     8
+       6: iconst_0
+       7: ireturn
+       8: getstatic     #555                // Field NEI_INVENTORY_SEARCH_FIELD:Ljava/lang/reflect/Field;
+      11: aconst_null
+      12: invokevirtual #560                // Method java/lang/reflect/Field.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      15: astore_0
+      16: aload_0
+      17: invokestatic  #562                // Method isNeiSearchFocused:(Ljava/lang/Object;)Z
+      20: ifeq          25
+      23: iconst_1
+      24: ireturn
+      25: invokestatic  #126                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+      28: getfield      #129                // Field net/minecraft/client/Minecraft.field_71462_r:Lnet/minecraft/client/gui/GuiScreen;
+      31: astore_1
+      32: getstatic     #553                // Field NEI_GUI_RECIPE_CLASS:Ljava/lang/Class;
+      35: aload_1
+      36: invokevirtual #567                // Method java/lang/Class.isInstance:(Ljava/lang/Object;)Z
+      39: ifne          44
+      42: iconst_0
+      43: ireturn
+      44: getstatic     #571                // Field NEI_RECIPE_SEARCH_FIELD:Ljava/lang/reflect/Field;
+      47: aconst_null
+      48: invokevirtual #560                // Method java/lang/reflect/Field.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      51: invokestatic  #562                // Method isNeiSearchFocused:(Ljava/lang/Object;)Z
+      54: ireturn
+      55: astore_0
+      56: iconst_0
+      57: ireturn
+    Exception table:
+       from    to  target type
+           8    24    55   Class java/lang/ReflectiveOperationException
+           8    24    55   Class java/lang/LinkageError
+          25    43    55   Class java/lang/ReflectiveOperationException
+          25    43    55   Class java/lang/LinkageError
+          44    54    55   Class java/lang/ReflectiveOperationException
+          44    54    55   Class java/lang/LinkageError
+
+  private static boolean isNeiSearchFocused(java.lang.Object) throws java.lang.ReflectiveOperationException;
+    Code:
+       0: aload_0
+       1: ifnull        70
+       4: getstatic     #583                // Field java/lang/Boolean.TRUE:Ljava/lang/Boolean;
+       7: aload_0
+       8: invokevirtual #587                // Method java/lang/Object.getClass:()Ljava/lang/Class;
+      11: ldc_w         #589                // String isVisible
+      14: iconst_0
+      15: anewarray     #564                // class java/lang/Class
+      18: invokevirtual #593                // Method java/lang/Class.getMethod:(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+      21: aload_0
+      22: iconst_0
+      23: anewarray     #4                  // class java/lang/Object
+      26: invokevirtual #599                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+      29: invokevirtual #602                // Method java/lang/Boolean.equals:(Ljava/lang/Object;)Z
+      32: ifeq          70
+      35: getstatic     #583                // Field java/lang/Boolean.TRUE:Ljava/lang/Boolean;
+      38: aload_0
+      39: invokevirtual #587                // Method java/lang/Object.getClass:()Ljava/lang/Class;
+      42: ldc_w         #604                // String focused
+      45: iconst_0
+      46: anewarray     #564                // class java/lang/Class
+      49: invokevirtual #593                // Method java/lang/Class.getMethod:(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+      52: aload_0
+      53: iconst_0
+      54: anewarray     #4                  // class java/lang/Object
+      57: invokevirtual #599                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+      60: invokevirtual #602                // Method java/lang/Boolean.equals:(Ljava/lang/Object;)Z
+      63: ifeq          70
+      66: iconst_1
+      67: goto          71
+      70: iconst_0
+      71: ireturn
+
+  private static boolean canSort(com.cleanroommc.bogosorter.mixins.early.minecraft.SlotAccessor);
+    Code:
+       0: invokestatic  #126                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+       3: getfield      #368                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+       6: getfield      #608                // Field net/minecraft/client/entity/EntityClientPlayerMP.field_71075_bZ:Lnet/minecraft/entity/player/PlayerCapabilities;
+       9: getfield      #613                // Field net/minecraft/entity/player/PlayerCapabilities.field_75098_d:Z
+      12: ifeq          43
+      15: invokestatic  #126                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+      18: getfield      #368                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      21: getfield      #617                // Field net/minecraft/client/entity/EntityClientPlayerMP.field_71071_by:Lnet/minecraft/entity/player/InventoryPlayer;
+      24: invokevirtual #623                // Method net/minecraft/entity/player/InventoryPlayer.func_70445_o:()Lnet/minecraft/item/ItemStack;
+      27: ifnonnull     47
+      30: aload_0
+      31: ifnull        43
+      34: aload_0
+      35: invokeinterface #626,  1          // InterfaceMethod com/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor.callGetStack:()Lnet/minecraft/item/ItemStack;
+      40: ifnonnull     47
+      43: iconst_1
+      44: goto          48
+      47: iconst_0
+      48: ireturn
+
+  public static boolean isSortableContainer(net.minecraft.client.gui.GuiScreen);
+    Code:
+       0: aload_0
+       1: instanceof    #131                // class net/minecraft/client/gui/inventory/GuiContainer
+       4: ifeq          24
+       7: aload_0
+       8: checkcast     #131                // class net/minecraft/client/gui/inventory/GuiContainer
+      11: getfield      #135                // Field net/minecraft/client/gui/inventory/GuiContainer.field_147002_h:Lnet/minecraft/inventory/Container;
+      14: invokestatic  #632                // Method com/cleanroommc/bogosorter/BogoSortAPI.isValidSortable:(Lnet/minecraft/inventory/Container;)Z
+      17: ifeq          24
+      20: iconst_1
+      21: goto          25
+      24: iconst_0
+      25: ireturn
+
+  public static com.cleanroommc.bogosorter.mixins.early.minecraft.SlotAccessor getSlot(net.minecraft.client.gui.GuiScreen);
+    Code:
+       0: aload_0
+       1: instanceof    #131                // class net/minecraft/client/gui/inventory/GuiContainer
+       4: ifeq          18
+       7: aload_0
+       8: checkcast     #131                // class net/minecraft/client/gui/inventory/GuiContainer
+      11: getfield      #636                // Field net/minecraft/client/gui/inventory/GuiContainer.field_147006_u:Lnet/minecraft/inventory/Slot;
+      14: checkcast     #321                // class com/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor
+      17: areturn
+      18: aconst_null
+      19: areturn
+
+  public static boolean sort(net.minecraft.client.gui.GuiScreen, com.cleanroommc.bogosorter.mixins.early.minecraft.SlotAccessor);
+    Code:
+       0: aload_0
+       1: instanceof    #131                // class net/minecraft/client/gui/inventory/GuiContainer
+       4: ifeq          20
+       7: aload_0
+       8: checkcast     #131                // class net/minecraft/client/gui/inventory/GuiContainer
+      11: getfield      #135                // Field net/minecraft/client/gui/inventory/GuiContainer.field_147002_h:Lnet/minecraft/inventory/Container;
+      14: aload_1
+      15: iconst_m1
+      16: invokestatic  #453                // Method sort:(Lnet/minecraft/inventory/Container;Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;I)Z
+      19: ireturn
+      20: iconst_0
+      21: ireturn
+
+  public static boolean sort(net.minecraft.inventory.Container, com.cleanroommc.bogosorter.mixins.early.minecraft.SlotAccessor, int);
+    Code:
+       0: aload_0
+       1: invokestatic  #643                // Method com/cleanroommc/bogosorter/common/sort/GuiSortingContext.getOrCreate:(Lnet/minecraft/inventory/Container;)Lcom/cleanroommc/bogosorter/common/sort/GuiSortingContext;
+       4: astore_3
+       5: aload_3
+       6: invokevirtual #644                // Method com/cleanroommc/bogosorter/common/sort/GuiSortingContext.isEmpty:()Z
+       9: ifeq          14
+      12: iconst_0
+      13: ireturn
+      14: aconst_null
+      15: astore        4
+      17: aload_1
+      18: ifnonnull     96
+      21: iload_2
+      22: iconst_m1
+      23: if_icmpne     96
+      26: aload_3
+      27: invokevirtual #647                // Method com/cleanroommc/bogosorter/common/sort/GuiSortingContext.getNonPlayerSlotGroupAmount:()I
+      30: iconst_1
+      31: if_icmpne     43
+      34: aload_3
+      35: invokevirtual #651                // Method com/cleanroommc/bogosorter/common/sort/GuiSortingContext.getNonPlayerSlotGroup:()Lcom/cleanroommc/bogosorter/common/sort/SlotGroup;
+      38: astore        4
+      40: goto          63
+      43: aload_3
+      44: invokevirtual #656                // Method com/cleanroommc/bogosorter/common/sort/GuiSortingContext.hasPlayer:()Z
+      47: ifeq          63
+      50: aload_3
+      51: invokevirtual #647                // Method com/cleanroommc/bogosorter/common/sort/GuiSortingContext.getNonPlayerSlotGroupAmount:()I
+      54: ifne          63
+      57: aload_3
+      58: invokevirtual #659                // Method com/cleanroommc/bogosorter/common/sort/GuiSortingContext.getPlayerSlotGroup:()Lcom/cleanroommc/bogosorter/common/sort/SlotGroup;
+      61: astore        4
+      63: aload         4
+      65: ifnull        76
+      68: aload         4
+      70: invokevirtual #660                // Method com/cleanroommc/bogosorter/common/sort/SlotGroup.isEmpty:()Z
+      73: ifeq          78
+      76: iconst_0
+      77: ireturn
+      78: aload         4
+      80: invokevirtual #664                // Method com/cleanroommc/bogosorter/common/sort/SlotGroup.getSlots:()Ljava/util/List;
+      83: iconst_0
+      84: invokeinterface #667,  2          // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+      89: checkcast     #321                // class com/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor
+      92: astore_1
+      93: goto          145
+      96: aload_3
+      97: aload_1
+      98: ifnull        110
+     101: aload_1
+     102: invokeinterface #382,  1          // InterfaceMethod com/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor.getSlotNumber:()I
+     107: goto          111
+     110: iload_2
+     111: invokevirtual #671                // Method com/cleanroommc/bogosorter/common/sort/GuiSortingContext.getSlotGroup:(I)Lcom/cleanroommc/bogosorter/common/sort/SlotGroup;
+     114: astore        4
+     116: aload         4
+     118: ifnull        143
+     121: aload         4
+     123: invokevirtual #660                // Method com/cleanroommc/bogosorter/common/sort/SlotGroup.isEmpty:()Z
+     126: ifne          143
+     129: aload         4
+     131: invokevirtual #674                // Method com/cleanroommc/bogosorter/common/sort/SlotGroup.isHotbar:()Z
+     134: ifeq          145
+     137: getstatic     #677                // Field com/cleanroommc/bogosorter/common/config/BogoSorterConfig.enableHotbarSort:Z
+     140: ifne          145
+     143: iconst_0
+     144: ireturn
+     145: getstatic     #682                // Field com/cleanroommc/bogosorter/common/config/SortRulesConfig.sortRules:Ljava/util/List;
+     148: astore        5
+     150: aload         5
+     152: getstatic     #478                // Field com/cleanroommc/bogosorter/BogoSortAPI.INSTANCE:Lcom/cleanroommc/bogosorter/BogoSortAPI;
+     155: ldc_w         #684                // String color
+     158: invokevirtual #688                // Method com/cleanroommc/bogosorter/BogoSortAPI.getItemSortRule:(Ljava/lang/String;)Lcom/cleanroommc/bogosorter/api/SortRule;
+     161: invokeinterface #691,  2          // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     166: istore        6
+     168: aload         5
+     170: getstatic     #478                // Field com/cleanroommc/bogosorter/BogoSortAPI.INSTANCE:Lcom/cleanroommc/bogosorter/BogoSortAPI;
+     173: ldc_w         #693                // String display_name
+     176: invokevirtual #688                // Method com/cleanroommc/bogosorter/BogoSortAPI.getItemSortRule:(Ljava/lang/String;)Lcom/cleanroommc/bogosorter/api/SortRule;
+     179: invokeinterface #691,  2          // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     184: istore        7
+     186: new           #695                // class com/cleanroommc/bogosorter/common/network/CSort
+     189: dup
+     190: aload         4
+     192: iload         6
+     194: iload         7
+     196: invokestatic  #699                // Method createSortData:(Lcom/cleanroommc/bogosorter/common/sort/SlotGroup;ZZ)Ljava/util/Collection;
+     199: getstatic     #682                // Field com/cleanroommc/bogosorter/common/config/SortRulesConfig.sortRules:Ljava/util/List;
+     202: getstatic     #702                // Field com/cleanroommc/bogosorter/common/config/SortRulesConfig.nbtSortRules:Ljava/util/List;
+     205: aload_1
+     206: ifnull        218
+     209: aload_1
+     210: invokeinterface #382,  1          // InterfaceMethod com/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor.getSlotNumber:()I
+     215: goto          219
+     218: iload_2
+     219: aload         4
+     221: invokevirtual #707                // Method com/cleanroommc/bogosorter/common/sort/SlotGroup.isPlayerInventory:()Z
+     224: invokespecial #710                // Method com/cleanroommc/bogosorter/common/network/CSort."<init>":(Ljava/util/Collection;Ljava/util/List;Ljava/util/List;IZ)V
+     227: invokestatic  #153                // Method com/cleanroommc/bogosorter/common/network/NetworkHandler.sendToServer:(Lcom/cleanroommc/bogosorter/common/network/IPacket;)V
+     230: invokestatic  #713                // Method com/cleanroommc/bogosorter/common/sort/SortHandler.playSortSound:()V
+     233: iconst_1
+     234: ireturn
+
+  public static java.util.Collection<com.cleanroommc.bogosorter.common.sort.ClientSortData> createSortData(com.cleanroommc.bogosorter.common.sort.SlotGroup, boolean, boolean);
+    Code:
+       0: iload_1
+       1: ifne          12
+       4: iload_2
+       5: ifne          12
+       8: invokestatic  #726                // Method java/util/Collections.emptyList:()Ljava/util/List;
+      11: areturn
+      12: new           #728                // class it/unimi/dsi/fastutil/objects/Object2ObjectOpenCustomHashMap
+      15: dup
+      16: getstatic     #732                // Field com/cleanroommc/bogosorter/BogoSortAPI.ITEM_META_NBT_HASH_STRATEGY:Lit/unimi/dsi/fastutil/Hash$Strategy;
+      19: invokespecial #735                // Method it/unimi/dsi/fastutil/objects/Object2ObjectOpenCustomHashMap."<init>":(Lit/unimi/dsi/fastutil/Hash$Strategy;)V
+      22: astore_3
+      23: aload_0
+      24: invokevirtual #664                // Method com/cleanroommc/bogosorter/common/sort/SlotGroup.getSlots:()Ljava/util/List;
+      27: invokeinterface #739,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      32: astore        4
+      34: aload         4
+      36: invokeinterface #746,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      41: ifeq          98
+      44: aload         4
+      46: invokeinterface #750,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      51: checkcast     #321                // class com/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor
+      54: astore        5
+      56: aload_3
+      57: aload         5
+      59: invokeinterface #626,  1          // InterfaceMethod com/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor.callGetStack:()Lnet/minecraft/item/ItemStack;
+      64: iload_1
+      65: iload_2
+      66: invokedynamic #769,  0            // InvokeDynamic #0:apply:(ZZ)Ljava/util/function/Function;
+      71: invokeinterface #773,  3          // InterfaceMethod java/util/Map.computeIfAbsent:(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
+      76: checkcast     #775                // class com/cleanroommc/bogosorter/common/sort/ClientSortData
+      79: invokevirtual #779                // Method com/cleanroommc/bogosorter/common/sort/ClientSortData.getSlotNumbers:()Lit/unimi/dsi/fastutil/ints/IntList;
+      82: aload         5
+      84: invokeinterface #382,  1          // InterfaceMethod com/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor.getSlotNumber:()I
+      89: invokeinterface #783,  2          // InterfaceMethod it/unimi/dsi/fastutil/ints/IntList.add:(I)Z
+      94: pop
+      95: goto          34
+      98: aload_3
+      99: invokeinterface #787,  1          // InterfaceMethod java/util/Map.values:()Ljava/util/Collection;
+     104: areturn
+
+  public static com.cleanroommc.bogosorter.common.sort.SortHandler createSortHandler(net.minecraft.client.gui.GuiScreen, com.cleanroommc.bogosorter.mixins.early.minecraft.SlotAccessor);
+    Code:
+       0: aload_1
+       1: ifnull        61
+       4: aload_0
+       5: instanceof    #131                // class net/minecraft/client/gui/inventory/GuiContainer
+       8: ifeq          61
+      11: aload_0
+      12: checkcast     #131                // class net/minecraft/client/gui/inventory/GuiContainer
+      15: getfield      #135                // Field net/minecraft/client/gui/inventory/GuiContainer.field_147002_h:Lnet/minecraft/inventory/Container;
+      18: astore_2
+      19: aload_1
+      20: invokestatic  #794                // Method com/cleanroommc/bogosorter/BogoSortAPI.isPlayerSlot:(Lcom/cleanroommc/bogosorter/mixins/early/minecraft/SlotAccessor;)Z
+      23: istore_3
+      24: iload_3
+      25: ifne          37
+      28: aload_0
+      29: invokestatic  #796                // Method isSortableContainer:(Lnet/minecraft/client/gui/GuiScreen;)Z
+      32: ifne          37
+      35: aconst_null
+      36: areturn
+      37: new           #323                // class com/cleanroommc/bogosorter/common/sort/SortHandler
+      40: dup
+      41: invokestatic  #126                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+      44: getfield      #368                // Field net/minecraft/client/Minecraft.field_71439_g:Lnet/minecraft/client/entity/EntityClientPlayerMP;
+      47: aload_2
+      48: getstatic     #682                // Field com/cleanroommc/bogosorter/common/config/SortRulesConfig.sortRules:Ljava/util/List;
+      51: getstatic     #702                // Field com/cleanroommc/bogosorter/common/config/SortRulesConfig.nbtSortRules:Ljava/util/List;
+      54: invokestatic  #802                // Method it/unimi/dsi/fastutil/ints/Int2ObjectMaps.emptyMap:()Lit/unimi/dsi/fastutil/ints/Int2ObjectMap;
+      57: invokespecial #805                // Method com/cleanroommc/bogosorter/common/sort/SortHandler."<init>":(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/inventory/Container;Ljava/util/List;Ljava/util/List;Lit/unimi/dsi/fastutil/ints/Int2ObjectMap;)V
+      60: areturn
+      61: aconst_null
+      62: areturn
+
+  private static boolean Keypress(net.minecraft.client.settings.KeyBinding);
+    Code:
+       0: aload_0
+       1: invokevirtual #523                // Method net/minecraft/client/settings/KeyBinding.func_151463_i:()I
+       4: istore_1
+       5: iload_1
+       6: ifne          11
+       9: iconst_0
+      10: ireturn
+      11: aload_0
+      12: invokevirtual #809                // Method net/minecraft/client/settings/KeyBinding.func_151468_f:()Z
+      15: ifne          25
+      18: aload_0
+      19: invokevirtual #812                // Method net/minecraft/client/settings/KeyBinding.func_151470_d:()Z
+      22: ifeq          27
+      25: iconst_1
+      26: ireturn
+      27: iload_1
+      28: ifle          52
+      31: invokestatic  #526                // Method org/lwjgl/input/Keyboard.getEventKeyState:()Z
+      34: ifeq          48
+      37: invokestatic  #529                // Method org/lwjgl/input/Keyboard.getEventKey:()I
+      40: iload_1
+      41: if_icmpne     48
+      44: iconst_1
+      45: goto          73
+      48: iconst_0
+      49: goto          73
+      52: invokestatic  #534                // Method org/lwjgl/input/Mouse.getEventButtonState:()Z
+      55: ifeq          72
+      58: invokestatic  #537                // Method org/lwjgl/input/Mouse.getEventButton:()I
+      61: iload_1
+      62: bipush        100
+      64: iadd
+      65: if_icmpne     72
+      68: iconst_1
+      69: goto          73
+      72: iconst_0
+      73: istore_2
+      74: iload_2
+      75: ifne          80
+      78: iconst_0
+      79: ireturn
+      80: getstatic     #512                // Field com/cleanroommc/bogosorter/compat/Mods.Controlling:Lcom/cleanroommc/bogosorter/compat/Mods;
+      83: invokevirtual #515                // Method com/cleanroommc/bogosorter/compat/Mods.isLoaded:()Z
+      86: ifeq          96
+      89: aload_0
+      90: invokestatic  #542                // Method com/cleanroommc/bogosorter/compat/controlling/ControllingCompat.isModifierActive:(Lnet/minecraft/client/settings/KeyBinding;)Z
+      93: ifeq          100
+      96: iconst_1
+      97: goto          101
+     100: iconst_0
+     101: ireturn
+
+  private static com.cleanroommc.bogosorter.common.sort.ClientSortData lambda$createSortData$0(boolean, boolean, net.minecraft.item.ItemStack);
+    Code:
+       0: aload_2
+       1: iload_0
+       2: iload_1
+       3: invokestatic  #817                // Method com/cleanroommc/bogosorter/common/sort/ClientSortData.of:(Lnet/minecraft/item/ItemStack;ZZ)Lcom/cleanroommc/bogosorter/common/sort/ClientSortData;
+       6: areturn
+
+  static {};
+    Code:
+       0: lconst_0
+       1: putstatic     #468                // Field timeConfigGui:J
+       4: lconst_0
+       5: putstatic     #442                // Field timeSort:J
+       8: lconst_0
+       9: putstatic     #270                // Field timeShortcut:J
+      12: lconst_0
+      13: putstatic     #489                // Field timeDropoff:J
+      16: lconst_0
+      17: putstatic     #94                 // Field ticks:J
+      20: aconst_null
+      21: putstatic     #89                 // Field nextGui:Lnet/minecraft/client/gui/GuiScreen;
+      24: ldc_w         #822                // String NotEnoughItems
+      27: invokestatic  #212                // Method cpw/mods/fml/common/Loader.isModLoaded:(Ljava/lang/String;)Z
+      30: ifeq          76
+      33: ldc_w         #824                // String codechicken.nei.recipe.GuiRecipe
+      36: invokestatic  #828                // Method java/lang/Class.forName:(Ljava/lang/String;)Ljava/lang/Class;
+      39: putstatic     #553                // Field NEI_GUI_RECIPE_CLASS:Ljava/lang/Class;
+      42: getstatic     #553                // Field NEI_GUI_RECIPE_CLASS:Ljava/lang/Class;
+      45: ldc_w         #829                // String searchField
+      48: invokevirtual #833                // Method java/lang/Class.getDeclaredField:(Ljava/lang/String;)Ljava/lang/reflect/Field;
+      51: putstatic     #571                // Field NEI_RECIPE_SEARCH_FIELD:Ljava/lang/reflect/Field;
+      54: getstatic     #571                // Field NEI_RECIPE_SEARCH_FIELD:Ljava/lang/reflect/Field;
+      57: iconst_1
+      58: invokevirtual #836                // Method java/lang/reflect/Field.setAccessible:(Z)V
+      61: ldc_w         #838                // String codechicken.nei.LayoutManager
+      64: invokestatic  #828                // Method java/lang/Class.forName:(Ljava/lang/String;)Ljava/lang/Class;
+      67: ldc_w         #829                // String searchField
+      70: invokevirtual #841                // Method java/lang/Class.getField:(Ljava/lang/String;)Ljava/lang/reflect/Field;
+      73: putstatic     #555                // Field NEI_INVENTORY_SEARCH_FIELD:Ljava/lang/reflect/Field;
+      76: goto          84
+      79: astore_0
+      80: aconst_null
+      81: putstatic     #553                // Field NEI_GUI_RECIPE_CLASS:Ljava/lang/Class;
+      84: return
+    Exception table:
+       from    to  target type
+          24    76    79   Class java/lang/ReflectiveOperationException
+          24    76    79   Class java/lang/LinkageError
+}

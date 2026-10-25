@@ -1,0 +1,454 @@
+Compiled from "MixinSplashProgress$3.java"
+public class com.gtnewhorizons.angelica.mixins.early.angelica.archaic.MixinSplashProgress$3 {
+  private static final int MEMORY_GOOD_COLOR;
+
+  private static final int MEMORY_WARN_COLOR;
+
+  private static final int MEMORY_LOW_COLOR;
+
+  private static float memoryColorPercent;
+
+  private static long memoryColorChangeTime;
+
+  private static java.lang.Boolean angelica$isArchaicFixPresent;
+
+  private int barWidth;
+
+  private int barHeight;
+
+  private int textHeight2;
+
+  public com.gtnewhorizons.angelica.mixins.early.angelica.archaic.MixinSplashProgress$3();
+    Code:
+       0: aload_0
+       1: invokespecial #48                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  private void injectDrawMemoryBar(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+       0: getstatic     #71                 // Field angelica$isArchaicFixPresent:Ljava/lang/Boolean;
+       3: ifnonnull     30
+       6: ldc           #73                 // String org.embeddedt.archaicfix.ArchaicCore
+       8: invokestatic  #79                 // Method java/lang/Class.forName:(Ljava/lang/String;)Ljava/lang/Class;
+      11: pop
+      12: iconst_1
+      13: invokestatic  #85                 // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+      16: putstatic     #71                 // Field angelica$isArchaicFixPresent:Ljava/lang/Boolean;
+      19: goto          30
+      22: astore_2
+      23: iconst_0
+      24: invokestatic  #85                 // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+      27: putstatic     #71                 // Field angelica$isArchaicFixPresent:Ljava/lang/Boolean;
+      30: invokestatic  #90                 // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glPushMatrix:()V
+      33: sipush        320
+      36: invokestatic  #96                 // Method org/lwjgl/opengl/Display.getWidth:()I
+      39: iconst_2
+      40: idiv
+      41: isub
+      42: iconst_4
+      43: iadd
+      44: i2f
+      45: sipush        240
+      48: invokestatic  #99                 // Method org/lwjgl/opengl/Display.getHeight:()I
+      51: iconst_2
+      52: idiv
+      53: iadd
+      54: aload_0
+      55: getfield      #101                // Field textHeight2:I
+      58: isub
+      59: i2f
+      60: fconst_0
+      61: invokestatic  #105                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glTranslatef:(FFF)V
+      64: fconst_2
+      65: fconst_2
+      66: fconst_1
+      67: invokestatic  #108                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glScalef:(FFF)V
+      70: sipush        3553
+      73: invokestatic  #112                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glEnable:(I)V
+      76: invokestatic  #118                // InterfaceMethod com/gtnewhorizons/angelica/mixins/early/angelica/archaic/AccessorSplashProgress.getFontRenderer:()Lcpw/mods/fml/client/SplashProgress$SplashFontRenderer;
+      79: ldc           #120                // String Angelica 2.2.8
+      81: iconst_0
+      82: getstatic     #71                 // Field angelica$isArchaicFixPresent:Ljava/lang/Boolean;
+      85: invokevirtual #124                // Method java/lang/Boolean.booleanValue:()Z
+      88: ifeq          96
+      91: bipush        -10
+      93: goto          97
+      96: iconst_0
+      97: iconst_0
+      98: invokevirtual #132                // Method cpw/mods/fml/client/SplashProgress$SplashFontRenderer.func_78276_b:(Ljava/lang/String;III)I
+     101: pop
+     102: sipush        3553
+     105: invokestatic  #135                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glDisable:(I)V
+     108: invokestatic  #138                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glPopMatrix:()V
+     111: getstatic     #144                // Field com/gtnewhorizons/angelica/config/AngelicaConfig.showSplashMemoryBar:Z
+     114: ifeq          143
+     117: invokestatic  #90                 // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glPushMatrix:()V
+     120: ldc           #145                // float 320.0f
+     122: aload_0
+     123: getfield      #147                // Field barWidth:I
+     126: i2f
+     127: fconst_2
+     128: fdiv
+     129: fsub
+     130: ldc           #148                // float 20.0f
+     132: fconst_0
+     133: invokestatic  #105                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glTranslatef:(FFF)V
+     136: aload_0
+     137: invokevirtual #151                // Method drawMemoryBar:()V
+     140: invokestatic  #138                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glPopMatrix:()V
+     143: return
+    Exception table:
+       from    to  target type
+           6    19    22   Class java/lang/Exception
+
+  private void setColor(int);
+    Code:
+       0: return
+
+  private void drawBox(int, int);
+    Code:
+       0: return
+
+  private void drawMemoryBar();
+    Code:
+       0: invokestatic  #167                // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+       3: invokevirtual #171                // Method java/lang/Runtime.maxMemory:()J
+       6: invokestatic  #175                // Method bytesToMb:(J)I
+       9: istore_1
+      10: invokestatic  #167                // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+      13: invokevirtual #178                // Method java/lang/Runtime.totalMemory:()J
+      16: invokestatic  #175                // Method bytesToMb:(J)I
+      19: istore_2
+      20: invokestatic  #167                // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+      23: invokevirtual #181                // Method java/lang/Runtime.freeMemory:()J
+      26: invokestatic  #175                // Method bytesToMb:(J)I
+      29: istore_3
+      30: iload_2
+      31: iload_3
+      32: isub
+      33: istore        4
+      35: iload         4
+      37: i2f
+      38: iload_1
+      39: i2f
+      40: fdiv
+      41: fstore        5
+      43: invokestatic  #118                // InterfaceMethod com/gtnewhorizons/angelica/mixins/early/angelica/archaic/AccessorSplashProgress.getFontRenderer:()Lcpw/mods/fml/client/SplashProgress$SplashFontRenderer;
+      46: astore        6
+      48: invokestatic  #90                 // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glPushMatrix:()V
+      51: aload_0
+      52: invokestatic  #184                // InterfaceMethod com/gtnewhorizons/angelica/mixins/early/angelica/archaic/AccessorSplashProgress.getFontColor:()I
+      55: invokevirtual #186                // Method setColor:(I)V
+      58: fconst_2
+      59: fconst_2
+      60: fconst_1
+      61: invokestatic  #108                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glScalef:(FFF)V
+      64: sipush        3553
+      67: invokestatic  #112                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glEnable:(I)V
+      70: aload         6
+      72: ldc           #188                // String Memory Used / Total
+      74: iconst_0
+      75: iconst_0
+      76: iconst_0
+      77: invokevirtual #132                // Method cpw/mods/fml/client/SplashProgress$SplashFontRenderer.func_78276_b:(Ljava/lang/String;III)I
+      80: pop
+      81: sipush        3553
+      84: invokestatic  #135                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glDisable:(I)V
+      87: invokestatic  #138                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glPopMatrix:()V
+      90: invokestatic  #90                 // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glPushMatrix:()V
+      93: fconst_0
+      94: aload_0
+      95: getfield      #101                // Field textHeight2:I
+      98: i2f
+      99: fconst_0
+     100: invokestatic  #105                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glTranslatef:(FFF)V
+     103: aload_0
+     104: invokestatic  #191                // InterfaceMethod com/gtnewhorizons/angelica/mixins/early/angelica/archaic/AccessorSplashProgress.getBarBorderColor:()I
+     107: invokevirtual #186                // Method setColor:(I)V
+     110: aload_0
+     111: aload_0
+     112: getfield      #147                // Field barWidth:I
+     115: aload_0
+     116: getfield      #193                // Field barHeight:I
+     119: invokevirtual #195                // Method drawBox:(II)V
+     122: aload_0
+     123: invokestatic  #198                // InterfaceMethod com/gtnewhorizons/angelica/mixins/early/angelica/archaic/AccessorSplashProgress.getBarBackgroundColor:()I
+     126: invokevirtual #186                // Method setColor:(I)V
+     129: fconst_1
+     130: fconst_1
+     131: fconst_0
+     132: invokestatic  #105                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glTranslatef:(FFF)V
+     135: aload_0
+     136: aload_0
+     137: getfield      #147                // Field barWidth:I
+     140: iconst_2
+     141: isub
+     142: aload_0
+     143: getfield      #193                // Field barHeight:I
+     146: iconst_2
+     147: isub
+     148: invokevirtual #195                // Method drawBox:(II)V
+     151: invokestatic  #203                // Method java/lang/System.currentTimeMillis:()J
+     154: lstore        7
+     156: fload         5
+     158: getstatic     #205                // Field memoryColorPercent:F
+     161: fcmpl
+     162: ifgt          178
+     165: lload         7
+     167: getstatic     #207                // Field memoryColorChangeTime:J
+     170: lsub
+     171: ldc2_w        #208                // long 1000l
+     174: lcmp
+     175: ifle          188
+     178: lload         7
+     180: putstatic     #207                // Field memoryColorChangeTime:J
+     183: fload         5
+     185: putstatic     #205                // Field memoryColorPercent:F
+     188: getstatic     #205                // Field memoryColorPercent:F
+     191: ldc           #210                // float 0.75f
+     193: fcmpg
+     194: ifge          204
+     197: ldc           #26                 // int 7916340
+     199: istore        9
+     201: goto          224
+     204: getstatic     #205                // Field memoryColorPercent:F
+     207: ldc           #211                // float 0.85f
+     209: fcmpg
+     210: ifge          220
+     213: ldc           #28                 // int 15132746
+     215: istore        9
+     217: goto          224
+     220: ldc           #30                 // int 14954287
+     222: istore        9
+     224: aload_0
+     225: ldc           #30                 // int 14954287
+     227: invokevirtual #186                // Method setColor:(I)V
+     230: invokestatic  #90                 // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glPushMatrix:()V
+     233: aload_0
+     234: getfield      #147                // Field barWidth:I
+     237: iconst_2
+     238: isub
+     239: iload_2
+     240: imul
+     241: iload_1
+     242: idiv
+     243: iconst_2
+     244: isub
+     245: i2f
+     246: fconst_0
+     247: fconst_0
+     248: invokestatic  #105                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glTranslatef:(FFF)V
+     251: aload_0
+     252: iconst_2
+     253: aload_0
+     254: getfield      #193                // Field barHeight:I
+     257: iconst_2
+     258: isub
+     259: invokevirtual #195                // Method drawBox:(II)V
+     262: invokestatic  #138                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glPopMatrix:()V
+     265: aload_0
+     266: iload         9
+     268: invokevirtual #186                // Method setColor:(I)V
+     271: aload_0
+     272: aload_0
+     273: getfield      #147                // Field barWidth:I
+     276: iconst_2
+     277: isub
+     278: iload         4
+     280: imul
+     281: iload_1
+     282: idiv
+     283: aload_0
+     284: getfield      #193                // Field barHeight:I
+     287: iconst_2
+     288: isub
+     289: invokevirtual #195                // Method drawBox:(II)V
+     292: aload_0
+     293: iload         4
+     295: invokevirtual #215                // Method getMemoryString:(I)Ljava/lang/String;
+     298: aload_0
+     299: iload_1
+     300: invokevirtual #215                // Method getMemoryString:(I)Ljava/lang/String;
+     303: invokestatic  #219                // Method jvmdowngrader$concat$drawMemoryBar$1:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+     306: astore        10
+     308: aload_0
+     309: getfield      #147                // Field barWidth:I
+     312: i2f
+     313: fconst_2
+     314: fsub
+     315: fconst_2
+     316: fdiv
+     317: aload         6
+     319: aload         10
+     321: invokevirtual #223                // Method cpw/mods/fml/client/SplashProgress$SplashFontRenderer.func_78256_a:(Ljava/lang/String;)I
+     324: i2f
+     325: fsub
+     326: fconst_2
+     327: fconst_0
+     328: invokestatic  #105                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glTranslatef:(FFF)V
+     331: aload_0
+     332: invokestatic  #184                // InterfaceMethod com/gtnewhorizons/angelica/mixins/early/angelica/archaic/AccessorSplashProgress.getFontColor:()I
+     335: invokevirtual #186                // Method setColor:(I)V
+     338: fconst_2
+     339: fconst_2
+     340: fconst_1
+     341: invokestatic  #108                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glScalef:(FFF)V
+     344: sipush        3553
+     347: invokestatic  #112                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glEnable:(I)V
+     350: aload         6
+     352: aload         10
+     354: iconst_0
+     355: iconst_0
+     356: iconst_0
+     357: invokevirtual #132                // Method cpw/mods/fml/client/SplashProgress$SplashFontRenderer.func_78276_b:(Ljava/lang/String;III)I
+     360: pop
+     361: invokestatic  #138                // Method com/gtnewhorizons/angelica/glsm/GLStateManager.glPopMatrix:()V
+     364: return
+
+  private java.lang.String getMemoryString(int);
+    Code:
+       0: iload_1
+       1: invokestatic  #236                // Method java/lang/Integer.toString:(I)Ljava/lang/String;
+       4: iconst_4
+       5: bipush        32
+       7: invokestatic  #242                // Method org/apache/commons/lang3/StringUtils.leftPad:(Ljava/lang/String;IC)Ljava/lang/String;
+      10: invokestatic  #246                // Method jvmdowngrader$concat$getMemoryString$1:(Ljava/lang/String;)Ljava/lang/String;
+      13: areturn
+
+  private static int bytesToMb(long);
+    Code:
+       0: lload_0
+       1: ldc2_w        #248                // long 1024l
+       4: ldiv
+       5: ldc2_w        #248                // long 1024l
+       8: ldiv
+       9: l2i
+      10: ireturn
+
+  static {};
+    Code:
+       0: aconst_null
+       1: putstatic     #71                 // Field angelica$isArchaicFixPresent:Ljava/lang/Boolean;
+       4: return
+
+  private static java.lang.String jvmdowngrader$concat$drawMemoryBar$1(java.lang.String, java.lang.String);
+    Code:
+       0: new           #253                // class java/lang/StringBuilder
+       3: dup
+       4: invokespecial #254                // Method java/lang/StringBuilder."<init>":()V
+       7: aload_0
+       8: invokevirtual #258                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      11: ldc_w         #260                // String  /
+      14: invokevirtual #258                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      17: aload_1
+      18: invokevirtual #258                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      21: invokevirtual #263                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      24: areturn
+
+  private static java.lang.String jvmdowngrader$concat$getMemoryString$1(java.lang.String);
+    Code:
+       0: new           #253                // class java/lang/StringBuilder
+       3: dup
+       4: invokespecial #254                // Method java/lang/StringBuilder."<init>":()V
+       7: aload_0
+       8: invokevirtual #258                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      11: ldc_w         #265                // String  MB
+      14: invokevirtual #258                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      17: invokevirtual #263                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      20: areturn
+}
+Compiled from "SplashDispatcher.java"
+public final class com.gtnewhorizons.angelica.sdlgpu.splash.SplashDispatcher {
+  private static volatile boolean frameReady;
+
+  private static volatile long drawnSize;
+
+  private static long lastBlitNanos;
+
+  private static final long MIN_INTERVAL_NS;
+
+  private com.gtnewhorizons.angelica.sdlgpu.splash.SplashDispatcher();
+    Code:
+       0: aload_0
+       1: invokespecial #18                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void seedDrawnSize(int, int);
+    Code:
+       0: iload_0
+       1: iload_1
+       2: invokestatic  #26                 // Method pack:(II)J
+       5: putstatic     #28                 // Field drawnSize:J
+       8: return
+
+  public static void signalFrameReady(int, int);
+    Code:
+       0: iload_0
+       1: iload_1
+       2: invokestatic  #26                 // Method pack:(II)J
+       5: putstatic     #28                 // Field drawnSize:J
+       8: iconst_1
+       9: putstatic     #34                 // Field frameReady:Z
+      12: return
+
+  public static void signalFrameReady();
+    Code:
+       0: iconst_1
+       1: putstatic     #34                 // Field frameReady:Z
+       4: return
+
+  public static long getDrawnSize();
+    Code:
+       0: getstatic     #28                 // Field drawnSize:J
+       3: lreturn
+
+  private static long pack(int, int);
+    Code:
+       0: iload_0
+       1: i2l
+       2: bipush        32
+       4: lshl
+       5: iload_1
+       6: i2l
+       7: ldc2_w        #37                 // long 4294967295l
+      10: land
+      11: lor
+      12: lreturn
+
+  public static void tryDispatch(com.gtnewhorizons.angelica.sdlgpu.SDLGPURenderBackend, com.gtnewhorizons.angelica.sdlgpu.frame.OffscreenTarget, boolean);
+    Code:
+       0: getstatic     #34                 // Field frameReady:Z
+       3: ifeq          10
+       6: aload_1
+       7: ifnonnull     11
+      10: return
+      11: invokestatic  #45                 // Method java/lang/System.nanoTime:()J
+      14: lstore_3
+      15: iload_2
+      16: ifne          32
+      19: lload_3
+      20: getstatic     #47                 // Field lastBlitNanos:J
+      23: lsub
+      24: ldc2_w        #13                 // long 16000000l
+      27: lcmp
+      28: ifge          32
+      31: return
+      32: lload_3
+      33: putstatic     #47                 // Field lastBlitNanos:J
+      36: iconst_0
+      37: putstatic     #34                 // Field frameReady:Z
+      40: aload_0
+      41: aload_1
+      42: invokevirtual #53                 // Method com/gtnewhorizons/angelica/sdlgpu/SDLGPURenderBackend.dispatchSplashBlit:(Lcom/gtnewhorizons/angelica/sdlgpu/frame/OffscreenTarget;)V
+      45: return
+
+  public static void reset();
+    Code:
+       0: iconst_0
+       1: putstatic     #34                 // Field frameReady:Z
+       4: lconst_0
+       5: putstatic     #28                 // Field drawnSize:J
+       8: lconst_0
+       9: putstatic     #47                 // Field lastBlitNanos:J
+      12: return
+}
