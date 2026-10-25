@@ -1,6 +1,6 @@
 # HANDOFF — como continuar a partir da 0.7.0-alpha.4
 
-> Público: qualquer pessoa (ou agente de IA) que vá trabalhar no mod. Leia **na ordem**: este arquivo → [`governance/QUALITY_CONTRACT.md`](governance/QUALITY_CONTRACT.md) → [`OPEN-ISSUES.md`](OPEN-ISSUES.md) → [`CRONOLOGIA.md`](CRONOLOGIA.md).
+> Público: qualquer pessoa (ou agente de IA) que vá trabalhar no mod. Leia **na ordem**: este arquivo → [`QUALITY_CONTRACT.md`](QUALITY_CONTRACT.md) → [`OPEN-ISSUES.md`](OPEN-ISSUES.md) → [`CRONOLOGIA.md`](CRONOLOGIA.md).
 
 ## 1. Estado em uma frase
 
@@ -94,7 +94,7 @@ Observações:
 ## 8. Armadilhas conhecidas
 
 * **Rótulo de versão repetido**: dois JARs `0.5.0-alpha.1` distintos (ver `LINEAGE.md`).
-* `CURRENT_STATUS.json` é **estado vivo** e, em partes, **defasado** (ainda aponta `active_candidate: native-n07`; o bloco `gui_wave2_candidate` é o correto). O README original do acervo começa em "0.1.0-alpha.1" e acumula seções — está em `docs/reviews/README.original.md`; este repositório tem um README novo.
+* `CURRENT_STATUS.json` é **estado vivo** e, em partes, **defasado** (ainda aponta `active_candidate: native-n07`; o bloco `gui_wave2_candidate` é o correto). O README original do acervo começa em "0.1.0-alpha.1" e acumula seções — está em `docs/reviews/README.workspace-original.md`; este repositório tem um README novo.
 * Contagens de "verificações" nos pareceres incluem pré-condições/repetições; não são "tipos de defeito".
 * Medições de tempo (7,479 s → 2,432 s; 8,5 s de foco; 0,0804 de erro médio de recomposição) são **pontuais**, não benchmarks.
 * Pack diário observado variando entre leituras (20 hashes de config; JAR extra `akashicindex-tablet-music-online-r2.jar`): homologações valem para a **cópia testada**.
@@ -104,18 +104,21 @@ Observações:
 
 ```
 src/                      fonte da 0.7.0-alpha.4 (main + test)
-tools/                    scripts e probes da N11 (cumulativos) · tools/workspace/ (staging do acervo) · tools/repo/ (deste repositório)
+tools/                    scripts e probes da N11 (cumulativos) · tools/repo/ (deste repositório). Scripts de cada candidata: no tag dela
 docs/CRONOLOGIA.md        linha do tempo + fluxograma geral
 docs/FLUXOGRAMA.md        diagramas (linhagem, governança, boot, jogar, áudio, ecossistema)
 docs/LINEAGE.md           todos os JARs com SHA-256
 docs/ARCHITECTURE.md      como o mod funciona
 docs/OPEN-ISSUES.md       pendências e riscos
 docs/PROVENANCE.md        fontes, lacunas, confiança
-docs/governance/          QUALITY_CONTRACT + AGENTS originais
-docs/reviews/             pareceres e relatórios na ordem em que foram escritos
-docs/versions/<id>/       README/CHECKPOINT/PARECER de cada candidata
-docs/design/              HTML aprovado R03 (+ R02 base) e evidências
-docs/research/            análises de bytecode (resize/SFX) e pesquisas das N01/N08
-evidence/<id>/            recibos JSON, logs e capturas de cada candidata (≤2,5 MB por arquivo)
+docs/QUALITY_CONTRACT.md  contrato de qualidade original (regra cardinal)
+docs/reviews/             pareceres e relatórios originais (+ README/AGENTS do acervo, com acentos corrompidos na origem)
+docs/design/R03/          HTML aprovado R03 (+ R02 base) e evidências
+docs/research/            análise de bytecode (resize/SFX)
+docs/ci/core-tests.yml    workflow de CI (inativo: falta o escopo 'workflow' no token; ver OI-09)
+checkpoints/<id>/         CHECKPOINT_*.json e README de cada candidata; CURRENT_STATUS.json (defasado)
+candidate-docs/<id>/      docs/ e research/ que acompanhavam cada candidata
+evidence/<id>/            recibos JSON, logs e capturas de cada candidata (≤2,5 MB por arquivo); LARGE-FILES.json = excluídos com SHA
+history/                  scripts usados para transferir o código ao PC
 releases/                 RELEASES.md e SHA256SUMS
 ```

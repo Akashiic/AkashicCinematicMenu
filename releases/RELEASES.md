@@ -1,6 +1,6 @@
 # Releases
 
-Todos os Releases são **pré-lançamentos** (alpha). O único marcado como *Latest* é `v0.7.0-alpha.4`.
+Todos são versões **alpha**. Os 11 anteriores estão marcados como *pré-lançamento*; `v0.7.0-alpha.4` (último estado) não está porque o GitHub só permite *Latest* em lançamentos não-pré — continua sendo alpha.
 Hashes: `releases/SHA256SUMS` (confira com `python tools/repo/verify_release.py <pasta-dos-jars>`).
 
 ## Por que alguns JARs são `-nobgm`

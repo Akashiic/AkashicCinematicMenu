@@ -7,7 +7,7 @@
 
 | Marca | Significado |
 |---|---|
-| **[DOC]** | afirmado em documento do projeto (pareceres, READMEs, checkpoints) — ver `docs/reviews/` e `docs/versions/` |
+| **[DOC]** | afirmado em documento do projeto (pareceres, READMEs, checkpoints) — ver `docs/reviews/`, `checkpoints/` e `candidate-docs/` |
 | **[JAR]** | data/tamanho/SHA-256 medidos no arquivo do artefato (mtime do `.jar`) |
 | **[LOG]** | registro de sessão do Codex (ChatGPT desktop) recuperado do PC |
 | **[INF]** | inferência do documentador — **não** é fato registrado |
