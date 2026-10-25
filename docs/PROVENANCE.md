@@ -47,6 +47,13 @@ Nada do modpack (JARs de terceiros, configs, saves, logs de jogo, contas) foi co
 6. **Mobile launcher**: este repositório descreve só a relação (arte reaproveitada; entrega da apresentação ao mod). O código do launcher é outro projeto.
 7. **Fontes TTF/OTF** nunca fizeram parte do mod (atlas rasterizados); não há licenças de fonte a declarar no JAR.
 
+## Varredura das demais pastas de `Desktop\Codex` (24/10/2026)
+Busca textual (`.md/.json/.txt` < 3 MB) por `AkashicCinematicMenu|CinematicMenu|akashiccinematic` em todas as ~130 pastas irmãs. Só três citam o menu, todas do **ThePatcher**:
+* `…beta.9-MPS-Angelica` — `README-TESTE.txt` (23/09 16:45) manda fazer novo restart "para validar o AkashicCinematicMenu" (contexto de teste do Angelica/MPS que antecede a beta.10).
+* `…beta10-Cinematic-Angelica` — o checkpoint/auditoria já usado neste repositório (`RawScope` reescrito; *state fence*).
+* `…beta.11-Async-Forestry` — carrega o *delta* da beta.10 (`CinematicAngelicaCompatTransformer`, `CinematicAngelicaStateFence`, `AngelicaVSyncGuard`) em `beta10-delta/reports/final-build-audit.json`.
+As betas 12–34, `Angelica-VAO-*`, `forbidden-mobile-launcher` etc. **não** citam o menu nos arquivos de texto varridos (JARs/binários não foram abertos). Pastas posteriores a 23/09 existem, mas nada indica nova versão do AkashicCinematicMenu depois da 0.7.0-alpha.4.
+
 ## Marcos de integridade usados
 
 `evidence/source-manifest.sha256` (alpha.1), `SHA256SUMS.txt` do R03, `CHECKPOINT_*.json` com `jar_sha256`, `LINEAGE.md` (calculado em 24/10/2026 sobre os arquivos do PC).
