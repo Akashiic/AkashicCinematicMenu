@@ -33,7 +33,7 @@ Montado em **24/10/2026** pelo Claude (Anthropic) a pedido do dono do projeto, a
 |---|---|
 | fonte (`src/`), testes, `tools/`, READMEs, CHECKPOINTs, pareceres, recibos JSON, logs, capturas ≤ 2,5 MB, pesquisas de bytecode (texto) | JARs e zips (vão para **Releases** ou ficam no acervo) |
 | design R03 (HTML, fonte, testes, capturas) | `build/` (reproduzível), `qa-*/instance` (cópias completas do modpack, ~GB) |
-| ativos de arte, fontes rasterizadas e SFX sintetizados | **`menu.ogg` / `BGM.mp3`** (terceiros), `local-assets/`, arquivos > 2,5 MB (listados com SHA em `evidence/LARGE-FILES.json`) |
+| ativos de arte, fontes rasterizadas, SFX sintetizados e a faixa `menu.ogg` (terceiros, com permissão de outro contribuinte — OI-07) | `BGM.mp3` original, `local-assets/`, arquivos > 2,5 MB (listados com SHA em `evidence/LARGE-FILES.json`) |
 
 Nada do modpack (JARs de terceiros, configs, saves, logs de jogo, contas) foi copiado. Foi feita varredura de segredos/dados pessoais antes do push (ver `docs/PRIVACY-SCAN.md`).
 

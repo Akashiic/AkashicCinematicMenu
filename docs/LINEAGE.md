@@ -4,7 +4,7 @@ Medidos em 24/10/2026 diretamente nos arquivos do PC do autor (`C:\Users\User\Ak
 Coluna **Pai** = linha de base declarada no `baseline.json`/parecer da própria candidata.
 
 > ⚠️ **Dois JARs diferentes têm o rótulo `0.5.0-alpha.1`** (`9d1fa4e1…` em `native-n08` e `c9248a30…` em `native-n08-bgm-r1`). Identifique sempre pelo **SHA-256**, nunca só pela versão.
-> ⚠️ Do **N09 (0.5.2) em diante** os JARs oficiais embutem a gravação de terceiros `menu.ogg`; os Releases públicos deste repositório publicam a variante **`-nobgm`** (veja [`../releases/RELEASES.md`](../releases/RELEASES.md)). Os hashes oficiais abaixo continuam sendo a referência de integridade para quem tem o arquivo.
+> ℹ️ Do **N09 (0.5.2) em diante** os JARs oficiais embutem a gravação de terceiros `menu.ogg`; **os Releases deste repositório publicam esses JARs oficiais, com a faixa** (permissão obtida por outro contribuinte — OI-07). Os hashes abaixo valem para eles.
 
 ## JARs do mod
 
@@ -60,8 +60,8 @@ Guardados como evidência no acervo (≈45–67 KB cada os pequenos; ≈6 MB os 
 
 | Item | SHA-256 | Observação |
 |---|---|---|
-| `BGM.mp3` fornecido pelo usuário (Fluxxwave, *Slowed + Reverb*) | `1e7a442de0759fb7a9b605c3f70d0fecdb7c3e1da428796e41df9a717d668408` (6.475.232 B) | **não distribuído** |
-| `menu.ogg` embutido (Ogg/Vorbis 44,1 kHz estéreo, 161,88 s) | `6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6` (4.271.570 B) | **não distribuído**; é a entrada que o código espera em `assets/akashiccinematic/sounds/bgm/menu.ogg` |
+| `BGM.mp3` fornecido pelo usuário (Fluxxwave, *Slowed + Reverb*) | `1e7a442de0759fb7a9b605c3f70d0fecdb7c3e1da428796e41df9a717d668408` (6.475.232 B) | original mp3 **não** está no repositório |
+| `menu.ogg` embutido (Ogg/Vorbis 44,1 kHz estéreo, 161,88 s) | `6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6` (4.271.570 B) | **incluído no repositório e nos JARs**; é a entrada que o código espera em `assets/akashiccinematic/sounds/bgm/menu.ogg` |
 | `!Akashic-ThePatcher-1.1.0-beta.10-Cinematic-Angelica.jar` | `3182e7e3d6b51854eae008ff8eb8f346a1d0a8b291740ceff8dab9c5fabc9dab` | repo irmão *AkashicThePatcher* |
 
 ## Bibliotecas usadas para compilar (não redistribuídas)

@@ -14,7 +14,7 @@ Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md
 
 ## [0.5.2-alpha.1] — 2026-09-21 13:28 (N09)
 - BGM embutida (streaming Ogg/Vorbis via `SoundHandler`, categoria MUSIC); filtro de música alheia só no frontend. **Música confirmada como funcional pelo dono** (linha de base).
-- *Obs.:* a faixa é de terceiros — ver OI-07; os Releases públicos são `-nobgm`.
+- *Obs.:* a faixa é de terceiros e permanece no repositório e nos JARs oficiais, com permissão obtida por outro contribuinte — ver OI-07.
 
 ## [0.5.0-alpha.1] — 2026-09-21 01:41 (N08 R1) *(rótulo duplicado: existe outro JAR 0.5.0-alpha.1, variante parcial)*
 - Motor de BGM (sem a faixa no JAR); aviso de fade/ciclo de vida; 15 verificações de runtime.

@@ -14,6 +14,6 @@ A native (Java + LWJGL 2 / OpenGL) **cinematic main menu and startup overlay** f
 
 **Git history is reconstructed** (one commit per candidate build; author date = JAR mtime) because the original work was never under version control. Tags `v0.1.0-alpha.1 … v0.7.0-alpha.4`.
 
-**Third-party audio:** the menu music track is not ours to redistribute, so it is excluded from git and public Releases are `*-nobgm.jar`.
+**Third-party audio:** the menu music track (`menu.ogg`, by a third-party artist) is kept in the repository and in the official JARs; per the owner, the permission to use it was obtained by another contributor (the permission itself is not in the repo — see `docs/OPEN-ISSUES.md`, OI-07).
 
 Build: `python tools/build_native.py --classpath-json deps.json` (dependencies are not redistributed; see `docs/HANDOFF.md`).

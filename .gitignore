@@ -4,8 +4,7 @@ dist/
 *.jar
 *.zip
 !evidence/**/*.zip
-# audio de terceiros (ver docs/OPEN-ISSUES.md OI-07)
-menu.ogg
+# menu.ogg e MANTIDO no repositorio (ver docs/OPEN-ISSUES.md OI-07); o BGM.mp3 original nao
 *.mp3
 local-assets/
 # copias do modpack / QA

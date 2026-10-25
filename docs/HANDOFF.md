@@ -17,7 +17,7 @@ O código-fonte em `src/` **é** o da 0.7.0-alpha.4. O histórico git reconstró
 | Python 3 + Pillow (+ numpy/opencv só para regerar arte/áudio) | 3.11+ | `tools/*.py` |
 | GPU com OpenGL ≥ 2.1 | Intel UHD (GL 4.6) | probes de renderização em *pbuffer* privado |
 | Dependências de compilação (SRG!) | ver `evidence/**/native-classpath.json` | `build_native.py` |
-| **A faixa `menu.ogg`** (opcional) | ver §5 | só para empacotar o JAR *com* música |
+| **A faixa `menu.ogg`** | já em `src/main/resources/assets/akashiccinematic/sounds/bgm/` | incluída no repositório (ver §5) |
 
 **Dependências de compilação**: `srg_merged_minecraft.jar` + `recompiled_minecraft-1.7.10.jar` (build RetroFuturaGradle do 1.7.10 com nomes **SRG** — o código usa `func_*`/`field_*` de propósito), `lwjgl-2.9.1`, `log4j-api-2.0-beta9`, `asm-9.8` + `asm-tree-9.8`, `launchwrapper-1.13` (CrucibleMC) e `netty-all-4.0.10.Final`. Nada disso é redistribuído aqui. Aponte para os seus arquivos com:
 
@@ -58,11 +58,11 @@ Observações:
 
 ## 5. A faixa de música (`menu.ogg`)
 
-* O código espera `src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg` (Ogg/Vorbis, 44,1 kHz, estéreo, 161,88 s, SHA-256 `6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6`).
-* É uma gravação **de terceiros** (*Fluxxwave — Slowed + Reverb*, fornecida pelo dono como `BGM.mp3`, `1e7a442d…`). O registro do projeto já determinava: *não baixar/ripar nem substituir a gravação; o motor funciona sem ela*. Por isso **ela não está neste repositório** (`.gitignore`) e os Releases públicos são `-nobgm`.
-* Sem o arquivo: o JAR compila e roda; a BGM entra em estado `MISSING`, **não suprime** a música vanilla e o resto do menu funciona. (Esse caminho foi exercitado no runtime da N08 R1; o das versões 0.5.2+ sem a faixa **não** foi reexecutado — trate como não verificado.)
-* Quem tiver o arquivo legítimo: copie para o caminho acima **antes** do build e confira o SHA.
-* `tools/repo/strip_bgm.py` gera a variante `-nobgm` a partir de um JAR oficial; `tools/repo/verify_release.py` confere os hashes.
+* O código espera `src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg` (Ogg/Vorbis, 44,1 kHz, estéreo, 161,88 s, SHA-256 `6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6`) — **o arquivo está no repositório** (commit "mantem a faixa original"); é byte a byte o embutido nos JARs 0.5.2-alpha.1, 0.6.0-alpha.3 e 0.7.0-alpha.4.
+* A faixa é de terceiros (Fluxxwave, *Slowed + Reverb*); **por decisão do dono (24/10/2026) ela permanece no repositório e nos JARs oficiais**, pois a permissão de uso foi obtida por **outro contribuinte** do projeto. O documento/prova dessa permissão **não está neste repositório** e o assistente que montou o repositório não pôde verificá-lo. Origem: `BGM.mp3` fornecido pelo dono (`1e7a442d…`, não incluído) convertido para Ogg.
+* **Não remova nem troque a faixa sem o dono.** Os tags anteriores a esse commit (v0.5.2-alpha.1 e v0.6.0-alpha.3) *não* têm o arquivo na árvore (o repositório foi montado antes da decisão); o JAR do Release de cada um o contém.
+* Sem o arquivo o JAR compila e roda (estado `MISSING`, não suprime a música vanilla). Esse caminho foi exercitado na N08 R1; nas versões 0.5.2+ **não** foi reexecutado.
+* `tools/repo/strip_bgm.py` gera uma variante sem a faixa (para quem for redistribuir sem ela); `tools/repo/verify_release.py` confere os hashes.
 
 ## 6. Regras que não podem ser quebradas
 

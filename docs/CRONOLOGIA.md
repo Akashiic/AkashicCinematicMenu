@@ -137,7 +137,7 @@ Em ~45 minutos surgiram **três** artefatos N08 a partir da N07 (provável sobre
 | `native-n08-bgm-6c79c577` | 01:40–02:19 · 0.5.1-alpha.1..3 | `2de7bd9a…` / `ee22b716…` / `4f12227f…` | QA própria (`qa-n08-bgm-6c79c577`); inclui rota de carregamento do **Et Futurum** e guarda de namespace para a música vanilla `minecraft:music.menu` (rotulada `RECORDS`). |
 | **`native-n08-bgm-r1`** | 01:41 · **0.5.0-alpha.1** | `c9248a30…` | **Linha principal.** 73 classes; 15 verificações de runtime (renderizadores Aether e vanilla); **sem a faixa** dentro do JAR (teste só de fallback). |
 
-Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.475.232 B); o artista pedido era *"Fluxxwave (Slowed + Reverb)"* e o registro do projeto já anotava **"não baixar/ripar nem substituir gravação; o motor pode ser construído sem a faixa protegida"**. → **A faixa é de terceiros e não está neste repositório.**
+Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.475.232 B); o artista pedido era *"Fluxxwave (Slowed + Reverb)"* e o registro do projeto já anotava **"não baixar/ripar nem substituir gravação; o motor pode ser construído sem a faixa protegida"**. → **A faixa é de terceiros; permanece no repositório por decisão do dono (permissão obtida por outro contribuinte — OI-07).**
 
 ### Fase 7 — N09: entrega e exclusividade da BGM (21/09, 13:28)
 

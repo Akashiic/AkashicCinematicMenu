@@ -43,7 +43,7 @@ Cada um confere âncoras **exatas** (contagem, descritor, nome SRG *ou* MCP); se
 ## 5. Áudio
 
 * **SFX** (`sounds.json`, categoria `master`): `ui.focus` (2 variantes), `ui.select`, `ui.back`, `ui.enter`, `ui.connect` → `sounds/ritual/*.ogg` (sintetizados; limite de 6 vozes, liberação de 90 ms). Há também `sounds/ui/*.ogg` (conjunto anterior, 5 arquivos).
-* **BGM** (`bgm.menu`, categoria `music`, `stream:true`) → `assets/akashiccinematic/sounds/bgm/menu.ogg` (**não distribuída**). Um único *stream* via `SoundHandler`; respeita `MUSIC`/`MASTER`; entrada 2,5 s, saída 0,8 s, volume extra 0,40; contexto = menu raiz e telas de `BgmFrontendPolicy`, nunca dentro de mundo. Música vanilla/alheia só é suprimida **se** a nossa tocar de fato; sem a faixa → estado `MISSING`, nada é suprimido.
+* **BGM** (`bgm.menu`, categoria `music`, `stream:true`) → `assets/akashiccinematic/sounds/bgm/menu.ogg` (**incluída no repositório**, faixa de terceiros com permissão — OI-07). Um único *stream* via `SoundHandler`; respeita `MUSIC`/`MASTER`; entrada 2,5 s, saída 0,8 s, volume extra 0,40; contexto = menu raiz e telas de `BgmFrontendPolicy`, nunca dentro de mundo. Música vanilla/alheia só é suprimida **se** a nossa tocar de fato; sem a faixa → estado `MISSING`, nada é suprimido.
 * Config separada: `config/akashiccinematic-bgm.cfg` (`music.enabled/loop/volume/fadeInSeconds/fadeOutSeconds`).
 
 ## 6. Configuração e interruptores

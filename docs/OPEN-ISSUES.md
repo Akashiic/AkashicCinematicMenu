@@ -39,10 +39,10 @@ N03: >12 s numa tentativa e 8,501 s na repetição para observar `active=false`.
 ### OI-05 — Aprovação do dono
 Pendentes: paleta/enquadramento (N07), SFX cerimoniais, CTA carmesim, parallax (N10), Wave 2 (N11). Nenhum agente deve marcar como aprovado.
 
-### OI-07 — Música de terceiros
-* A faixa é *Fluxxwave (Slowed + Reverb)*; o registro do projeto pedia **não baixar/ripar nem substituir**. Os JARs oficiais ≥ 0.5.2 a embutem.
-* **Decisão tomada na montagem deste repositório:** `menu.ogg` fora do git; Releases públicos `-nobgm`; hashes oficiais documentados.
-* **Decisão pendente do dono:** manter assim, ou obter licença/autorização e publicar os JARs oficiais; ou trocar por faixa livre (então o `sounds.json`/código não mudam — só o arquivo e o SHA esperado em `verify_*`).
+### OI-07 — Música de terceiros (mantida)
+* A faixa é *Fluxxwave (Slowed + Reverb)*; o registro antigo do projeto pedia não baixar/ripar nem substituir. **Decisão do dono em 24/10/2026: a faixa fica** no repositório (`src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg`, SHA-256 `6e91e747…`) e nos JARs oficiais ≥ 0.5.2, porque **outro contribuinte obteve a permissão**.
+* Pendente (documentação, não bloqueia): registrar em `docs/` **quem** obteve a permissão, **de quem**, o **escopo** (redistribuição pública? licença?) e anexar a prova. Este repositório é público: se o escopo da permissão não cobrir redistribuição pública, o dono deve ajustar.
+* Observação histórica: durante a montagem deste repositório a faixa foi inicialmente excluída e os Releases foram publicados `-nobgm`; isso foi revertido por esta decisão.
 * Não verificado: JAR 0.5.2+ **sem** a faixa em runtime.
 
 ### OI-08 — Licença

@@ -45,7 +45,7 @@ O fonte (`src/`, `tools/`) de **cada** candidata está em seu commit/tag — `gi
 O dono não usava git; o histórico foi **reconstruído** (um commit por candidata, data do autor = *mtime* do JAR). Cada versão tem uma tag `v0.1.0-alpha.1 … v0.7.0-alpha.4`. Ramos `experiment/n05-blocked`, `variant/n08-partial`, `variant/n08-bgm-6c79c577` guardam caminhos não promovidos. Detalhes em `docs/PROVENANCE.md`.
 
 ## JARs
-Estão em **[Releases](../../releases)** (pré-lançamentos; `v0.7.0-alpha.4` = Latest). Por direitos de terceiros, os JARs públicos de 0.5.2+ saem como `*-nobgm.jar` (sem a faixa `menu.ogg`) — veja `docs/OPEN-ISSUES.md` OI-07 e `releases/RELEASES.md`. Os hashes dos JARs oficiais (com a faixa) constam em `docs/LINEAGE.md`.
+Estão em **[Releases](../../releases)** (`v0.7.0-alpha.4` = Latest; os demais são pré-lançamentos). Os JARs de 0.5.2+ **incluem a faixa de música `menu.ogg`** (de terceiros, mantida com a permissão obtida por outro contribuinte — ver `docs/OPEN-ISSUES.md` OI-07). Hashes: `releases/SHA256SUMS` e `docs/LINEAGE.md`.
 
 ## Compilar (resumo)
 ```
