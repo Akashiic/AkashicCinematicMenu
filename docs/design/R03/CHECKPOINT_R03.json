@@ -1,0 +1,29 @@
+{
+  "id": "ACM-SANTUARIO-R03.1",
+  "selected_composition": "R02 / Layout 1 — Santuário",
+  "selection_source": "User: a opção Nº 1 é a invicta",
+  "panel_options": {
+    "a": {
+      "blur_px": 10,
+      "base_alpha": 0.36
+    },
+    "b": {
+      "blur_px": 16,
+      "base_alpha": 0.46
+    },
+    "c": {
+      "blur_px": 24,
+      "base_alpha": 0.58
+    }
+  },
+  "default_preview": "b",
+  "panel_final_approval": "PENDING_AKASHIC",
+  "html_sha256": "0646661bbea90e692e85ae9533b43da546126e1dcafca7240e5999bce6a714ac",
+  "tests_passed": 243,
+  "tests_failed": 0,
+  "java_changed": false,
+  "minecraft_runtime_tested": false,
+  "user_pc_open_tested": false,
+  "native_checkpoint_preserved": "ACM-2026-09-20-ALPHA1",
+  "delivery": "Files in this conversation; not installed in playable instance"
+}

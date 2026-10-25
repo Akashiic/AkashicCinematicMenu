@@ -1,0 +1,661 @@
+{
+  "candidate_sha256": "0646661bbea90e692e85ae9533b43da546126e1dcafca7240e5999bce6a714ac",
+  "blur_pixel_deltas": {
+    "a": 9.5641,
+    "b": 9.6221,
+    "c": 8.5113
+  },
+  "scene_delta_R02": 0.0,
+  "original_panel_delta_R02": 0.0,
+  "contrast": [
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "panel": "a",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 4.793070446278176
+        },
+        {
+          "element": "H1",
+          "minimum": 3.8793964734725286
+        },
+        {
+          "element": "brand-poem",
+          "minimum": 4.710191775101193
+        },
+        {
+          "element": "menu-overline",
+          "minimum": 4.674403367344094
+        },
+        {
+          "element": "menu-label",
+          "minimum": 9.095302685306262
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.195081883232712
+        },
+        {
+          "element": "menu-label",
+          "minimum": 12.445204119186924
+        },
+        {
+          "element": "menu-label",
+          "minimum": 10.119353161122843
+        },
+        {
+          "element": "menu-label",
+          "minimum": 7.453193200013846
+        },
+        {
+          "element": "network-name",
+          "minimum": 6.616968531785019
+        },
+        {
+          "element": "P",
+          "minimum": 7.893901443915174
+        },
+        {
+          "element": "offline-label",
+          "minimum": 7.606748057716336
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "panel": "b",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 6.134974903466186
+        },
+        {
+          "element": "H1",
+          "minimum": 5.843214838235454
+        },
+        {
+          "element": "brand-poem",
+          "minimum": 6.849852554096539
+        },
+        {
+          "element": "menu-overline",
+          "minimum": 6.789747264737583
+        },
+        {
+          "element": "menu-label",
+          "minimum": 10.792775739005405
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.476534046228265
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.758873873208668
+        },
+        {
+          "element": "menu-label",
+          "minimum": 12.4143678756644
+        },
+        {
+          "element": "menu-label",
+          "minimum": 9.73723469230932
+        },
+        {
+          "element": "network-name",
+          "minimum": 8.39700087431947
+        },
+        {
+          "element": "P",
+          "minimum": 9.194989079261854
+        },
+        {
+          "element": "offline-label",
+          "minimum": 8.58647511314221
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "panel": "c",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 7.760749070997134
+        },
+        {
+          "element": "H1",
+          "minimum": 8.529949969200326
+        },
+        {
+          "element": "brand-poem",
+          "minimum": 9.460148016595918
+        },
+        {
+          "element": "menu-overline",
+          "minimum": 8.753135112636489
+        },
+        {
+          "element": "menu-label",
+          "minimum": 12.069220847562496
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.12529479364425
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.502633602770238
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.784822180027383
+        },
+        {
+          "element": "menu-label",
+          "minimum": 12.275771631654951
+        },
+        {
+          "element": "network-name",
+          "minimum": 9.785446508105016
+        },
+        {
+          "element": "P",
+          "minimum": 10.251199026170637
+        },
+        {
+          "element": "offline-label",
+          "minimum": 9.411362157339536
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "panel": "a",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 4.873097206343131
+        },
+        {
+          "element": "H1",
+          "minimum": 5.15460944071344
+        },
+        {
+          "element": "brand-poem",
+          "minimum": 6.338612862560213
+        },
+        {
+          "element": "menu-overline",
+          "minimum": 5.259528026615734
+        },
+        {
+          "element": "menu-label",
+          "minimum": 10.657248695764391
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.70472574035708
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.16650136512593
+        },
+        {
+          "element": "menu-label",
+          "minimum": 11.304186825843882
+        },
+        {
+          "element": "menu-label",
+          "minimum": 7.934877927082238
+        },
+        {
+          "element": "network-name",
+          "minimum": 7.747434021420124
+        },
+        {
+          "element": "P",
+          "minimum": 8.106521027675862
+        },
+        {
+          "element": "offline-label",
+          "minimum": 7.032696648493006
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "panel": "b",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 6.052783778577467
+        },
+        {
+          "element": "H1",
+          "minimum": 7.183903640480973
+        },
+        {
+          "element": "brand-poem",
+          "minimum": 8.932838735454084
+        },
+        {
+          "element": "menu-overline",
+          "minimum": 7.317507628437009
+        },
+        {
+          "element": "menu-label",
+          "minimum": 11.868008022703133
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.605086083993776
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.014439342310311
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.002525972423893
+        },
+        {
+          "element": "menu-label",
+          "minimum": 10.607076206549008
+        },
+        {
+          "element": "network-name",
+          "minimum": 9.227203155396984
+        },
+        {
+          "element": "P",
+          "minimum": 9.425325083417448
+        },
+        {
+          "element": "offline-label",
+          "minimum": 8.35125690694398
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "panel": "c",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 8.127207718767423
+        },
+        {
+          "element": "H1",
+          "minimum": 9.244173704113098
+        },
+        {
+          "element": "brand-poem",
+          "minimum": 11.139413689150425
+        },
+        {
+          "element": "menu-overline",
+          "minimum": 9.15575270803732
+        },
+        {
+          "element": "menu-label",
+          "minimum": 12.522063743417773
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.134207463073334
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.626898034563022
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.142771419609542
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.013069067376884
+        },
+        {
+          "element": "network-name",
+          "minimum": 10.219581370775897
+        },
+        {
+          "element": "P",
+          "minimum": 10.435970842378884
+        },
+        {
+          "element": "offline-label",
+          "minimum": 9.380084980624087
+        }
+      ]
+    },
+    {
+      "viewport": [
+        854,
+        480
+      ],
+      "panel": "a",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 4.783285169917418
+        },
+        {
+          "element": "H1",
+          "minimum": 6.06126514350554
+        },
+        {
+          "element": "menu-overline",
+          "minimum": 6.561334322571159
+        },
+        {
+          "element": "menu-label",
+          "minimum": 10.874435713613092
+        },
+        {
+          "element": "menu-label",
+          "minimum": 11.843939140532672
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.892101025217741
+        },
+        {
+          "element": "menu-label",
+          "minimum": 12.56300698562331
+        },
+        {
+          "element": "menu-label",
+          "minimum": 9.422592130756934
+        },
+        {
+          "element": "network-name",
+          "minimum": 8.835116576151712
+        },
+        {
+          "element": "P",
+          "minimum": 8.823322969739559
+        },
+        {
+          "element": "offline-label",
+          "minimum": 7.85094037192854
+        }
+      ]
+    },
+    {
+      "viewport": [
+        854,
+        480
+      ],
+      "panel": "b",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 6.512901307383781
+        },
+        {
+          "element": "H1",
+          "minimum": 7.6829068189890855
+        },
+        {
+          "element": "menu-overline",
+          "minimum": 8.124683004892967
+        },
+        {
+          "element": "menu-label",
+          "minimum": 11.675702819787553
+        },
+        {
+          "element": "menu-label",
+          "minimum": 12.897075390581639
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.604341056881433
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.758873873208668
+        },
+        {
+          "element": "menu-label",
+          "minimum": 12.255035197557199
+        },
+        {
+          "element": "network-name",
+          "minimum": 9.75663521006723
+        },
+        {
+          "element": "P",
+          "minimum": 9.982552732732957
+        },
+        {
+          "element": "offline-label",
+          "minimum": 8.991192682784414
+        }
+      ]
+    },
+    {
+      "viewport": [
+        854,
+        480
+      ],
+      "panel": "c",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 8.896765597362519
+        },
+        {
+          "element": "H1",
+          "minimum": 10.062470212158567
+        },
+        {
+          "element": "menu-overline",
+          "minimum": 9.619074214247503
+        },
+        {
+          "element": "menu-label",
+          "minimum": 12.387181855392212
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.865248817617122
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.732486598472018
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.421730866233212
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.908874716874696
+        },
+        {
+          "element": "network-name",
+          "minimum": 10.492950377360232
+        },
+        {
+          "element": "P",
+          "minimum": 10.735917476536144
+        },
+        {
+          "element": "offline-label",
+          "minimum": 9.686282043196263
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "panel": "a",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 10.548664662989639
+        },
+        {
+          "element": "H1",
+          "minimum": 11.88099721039808
+        },
+        {
+          "element": "menu-label",
+          "minimum": 10.726096181632961
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.547448427546392
+        },
+        {
+          "element": "menu-label",
+          "minimum": 9.558335730766606
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.33033995554726
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.322628236783144
+        },
+        {
+          "element": "network-name",
+          "minimum": 10.47366768036204
+        },
+        {
+          "element": "P",
+          "minimum": 8.344747055605552
+        },
+        {
+          "element": "offline-label",
+          "minimum": 7.592758452876505
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "panel": "b",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 11.661092964421226
+        },
+        {
+          "element": "H1",
+          "minimum": 13.203157980403663
+        },
+        {
+          "element": "menu-label",
+          "minimum": 11.684723184684668
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.18314726698401
+        },
+        {
+          "element": "menu-label",
+          "minimum": 11.632237737353558
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.54761456673946
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.07161121565622
+        },
+        {
+          "element": "network-name",
+          "minimum": 10.274543579681929
+        },
+        {
+          "element": "P",
+          "minimum": 9.38618303213293
+        },
+        {
+          "element": "offline-label",
+          "minimum": 8.864169389980157
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "panel": "c",
+      "samples": [
+        {
+          "element": "brand-overline",
+          "minimum": 12.899360678208694
+        },
+        {
+          "element": "H1",
+          "minimum": 14.153510114336951
+        },
+        {
+          "element": "menu-label",
+          "minimum": 12.39618258404461
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.676382626587243
+        },
+        {
+          "element": "menu-label",
+          "minimum": 13.364029647703564
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.78766712971095
+        },
+        {
+          "element": "menu-label",
+          "minimum": 14.31456941611748
+        },
+        {
+          "element": "network-name",
+          "minimum": 10.466869057136273
+        },
+        {
+          "element": "P",
+          "minimum": 10.32306735817189
+        },
+        {
+          "element": "offline-label",
+          "minimum": 9.645353961110997
+        }
+      ]
+    }
+  ],
+  "method": "Computed text RGB against screenshot with text/shadows removed; minimum over text bounding rectangles; selected fixed frames only. Not complete WCAG conformance."
+}

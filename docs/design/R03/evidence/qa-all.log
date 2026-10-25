@@ -1,0 +1,244 @@
+PASS Self-contained HTML renders while browser network is offline
+PASS System reduced-motion preference is honored
+PASS Default state explicitly has no final user approval
+PASS Layout a at 1920x1080 / buttons stay within frame
+PASS Layout a at 1920x1080 / labels fit
+PASS Layout a at 1920x1080 / title fits sidebar
+PASS Layout a at 1920x1080 / no vertical menu overlap
+PASS Layout a at 1920x1080 / no horizontal page overflow
+PASS Layout a at 1920x1080 / footer does not overlap menu
+PASS Layout a at 1920x1080 / desktop sidebar proportion
+PASS Layout b at 1920x1080 / buttons stay within frame
+PASS Layout b at 1920x1080 / labels fit
+PASS Layout b at 1920x1080 / title fits sidebar
+PASS Layout b at 1920x1080 / no vertical menu overlap
+PASS Layout b at 1920x1080 / no horizontal page overflow
+PASS Layout b at 1920x1080 / footer does not overlap menu
+PASS Layout b at 1920x1080 / desktop sidebar proportion
+PASS Layout c at 1920x1080 / buttons stay within frame
+PASS Layout c at 1920x1080 / labels fit
+PASS Layout c at 1920x1080 / title fits sidebar
+PASS Layout c at 1920x1080 / no vertical menu overlap
+PASS Layout c at 1920x1080 / no horizontal page overflow
+PASS Layout c at 1920x1080 / footer does not overlap menu
+PASS Layout c at 1920x1080 / desktop sidebar proportion
+PASS Layout a at 1366x768 / buttons stay within frame
+PASS Layout a at 1366x768 / labels fit
+PASS Layout a at 1366x768 / title fits sidebar
+PASS Layout a at 1366x768 / no vertical menu overlap
+PASS Layout a at 1366x768 / no horizontal page overflow
+PASS Layout a at 1366x768 / footer does not overlap menu
+PASS Layout a at 1366x768 / desktop sidebar proportion
+PASS Layout b at 1366x768 / buttons stay within frame
+PASS Layout b at 1366x768 / labels fit
+PASS Layout b at 1366x768 / title fits sidebar
+PASS Layout b at 1366x768 / no vertical menu overlap
+PASS Layout b at 1366x768 / no horizontal page overflow
+PASS Layout b at 1366x768 / footer does not overlap menu
+PASS Layout b at 1366x768 / desktop sidebar proportion
+PASS Layout c at 1366x768 / buttons stay within frame
+PASS Layout c at 1366x768 / labels fit
+PASS Layout c at 1366x768 / title fits sidebar
+PASS Layout c at 1366x768 / no vertical menu overlap
+PASS Layout c at 1366x768 / no horizontal page overflow
+PASS Layout c at 1366x768 / footer does not overlap menu
+PASS Layout c at 1366x768 / desktop sidebar proportion
+PASS Layout a at 854x480 / buttons stay within frame
+PASS Layout a at 854x480 / labels fit
+PASS Layout a at 854x480 / title fits sidebar
+PASS Layout a at 854x480 / no vertical menu overlap
+PASS Layout a at 854x480 / no horizontal page overflow
+PASS Layout a at 854x480 / footer does not overlap menu
+PASS Layout a at 854x480 / desktop sidebar proportion
+PASS Layout b at 854x480 / buttons stay within frame
+PASS Layout b at 854x480 / labels fit
+PASS Layout b at 854x480 / title fits sidebar
+PASS Layout b at 854x480 / no vertical menu overlap
+PASS Layout b at 854x480 / no horizontal page overflow
+PASS Layout b at 854x480 / footer does not overlap menu
+PASS Layout b at 854x480 / desktop sidebar proportion
+PASS Layout c at 854x480 / buttons stay within frame
+PASS Layout c at 854x480 / labels fit
+PASS Layout c at 854x480 / title fits sidebar
+PASS Layout c at 854x480 / no vertical menu overlap
+PASS Layout c at 854x480 / no horizontal page overflow
+PASS Layout c at 854x480 / footer does not overlap menu
+PASS Layout c at 854x480 / desktop sidebar proportion
+PASS Layout a at 2560x1080 / buttons stay within frame
+PASS Layout a at 2560x1080 / labels fit
+PASS Layout a at 2560x1080 / title fits sidebar
+PASS Layout a at 2560x1080 / no vertical menu overlap
+PASS Layout a at 2560x1080 / no horizontal page overflow
+PASS Layout a at 2560x1080 / footer does not overlap menu
+PASS Layout a at 2560x1080 / desktop sidebar proportion
+PASS Layout b at 2560x1080 / buttons stay within frame
+PASS Layout b at 2560x1080 / labels fit
+PASS Layout b at 2560x1080 / title fits sidebar
+PASS Layout b at 2560x1080 / no vertical menu overlap
+PASS Layout b at 2560x1080 / no horizontal page overflow
+PASS Layout b at 2560x1080 / footer does not overlap menu
+PASS Layout b at 2560x1080 / desktop sidebar proportion
+PASS Layout c at 2560x1080 / buttons stay within frame
+PASS Layout c at 2560x1080 / labels fit
+PASS Layout c at 2560x1080 / title fits sidebar
+PASS Layout c at 2560x1080 / no vertical menu overlap
+PASS Layout c at 2560x1080 / no horizontal page overflow
+PASS Layout c at 2560x1080 / footer does not overlap menu
+PASS Layout c at 2560x1080 / desktop sidebar proportion
+PASS Layout a at 1024x768 / buttons stay within frame
+PASS Layout a at 1024x768 / labels fit
+PASS Layout a at 1024x768 / title fits sidebar
+PASS Layout a at 1024x768 / no vertical menu overlap
+PASS Layout a at 1024x768 / no horizontal page overflow
+PASS Layout a at 1024x768 / footer does not overlap menu
+PASS Layout a at 1024x768 / desktop sidebar proportion
+PASS Layout b at 1024x768 / buttons stay within frame
+PASS Layout b at 1024x768 / labels fit
+PASS Layout b at 1024x768 / title fits sidebar
+PASS Layout b at 1024x768 / no vertical menu overlap
+PASS Layout b at 1024x768 / no horizontal page overflow
+PASS Layout b at 1024x768 / footer does not overlap menu
+PASS Layout b at 1024x768 / desktop sidebar proportion
+PASS Layout c at 1024x768 / buttons stay within frame
+PASS Layout c at 1024x768 / labels fit
+PASS Layout c at 1024x768 / title fits sidebar
+PASS Layout c at 1024x768 / no vertical menu overlap
+PASS Layout c at 1024x768 / no horizontal page overflow
+PASS Layout c at 1024x768 / footer does not overlap menu
+PASS Layout c at 1024x768 / desktop sidebar proportion
+PASS Layout a at 390x844 / buttons stay within frame
+PASS Layout a at 390x844 / labels fit
+PASS Layout a at 390x844 / title fits sidebar
+PASS Layout a at 390x844 / no vertical menu overlap
+PASS Layout a at 390x844 / no horizontal page overflow
+PASS Layout a at 390x844 / footer does not overlap menu
+PASS Layout b at 390x844 / buttons stay within frame
+PASS Layout b at 390x844 / labels fit
+PASS Layout b at 390x844 / title fits sidebar
+PASS Layout b at 390x844 / no vertical menu overlap
+PASS Layout b at 390x844 / no horizontal page overflow
+PASS Layout b at 390x844 / footer does not overlap menu
+PASS Layout c at 390x844 / buttons stay within frame
+PASS Layout c at 390x844 / labels fit
+PASS Layout c at 390x844 / title fits sidebar
+PASS Layout c at 390x844 / no vertical menu overlap
+PASS Layout c at 390x844 / no horizontal page overflow
+PASS Layout c at 390x844 / footer does not overlap menu
+PASS Layout a at 320x568 / buttons stay within frame
+PASS Layout a at 320x568 / labels fit
+PASS Layout a at 320x568 / title fits sidebar
+PASS Layout a at 320x568 / no vertical menu overlap
+PASS Layout a at 320x568 / no horizontal page overflow
+PASS Layout a at 320x568 / footer does not overlap menu
+PASS Layout b at 320x568 / buttons stay within frame
+PASS Layout b at 320x568 / labels fit
+PASS Layout b at 320x568 / title fits sidebar
+PASS Layout b at 320x568 / no vertical menu overlap
+PASS Layout b at 320x568 / no horizontal page overflow
+PASS Layout b at 320x568 / footer does not overlap menu
+PASS Layout c at 320x568 / buttons stay within frame
+PASS Layout c at 320x568 / labels fit
+PASS Layout c at 320x568 / title fits sidebar
+PASS Layout c at 320x568 / no vertical menu overlap
+PASS Layout c at 320x568 / no horizontal page overflow
+PASS Layout c at 320x568 / footer does not overlap menu
+PASS Keyboard selects layout a
+PASS Keyboard selects layout b
+PASS Keyboard selects layout c
+PASS Arrow-up wraps focus to last menu item
+PASS Arrow-down wraps focus to first menu item
+PASS End focuses last menu item
+PASS Home focuses first menu item
+PASS Keyboard focus is visually outlined
+PASS Enter opens the focused route
+PASS Dialog names itself for assistive technology
+PASS Modal keeps keyboard focus inside
+PASS Escape closes dialog
+PASS Closing dialog restores initiating button focus
+PASS multiplayer opens its own explicit local panel
+PASS No fabricated online status
+PASS options opens its own explicit local panel
+PASS Particle toggle works
+PASS Moss atmosphere setting changes local style
+PASS mods opens its own explicit local panel
+PASS exit opens its own explicit local panel
+PASS Comparison presents exactly three candidates
+PASS Comparison choice updates the view
+PASS Comparison choice does not grant final approval
+PASS Cinema mode hides evaluation chrome
+PASS Evaluation tools can be restored
+PASS Motion can be enabled explicitly
+PASS Escape cancels pending route without late activation
+PASS Repeated clicks open route exactly once
+PASS Window blur cancels pending route
+PASS Window blur pauses animation loop
+PASS Window focus resumes animation loop
+PASS Pointer produces bounded scenery movement
+PASS Reduced motion resets parallax
+PASS Reduced mode has no animation-frame polling
+PASS R03 material choice remains pending user approval
+PASS Image error shows a readable fallback
+PASS Navigation survives an image failure
+PASS OS motion change updates a non-overridden session
+PASS OS reduced preference can disable motion again
+PASS Browser timing sample recorded
+PASS R03 / default is B and the composition stays Layout 1
+PASS R03 / both scenic images decoded offline
+PASS R03 / backdrop filter is supported by test browser
+PASS R03 / panel a changes no navigation geometry
+PASS R03 / panel a applies 10px blur on separate surface
+PASS R03 / panel a leaves typography unfiltered
+PASS R03 / panel a blur changes rendered pixels, not only CSS metadata
+PASS R03 / panel b changes no navigation geometry
+PASS R03 / panel b applies 16px blur on separate surface
+PASS R03 / panel b leaves typography unfiltered
+PASS R03 / panel b blur changes rendered pixels, not only CSS metadata
+PASS R03 / panel c changes no navigation geometry
+PASS R03 / panel c applies 24px blur on separate surface
+PASS R03 / panel c leaves typography unfiltered
+PASS R03 / panel c blur changes rendered pixels, not only CSS metadata
+PASS R03 / preserves original R02 Layout 1 sidebar, branding and all five button rectangles
+PASS R03 / right-hand scenic framing and artwork are pixel-identical to R02 in fixed test
+PASS R03 / Before toggle recreates original panel pixels
+PASS R03 / Before toggle returns to the selected material
+PASS R03 / transparency option disables backdrop blur
+PASS R03 / solid fallback is visibly labelled
+PASS R03 / material shortcut cannot override reduced-transparency preference
+PASS R03 / glass can be restored after solid mode
+PASS R03 / honors OS reduced-transparency media on initial load
+PASS R03 / follows non-overridden transparency media changes
+PASS R03 / simulated unsupported filter gets readable fallback
+PASS R03 / fallback retains navigation
+PASS R03 / missing underlay leaves primary scenic art ready
+PASS R03 / missing underlay retains options
+PASS R03 / rejects non-whitelisted panel ID
+PASS R03 / recognizes valid hash candidate
+PASS R03 / samples all three material timings independently
+PASS R03 / a at 1920x1080, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / a at 1920x1080, secondary lettering meets 4.5:1 in sampled frame
+PASS R03 / b at 1920x1080, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / b at 1920x1080, secondary lettering meets 4.5:1 in sampled frame
+PASS R03 / c at 1920x1080, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / c at 1920x1080, secondary lettering meets 4.5:1 in sampled frame
+PASS R03 / a at 1366x768, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / a at 1366x768, secondary lettering meets 4.5:1 in sampled frame
+PASS R03 / b at 1366x768, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / b at 1366x768, secondary lettering meets 4.5:1 in sampled frame
+PASS R03 / c at 1366x768, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / c at 1366x768, secondary lettering meets 4.5:1 in sampled frame
+PASS R03 / a at 854x480, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / a at 854x480, secondary lettering meets 4.5:1 in sampled frame
+PASS R03 / b at 854x480, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / b at 854x480, secondary lettering meets 4.5:1 in sampled frame
+PASS R03 / c at 854x480, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / c at 854x480, secondary lettering meets 4.5:1 in sampled frame
+PASS R03 / a at 390x844, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / a at 390x844, secondary lettering meets 4.5:1 in sampled frame
+PASS R03 / b at 390x844, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / b at 390x844, secondary lettering meets 4.5:1 in sampled frame
+PASS R03 / c at 390x844, primary labels exceed 4.5:1 on sampled backdrop
+PASS R03 / c at 390x844, secondary lettering meets 4.5:1 in sampled frame
+PASS No unexpected JavaScript exceptions
+PASS No external network requests
+PASS No unexpected console errors
+SUMMARY 243 passed, 0 failed

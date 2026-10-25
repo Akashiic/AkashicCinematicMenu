@@ -1,0 +1,18 @@
+{
+  "revision": "ACM-SANTUARIO-R03.1",
+  "baseline_html_sha256": "32fdf021084d1b826a03cfb1a37d57d4a3710a00748ec0643202baa69666fd7e",
+  "assets": [
+    {
+      "file": "industrial.webp",
+      "sha256": "e2e458fb0bf101e8e70b2b2646b2afe297e5aafb076456e34fe00bb625b27cda",
+      "source": "byte-for-byte from user-visible Forbidden-Layouts-R02-source.zip"
+    },
+    {
+      "file": "cathedral.webp",
+      "sha256": "dc5ed953ee66a7ad90c9c1564b78ebf69db4b9075b561dcc084ee5d0e5c7eb05",
+      "source": "byte-for-byte from user-visible Forbidden-Layouts-R02-source.zip"
+    }
+  ],
+  "new_image_generation": false,
+  "models_3d": false
+}
