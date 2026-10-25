@@ -115,7 +115,7 @@ docs/QUALITY_CONTRACT.md  contrato de qualidade original (regra cardinal)
 docs/reviews/             pareceres e relatórios originais (+ README/AGENTS do acervo, com acentos corrompidos na origem)
 docs/design/R03/          HTML aprovado R03 (+ R02 base) e evidências
 docs/research/            análise de bytecode (resize/SFX)
-docs/ci/core-tests.yml    workflow de CI (inativo: falta o escopo 'workflow' no token; ver OI-09)
+.github/workflows/core-tests.yml  workflow de CI (núcleo puro + docs), ativo desde 25/10/2026
 checkpoints/<id>/         CHECKPOINT_*.json e README de cada candidata; CURRENT_STATUS.json (defasado)
 candidate-docs/<id>/      docs/ e research/ que acompanhavam cada candidata
 evidence/<id>/            recibos JSON, logs e capturas de cada candidata (≤2,5 MB por arquivo); LARGE-FILES.json = excluídos com SHA

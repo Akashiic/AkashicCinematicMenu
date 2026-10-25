@@ -51,7 +51,7 @@ Pendentes: paleta/enquadramento (N07), SFX cerimoniais, CTA carmesim, parallax (
 Sem arquivo `LICENSE`: por padrão, todos os direitos reservados, e terceiros **não** podem legalmente reutilizar o código. O dono deve escolher (ex.: MIT/Apache-2.0 para o código; arte e áudio podem ter licença própria). O assistente que montou o repositório **não** escolheu por ele.
 
 ### OI-09 — Build
-Dependências SRG (RFG) e `launchwrapper` vêm de pastas locais (`CubicChunks-Crucible`, `.gradle`, `ThePatcher/lib`). Falta um build público (Gradle/RFG) que baixe tudo por coordenadas Maven e rode os gates em CI. Hoje o CI público só roda o **núcleo puro**. **O workflow está em `docs/ci/core-tests.yml`, ainda inativo**: o push inicial usou um token sem o escopo `workflow`, e o GitHub recusou criar `.github/workflows/`. Para ativar: `gh auth refresh -s workflow` e mover o arquivo para `.github/workflows/core-tests.yml`.
+Dependências SRG (RFG) e `launchwrapper` vêm de pastas locais (`CubicChunks-Crucible`, `.gradle`, `ThePatcher/lib`). Falta um build público (Gradle/RFG) que baixe tudo por coordenadas Maven e rode os gates em CI. Hoje o CI público só roda o **núcleo puro**. **O workflow `core-tests` está ativo desde 25/10/2026** (`.github/workflows/core-tests.yml`): roda `run_core_gates.py` e `check_docs.py` a cada push/PR. O build do JAR contra o Minecraft (SRG) continua fora do CI.
 
 ### OI-13 — Cobertura nunca exercitada
 Mundo aberto/criado/apagado, servidor `br2.xmxcloud.net:10511` em conexão real e retorno após desconexão real, login autenticado, jogabilidade prolongada, *stress*, outros drivers/GPUs, Android (o launcher mobile entrega a apresentação ao mod, mas isso é outro repositório/ciclo).
