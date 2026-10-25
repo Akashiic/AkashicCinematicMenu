@@ -1,0 +1,137 @@
+{
+ "A-angelica-2.2.18-cinematic": {
+  "mods": {
+   "+unimixins-all-1.7.10-0.3.1.jar": "ad0ea4f92daf7bf7ec5c10e16258425e47929126954aea5d80df69ce26cd7318",
+   "AkashicCinematicMenu-0.7.0-alpha.4.jar": "7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a",
+   "angelica-2.2.18.jar": "563d907f3035aedc7761be0f882674d6e736b63c5860e126e7af7df0d9f15c50",
+   "gtnhlib-0.11.51.jar": "9d31e3a5011b39a111536a43f1c2bf74e83a037f5789cf66da3d482e2686adf7"
+  },
+  "crash_report": false,
+  "splash_properties": "enabled=true",
+  "key_log_lines": [
+   "[Client thread/INFO] [Angelica/]: Created GL 4.5 core profile context (pinned)",
+   "[Client thread/INFO] [Angelica/]: OpenGL Renderer: llvmpipe (LLVM 20.1.2, 256 bits)",
+   "[Client thread/INFO] [Angelica/]: OpenGL Version: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4",
+   "[Client thread/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:24]: [AkashicCinematic] EARLY_FRAME_PRESENTED epoch=1792894104356 costMs=849",
+   "[Thread-7/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:22]: [AkashicCinematic] SPLASH_GEOMETRY 854x480",
+   "[Thread-7/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:24]: [AkashicCinematic] FORGE_OVERLAY_STARTED epoch=1792894106905",
+   "[Client thread/INFO] [akashiccinematicmenu/]: Cinematic replacing exact menu class: net.minecraft.client.gui.GuiMainMenu"
+  ]
+ },
+ "B-angelica-2.2.37-cinematic": {
+  "mods": {
+   "+unimixins-all-1.7.10-0.3.1.jar": "ad0ea4f92daf7bf7ec5c10e16258425e47929126954aea5d80df69ce26cd7318",
+   "AkashicCinematicMenu-0.7.0-alpha.4.jar": "7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a",
+   "angelica-2.2.37.jar": "2125183d9f3c11a401be61e6273e1e813a51e41d892ba035b99cdfdb83e2677b",
+   "gtnhlib-0.11.51.jar": "9d31e3a5011b39a111536a43f1c2bf74e83a037f5789cf66da3d482e2686adf7"
+  },
+  "crash_report": false,
+  "splash_properties": "enabled=true",
+  "key_log_lines": [
+   "[Client thread/INFO] [Angelica/]: Created GL 4.5 core profile context (pinned)",
+   "[Client thread/INFO] [Angelica/]: OpenGL Renderer: llvmpipe (LLVM 20.1.2, 256 bits)",
+   "[Client thread/INFO] [Angelica/]: OpenGL Version: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4",
+   "[Client thread/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:24]: [AkashicCinematic] EARLY_FRAME_PRESENTED epoch=1792894104271 costMs=737",
+   "[Thread-7/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:22]: [AkashicCinematic] SPLASH_GEOMETRY 854x480",
+   "[Thread-7/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:24]: [AkashicCinematic] FORGE_OVERLAY_STARTED epoch=1792894108219",
+   "[Client thread/INFO] [akashiccinematicmenu/]: Cinematic replacing exact menu class: net.minecraft.client.gui.GuiMainMenu"
+  ]
+ },
+ "C-angelica-2.2.37-necrotempus-2.0.0-no-thepatcher": {
+  "mods": {
+   "+unimixins-all-1.7.10-0.3.1.jar": "ad0ea4f92daf7bf7ec5c10e16258425e47929126954aea5d80df69ce26cd7318",
+   "AkashicCinematicMenu-0.7.0-alpha.4.jar": "7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a",
+   "angelica-2.2.37.jar": "2125183d9f3c11a401be61e6273e1e813a51e41d892ba035b99cdfdb83e2677b",
+   "gtnhlib-0.11.51.jar": "9d31e3a5011b39a111536a43f1c2bf74e83a037f5789cf66da3d482e2686adf7",
+   "necrotempus-2.0.0.jar": "d220dad5f270b99fd6ad8a42dcdb1d092eb97412f5c4d888aa072ea3fecc374c",
+   "omniconfig.jar": "f0e7d47e5ae081b78de5f0754b6db629f0bba567767ad7071c81846c494f1feb"
+  },
+  "crash_report": true,
+  "splash_properties": "enabled=true",
+  "key_log_lines": [
+   "[Client thread/INFO] [Angelica/]: Created GL 4.5 core profile context",
+   "[Client thread/INFO] [Angelica/]: OpenGL Renderer: llvmpipe (LLVM 20.1.2, 256 bits)",
+   "[Client thread/INFO] [Angelica/]: OpenGL Version: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4",
+   "[Client thread/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:24]: [AkashicCinematic] EARLY_FRAME_PRESENTED epoch=1792894367509 costMs=1488",
+   "[Thread-7/FATAL] [mixin/]: Mixin apply for mod necrotempus failed mixins.necrotempus.json:angelica.BatchingFontRendererMixin from mod necrotempus -> com.gtnewhorizons.angelica.client.font.BatchingFontRenderer: org.spongepowered.asm.mixin.tr",
+   "[Thread-7/ERROR] [FML/]: Splash thread Exception",
+   "java.lang.NoClassDefFoundError: com/gtnewhorizons/angelica/client/font/BatchingFontRenderer"
+  ]
+ },
+ "D-angelica-2.2.37-necrotempus-2.0.0-beta38": {
+  "mods": {
+   "!Akashic-ThePatcher-1.1.0-beta.38-AngelicaFontCompat.jar": "bef913778167a2fb540b638bf8276981073eb39b014b30ca07df1d94bf2ff701",
+   "+unimixins-all-1.7.10-0.3.1.jar": "ad0ea4f92daf7bf7ec5c10e16258425e47929126954aea5d80df69ce26cd7318",
+   "AkashicCinematicMenu-0.7.0-alpha.4.jar": "7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a",
+   "angelica-2.2.37.jar": "2125183d9f3c11a401be61e6273e1e813a51e41d892ba035b99cdfdb83e2677b",
+   "gtnhlib-0.11.51.jar": "9d31e3a5011b39a111536a43f1c2bf74e83a037f5789cf66da3d482e2686adf7",
+   "necrotempus-2.0.0.jar": "d220dad5f270b99fd6ad8a42dcdb1d092eb97412f5c4d888aa072ea3fecc374c",
+   "omniconfig.jar": "f0e7d47e5ae081b78de5f0754b6db629f0bba567767ad7071c81846c494f1feb"
+  },
+  "crash_report": true,
+  "splash_properties": "enabled=true",
+  "key_log_lines": [
+   "[main/DEBUG] [mixingasm/]:   Not trusting transformer com.akashic.thepatcher.module.necrotempus.NecroTempusAngelicaFontTransformer",
+   "[Client thread/INFO] [Angelica/]: Created GL 4.5 core profile context",
+   "[Client thread/INFO] [Angelica/]: OpenGL Renderer: llvmpipe (LLVM 20.1.2, 256 bits)",
+   "[Client thread/INFO] [Angelica/]: OpenGL Version: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4",
+   "[Client thread/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:24]: [AkashicCinematic] EARLY_FRAME_PRESENTED epoch=1792894366829 costMs=1211",
+   "[Thread-7/INFO] [STDOUT/]: [com.akashic.thepatcher.util.BundleLog:info:10]: [Akashic-ThePatcher] Angelica whitespace decoration endpoint fix installed: BatchingFontRenderer.drawString.",
+   "[Thread-7/FATAL] [mixin/]: Mixin apply for mod necrotempus failed mixins.necrotempus.json:angelica.BatchingFontRendererMixin from mod necrotempus -> com.gtnewhorizons.angelica.client.font.BatchingFontRenderer: org.spongepowered.asm.mixin.tr",
+   "[Thread-7/ERROR] [FML/]: Splash thread Exception",
+   "java.lang.NoClassDefFoundError: com/gtnewhorizons/angelica/client/font/BatchingFontRenderer"
+  ]
+ },
+ "E-angelica-2.2.37-necrotempus-2.0.0-beta39": {
+  "mods": {
+   "!Akashic-ThePatcher-1.1.0-beta.39-AngelicaFontMixinTrust.jar": "8054509c0dc5067e2e043b34f6b93480e29aca285eabb1fcb3d7d8ac9ca73cbd",
+   "+unimixins-all-1.7.10-0.3.1.jar": "ad0ea4f92daf7bf7ec5c10e16258425e47929126954aea5d80df69ce26cd7318",
+   "AkashicCinematicMenu-0.7.0-alpha.4.jar": "7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a",
+   "angelica-2.2.37.jar": "2125183d9f3c11a401be61e6273e1e813a51e41d892ba035b99cdfdb83e2677b",
+   "gtnhlib-0.11.51.jar": "9d31e3a5011b39a111536a43f1c2bf74e83a037f5789cf66da3d482e2686adf7",
+   "necrotempus-2.0.0.jar": "d220dad5f270b99fd6ad8a42dcdb1d092eb97412f5c4d888aa072ea3fecc374c",
+   "omniconfig.jar": "f0e7d47e5ae081b78de5f0754b6db629f0bba567767ad7071c81846c494f1feb"
+  },
+  "crash_report": false,
+  "splash_properties": "enabled=true",
+  "key_log_lines": [
+   "[main/DEBUG] [mixingasm/]:       Trusting transformer com.akashic.thepatcher.module.necrotempus.NecroTempusAngelicaFontTransformer",
+   "[main/INFO] [STDOUT/]: [com.akashic.thepatcher.util.BundleLog:info:10]: [Akashic-ThePatcher] NecroTempus Angelica font fix armed: Angelica font API uses GL texture ids.",
+   "[main/INFO] [STDOUT/]: [com.akashic.thepatcher.util.BundleLog:info:10]: [Akashic-ThePatcher] NecroTempus Angelica font fix applied: io.github.cruciblemc.necrotempus.modules.mixin.mixins.angelica.BatchingFontRendererMixin (pushDrawCmd shadow",
+   "[Client thread/INFO] [Angelica/]: Created GL 4.5 core profile context",
+   "[Client thread/INFO] [Angelica/]: OpenGL Renderer: llvmpipe (LLVM 20.1.2, 256 bits)",
+   "[Client thread/INFO] [Angelica/]: OpenGL Version: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4",
+   "[Client thread/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:24]: [AkashicCinematic] EARLY_FRAME_PRESENTED epoch=1792894761577 costMs=1017",
+   "[Thread-7/INFO] [STDOUT/]: [com.akashic.thepatcher.util.BundleLog:info:10]: [Akashic-ThePatcher] Angelica whitespace decoration endpoint fix installed: BatchingFontRenderer.drawString.",
+   "[Thread-7/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:22]: [AkashicCinematic] SPLASH_GEOMETRY 854x480",
+   "[Thread-7/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:24]: [AkashicCinematic] FORGE_OVERLAY_STARTED epoch=1792894764605",
+   "[Client thread/INFO] [akashiccinematicmenu/]: Cinematic replacing exact menu class: net.minecraft.client.gui.GuiMainMenu"
+  ]
+ },
+ "F-angelica-2.2.37-necrotempus-2.1.0-beta39": {
+  "mods": {
+   "!Akashic-ThePatcher-1.1.0-beta.39-AngelicaFontMixinTrust.jar": "8054509c0dc5067e2e043b34f6b93480e29aca285eabb1fcb3d7d8ac9ca73cbd",
+   "+unimixins-all-1.7.10-0.3.1.jar": "ad0ea4f92daf7bf7ec5c10e16258425e47929126954aea5d80df69ce26cd7318",
+   "AkashicCinematicMenu-0.7.0-alpha.4.jar": "7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a",
+   "angelica-2.2.37.jar": "2125183d9f3c11a401be61e6273e1e813a51e41d892ba035b99cdfdb83e2677b",
+   "gtnhlib-0.11.51.jar": "9d31e3a5011b39a111536a43f1c2bf74e83a037f5789cf66da3d482e2686adf7",
+   "necrotempus-2.1.0.jar": "a34a021fb88a4d3ef1806a9304e1a507ee1535e0e8203d1f5ef43bac4b842b9a",
+   "omniconfig.jar": "f0e7d47e5ae081b78de5f0754b6db629f0bba567767ad7071c81846c494f1feb"
+  },
+  "crash_report": false,
+  "splash_properties": "enabled=true",
+  "key_log_lines": [
+   "[main/DEBUG] [mixingasm/]:       Trusting transformer com.akashic.thepatcher.module.necrotempus.NecroTempusAngelicaFontTransformer",
+   "[main/INFO] [STDOUT/]: [com.akashic.thepatcher.util.BundleLog:info:10]: [Akashic-ThePatcher] NecroTempus Angelica font fix armed: Angelica font API uses GL texture ids.",
+   "[main/INFO] [STDOUT/]: [com.akashic.thepatcher.util.BundleLog:info:10]: [Akashic-ThePatcher] NecroTempus Angelica font fix applied: io.github.cruciblemc.necrotempus.modules.mixin.mixins.angelica.BatchingFontRendererMixin (pushDrawCmd shadow",
+   "[Client thread/INFO] [Angelica/]: Created GL 4.5 core profile context",
+   "[Client thread/INFO] [Angelica/]: OpenGL Renderer: llvmpipe (LLVM 20.1.2, 256 bits)",
+   "[Client thread/INFO] [Angelica/]: OpenGL Version: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4",
+   "[Client thread/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.EarlyWindowHooks:graphicsReady:24]: [AkashicCinematic] EARLY_FRAME_PRESENTED epoch=1792894763070 costMs=1159",
+   "[Thread-7/INFO] [STDOUT/]: [com.akashic.thepatcher.util.BundleLog:info:10]: [Akashic-ThePatcher] Angelica whitespace decoration endpoint fix installed: BatchingFontRenderer.drawString.",
+   "[Thread-7/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:22]: [AkashicCinematic] SPLASH_GEOMETRY 854x480",
+   "[Thread-7/INFO] [STDOUT/]: [br.com.redeakashic.cinematic.bootstrap.SplashHooks:frame:24]: [AkashicCinematic] FORGE_OVERLAY_STARTED epoch=1792894767013",
+   "[Client thread/INFO] [akashiccinematicmenu/]: Cinematic replacing exact menu class: net.minecraft.client.gui.GuiMainMenu"
+  ]
+ }
+}

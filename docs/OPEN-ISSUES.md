@@ -18,6 +18,8 @@ Formato: **ID · gravidade · estado**. "Evidência" aponta para o que prova o i
 | OI-12 | `CURRENT_STATUS.json` defasado | Baixa | Corrigir ao próximo checkpoint |
 | OI-13 | Nunca testado: mundo aberto, servidor real, login autenticado, Android | Média | Aberto |
 | OI-14 | Pack diário divergente do manifesto homologado | Info | Registrado, não corrigido |
+| OI-15 | Angelica 2.2.37: splash cinemático sumiu e o cliente crashou | Alta | Causa externa (NecroTempus); corrigida na ThePatcher 1.1.0-beta.39 — aceite no pack pendente |
+| OI-16 | Sem foco, o fade do boot para o menu fica parado no último quadro do splash | Baixa | Aberto — decisão de design do dono |
 
 ---
 
@@ -56,3 +58,15 @@ Mundo aberto/criado/apagado, servidor `br2.xmxcloud.net:10511` em conexão real 
 
 ### OI-14 — Pack diário
 Observado: JAR extra `mods/akashicindex-tablet-music-online-r2.jar` (`55f26820…`), 20 de 898 entradas do manifesto com hash diferente (18 configs + 2 mcdata) e a pasta diária contendo, em momentos distintos, N07 alpha.3, 0.5.0-alpha.1, 0.5.2-alpha.1 e 0.6.0-alpha.3. Autoria/momento das cópias não foi atribuído.
+
+### OI-15 — Angelica 2.2.37 (25/10/2026)
+* **Sintoma no pack:** ao atualizar o Angelica para a 2.2.37, o splash cinemático não apareceu e o cliente crashou com `NoClassDefFoundError: com/gtnewhorizons/angelica/client/font/BatchingFontRenderer`.
+* **Causa:** o Angelica 2.2.24+ trocou `ResourceLocation` por id de textura GL na API de fontes; o mixin obrigatório do NecroTempus 2.0.0/2.1.0 deixou de encaixar, o `BatchingFontRenderer` não carrega e a thread de splash do Forge morre no construtor do `SplashFontRenderer`, antes do primeiro `SplashHooks.frame()`.
+* **Este mod:** testado num cliente real *headless* A/B (Angelica 2.2.18 × 2.2.37): splash e menu iguais, nenhum erro GL, `splash.properties` intacto. **Nenhuma mudança de código necessária.** Evidência: `evidence/angelica-2.2.37-20261025/`.
+* **Correção:** ThePatcher **1.1.0-beta.39** (a beta.38 é inerte no cliente real por causa do Mixingasm). Correção-fonte para o NecroTempus preparada no repositório da ThePatcher.
+* **`splash.properties`:** o Forge grava `enabled=false` quando a thread de splash morre e o carregamento termina; se isso aconteceu no pack, volte para `enabled=true`.
+* **Próximo passo:** aceite no pack completo (Windows/Intel) com beta.39.
+
+### OI-16 — Fade do boot congela sem foco
+Com a janela sem foco quando o carregamento termina (alt-tab, ou um ambiente sem gerenciador de janelas), o `CinematicMenu` abre, mas `FrameClock.tick(Display.isActive())` não avança, `visitAge` fica em 0 e o quadro de fade do boot (último estado do splash, "Loading 100%", cronômetro parado) continua na tela até a janela receber foco. Observado igual com Angelica 2.2.18 e 2.2.37 (`evidence/angelica-2.2.37-20261025/`). O relógio pausar sem foco é proposital ("no background catch-up"); a dúvida é só se o **fade de entrada** deveria usar tempo real. Decisão visual do dono; não alterado.
+
