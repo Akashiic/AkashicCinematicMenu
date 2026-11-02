@@ -2,6 +2,8 @@
 
 Default paths match the audited Windows workspace. Else provide
 --classpath-json pointing to a JSON array of real SRG Minecraft/Forge/LWJGL/log4j jars.
+The optional AkashicMixer integration compiles against the AkashicMixer jar (compile only, never bundled):
+list it in the JSON or pass --mixer-jar (JitPack com.github.Akashiic:AkashicMixer:<commit>:dev, or its build/libs).
 Minecraft must use SRG member names; the adapter source intentionally uses that ABI.
 No dependency is copied into the output jar. No game installation is modified.
 """
@@ -9,7 +11,7 @@ from pathlib import Path
 import argparse, hashlib, json, os, shutil, struct, subprocess, sys, tempfile, zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.7.0-alpha.4'
+VERSION = '0.7.0-alpha.5'
 
 def sha(p):
     with Path(p).open('rb') as stream:
@@ -24,6 +26,7 @@ def pick(root, pattern):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--classpath-json', type=Path)
+    ap.add_argument('--mixer-jar', type=Path, help='AkashicMixer jar with the sound routing API (compile only)')
     opt = ap.parse_args()
     home = Path.home()
     if opt.classpath_json:
@@ -36,8 +39,12 @@ def main():
                 pick(cache/'org.apache.logging.log4j/log4j-api/2.0-beta9', '*/*.jar'), home/'AkashicDev/ThePatcher-1.1.0-beta.4/lib/asm-9.8.jar', home/'AkashicDev/ThePatcher-1.1.0-beta.4/lib/asm-tree-9.8.jar', home/'AkashicDev/CubicChunks-Crucible/bootstrap-probe/libraries/io/github/cruciblemc/launchwrapper/1.13/launchwrapper-1.13.jar']
     if not opt.classpath_json:
         deps.append(home/'AppData/Roaming/.technic/libraries/io/netty/netty-all/4.0.10.Final/netty-all-4.0.10.Final.jar')
+    if opt.mixer_jar:
+        deps.append(opt.mixer_jar.resolve(strict=True))
     for p in deps:
         if not p.is_file(): raise FileNotFoundError(p)
+    if not any('com/akashiic/mixer/api/AkashicMixerApi.class' in zipfile.ZipFile(p).namelist() for p in deps):
+        raise ValueError('AkashicMixer API missing: add the AkashicMixer jar to the classpath JSON or pass --mixer-jar')
     # Confirm this really is SRG Minecraft and a real Forge development artifact.
     with zipfile.ZipFile(deps[0]) as z:
         b=z.read('net/minecraft/client/gui/GuiScreen.class')

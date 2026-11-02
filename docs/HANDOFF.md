@@ -6,7 +6,9 @@
 
 **0.7.0-alpha.4** (SHA-256 `7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a`, 81 classes) está **compilada, reproduzível e testada em escopo dirigido no modpack completo (exit=0)**, mas a **aprovação visual/sonora do dono ainda está PENDENTE**, não há "liberação geral" e há um problema conhecido de coexistência com o Angelica (OI-01).
 
-O código-fonte em `src/` **é** o da 0.7.0-alpha.4. O histórico git reconstrói, commit a commit, cada candidata anterior (`git log --oneline`, tags `v0.1.0-alpha.1 … v0.7.0-alpha.4`).
+> **Atualização 02/11/2026:** `src/` passou para a **0.7.0-alpha.5** (BGM e SFX do menu controlados pelo AkashicMixer, integração opcional — ver `CHANGELOG.md` e OI-17). Ela **não rodou no jogo**; tudo abaixo sobre a alpha.4 continua valendo como linha de base. Para compilar, acrescente o jar do AkashicMixer ao classpath (`--mixer-jar`).
+
+Até o commit da alpha.5, o código-fonte em `src/` era o da 0.7.0-alpha.4. O histórico git reconstrói, commit a commit, cada candidata anterior (`git log --oneline`, tags `v0.1.0-alpha.1 … v0.7.0-alpha.4`).
 
 ## 2. Pré-requisitos para trabalhar
 

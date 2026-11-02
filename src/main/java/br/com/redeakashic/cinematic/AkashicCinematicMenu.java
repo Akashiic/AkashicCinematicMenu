@@ -6,10 +6,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = AkashicCinematicMenu.ID, name = "Akashic Cinematic Menu",
      version = AkashicCinematicMenu.VERSION, acceptedMinecraftVersions = "[1.7.10]",
-     acceptableRemoteVersions = "*")
+     acceptableRemoteVersions = "*", dependencies = "after:akashicmixer")
 public final class AkashicCinematicMenu {
     public static final String ID = "akashiccinematicmenu";
-    public static final String VERSION = "0.7.0-alpha.4";
+    public static final String VERSION = "0.7.0-alpha.5";
     @SidedProxy(clientSide = "br.com.redeakashic.cinematic.client.ClientProxy",
                 serverSide = "br.com.redeakashic.cinematic.CommonProxy")
     public static CommonProxy proxy;

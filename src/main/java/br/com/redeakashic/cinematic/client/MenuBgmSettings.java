@@ -10,7 +10,7 @@ public final class MenuBgmSettings {
     private MenuBgmSettings(Configuration c){
         enabled=c.get("music","enabled",true,"Custom music only in the supported frontend after its main menu appears.").getBoolean(true);
         loop=c.get("music","loop",true,"Repeat the same supplied recording; no network source.").getBoolean(true);
-        volume=finite(c.get("music","volume",.40,"Additional MUSIC/MASTER multiplier; does not change the game sliders.").getDouble(.40),.40,0,1);
+        volume=finite(c.get("music","volume",.40,"Trim 0..1 for the menu music. On top of it: the Akashic Sounds Mixer Menu Music slider (or, without AkashicMixer, Minecraft's Music slider) and Minecraft's Master.").getDouble(.40),.40,0,1);
         fadeIn=finite(c.get("music","fadeInSeconds",2.5,"Entry fade begins after SoundHandler reports playback.").getDouble(2.5),2.5,0,30);
         fadeOut=finite(c.get("music","fadeOutSeconds",.8,"Soft exit to connection; world entry still stops immediately.").getDouble(.8),.8,0,10);
     }

@@ -20,6 +20,7 @@ Formato: **ID · gravidade · estado**. "Evidência" aponta para o que prova o i
 | OI-14 | Pack diário divergente do manifesto homologado | Info | Registrado, não corrigido |
 | OI-15 | Angelica 2.2.37: splash cinemático sumiu e o cliente crashou | Alta | Causa externa (NecroTempus); corrigida na ThePatcher 1.1.0-beta.39 — aceite no pack pendente |
 | OI-16 | Sem foco, o fade do boot para o menu fica parado no último quadro do splash | Baixa | Aberto — decisão de design do dono |
+| OI-17 | 0.7.0-alpha.5: BGM/SFX no AkashicMixer nunca rodaram no jogo | Média | Aberto — teste em cópia isolada + aceite sonoro do dono |
 
 ---
 
@@ -69,4 +70,9 @@ Observado: JAR extra `mods/akashicindex-tablet-music-online-r2.jar` (`55f26820�
 
 ### OI-16 — Fade do boot congela sem foco
 Com a janela sem foco quando o carregamento termina (alt-tab, ou um ambiente sem gerenciador de janelas), o `CinematicMenu` abre, mas `FrameClock.tick(Display.isActive())` não avança, `visitAge` fica em 0 e o quadro de fade do boot (último estado do splash, "Loading 100%", cronômetro parado) continua na tela até a janela receber foco. Observado igual com Angelica 2.2.18 e 2.2.37 (`evidence/angelica-2.2.37-20261025/`). O relógio pausar sem foco é proposital ("no background catch-up"); a dúvida é só se o **fade de entrada** deveria usar tempo real. Decisão visual do dono; não alterado.
+
+### OI-17 — BGM/SFX controlados pelo AkashicMixer (0.7.0-alpha.5)
+* **Feito (implementado, núcleo testado):** `MixerLink`/`MixerChannels` registram **Música do Menu** e **Sons do Menu** no AkashicMixer e roteiam `akashiccinematic:bgm.*` e `akashiccinematic:ui.*` (`AkashicMixerApi.routeSounds`); o mixin do mixer em `SoundManager.getNormalizedVolume` troca o slider de categoria pelo nível do canal. `MenuVolumeSource` decide quando o menu é audível (`MenuVolumeTests`, 11 checagens).
+* **Não executado:** nenhum cliente real ou de desenvolvimento rodou esta combinação. A conclusão de que o slider *Música* do Minecraft deixa de parar a BGM vem da leitura do `SoundManager` 1.7.10 (`setSoundCategoryVolume` recalcula `getNormalizedVolume` e só para o som em 0), não de observação.
+* **Testar (cópia isolada):** com Música do Minecraft = 0 e Música do Menu = 100 % a BGM toca; mover Música do Menu muda o volume ao vivo; mutar para a BGM e os SFX; voltar retoma; Opções → Música e Sons → Akashic Sounds Mixer não corta a BGM; sem o AkashicMixer o menu se comporta como a alpha.4; com o AkashicMixer `bab631d` (sem `routeSounds`) o log diz `MIXER_WITHOUT_ROUTING` e nada muda.
 

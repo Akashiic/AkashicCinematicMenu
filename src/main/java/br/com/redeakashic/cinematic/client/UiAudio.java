@@ -1,4 +1,5 @@
 package br.com.redeakashic.cinematic.client;
+import br.com.redeakashic.cinematic.core.MenuVolumeSource;
 import br.com.redeakashic.cinematic.core.UiCueGate;
 import br.com.redeakashic.cinematic.core.UiCueGate.Cue;
 import java.util.ArrayDeque;
@@ -8,7 +9,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.*;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.Display;
-/** Pre-rendered cathedral cues: bounded voices and soft steals, sharing the existing Minecraft mixer. */
+/** Pre-rendered cathedral cues: bounded voices and soft steals. With AkashicMixer their level is the Menu Sounds channel (MixerLink). */
 public final class UiAudio {
     private static final UiCueGate gate=new UiCueGate();private static final ArrayDeque<UiSound> voices=new ArrayDeque<UiSound>();
     private static MenuConfig config;private static boolean greeted,failed;
@@ -16,7 +17,7 @@ public final class UiAudio {
     private UiAudio(){}
     static void configure(MenuConfig c){config=c;}
     static void greet(){if(!greeted&&ready()){greeted=true;play(Cue.ENTER);}}
-    private static boolean ready(){Minecraft mc=Minecraft.func_71410_x();return config!=null&&config.sfxEnabled&&config.sfxVolume>0&&!failed&&mc!=null&&mc.field_71474_y!=null&&mc.func_147118_V()!=null&&Display.isActive()&&mc.field_71474_y.func_151438_a(SoundCategory.MASTER)>0;}
+    private static boolean ready(){Minecraft mc=Minecraft.func_71410_x();return config!=null&&config.sfxEnabled&&config.sfxVolume>0&&!failed&&mc!=null&&mc.field_71474_y!=null&&mc.func_147118_V()!=null&&Display.isActive()&&MenuVolumeSource.audible(mc.field_71474_y.func_151438_a(SoundCategory.MASTER),1f,MixerLink.sfx());}
     public static void play(Cue cue){
         if(!ready())return;if(!gate.allow(cue,System.nanoTime())){suppressed++;return;}
         try{

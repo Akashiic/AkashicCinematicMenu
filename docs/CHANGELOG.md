@@ -3,7 +3,13 @@
 Reconstruído a partir dos pareceres, `CHECKPOINT_*.json` e JARs do acervo (ver `PROVENANCE.md`). Datas/horas = *mtime* do JAR final (America/Sao_Paulo). "Status" segue o `QUALITY_CONTRACT`: **compilado/testado ≠ aprovado pelo usuário**.
 Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md`.
 
-## [0.7.0-alpha.4] — 2026-09-21 22:46 — *último estado*
+## [0.7.0-alpha.5] — 2026-11-02 — *candidata, não testada no jogo*
+- **BGM e SFX do menu passam para o AkashicMixer** (pedido do dono, 02/11/2026): com o AkashicMixer instalado, canais **Música do Menu** e **Sons do Menu** no *Akashic Sounds Mixer*; o slider *Música* do Minecraft não afeta mais o menu (o *Master* continua). Integração opcional (`after:akashicmixer`); sem o mixer, comportamento da alpha.4.
+- A tela do mixer mantém a BGM do menu tocando (allow-list de `BgmFrontendPolicy`).
+- `tools/build_native.py` exige a API do AkashicMixer no classpath (`--mixer-jar`), só para compilar; nada do mixer entra no JAR.
+- Status: núcleo puro testado (todas as suítes, Linux). **Não rodou no jogo; aprovação sonora do dono pendente.**
+
+## [0.7.0-alpha.4] — 2026-09-21 22:46
 - Tema do Santuário estendido às GUIs secundárias (allow-list de 17 classes): Options, Select World, Create World (+ aviso RTG), Language, Resource Packs, Controls, Video (Reese Sodium), Sound, Chat, Snooper, Flat World/Presets, Rename World, confirmações vanilla.
 - **Sair** encerra direto no menu principal; confirmações destrutivas preservadas.
 - Status: testes dirigidos no pack completo aprovados (13 gates; 83 checagens; exit=0). **Aprovação visual do dono pendente.** OI-01 (RawScope × Angelica) em aberto.

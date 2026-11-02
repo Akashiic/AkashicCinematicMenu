@@ -169,6 +169,13 @@ Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.47
 | 23/09 | **ThePatcher 1.1.0-beta.10-Cinematic-Angelica** (`3182e7e3…`) injeta um *state fence* após o `RawScope.close()` da alpha.4 e protege o `applyVSyncMode` do Angelica. Candidato técnico PASS; **aceitação em GPU/cliente real pendente.** | [DOC] |
 | 24/10 | Este repositório é montado a partir do acervo local (ver `PROVENANCE.md`). | — |
 
+
+### Fase 11 — 0.7.0-alpha.5: áudio do menu no AkashicMixer (02/11/2026)
+
+* Pedido do dono: o **AkashicMixer** passa a controlar a BGM e os SFX do menu, separados dos sliders do Minecraft, na tela *Akashic Sounds Mixer*.
+* AkashicMixer ganha a API `routeSounds` e os canais `menu_music`/`menu_sfx` (repositório `Akashiic/AkashicMixer`, mesmo ramo); o menu se conecta a ela de forma opcional (`MixerLink`).
+* Status: implementado; núcleo puro testado (Linux). **Não rodou no jogo** (OI-17). Aprovação sonora do dono pendente.
+
 ---
 
 ## 3. Placar de evidência por versão (o que cada parecer *afirmou* ter executado)
