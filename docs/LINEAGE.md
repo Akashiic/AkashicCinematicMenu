@@ -34,7 +34,8 @@ Coluna **Pai** = linha de base declarada no `baseline.json`/parecer da própria 
 | 22 | 0.7.0-alpha.1 | `native-n11-gui-wave2` | 21/09 18:23 | 16.508.062 | `2ed2b906e42312fe77107884eee9fc0dd2851f90142fbed5d2564d802a0bc312` | #21 | — |
 | 23 | 0.7.0-alpha.2 | `native-n11-gui-wave2` | 21/09 18:25 | 16.508.146 | `2138cd5c4e0bc071ca167c31a9ecbd03fb3f8d8bcd6c094755d8b520a525bf7e` | #22 | — |
 | 24 | 0.7.0-alpha.3 | `native-n11-gui-wave2` | 21/09 18:42 | 16.508.224 | `6640852dfe1e53e43625c3778268777f9b41675350f621495c400043858f2b4b` | #23 | — |
-| 25 | **0.7.0-alpha.4 ★** | `native-n11-gui-wave2` | 21/09 22:46 | 16.508.324 | `7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a` | #21 | **ÚLTIMA** · full-pack exit=0 · aprovação visual do usuário pendente |
+| 25 | **0.7.0-alpha.4 ★** | `native-n11-gui-wave2` | 21/09 22:46 | 16.508.324 | `7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a` | #21 | última testada no pack · full-pack exit=0 · aprovação visual do usuário pendente |
+| 26 | 0.7.0-alpha.5 | `alpha5-mixer` (Linux, este repositório) | 02/11 | 16.511.727 | `799385c5ba9534d26c880e27986ffb2fc147ae2521a668ca8a6375e4658520bb` | #25 | BGM/SFX no AkashicMixer · compilado (classpath RFG/Linux, ver evidência) · **não rodou no jogo** (OI-17) |
 
 Também existe `candidates/native-n10-ceremonial/build/depth-missing-test-only.jar` (`626d227c…`, 15.304.118 B): **fixture de teste** (camada ausente simulada), *não* é distribuição.
 
