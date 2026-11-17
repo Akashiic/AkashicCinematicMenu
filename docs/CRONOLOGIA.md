@@ -211,6 +211,11 @@ Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.47
 * No mesmo pacote, a pedido do dono: Single e Multi lado a lado no menu principal ("SINGLE" / "MULTI"). [DOC]
 * [LOG] A sonda na CI contra a `GuiSlot` do Forge mostrou `drawContainerBackground`: o fundo da lista não fica em `drawScreen` no jogo. Transformer ajustado às duas estruturas. As menções de "GuiSlot themed" da N11 eram de sondas (estrutura vanilla), não de log do jogo.
 
+### Fase 16 — 0.7.0-alpha.10: novo endereço (17/11/2026)
+
+* O dono troca o destino do **Jogar** para `br2.xmxcloud.net:10542` (antes `:10511`, fixado desde a R04 de 20/09). [DOC]
+* Menções a `10511` em revisões, checkpoints e entradas antigas ficam como histórico.
+
 ---
 
 ## 3. Placar de evidência por versão (o que cada parecer *afirmou* ter executado)

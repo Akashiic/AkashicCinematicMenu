@@ -5,7 +5,7 @@ Menu principal e tela de abertura **cinematográficos e nativos** (Java + LWJGL 
 | | |
 |---|---|
 | Último estado | **0.7.0-alpha.4** (21/09/2026) — último JAR, testado no pack completo; **aprovação visual do dono pendente** |
-| Em andamento | **0.7.0-alpha.9** (17/11/2026) — alpha.8 + **listas com o nosso tema** (Singleplayer, Multijogador, Idiomas, Texturas e demais telas com lista); sem teste no jogo (OI-22). A alpha.7 (`bc7fdbee…`) é a última com relato do dono de que funcionou |
+| Em andamento | **0.7.0-alpha.10** (17/11/2026) — alpha.9 com o botão **Jogar** apontando para `br2.xmxcloud.net:10542`; JAR como artifact do `build-jar`; sem teste no jogo. A alpha.7 (`bc7fdbee…`) é a última com relato do dono de que funcionou |
 | Modid / pacote | `akashiccinematicmenu` / `br.com.redeakashic.cinematic` |
 | Tipo | FMLCorePlugin (coremod ASM, *fail-open*) + mod |
 | Ambiente-alvo | Angelica 2.2.18, Reese Sodium, RTG, Technic |
@@ -14,7 +14,7 @@ Menu principal e tela de abertura **cinematográficos e nativos** (Java + LWJGL 
 > 🌐 English summary: [README.en.md](README.en.md)
 
 ## O que ele faz
-* Substitui o menu principal por **"Santuário"**: céu, arquitetura e anjo em parallax 2.5D, botão **Jogar** carmesim (conecta direto a `br2.xmxcloud.net:10511`), Singleplayer, Opções, Sair.
+* Substitui o menu principal por **"Santuário"**: céu, arquitetura e anjo em parallax 2.5D, botão **Jogar** carmesim (conecta direto a `br2.xmxcloud.net:10542`), Singleplayer, Opções, Sair.
 * Substitui a tela de carregamento por **"O Despertar"**, com progresso real do Forge (sem percentuais fictícios).
 * Estende o tema a 17 GUIs secundárias por *allow-list* exata (GUIs de outros mods ficam intactas).
 * Música de menu via `SoundHandler` e 6 SFX rituais sintetizados.

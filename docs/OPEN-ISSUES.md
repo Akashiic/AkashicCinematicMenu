@@ -60,7 +60,7 @@ Sem arquivo `LICENSE`: por padrão, todos os direitos reservados, e terceiros **
 Dependências SRG (RFG) e `launchwrapper` vêm de pastas locais (`CubicChunks-Crucible`, `.gradle`, `ThePatcher/lib`). Falta um build público (Gradle/RFG) que baixe tudo por coordenadas Maven e rode os gates em CI. Hoje o CI público só roda o **núcleo puro**. **O workflow `core-tests` está ativo desde 25/10/2026** (`.github/workflows/core-tests.yml`): roda `run_core_gates.py` e `check_docs.py` a cada push/PR. O build do JAR contra o Minecraft (SRG) continua fora do CI.
 
 ### OI-13 — Cobertura nunca exercitada
-Mundo aberto/criado/apagado, servidor `br2.xmxcloud.net:10511` em conexão real e retorno após desconexão real, login autenticado, jogabilidade prolongada, *stress*, outros drivers/GPUs, Android (o launcher mobile entrega a apresentação ao mod, mas isso é outro repositório/ciclo).
+Mundo aberto/criado/apagado, servidor `br2.xmxcloud.net:10542` (até 17/11/2026: porta 10511) em conexão real e retorno após desconexão real, login autenticado, jogabilidade prolongada, *stress*, outros drivers/GPUs, Android (o launcher mobile entrega a apresentação ao mod, mas isso é outro repositório/ciclo).
 
 ### OI-14 — Pack diário
 Observado: JAR extra `mods/akashicindex-tablet-music-online-r2.jar` (`55f26820…`), 20 de 898 entradas do manifesto com hash diferente (18 configs + 2 mcdata) e a pasta diária contendo, em momentos distintos, N07 alpha.3, 0.5.0-alpha.1, 0.5.2-alpha.1 e 0.6.0-alpha.3. Autoria/momento das cópias não foi atribuído.
