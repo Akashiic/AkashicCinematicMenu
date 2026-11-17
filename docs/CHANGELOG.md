@@ -10,7 +10,7 @@ Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md
 - Lista do tamanho da tela (mundos, idiomas, servidores) é limitada à largura do painel.
 - Menu principal (pedido do dono): **Single** e **Multi** na mesma linha, duas metades iguais que somam exatamente a largura do container (bordas alinhadas com os outros botões); textos abreviados "02 SINGLE" / "03 MULTI". O grupo passa a 4 linhas e continua centralizado entre o lema e o Discord. Setas ←/→ também navegam.
 - CI: `tools/ci/run_transformer_probe.py` roda a sonda do transformer contra a `GuiSlot`/`GuiScreen`/`GuiButton` reais (Forge 1.7.10 do RFG) antes do build; log publicado como artifact.
-- Status: núcleo PASSOU; transformer testado contra uma `GuiSlot` sintética (verificação de bytecode `-Xverify:all`, ordem dos ganchos, idempotência); sonda contra a `GuiSlot` real na CI; **não rodou no jogo; aprovação do dono pendente.**
+- Status: núcleo PASSOU; transformer testado contra uma `GuiSlot` sintética (verificação de bytecode `-Xverify:all`, ordem dos ganchos, idempotência); sonda contra a `GuiSlot` real **PASSOU** na CI (vanilla SRG e Forge: 16 checagens e 2 ganchos cada); **JAR compilado** (`08a934db…`, 16.236.164 B, 87 classes); **não rodou no jogo; aprovação do dono pendente.**
 
 ## [0.7.0-alpha.8] — 2026-11-17 — Multijogador + Discord (candidata)
 - **Multijogador de volta** (pedido do dono, 17/11; tinha sido removido na navegação R04 de 20/09): ordem Jogar, Singleplayer, **Multijogador**, Opções, Sair. Abre a `GuiMultiplayer` vanilla.

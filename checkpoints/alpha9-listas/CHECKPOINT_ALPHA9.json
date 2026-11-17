@@ -5,8 +5,8 @@
     "version": "0.7.0-alpha.8",
     "jar_sha256": "bd08d75e82d28eeb02506542574252c1131ca1692b79bbc6fa0cf6b14b33244c"
   },
-  "status": "IMPLEMENTED__CORE_TESTED__TRANSFORMER_TESTED_SYNTHETIC__JAR_PENDING_CI__NOT_RUN_IN_GAME",
-  "jar_sha256": null,
+  "status": "IMPLEMENTED__CORE_TESTED__TRANSFORMER_PROBED_REAL_VANILLA_AND_FORGE__JAR_COMPILED_IN_CI__NOT_RUN_IN_GAME",
+  "jar_sha256": "08a934dbb239571123880bdd55213075891f3fd4a72765d114aada7d3c1007e7",
   "request": "dono 17/11: Singleplayer, Multijogador, Texturas e Idiomas quase sem o nosso fundo; customizar com o menu custom",
   "root_cause": "GuiSlot pinta o fundo da lista opaco (textura x cor solida do vanilla) e as faixas de cima/baixo; GuiSelectWorld nem chama drawDefaultBackground (capturas reais N11)",
   "code_changes": {
@@ -31,14 +31,14 @@
       "evidence": "ordem: fundo -> gancho -> entradas -> faixa -> gancho -> faixa -> gancho; segunda passada identica"
     },
     {
-      "gate": "sonda contra a GuiSlot real (Forge 1.7.10)",
-      "result": "NAO EXECUTADO (local)",
-      "evidence": "roda no build-jar do PR"
+      "gate": "sonda contra a GuiSlot real (vanilla SRG e Forge)",
+      "result": "PASSOU",
+      "evidence": "https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44096988814 — 16 checagens e 2 ganchos em cada; falhas anteriores preservadas: runs 44095943318 (jar errado) e 44096295935 (estrutura Forge detectada)"
     },
     {
       "gate": "compilacao completa",
-      "result": "NAO EXECUTADO (local)",
-      "evidence": "build-jar do PR"
+      "result": "PASSOU",
+      "evidence": "https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44096988814"
     },
     {
       "gate": "runtime no modpack isolado",
@@ -50,5 +50,8 @@
       "result": "PENDENTE"
     }
   ],
-  "reviewer": "autorrevisao do agente (nao e auditoria independente)"
+  "reviewer": "autorrevisao do agente (nao e auditoria independente)",
+  "jar_bytes": 16236164,
+  "classes": 87,
+  "jar_note": "build-jar https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44096988814; log da sonda: artifact transformer-probe-ci.log"
 }
