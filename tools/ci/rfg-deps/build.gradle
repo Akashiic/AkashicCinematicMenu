@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'com.gtnewhorizons.retrofuturagradle' version '1.4.9'
+}
+java { toolchain { languageVersion = JavaLanguageVersion.of(8) } }
+// setupCIWorkspace gera build/rfg/srg_merged_minecraft.jar (vanilla em nomes SRG)
+// e build/rfg/recompiled_minecraft.jar (Minecraft + Forge 1.7.10 recompilados).
+minecraft { mcVersion = '1.7.10' }
+repositories {
+    maven { name = 'GTNH'; url = 'https://nexus.gtnewhorizons.com/repository/public/' }
+    maven { name = 'Forge'; url = 'https://maven.minecraftforge.net' }
+    maven { name = 'Mojang'; url = 'https://libraries.minecraft.net' }
+    mavenCentral()
+}
+// Demais jars do classpath de tools/build_native.py (mesma ordem/versoes do HANDOFF §2).
+// launchwrapper: Mojang 1.12 no lugar do fork CrucibleMC 1.13 (mesma API usada pelo mod).
+configurations { acmDeps { transitive = false } }
+dependencies {
+    acmDeps 'org.lwjgl.lwjgl:lwjgl:2.9.1'
+    acmDeps 'org.apache.logging.log4j:log4j-api:2.0-beta9'
+    acmDeps 'org.ow2.asm:asm:9.8'
+    acmDeps 'org.ow2.asm:asm-tree:9.8'
+    acmDeps 'net.minecraft:launchwrapper:1.12'
+    acmDeps 'io.netty:netty-all:4.0.10.Final'
+}
+tasks.register('copyAcmDeps', Copy) {
+    from configurations.acmDeps
+    into layout.buildDirectory.dir('acm-deps')
+}

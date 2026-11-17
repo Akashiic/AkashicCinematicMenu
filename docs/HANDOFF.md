@@ -28,6 +28,8 @@ O código-fonte da 0.7.0-alpha.4 está na tag `v0.7.0-alpha.4`. O histórico git
 python tools/build_native.py --classpath-json deps.json
 ```
 
+> **Sem as deps locais?** O workflow `.github/workflows/build-jar.yml` gera tudo no GitHub Actions (RetroFuturaGradle 1.4.9 em `tools/ci/rfg-deps`) e publica o JAR **solto** (sem zip) nos artifacts da execução.
+
 > `build_native.py` sem argumento usa os caminhos da máquina do autor (`C:\Users\User\AkashicDev\CubicChunks-Crucible\…`, `~/.gradle/caches/…`). Em outra máquina **sempre** passe `--classpath-json`.
 
 ## 3. Comandos de verificação (do mais barato ao mais caro)

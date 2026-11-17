@@ -12,7 +12,7 @@ Formato: **ID · gravidade · estado**. "Evidência" aponta para o que prova o i
 | OI-06 | N10 nunca rodou no modpack completo | Média | Coberta indiretamente pela N11 (herda), mas sem aceite próprio |
 | OI-07 | Música: direitos da faixa e caminho "sem faixa" nas versões 0.5.2+ | Alta (jurídico) | Decisão do dono |
 | OI-08 | Licença do repositório | Média | Não definida |
-| OI-09 | Build depende de caminhos da máquina do autor | Média | Aberto |
+| OI-09 | Build depende de caminhos da máquina do autor | Média | Mitigado — workflow `build-jar` monta as deps no Actions (launchwrapper Mojang 1.12 no lugar do fork CrucibleMC 1.13); hash da CI pode diferir do build local |
 | OI-10 | Lacuna: conversa do ChatGPT (R02→N11) fora do acervo | Info | Documentada |
 | OI-11 | HTMLs R04 e S01 só existiam na conversa | Info | Hashes preservados, arquivos ausentes |
 | OI-12 | `CURRENT_STATUS.json` defasado | Baixa | Corrigir ao próximo checkpoint |

@@ -10,6 +10,7 @@ Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md
 - Textos de Natal mantendo **THE END OF FORBIDDEN**; botões no mesmo lugar.
 - Correção: texto pequeno perdia a base das letras (E→F) na filtragem bilinear; glifos ganham 1 px de margem.
 - **BGM do menu trocada** pela faixa fornecida pelo dono (Ogg/Vorbis 44,1 kHz estéreo, 225,79 s, `616bfa84…`), copiada sem recodificar; `sounds.json` (`akashiccinematic:bgm/menu`, `stream: true`) e o loop já atendiam, sem mudança de código.
+- CI `build-jar`: gera as dependências SRG via RetroFuturaGradle (`tools/ci/rfg-deps`), roda `build_native.py` e publica JAR, `.sha256`, `native-build.json` e amostras como artifacts **soltos** (`upload-artifact@v7`, `archive: false`).
 - Ferramentas: `tools/build_natal_layers.py`, `tools/build_natal_gui.py`, `tools/preview/` (amostras pelo código real, sem Minecraft).
 - Status: núcleo e suítes PASSOU; **JAR não gerado; não rodou no jogo; aprovação visual do dono pendente.**
 
