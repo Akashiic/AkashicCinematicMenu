@@ -203,6 +203,12 @@ Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.47
 * Tela de conexão passa a mostrar o endereço real do servidor.
 * Ajuste pedido pelo dono: grupo de botões centralizado no espaço livre entre o lema e o Discord (escolheu a opção B entre duas amostras), Jogar mais alto e com espaço maior abaixo dele, "EDIÇÃO DE NATAL" no rodapé. [DOC]
 
+### Fase 15 — 0.7.0-alpha.9: listas com o tema (17/11/2026)
+
+* O dono aponta que Singleplayer, Multijogador, Texturas e Idiomas quase não mostram o nosso fundo. As capturas reais da N11 (`evidence/native-n11-gui-wave2/runtime-review/`) confirmam: lista opaca cobrindo tudo; nos pacotes de recursos, dois blocos opacos sobre o painel. [DOC]
+* Diagnóstico: o patch de textura da `GuiSlot` estava aplicado (log da N11), mas a cor sólida do vanilla torna o fundo opaco de qualquer jeito.
+* Solução: ganchos de repintura após o fundo da lista e após cada faixa; superfície translúcida. Sonda do transformer passa a rodar na CI contra a classe real.
+
 ---
 
 ## 3. Placar de evidência por versão (o que cada parecer *afirmou* ter executado)

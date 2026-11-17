@@ -3,6 +3,13 @@
 Reconstruído a partir dos pareceres, `CHECKPOINT_*.json` e JARs do acervo (ver `PROVENANCE.md`). Datas/horas = *mtime* do JAR final (America/Sao_Paulo). "Status" segue o `QUALITY_CONTRACT`: **compilado/testado ≠ aprovado pelo usuário**.
 Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md`.
 
+## [0.7.0-alpha.9] — 2026-11-17 — Listas com o tema (candidata)
+- Pedido do dono: Singleplayer, Multijogador, Pacotes de recursos e Idiomas "mal têm o nosso background". Causa (vista nas capturas reais da N11): a `GuiSlot` vanilla pinta o fundo da lista **opaco** (a nossa textura multiplicada pela cor sólida do vanilla) mais as faixas de cima e de baixo; a tela de mundos nem chama o fundo padrão.
+- Correção genérica, em todas as telas da allow-list que usam lista: dois ganchos novos no `SecondaryThemeTransformer` (âncoras exatas, fail-open independente do patch de textura existente): logo depois do `Tessellator.draw()` do fundo da lista em `GuiSlot.drawScreen`, o painel é repintado com recorte (scissor) e ganha uma **superfície translúcida** (café 46 %, fios dourados, friso vermelho); no fim de `overlayBackground`, a faixa recebe o painel de volta, sem perder a função de esconder as linhas que passam do limite.
+- Lista do tamanho da tela (mundos, idiomas, servidores) é limitada à largura do painel.
+- CI: `tools/ci/run_transformer_probe.py` roda a sonda do transformer contra a `GuiSlot`/`GuiScreen`/`GuiButton` reais (Forge 1.7.10 do RFG) antes do build; log publicado como artifact.
+- Status: núcleo PASSOU; transformer testado contra uma `GuiSlot` sintética (verificação de bytecode `-Xverify:all`, ordem dos ganchos, idempotência); sonda contra a `GuiSlot` real na CI; **não rodou no jogo; aprovação do dono pendente.**
+
 ## [0.7.0-alpha.8] — 2026-11-17 — Multijogador + Discord (candidata)
 - **Multijogador de volta** (pedido do dono, 17/11; tinha sido removido na navegação R04 de 20/09): ordem Jogar, Singleplayer, **Multijogador**, Opções, Sair. Abre a `GuiMultiplayer` vanilla.
 - **Botão do Discord**: compacto, azul Discord (`#5865F2`), abaixo dos cinco botões; abre direto no navegador (escolha do dono, sem tela de confirmação) o convite fixo `https://discord.gg/cMc32d7UTF` (`core/MenuLinks`). Não sai do menu; 1,5 s de proteção contra clique duplo. Teclado: Tab/setas/Home/End passam por ele.

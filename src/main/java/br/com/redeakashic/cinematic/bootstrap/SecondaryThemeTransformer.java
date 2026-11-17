@@ -76,6 +76,48 @@ public final class SecondaryThemeTransformer implements IClassTransformer {
                         m.instructions.set(f,new MethodInsnNode(Opcodes.INVOKESTATIC,HOOK,"listTexture","()Lnet/minecraft/util/ResourceLocation;",false));
                 }n=next;
             }
-        }return true;
+        }
+        int hooks=listRepaint(c);
+        if(hooks==0)System.err.println("[AkashicCinematic] GuiSlot repaint anchors diverged; list texture swap only");
+        else System.out.println("[AkashicCinematic] GuiSlot repaint hooks: "+hooks);
+        return true;
+    }
+    /**
+     * Second, independent splice (fail-open): after the container background's Tessellator.draw() in drawScreen, and at
+     * every RETURN of overlayBackground, call the theme so the frame is repainted under/around the list. Exact anchors:
+     * one drawScreen(IIF)V, one overlayBackground(IIII)V, one listTexture() call in drawScreen, the first
+     * Tessellator.draw()I after it followed by POP, and at least one RETURN. Any divergence: nothing is inserted.
+     */
+    static int listRepaint(ClassNode c){
+        MethodNode draw=null,overlay=null;int draws=0,overlays=0;
+        for(Object value:c.methods){MethodNode m=(MethodNode)value;
+            if(m.desc.equals("(IIF)V")&&(m.name.equals("func_148128_a")||m.name.equals("drawScreen"))){draw=m;draws++;}
+            if(m.desc.equals("(IIII)V")&&(m.name.equals("func_148136_c")||m.name.equals("overlayBackground"))){overlay=m;overlays++;}
+        }
+        if(draws!=1||overlays!=1)return 0;
+        AbstractInsnNode anchor=null;int refs=0;
+        for(AbstractInsnNode n=draw.instructions.getFirst();n!=null;n=n.getNext())if(n instanceof MethodInsnNode){
+            MethodInsnNode mi=(MethodInsnNode)n;
+            if(mi.owner.equals(HOOK)&&mi.name.equals("listTexture")){anchor=n;refs++;}
+            if(mi.owner.equals(HOOK)&&(mi.name.equals("listBackgroundDrawn")||mi.name.equals("listOverlayDrawn")))return 0;
+        }
+        if(refs!=1)return 0;
+        MethodInsnNode tessDraw=null;
+        for(AbstractInsnNode n=anchor.getNext();n!=null;n=n.getNext())if(n instanceof MethodInsnNode){
+            MethodInsnNode mi=(MethodInsnNode)n;
+            if(mi.owner.equals("net/minecraft/client/renderer/Tessellator")&&(mi.name.equals("func_78381_a")||mi.name.equals("draw"))&&mi.desc.equals("()I")){tessDraw=mi;break;}
+        }
+        if(tessDraw==null||tessDraw.getNext()==null||tessDraw.getNext().getOpcode()!=Opcodes.POP)return 0;
+        java.util.List<AbstractInsnNode> returns=new java.util.ArrayList<AbstractInsnNode>();
+        for(AbstractInsnNode n=overlay.instructions.getFirst();n!=null;n=n.getNext())if(n.getOpcode()==Opcodes.RETURN)returns.add(n);
+        if(returns.isEmpty())return 0;
+        InsnList after=new InsnList();after.add(new VarInsnNode(Opcodes.ALOAD,0));
+        after.add(new MethodInsnNode(Opcodes.INVOKESTATIC,HOOK,"listBackgroundDrawn","(Lnet/minecraft/client/gui/GuiSlot;)V",false));
+        draw.instructions.insert(tessDraw.getNext(),after);
+        for(AbstractInsnNode ret:returns){InsnList call=new InsnList();
+            call.add(new VarInsnNode(Opcodes.ALOAD,0));call.add(new VarInsnNode(Opcodes.ILOAD,1));call.add(new VarInsnNode(Opcodes.ILOAD,2));
+            call.add(new MethodInsnNode(Opcodes.INVOKESTATIC,HOOK,"listOverlayDrawn","(Lnet/minecraft/client/gui/GuiSlot;II)V",false));
+            overlay.instructions.insertBefore(ret,call);}
+        return 1+returns.size();
     }
 }

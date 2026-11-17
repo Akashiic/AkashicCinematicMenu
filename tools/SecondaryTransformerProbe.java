@@ -48,6 +48,11 @@ public final class SecondaryTransformerProbe {
             check(hookCalls(tb,"buttonTexture")==1,"button hook exact");
             check(hookCalls(tl,"listTexture")==oldSlotFields,"every dirt ref replaced");
             check(optionFields(tl)==0,"no GuiSlot dirt refs remain");
+            int bg=hookCalls(tl,"listBackgroundDrawn"),ov=hookCalls(tl,"listOverlayDrawn");
+            check(bg==1,"list background repaint hook exactly once ("+bg+")");
+            check(ov>=1,"overlay repaint hook at every overlayBackground return ("+ov+")");
+            byte[] again=t.transform("net.minecraft.client.gui.GuiSlot","net.minecraft.client.gui.GuiSlot",tl);
+            check(hookCalls(again,"listBackgroundDrawn")==1,"second pass does not duplicate hooks");
             new ClassReader(ts);new ClassReader(tb);new ClassReader(tl);checks+=3;
             byte[] select=read(jar,"net/minecraft/client/gui/GuiSelectWorld.class");
             byte[] untouched=t.transform("net.minecraft.client.gui.GuiSelectWorld","net.minecraft.client.gui.GuiSelectWorld",select);
@@ -56,7 +61,7 @@ public final class SecondaryTransformerProbe {
             for(Object o:world.methods)for(AbstractInsnNode n=((MethodNode)o).instructions.getFirst();n!=null;n=n.getNext())
                 if(n instanceof TypeInsnNode&&n.getOpcode()==Opcodes.NEW&&((TypeInsnNode)n).desc.equals("net/minecraft/client/gui/GuiYesNo"))yesNo++;
             check(yesNo>=1,"delete-world confirmation remains in vanilla bytecode");
-            System.out.println("RESULT transformer_checks="+checks+" slot_dirt_refs="+oldSlotFields+" failures=0");
+            System.out.println("RESULT transformer_checks="+checks+" slot_dirt_refs="+oldSlotFields+" list_repaint_hooks="+(hookCalls(tl,"listBackgroundDrawn")+hookCalls(tl,"listOverlayDrawn"))+" failures=0");
         }
     }
 }
