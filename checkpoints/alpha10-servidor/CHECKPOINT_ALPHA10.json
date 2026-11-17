@@ -1,0 +1,36 @@
+{
+  "checkpoint": "ACM-ALPHA10-SERVIDOR-2026-11-17",
+  "version": "0.7.0-alpha.10",
+  "parent": {
+    "version": "0.7.0-alpha.9",
+    "jar_sha256": "08a934dbb239571123880bdd55213075891f3fd4a72765d114aada7d3c1007e7"
+  },
+  "status": "IMPLEMENTED__CORE_TESTED__JAR_COMPILED_IN_CI__NOT_RUN_IN_GAME",
+  "jar_sha256": "c62adf736e87528590a236666587b0434ee70b5a2068b1d80967047a1973b34e",
+  "change": {
+    "file": "src/main/java/br/com/redeakashic/cinematic/core/ServerTarget.java",
+    "host": "br2.xmxcloud.net",
+    "port_before": 10511,
+    "port_after": 10542,
+    "requested_by": "dono, 17/11/2026"
+  },
+  "gates": [
+    {
+      "gate": "run_core_gates.py (inclui 'exact direct server endpoint' com a porta nova)",
+      "result": "PASSOU"
+    },
+    {
+      "gate": "compilacao completa / sonda do transformer",
+      "result": "PASSOU",
+      "evidence": "https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44143710021 — compilacao completa; sonda 16 checagens e 2 ganchos em vanilla e Forge"
+    },
+    {
+      "gate": "conexao real ao servidor",
+      "result": "NAO EXECUTADO"
+    }
+  ],
+  "reviewer": "autorrevisao do agente (nao e auditoria independente)",
+  "jar_bytes": 16236165,
+  "classes": 87,
+  "jar_note": "build-jar https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44143710021"
+}

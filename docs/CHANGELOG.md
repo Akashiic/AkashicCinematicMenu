@@ -3,6 +3,11 @@
 Reconstruído a partir dos pareceres, `CHECKPOINT_*.json` e JARs do acervo (ver `PROVENANCE.md`). Datas/horas = *mtime* do JAR final (America/Sao_Paulo). "Status" segue o `QUALITY_CONTRACT`: **compilado/testado ≠ aprovado pelo usuário**.
 Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md`.
 
+## [0.7.0-alpha.10] — 2026-11-17 — novo endereço do servidor (candidata)
+- O botão **Jogar** conecta em `br2.xmxcloud.net:10542` (pedido do dono, 17/11/2026; antes porta `10511`). Mudança só em `core/ServerTarget.PORT`; o teste "exact direct server endpoint" passa a exigir a porta nova.
+- A tela "Conectando" já mostra o endereço real desde a alpha.8, então passa a exibir o novo sozinha.
+- Status: núcleo PASSOU; sonda do transformer PASSOU; **JAR compilado** (`c62adf73…`, 16.236.165 B, 87 classes); **não rodou no jogo.**
+
 ## [0.7.0-alpha.9] — 2026-11-17 — Listas com o tema (candidata)
 - Pedido do dono: Singleplayer, Multijogador, Pacotes de recursos e Idiomas "mal têm o nosso background". Causa (vista nas capturas reais da N11): a `GuiSlot` vanilla pinta o fundo da lista **opaco** (a nossa textura multiplicada pela cor sólida do vanilla) mais as faixas de cima e de baixo; a tela de mundos nem chama o fundo padrão.
 - Correção genérica, em todas as telas da allow-list que usam lista: dois ganchos novos no `SecondaryThemeTransformer` (âncoras exatas, fail-open independente do patch de textura existente): logo depois do `Tessellator.draw()` do fundo da lista em `GuiSlot.drawScreen`, o painel é repintado com recorte (scissor) e ganha uma **superfície translúcida** (café 46 %, fios dourados, friso vermelho); no fim de `overlayBackground`, a faixa recebe o painel de volta, sem perder a função de esconder as linhas que passam do limite.

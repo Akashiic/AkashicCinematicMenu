@@ -67,7 +67,7 @@ flowchart TD
     GO --> Q{"Classe exata?<br/>GuiMainMenu · DummyCore MenuVanilla/Old"}
     Q -- "não / SHIFT mantido / disabled" --> ORIG["Menu original preservado"]
     Q -- "sim" --> CM["CinematicMenu (Santuário)"]
-    CM --> A1["Jogar → br2.xmxcloud.net:10511"]
+    CM --> A1["Jogar → br2.xmxcloud.net:10542"]
     CM --> A2["Singleplayer → GuiSelectWorld"]
     CM --> A3["Opções → GuiOptions"]
     CM --> A4["Sair → encerra direto (N11)"]
@@ -115,7 +115,7 @@ flowchart TD
 flowchart LR
     MOB["Forbidden Series — launcher Android<br/>(home 'The End of Forbidden')"] -- "arte e identidade" --> ACM["AkashicCinematicMenu<br/>(este repo)"]
     ACM -- "mod no pack" --> TEOF["Modpack TEOF / Forbidden Series<br/>1.7.10 · Forge 10.13.4.1614"]
-    TEOF -- "conecta" --> SRV["br2.xmxcloud.net:10511"]
+    TEOF -- "conecta" --> SRV["br2.xmxcloud.net:10542"]
     ACM -- "RawScope × Angelica" --> TP["AkashicThePatcher<br/>beta.10 Cinematic-Angelica"]
     ANG["Angelica / GTNHLib / Reese Sodium / RTG / DummyCore / BogoSorter"] -- "coexistência" --> ACM
     MOB -- "entrega a apresentação após atividade GL real" --> ACM

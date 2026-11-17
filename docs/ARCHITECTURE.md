@@ -35,7 +35,7 @@ Cada um confere âncoras **exatas** (contagem, descritor, nome SRG *ou* MCP); se
 
 * `MenuHook.onOpen` (`GuiOpenEvent`, prioridade LOWEST): troca **apenas** as classes exatas `GuiMainMenu`, `DummyCore.Client.GuiMainMenuVanilla`, `DummyCore.Client.GuiMainMenuOld` (`ScreenPolicy`). **SHIFT** mantido na abertura = bypass da sessão; **F8** = volta ao menu original e trava o hook na sessão (`fallback`); **F7** = movimento reduzido.
 * `MenuFlow`: máquina `INTRO → READY → EXITING → HANDED_OFF`; um clique agenda **exatamente uma** navegação; o render nunca é dono da navegação.
-* Ações (`MenuAction`): **PLAY** (conexão direta a `ServerTarget` = `br2.xmxcloud.net:10511`, nome "The End of Forbidden", sem lista de servidores), **SINGLEPLAYER**, **OPTIONS**, **QUIT** (encerra direto desde a N11; as confirmações destrutivas de outras telas permanecem).
+* Ações (`MenuAction`): **PLAY** (conexão direta a `ServerTarget` = `br2.xmxcloud.net:10542`, nome "The End of Forbidden", sem lista de servidores), **SINGLEPLAYER**, **OPTIONS**, **QUIT** (encerra direto desde a N11; as confirmações destrutivas de outras telas permanecem).
 * `SecondaryScreenPolicy`: allow-list **exata** de 17 classes (Options, SelectWorld, CreateWorld, Language, ResourcePacks, Controls, VideoSettings, OptionsSounds, ChatOptions, Snooper, CreateFlatWorld, FlatPresets, RenameWorld, YesNo, ConfirmOpenLink, `rtg…WorldTypeMessageGUI`, `…ReeseSodiumVideoOptionsScreen`).
 * `ConnectionScreenTheme`/`ConnectionCancellationGuard`: temas de *Connecting/Disconnected* + fechamento do canal publicado tarde após cancelar (defeito real reproduzido no run03).
 * `BogoWarningCompat`/`LateBogoNoticeGate`: o aviso conhecido InventoryTweaks/BogoSorter vai para o log; avisos desconhecidos são preservados.

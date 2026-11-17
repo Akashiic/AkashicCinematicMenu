@@ -6,7 +6,9 @@
 
 **0.7.0-alpha.4** (SHA-256 `7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a`, 81 classes) está **compilada, reproduzível e testada em escopo dirigido no modpack completo (exit=0)**, mas a **aprovação visual/sonora do dono ainda está PENDENTE**, não há "liberação geral" e há um problema conhecido de coexistência com o Angelica (OI-01).
 
-> **Atualização 17/11/2026 (noite):** `src/` contém a **0.7.0-alpha.9** = alpha.8 + fundo das listas vanilla com o nosso tema (OI-22).
+> **Atualização 17/11/2026 (noite, 2):** `src/` contém a **0.7.0-alpha.10** = alpha.9 com o Jogar em `br2.xmxcloud.net:10542`.
+>
+> **Atualização 17/11/2026 (noite):** a **0.7.0-alpha.9** = alpha.8 + fundo das listas vanilla com o nosso tema (OI-22).
 >
 > **Atualização 17/11/2026 (tarde):** a **0.7.0-alpha.8** = alpha.7 + botões Multijogador e Discord (OI-21).
 >
