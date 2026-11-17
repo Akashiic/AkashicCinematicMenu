@@ -20,7 +20,7 @@
     "discord": "compacto no rodape, azul #5865F2",
     "discord_open": "direto, sem confirmacao",
     "invite": "https://discord.gg/cMc32d7UTF",
-    "layout": "opcao B: grupo centralizado entre o fim do lema (ou a linha do header) e o Discord; Jogar mais alto (8,1% vs 6,0%); EDICAO DE NATAL no rodape"
+    "layout": "opcao B: grupo centralizado entre o fim do lema (ou a linha do header) e o Discord; Jogar mais alto (8,1% vs 6,0%); EDICAO DE NATAL no rodape; espaco maior abaixo do Jogar (2,6% vs 1,0%)"
   },
   "code_changes": {
     "core/MenuAction": "+MULTIPLAYER, +DISCORD, navigates()",
@@ -42,7 +42,7 @@
     {
       "gate": "11 suites *Tests",
       "result": "PASSOU",
-      "evidence": "PixelLayout 1936, SecondaryScreenPolicy 71, demais inalteradas, failures=0"
+      "evidence": "evidence/alpha8-multi-discord/test-suites.log (PixelLayout 2016), failures=0"
     },
     {
       "gate": "amostras pelo codigo real (rasterizador em software)",

@@ -5,7 +5,7 @@ CoreTests: RESULT scenarios=49 assertions=17634 failures=0
 MenuSoundGateTests: RESULT sound_gate_checks=32 failures=0
 MenuVolumeTests: RESULT menu_volume_checks=11 failures=0
 MusicCoreTests: RESULT music_core_checks=1557 failures=0
-PixelLayoutTests: RESULT geometry_checks=1986 failures=0
+PixelLayoutTests: RESULT geometry_checks=2016 failures=0
 SecondaryScreenPolicyTests: RESULT secondary_policy_checks=71 failures=0
 UiFeaturesTests: RESULT ui-feature-checks=140 failures=0
 VorbisHeaderTests: RESULT vorbis_header_checks=70 failures=0; actual file plus malformed fixtures; not full decoder approval

@@ -10,22 +10,25 @@ public final class PixelLayout {
     }
     /**
      * Fractions of the height: header rule under FORBIDDEN, end of the two-line tagline (shown when h>=600),
-     * button height, the taller Jogar button, the gap between buttons, and the Discord top.
+     * button height, the taller Jogar button, the gap between buttons, the larger gap under Jogar, and the Discord top.
      */
-    static final double HEADER_RULE=.272,TAGLINE_END=.350,BUTTON=.060,HERO=.081,GAP=.010,DISCORD_TOP=.800;
+    static final double HEADER_RULE=.272,TAGLINE_END=.350,BUTTON=.060,HERO=.081,GAP=.010,HERO_GAP=.026,DISCORD_TOP=.800;
     public double buttonX(){return Math.round(sidebar*.10);}
     /** Header rule (divider under the title); drawn by the renderer at exactly this row. */
     public double headerRuleY(){return Math.round(height*HEADER_RULE);}
     /** Upper bound of the free space: the end of the tagline when it is shown, else the header rule. */
     public double groupUpperBound(){return height>=600?Math.round(height*TAGLINE_END):headerRuleY();}
     /** Height of the five-button group (Jogar taller than the rest). */
-    public double groupHeight(){double gap=Math.round(height*GAP);return heroHeight()+(MAIN-1)*(gap+buttonHeight());}
+    public double groupHeight(){return heroHeight()+heroGap()+(MAIN-1)*buttonHeight()+(MAIN-2)*gap();}
+    /** Gap between the regular buttons. */
+    public double gap(){return Math.round(height*GAP);}
+    /** Larger gap under Jogar, to set it apart (owner request 17/11). */
+    public double heroGap(){return Math.round(height*HERO_GAP);}
     /** Top of the group, centered in the free space between the tagline (or header rule) and the Discord button (owner choice B, 17/11). */
     public double groupTop(){return Math.round(groupUpperBound()+(discordY()-groupUpperBound()-groupHeight())/2);}
     public double buttonY(int i){
         if(i<0||i>=MAIN)throw new IllegalArgumentException("index");
-        double gap=Math.round(height*GAP);
-        return i==0?groupTop():groupTop()+heroHeight()+gap+(i-1)*(buttonHeight()+gap);
+        return i==0?groupTop():groupTop()+heroHeight()+heroGap()+(i-1)*(buttonHeight()+gap());
     }
     public double buttonWidth(){return sidebar-2*buttonX();}
     /** Regular main-button height (Singleplayer..Sair). */

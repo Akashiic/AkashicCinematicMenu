@@ -17,6 +17,9 @@ public final class PixelLayoutTests {
             check(above>=p.height*.02,"breathing room above the group");
             check(p.groupUpperBound()==(p.height>=600?Math.round(p.height*.350):p.headerRuleY()),"upper bound: tagline end or header rule");
             check(p.heroHeight()>p.buttonHeight()*1.25||p.height<60,"Jogar taller");
+            double underJogar=p.buttonY(1)-(p.buttonY(0)+p.heroHeight()),between=p.buttonY(2)-(p.buttonY(1)+p.buttonHeight());
+            check(underJogar>=between*2||p.height<200,"larger gap under Jogar "+underJogar+"/"+between);
+            for(int k=2;k<PixelLayout.MAIN-1;k++)check(Math.abs(p.buttonY(k+1)-(p.buttonY(k)+p.buttonHeight())-between)<1e-9,"regular gaps equal");
             check(Math.abs(p.groupHeight()-(p.buttonY(PixelLayout.MAIN-1)+p.buttonHeight(PixelLayout.MAIN-1)-p.buttonY(0)))<1e-9,"group height consistent");
             check(p.hit(Double.NaN,1)==-1,"NaN input");check(p.hit(-1,-1)==-1,"outside input");
         }
