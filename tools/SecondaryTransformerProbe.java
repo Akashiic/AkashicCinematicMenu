@@ -27,7 +27,7 @@ public final class SecondaryTransformerProbe {
         for(Object o:c.methods)for(AbstractInsnNode n=((MethodNode)o).instructions.getFirst();n!=null;n=n.getNext())
             if(n instanceof FieldInsnNode){
                 FieldInsnNode f=(FieldInsnNode)n;
-                if(f.getOpcode()==Opcodes.GETSTATIC&&f.owner.equals("net/minecraft/client/gui/Gui")&&f.name.equals("field_110325_k"))count++;
+                if(f.getOpcode()==Opcodes.GETSTATIC&&f.owner.equals("net/minecraft/client/gui/Gui")&&(f.name.equals("field_110325_k")||f.name.equals("optionsBackground")))count++;
             }
         return count;
     }

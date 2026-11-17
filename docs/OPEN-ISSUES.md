@@ -100,6 +100,7 @@ O dono escreveu "Funcionou essa versão" depois de baixar o JAR **0.7.0-alpha.7*
 * **Testar (cópia isolada):** clicar Multijogador → lista aparece com tema, música continua; adicionar/editar servidor e conexão direta; conectar num servidor da lista → "Conectando" mostra o endereço dele; clicar Discord (e Enter com foco nele) → abre o convite uma vez, o menu fica; clique duplo rápido não abre duas abas.
 
 ### OI-22 — Listas com o tema (0.7.0-alpha.9)
+* **Estrutura Forge:** no jogo a `GuiSlot` tem o fundo em `drawContainerBackground` (sonda da CI, execução 44096295935); o transformer trata vanilla e Forge, e a sonda roda contra os dois.
 * **Feito:** ganchos `listBackgroundDrawn`/`listOverlayDrawn` na `GuiSlot` (âncoras exatas; se divergirem, só a troca de textura antiga é aplicada e o log diz `GuiSlot repaint anchors diverged`). Testado contra `GuiSlot` sintética com `-Xverify:all`; sonda contra a real roda na CI.
 * **Riscos:** (1) mais desenho por quadro nas telas com lista (o painel é repintado em até 3 recortes); (2) `RawScope` + scissor sob o Angelica (mesma família da OI-01); (3) a seleção da linha continua o quadro preto do vanilla; (4) o cabeçalho "REDE AKASHIC / seção" fica sob a superfície translúcida quando a lista começa acima dele.
 * **Testar (cópia isolada):** Singleplayer, Multijogador (lista e adicionar servidor), Idiomas, Pacotes de recursos, Controles e Vídeo: fundo visível pela lista, faixas sem linhas vazando ao rolar, nenhum bloco branco; repetir com o Angelica.

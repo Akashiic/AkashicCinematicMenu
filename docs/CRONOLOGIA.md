@@ -209,6 +209,7 @@ Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.47
 * Diagnóstico: o patch de textura da `GuiSlot` estava aplicado (log da N11), mas a cor sólida do vanilla torna o fundo opaco de qualquer jeito.
 * Solução: ganchos de repintura após o fundo da lista e após cada faixa; superfície translúcida. Sonda do transformer passa a rodar na CI contra a classe real.
 * No mesmo pacote, a pedido do dono: Single e Multi lado a lado no menu principal ("SINGLE" / "MULTI"). [DOC]
+* [LOG] A sonda na CI contra a `GuiSlot` do Forge mostrou `drawContainerBackground`: o fundo da lista não fica em `drawScreen` no jogo. Transformer ajustado às duas estruturas. As menções de "GuiSlot themed" da N11 eram de sondas (estrutura vanilla), não de log do jogo.
 
 ---
 
