@@ -201,6 +201,7 @@ Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.47
 * O Multijogador volta depois de ter sido retirado na R04 (20/09) — decisão nova do dono, não regressão.
 * `MenuAction` ganha `MULTIPLAYER` e `DISCORD`; o link é uma constante (`MenuLinks`) aberta como no chat vanilla (`java.awt.Desktop`, depois `Sys.openURL`).
 * Tela de conexão passa a mostrar o endereço real do servidor.
+* Ajuste pedido pelo dono: grupo de botões centralizado no espaço livre entre o lema e o Discord (escolheu a opção B entre duas amostras), Jogar mais alto, "EDIÇÃO DE NATAL" no rodapé. [DOC]
 
 ---
 

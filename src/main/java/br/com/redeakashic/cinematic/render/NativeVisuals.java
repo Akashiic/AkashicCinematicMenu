@@ -80,22 +80,22 @@ public final class NativeVisuals implements AutoCloseable {
         star(c,h*.098,10*s,GOLD,.95,motion?.85+.15*Math.sin(age*1.1):.9);
         center("THE END OF",c,h*.140,11*s,p*.80,false,3*s,MUTED,1);
         center("FORBIDDEN",c,h*.180,43*s,p*.86,true,1.3*s,IVORY,1);
-        rect(p*.23,h*.272,p*.54,1,GOLD,.35);star(c,h*.272,4.5*s,RED,.95,0);
+        double rule=layout.pixels.headerRuleY();rect(p*.23,rule,p*.54,1,GOLD,.35);star(c,rule,4.5*s,RED,.95,0);
         if(h>=600){center("Até nos corredores sem fim,",c,h*.300,11*s,p*.83,true,1*s,IVORY,.88);center("o Natal encontra caminho.",c,h*.326,11*s,p*.83,true,.7*s,IVORY,.88);}
-        rect(p*.10,h*.366+3*s,4*s,4*s,RED,.9);rect(p*.10+7*s,h*.366+3*s,4*s,4*s,PINE,.95);
-        text("EDIÇÃO DE NATAL",p*.10+16*s,h*.366,9*s,p*.7,false,2*s,GOLD,.88);
         String[] actions={"JOGAR","SINGLEPLAYER","MULTIJOGADOR","OPÇÕES","SAIR"};
         for(int i=0;i<PixelLayout.MAIN;i++){
-            double x=layout.pixels.buttonX(),y=layout.pixels.buttonY(i),bw=layout.pixels.buttonWidth(),bh=layout.pixels.buttonHeight(),hot=Math.max(0,Math.min(1,highlights[i]));
+            double x=layout.pixels.buttonX(),y=layout.pixels.buttonY(i),bw=layout.pixels.buttonWidth(),bh=layout.pixels.buttonHeight(i),hot=Math.max(0,Math.min(1,highlights[i]));
             if(i==0)HeroButton.draw(x,y,bw,bh,age,hot,playPressAge,visibility,motion&&heroAnimation);
             else{rect(x,y,bw,bh,SLATE,(.30+hot*.40)*visibility);outline(x,y,bw,bh,GOLD,(.20+hot*.50)*visibility);if(hot>.005){rect(x,y,2,bh,RED,hot*visibility);rect(x+2,y,1,bh,GOLD,hot*.6*visibility);}}
             text("0"+(i+1),x+12*s,y+(bh-10*s)/2,9*s,24*s,false,1*s,i==0?0xFFF5E8:GOLD,visibility*.88);
-            text(actions[i],x+36*s,y+(bh-19*s)/2-1,19*s,bw-(i==0?67:48)*s,true,1*s,i==0?0xFFFFFF:IVORY,visibility);
+            double label=i==0?23*s:19*s;
+            text(actions[i],x+36*s,y+(bh-label)/2-1,label,bw-(i==0?67:48)*s,true,1*s,i==0?0xFFFFFF:IVORY,visibility);
         }
         discord(layout.pixels.buttonX(),layout.pixels.discordY(),layout.pixels.buttonWidth(),layout.pixels.discordHeight(),s,Math.max(0,Math.min(1,highlights[PixelLayout.DISCORD])),visibility);
         text("REDE AKASHIC",p*.10,h*.877,10*s,p*.80,false,2*s,GOLD,1);
         text("FORBIDDEN SERIES  /  1.7.10",p*.10,h*.919,8*s,p*.80,false,1*s,MUTED,1);
-        text("BOAS FESTAS  ·  NATAL 2026",p*.10,h*.947,8*s,p*.80,false,1*s,MUTED,.85);
+        rect(p*.10,h*.947+2*s,4*s,4*s,RED,.9);rect(p*.10+7*s,h*.947+2*s,4*s,4*s,PINE,.95);
+        text("EDIÇÃO DE NATAL 2026",p*.10+16*s,h*.947,8*s,p*.74,false,1*s,MUTED,.85);
         shadeV(p,h*.80,w-p,h*.20,INK,0,.55);
         quote("Corra. O Natal não espera.",w*.79,h*.897,23*s,w*.37,.3*s,s,1);
     }

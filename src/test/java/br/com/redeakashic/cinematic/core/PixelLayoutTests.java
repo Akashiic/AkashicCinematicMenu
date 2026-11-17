@@ -12,6 +12,12 @@ public final class PixelLayoutTests {
                 check(i==PixelLayout.TARGETS-1||y+h<p.targetY(i+1),"nonoverlap");
                 check(i==PixelLayout.DISCORD||p.targetY(i)==p.buttonY(i),"main buttons");}
             check(p.discordHeight()<p.buttonHeight()||p.height<40,"discord compact");
+            double above=p.buttonY(0)-p.groupUpperBound(),below=p.discordY()-(p.buttonY(PixelLayout.MAIN-1)+p.buttonHeight(PixelLayout.MAIN-1));
+            check(Math.abs(above-below)<=1.5,"group centered in the free space "+s[0]+"x"+s[1]+" "+above+"/"+below);
+            check(above>=p.height*.02,"breathing room above the group");
+            check(p.groupUpperBound()==(p.height>=600?Math.round(p.height*.350):p.headerRuleY()),"upper bound: tagline end or header rule");
+            check(p.heroHeight()>p.buttonHeight()*1.25||p.height<60,"Jogar taller");
+            check(Math.abs(p.groupHeight()-(p.buttonY(PixelLayout.MAIN-1)+p.buttonHeight(PixelLayout.MAIN-1)-p.buttonY(0)))<1e-9,"group height consistent");
             check(p.hit(Double.NaN,1)==-1,"NaN input");check(p.hit(-1,-1)==-1,"outside input");
         }
         for(int w=640;w<=3840;w+=73)for(int h=480;h<=2160;h+=97){PixelLayout p=new PixelLayout(w,h);check(p.buttonX()+p.buttonWidth()<=p.sidebar,"sweep no overflow");check(p.discordY()+p.discordHeight()<h*.87,"sweep footer safe");}

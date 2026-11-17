@@ -19,12 +19,13 @@
     ],
     "discord": "compacto no rodape, azul #5865F2",
     "discord_open": "direto, sem confirmacao",
-    "invite": "https://discord.gg/cMc32d7UTF"
+    "invite": "https://discord.gg/cMc32d7UTF",
+    "layout": "opcao B: grupo centralizado entre o fim do lema (ou a linha do header) e o Discord; Jogar mais alto (8,1% vs 6,0%); EDICAO DE NATAL no rodape"
   },
   "code_changes": {
     "core/MenuAction": "+MULTIPLAYER, +DISCORD, navigates()",
     "core/MenuLinks": "nova: convite fixo",
-    "core/PixelLayout": "5 botoes + alvo compacto do Discord (TARGETS=6)",
+    "core/PixelLayout": "5 botoes (Jogar mais alto) centralizados no espaco livre + alvo compacto do Discord (TARGETS=6)",
     "render/NativeVisuals": "5 botoes, botao do Discord",
     "render/NativeLayout": "count/alvos",
     "client/CinematicMenu": "MULTIPLAYER -> GuiMultiplayer; DISCORD abre link sem sair",
