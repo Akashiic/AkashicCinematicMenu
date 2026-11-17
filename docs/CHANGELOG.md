@@ -9,6 +9,7 @@ Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md
 - Paleta quente (café, ouro de estrela, creme, vermelho de laço, verde pinheiro); estrela, guirlanda de luzes e neve; botão Jogar vermelho de Natal.
 - Textos de Natal mantendo **THE END OF FORBIDDEN**; botões no mesmo lugar.
 - Correção: texto pequeno perdia a base das letras (E→F) na filtragem bilinear; glifos ganham 1 px de margem.
+- **BGM do menu trocada** pela faixa fornecida pelo dono (Ogg/Vorbis 44,1 kHz estéreo, 225,79 s, `616bfa84…`), copiada sem recodificar; `sounds.json` (`akashiccinematic:bgm/menu`, `stream: true`) e o loop já atendiam, sem mudança de código.
 - Ferramentas: `tools/build_natal_layers.py`, `tools/build_natal_gui.py`, `tools/preview/` (amostras pelo código real, sem Minecraft).
 - Status: núcleo e suítes PASSOU; **JAR não gerado; não rodou no jogo; aprovação visual do dono pendente.**
 

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/user/AkashicCinematicMenu/tools/build_native.py", line 88, in <module>
+    main()
+    ~~~~^^
+  File "/home/user/AkashicCinematicMenu/tools/build_native.py", line 35, in main
+    pick(cache/'org.lwjgl.lwjgl/lwjgl/2.9.1', '*/*.jar'),
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/AkashicCinematicMenu/tools/build_native.py", line 21, in pick
+    raise FileNotFoundError(str(root / pattern))
+FileNotFoundError: /root/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl/2.9.1/*/*.jar
+exit=1

@@ -176,6 +176,7 @@ Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.47
 * O dono pede a troca completa da estética pela sua arte de Natal (2000×1116), mantendo **THE END OF FORBIDDEN**, os botões no mesmo lugar e textos novos de Natal; autoria declarada pelo próprio dono. [DOC]
 * **0.7.0-alpha.5** (código): paralaxe em 3 planos recortados com BiRefNet (máscaras versionadas), paleta quente, estrela/guirlanda/neve, textos de Natal em todas as superfícies, recolorido determinístico dos widgets e correção da base das letras no `UiTypography`.
 * Amostras geradas pelo **código real** do pacote `render` num rasterizador OpenGL em software (`tools/preview/`), em 6 resoluções (854×480 a 2560×1080).
+* Mesmo dia: o dono troca a BGM do menu (225,79 s, `616bfa84…`). Verificados: `stream: true`, loop sem duração fixa e supressão da música vanilla; decodificação completa via ffmpeg sem erro. `build_native.py` falhou por falta das dependências SRG (log preservado em `evidence/natal/build-native-attempt.log`); a reconstrução delas via RetroFuturaGradle foi bloqueada pela política do ambiente.
 * Núcleo + 10 suítes PASSOU. **JAR não gerado** (sessão em nuvem sem as dependências SRG); **sem teste no jogo**; aprovação visual do dono pendente.
 
 ---

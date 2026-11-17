@@ -30,6 +30,11 @@
       "evidence": "evidence/natal/test-suites.log / run_core_gates.py: scenarios=48 assertions=17489 failures=0"
     },
     {
+      "gate": "VorbisHeaderTests com a BGM nova + BgmPlaybackTests/MusicCoreTests/MenuSoundGateTests",
+      "result": "PASSOU",
+      "evidence": "vorbis_header_checks=70; playback 18/124; music_core 1557; sound_gate 32; failures=0"
+    },
+    {
       "gate": "suites *Tests individuais (10)",
       "result": "PASSOU",
       "evidence": "evidence/natal/test-suites.log",
@@ -62,8 +67,8 @@
     },
     {
       "gate": "build_native.py (JAR contra artefatos SRG reais)",
-      "result": "NAO EXECUTADO",
-      "evidence": "dependencias ausentes"
+      "result": "FALHOU (ambiente)",
+      "evidence": "evidence/natal/build-native-attempt.log: dependencias SRG ausentes; reconstrucao via RetroFuturaGradle bloqueada pela politica do ambiente"
     },
     {
       "gate": "verify_wave2_alpha4.py / probes de bytecode e graficos (GPU)",
@@ -147,5 +152,21 @@
     "before_backdrop": 3.8,
     "after_backdrop": 8.5
   },
-  "reviewer": "autorrevisao do agente (nao e auditoria independente)"
+  "reviewer": "autorrevisao do agente (nao e auditoria independente)",
+  "bgm": {
+    "path": "src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg",
+    "sha256": "616bfa84978c3154b240a7ae9c0a2b9fc3ac17321ae032efccbd3f55b797e3a0",
+    "bytes": 4463690,
+    "format": "Ogg/Vorbis 44100 Hz estereo",
+    "duration_s": 225.79,
+    "previous_sha256": "6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6",
+    "replaced": "2026-11-17, pelo dono; copia byte a byte, sem recodificar",
+    "checks": {
+      "sounds_json": "akashiccinematic:bgm/menu, category music, stream true",
+      "loop": "MenuTrack repeat=settings.loop (padrao true), repeatDelay 0; BgmPlayback reentra se o stream terminar",
+      "hardcoded_duration": "nenhuma",
+      "vanilla_suppression": "PlaySoundEvent17 (HIGHEST/LOWEST) + silenceTrackedVanilla; inalterado",
+      "ffmpeg_full_decode": "sem erro"
+    }
+  }
 }
