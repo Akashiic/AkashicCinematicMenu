@@ -51,6 +51,8 @@ jobs:
       - uses: actions/upload-artifact@v7
         with: { path: evidence/native-build.json, archive: false, if-no-files-found: error }
       - uses: actions/upload-artifact@v7
+        with: { path: evidence/native-classpath.json, archive: false, if-no-files-found: error }
+      - uses: actions/upload-artifact@v7
         with: { path: build/preview-natal/menu-1920x1080.png, archive: false, if-no-files-found: error }
       - uses: actions/upload-artifact@v7
         with: { path: build/preview-natal/boot-1920x1080.png, archive: false, if-no-files-found: error }
