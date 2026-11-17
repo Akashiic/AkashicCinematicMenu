@@ -3,7 +3,8 @@
 Reconstruído a partir dos pareceres, `CHECKPOINT_*.json` e JARs do acervo (ver `PROVENANCE.md`). Datas/horas = *mtime* do JAR final (America/Sao_Paulo). "Status" segue o `QUALITY_CONTRACT`: **compilado/testado ≠ aprovado pelo usuário**.
 Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md`.
 
-## [0.7.0-alpha.5] — 2026-11-17 — N12 *Edição de Natal* (candidata, sem JAR)
+## [0.7.0-alpha.6] — 2026-11-17 — N12 *Edição de Natal* (candidata, sem JAR)
+- *Numeração:* entrou no `main` como `0.7.0-alpha.5`, renomeada para alpha.6 porque já existia um JAR alpha.5 (`799385c5…`, AkashicMixer, branch não mergeado) — ver `LINEAGE.md`.
 - **Nova estética completa** a partir da arte de Natal do dono (`docs/design/N12-natal/`): menu, loading/splash, transição, conexão e telas secundárias.
 - Paralaxe refeita em 3 planos (corredor, perseguidores, garota + árvore) de 2080×1196; vidro em meia resolução; enquadramento ancorado para 4:3 e 21:9.
 - Paleta quente (café, ouro de estrela, creme, vermelho de laço, verde pinheiro); estrela, guirlanda de luzes e neve; botão Jogar vermelho de Natal.

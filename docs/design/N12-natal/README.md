@@ -1,4 +1,4 @@
-# N12 — Edição de Natal (0.7.0-alpha.5)
+# N12 — Edição de Natal (0.7.0-alpha.6)
 
 Troca completa da estética do menu: a catedral com o anjo dá lugar à arte de Natal do dono (a garota com a árvore e o lança-mísseis fugindo pelos corredores amarelos, com dois perseguidores). **Implementado e testado no núcleo; JAR não gerado; não testado no jogo; aprovação visual do dono PENDENTE.**
 

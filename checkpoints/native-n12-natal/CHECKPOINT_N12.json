@@ -1,6 +1,6 @@
 {
   "checkpoint": "ACM-N12-NATAL-2026-11-17",
-  "version": "0.7.0-alpha.5",
+  "version": "0.7.0-alpha.6",
   "parent": {
     "version": "0.7.0-alpha.4",
     "jar_sha256": "7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a"
