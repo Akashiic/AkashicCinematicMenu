@@ -22,6 +22,9 @@ public final class SecondaryScreenPolicy {
         m.put("net.minecraft.client.gui.GuiConfirmOpenLink","LINK EXTERNO");
         m.put("rtg.client.gui.WorldTypeMessageGUI","GERAÇÃO DE MUNDO");
         m.put("me.flashyreese.mods.reeses_sodium_options.client.gui.ReeseSodiumVideoOptionsScreen","VÍDEO");
+        m.put("net.minecraft.client.gui.GuiMultiplayer","MULTIJOGADOR");
+        m.put("net.minecraft.client.gui.GuiScreenAddServer","SERVIDOR");
+        m.put("net.minecraft.client.gui.GuiScreenServerList","CONEXÃO DIRETA");
         LABELS=Collections.unmodifiableMap(m);
     }
     private SecondaryScreenPolicy(){}

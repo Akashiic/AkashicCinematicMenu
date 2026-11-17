@@ -14,7 +14,9 @@ public final class SecondaryScreenPolicyTests {
             "net.minecraft.client.gui.GuiRenameWorld","net.minecraft.client.gui.GuiYesNo",
             "net.minecraft.client.gui.GuiConfirmOpenLink",
             "rtg.client.gui.WorldTypeMessageGUI",
-            "me.flashyreese.mods.reeses_sodium_options.client.gui.ReeseSodiumVideoOptionsScreen"
+            "me.flashyreese.mods.reeses_sodium_options.client.gui.ReeseSodiumVideoOptionsScreen",
+            "net.minecraft.client.gui.GuiMultiplayer","net.minecraft.client.gui.GuiScreenAddServer",
+            "net.minecraft.client.gui.GuiScreenServerList"
         };
         Set<String> unique=new HashSet<String>();
         for(String name:supported){
@@ -29,6 +31,10 @@ public final class SecondaryScreenPolicyTests {
         }
         check(BgmFrontendPolicy.frontend(true,false,"net.minecraft.client.gui.ScreenChatOptions"),
                 "chat options keeps menu BGM");
+        for(String mp:new String[]{"net.minecraft.client.gui.GuiMultiplayer","net.minecraft.client.gui.GuiScreenAddServer","net.minecraft.client.gui.GuiScreenServerList"})
+            check(BgmFrontendPolicy.frontend(true,false,mp),"multiplayer screens keep menu BGM "+mp);
+        check(BgmFrontendPolicy.context(true,true,false,"net.minecraft.client.multiplayer.GuiConnecting")!=BgmPlayback.Context.FRONTEND,
+                "joining a server from the list still leaves the menu music");
         check(!BgmFrontendPolicy.frontend(true,true,"net.minecraft.client.gui.GuiOptions"),
                 "world always suppresses menu BGM context");
         System.out.println("RESULT secondary_policy_checks="+checks+" failures=0");

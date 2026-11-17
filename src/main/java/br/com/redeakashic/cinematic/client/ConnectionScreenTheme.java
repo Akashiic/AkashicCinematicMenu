@@ -5,6 +5,7 @@ import br.com.redeakashic.cinematic.render.*;
 import cpw.mods.fml.common.eventhandler.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.*;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.resources.I18n;
 import net.minecraftforge.client.event.*;
 import org.apache.logging.log4j.Logger;
@@ -32,7 +33,7 @@ public final class ConnectionScreenTheme {
             boolean connecting=g.getClass().getName().equals(CONNECTING);
             String title=connecting?"A TRAVESSIA DE NATAL":String.valueOf(field(g,"field_146306_a"));
             List<String> lines=new ArrayList<String>();
-            if(connecting){lines.add(I18n.func_135052_a(field(g,"field_146371_g")==null?"connect.connecting":"connect.authorizing"));lines.add("br2.xmxcloud.net:10511");}
+            if(connecting){lines.add(I18n.func_135052_a(field(g,"field_146371_g")==null?"connect.connecting":"connect.authorizing"));String address=currentAddress(mc);if(address!=null)lines.add(address);}
             else{Object raw=field(g,"field_146305_g");if(!(raw instanceof List<?>))return;for(Object line:(List<?>)raw){if(!(line instanceof String))return;lines.add((String)line);}}
             if(lines.size()>32||lines.size()*10>gh-95)return; // Keep native behavior for exceptionally long server errors.
             Object rawButtons=field(g,"field_146292_n");if(!(rawButtons instanceof List<?>))return;
@@ -62,6 +63,11 @@ public final class ConnectionScreenTheme {
             }
             event.setCanceled(true);drawn++;
         }catch(ReflectiveOperationException|RuntimeException|LinkageError ex){failed=true;log.warn("Connection theme unavailable; native rendering preserved.",ex);dispose();}
+    }
+    /** The server actually being joined (Jogar or the Multiplayer list both set it), never a hardcoded address. */
+    private static String currentAddress(Minecraft mc){
+        ServerData data=mc.func_147104_D();String ip=data==null?null:data.field_78845_b;
+        return ip==null||ip.trim().isEmpty()?null:ip.trim();
     }
     private static void centered(Minecraft mc,String text,int x,int y,int color){
         mc.field_71466_p.func_78276_b(text,x-mc.field_71466_p.func_78256_a(text)/2,y,color);

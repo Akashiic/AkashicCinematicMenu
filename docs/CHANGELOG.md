@@ -3,6 +3,15 @@
 Reconstruído a partir dos pareceres, `CHECKPOINT_*.json` e JARs do acervo (ver `PROVENANCE.md`). Datas/horas = *mtime* do JAR final (America/Sao_Paulo). "Status" segue o `QUALITY_CONTRACT`: **compilado/testado ≠ aprovado pelo usuário**.
 Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md`.
 
+## [0.7.0-alpha.8] — 2026-11-17 — Multijogador + Discord (candidata)
+- **Multijogador de volta** (pedido do dono, 17/11; tinha sido removido na navegação R04 de 20/09): ordem Jogar, Singleplayer, **Multijogador**, Opções, Sair. Abre a `GuiMultiplayer` vanilla.
+- **Botão do Discord**: compacto, azul Discord (`#5865F2`), abaixo dos cinco botões; abre direto no navegador (escolha do dono, sem tela de confirmação) o convite fixo `https://discord.gg/cMc32d7UTF` (`core/MenuLinks`). Não sai do menu; 1,5 s de proteção contra clique duplo. Teclado: Tab/setas/Home/End passam por ele.
+- O menu continua sem URL/comando arbitrário: `MenuAction` é fechado e o único link é a constante testada.
+- Telas de multijogador (`GuiMultiplayer`, `GuiScreenAddServer`, `GuiScreenServerList`) entram nas allow-lists exatas do tema e da BGM do menu.
+- Correção: a tela "Conectando" com tema mostrava sempre `br2.xmxcloud.net:10511`; agora mostra o servidor que está sendo de fato conectado (`Minecraft.func_147104_D`), o que importa para servidores da lista.
+- Layout: 5 botões a 39,8 % da altura (passo 7,9 %, altura 6,6 %) e o Discord a 80 %; "EDIÇÃO DE NATAL" sobe para 36,6 %.
+- Status: núcleo e 11 suítes PASSOU (CoreTests 49 cenários); amostras pelo código real; JAR na CI do PR; **não rodou no jogo; aprovação do dono pendente.**
+
 ## [0.7.0-alpha.7] — 2026-11-17 — Edição de Natal + AkashicMixer (candidata)
 - Integra o branch `claude/focused-tesla-4haxh8` (0.7.0-alpha.5, 02/11), que tinha ficado fora do `main`: a BGM e os SFX do menu voltam a ser controlados pelo AkashicMixer quando ele está instalado (fail-open). A alpha.6 não tinha esse hook.
 - CI `build-jar` baixa `akashicmixer-0ff47b7-dev.jar` do JitPack e confere o SHA-256 `56e6e80c…` (o mesmo da evidência da alpha.5) antes de compilar.

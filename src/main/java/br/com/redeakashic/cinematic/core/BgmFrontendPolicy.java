@@ -28,6 +28,10 @@ public final class BgmFrontendPolicy {
         "rtg.client.gui.WorldTypeMessageGUI",
         "me.flashyreese.mods.reeses_sodium_options.client.gui.ReeseSodiumVideoOptionsScreen",
         "net.minecraft.client.gui.GuiYesNoLink",
+        // Multijogador (0.7.0-alpha.8): lista de servidores, adicionar/editar servidor e conexao direta.
+        "net.minecraft.client.gui.GuiMultiplayer",
+        "net.minecraft.client.gui.GuiScreenAddServer",
+        "net.minecraft.client.gui.GuiScreenServerList",
         // AkashicMixer screen (Options > Music & Sounds > Akashic Sounds Mixer): the menu music keeps playing while its slider moves.
         "com.akashiic.mixer.client.GuiAkashicMixer"
     )));

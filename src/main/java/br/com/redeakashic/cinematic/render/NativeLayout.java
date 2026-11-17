@@ -14,9 +14,9 @@ public final class NativeLayout {
     public double localY(double y,int w,int h){return y;}
     public int hit(double x,double y){return pixels.hit(x,y);}
     public int n(String key){
-        if(key.equals("count"))return 4;if(key.equals("width"))return width;if(key.equals("height"))return height;
+        if(key.equals("count"))return PixelLayout.TARGETS;if(key.equals("width"))return width;if(key.equals("height"))return height;
         if(key.startsWith("button.")){String[] parts=key.split("\\.");int i=Integer.parseInt(parts[1]);
-            switch(parts[2]){case "x":return (int)pixels.buttonX();case "y":return (int)pixels.buttonY(i);case "width":return (int)pixels.buttonWidth();case "height":return (int)pixels.buttonHeight();default:break;}}
+            switch(parts[2]){case "x":return (int)pixels.buttonX();case "y":return (int)pixels.targetY(i);case "width":return (int)pixels.buttonWidth();case "height":return (int)pixels.targetHeight(i);default:break;}}
         throw new IllegalArgumentException(key);
     }
     static InputStream open(String name)throws IOException{
