@@ -36,7 +36,7 @@ Coluna **Pai** = linha de base declarada no `baseline.json`/parecer da própria 
 | 24 | 0.7.0-alpha.3 | `native-n11-gui-wave2` | 21/09 18:42 | 16.508.224 | `6640852dfe1e53e43625c3778268777f9b41675350f621495c400043858f2b4b` | #23 | — |
 | 25 | **0.7.0-alpha.4 ★** | `native-n11-gui-wave2` | 21/09 22:46 | 16.508.324 | `7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a` | #21 | **último JAR** · full-pack exit=0 · aprovação visual do usuário pendente |
 | 26 | 0.7.0-alpha.5 | `alpha5-mixer` (branch `claude/focused-tesla-4haxh8`, **não mergeado**) | 02/11 | 16.511.727 | `799385c5ba9534d26c880e27986ffb2fc147ae2521a668ca8a6375e4658520bb` | #25 | BGM/SFX no AkashicMixer · compilado · não rodou no jogo · registrado aqui para o número não ser reusado |
-| 27 | 0.7.0-alpha.6 | `native-n12-natal` | 17/11 (código) | — | **JAR ainda não gerado** (CI `build-jar`) | #25 | Edição de Natal; só código-fonte/recursos (ver `checkpoints/native-n12-natal/`). Preencher o SHA ao compilar |
+| 27 | **0.7.0-alpha.6** | `native-n12-natal` (CI `build-jar`, Linux) | 17/11 11:23 UTC | 16.226.074 | `dcc69230a1e6e580c6fbfdd2fd5582e77f71915bc14e7b4e16d0b906d4dfcac3` | #25 | Edição de Natal · 81 classes major 52 · compilado contra SRG do RFG 1.4.9 (log4j `2.0-beta9-fixed`, launchwrapper 1.12) · **não rodou no jogo** · aprovação do dono pendente · [execução](https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44073307002) | Edição de Natal; só código-fonte/recursos (ver `checkpoints/native-n12-natal/`). Preencher o SHA ao compilar |
 
 Também existe `candidates/native-n10-ceremonial/build/depth-missing-test-only.jar` (`626d227c…`, 15.304.118 B): **fixture de teste** (camada ausente simulada), *não* é distribuição.
 

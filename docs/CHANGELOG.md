@@ -13,7 +13,7 @@ Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md
 - **BGM do menu trocada** pela faixa fornecida pelo dono (Ogg/Vorbis 44,1 kHz estéreo, 225,79 s, `616bfa84…`), copiada sem recodificar; `sounds.json` (`akashiccinematic:bgm/menu`, `stream: true`) e o loop já atendiam, sem mudança de código.
 - CI `build-jar`: gera as dependências SRG via RetroFuturaGradle (`tools/ci/rfg-deps`), roda `build_native.py` e publica JAR, `.sha256`, `native-build.json` e amostras como artifacts **soltos** (`upload-artifact@v7`, `archive: false`).
 - Ferramentas: `tools/build_natal_layers.py`, `tools/build_natal_gui.py`, `tools/preview/` (amostras pelo código real, sem Minecraft).
-- Status: núcleo e suítes PASSOU; **JAR não gerado; não rodou no jogo; aprovação visual do dono pendente.**
+- Status: núcleo e suítes PASSOU; **JAR compilado na CI** (`dcc69230…`, 16.226.074 B, 81 classes); **não rodou no jogo; aprovação visual do dono pendente.**
 
 ## [0.7.0-alpha.4] — 2026-09-21 22:46
 - Tema do Santuário estendido às GUIs secundárias (allow-list de 17 classes): Options, Select World, Create World (+ aviso RTG), Language, Resource Packs, Controls, Video (Reese Sodium), Sound, Chat, Snooper, Flat World/Presets, Rename World, confirmações vanilla.
