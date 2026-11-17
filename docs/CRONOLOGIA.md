@@ -195,6 +195,14 @@ Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.47
 * JAR alpha.7 `bc7fdbee…` (85 classes). **O dono relata que funcionou** (17/11); escopo do teste não informado. [DOC]
 * No repositório do AkashicMixer, o branch padrão (`claude/practical-newton-5y195a`, 18/10) não tem a API de roteamento; o trabalho de 25/10–03/11 está em `claude/admiring-edison-pn33fa`. Sem ela, o menu cai em `MIXER_WITHOUT_ROUTING` (fail-open).
 
+### Fase 14 — 0.7.0-alpha.8: Multijogador e Discord (17/11/2026)
+
+* O dono relata que a alpha.7 funcionou e pede um botão **Multijogador** e um botão **Discord** azul. Decisões dele: ordem Jogar/Single/Multi/Opções/Sair; Discord compacto no rodapé; abre direto, sem confirmação; convite `discord.gg/cMc32d7UTF`. [DOC]
+* O Multijogador volta depois de ter sido retirado na R04 (20/09) — decisão nova do dono, não regressão.
+* `MenuAction` ganha `MULTIPLAYER` e `DISCORD`; o link é uma constante (`MenuLinks`) aberta como no chat vanilla (`java.awt.Desktop`, depois `Sys.openURL`).
+* Tela de conexão passa a mostrar o endereço real do servidor.
+* Ajuste pedido pelo dono: grupo de botões centralizado no espaço livre entre o lema e o Discord (escolheu a opção B entre duas amostras), Jogar mais alto e com espaço maior abaixo dele, "EDIÇÃO DE NATAL" no rodapé. [DOC]
+
 ---
 
 ## 3. Placar de evidência por versão (o que cada parecer *afirmou* ter executado)

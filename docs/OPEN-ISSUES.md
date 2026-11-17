@@ -22,6 +22,7 @@ Formato: **ID · gravidade · estado**. "Evidência" aponta para o que prova o i
 | OI-16 | Sem foco, o fade do boot para o menu fica parado no último quadro do splash | Baixa | Aberto — decisão de design do dono |
 | OI-17 | Edição de Natal no jogo (0.7.0-alpha.7) | Alta | **Relato do dono (17/11): funcionou** — escopo não detalhado; falta o registro do teste (pack/cópia, resoluções, com/sem mixer) |
 | OI-18 | Texturas maiores na N12 (fundo 2000×1116; planos 2080×1196) — custo do 1º quadro do menu | Baixa | Aberto — medir no pack |
+| OI-21 | 0.7.0-alpha.8: Multijogador, Discord e tema das telas de multijogador nunca rodaram no jogo | Média | Aberto — testar em cópia isolada |
 | OI-19 | Perfis antigos `native/{classic,compact,hd,wide}` e `serif.png`/`body.png` não são carregados, mas vão no JAR | Info | Registrado — remoção só com o dono |
 | OI-20 | 0.7.0-alpha.5/.7: BGM/SFX no AkashicMixer nunca rodaram no jogo | Média | Aberto — teste em cópia isolada + aceite sonoro do dono |
 
@@ -91,3 +92,8 @@ Desde a N07 o layout é responsivo por pixels (`PixelLayout`); `native/{classic,
 
 ### Relato de 17/11/2026 (OI-17 / OI-20)
 O dono escreveu "Funcionou essa versão" depois de baixar o JAR **0.7.0-alpha.7** (`bc7fdbee…`). É um relato do dono, registrado como tal: não diz onde rodou (pack diário ou cópia isolada), em quais resoluções, nem se o AkashicMixer estava instalado e com que build. Para fechar OI-17/OI-20 com evidência: anotar esse escopo e, se possível, guardar o `latest.log` (sem dados pessoais) da execução.
+
+### OI-21 — Multijogador e Discord (0.7.0-alpha.8)
+* **Feito (implementado, núcleo testado):** `MULTIPLAYER` → `GuiMultiplayer`; `DISCORD` abre `MenuLinks.DISCORD` sem sair do menu; telas de multijogador nas allow-lists do tema e da BGM; tela de conexão com o endereço real.
+* **Não executado:** nada disso rodou num cliente. Em especial: (1) a lista de servidores com o tema (fundo, lista e botões) nunca foi vista; (2) `java.awt.Desktop` dentro do Minecraft — em macOS o vanilla usa o mesmo caminho, mas não foi testado aqui; o fallback é `Sys.openURL` do LWJGL; (3) a BGM continuar na lista de servidores e parar ao conectar.
+* **Testar (cópia isolada):** clicar Multijogador → lista aparece com tema, música continua; adicionar/editar servidor e conexão direta; conectar num servidor da lista → "Conectando" mostra o endereço dele; clicar Discord (e Enter com foco nele) → abre o convite uma vez, o menu fica; clique duplo rápido não abre duas abas.

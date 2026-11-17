@@ -15,7 +15,7 @@ Leia primeiro: `docs/HANDOFF.md`, `docs/OPEN-ISSUES.md`, `docs/CRONOLOGIA.md`.
 10. **Não commite** JARs/zips (use Releases), `build/`, cópias do modpack, contas, tokens, logs de jogo com dados pessoais. **Mantenha `src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg`** (SHA-256 `616bfa84…`, 225,79 s, trocada pelo dono em 17/11/2026; a faixa anterior `6e91e747…` segue nos JARs até a 0.7.0-alpha.4): não a remova nem a troque sem o dono. O `BGM.mp3` original não está no repositório.
 
 ## Fluxo de trabalho
-* Partir de `main` (= 0.7.0-alpha.7 em código; último JAR publicado em Release: 0.7.0-alpha.4). Nova candidata ⇒ nova versão (`0.7.0-alpha.8`…), **nunca** sobrescrever artefato/hash existente — confira `docs/LINEAGE.md` **e os outros branches** antes de escolher o número.
+* Partir de `main` (= 0.7.0-alpha.8 em código; último JAR publicado em Release: 0.7.0-alpha.4). Nova candidata ⇒ nova versão (`0.7.0-alpha.9`…), **nunca** sobrescrever artefato/hash existente — confira `docs/LINEAGE.md` **e os outros branches** antes de escolher o número.
 * Atualizar: `src/`, `docs/CHANGELOG.md`, `docs/LINEAGE.md` (hash novo), `docs/CRONOLOGIA.md` (fase nova), `docs/OPEN-ISSUES.md`, e criar um `CHECKPOINT_*.json` novo (não sobrescrever os antigos).
 * Antes do PR: `python tools/repo/run_core_gates.py` e preencher o checklist de `.github/PULL_REQUEST_TEMPLATE.md` com **PASSOU / FALHOU / NÃO EXECUTADO** — nunca omita o que não rodou.
 * Mensagens de commit em português; marque fatos novos com [DOC]/[JAR]/[LOG]/[INF].

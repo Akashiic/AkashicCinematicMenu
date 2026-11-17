@@ -1,0 +1,68 @@
+{
+  "checkpoint": "ACM-ALPHA8-MULTI-DISCORD-2026-11-17",
+  "version": "0.7.0-alpha.8",
+  "parent": {
+    "version": "0.7.0-alpha.7",
+    "jar_sha256": "bc7fdbee24e74d08636784f769ca7a267a5cf33b827e4eaceb28fd72d6afcfd0",
+    "owner_report": "funcionou (17/11)"
+  },
+  "status": "IMPLEMENTED__CORE_TESTED__JAR_PENDING_CI__NOT_RUN_IN_GAME__OWNER_APPROVAL_PENDING",
+  "jar_sha256": null,
+  "jar_note": "gerado pelo workflow build-jar no PR; registrar no LINEAGE (linha 29) ao mergear",
+  "owner_decisions_2026_11_17": {
+    "order": [
+      "JOGAR",
+      "SINGLEPLAYER",
+      "MULTIJOGADOR",
+      "OPÇÕES",
+      "SAIR"
+    ],
+    "discord": "compacto no rodape, azul #5865F2",
+    "discord_open": "direto, sem confirmacao",
+    "invite": "https://discord.gg/cMc32d7UTF",
+    "layout": "opcao B: grupo centralizado entre o fim do lema (ou a linha do header) e o Discord; Jogar mais alto (8,1% vs 6,0%); EDICAO DE NATAL no rodape; espaco maior abaixo do Jogar (2,6% vs 1,0%)"
+  },
+  "code_changes": {
+    "core/MenuAction": "+MULTIPLAYER, +DISCORD, navigates()",
+    "core/MenuLinks": "nova: convite fixo",
+    "core/PixelLayout": "5 botoes (Jogar mais alto) centralizados no espaco livre + alvo compacto do Discord (TARGETS=6)",
+    "render/NativeVisuals": "5 botoes, botao do Discord",
+    "render/NativeLayout": "count/alvos",
+    "client/CinematicMenu": "MULTIPLAYER -> GuiMultiplayer; DISCORD abre link sem sair",
+    "client/ExternalLink": "nova: Desktop.browse por reflexao, fallback Sys.openURL, debounce 1,5 s",
+    "client/ConnectionScreenTheme": "endereco real (func_147104_D) no lugar do fixo",
+    "core/BgmFrontendPolicy,SecondaryScreenPolicy": "+GuiMultiplayer, +GuiScreenAddServer, +GuiScreenServerList"
+  },
+  "gates": [
+    {
+      "gate": "run_core_gates.py",
+      "result": "PASSOU",
+      "evidence": "scenarios=49 assertions=17634 failures=0"
+    },
+    {
+      "gate": "11 suites *Tests",
+      "result": "PASSOU",
+      "evidence": "evidence/alpha8-multi-discord/test-suites.log (PixelLayout 2016), failures=0"
+    },
+    {
+      "gate": "amostras pelo codigo real (rasterizador em software)",
+      "result": "PASSOU",
+      "evidence": "evidence/alpha8-multi-discord/"
+    },
+    {
+      "gate": "compilacao completa contra SRG + API do mixer",
+      "result": "NAO EXECUTADO (local)",
+      "evidence": "roda no build-jar do PR"
+    },
+    {
+      "gate": "runtime no modpack isolado",
+      "result": "NAO EXECUTADO",
+      "evidence": "OI-21"
+    },
+    {
+      "gate": "aprovacao visual do dono",
+      "result": "PENDENTE"
+    }
+  ],
+  "reviewer": "autorrevisao do agente (nao e auditoria independente)"
+}

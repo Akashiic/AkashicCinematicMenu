@@ -18,14 +18,16 @@ public final class NatalPreview {
         LoadState unknown=LoadState.unknown();
         int[][] sizes={{1920,1080},{1366,768},{2560,1080},{1280,800},{1024,768},{854,480}};
         for(int[] s:sizes){
-            menu(s[0],s[1],0,0,new double[]{1,0,0,0},true,"menu-"+s[0]+"x"+s[1]);
+            menu(s[0],s[1],0,0,new double[]{1,0,0,0,0,0},true,"menu-"+s[0]+"x"+s[1]);
             boot(s[0],s[1],mods,"boot-"+s[0]+"x"+s[1]);
         }
-        menu(1920,1080,0,0,new double[]{0,0,1,0},true,"menu-1920x1080-hover-opcoes");
-        menu(1920,1080,0,0,new double[]{1,0,0,0},false,"menu-1920x1080-movimento-reduzido");
+        menu(1920,1080,0,0,new double[]{0,0,1,0,0,0},true,"menu-1920x1080-hover-multijogador");
+        menu(1920,1080,0,0,new double[]{1,0,0,0,0,0},false,"menu-1920x1080-movimento-reduzido");
+        menu(1920,1080,0,0,new double[]{0,0,0,0,0,1},true,"menu-1920x1080-hover-discord");
+        menu(1366,768,0,0,new double[]{0,0,0,0,0,1},true,"menu-1366x768-hover-discord");
         boot(1920,1080,unknown,"boot-1920x1080-sem-total");
         // Varredura de paralaxe (mouse da esquerda/cima para direita/baixo) para animacao.
-        for(int i=0;i<24;i++){double t=i/23.0*2*Math.PI;menuFrame(960,540,Math.cos(t),Math.sin(t)*.8,i*.18,new double[]{1,0,0,0},true,String.format("parallax-%02d",i));}
+        for(int i=0;i<24;i++){double t=i/23.0*2*Math.PI;menuFrame(960,540,Math.cos(t),Math.sin(t)*.8,i*.18,new double[]{1,0,0,0,0,0},true,String.format("parallax-%02d",i));}
         for(int[] s:new int[][]{{1920,1080},{1366,768}}){transition(s[0],s[1]);secondary(s[0],s[1]);}
         System.out.println("PREVIEW_WRITTEN "+out.getAbsolutePath());
     }

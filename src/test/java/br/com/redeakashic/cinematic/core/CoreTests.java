@@ -50,8 +50,8 @@ public final class CoreTests {
         test("button hitboxes centers and right edge", () -> {for(int i=0;i<MenuLayout.COUNT;i++){check(MenuLayout.hit(MenuLayout.X+10,MenuLayout.top(i)+10)==i);check(MenuLayout.hit(MenuLayout.X+MenuLayout.W,MenuLayout.top(i)+10)==-1);}});
         test("button spacing has no overlapping targets", () -> {for(int i=0;i<MenuLayout.COUNT;i++){check(MenuLayout.hit(MenuLayout.X+10,MenuLayout.top(i)+MenuLayout.H+1)==-1);}});
         test("button nonfinite coordinates rejected", () -> {check(MenuLayout.hit(Double.NaN,0)==-1);check(MenuLayout.hit(100,Double.POSITIVE_INFINITY)==-1);});
-        test("focus wraps in both directions", () -> {check(MenuLayout.nextFocus(3,1)==0);check(MenuLayout.nextFocus(0,-1)==3);check(MenuLayout.nextFocus(2,1)==3);});
-        test("action whitelist has four routes", () -> {for(int i=0;i<MenuLayout.COUNT;i++){check(MenuLayout.action(i)!=null);}bad(()->MenuLayout.action(4));});
+        test("focus wraps in both directions", () -> {check(MenuLayout.nextFocus(5,1)==0);check(MenuLayout.nextFocus(0,-1)==5);check(MenuLayout.nextFocus(2,1)==3);});
+        test("action whitelist has six routes", () -> {for(int i=0;i<MenuLayout.COUNT;i++){check(MenuLayout.action(i)!=null);}bad(()->MenuLayout.action(6));});
         test("flow ignores clicks during intro", () -> {MenuFlow f=new MenuFlow(false,true);check(!f.request(MenuAction.QUIT));check(f.consume()==null);});
         test("flow becomes ready after intro", () -> {MenuFlow f=new MenuFlow(false,true);for(int i=0;i<54;i++){f.advance(1.0/60);}check(f.state()==MenuFlow.State.READY);near(f.visibility(),1,0);});
         test("flow duplicate click protection", () -> {MenuFlow f=new MenuFlow(true,true);check(f.request(MenuAction.PLAY));check(!f.request(MenuAction.QUIT));check(f.consume()==MenuAction.PLAY);check(f.consume()==null);check(!f.request(MenuAction.SINGLEPLAYER));});
@@ -69,8 +69,9 @@ public final class CoreTests {
         test("boot ratio is stage scoped not readiness", () -> {BootSnapshot b=new BootSnapshot("Stage",10,10,false);near(b.stageFraction(),1,0);check(!b.ready);});
         test("boot malformed snapshots rejected", () -> {bad(()->new BootSnapshot(null,0,0,false));bad(()->new BootSnapshot("x",1,0,false));bad(()->new BootSnapshot("x",11,10,false));bad(()->new BootSnapshot("x",-1,10,false));});
         test("exact direct server endpoint", () -> {check(ServerTarget.HOST.equals("br2.xmxcloud.net"));check(ServerTarget.PORT==10511);check(ServerTarget.address().equals("br2.xmxcloud.net:10511"));});
-        test("four routes in requested order", () -> {check(MenuLayout.COUNT==4);check(MenuLayout.action(0)==MenuAction.PLAY);check(MenuLayout.action(1)==MenuAction.SINGLEPLAYER);check(MenuLayout.action(2)==MenuAction.OPTIONS);check(MenuLayout.action(3)==MenuAction.QUIT);});
+        test("six routes in requested order", () -> {check(MenuLayout.COUNT==6);check(MenuLayout.action(0)==MenuAction.PLAY);check(MenuLayout.action(1)==MenuAction.SINGLEPLAYER);check(MenuLayout.action(2)==MenuAction.MULTIPLAYER);check(MenuLayout.action(3)==MenuAction.OPTIONS);check(MenuLayout.action(4)==MenuAction.QUIT);check(MenuLayout.action(5)==MenuAction.DISCORD);check(MenuAction.DISCORD.ordinal()==PixelLayout.DISCORD&&PixelLayout.TARGETS==MenuLayout.COUNT);});
         test("removed routes rejected", () -> {bad(()->MenuAction.valueOf("MODS"));bad(()->MenuAction.valueOf("SERVERS"));});
+        test("only discord opens a link and it is the fixed invite", () -> {check(MenuLinks.DISCORD.equals("https://discord.gg/cMc32d7UTF"));check(MenuLinks.forAction(MenuAction.DISCORD)==MenuLinks.DISCORD);for(MenuAction a:MenuAction.values()){check(a.navigates()==(a!=MenuAction.DISCORD));if(a!=MenuAction.DISCORD)bad(()->MenuLinks.forAction(a));}bad(()->MenuLinks.forAction(null));});
         test("direct play handoff executes once after transition", () -> {MenuFlow f=new MenuFlow(false,false);f.advance(.22);check(f.request(MenuAction.PLAY));check(!f.request(MenuAction.PLAY));check(f.consume()==null);f.advance(.22);check(f.consume()==MenuAction.PLAY);check(f.consume()==null);});
         System.out.println("RESULT scenarios="+passed.size()+" assertions="+assertions+" failures=0");
     }

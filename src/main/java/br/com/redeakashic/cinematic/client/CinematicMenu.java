@@ -101,6 +101,11 @@ public final class CinematicMenu extends GuiScreen {
         if (key == Keyboard.KEY_RETURN || key == Keyboard.KEY_NUMPADENTER || key == Keyboard.KEY_SPACE) { requestAction(MenuLayout.action(focus),"key:"+key); }
     }
     private void requestAction(MenuAction action,String source){
+        if(!action.navigates()){
+            // Discord: opens the browser and keeps the menu (no exit transition); only while the menu is ready.
+            if(flow.state()==MenuFlow.State.READY&&ExternalLink.open(action)){hook.dispatched(action.name());System.out.println("[AkashicCinematic] ACCEPTED_INPUT "+source+" action="+action);UiAudio.play(br.com.redeakashic.cinematic.core.UiCueGate.Cue.SELECT);}
+            return;
+        }
         if(flow.request(action)){if(action==MenuAction.PLAY)playPressedAt=clock.elapsed();System.out.println("[AkashicCinematic] ACCEPTED_INPUT "+source+" action="+action);UiAudio.play(action==MenuAction.PLAY?br.com.redeakashic.cinematic.core.UiCueGate.Cue.CONNECT:br.com.redeakashic.cinematic.core.UiCueGate.Cue.SELECT);}
     }
     private void dispatch(MenuAction action) {
@@ -110,6 +115,7 @@ public final class CinematicMenu extends GuiScreen {
                 ConnectionCancellationGuard.INSTANCE.connect(field_146297_k, this);
                 break;
             case SINGLEPLAYER: field_146297_k.func_147108_a(new GuiSelectWorld(this)); break;
+            case MULTIPLAYER: field_146297_k.func_147108_a(new GuiMultiplayer(this)); break;
             case OPTIONS: field_146297_k.func_147108_a(new GuiOptions(this, field_146297_k.field_71474_y)); break;
             case QUIT: field_146297_k.func_71400_g(); break;
             default: throw new IllegalStateException("Unsupported action: " + action);

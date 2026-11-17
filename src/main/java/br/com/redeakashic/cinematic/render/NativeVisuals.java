@@ -1,11 +1,12 @@
 package br.com.redeakashic.cinematic.render;
 import br.com.redeakashic.cinematic.core.LoadState;
+import br.com.redeakashic.cinematic.core.PixelLayout;
 import org.lwjgl.opengl.GL11;
 /** Pixel-native composition. Scenic art is independent of text, panels, ornaments and progress. */
 public final class NativeVisuals implements AutoCloseable {
     /** Edicao de Natal: tinta cafe, ouro de estrela, creme, vermelho de laco e verde pinheiro (tirados da arte). */
     public static final int INK=0x170D09,SLATE=0x2E1C14,IVORY=0xFFF3DE,GOLD=0xE9BF63,MUTED=0xD4BE9E,ICE=0xFFF7EA,
-        RED=0xC8283C,PINE=0x3B7A47,GLOW=0xFFD98A,DISABLED=0x8C7B6A;
+        RED=0xC8283C,PINE=0x3B7A47,GLOW=0xFFD98A,DISABLED=0x8C7B6A,DISCORD=0x5865F2,DISCORD_HOT=0x7983F5;
     private static final int[] BULBS={RED,GLOW,PINE,ICE};
     public final NativeLayout layout;private BackdropRenderer backdrop;private final UiTypography type=new UiTypography();
     public double playPressAge=-1;public boolean depthEnabled=true,heroAnimation=true;
@@ -79,23 +80,45 @@ public final class NativeVisuals implements AutoCloseable {
         star(c,h*.098,10*s,GOLD,.95,motion?.85+.15*Math.sin(age*1.1):.9);
         center("THE END OF",c,h*.140,11*s,p*.80,false,3*s,MUTED,1);
         center("FORBIDDEN",c,h*.180,43*s,p*.86,true,1.3*s,IVORY,1);
-        rect(p*.23,h*.272,p*.54,1,GOLD,.35);star(c,h*.272,4.5*s,RED,.95,0);
+        double rule=layout.pixels.headerRuleY();rect(p*.23,rule,p*.54,1,GOLD,.35);star(c,rule,4.5*s,RED,.95,0);
         if(h>=600){center("Até nos corredores sem fim,",c,h*.300,11*s,p*.83,true,1*s,IVORY,.88);center("o Natal encontra caminho.",c,h*.326,11*s,p*.83,true,.7*s,IVORY,.88);}
-        rect(p*.10,h*.412+3*s,4*s,4*s,RED,.9);rect(p*.10+7*s,h*.412+3*s,4*s,4*s,PINE,.95);
-        text("EDIÇÃO DE NATAL",p*.10+16*s,h*.412,9*s,p*.7,false,2*s,GOLD,.88);
-        String[] actions={"JOGAR","SINGLEPLAYER","OPÇÕES","SAIR"};
-        for(int i=0;i<4;i++){
-            double x=layout.pixels.buttonX(),y=layout.pixels.buttonY(i),bw=layout.pixels.buttonWidth(),bh=layout.pixels.buttonHeight(),hot=Math.max(0,Math.min(1,highlights[i]));
+        String[] actions={"JOGAR","SINGLEPLAYER","MULTIJOGADOR","OPÇÕES","SAIR"};
+        for(int i=0;i<PixelLayout.MAIN;i++){
+            double x=layout.pixels.buttonX(),y=layout.pixels.buttonY(i),bw=layout.pixels.buttonWidth(),bh=layout.pixels.buttonHeight(i),hot=Math.max(0,Math.min(1,highlights[i]));
             if(i==0)HeroButton.draw(x,y,bw,bh,age,hot,playPressAge,visibility,motion&&heroAnimation);
             else{rect(x,y,bw,bh,SLATE,(.30+hot*.40)*visibility);outline(x,y,bw,bh,GOLD,(.20+hot*.50)*visibility);if(hot>.005){rect(x,y,2,bh,RED,hot*visibility);rect(x+2,y,1,bh,GOLD,hot*.6*visibility);}}
             text("0"+(i+1),x+12*s,y+(bh-10*s)/2,9*s,24*s,false,1*s,i==0?0xFFF5E8:GOLD,visibility*.88);
-            text(actions[i],x+36*s,y+(bh-19*s)/2-1,19*s,bw-(i==0?67:48)*s,true,1*s,i==0?0xFFFFFF:IVORY,visibility);
+            double label=i==0?23*s:19*s;
+            text(actions[i],x+36*s,y+(bh-label)/2-1,label,bw-(i==0?67:48)*s,true,1*s,i==0?0xFFFFFF:IVORY,visibility);
         }
+        discord(layout.pixels.buttonX(),layout.pixels.discordY(),layout.pixels.buttonWidth(),layout.pixels.discordHeight(),s,Math.max(0,Math.min(1,highlights[PixelLayout.DISCORD])),visibility);
         text("REDE AKASHIC",p*.10,h*.877,10*s,p*.80,false,2*s,GOLD,1);
         text("FORBIDDEN SERIES  /  1.7.10",p*.10,h*.919,8*s,p*.80,false,1*s,MUTED,1);
-        text("BOAS FESTAS  ·  NATAL 2026",p*.10,h*.947,8*s,p*.80,false,1*s,MUTED,.85);
+        rect(p*.10,h*.947+2*s,4*s,4*s,RED,.9);rect(p*.10+7*s,h*.947+2*s,4*s,4*s,PINE,.95);
+        text("EDIÇÃO DE NATAL 2026",p*.10+16*s,h*.947,8*s,p*.74,false,1*s,MUTED,.85);
         shadeV(p,h*.80,w-p,h*.20,INK,0,.55);
         quote("Corra. O Natal não espera.",w*.79,h*.897,23*s,w*.37,.3*s,s,1);
+    }
+    private static int mixRgb(int a,int b,double t){t=Math.max(0,Math.min(1,t));
+        return ((int)((a>>16&255)*(1-t)+(b>>16&255)*t)<<16)|((int)((a>>8&255)*(1-t)+(b>>8&255)*t)<<8)|(int)((a&255)*(1-t)+(b&255)*t);}
+    /** Botao compacto do Discord (azul da marca), com balao de conversa generico e seta de link externo. */
+    private void discord(double x,double y,double bw,double bh,double s,double hot,double vis){
+        int fill=mixRgb(DISCORD,DISCORD_HOT,hot);
+        rect(x,y,bw,bh,fill,(.88+.12*hot)*vis);
+        rect(x+1,y+1,bw-2,1,0xFFFFFF,(.16+.24*hot)*vis);
+        outline(x,y,bw,bh,0xFFFFFF,(.12+.45*hot)*vis);
+        if(hot>.005)rect(x,y,2,bh,0xFFFFFF,hot*vis);
+        double ih=Math.max(5,Math.round(bh*.40)),iw=Math.round(ih*1.3),ix=Math.round(x+12*s),iy=Math.round(y+(bh-ih)/2-ih*.08);
+        rect(ix,iy,iw,ih,0xFFFFFF,.96*vis);rect(ix+iw*.16,iy+ih,Math.max(1,iw*.22),Math.max(1,ih*.24),0xFFFFFF,.96*vis);
+        double eye=Math.max(1,Math.round(ih*.22));rect(ix+iw*.27,iy+ih*.36,eye,eye,fill,vis);rect(ix+iw*.73-eye,iy+ih*.36,eye,eye,fill,vis);
+        double label=11*s,tx=ix+iw+10*s;
+        text("DISCORD",tx,y+(bh-label)/2-1,label,bw*.45,false,2.5*s,0xFFFFFF,vis);
+        double small=9*s,arrow=Math.max(4,Math.round(bh*.26)),ax=Math.round(x+bw-12*s-arrow),ay=Math.round(y+(bh-arrow)/2);
+        String hint="ENTRAR";double hw=type.width(hint,false,small,1.5*s);
+        text(hint,ax-8*s-hw,y+(bh-small)/2-1,small,bw*.30,false,1.5*s,0xFFFFFF,(.78+.22*hot)*vis);
+        GL11.glDisable(GL11.GL_TEXTURE_2D);GL11.glColor4d(1,1,1,(.85+.15*hot)*vis);GL11.glBegin(GL11.GL_LINES);
+        GL11.glVertex2d(ax,ay+arrow);GL11.glVertex2d(ax+arrow,ay);GL11.glVertex2d(ax+arrow*.35,ay);GL11.glVertex2d(ax+arrow,ay);
+        GL11.glVertex2d(ax+arrow,ay);GL11.glVertex2d(ax+arrow,ay+arrow*.65);GL11.glEnd();
     }
     public void startup(LoadState state,double elapsed,double alpha,boolean animate){
         startupFrames++;double w=layout.width,h=layout.height,s=layout.pixels.unit,a=Math.max(0,Math.min(1,alpha));
