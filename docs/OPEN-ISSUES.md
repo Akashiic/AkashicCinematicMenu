@@ -20,7 +20,7 @@ Formato: **ID · gravidade · estado**. "Evidência" aponta para o que prova o i
 | OI-14 | Pack diário divergente do manifesto homologado | Info | Registrado, não corrigido |
 | OI-15 | Angelica 2.2.37: splash cinemático sumiu e o cliente crashou | Alta | Causa externa (NecroTempus); corrigida na ThePatcher 1.1.0-beta.39 — aceite no pack pendente |
 | OI-16 | Sem foco, o fade do boot para o menu fica parado no último quadro do splash | Baixa | Aberto — decisão de design do dono |
-| OI-17 | N12 (Edição de Natal, 0.7.0-alpha.6) sem teste no jogo | Alta | Aberto — JAR `dcc69230…` gerado na CI; testar em cópia isolada |
+| OI-17 | Edição de Natal sem teste no jogo (vale para a 0.7.0-alpha.7) | Alta | Aberto — JAR alpha.7 `bc7fdbee…` gerado na CI; testar em cópia isolada |
 | OI-18 | Texturas maiores na N12 (fundo 2000×1116; planos 2080×1196) — custo do 1º quadro do menu | Baixa | Aberto — medir no pack |
 | OI-19 | Perfis antigos `native/{classic,compact,hd,wide}` e `serif.png`/`body.png` não são carregados, mas vão no JAR | Info | Registrado — remoção só com o dono |
 | OI-20 | 0.7.0-alpha.5/.7: BGM/SFX no AkashicMixer nunca rodaram no jogo | Média | Aberto — teste em cópia isolada + aceite sonoro do dono |
