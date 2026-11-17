@@ -192,6 +192,8 @@ Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.47
 * O dono aponta que a N12 partiu do `main` e **deixou de fora** o hook do AkashicMixer da alpha.5 (branch não mergeado). [DOC]
 * O branch `claude/focused-tesla-4haxh8` é mesclado sem perda: `MixerLink`/`MixerChannels`, `MenuVolumeSource`, `MenuVolumeTests`, a tela do mixer na allow-list da BGM e o `--mixer-jar` do `build_native.py`. A versão passa a **0.7.0-alpha.7**, porque alpha.5 e alpha.6 já têm JAR.
 * CI `build-jar`: baixa `akashicmixer-0ff47b7-dev.jar` do JitPack com SHA conferido (`56e6e80c…`, idêntico ao da evidência da alpha.5).
+* JAR alpha.7 `bc7fdbee…` (85 classes). **O dono relata que funcionou** (17/11); escopo do teste não informado. [DOC]
+* No repositório do AkashicMixer, o branch padrão (`claude/practical-newton-5y195a`, 18/10) não tem a API de roteamento; o trabalho de 25/10–03/11 está em `claude/admiring-edison-pn33fa`. Sem ela, o menu cai em `MIXER_WITHOUT_ROUTING` (fail-open).
 
 ---
 

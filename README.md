@@ -5,7 +5,7 @@ Menu principal e tela de abertura **cinematográficos e nativos** (Java + LWJGL 
 | | |
 |---|---|
 | Último estado | **0.7.0-alpha.4** (21/09/2026) — último JAR, testado no pack completo; **aprovação visual do dono pendente** |
-| Em andamento | **0.7.0-alpha.7 — Edição de Natal + AkashicMixer** (17/11/2026) — JAR como artifact do workflow `build-jar`; **sem teste no jogo** (OI-17, OI-20) |
+| Em andamento | **0.7.0-alpha.7 — Edição de Natal + AkashicMixer** (17/11/2026) — JAR `bc7fdbee…` (artifact do workflow `build-jar`); **o dono relata que funcionou** (17/11) — escopo do teste a registrar (OI-17, OI-20) |
 | Modid / pacote | `akashiccinematicmenu` / `br.com.redeakashic.cinematic` |
 | Tipo | FMLCorePlugin (coremod ASM, *fail-open*) + mod |
 | Ambiente-alvo | Angelica 2.2.18, Reese Sodium, RTG, Technic |
