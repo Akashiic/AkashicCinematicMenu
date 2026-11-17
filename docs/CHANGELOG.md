@@ -3,7 +3,16 @@
 Reconstruído a partir dos pareceres, `CHECKPOINT_*.json` e JARs do acervo (ver `PROVENANCE.md`). Datas/horas = *mtime* do JAR final (America/Sao_Paulo). "Status" segue o `QUALITY_CONTRACT`: **compilado/testado ≠ aprovado pelo usuário**.
 Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md`.
 
-## [0.7.0-alpha.4] — 2026-09-21 22:46 — *último estado*
+## [0.7.0-alpha.5] — 2026-11-17 — N12 *Edição de Natal* (candidata, sem JAR)
+- **Nova estética completa** a partir da arte de Natal do dono (`docs/design/N12-natal/`): menu, loading/splash, transição, conexão e telas secundárias.
+- Paralaxe refeita em 3 planos (corredor, perseguidores, garota + árvore) de 2080×1196; vidro em meia resolução; enquadramento ancorado para 4:3 e 21:9.
+- Paleta quente (café, ouro de estrela, creme, vermelho de laço, verde pinheiro); estrela, guirlanda de luzes e neve; botão Jogar vermelho de Natal.
+- Textos de Natal mantendo **THE END OF FORBIDDEN**; botões no mesmo lugar.
+- Correção: texto pequeno perdia a base das letras (E→F) na filtragem bilinear; glifos ganham 1 px de margem.
+- Ferramentas: `tools/build_natal_layers.py`, `tools/build_natal_gui.py`, `tools/preview/` (amostras pelo código real, sem Minecraft).
+- Status: núcleo e suítes PASSOU; **JAR não gerado; não rodou no jogo; aprovação visual do dono pendente.**
+
+## [0.7.0-alpha.4] — 2026-09-21 22:46
 - Tema do Santuário estendido às GUIs secundárias (allow-list de 17 classes): Options, Select World, Create World (+ aviso RTG), Language, Resource Packs, Controls, Video (Reese Sodium), Sound, Chat, Snooper, Flat World/Presets, Rename World, confirmações vanilla.
 - **Sair** encerra direto no menu principal; confirmações destrutivas preservadas.
 - Status: testes dirigidos no pack completo aprovados (13 gates; 83 checagens; exit=0). **Aprovação visual do dono pendente.** OI-01 (RawScope × Angelica) em aberto.

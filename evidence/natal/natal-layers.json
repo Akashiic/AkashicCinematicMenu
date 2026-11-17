@@ -1,0 +1,91 @@
+{
+  "source": "docs/design/N12-natal/source/natal-source.jpg",
+  "source_sha256": "48daedf34cbe69cdbdec7e670c733f36f387ae56fcec6ae93b74c479421bc716",
+  "source_size": [
+    2000,
+    1116
+  ],
+  "author": "dono do projeto (declarado em 17/11/2026)",
+  "masks": {
+    "model": "birefnet-general-lite",
+    "rembg": "2.0.87",
+    "source_sha256": "48daedf34cbe69cdbdec7e670c733f36f387ae56fcec6ae93b74c479421bc716",
+    "hero_crop": [
+      780,
+      0,
+      2000,
+      1116
+    ],
+    "files": {
+      "full.png": "59d5dd01256a52cd249fbe23025713a9620d81b577e562d3ee308e293f91c43c",
+      "hero-crop.png": "46977baee256d0b371970db744fb36c1589aab4f6d6e501666fb5025ae930119"
+    }
+  },
+  "planes": [
+    "room",
+    "chasers",
+    "hero"
+  ],
+  "pad": 40,
+  "max_offset_source_px": {
+    "x": [
+      1.5,
+      4.6,
+      13.3
+    ],
+    "y": [
+      0.75,
+      2.3,
+      6.6
+    ]
+  },
+  "neutral_mean_abs_rgb": [
+    0.25140905017921145,
+    0.23646594982078853,
+    0.18212096774193548
+  ],
+  "neutral_changed_pixels_gt3": 0.02289247311827957,
+  "hero_pixels": 1096721,
+  "chaser_pixels": 183101,
+  "room_fill": "multiescala: Telea 1/8 no interior + Telea fino na borda; interior so aparece no corredor de movimento",
+  "glass": "meia resolucao, blur sigma 6.5 em cor pre-multiplicada",
+  "files": {
+    "depth/chasers-blur.png": {
+      "bytes": 106451,
+      "sha256": "cb2f0c462d3a767050d54231f51f4c5c97726ed610ae7c5dd3c3f91023c85969"
+    },
+    "depth/chasers.png": {
+      "bytes": 1546646,
+      "sha256": "74001559e9eb1e35f82ed1ef48da3bec0cf15e794458efd3d315885c4821ea66"
+    },
+    "depth/hero-blur.png": {
+      "bytes": 281832,
+      "sha256": "14c09fcf9fdf2d29df270c994aef103614e494fe3c59733dcb16363890e24447"
+    },
+    "depth/hero.png": {
+      "bytes": 2340761,
+      "sha256": "38a92d5526ae80ada7838a180e351bacc441d42beb77b4995d1d5b506ef1c087"
+    },
+    "depth/layers.properties": {
+      "bytes": 116,
+      "sha256": "6bca0e6b12d203aef1aecb593aca28f7e0492c57b19ca387d6ed0e5cd5ee630f"
+    },
+    "depth/room-blur.jpg": {
+      "bytes": 37206,
+      "sha256": "0a3d75dc83d77b281b975d8fd21266c55b53cd9fa6fe01bd4fc0d6a001ccd61f"
+    },
+    "depth/room.jpg": {
+      "bytes": 310578,
+      "sha256": "c0a088a58ea5292475fefee5dadfe08d3002d1e353d541d00ef062813d6232d6"
+    },
+    "backdrop.jpg": {
+      "bytes": 314323,
+      "sha256": "48daedf34cbe69cdbdec7e670c733f36f387ae56fcec6ae93b74c479421bc716"
+    },
+    "backdrop-blur.jpg": {
+      "bytes": 56891,
+      "sha256": "a7dc44b252386127f43d07ebd1aae78b26b1f6c1f097c603d3183a3ac6bd3247"
+    }
+  },
+  "visual_gate": "PENDENTE (aprovacao exclusiva do dono)"
+}

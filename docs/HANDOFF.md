@@ -6,7 +6,9 @@
 
 **0.7.0-alpha.4** (SHA-256 `7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a`, 81 classes) está **compilada, reproduzível e testada em escopo dirigido no modpack completo (exit=0)**, mas a **aprovação visual/sonora do dono ainda está PENDENTE**, não há "liberação geral" e há um problema conhecido de coexistência com o Angelica (OI-01).
 
-O código-fonte em `src/` **é** o da 0.7.0-alpha.4. O histórico git reconstrói, commit a commit, cada candidata anterior (`git log --oneline`, tags `v0.1.0-alpha.1 … v0.7.0-alpha.4`).
+> **Atualização 17/11/2026:** `src/` agora contém a **0.7.0-alpha.5 — Edição de Natal (N12)**, ainda **sem JAR e sem teste no jogo** (ver `checkpoints/native-n12-natal/` e OI-17). O texto abaixo descreve a alpha.4, que segue sendo o último JAR.
+
+O código-fonte da 0.7.0-alpha.4 está na tag `v0.7.0-alpha.4`. O histórico git reconstrói, commit a commit, cada candidata anterior (`git log --oneline`, tags `v0.1.0-alpha.1 … v0.7.0-alpha.4`).
 
 ## 2. Pré-requisitos para trabalhar
 

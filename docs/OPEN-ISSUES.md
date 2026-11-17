@@ -20,6 +20,9 @@ Formato: **ID · gravidade · estado**. "Evidência" aponta para o que prova o i
 | OI-14 | Pack diário divergente do manifesto homologado | Info | Registrado, não corrigido |
 | OI-15 | Angelica 2.2.37: splash cinemático sumiu e o cliente crashou | Alta | Causa externa (NecroTempus); corrigida na ThePatcher 1.1.0-beta.39 — aceite no pack pendente |
 | OI-16 | Sem foco, o fade do boot para o menu fica parado no último quadro do splash | Baixa | Aberto — decisão de design do dono |
+| OI-17 | N12 (Edição de Natal, 0.7.0-alpha.5) sem JAR e sem teste no jogo | Alta | Aberto — compilar com deps SRG e testar em cópia isolada |
+| OI-18 | Texturas maiores na N12 (fundo 2000×1116; planos 2080×1196) — custo do 1º quadro do menu | Baixa | Aberto — medir no pack |
+| OI-19 | Perfis antigos `native/{classic,compact,hd,wide}` e `serif.png`/`body.png` não são carregados, mas vão no JAR | Info | Registrado — remoção só com o dono |
 
 ---
 
@@ -39,7 +42,7 @@ A alpha.3 da N07 encerrou cedo, sem `hs_err` nem stacktrace fatal, antes do menu
 N03: >12 s numa tentativa e 8,501 s na repetição para observar `active=false`. N04/N07 mediram recuperação em ≤ 409 ms agindo direto no HWND, mas **o código de foco do menu não mudou** — a diferença é de método de teste. Origem (mod, driver gráfico, SO ou automação) não isolada.
 
 ### OI-05 — Aprovação do dono
-Pendentes: paleta/enquadramento (N07), SFX cerimoniais, CTA carmesim, parallax (N10), Wave 2 (N11). Nenhum agente deve marcar como aprovado.
+Pendentes: paleta/enquadramento (N07), SFX cerimoniais, CTA carmesim, parallax (N10), Wave 2 (N11), **Edição de Natal inteira (N12)**. Nenhum agente deve marcar como aprovado.
 
 ### OI-07 — Música de terceiros (mantida)
 * A faixa é *Fluxxwave (Slowed + Reverb)*; o registro antigo do projeto pedia não baixar/ripar nem substituir. **Decisão do dono em 24/10/2026: a faixa fica** no repositório (`src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg`, SHA-256 `6e91e747…`) e nos JARs oficiais ≥ 0.5.2, porque **outro contribuinte obteve a permissão**.
@@ -70,3 +73,11 @@ Observado: JAR extra `mods/akashicindex-tablet-music-online-r2.jar` (`55f26820�
 ### OI-16 — Fade do boot congela sem foco
 Com a janela sem foco quando o carregamento termina (alt-tab, ou um ambiente sem gerenciador de janelas), o `CinematicMenu` abre, mas `FrameClock.tick(Display.isActive())` não avança, `visitAge` fica em 0 e o quadro de fade do boot (último estado do splash, "Loading 100%", cronômetro parado) continua na tela até a janela receber foco. Observado igual com Angelica 2.2.18 e 2.2.37 (`evidence/angelica-2.2.37-20261025/`). O relógio pausar sem foco é proposital ("no background catch-up"); a dúvida é só se o **fade de entrada** deveria usar tempo real. Decisão visual do dono; não alterado.
 
+### OI-17 — N12 sem JAR e sem jogo
+A 0.7.0-alpha.5 existe só como código e recursos. Gates PASSOU: núcleo, 10 suítes, compilação do `render` contra stubs, sintaxe dos 62 `.java`, amostras pelo código real (`evidence/natal/`). NÃO EXECUTADO: `build_native.py`, probes de bytecode/GPU, runtime no pack. As classes `client/*` alteradas (`TransitionTheme`, `ConnectionScreenTheme`) só passaram pela análise sintática. **Próximo passo:** compilar com `--classpath-json`, registrar o SHA em `LINEAGE.md` e testar splash → menu → Opções → conexão → Sair numa cópia isolada.
+
+### OI-18 — Custo das texturas da N12
+A memória de GPU estimada fica parecida (planos: 33,6 → 35,6 MB; fundo estático: 3,8 → 8,5 MB), mas cada plano tem 2,5 M pixels lidos por `getRGB` no 1º quadro do menu (antes 1,1 M). **Próximo passo:** medir a duração do 1º quadro no pack; se houver engasgo perceptível, reduzir a fonte para ~1600 px de largura.
+
+### OI-19 — Perfis antigos não usados
+Desde a N07 o layout é responsivo por pixels (`PixelLayout`); `native/{classic,compact,hd,wide}/` (boot/panel/scene/botões) e os atlas `serif.png`/`body.png` não são lidos por nenhuma classe, mas continuam no JAR com a arte da catedral. Não removidos na N12 para não misturar limpeza com a troca de tema.

@@ -171,6 +171,15 @@ Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.47
 
 ---
 
+### Fase 11 — N12: Edição de Natal (17/11/2026)
+
+* O dono pede a troca completa da estética pela sua arte de Natal (2000×1116), mantendo **THE END OF FORBIDDEN**, os botões no mesmo lugar e textos novos de Natal; autoria declarada pelo próprio dono. [DOC]
+* **0.7.0-alpha.5** (código): paralaxe em 3 planos recortados com BiRefNet (máscaras versionadas), paleta quente, estrela/guirlanda/neve, textos de Natal em todas as superfícies, recolorido determinístico dos widgets e correção da base das letras no `UiTypography`.
+* Amostras geradas pelo **código real** do pacote `render` num rasterizador OpenGL em software (`tools/preview/`), em 6 resoluções (854×480 a 2560×1080).
+* Núcleo + 10 suítes PASSOU. **JAR não gerado** (sessão em nuvem sem as dependências SRG); **sem teste no jogo**; aprovação visual do dono pendente.
+
+---
+
 ## 3. Placar de evidência por versão (o que cada parecer *afirmou* ter executado)
 
 | Versão | Classes | Núcleo | Outros gates | Runtime no pack |

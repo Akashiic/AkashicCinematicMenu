@@ -1,7 +1,7 @@
 package br.com.redeakashic.cinematic.render;
 import br.com.redeakashic.cinematic.core.HeroButtonState;
 import org.lwjgl.opengl.GL11;
-/** Bounded crimson/white material, independent of the unchanged button hitbox. */
+/** Bounded Christmas-red/gold material, independent of the unchanged button hitbox. */
 public final class HeroButton {
     private HeroButton(){}
     private static void color(int rgb,double a){GL11.glColor4d((rgb>>16&255)/255.0,(rgb>>8&255)/255.0,(rgb&255)/255.0,a);}
@@ -9,13 +9,13 @@ public final class HeroButton {
     public static void draw(double x,double y,double w,double h,double age,double hover,double pressed,double opacity,boolean motion){
         double hot=HeroButtonState.clamp(hover),a=HeroButtonState.clamp(opacity),glow=HeroButtonState.glow(age,hot,motion);
         double inset=HeroButtonState.press(pressed,motion)*1.6;
-        for(int i=4;i>=1;i--)NativeVisuals.outline(x-i,y-i,w+2*i,h+2*i,0xC93A57,a*glow*(5-i)*.023);
+        for(int i=4;i>=1;i--)NativeVisuals.outline(x-i,y-i,w+2*i,h+2*i,0xD9443A,a*glow*(5-i)*.023);
         x+=inset;y+=inset;w-=2*inset;h-=2*inset;
         double drift=motion?.5+.5*Math.sin(age*2*Math.PI/7.2):.5;
-        int left=mix(0x540C20,0x74102D,.30+.22*drift+.15*hot),right=mix(0xA92143,0xCB3454,.12+.20*drift+.13*hot);
+        int left=mix(0x5E0A14,0x7E0F1E,.30+.22*drift+.15*hot),right=mix(0xB8192E,0xD62A3C,.12+.20*drift+.13*hot);
         GL11.glDisable(GL11.GL_TEXTURE_2D);GL11.glShadeModel(GL11.GL_SMOOTH);GL11.glBegin(GL11.GL_QUADS);
         color(left,a);GL11.glVertex2d(x,y);color(right,a);GL11.glVertex2d(x+w,y);
-        color(mix(right,0x310814,.20),a);GL11.glVertex2d(x+w,y+h);color(mix(left,0x240710,.22),a);GL11.glVertex2d(x,y+h);GL11.glEnd();
+        color(mix(right,0x36060C,.20),a);GL11.glVertex2d(x+w,y+h);color(mix(left,0x28050A,.22),a);GL11.glVertex2d(x,y+h);GL11.glEnd();
         double band=HeroButtonState.shimmer(age,motion);
         if(band>-.5){
             GL11.glBegin(GL11.GL_TRIANGLE_STRIP);
@@ -25,7 +25,7 @@ public final class HeroButton {
                 GL11.glVertex2d(x+u*w,y+1);GL11.glVertex2d(x+u*w,y+h-1);
             }GL11.glEnd();
         }
-        NativeVisuals.outline(x,y,w,h,0xF0B1C0,a*(.39+.30*hot));
+        NativeVisuals.outline(x,y,w,h,0xF6D9A0,a*(.42+.32*hot));
         NativeVisuals.rect(x+1,y+1,w-2,1,0xFFF7FA,a*(.08+glow*.15));
         NativeVisuals.rect(x+1,y+1,2,h-2,0xFFF7FA,a*(.36+.24*hot));
         // Fine double-chevron, remaining strictly inside the right padding.

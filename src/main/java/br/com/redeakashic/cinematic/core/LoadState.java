@@ -16,5 +16,5 @@ public final class LoadState {
     }
     public double fraction(){return total==0?Double.NaN:(double)step/total;}
     public String percent(){return total==0?"...":Integer.toString((int)Math.floor(100.0*step/total))+"%";}
-    public static LoadState unknown(){return new LoadState("O santuário desperta.","Aguardando informações do carregador.","FORGE / INICIALIZAÇÃO",0,0);}
+    public static LoadState unknown(){return new LoadState("As luzes estão acendendo.","Aguardando informações do carregador.","FORGE / INICIALIZAÇÃO",0,0);}
 }

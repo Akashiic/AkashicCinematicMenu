@@ -28,7 +28,10 @@ public final class UiTypography implements AutoCloseable {
         if(measured>maxWidth){double fit=maxWidth/measured;size*=fit;tracking*=fit;}
         Face f=face(serif,size);double scale=size/f.size,baseline=Math.round(y+f.ascent*scale);x=Math.round(x);
         for(int i=0;i<text.length();i++){double[] g=f.glyph[glyph(text.charAt(i))];
-            f.texture().draw(Math.round(x+g[4]*scale),Math.round(baseline+g[5]*scale),g[2]*scale,g[3]*scale,g[0]/f.width,g[1]/f.height,(g[0]+g[2])/f.width,(g[1]+g[3])/f.height,alpha,rgb);
+            // 1 px inteiro de margem (e a margem equivalente em texels, limitada a folga de 4 px do atlas): a ultima
+            // linha/coluna do glifo deixa de sumir na filtragem bilinear sem tirar o glifo da grade de pixels.
+            double pad=Math.min(3,1/scale);
+            f.texture().draw(Math.round(x+g[4]*scale)-1,Math.round(baseline+g[5]*scale)-1,g[2]*scale+2,g[3]*scale+2,(g[0]-pad)/f.width,(g[1]-pad)/f.height,(g[0]+g[2]+pad)/f.width,(g[1]+g[3]+pad)/f.height,alpha,rgb);
             x+=g[6]*scale+tracking;
         }
     }
