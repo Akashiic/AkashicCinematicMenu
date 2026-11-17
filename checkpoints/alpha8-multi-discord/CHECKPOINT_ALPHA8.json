@@ -6,9 +6,9 @@
     "jar_sha256": "bc7fdbee24e74d08636784f769ca7a267a5cf33b827e4eaceb28fd72d6afcfd0",
     "owner_report": "funcionou (17/11)"
   },
-  "status": "IMPLEMENTED__CORE_TESTED__JAR_PENDING_CI__NOT_RUN_IN_GAME__OWNER_APPROVAL_PENDING",
-  "jar_sha256": null,
-  "jar_note": "gerado pelo workflow build-jar no PR; registrar no LINEAGE (linha 29) ao mergear",
+  "status": "IMPLEMENTED__CORE_TESTED__JAR_COMPILED_IN_CI__NOT_RUN_IN_GAME__OWNER_APPROVAL_PENDING",
+  "jar_sha256": "bd08d75e82d28eeb02506542574252c1131ca1692b79bbc6fa0cf6b14b33244c",
+  "jar_note": "compilado pela CI build-jar (https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44086772868); API do mixer 0ff47b7 conferida (56e6e80c...); log4j 2.0-beta9-fixed",
   "owner_decisions_2026_11_17": {
     "order": [
       "JOGAR",
@@ -51,8 +51,8 @@
     },
     {
       "gate": "compilacao completa contra SRG + API do mixer",
-      "result": "NAO EXECUTADO (local)",
-      "evidence": "roda no build-jar do PR"
+      "result": "PASSOU",
+      "evidence": "https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44086772868"
     },
     {
       "gate": "runtime no modpack isolado",
@@ -64,5 +64,7 @@
       "result": "PENDENTE"
     }
   ],
-  "reviewer": "autorrevisao do agente (nao e auditoria independente)"
+  "reviewer": "autorrevisao do agente (nao e auditoria independente)",
+  "jar_bytes": 16233427,
+  "classes": 87
 }

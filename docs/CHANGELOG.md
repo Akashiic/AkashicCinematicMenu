@@ -10,7 +10,7 @@ Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md
 - Telas de multijogador (`GuiMultiplayer`, `GuiScreenAddServer`, `GuiScreenServerList`) entram nas allow-lists exatas do tema e da BGM do menu.
 - Correção: a tela "Conectando" com tema mostrava sempre `br2.xmxcloud.net:10511`; agora mostra o servidor que está sendo de fato conectado (`Minecraft.func_147104_D`), o que importa para servidores da lista.
 - Layout (ajustes do dono, 17/11): os 5 botões ficam **centralizados no espaço livre** entre o fim do lema (35 % da altura; a linha do header, 27,2 %, quando o lema não aparece) e o botão do Discord (80 %), opção "B". **Jogar mais alto** (8,1 % contra 6,0 % dos demais, texto 23 contra 19) e com **espaço maior abaixo dele** (2,6 % contra 1,0 % entre os demais), ambos incluídos na centralização (diferença ≤ 1 px, testada em `PixelLayoutTests`). O rótulo "EDIÇÃO DE NATAL" foi para o rodapé ("EDIÇÃO DE NATAL 2026", no lugar de "BOAS FESTAS · NATAL 2026", que cortava em 854/1024).
-- Status: núcleo e 11 suítes PASSOU (CoreTests 49 cenários); amostras pelo código real; JAR na CI do PR; **não rodou no jogo; aprovação do dono pendente.**
+- Status: núcleo e 11 suítes PASSOU (CoreTests 49 cenários); amostras pelo código real; **JAR compilado na CI** (`bd08d75e…`, 16.233.427 B, 87 classes); **não rodou no jogo; aprovação do dono pendente.**
 
 ## [0.7.0-alpha.7] — 2026-11-17 — Edição de Natal + AkashicMixer (candidata)
 - Integra o branch `claude/focused-tesla-4haxh8` (0.7.0-alpha.5, 02/11), que tinha ficado fora do `main`: a BGM e os SFX do menu voltam a ser controlados pelo AkashicMixer quando ele está instalado (fail-open). A alpha.6 não tinha esse hook.
