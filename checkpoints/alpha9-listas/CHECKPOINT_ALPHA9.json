@@ -14,13 +14,16 @@
     "client/SecondaryScreenTheme": "listBackgroundDrawn/listOverlayDrawn: repintura com scissor + superficie translucida",
     "render/SecondaryFrameRenderer": "region() (scissor) e listSurface()",
     "tools/SecondaryTransformerProbe": "verifica os ganchos novos e idempotencia",
-    "tools/ci/run_transformer_probe.py": "sonda na CI contra a GuiSlot real"
+    "tools/ci/run_transformer_probe.py": "sonda na CI contra a GuiSlot real",
+    "core/PixelLayout": "Single e Multi na mesma linha (metades iguais alinhadas ao container), 4 linhas, centralizacao mantida",
+    "render/NativeVisuals": "rotulos SINGLE / MULTI",
+    "client/CinematicMenu": "setas esquerda/direita navegam"
   },
   "gates": [
     {
       "gate": "run_core_gates.py",
       "result": "PASSOU",
-      "evidence": "scenarios=49 assertions=17634 failures=0"
+      "evidence": "scenarios=49 assertions=17634 failures=0; PixelLayoutTests 2066"
     },
     {
       "gate": "transformer contra GuiSlot sintetica (-Xverify:all)",

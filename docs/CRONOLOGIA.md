@@ -208,6 +208,7 @@ Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.47
 * O dono aponta que Singleplayer, Multijogador, Texturas e Idiomas quase não mostram o nosso fundo. As capturas reais da N11 (`evidence/native-n11-gui-wave2/runtime-review/`) confirmam: lista opaca cobrindo tudo; nos pacotes de recursos, dois blocos opacos sobre o painel. [DOC]
 * Diagnóstico: o patch de textura da `GuiSlot` estava aplicado (log da N11), mas a cor sólida do vanilla torna o fundo opaco de qualquer jeito.
 * Solução: ganchos de repintura após o fundo da lista e após cada faixa; superfície translúcida. Sonda do transformer passa a rodar na CI contra a classe real.
+* No mesmo pacote, a pedido do dono: Single e Multi lado a lado no menu principal ("SINGLE" / "MULTI"). [DOC]
 
 ---
 

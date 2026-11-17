@@ -18,8 +18,12 @@ public final class PixelLayout {
     public double headerRuleY(){return Math.round(height*HEADER_RULE);}
     /** Upper bound of the free space: the end of the tagline when it is shown, else the header rule. */
     public double groupUpperBound(){return height>=600?Math.round(height*TAGLINE_END):headerRuleY();}
-    /** Height of the five-button group (Jogar taller than the rest). */
-    public double groupHeight(){return heroHeight()+heroGap()+(MAIN-1)*buttonHeight()+(MAIN-2)*gap();}
+    /** Rows of the group: Jogar; Single | Multi side by side (owner request 17/11); Opcoes; Sair. */
+    public static final int ROWS=4;
+    /** Row of a main button (0..4 -> 0,1,1,2,3). */
+    public static int rowOf(int i){if(i<0||i>=MAIN)throw new IllegalArgumentException("index");return i<=1?i:i-1;}
+    /** Height of the group (Jogar taller than the rest). */
+    public double groupHeight(){return heroHeight()+heroGap()+(ROWS-1)*buttonHeight()+(ROWS-2)*gap();}
     /** Gap between the regular buttons. */
     public double gap(){return Math.round(height*GAP);}
     /** Larger gap under Jogar, to set it apart (owner request 17/11). */
@@ -28,7 +32,20 @@ public final class PixelLayout {
     public double groupTop(){return Math.round(groupUpperBound()+(discordY()-groupUpperBound()-groupHeight())/2);}
     public double buttonY(int i){
         if(i<0||i>=MAIN)throw new IllegalArgumentException("index");
-        return i==0?groupTop():groupTop()+heroHeight()+heroGap()+(i-1)*(buttonHeight()+gap());
+        int row=rowOf(i);
+        return row==0?groupTop():groupTop()+heroHeight()+heroGap()+(row-1)*(buttonHeight()+gap());
+    }
+    /** Horizontal gap between Single and Multi. */
+    public double splitGap(){return Math.max(gap(),Math.round(sidebar*.03));}
+    /** Single and Multi are equal halves that together span exactly the container width. */
+    public double halfWidth(){return Math.floor((buttonWidth()-splitGap())/2);}
+    public double targetX(int i){
+        if(i<0||i>=TARGETS)throw new IllegalArgumentException("index");
+        return i==MenuAction.MULTIPLAYER.ordinal()?buttonX()+buttonWidth()-halfWidth():buttonX();
+    }
+    public double targetWidth(int i){
+        if(i<0||i>=TARGETS)throw new IllegalArgumentException("index");
+        return i==MenuAction.SINGLEPLAYER.ordinal()||i==MenuAction.MULTIPLAYER.ordinal()?halfWidth():buttonWidth();
     }
     public double buttonWidth(){return sidebar-2*buttonX();}
     /** Regular main-button height (Singleplayer..Sair). */
@@ -43,8 +60,7 @@ public final class PixelLayout {
     public double targetHeight(int i){if(i<0||i>=TARGETS)throw new IllegalArgumentException("index");return i==DISCORD?discordHeight():buttonHeight(i);}
     public int hit(double x,double y){
         if(!Double.isFinite(x)||!Double.isFinite(y))return -1;
-        if(x<buttonX()||x>=buttonX()+buttonWidth())return -1;
-        for(int i=0;i<TARGETS;i++)if(y>=targetY(i)&&y<targetY(i)+targetHeight(i))return i;
+        for(int i=0;i<TARGETS;i++)if(x>=targetX(i)&&x<targetX(i)+targetWidth(i)&&y>=targetY(i)&&y<targetY(i)+targetHeight(i))return i;
         return -1;
     }
 }
