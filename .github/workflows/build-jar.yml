@@ -39,6 +39,8 @@ jobs:
           echo "56e6e80c615e3806b4b592f77a889ca11d64dc549d803688d1b3d95dcd7375d2  $J" | sha256sum -c -
       - name: deps.json
         run: python3 tools/ci/write_deps_json.py
+      - name: Sonda do transformer contra a GuiSlot real (ancoras exatas)
+        run: python3 tools/ci/run_transformer_probe.py
       - name: Build do JAR (tools/build_native.py)
         run: python3 tools/build_native.py --classpath-json deps.json
       - name: SHA-256 e nome do JAR
@@ -59,6 +61,8 @@ jobs:
         with: { path: evidence/native-build.json, archive: false, if-no-files-found: error }
       - uses: actions/upload-artifact@v7
         with: { path: evidence/native-classpath.json, archive: false, if-no-files-found: error }
+      - uses: actions/upload-artifact@v7
+        with: { path: evidence/transformer-probe-ci.log, archive: false, if-no-files-found: error }
       - uses: actions/upload-artifact@v7
         with: { path: build/preview-natal/menu-1920x1080.png, archive: false, if-no-files-found: error }
       - uses: actions/upload-artifact@v7

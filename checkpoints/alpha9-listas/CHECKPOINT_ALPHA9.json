@@ -1,0 +1,57 @@
+{
+  "checkpoint": "ACM-ALPHA9-LISTAS-2026-11-17",
+  "version": "0.7.0-alpha.9",
+  "parent": {
+    "version": "0.7.0-alpha.8",
+    "jar_sha256": "bd08d75e82d28eeb02506542574252c1131ca1692b79bbc6fa0cf6b14b33244c"
+  },
+  "status": "IMPLEMENTED__CORE_TESTED__TRANSFORMER_PROBED_REAL_VANILLA_AND_FORGE__JAR_COMPILED_IN_CI__NOT_RUN_IN_GAME",
+  "jar_sha256": "08a934dbb239571123880bdd55213075891f3fd4a72765d114aada7d3c1007e7",
+  "request": "dono 17/11: Singleplayer, Multijogador, Texturas e Idiomas quase sem o nosso fundo; customizar com o menu custom",
+  "root_cause": "GuiSlot pinta o fundo da lista opaco (textura x cor solida do vanilla) e as faixas de cima/baixo; GuiSelectWorld nem chama drawDefaultBackground (capturas reais N11)",
+  "code_changes": {
+    "bootstrap/SecondaryThemeTransformer": "listRepaint(): gancho apos o Tessellator.draw do fundo em drawScreen e antes de cada RETURN de overlayBackground; ancoras exatas, fail-open independente",
+    "client/SecondaryScreenTheme": "listBackgroundDrawn/listOverlayDrawn: repintura com scissor + superficie translucida",
+    "render/SecondaryFrameRenderer": "region() (scissor) e listSurface()",
+    "tools/SecondaryTransformerProbe": "verifica os ganchos novos e idempotencia",
+    "tools/ci/run_transformer_probe.py": "sonda na CI contra a GuiSlot real",
+    "core/PixelLayout": "Single e Multi na mesma linha (metades iguais alinhadas ao container), 4 linhas, centralizacao mantida",
+    "render/NativeVisuals": "rotulos SINGLE / MULTI",
+    "client/CinematicMenu": "setas esquerda/direita navegam"
+  },
+  "gates": [
+    {
+      "gate": "run_core_gates.py",
+      "result": "PASSOU",
+      "evidence": "scenarios=49 assertions=17634 failures=0; PixelLayoutTests 2066"
+    },
+    {
+      "gate": "transformer contra GuiSlot sintetica (-Xverify:all)",
+      "result": "PASSOU",
+      "evidence": "ordem: fundo -> gancho -> entradas -> faixa -> gancho -> faixa -> gancho; segunda passada identica"
+    },
+    {
+      "gate": "sonda contra a GuiSlot real (vanilla SRG e Forge)",
+      "result": "PASSOU",
+      "evidence": "https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44096988814 — 16 checagens e 2 ganchos em cada; falhas anteriores preservadas: runs 44095943318 (jar errado) e 44096295935 (estrutura Forge detectada)"
+    },
+    {
+      "gate": "compilacao completa",
+      "result": "PASSOU",
+      "evidence": "https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44096988814"
+    },
+    {
+      "gate": "runtime no modpack isolado",
+      "result": "NAO EXECUTADO",
+      "evidence": "OI-22"
+    },
+    {
+      "gate": "aprovacao visual do dono",
+      "result": "PENDENTE"
+    }
+  ],
+  "reviewer": "autorrevisao do agente (nao e auditoria independente)",
+  "jar_bytes": 16236164,
+  "classes": 87,
+  "jar_note": "build-jar https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44096988814; log da sonda: artifact transformer-probe-ci.log"
+}

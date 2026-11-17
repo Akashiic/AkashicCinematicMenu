@@ -94,6 +94,8 @@ public final class CinematicMenu extends GuiScreen {
         int delta = 0;
         if (key == Keyboard.KEY_UP) { delta = -1; }
         if (key == Keyboard.KEY_DOWN) { delta = 1; }
+        if (key == Keyboard.KEY_LEFT) { delta = -1; }
+        if (key == Keyboard.KEY_RIGHT) { delta = 1; }
         if (key == Keyboard.KEY_TAB) {
             delta = Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) ? -1 : 1;
         }

@@ -23,6 +23,7 @@ Formato: **ID · gravidade · estado**. "Evidência" aponta para o que prova o i
 | OI-17 | Edição de Natal no jogo (0.7.0-alpha.7) | Alta | **Relato do dono (17/11): funcionou** — escopo não detalhado; falta o registro do teste (pack/cópia, resoluções, com/sem mixer) |
 | OI-18 | Texturas maiores na N12 (fundo 2000×1116; planos 2080×1196) — custo do 1º quadro do menu | Baixa | Aberto — medir no pack |
 | OI-21 | 0.7.0-alpha.8: Multijogador, Discord e tema das telas de multijogador nunca rodaram no jogo | Média | Aberto — testar em cópia isolada |
+| OI-22 | 0.7.0-alpha.9: listas com o tema (ganchos na `GuiSlot`) nunca vistas no jogo | Média | Aberto — testar em cópia isolada, com e sem Angelica |
 | OI-19 | Perfis antigos `native/{classic,compact,hd,wide}` e `serif.png`/`body.png` não são carregados, mas vão no JAR | Info | Registrado — remoção só com o dono |
 | OI-20 | 0.7.0-alpha.5/.7: BGM/SFX no AkashicMixer nunca rodaram no jogo | Média | Aberto — teste em cópia isolada + aceite sonoro do dono |
 
@@ -97,3 +98,9 @@ O dono escreveu "Funcionou essa versão" depois de baixar o JAR **0.7.0-alpha.7*
 * **Feito (implementado, núcleo testado):** `MULTIPLAYER` → `GuiMultiplayer`; `DISCORD` abre `MenuLinks.DISCORD` sem sair do menu; telas de multijogador nas allow-lists do tema e da BGM; tela de conexão com o endereço real.
 * **Não executado:** nada disso rodou num cliente. Em especial: (1) a lista de servidores com o tema (fundo, lista e botões) nunca foi vista; (2) `java.awt.Desktop` dentro do Minecraft — em macOS o vanilla usa o mesmo caminho, mas não foi testado aqui; o fallback é `Sys.openURL` do LWJGL; (3) a BGM continuar na lista de servidores e parar ao conectar.
 * **Testar (cópia isolada):** clicar Multijogador → lista aparece com tema, música continua; adicionar/editar servidor e conexão direta; conectar num servidor da lista → "Conectando" mostra o endereço dele; clicar Discord (e Enter com foco nele) → abre o convite uma vez, o menu fica; clique duplo rápido não abre duas abas.
+
+### OI-22 — Listas com o tema (0.7.0-alpha.9)
+* **Estrutura Forge:** no jogo a `GuiSlot` tem o fundo em `drawContainerBackground` (sonda da CI, execução 44096295935); o transformer trata vanilla e Forge, e a sonda roda contra os dois.
+* **Feito:** ganchos `listBackgroundDrawn`/`listOverlayDrawn` na `GuiSlot` (âncoras exatas; se divergirem, só a troca de textura antiga é aplicada e o log diz `GuiSlot repaint anchors diverged`). Testado contra `GuiSlot` sintética com `-Xverify:all`; sonda contra a real roda na CI.
+* **Riscos:** (1) mais desenho por quadro nas telas com lista (o painel é repintado em até 3 recortes); (2) `RawScope` + scissor sob o Angelica (mesma família da OI-01); (3) a seleção da linha continua o quadro preto do vanilla; (4) o cabeçalho "REDE AKASHIC / seção" fica sob a superfície translúcida quando a lista começa acima dele.
+* **Testar (cópia isolada):** Singleplayer, Multijogador (lista e adicionar servidor), Idiomas, Pacotes de recursos, Controles e Vídeo: fundo visível pela lista, faixas sem linhas vazando ao rolar, nenhum bloco branco; repetir com o Angelica.

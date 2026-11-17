@@ -22,5 +22,29 @@ public final class SecondaryFrameRenderer implements AutoCloseable {
         NativeVisuals.star(x+21*unit,y+58*unit,3.5*unit,NativeVisuals.RED,.9,0);
         draws++;
     }
+    /** Repaints the frame (backdrop, panel, header) only inside a framebuffer rectangle, using the scissor test. */
+    public void region(int w,int h,String section,double x,double y,double rw,double rh){
+        int sx=(int)Math.max(0,Math.floor(x)),sy=(int)Math.max(0,Math.floor(y));
+        int ex=(int)Math.min(w,Math.ceil(x+rw)),ey=(int)Math.min(h,Math.ceil(y+rh));
+        if(ex<=sx||ey<=sy)return;
+        org.lwjgl.opengl.GL11.glEnable(org.lwjgl.opengl.GL11.GL_SCISSOR_TEST);
+        org.lwjgl.opengl.GL11.glScissor(sx,h-ey,ex-sx,ey-sy);
+        try{draw(w,h,section);}finally{org.lwjgl.opengl.GL11.glDisable(org.lwjgl.opengl.GL11.GL_SCISSOR_TEST);}
+    }
+    /**
+     * Translucent surface for a vanilla list (GuiSlot), in place of its opaque dirt: the backdrop and panel stay visible.
+     * A list as wide as the screen is clamped to the panel, so it reads as part of the frame.
+     */
+    public void listSurface(int w,int h,double x,double y,double rw,double rh){
+        if(rw<=0||rh<=0)return;
+        double unit=Math.max(.65,Math.min(1.75,Math.min(w/1366.0,h/768.0)));
+        double inner=w*.065+12*unit,outer=w*.935-12*unit,l=Math.max(x,inner),r=Math.min(x+rw,outer);
+        if(r-l<60*unit){l=x;r=x+rw;}
+        NativeVisuals.rect(l,y,r-l,rh,NativeVisuals.INK,.46);
+        NativeVisuals.rect(l,y,r-l,1,NativeVisuals.GOLD,.42);
+        NativeVisuals.rect(l,y+rh-1,r-l,1,NativeVisuals.GOLD,.22);
+        NativeVisuals.rect(l,y,1,rh,NativeVisuals.GOLD,.10);NativeVisuals.rect(r-1,y,1,rh,NativeVisuals.GOLD,.10);
+        NativeVisuals.rect(l,y+1,2,Math.min(rh-2,28*unit),NativeVisuals.RED,.55);
+    }
     @Override public void close(){if(backdrop!=null){backdrop.close();backdrop=null;}type.close();}
 }

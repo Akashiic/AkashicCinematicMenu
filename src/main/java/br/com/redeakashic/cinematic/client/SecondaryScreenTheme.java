@@ -5,6 +5,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.GuiSlot;
 import net.minecraft.util.ResourceLocation;
 /** Presentation-only theme for audited vanilla front-end screens. */
 public final class SecondaryScreenTheme {
@@ -38,6 +39,31 @@ public final class SecondaryScreenTheme {
         }catch(RuntimeException|LinkageError ex){
             System.err.println("[AkashicCinematic] Secondary theme background fallback: "+ex);
             release();return false;
+        }
+    }
+    public static int listPaints,overlayPaints;
+    /** Called right after a vanilla list drew its container background (transformer anchor, see SecondaryThemeTransformer). */
+    public static void listBackgroundDrawn(GuiSlot slot){paintList(slot,true,0,0);}
+    /** Called at the end of GuiSlot.overlayBackground(startY,endY): the band above/below the list gets the frame back. */
+    public static void listOverlayDrawn(GuiSlot slot,int startY,int endY){paintList(slot,false,startY,endY);}
+    @SuppressWarnings("try")
+    private static void paintList(GuiSlot slot,boolean background,int startY,int endY){
+        if(slot==null||!current()||Boolean.getBoolean("akashic.cinematic.disabled"))return;
+        Minecraft mc=Minecraft.func_71410_x();GuiScreen screen=mc.field_71462_r;
+        int w=mc.field_71443_c,h=mc.field_71440_d;if(w<160||h<120||screen==null)return;
+        double sx=(double)w/Math.max(1,screen.field_146294_l),sy=(double)h/Math.max(1,screen.field_146295_m);
+        try(RawScope scope=new RawScope(w,h)){
+            if(renderer==null)renderer=new SecondaryFrameRenderer();
+            String section=SecondaryScreenPolicy.label(screen.getClass().getName());
+            if(background){
+                double x=slot.field_148152_e*sx,y=slot.field_148153_b*sy,rw=(slot.field_148151_d-slot.field_148152_e)*sx,rh=(slot.field_148154_c-slot.field_148153_b)*sy;
+                renderer.region(w,h,section,x,y,rw,rh);renderer.listSurface(w,h,x,y,rw,rh);listPaints++;
+            }else{
+                renderer.region(w,h,section,0,startY*sy,w,(endY-startY)*sy);overlayPaints++;
+            }
+        }catch(RuntimeException|LinkageError ex){
+            System.err.println("[AkashicCinematic] Secondary list theme fallback: "+ex);
+            release();
         }
     }
     public static ResourceLocation buttonTexture(){return current()?BUTTONS:VANILLA_BUTTONS;}

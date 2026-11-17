@@ -12,16 +12,17 @@ public final class GL11 {
     public static final int GL_TEXTURE_2D=0x0DE1,GL_QUADS=7,GL_TRIANGLE_STRIP=5,GL_LINES=1,GL_SMOOTH=0x1D01,GL_FLAT=0x1D00,
         GL_MAX_TEXTURE_SIZE=0x0D33,GL_TEXTURE_MIN_FILTER=0x2801,GL_TEXTURE_MAG_FILTER=0x2800,GL_LINEAR=0x2601,
         GL_TEXTURE_WRAP_S=0x2802,GL_TEXTURE_WRAP_T=0x2803,GL_UNPACK_ALIGNMENT=0x0CF5,GL_UNPACK_ROW_LENGTH=0x0CF2,
-        GL_UNPACK_SKIP_PIXELS=0x0CF4,GL_UNPACK_SKIP_ROWS=0x0CF3,GL_RGBA8=0x8058,GL_RGBA=0x1908,GL_UNSIGNED_BYTE=0x1401;
+        GL_UNPACK_SKIP_PIXELS=0x0CF4,GL_UNPACK_SKIP_ROWS=0x0CF3,GL_RGBA8=0x8058,GL_RGBA=0x1908,GL_UNSIGNED_BYTE=0x1401,GL_SCISSOR_TEST=0x0C11;
     public static int width=1,height=1;public static float[] fb=new float[3];
     public static void surface(int w,int h){width=w;height=h;fb=new float[w*h*3];}
     private static final class Tex{int w,h;float[] p;}
     private static final Map<Integer,Tex> textures=new HashMap<Integer,Tex>();private static int nextId=1,bound;
-    private static boolean texturing;private static double r=1,g=1,b=1,a=1,u,v;
+    private static boolean texturing,scissor;private static int scX,scY,scW,scH;
+    public static void glScissor(int x,int y,int w,int h){scX=x;scY=y;scW=w;scH=h;}private static double r=1,g=1,b=1,a=1,u,v;
     private static int mode=-1;private static final List<double[]> verts=new ArrayList<double[]>();
     private static double[] m={1,0,0,1,0,0};private static final Deque<double[]> stack=new ArrayDeque<double[]>();
-    public static void glEnable(int cap){if(cap==GL_TEXTURE_2D)texturing=true;}
-    public static void glDisable(int cap){if(cap==GL_TEXTURE_2D)texturing=false;}
+    public static void glEnable(int cap){if(cap==GL_TEXTURE_2D)texturing=true;if(cap==GL_SCISSOR_TEST)scissor=true;}
+    public static void glDisable(int cap){if(cap==GL_TEXTURE_2D)texturing=false;if(cap==GL_SCISSOR_TEST)scissor=false;}
     public static void glColor4d(double R,double G,double B,double A){r=R;g=G;b=B;a=A;}
     public static void glTexCoord2d(double U,double V){u=U;v=V;}
     public static void glShadeModel(int m){}
@@ -71,7 +72,9 @@ public final class GL11 {
     }
     private static float texel(Tex t,int x,int y,int k){x=Math.max(0,Math.min(t.w-1,x));y=Math.max(0,Math.min(t.h-1,y));return t.p[(y*t.w+x)*4+k];}
     private static void blend(int x,int y,double R,double G,double B,double A){
-        if(x<0||y<0||x>=width||y>=height)return;A=Math.max(0,Math.min(1,A));int i=(y*width+x)*3;
+        if(x<0||y<0||x>=width||y>=height)return;
+        if(scissor){int gy=height-1-y;if(x<scX||x>=scX+scW||gy<scY||gy>=scY+scH)return;}
+        A=Math.max(0,Math.min(1,A));int i=(y*width+x)*3;
         fb[i]=(float)(R*A+fb[i]*(1-A));fb[i+1]=(float)(G*A+fb[i+1]*(1-A));fb[i+2]=(float)(B*A+fb[i+2]*(1-A));
     }
     private static void line(double[] p,double[] q){

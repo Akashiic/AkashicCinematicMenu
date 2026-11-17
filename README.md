@@ -5,7 +5,7 @@ Menu principal e tela de abertura **cinematográficos e nativos** (Java + LWJGL 
 | | |
 |---|---|
 | Último estado | **0.7.0-alpha.4** (21/09/2026) — último JAR, testado no pack completo; **aprovação visual do dono pendente** |
-| Em andamento | **0.7.0-alpha.8** (17/11/2026) — alpha.7 + botão **Multijogador** e botão do **Discord**; JAR como artifact do `build-jar`; sem teste no jogo (OI-21). A alpha.7 (`bc7fdbee…`) é a última com relato do dono de que funcionou |
+| Em andamento | **0.7.0-alpha.9** (17/11/2026) — alpha.8 + **listas com o nosso tema** (Singleplayer, Multijogador, Idiomas, Texturas e demais telas com lista); sem teste no jogo (OI-22). A alpha.7 (`bc7fdbee…`) é a última com relato do dono de que funcionou |
 | Modid / pacote | `akashiccinematicmenu` / `br.com.redeakashic.cinematic` |
 | Tipo | FMLCorePlugin (coremod ASM, *fail-open*) + mod |
 | Ambiente-alvo | Angelica 2.2.18, Reese Sodium, RTG, Technic |

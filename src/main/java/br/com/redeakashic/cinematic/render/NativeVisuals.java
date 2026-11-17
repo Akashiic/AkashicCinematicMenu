@@ -82,9 +82,9 @@ public final class NativeVisuals implements AutoCloseable {
         center("FORBIDDEN",c,h*.180,43*s,p*.86,true,1.3*s,IVORY,1);
         double rule=layout.pixels.headerRuleY();rect(p*.23,rule,p*.54,1,GOLD,.35);star(c,rule,4.5*s,RED,.95,0);
         if(h>=600){center("Até nos corredores sem fim,",c,h*.300,11*s,p*.83,true,1*s,IVORY,.88);center("o Natal encontra caminho.",c,h*.326,11*s,p*.83,true,.7*s,IVORY,.88);}
-        String[] actions={"JOGAR","SINGLEPLAYER","MULTIJOGADOR","OPÇÕES","SAIR"};
+        String[] actions={"JOGAR","SINGLE","MULTI","OPÇÕES","SAIR"};
         for(int i=0;i<PixelLayout.MAIN;i++){
-            double x=layout.pixels.buttonX(),y=layout.pixels.buttonY(i),bw=layout.pixels.buttonWidth(),bh=layout.pixels.buttonHeight(i),hot=Math.max(0,Math.min(1,highlights[i]));
+            double x=layout.pixels.targetX(i),y=layout.pixels.buttonY(i),bw=layout.pixels.targetWidth(i),bh=layout.pixels.buttonHeight(i),hot=Math.max(0,Math.min(1,highlights[i]));
             if(i==0)HeroButton.draw(x,y,bw,bh,age,hot,playPressAge,visibility,motion&&heroAnimation);
             else{rect(x,y,bw,bh,SLATE,(.30+hot*.40)*visibility);outline(x,y,bw,bh,GOLD,(.20+hot*.50)*visibility);if(hot>.005){rect(x,y,2,bh,RED,hot*visibility);rect(x+2,y,1,bh,GOLD,hot*.6*visibility);}}
             text("0"+(i+1),x+12*s,y+(bh-10*s)/2,9*s,24*s,false,1*s,i==0?0xFFF5E8:GOLD,visibility*.88);
