@@ -1,0 +1,15 @@
+{
+  "status": "COMPILED_NOT_RUNTIME_APPROVED",
+  "version": "0.7.0-alpha.5",
+  "jar": "AkashicCinematicMenu-0.7.0-alpha.5.jar",
+  "sha256": "799385c5ba9534d26c880e27986ffb2fc147ae2521a668ca8a6375e4658520bb",
+  "bytes": 16511727,
+  "classes": 85,
+  "class_major_version": 52,
+  "compiled_against_real_artifacts": true,
+  "stubs_used": false,
+  "splash_overlay_implemented": true,
+  "installed_in_game": false,
+  "runtime_tested": false,
+  "compiler": "javac 21.0.12 (--release 8)"
+}

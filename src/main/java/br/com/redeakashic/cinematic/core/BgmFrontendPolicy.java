@@ -27,7 +27,9 @@ public final class BgmFrontendPolicy {
         "net.minecraft.client.gui.GuiConfirmOpenLink",
         "rtg.client.gui.WorldTypeMessageGUI",
         "me.flashyreese.mods.reeses_sodium_options.client.gui.ReeseSodiumVideoOptionsScreen",
-        "net.minecraft.client.gui.GuiYesNoLink"
+        "net.minecraft.client.gui.GuiYesNoLink",
+        // AkashicMixer screen (Options > Music & Sounds > Akashic Sounds Mixer): the menu music keeps playing while its slider moves.
+        "com.akashiic.mixer.client.GuiAkashicMixer"
     )));
     private BgmFrontendPolicy(){}
     public static boolean root(String screen){return ROOT.equals(screen);}

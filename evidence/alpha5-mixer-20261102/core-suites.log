@@ -1,0 +1,29 @@
+== SecondaryScreenPolicyTests
+RESULT secondary_policy_checks=58 failures=0
+exit=0
+== CeremonialTests
+RESULT ceremonial_checks=4807 failures=0
+exit=0
+== PixelLayoutTests
+RESULT geometry_checks=1785 failures=0
+exit=0
+== UiFeaturesTests
+RESULT ui-feature-checks=140 failures=0
+exit=0
+== MusicCoreTests
+RESULT music_core_checks=1557 failures=0
+exit=0
+== BgmPlaybackTests
+RESULT playback_scenarios=18 assertions=124 failures=0
+exit=0
+== MenuSoundGateTests
+RESULT sound_gate_checks=32 failures=0
+exit=0
+== MenuVolumeTests
+RESULT menu_volume_checks=11 failures=0
+exit=0
+== ConnectionWatchTests
+RESULT checks=15 failures=0
+exit=0
+== VorbisHeaderTests
+RESULT vorbis_header_checks=70 failures=0; actual file plus malformed fixtures; not full decoder approval

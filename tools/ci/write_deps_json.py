@@ -24,6 +24,7 @@ deps = [one(rfg, 'srg_merged_minecraft.jar'), one(rfg, 'recompiled_minecraft*.ja
         one(libs, 'asm-[0-9]*.jar', 'asm-9.8.jar'),
         one(libs, 'asm-tree-*.jar', 'asm-tree-9.8.jar'),
         one(libs, 'launchwrapper-*.jar', 'launchwrapper-1.12.jar'),
-        one(libs, 'netty-all-*.jar', 'netty-all-4.0.10.Final.jar')]
+        one(libs, 'netty-all-*.jar', 'netty-all-4.0.10.Final.jar'),
+        one(libs, 'akashicmixer-*-dev.jar', 'akashicmixer-0ff47b7-dev.jar')]  # API do mixer: so compilacao
 Path('deps.json').write_text(json.dumps(deps, indent=2))
 print('\n'.join(deps))

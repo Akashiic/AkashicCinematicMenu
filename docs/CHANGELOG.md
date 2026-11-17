@@ -3,6 +3,12 @@
 Reconstruído a partir dos pareceres, `CHECKPOINT_*.json` e JARs do acervo (ver `PROVENANCE.md`). Datas/horas = *mtime* do JAR final (America/Sao_Paulo). "Status" segue o `QUALITY_CONTRACT`: **compilado/testado ≠ aprovado pelo usuário**.
 Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md`.
 
+## [0.7.0-alpha.7] — 2026-11-17 — Edição de Natal + AkashicMixer (candidata)
+- Integra o branch `claude/focused-tesla-4haxh8` (0.7.0-alpha.5, 02/11), que tinha ficado fora do `main`: a BGM e os SFX do menu voltam a ser controlados pelo AkashicMixer quando ele está instalado (fail-open). A alpha.6 não tinha esse hook.
+- CI `build-jar` baixa `akashicmixer-0ff47b7-dev.jar` do JitPack e confere o SHA-256 `56e6e80c…` (o mesmo da evidência da alpha.5) antes de compilar.
+- Pendência do mixer renumerada de OI-17 para **OI-20**.
+- Status: ver `LINEAGE.md` (SHA da CI); **não rodou no jogo; aprovação visual e sonora do dono pendente.**
+
 ## [0.7.0-alpha.6] — 2026-11-17 — N12 *Edição de Natal* (candidata, sem JAR)
 - *Numeração:* entrou no `main` como `0.7.0-alpha.5`, renomeada para alpha.6 porque já existia um JAR alpha.5 (`799385c5…`, AkashicMixer, branch não mergeado) — ver `LINEAGE.md`.
 - **Nova estética completa** a partir da arte de Natal do dono (`docs/design/N12-natal/`): menu, loading/splash, transição, conexão e telas secundárias.
@@ -14,6 +20,12 @@ Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md
 - CI `build-jar`: gera as dependências SRG via RetroFuturaGradle (`tools/ci/rfg-deps`), roda `build_native.py` e publica JAR, `.sha256`, `native-build.json` e amostras como artifacts **soltos** (`upload-artifact@v7`, `archive: false`).
 - Ferramentas: `tools/build_natal_layers.py`, `tools/build_natal_gui.py`, `tools/preview/` (amostras pelo código real, sem Minecraft).
 - Status: núcleo e suítes PASSOU; **JAR compilado na CI** (`dcc69230…`, 16.226.074 B, 81 classes); **não rodou no jogo; aprovação visual do dono pendente.**
+
+## [0.7.0-alpha.5] — 2026-11-02 — *candidata, não testada no jogo*
+- **BGM e SFX do menu passam para o AkashicMixer** (pedido do dono, 02/11/2026): com o AkashicMixer instalado, canais **Música do Menu** e **Sons do Menu** no *Akashic Sounds Mixer*; o slider *Música* do Minecraft não afeta mais o menu (o *Master* continua). Integração opcional (`after:akashicmixer`); sem o mixer, comportamento da alpha.4.
+- A tela do mixer mantém a BGM do menu tocando (allow-list de `BgmFrontendPolicy`).
+- `tools/build_native.py` exige a API do AkashicMixer no classpath (`--mixer-jar`), só para compilar; nada do mixer entra no JAR.
+- Status: núcleo puro testado (todas as suítes, Linux). **Não rodou no jogo; aprovação sonora do dono pendente.**
 
 ## [0.7.0-alpha.4] — 2026-09-21 22:46
 - Tema do Santuário estendido às GUIs secundárias (allow-list de 17 classes): Options, Select World, Create World (+ aviso RTG), Language, Resource Packs, Controls, Video (Reese Sodium), Sound, Chat, Snooper, Flat World/Presets, Rename World, confirmações vanilla.
