@@ -20,7 +20,7 @@ Formato: **ID · gravidade · estado**. "Evidência" aponta para o que prova o i
 | OI-14 | Pack diário divergente do manifesto homologado | Info | Registrado, não corrigido |
 | OI-15 | Angelica 2.2.37: splash cinemático sumiu e o cliente crashou | Alta | Causa externa (NecroTempus); corrigida na ThePatcher 1.1.0-beta.39 — aceite no pack pendente |
 | OI-16 | Sem foco, o fade do boot para o menu fica parado no último quadro do splash | Baixa | Aberto — decisão de design do dono |
-| OI-17 | Edição de Natal sem teste no jogo (vale para a 0.7.0-alpha.7) | Alta | Aberto — JAR alpha.7 `bc7fdbee…` gerado na CI; testar em cópia isolada |
+| OI-17 | Edição de Natal no jogo (0.7.0-alpha.7) | Alta | **Relato do dono (17/11): funcionou** — escopo não detalhado; falta o registro do teste (pack/cópia, resoluções, com/sem mixer) |
 | OI-18 | Texturas maiores na N12 (fundo 2000×1116; planos 2080×1196) — custo do 1º quadro do menu | Baixa | Aberto — medir no pack |
 | OI-19 | Perfis antigos `native/{classic,compact,hd,wide}` e `serif.png`/`body.png` não são carregados, mas vão no JAR | Info | Registrado — remoção só com o dono |
 | OI-20 | 0.7.0-alpha.5/.7: BGM/SFX no AkashicMixer nunca rodaram no jogo | Média | Aberto — teste em cópia isolada + aceite sonoro do dono |
@@ -89,3 +89,5 @@ Desde a N07 o layout é responsivo por pixels (`PixelLayout`); `native/{classic,
 * **Não executado:** nenhum cliente real ou de desenvolvimento rodou esta combinação. A conclusão de que o slider *Música* do Minecraft deixa de parar a BGM vem da leitura do `SoundManager` 1.7.10 (`setSoundCategoryVolume` recalcula `getNormalizedVolume` e só para o som em 0), não de observação.
 * **Testar (cópia isolada):** com Música do Minecraft = 0 e Música do Menu = 100 % a BGM toca; mover Música do Menu muda o volume ao vivo; mutar para a BGM e os SFX; voltar retoma; Opções → Música e Sons → Akashic Sounds Mixer não corta a BGM; sem o AkashicMixer o menu se comporta como a alpha.4; com o AkashicMixer `bab631d` (sem `routeSounds`) o log diz `MIXER_WITHOUT_ROUTING` e nada muda.
 
+### Relato de 17/11/2026 (OI-17 / OI-20)
+O dono escreveu "Funcionou essa versão" depois de baixar o JAR **0.7.0-alpha.7** (`bc7fdbee…`). É um relato do dono, registrado como tal: não diz onde rodou (pack diário ou cópia isolada), em quais resoluções, nem se o AkashicMixer estava instalado e com que build. Para fechar OI-17/OI-20 com evidência: anotar esse escopo e, se possível, guardar o `latest.log` (sem dados pessoais) da execução.

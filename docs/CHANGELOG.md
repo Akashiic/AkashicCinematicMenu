@@ -7,7 +7,7 @@ Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md
 - Integra o branch `claude/focused-tesla-4haxh8` (0.7.0-alpha.5, 02/11), que tinha ficado fora do `main`: a BGM e os SFX do menu voltam a ser controlados pelo AkashicMixer quando ele está instalado (fail-open). A alpha.6 não tinha esse hook.
 - CI `build-jar` baixa `akashicmixer-0ff47b7-dev.jar` do JitPack e confere o SHA-256 `56e6e80c…` (o mesmo da evidência da alpha.5) antes de compilar.
 - Pendência do mixer renumerada de OI-17 para **OI-20**.
-- Status: núcleo e 11 suítes PASSOU; **JAR compilado na CI** (`bc7fdbee…`, 16.229.515 B, 85 classes); **não rodou no jogo; aprovação visual e sonora do dono pendente.**
+- Status: núcleo e 11 suítes PASSOU; **JAR compilado na CI** (`bc7fdbee…`, 16.229.515 B, 85 classes); **relato do dono em 17/11/2026: "Funcionou essa versão" (escopo do teste não detalhado; não substitui a homologação).**
 
 ## [0.7.0-alpha.6] — 2026-11-17 — N12 *Edição de Natal* (candidata, sem JAR)
 - *Numeração:* entrou no `main` como `0.7.0-alpha.5`, renomeada para alpha.6 porque já existia um JAR alpha.5 (`799385c5…`, AkashicMixer, branch não mergeado) — ver `LINEAGE.md`.

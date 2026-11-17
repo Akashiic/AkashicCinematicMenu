@@ -13,7 +13,7 @@
       "content": "Edicao de Natal sem o mixer"
     }
   ],
-  "status": "IMPLEMENTED__CORE_TESTED__JAR_COMPILED_IN_CI__NOT_RUN_IN_GAME__OWNER_APPROVAL_PENDING",
+  "status": "IMPLEMENTED__CORE_TESTED__JAR_COMPILED_IN_CI__OWNER_REPORTS_WORKING__SCOPE_UNRECORDED",
   "jar": "AkashicCinematicMenu-0.7.0-alpha.7.jar",
   "jar_sha256": "bc7fdbee24e74d08636784f769ca7a267a5cf33b827e4eaceb28fd72d6afcfd0",
   "jar_bytes": 16229515,
@@ -52,13 +52,19 @@
     },
     {
       "gate": "runtime no modpack isolado, com e sem AkashicMixer",
-      "result": "NAO EXECUTADO",
+      "result": "RELATO DO DONO: funcionou (escopo nao registrado)",
       "evidence": "OI-17, OI-20"
     },
     {
       "gate": "aprovacao visual/sonora do dono",
-      "result": "PENDENTE"
+      "result": "RELATO POSITIVO DO DONO (17/11); homologacao formal nao registrada"
     }
   ],
-  "reviewer": "autorrevisao do agente (nao e auditoria independente)"
+  "reviewer": "autorrevisao do agente (nao e auditoria independente)",
+  "owner_report": {
+    "date": "2026-11-17",
+    "text": "Funcionou essa versão.",
+    "scope": "nao detalhado (local, resolucoes e presenca/build do AkashicMixer nao informados)",
+    "note": "relato do dono registrado como tal; nao e homologacao"
+  }
 }
