@@ -1,13 +1,13 @@
 {
   "checkpoint": "ACM-N12-NATAL-2026-11-17",
-  "version": "0.7.0-alpha.5",
+  "version": "0.7.0-alpha.6",
   "parent": {
     "version": "0.7.0-alpha.4",
     "jar_sha256": "7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a"
   },
-  "status": "IMPLEMENTED__CORE_TESTED__JAR_NOT_BUILT__NOT_RUN_IN_GAME__OWNER_VISUAL_APPROVAL_PENDING",
-  "jar_sha256": null,
-  "jar_note": "JAR nao gerado: dependencias SRG do 1.7.10 ausentes no ambiente desta sessao (nuvem).",
+  "status": "IMPLEMENTED__CORE_TESTED__JAR_COMPILED_IN_CI__NOT_RUN_IN_GAME__OWNER_VISUAL_APPROVAL_PENDING",
+  "jar_sha256": "dcc69230a1e6e580c6fbfdd2fd5582e77f71915bc14e7b4e16d0b906d4dfcac3",
+  "jar_note": "Compilado pela CI build-jar (RFG 1.4.9, Linux, JDK 17 --release 8): https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44073307002. Deps: log4j-api 2.0-beta9-fixed, launchwrapper 1.12 (Mojang). Hash pode diferir de build local com outras deps.",
   "scope": "troca completa da estetica para a Edicao de Natal (menu, loading/splash, transicao, conexao, telas secundarias)",
   "source_art": {
     "path": "docs/design/N12-natal/source/natal-source.jpg",
@@ -67,8 +67,8 @@
     },
     {
       "gate": "build_native.py (JAR contra artefatos SRG reais)",
-      "result": "FALHOU (ambiente)",
-      "evidence": "evidence/natal/build-native-attempt.log: dependencias SRG ausentes; reconstrucao via RetroFuturaGradle bloqueada pela politica do ambiente"
+      "result": "PASSOU (CI)",
+      "evidence": "https://github.com/Akashiic/AkashicCinematicMenu/actions/runs/44073307002 — antes FALHOU no ambiente do agente: evidence/natal/build-native-attempt.log"
     },
     {
       "gate": "verify_wave2_alpha4.py / probes de bytecode e graficos (GPU)",
@@ -168,5 +168,7 @@
       "vanilla_suppression": "PlaySoundEvent17 (HIGHEST/LOWEST) + silenceTrackedVanilla; inalterado",
       "ffmpeg_full_decode": "sem erro"
     }
-  }
+  },
+  "jar_bytes": 16226074,
+  "classes": 81
 }

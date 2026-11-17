@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Camadas de paralaxe da edicao de Natal (0.7.0-alpha.5).
+"""Camadas de paralaxe da edicao de Natal (0.7.0-alpha.6).
 
 Fonte unica: docs/design/N12-natal/source/natal-source.jpg (2000x1116, arte do dono).
 

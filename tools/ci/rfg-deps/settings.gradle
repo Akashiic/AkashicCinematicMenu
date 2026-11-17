@@ -1,0 +1,11 @@
+// Projeto auxiliar SO para CI: gera as dependencias de compilacao SRG do 1.7.10 (RetroFuturaGradle)
+// que tools/build_native.py exige. Nada daqui vai para o JAR do mod.
+pluginManagement {
+    repositories {
+        maven { name = 'GTNH'; url = 'https://nexus.gtnewhorizons.com/repository/public/' }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+plugins { id 'org.gradle.toolchains.foojay-resolver-convention' version '0.9.0' }
+rootProject.name = 'acm-ci-deps'

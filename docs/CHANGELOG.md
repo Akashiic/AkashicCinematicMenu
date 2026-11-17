@@ -3,15 +3,17 @@
 Reconstruído a partir dos pareceres, `CHECKPOINT_*.json` e JARs do acervo (ver `PROVENANCE.md`). Datas/horas = *mtime* do JAR final (America/Sao_Paulo). "Status" segue o `QUALITY_CONTRACT`: **compilado/testado ≠ aprovado pelo usuário**.
 Detalhes e evidências por versão: `CRONOLOGIA.md` §2–3. Hashes: `LINEAGE.md`.
 
-## [0.7.0-alpha.5] — 2026-11-17 — N12 *Edição de Natal* (candidata, sem JAR)
+## [0.7.0-alpha.6] — 2026-11-17 — N12 *Edição de Natal* (candidata, sem JAR)
+- *Numeração:* entrou no `main` como `0.7.0-alpha.5`, renomeada para alpha.6 porque já existia um JAR alpha.5 (`799385c5…`, AkashicMixer, branch não mergeado) — ver `LINEAGE.md`.
 - **Nova estética completa** a partir da arte de Natal do dono (`docs/design/N12-natal/`): menu, loading/splash, transição, conexão e telas secundárias.
 - Paralaxe refeita em 3 planos (corredor, perseguidores, garota + árvore) de 2080×1196; vidro em meia resolução; enquadramento ancorado para 4:3 e 21:9.
 - Paleta quente (café, ouro de estrela, creme, vermelho de laço, verde pinheiro); estrela, guirlanda de luzes e neve; botão Jogar vermelho de Natal.
 - Textos de Natal mantendo **THE END OF FORBIDDEN**; botões no mesmo lugar.
 - Correção: texto pequeno perdia a base das letras (E→F) na filtragem bilinear; glifos ganham 1 px de margem.
 - **BGM do menu trocada** pela faixa fornecida pelo dono (Ogg/Vorbis 44,1 kHz estéreo, 225,79 s, `616bfa84…`), copiada sem recodificar; `sounds.json` (`akashiccinematic:bgm/menu`, `stream: true`) e o loop já atendiam, sem mudança de código.
+- CI `build-jar`: gera as dependências SRG via RetroFuturaGradle (`tools/ci/rfg-deps`), roda `build_native.py` e publica JAR, `.sha256`, `native-build.json` e amostras como artifacts **soltos** (`upload-artifact@v7`, `archive: false`).
 - Ferramentas: `tools/build_natal_layers.py`, `tools/build_natal_gui.py`, `tools/preview/` (amostras pelo código real, sem Minecraft).
-- Status: núcleo e suítes PASSOU; **JAR não gerado; não rodou no jogo; aprovação visual do dono pendente.**
+- Status: núcleo e suítes PASSOU; **JAR compilado na CI** (`dcc69230…`, 16.226.074 B, 81 classes); **não rodou no jogo; aprovação visual do dono pendente.**
 
 ## [0.7.0-alpha.4] — 2026-09-21 22:46
 - Tema do Santuário estendido às GUIs secundárias (allow-list de 17 classes): Options, Select World, Create World (+ aviso RTG), Language, Resource Packs, Controls, Video (Reese Sodium), Sound, Chat, Snooper, Flat World/Presets, Rename World, confirmações vanilla.

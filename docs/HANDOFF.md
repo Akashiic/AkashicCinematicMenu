@@ -6,7 +6,7 @@
 
 **0.7.0-alpha.4** (SHA-256 `7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a`, 81 classes) está **compilada, reproduzível e testada em escopo dirigido no modpack completo (exit=0)**, mas a **aprovação visual/sonora do dono ainda está PENDENTE**, não há "liberação geral" e há um problema conhecido de coexistência com o Angelica (OI-01).
 
-> **Atualização 17/11/2026:** `src/` agora contém a **0.7.0-alpha.5 — Edição de Natal (N12)**, ainda **sem JAR e sem teste no jogo** (ver `checkpoints/native-n12-natal/` e OI-17). O texto abaixo descreve a alpha.4, que segue sendo o último JAR.
+> **Atualização 17/11/2026:** `src/` agora contém a **0.7.0-alpha.6 — Edição de Natal (N12)**, ainda **sem JAR e sem teste no jogo** (ver `checkpoints/native-n12-natal/` e OI-17). O texto abaixo descreve a alpha.4, que segue sendo o último JAR.
 
 O código-fonte da 0.7.0-alpha.4 está na tag `v0.7.0-alpha.4`. O histórico git reconstrói, commit a commit, cada candidata anterior (`git log --oneline`, tags `v0.1.0-alpha.1 … v0.7.0-alpha.4`).
 
@@ -27,6 +27,8 @@ O código-fonte da 0.7.0-alpha.4 está na tag `v0.7.0-alpha.4`. O histórico git
 # deps.json = array JSON de caminhos absolutos dos 8 jars acima
 python tools/build_native.py --classpath-json deps.json
 ```
+
+> **Sem as deps locais?** O workflow `.github/workflows/build-jar.yml` gera tudo no GitHub Actions (RetroFuturaGradle 1.4.9 em `tools/ci/rfg-deps`) e publica o JAR **solto** (sem zip) nos artifacts da execução.
 
 > `build_native.py` sem argumento usa os caminhos da máquina do autor (`C:\Users\User\AkashicDev\CubicChunks-Crucible\…`, `~/.gradle/caches/…`). Em outra máquina **sempre** passe `--classpath-json`.
 
@@ -60,7 +62,7 @@ Observações:
 
 ## 5. A faixa de música (`menu.ogg`)
 
-* **Desde 17/11/2026 (N12 / 0.7.0-alpha.5)** o arquivo é a faixa nova fornecida pelo dono: Ogg/Vorbis, 44,1 kHz, estéreo, **225,79 s**, 4.463.690 B, SHA-256 `616bfa84978c3154b240a7ae9c0a2b9fc3ac17321ae032efccbd3f55b797e3a0`, copiada byte a byte (sem recodificar). O código não tem duração fixa: o loop vem do `repeat` do `ISound` + reentrada do `BgmPlayback`.
+* **Desde 17/11/2026 (N12 / 0.7.0-alpha.6)** o arquivo é a faixa nova fornecida pelo dono: Ogg/Vorbis, 44,1 kHz, estéreo, **225,79 s**, 4.463.690 B, SHA-256 `616bfa84978c3154b240a7ae9c0a2b9fc3ac17321ae032efccbd3f55b797e3a0`, copiada byte a byte (sem recodificar). O código não tem duração fixa: o loop vem do `repeat` do `ISound` + reentrada do `BgmPlayback`.
 * Até a 0.7.0-alpha.4 o arquivo era `6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6` (161,88 s), byte a byte o embutido nos JARs 0.5.2-alpha.1, 0.6.0-alpha.3 e 0.7.0-alpha.4.
 * A faixa **anterior** (até a 0.7.0-alpha.4) é de terceiros (Fluxxwave, *Slowed + Reverb*); **por decisão do dono (24/10/2026) ela permanece no repositório e nos JARs oficiais**, pois a permissão de uso foi obtida por **outro contribuinte** do projeto. O documento/prova dessa permissão **não está neste repositório** e o assistente que montou o repositório não pôde verificá-lo. Origem: `BGM.mp3` fornecido pelo dono (`1e7a442d…`, não incluído) convertido para Ogg.
 * **Não remova nem troque a faixa sem o dono.** Os tags anteriores a esse commit (v0.5.2-alpha.1 e v0.6.0-alpha.3) *não* têm o arquivo na árvore (o repositório foi montado antes da decisão); o JAR do Release de cada um o contém.
