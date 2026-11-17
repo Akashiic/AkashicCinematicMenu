@@ -20,13 +20,7 @@ public final class TransitionTheme {
         if(!enabled||failed||w<160||h<120||Boolean.getBoolean("akashic.cinematic.disabled"))return;
         try(RawScope scope=new RawScope(w,h)){
             if(backdrop==null)backdrop=new BackdropRenderer();if(text==null)text=new UiTypography();
-            backdrop.draw(w,h,1);NativeVisuals.rect(0,0,w,h,NativeVisuals.INK,.68);
-            double scale=Math.max(.65,Math.min(2,Math.min(w/1366.0,h/768.0)));
-            text.centered("THE END OF FORBIDDEN",w*.5,h*.14,32*scale,w*.80,true,2*scale,NativeVisuals.IVORY,.92);
-            NativeVisuals.rect(w*.37,h*.25,w*.26,1,NativeVisuals.GOLD,.65);
-            NativeVisuals.rect(w*.10,h*.38,w*.80,h*.26,NativeVisuals.INK,.58);
-            text.centered("A TRAVESSIA",w*.5,h*.77,13*scale,w*.8,false,3*scale,NativeVisuals.GOLD,.9);
-            text.centered("REDE AKASHIC",w*.5,h*.83,10*scale,w*.8,false,2*scale,NativeVisuals.MUTED,.85);
+            NativeVisuals.transition(backdrop,text,w,h);
             lastFrame=System.nanoTime();lastOrigin=origin;
             if(origin.equals("aether"))aetherFrames++;else if(origin.equals("terrain"))terrainFrames++;else vanillaFrames++;
         }catch(RuntimeException|LinkageError ex){failed=true;System.err.println("[AkashicCinematic] Transition background failed; original renderer retained: "+ex);dispose();}

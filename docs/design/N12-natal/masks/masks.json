@@ -1,0 +1,15 @@
+{
+  "model": "birefnet-general-lite",
+  "rembg": "2.0.87",
+  "source_sha256": "48daedf34cbe69cdbdec7e670c733f36f387ae56fcec6ae93b74c479421bc716",
+  "hero_crop": [
+    780,
+    0,
+    2000,
+    1116
+  ],
+  "files": {
+    "full.png": "59d5dd01256a52cd249fbe23025713a9620d81b577e562d3ee308e293f91c43c",
+    "hero-crop.png": "46977baee256d0b371970db744fb36c1589aab4f6d6e501666fb5025ae930119"
+  }
+}

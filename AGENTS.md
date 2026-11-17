@@ -12,7 +12,7 @@ Leia primeiro: `docs/HANDOFF.md`, `docs/OPEN-ISSUES.md`, `docs/CRONOLOGIA.md`.
 7. Sem `sleep`, sem percentual fictício, sem thread nova no splash.
 8. Tema apenas por *allow-list* exata de classes; não toque GUIs desconhecidas de outros mods.
 9. Não "conserte" o mute do usuário (Música = 0 %).
-10. **Não commite** JARs/zips (use Releases), `build/`, cópias do modpack, contas, tokens, logs de jogo com dados pessoais. **Mantenha `src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg`** (faixa de terceiros com permissão de outro contribuinte; SHA-256 `6e91e747…`): não a remova nem a troque sem o dono. O `BGM.mp3` original não está no repositório.
+10. **Não commite** JARs/zips (use Releases), `build/`, cópias do modpack, contas, tokens, logs de jogo com dados pessoais. **Mantenha `src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg`** (SHA-256 `616bfa84…`, 225,79 s, trocada pelo dono em 17/11/2026; a faixa anterior `6e91e747…` segue nos JARs até a 0.7.0-alpha.4): não a remova nem a troque sem o dono. O `BGM.mp3` original não está no repositório.
 
 ## Fluxo de trabalho
 * Partir de `main` (= 0.7.0-alpha.4). Nova candidata ⇒ nova versão (`0.7.0-alpha.5`…), **nunca** sobrescrever artefato/hash existente.

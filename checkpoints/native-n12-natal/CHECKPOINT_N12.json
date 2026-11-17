@@ -1,0 +1,172 @@
+{
+  "checkpoint": "ACM-N12-NATAL-2026-11-17",
+  "version": "0.7.0-alpha.5",
+  "parent": {
+    "version": "0.7.0-alpha.4",
+    "jar_sha256": "7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a"
+  },
+  "status": "IMPLEMENTED__CORE_TESTED__JAR_NOT_BUILT__NOT_RUN_IN_GAME__OWNER_VISUAL_APPROVAL_PENDING",
+  "jar_sha256": null,
+  "jar_note": "JAR nao gerado: dependencias SRG do 1.7.10 ausentes no ambiente desta sessao (nuvem).",
+  "scope": "troca completa da estetica para a Edicao de Natal (menu, loading/splash, transicao, conexao, telas secundarias)",
+  "source_art": {
+    "path": "docs/design/N12-natal/source/natal-source.jpg",
+    "sha256": "48daedf34cbe69cdbdec7e670c733f36f387ae56fcec6ae93b74c479421bc716",
+    "size": [
+      2000,
+      1116
+    ],
+    "author": "dono do projeto (declarado em 17/11/2026)"
+  },
+  "gates": [
+    {
+      "gate": "javac --release 8 (core + testes, -Werror)",
+      "result": "PASSOU",
+      "evidence": "tools/repo/run_core_gates.py"
+    },
+    {
+      "gate": "CoreTests",
+      "result": "PASSOU",
+      "evidence": "evidence/natal/test-suites.log / run_core_gates.py: scenarios=48 assertions=17489 failures=0"
+    },
+    {
+      "gate": "VorbisHeaderTests com a BGM nova + BgmPlaybackTests/MusicCoreTests/MenuSoundGateTests",
+      "result": "PASSOU",
+      "evidence": "vorbis_header_checks=70; playback 18/124; music_core 1557; sound_gate 32; failures=0"
+    },
+    {
+      "gate": "suites *Tests individuais (10)",
+      "result": "PASSOU",
+      "evidence": "evidence/natal/test-suites.log",
+      "lines": [
+        "BgmPlaybackTests: RESULT playback_scenarios=18 assertions=124 failures=0",
+        "CeremonialTests: RESULT ceremonial_checks=4807 failures=0",
+        "ConnectionWatchTests: RESULT checks=15 failures=0",
+        "MenuSoundGateTests: RESULT sound_gate_checks=32 failures=0",
+        "MusicCoreTests: RESULT music_core_checks=1557 failures=0",
+        "PixelLayoutTests: RESULT geometry_checks=1785 failures=0",
+        "SecondaryScreenPolicyTests: RESULT secondary_policy_checks=58 failures=0",
+        "UiFeaturesTests: RESULT ui-feature-checks=140 failures=0",
+        "VorbisHeaderTests: RESULT vorbis_header_checks=70 failures=0; actual file plus malformed fixtures; not full decoder approval"
+      ]
+    },
+    {
+      "gate": "compilacao do pacote render contra stubs GL em software",
+      "result": "PASSOU",
+      "evidence": "tools/preview/run_natal_preview.py"
+    },
+    {
+      "gate": "analise sintatica dos 62 .java de src/main (JavacTask.parse)",
+      "result": "PASSOU",
+      "evidence": "0 diagnosticos de sintaxe; classes client/bootstrap NAO tiveram verificacao de tipos (exigem Minecraft/Forge)"
+    },
+    {
+      "gate": "amostras renderizadas pelo codigo real (rasterizador em software)",
+      "result": "PASSOU",
+      "evidence": "evidence/natal/preview/"
+    },
+    {
+      "gate": "build_native.py (JAR contra artefatos SRG reais)",
+      "result": "FALHOU (ambiente)",
+      "evidence": "evidence/natal/build-native-attempt.log: dependencias SRG ausentes; reconstrucao via RetroFuturaGradle bloqueada pela politica do ambiente"
+    },
+    {
+      "gate": "verify_wave2_alpha4.py / probes de bytecode e graficos (GPU)",
+      "result": "NAO EXECUTADO",
+      "evidence": "sem JAR, sem JRE 8 + GPU"
+    },
+    {
+      "gate": "runtime no modpack isolado",
+      "result": "NAO EXECUTADO",
+      "evidence": "-"
+    },
+    {
+      "gate": "aprovacao visual/sonora do dono",
+      "result": "PENDENTE",
+      "evidence": "-"
+    }
+  ],
+  "code_changes": {
+    "core/DepthCamera": "fonte 2000x1116, PAD 40, textura 2080x1196, DX/DY escalados (1.657x), ancoras X .72 / Y .08",
+    "render/BackdropRenderer": "3 planos room.jpg/chasers.png/hero.png; vidro em meia resolucao; ancoras compartilhadas no fundo estatico",
+    "render/NativeVisuals": "paleta de Natal, estrela, guirlanda, neve, textos novos, transition() extraido para ser renderizavel fora do jogo",
+    "render/UiTypography": "glifos com 1 px de margem (corrige base de letras sumindo em texto pequeno)",
+    "render/HeroButton": "vermelho de Natal + borda dourada",
+    "render/SecondaryFrameRenderer": "guirlanda, estrela e rodape de Natal",
+    "client/TransitionTheme": "delegado a NativeVisuals.transition",
+    "client/ConnectionScreenTheme": "cores centralizadas + titulo de Natal",
+    "core/LoadState": "titulo do estado desconhecido"
+  },
+  "assets": {
+    "native/backdrop-blur.jpg": {
+      "bytes": 56891,
+      "sha256": "a7dc44b252386127f43d07ebd1aae78b26b1f6c1f097c603d3183a3ac6bd3247"
+    },
+    "native/backdrop.jpg": {
+      "bytes": 314323,
+      "sha256": "48daedf34cbe69cdbdec7e670c733f36f387ae56fcec6ae93b74c479421bc716"
+    },
+    "native/depth/chasers-blur.png": {
+      "bytes": 106451,
+      "sha256": "cb2f0c462d3a767050d54231f51f4c5c97726ed610ae7c5dd3c3f91023c85969"
+    },
+    "native/depth/chasers.png": {
+      "bytes": 1546646,
+      "sha256": "74001559e9eb1e35f82ed1ef48da3bec0cf15e794458efd3d315885c4821ea66"
+    },
+    "native/depth/hero-blur.png": {
+      "bytes": 281832,
+      "sha256": "14c09fcf9fdf2d29df270c994aef103614e494fe3c59733dcb16363890e24447"
+    },
+    "native/depth/hero.png": {
+      "bytes": 2340761,
+      "sha256": "38a92d5526ae80ada7838a180e351bacc441d42beb77b4995d1d5b506ef1c087"
+    },
+    "native/depth/layers.properties": {
+      "bytes": 116,
+      "sha256": "6bca0e6b12d203aef1aecb593aca28f7e0492c57b19ca387d6ed0e5cd5ee630f"
+    },
+    "native/depth/room-blur.jpg": {
+      "bytes": 37206,
+      "sha256": "0a3d75dc83d77b281b975d8fd21266c55b53cd9fa6fe01bd4fc0d6a001ccd61f"
+    },
+    "native/depth/room.jpg": {
+      "bytes": 310578,
+      "sha256": "c0a088a58ea5292475fefee5dadfe08d3002d1e353d541d00ef062813d6232d6"
+    },
+    "textures/gui/list_surface.png": {
+      "bytes": 441,
+      "sha256": "8835ad4a85236d11a613eabe026bd307bbbdf14cb3906ffcd42fa4f2807ff391"
+    },
+    "textures/gui/widgets_forbidden.png": {
+      "bytes": 684,
+      "sha256": "f257e91deaeb2c684d39256efa4a3b1d71519ef885a5a66a323ad457001ed356"
+    }
+  },
+  "removed_assets": [
+    "native/depth/{sky,architecture,angel,occluder}{,-blur}.png"
+  ],
+  "gpu_memory_estimate_mb": {
+    "before_depth": 33.6,
+    "after_depth": 35.6,
+    "before_backdrop": 3.8,
+    "after_backdrop": 8.5
+  },
+  "reviewer": "autorrevisao do agente (nao e auditoria independente)",
+  "bgm": {
+    "path": "src/main/resources/assets/akashiccinematic/sounds/bgm/menu.ogg",
+    "sha256": "616bfa84978c3154b240a7ae9c0a2b9fc3ac17321ae032efccbd3f55b797e3a0",
+    "bytes": 4463690,
+    "format": "Ogg/Vorbis 44100 Hz estereo",
+    "duration_s": 225.79,
+    "previous_sha256": "6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6",
+    "replaced": "2026-11-17, pelo dono; copia byte a byte, sem recodificar",
+    "checks": {
+      "sounds_json": "akashiccinematic:bgm/menu, category music, stream true",
+      "loop": "MenuTrack repeat=settings.loop (padrao true), repeatDelay 0; BgmPlayback reentra se o stream terminar",
+      "hardcoded_duration": "nenhuma",
+      "vanilla_suppression": "PlaySoundEvent17 (HIGHEST/LOWEST) + silenceTrackedVanilla; inalterado",
+      "ffmpeg_full_decode": "sem erro"
+    }
+  }
+}

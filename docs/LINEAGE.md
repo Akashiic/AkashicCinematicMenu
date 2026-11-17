@@ -34,7 +34,8 @@ Coluna **Pai** = linha de base declarada no `baseline.json`/parecer da própria 
 | 22 | 0.7.0-alpha.1 | `native-n11-gui-wave2` | 21/09 18:23 | 16.508.062 | `2ed2b906e42312fe77107884eee9fc0dd2851f90142fbed5d2564d802a0bc312` | #21 | — |
 | 23 | 0.7.0-alpha.2 | `native-n11-gui-wave2` | 21/09 18:25 | 16.508.146 | `2138cd5c4e0bc071ca167c31a9ecbd03fb3f8d8bcd6c094755d8b520a525bf7e` | #22 | — |
 | 24 | 0.7.0-alpha.3 | `native-n11-gui-wave2` | 21/09 18:42 | 16.508.224 | `6640852dfe1e53e43625c3778268777f9b41675350f621495c400043858f2b4b` | #23 | — |
-| 25 | **0.7.0-alpha.4 ★** | `native-n11-gui-wave2` | 21/09 22:46 | 16.508.324 | `7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a` | #21 | **ÚLTIMA** · full-pack exit=0 · aprovação visual do usuário pendente |
+| 25 | **0.7.0-alpha.4 ★** | `native-n11-gui-wave2` | 21/09 22:46 | 16.508.324 | `7dbf5177c4e26edea3c0d5caceafac6d4ec013eee6d543d2dbe80066d4c0fb4a` | #21 | **último JAR** · full-pack exit=0 · aprovação visual do usuário pendente |
+| 26 | 0.7.0-alpha.5 | `native-n12-natal` | 17/11 (código) | — | **JAR ainda não gerado** | #25 | Edição de Natal; só código-fonte/recursos (ver `checkpoints/native-n12-natal/`). Preencher o SHA ao compilar |
 
 Também existe `candidates/native-n10-ceremonial/build/depth-missing-test-only.jar` (`626d227c…`, 15.304.118 B): **fixture de teste** (camada ausente simulada), *não* é distribuição.
 
@@ -61,7 +62,8 @@ Guardados como evidência no acervo (≈45–67 KB cada os pequenos; ≈6 MB os 
 | Item | SHA-256 | Observação |
 |---|---|---|
 | `BGM.mp3` fornecido pelo usuário (Fluxxwave, *Slowed + Reverb*) | `1e7a442de0759fb7a9b605c3f70d0fecdb7c3e1da428796e41df9a717d668408` (6.475.232 B) | original mp3 **não** está no repositório |
-| `menu.ogg` embutido (Ogg/Vorbis 44,1 kHz estéreo, 161,88 s) | `6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6` (4.271.570 B) | **incluído no repositório e nos JARs**; é a entrada que o código espera em `assets/akashiccinematic/sounds/bgm/menu.ogg` |
+| `menu.ogg` embutido até a 0.7.0-alpha.4 (Ogg/Vorbis 44,1 kHz estéreo, 161,88 s) | `6e91e747a99148084b854012c48ce93974beb6275dc4add2951989beff0ae4a6` (4.271.570 B) | nos JARs 0.5.2-alpha.1 … 0.7.0-alpha.4 e nas tags correspondentes |
+| `menu.ogg` a partir da 0.7.0-alpha.5 (Ogg/Vorbis 44,1 kHz estéreo, 225,79 s) | `616bfa84978c3154b240a7ae9c0a2b9fc3ac17321ae032efccbd3f55b797e3a0` (4.463.690 B) | **no repositório** (`assets/akashiccinematic/sounds/bgm/menu.ogg`); fornecida pelo dono em 17/11/2026 |
 | `!Akashic-ThePatcher-1.1.0-beta.10-Cinematic-Angelica.jar` | `3182e7e3d6b51854eae008ff8eb8f346a1d0a8b291740ceff8dab9c5fabc9dab` | repo irmão *AkashicThePatcher* |
 
 ## Bibliotecas usadas para compilar (não redistribuídas)

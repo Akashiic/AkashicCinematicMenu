@@ -1,0 +1,10 @@
+{
+  "widgets_forbidden.png": {
+    "source_sha256": "359b304b06b00530b8f823fd49947b1a071240dfdeb9afebc6d5850e40eaa96e",
+    "sha256": "f257e91deaeb2c684d39256efa4a3b1d71519ef885a5a66a323ad457001ed356"
+  },
+  "list_surface.png": {
+    "source_sha256": "a8c791569e18c001f6f1a41d869fda4e2d46e9aa81a3b16bdf6bc56e8d1adf20",
+    "sha256": "8835ad4a85236d11a613eabe026bd307bbbdf14cb3906ffcd42fa4f2807ff391"
+  }
+}
