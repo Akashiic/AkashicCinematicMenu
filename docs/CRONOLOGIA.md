@@ -169,15 +169,29 @@ Fato sobre a música: o usuário forneceu `BGM.mp3` (SHA-256 `1e7a442d…`, 6.47
 | 23/09 | **ThePatcher 1.1.0-beta.10-Cinematic-Angelica** (`3182e7e3…`) injeta um *state fence* após o `RawScope.close()` da alpha.4 e protege o `applyVSyncMode` do Angelica. Candidato técnico PASS; **aceitação em GPU/cliente real pendente.** | [DOC] |
 | 24/10 | Este repositório é montado a partir do acervo local (ver `PROVENANCE.md`). | — |
 
+
+### Fase 11 — 0.7.0-alpha.5: áudio do menu no AkashicMixer (02/11/2026)
+
+* Pedido do dono: o **AkashicMixer** passa a controlar a BGM e os SFX do menu, separados dos sliders do Minecraft, na tela *Akashic Sounds Mixer*.
+* AkashicMixer ganha a API `routeSounds` e os canais `menu_music`/`menu_sfx` (repositório `Akashiic/AkashicMixer`, mesmo ramo); o menu se conecta a ela de forma opcional (`MixerLink`).
+* Status: implementado; núcleo puro testado (Linux). **Não rodou no jogo** (OI-20, numerada OI-17 no branch de origem). Aprovação sonora do dono pendente.
+* **Ficou fora do `main`**: o branch `claude/focused-tesla-4haxh8` nunca virou PR; só foi integrado na alpha.7 (Fase 13).
+
 ---
 
-### Fase 11 — N12: Edição de Natal (17/11/2026)
+### Fase 12 — N12: Edição de Natal (17/11/2026)
 
 * O dono pede a troca completa da estética pela sua arte de Natal (2000×1116), mantendo **THE END OF FORBIDDEN**, os botões no mesmo lugar e textos novos de Natal; autoria declarada pelo próprio dono. [DOC]
 * **0.7.0-alpha.6** (código): paralaxe em 3 planos recortados com BiRefNet (máscaras versionadas), paleta quente, estrela/guirlanda/neve, textos de Natal em todas as superfícies, recolorido determinístico dos widgets e correção da base das letras no `UiTypography`.
 * Amostras geradas pelo **código real** do pacote `render` num rasterizador OpenGL em software (`tools/preview/`), em 6 resoluções (854×480 a 2560×1080).
 * Mesmo dia: o dono troca a BGM do menu (225,79 s, `616bfa84…`). Verificados: `stream: true`, loop sem duração fixa e supressão da música vanilla; decodificação completa via ffmpeg sem erro. `build_native.py` falhou por falta das dependências SRG (log preservado em `evidence/natal/build-native-attempt.log`); a reconstrução delas via RetroFuturaGradle foi bloqueada pela política do ambiente.
 * Núcleo + 10 suítes PASSOU. **JAR não gerado** (sessão em nuvem sem as dependências SRG); **sem teste no jogo**; aprovação visual do dono pendente.
+
+### Fase 13 — 0.7.0-alpha.7: Natal + AkashicMixer (17/11/2026)
+
+* O dono aponta que a N12 partiu do `main` e **deixou de fora** o hook do AkashicMixer da alpha.5 (branch não mergeado). [DOC]
+* O branch `claude/focused-tesla-4haxh8` é mesclado sem perda: `MixerLink`/`MixerChannels`, `MenuVolumeSource`, `MenuVolumeTests`, a tela do mixer na allow-list da BGM e o `--mixer-jar` do `build_native.py`. A versão passa a **0.7.0-alpha.7**, porque alpha.5 e alpha.6 já têm JAR.
+* CI `build-jar`: baixa `akashicmixer-0ff47b7-dev.jar` do JitPack com SHA conferido (`56e6e80c…`, idêntico ao da evidência da alpha.5).
 
 ---
 

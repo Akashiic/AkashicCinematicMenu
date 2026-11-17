@@ -16,6 +16,7 @@ public final class ClientProxy extends CommonProxy {
         try {
             MenuConfig config = MenuConfig.read(event.getSuggestedConfigurationFile());
             if (!config.enabled) { return; }
+            MixerLink.install(event.getModLog());
             UiAudio.configure(config);
             SecondaryScreenTheme.configure(config.themeSecondaryScreens);
             cpw.mods.fml.common.FMLCommonHandler.instance().bus().register(SecondaryScreenTheme.INSTANCE);

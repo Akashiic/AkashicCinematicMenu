@@ -30,6 +30,13 @@ jobs:
           key: rfg-1.7.10-${{ hashFiles('tools/ci/rfg-deps/*.gradle') }}
       - name: Dependencias SRG do 1.7.10 (setupCIWorkspace)
         run: gradle -p tools/ci/rfg-deps --no-daemon setupCIWorkspace copyAcmDeps
+      # API do AkashicMixer (so classpath de compilacao; nada entra no JAR). Commit fixo + SHA-256 conferido,
+      # identico ao da evidencia da 0.7.0-alpha.5 (evidence/alpha5-mixer-20261102/native-classpath.json).
+      - name: AkashicMixer API (JitPack, commit 0ff47b7)
+        run: |
+          J=tools/ci/rfg-deps/build/acm-deps/akashicmixer-0ff47b7-dev.jar
+          curl -fsSL --retry 5 --retry-delay 15 --max-time 300 -o "$J" https://jitpack.io/com/github/Akashiic/AkashicMixer/0ff47b7/AkashicMixer-0ff47b7-dev.jar
+          echo "56e6e80c615e3806b4b592f77a889ca11d64dc549d803688d1b3d95dcd7375d2  $J" | sha256sum -c -
       - name: deps.json
         run: python3 tools/ci/write_deps_json.py
       - name: Build do JAR (tools/build_native.py)

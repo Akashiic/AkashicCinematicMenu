@@ -14,7 +14,7 @@ public final class MenuConfig {
         particles=c.get("motion","particles",true).getBoolean(true);
         parallax=Numbers.clamp(c.get("motion","parallaxStrength",1.0).getDouble(1.0),0,2);
         sfxEnabled=c.get("audio","enabled",true,"UI cues only after the Minecraft sound engine is ready.").getBoolean(true);
-        double volume=c.get("audio","uiVolume",0.45,"Additional UI volume multiplier, 0..1; respects MASTER volume.").getDouble(.45);
+        double volume=c.get("audio","uiVolume",0.45,"Trim 0..1 for the UI cues. On top of it: the Akashic Sounds Mixer Menu Sounds slider (when AkashicMixer is installed) and Minecraft's Master.").getDouble(.45);
         sfxVolume=Double.isFinite(volume)?Math.max(0,Math.min(1,volume)):.45;
         suppressBogoConflict=c.get("compatibility","hideBogoInventoryTweaksModal",true,"Only the audited notice is moved to the log; inventory incompatibility is not repaired.").getBoolean(true);
         themeTransitions=c.get("screens","themeLoadingTransitions",true,"Only audited Aether, vanilla loading and terrain backgrounds.").getBoolean(true);

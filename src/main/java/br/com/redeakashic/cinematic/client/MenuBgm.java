@@ -3,6 +3,7 @@ package br.com.redeakashic.cinematic.client;
 import br.com.redeakashic.cinematic.core.BgmFrontendPolicy;
 import br.com.redeakashic.cinematic.core.BgmPlayback;
 import br.com.redeakashic.cinematic.core.MenuSoundGate;
+import br.com.redeakashic.cinematic.core.MenuVolumeSource;
 import br.com.redeakashic.cinematic.core.VorbisHeader;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.EventPriority;
@@ -51,6 +52,10 @@ public final class MenuBgm {
         System.out.println("[AkashicCinematic] BGM controller registered; waiting for the main menu and audio resource.");
     }
     private static String screen(Minecraft mc){GuiScreen g=mc.field_71462_r;return g==null?null:g.getClass().getName();}
+    /** Minecraft's Master, and the mixer's Menu Music channel when AkashicMixer is installed (else Minecraft's Music). */
+    private static boolean audible(Minecraft mc){
+        return MenuVolumeSource.audible(mc.field_71474_y.func_151438_a(SoundCategory.MASTER),mc.field_71474_y.func_151438_a(SoundCategory.MUSIC),MixerLink.music());
+    }
     private boolean frontend(Minecraft mc){return BgmFrontendPolicy.frontend(reachedMain,mc.field_71441_e!=null,screen(mc));}
 
     @SubscribeEvent public void reloaded(SoundLoadEvent event){reload.set(true);}
@@ -59,7 +64,7 @@ public final class MenuBgm {
     private void filter(PlaySoundEvent17 event){
         if(event.result==null)return;ResourceLocation loc=event.result.func_147650_b();if(loc==null)return;
         if(!MenuSoundGate.competing(loc.func_110624_b(),loc.func_110623_a(),event.category==SoundCategory.MUSIC))return;
-        Minecraft mc=Minecraft.func_71410_x();boolean muted=mc!=null&&mc.field_71474_y!=null&&(mc.field_71474_y.func_151438_a(SoundCategory.MASTER)<=0||mc.field_71474_y.func_151438_a(SoundCategory.MUSIC)<=0);
+        Minecraft mc=Minecraft.func_71410_x();boolean muted=mc!=null&&mc.field_71474_y!=null&&!audible(mc);
         boolean replace=mc!=null&&!faulted&&settings.enabled&&settings.volume>0&&frontend(mc)&&(playback.snapshot().suppressVanilla||(muted&&backend.validated));
         if(replace){event.result=null;blocked++;return;}
         synchronized(trackedVanilla){if(!trackedVanilla.contains(event.result)){if(trackedVanilla.size()==16)trackedVanilla.removeFirst();trackedVanilla.addLast(event.result);}}
@@ -75,7 +80,7 @@ public final class MenuBgm {
             }
             String current=screen(mc);if(BgmFrontendPolicy.root(current)&&mc.field_71441_e==null)reachedMain=true;
             boolean enabled=settings.enabled&&!faulted&&!Boolean.getBoolean("akashic.cinematic.disabled");
-            boolean audible=mc.field_71474_y.func_151438_a(SoundCategory.MASTER)>0&&mc.field_71474_y.func_151438_a(SoundCategory.MUSIC)>0;
+            boolean audible=audible(mc);
             BgmPlayback.Context context=BgmFrontendPolicy.context(enabled,reachedMain,mc.field_71441_e!=null,current);
             playback.update(context,audible,now);
             if(enabled&&settings.volume>0&&!audible&&frontend(mc)&&backend.available())backend.silenceTrackedVanilla();
